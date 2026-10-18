@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ALLERGENS, ALLERGEN_LABELS, FOOD_TYPES } from './lib/allergens'
+import { ALLERGENS, ALLERGEN_LABELS, detectIngredientSignals, FOOD_TYPES } from './lib/allergens'
 import { productMatch } from './lib/matcher'
 import { supabase } from './lib/supabase'
 import './styles.css'
@@ -24,6 +24,12 @@ function Admin({ onSaved }) {
   const [catalogue, setCatalogue] = useState([])
   const [editingId, setEditingId] = useState(null)
   const change = (field, value) => setForm((old) => ({ ...old, [field]: value }))
+  const detectIngredients = () => {
+    const detected = detectIngredientSignals(form.ingredients_text)
+    change('allergens', detected.allergens)
+    if (detected.uncertain) change('uncertain', true)
+    setMessage(detected.allergens.length ? `Herkenning ingevuld: ${detected.allergens.map((key) => ALLERGEN_LABELS[key]).join(', ')}. Controleer dit altijd.` : 'Geen bekende allergiebronnen herkend. Controleer de lijst handmatig.')
+  }
   const loadCatalogue = async () => {
     const { data } = await supabase.from('products').select('*, recipe_versions(*, recipe_ingredients(*))').eq('recipe_versions.is_current', true).order('brand').order('name')
     setCatalogue(data || [])
@@ -69,6 +75,7 @@ function Admin({ onSaved }) {
     <label>Bron (URL of notitie)<input value={form.source_url} onChange={(e) => change('source_url', e.target.value)} /></label>
     <label>Laatst gecontroleerd<input required type="date" value={form.last_checked_at} onChange={(e) => change('last_checked_at', e.target.value)} /></label>
     <label>Volledige ingrediëntenlijst<textarea required rows="5" value={form.ingredients_text} onChange={(e) => change('ingredients_text', e.target.value)} /></label>
+    <button type="button" onClick={detectIngredients}>Herken allergiebronnen uit ingrediënten</button><p><small>Plak de tekst precies zoals op het etiket. De herkenning is een voorstel; controleer de vinkjes altijd.</small></p>
     <fieldset><legend>Bevestigd aanwezige allergiebronnen</legend>{ALLERGENS.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={form.allergens.includes(key)} onChange={(e) => change('allergens', e.target.checked ? [...form.allergens, key] : form.allergens.filter((item) => item !== key))} />{label}</label>)}</fieldset>
     <label className="inline"><input type="checkbox" checked={form.uncertain} onChange={(e) => change('uncertain', e.target.checked)} />Ingrediëntenlijst bevat een onduidelijke categorie</label>
     <label className="inline"><input type="checkbox" checked={form.published} onChange={(e) => change('published', e.target.checked)} />Publiceren</label>
