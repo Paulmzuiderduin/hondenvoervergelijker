@@ -7,6 +7,10 @@ import './styles.css'
 
 const blankForm = { brand: '', name: '', food_type: 'kibble', package_size: '', gtin: '', ingredients_text: '', source_url: '', last_checked_at: new Date().toISOString().slice(0, 10), published: false, uncertain: false, allergens: [] }
 
+function sourceDomain(url = '') {
+  try { return new URL(url).hostname.replace(/^www\./, '') } catch { return '' }
+}
+
 function ProductCard({ product, match }) {
   const version = product.recipe_versions?.[0]
   return <article className="product-card">
@@ -14,7 +18,7 @@ function ProductCard({ product, match }) {
     <small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]}{product.package_size ? ` · ${product.package_size}` : ''}</small>
     <p>{version?.ingredients_text || 'Geen ingrediëntenlijst ingevoerd.'}</p>
     <small>Laatst gecontroleerd: {product.last_checked_at ? new Date(product.last_checked_at).toLocaleDateString('nl-NL') : 'onbekend'}</small>
-    {product.source_url?.startsWith('http') && <p><a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">Bekijk product</a></p>}
+    {product.source_url?.startsWith('http') && <p><a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">Bekijk product{sourceDomain(product.source_url) ? ` (${sourceDomain(product.source_url)})` : ''}</a></p>}
     <p className="reason">{match.reasons.map((reason) => ALLERGEN_LABELS[reason] || reason).join(' · ')}</p>
   </article>
 }
