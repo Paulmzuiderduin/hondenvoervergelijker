@@ -26,7 +26,7 @@ create table public.import_staging (
 );
 
 create or replace function public.is_admin() returns boolean language sql stable security definer set search_path = public as $$
-  select exists (select 1 from public.admins where user_id = (select auth.uid()));
+  select (select auth.uid()) is not null and exists (select 1 from public.admins where user_id = (select auth.uid()));
 $$;
 create or replace function public.set_updated_at() returns trigger language plpgsql set search_path = public as $$ begin new.updated_at = now(); return new; end; $$;
 create trigger products_updated_at before update on public.products for each row execute function public.set_updated_at();
