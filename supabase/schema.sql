@@ -84,5 +84,6 @@ create policy "admins manage import staging" on public.import_staging for all to
 
 revoke all on function public.is_admin() from public;
 grant execute on function public.is_admin() to anon, authenticated;
+grant select on public.admins to authenticated;
 grant select on public.products, public.recipe_versions, public.recipe_ingredients to anon, authenticated;
 grant insert, update, delete on public.products, public.recipe_versions, public.recipe_ingredients, public.import_staging to authenticated;
