@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, assessLabel, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients, missingAllergenKeys, setCustomTerms } from './lib/allergens'
+import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, assessLabel, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients, missingAllergenKeys, setCustomTerms, sortAllergenKeys } from './lib/allergens'
 import { isReviewOverdue, productMatch } from './lib/matcher'
 import { supabase } from './lib/supabase'
 import './styles.css'
@@ -48,7 +48,7 @@ function ProductCard({ product, match, excluded = false }) {
   </article>
 }
 
-function Admin({ terms, reloadTerms, onSaved }) {
+function Admin({ terms, termsOud, reloadTerms, onSaved }) {
   const [form, setForm] = useState(blankForm)
   const [message, setMessage] = useState('')
   const [catalogue, setCatalogue] = useState([])
@@ -59,6 +59,7 @@ function Admin({ terms, reloadTerms, onSaved }) {
   const [editingId, setEditingId] = useState(null)
   const [keuring, setKeuring] = useState({ rijen: [], teDoen: [], klaar: [], woorden: [] })
   const [keuze, setKeuze] = useState({})
+  const [keuzeKeys, setKeuzeKeys] = useState({})
   const [labelAdvies, setLabelAdvies] = useState(() => assessLabel(''))
   const change = (field, value) => setForm((old) => ({ ...old, [field]: value }))
 
@@ -138,7 +139,7 @@ function Admin({ terms, reloadTerms, onSaved }) {
     ].filter(Boolean)
     if (punten.length && !window.confirm([`${product.brand} — ${product.name}`, 'Je legt vast: deze ingrediëntenlijst is de lijst van de fabrikant.', ...punten, '', 'Vastleggen?'].join('\n'))) return
     setWorking(true)
-    const { error } = await supabase.rpc('set_recipe_reviewed', { p_version_ids: [version.id], p_note: null })
+    const { error } = await supabase.rpc('set_recipe_reviewed', { p_version_ids: [version.id], p_note: version.review_note || null })
     setWorking(false)
     if (error) return setMessage(MISSING_RPC.test(error.message) ? 'De databasefunctie set_recipe_reviewed ontbreekt nog. Voer eerst supabase/migrations/20261019160000_recipe_review.sql uit in de Supabase SQL Editor.' : error.message)
     setMessage(`${product.brand} — ${product.name} staat als nagekeken vast.`)
@@ -146,20 +147,26 @@ function Admin({ terms, reloadTerms, onSaved }) {
   }
 
   // Eén woord indelen: de beslissing geldt meteen voor alle producten met dat
-  // woord, en de site gebruikt dezelfde indeling bij het vergelijken.
+  // woord, en de site gebruikt dezelfde indeling bij het vergelijken. Bij "blijft
+  // onduidelijk" mag de beheerder aanvinken welke allergenen erachter kunnen
+  // zitten (glucosamine: schaaldieren of mais). Vinkt hij niets aan, dan geldt de
+  // onzekerheid voor alle allergenen: dat is de eerlijke lezing als niemand het
+  // weet.
   const classifyWord = async (woord) => {
     if (!supabase) return setMessage('Voeg eerst de Supabase-omgevingsvariabelen toe.')
     if (working) return
     const keuzeVoorWoord = keuze[woord] || 'onschuldig'
     const [kind, allergenKey] = keuzeVoorWoord.split(':')
+    const keys = kind === 'onduidelijk' ? (keuzeKeys[woord] || []) : kind === 'bron' ? [allergenKey] : []
     const uitleg = kind === 'onschuldig' ? `"${woord}" is geen bron van een van de allergenen in de lijst en verbergt er ook geen.`
       : kind === 'bron' ? `"${woord}" is ${ALLERGEN_LABELS[allergenKey]}.`
-        : `"${woord}" kan een allergeen verbergen, maar het etiket zegt niet welke. Het blijft dus "Controleer etiket/fabrikant".`
+        : keys.length ? `"${woord}" kan ${sortAllergenKeys(keys).map((key) => ALLERGEN_LABELS[key]).join(' of ')} verbergen. Alleen daarvoor blijft het "Controleer etiket/fabrikant"; de andere allergenen laat de site met rust.`
+          : `"${woord}" kan elk allergeen verbergen, maar het etiket zegt niet welke. De site blijft dus voor alle allergenen "Controleer etiket/fabrikant" zeggen.`
     if (!window.confirm(`${uitleg}\n\nDit geldt voor alle producten met dit woord. Vastleggen?`)) return
     setWorking(true)
-    const { error } = await supabase.rpc('classify_ingredient_term', { p_term: woord, p_kind: kind, p_allergen_key: kind === 'bron' ? allergenKey : null, p_note: null })
+    const { error } = await supabase.rpc('classify_ingredient_term', { p_term: woord, p_kind: kind, p_allergen_keys: kind === 'onduidelijk' && !keys.length ? null : keys, p_note: null })
     setWorking(false)
-    if (error) return setMessage(MISSING_RPC.test(error.message) ? 'De databasefunctie classify_ingredient_term ontbreekt nog. Voer eerst supabase/migrations/20261019170000_ingredient_terms.sql uit in de Supabase SQL Editor.' : error.message)
+    if (error) return setMessage(MISSING_RPC.test(error.message) ? 'De databasefunctie classify_ingredient_term heeft nog de oude vorm (één allergeen per woord). Voer supabase/migrations/20261019180000_term_scopes.sql uit in de Supabase SQL Editor.' : error.message)
     setMessage(`"${woord}" is ingedeeld. De vergelijking en de takenlijst zijn meteen bijgewerkt.`)
     await reloadTerms(); onSaved(); loadCatalogue()
   }
@@ -246,17 +253,26 @@ function Admin({ terms, reloadTerms, onSaved }) {
 
     {keuring.woorden.length > 0 && <>
       <h3 id="woorden">Woorden die de keuring niet kent ({keuring.woorden.length})</h3>
-      <p><small>Eén indeling per woord geldt meteen voor alle producten met dat woord, op de site én in deze takenlijst. Kies je <strong>Blijft onduidelijk</strong>, dan is het woord ingedeeld en verdwijnt het van deze lijst; de site blijft voor de allergenen die erachter kunnen zitten eerlijk "kan erin zitten" zeggen, want dat kan alleen het etiket of de fabrikant wegnemen. Weet je dat het woord geen van de allergenen in onze lijst is, kies dan <strong>Onschuldig</strong>. Weet je welke bron het is, kies dan <strong>Bron van …</strong>; de site noemt het dan als bron.</small></p>
-      {keuring.woorden.map(({ woord, producten }) => <div className="admin-row" key={woord}>
-        <span><strong>{woord}</strong> · {producten.length} product{producten.length === 1 ? '' : 'en'}: {producten.slice(0, 3).map(({ brand, name }) => `${brand} — ${name}`).join(' · ')}{producten.length > 3 ? ` en ${producten.length - 3} meer` : ''}</span>
-        <select value={keuze[woord] || ''} onChange={(e) => setKeuze((old) => ({ ...old, [woord]: e.target.value }))}>
-          <option value="">Kies een indeling…</option>
-          <option value="onschuldig">Onschuldig: geen van de allergenen, en verbergt er ook geen</option>
-          <option value="onduidelijk">Blijft onduidelijk: kan een allergeen verbergen</option>
-          {ALLERGEN_GROUPS.map((group) => <optgroup key={group.key} label={`Bron van ${group.label.toLowerCase()}`}>{group.allergens.map(({ key, label }) => <option key={key} value={`bron:${key}`}>Bron van {label}</option>)}</optgroup>)}
-        </select>
-        <button type="button" disabled={working || !keuze[woord]} onClick={() => classifyWord(woord)}>Indelen</button>
-      </div>)}
+      <p><small>Eén indeling per woord geldt meteen voor alle producten met dat woord, op de site én in deze takenlijst. <strong>Onschuldig</strong>: geen van de allergenen in onze lijst, en verbergt er ook geen. <strong>Bron van …</strong>: het woord is die bron en de site noemt hem. <strong>Blijft onduidelijk</strong>: het woord is ingedeeld en verdwijnt van deze lijst, en de site blijft eerlijk "kan erin zitten" zeggen voor de allergenen die erachter kunnen zitten. Vink daarbij aan welke dat zijn (glucosamine kan van schaaldieren of van mais komen, niet van ei), of laat leeg als niemand het weet — dan geldt de onzekerheid voor alle allergenen.</small></p>
+      {termsOud && <p role="alert">De database kan nog maar één allergeen per woord onthouden. Voer supabase/migrations/20261019180000_term_scopes.sql uit in de Supabase SQL Editor; daarna kun je bij "blijft onduidelijk" aanvinken welke allergenen erachter kunnen zitten.</p>}
+      {keuring.woorden.map(({ woord, producten }) => {
+        const gekozen = keuze[woord] || ''
+        const keys = keuzeKeys[woord] || []
+        const wissel = (key) => setKeuzeKeys((old) => { const huidig = old[woord] || []; return { ...old, [woord]: huidig.includes(key) ? huidig.filter((item) => item !== key) : [...huidig, key] } })
+        return <div className="admin-row" key={woord}>
+          <span><strong>{woord}</strong> · {producten.length} product{producten.length === 1 ? '' : 'en'}: {producten.slice(0, 3).map(({ brand, name }) => `${brand} — ${name}`).join(' · ')}{producten.length > 3 ? ` en ${producten.length - 3} meer` : ''}</span>
+          <select value={gekozen} onChange={(e) => setKeuze((old) => ({ ...old, [woord]: e.target.value }))}>
+            <option value="">Kies een indeling…</option>
+            <option value="onschuldig">Onschuldig: geen van de allergenen, en verbergt er ook geen</option>
+            <option value="onduidelijk">Blijft onduidelijk: kan een allergeen verbergen</option>
+            {ALLERGEN_GROUPS.map((group) => <optgroup key={group.key} label={`Bron van ${group.label.toLowerCase()}`}>{group.allergens.map(({ key, label }) => <option key={key} value={`bron:${key}`}>Bron van {label}</option>)}</optgroup>)}
+          </select>
+          {gekozen === 'onduidelijk' && <details className="term-keys"><summary>{keys.length ? `kan ${sortAllergenKeys(keys).map((key) => ALLERGEN_LABELS[key]).join(' of ')} verbergen` : 'kan elk allergeen verbergen — vink hier aan welke het echt kunnen zijn'}</summary>
+            {ALLERGEN_GROUPS.map((group) => <fieldset className="allergen-group" key={group.key}><legend>{group.label}</legend><div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={keys.includes(key)} onChange={() => wissel(key)} />{label}</label>)}</div></fieldset>)}
+          </details>}
+          <button type="button" disabled={working || !gekozen} onClick={() => classifyWord(woord)}>Indelen</button>
+        </div>
+      })}
     </>}
 
     <h3>Klaar ({keuring.klaar.length})</h3>
@@ -266,7 +282,7 @@ function Admin({ terms, reloadTerms, onSaved }) {
     </div>)}</details> : <p>Nog geen producten die klaar zijn.</p>}
 
     {terms.length > 0 && <details><summary>Eerder ingedeelde woorden ({terms.length})</summary>{terms.map((term) => <div className="admin-row" key={term.term}>
-      <span><strong>{term.term}</strong> · {term.kind === 'onschuldig' ? 'onschuldig' : term.kind === 'bron' ? `bron van ${ALLERGEN_LABELS[term.allergen_key] ?? term.allergen_key}` : 'blijft onduidelijk'}{term.note ? ` · ${term.note}` : ''}</span>
+      <span><strong>{term.term}</strong> · {term.kind === 'onschuldig' ? 'onschuldig' : term.kind === 'bron' ? `bron van ${ALLERGEN_LABELS[term.allergen_keys[0]] ?? term.allergen_keys[0]}` : term.allergen_keys.length ? `blijft onduidelijk; kan ${sortAllergenKeys(term.allergen_keys).map((key) => ALLERGEN_LABELS[key] ?? key).join(' of ')} verbergen` : 'blijft onduidelijk; kan elk allergeen verbergen'}{term.note ? ` · ${term.note}` : ''}</span>
       <button type="button" disabled={working} onClick={() => removeTerm(term.term)}>Indeling intrekken</button>
     </div>)}</details>}
 
@@ -277,12 +293,24 @@ function Admin({ terms, reloadTerms, onSaved }) {
 
 function App() {
   const [products, setProducts] = useState([]); const [loading, setLoading] = useState(true); const [loadError, setLoadError] = useState('')
-  const [terms, setTerms] = useState([]); const [termsError, setTermsError] = useState('')
+  const [terms, setTerms] = useState([]); const [termsError, setTermsError] = useState(''); const [termsOud, setTermsOud] = useState(false)
   const [allergens, setAllergens] = useState([]); const [types, setTypes] = useState(FOOD_TYPES.map(([key]) => key))
   const [admin, setAdmin] = useState(false); const [session, setSession] = useState(null); const [isAdmin, setIsAdmin] = useState(false); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [authMessage, setAuthMessage] = useState(''); const [recovery, setRecovery] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery'); const [newPassword, setNewPassword] = useState(''); const [repeatPassword, setRepeatPassword] = useState('')
   const [matches, setMatches] = useState([])
   const load = async () => { if (!supabase) { setLoadError('Supabase is nog niet geconfigureerd, dus er kunnen geen producten worden geladen.'); setLoading(false); return }; setLoading(true); const { data, error } = await supabase.from('products').select('*, recipe_versions(*, recipe_ingredients(*))').eq('published', true).eq('recipe_versions.is_current', true); if (error) { setLoadError(error.message); setProducts([]) } else { setLoadError(''); setProducts(data || []) }; setLoading(false) }
-  const loadTerms = async () => { if (!supabase) return; const { data, error } = await supabase.from('ingredient_terms').select('term, kind, allergen_key, note').order('term'); if (error) { setTermsError(TERMS_HINT); setTerms([]); return } setTermsError(''); setTerms(data || []) }
+  // De woordenschat komt als ruwe rij binnen. Zo blijft de site werken zolang de
+  // laatste migratie (20261019180000_term_scopes.sql) nog niet is uitgevoerd: een
+  // ingedeeld woord houdt dan zijn ene allergeen, en "onduidelijk" verbergt alles
+  // — strenger, niet soepeler. In het beheer staat dan een regel met wat er nog
+  // moet gebeuren.
+  const loadTerms = async () => {
+    if (!supabase) return
+    const { data, error } = await supabase.from('ingredient_terms').select('*').order('term')
+    if (error) { setTermsError(TERMS_HINT); setTerms([]); return }
+    setTermsError('')
+    setTerms((data || []).map((term) => ({ term: term.term, kind: term.kind, note: term.note, allergen_keys: Array.isArray(term.allergen_keys) ? term.allergen_keys.filter(Boolean) : term.allergen_key ? [term.allergen_key] : [] })))
+    setTermsOud(data?.length > 0 && !('allergen_keys' in data[0]))
+  }
   useEffect(() => { load(); loadTerms(); supabase?.auth.getSession().then(({ data }) => setSession(data.session)); const { data } = supabase?.auth.onAuthStateChange((event, next) => { setSession(next); if (event === 'PASSWORD_RECOVERY') setRecovery(true) }) || {}; return () => data?.subscription.unsubscribe() }, [])
   useEffect(() => { const checkAdmin = async () => { if (!session || !supabase) return setIsAdmin(false); const { data } = await supabase.from('admins').select('user_id').eq('user_id', session.user.id).maybeSingle(); setIsAdmin(Boolean(data)) }; checkAdmin() }, [session])
   // De woordenschat (eigen indelingen) moet bekend zijn vóór het vergelijken.
@@ -303,9 +331,15 @@ function App() {
     setRecovery(false); setNewPassword(''); setRepeatPassword(''); setAuthMessage('Wachtwoord gewijzigd. Je bent nu ingelogd.')
   }
   return <main><header><h1>Hondenvoervergelijker</h1><button className="link" onClick={() => { if (admin) { load(); loadTerms() } setAdmin(!admin) }}>{admin ? 'Terug naar vergelijken' : 'Beheer'}</button></header>
-    {recovery ? <form className="login" onSubmit={updatePassword}><h2>Nieuw wachtwoord instellen</h2><p>Kies hieronder een nieuw wachtwoord voor het beheerdersaccount.</p><label>Nieuw wachtwoord<input type="password" required minLength="8" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} /></label><label>Herhaal wachtwoord<input type="password" required minLength="8" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} /></label><button>Wachtwoord opslaan</button>{authMessage && <p aria-live="polite">{authMessage}</p>}</form> : admin ? (isAdmin ? <Admin terms={terms} reloadTerms={loadTerms} onSaved={load} /> : session ? <section><h2>Geen beheerdersrechten</h2><p>Dit account mag geen producten beheren.</p><button onClick={() => supabase.auth.signOut()}>Uitloggen</button></section> : <form className="login" onSubmit={login}><h2>Beheer inloggen</h2><label>E-mail<input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} /></label><label>Wachtwoord<input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} /></label><button>Inloggen</button>{authMessage && <p>{authMessage}</p>}</form>) : <>
+    {recovery ? <form className="login" onSubmit={updatePassword}><h2>Nieuw wachtwoord instellen</h2><p>Kies hieronder een nieuw wachtwoord voor het beheerdersaccount.</p><label>Nieuw wachtwoord<input type="password" required minLength="8" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} /></label><label>Herhaal wachtwoord<input type="password" required minLength="8" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} /></label><button>Wachtwoord opslaan</button>{authMessage && <p aria-live="polite">{authMessage}</p>}</form> : admin ? (isAdmin ? <Admin terms={terms} termsOud={termsOud} reloadTerms={loadTerms} onSaved={load} /> : session ? <section><h2>Geen beheerdersrechten</h2><p>Dit account mag geen producten beheren.</p><button onClick={() => supabase.auth.signOut()}>Uitloggen</button></section> : <form className="login" onSubmit={login}><h2>Beheer inloggen</h2><label>E-mail<input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} /></label><label>Wachtwoord<input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} /></label><button>Inloggen</button>{authMessage && <p>{authMessage}</p>}</form>) : <>
       <aside><strong>Belangrijk:</strong> deze tool vergelijkt ingevoerde etiketinformatie. Hij is geen dierenartsadvies en geeft geen garantie. Controleer altijd de verpakking en overleg bij twijfel met een dierenarts.</aside>
-      <section><h2>Allergieën van je hond</h2>{ALLERGEN_GROUPS.map((group) => <fieldset className="allergen-group" key={group.key}><legend>{group.label}</legend><div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => setAllergens(e.target.checked ? [...allergens, key] : allergens.filter((item) => item !== key))} />{label}</label>)}</div></fieldset>)}<h2>Type voer</h2><div className="choices">{FOOD_TYPES.map(([key, label]) => <label className="inline" key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div></section>
+      <section><h2>Allergieën van je hond</h2><p><small>Kies wat je wilt vermijden. De lijst is fijnmazig — één groente, één vissoort of één kruid kan ook — dus open de groep die je nodig hebt.</small></p>{ALLERGEN_GROUPS.map((group) => {
+        const gekozen = group.allergens.filter(({ key }) => allergens.includes(key)).length
+        return <details className="allergen-group" key={group.key} open={group.key === 'protein'}>
+          <summary>{group.label} {gekozen ? `· ${gekozen} gekozen` : `(${group.allergens.length})`}</summary>
+          <div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => setAllergens(e.target.checked ? [...allergens, key] : allergens.filter((item) => item !== key))} />{label}</label>)}</div>
+        </details>
+      })}<h2>Type voer</h2><div className="choices">{FOOD_TYPES.map(([key, label]) => <label className="inline" key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div></section>
       {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : loading ? <p>Laden…</p> : <>{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">rood</mark> = het etiket noemt de bron van dat ingrediënt niet ("dierlijk vet", "granen"). Het oordeel gaat per allergeen: een product komt alleen bij "Controleer" als zo'n onduidelijkheid jouw allergeen kan bevatten. Reken op het etiket en de fabrikant, niet op deze site.</p>
         <section><h2>Geschikt ({suitable.length})</h2>{suitable.length ? suitable.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} />) : <p>{allergens.length ? 'Geen producten waarin de gekozen allergenen aantoonbaar ontbreken.' : 'Geen enkel etiket noemt elke allergeenbron bij name.'}</p>}</section>
         <section><h2>Controleer etiket/fabrikant ({check.length})</h2>{check.length ? check.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} />) : <p>Geen producten met een open vraag bij de gekozen allergenen.</p>}</section>

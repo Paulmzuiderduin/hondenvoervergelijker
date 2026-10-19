@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { isReviewOverdue, productMatch } from '../../src/lib/matcher.js'
-import { ALLERGENS, assessLabel, detectIngredientSignals, markUncertainIngredients, missingAllergenKeys, setCustomTerms } from '../../src/lib/allergens.js'
+import { ALLERGENS, assessLabel, detectIngredientSignals, markUncertainIngredients, missingAllergenKeys, sampleForAllergen, setCustomTerms } from '../../src/lib/allergens.js'
 
 const product = (overrides = {}) => ({
   last_checked_at: '2026-10-01',
@@ -72,11 +72,40 @@ test('een zelf ingedeeld woord geldt meteen voor alle producten', () => {
   setCustomTerms([{ term: 'groenten', kind: 'onduidelijk' }])
   assert.deepEqual(assessLabel('Kip 40%, groenten').unknown, [])
   assert.equal(assessLabel('Kip 40%, groenten').keys.includes('soy'), true)
-  setCustomTerms([{ term: 'garbanzo', kind: 'bron', allergen_key: 'chickpea' }])
+  setCustomTerms([{ term: 'garbanzo', kind: 'bron', allergen_keys: ['chickpea'] }])
   assert.deepEqual(detectIngredientSignals('garbanzo, kip').allergens, ['chicken', 'chickpea'])
   setCustomTerms([])
   assert.deepEqual(assessLabel('Kip 40%, glucosamine, erwten').unknown, ['glucosamine'])
 })
+test('een onduidelijk woord kan ook juist een paar allergenen verbergen', () => {
+  // Glucosamine komt van schaaldieren of van mais; een ei kan er niet achter
+  // zitten. Zonder die keuze zou de site ook voor ei om controle vragen.
+  setCustomTerms([{ term: 'glucosamine', kind: 'onduidelijk', allergen_keys: ['shellfish', 'corn'] }])
+  const keuring = assessLabel('Kip 40%, glucosamine, rijst')
+  assert.deepEqual(keuring.unknown, [])
+  assert.deepEqual(keuring.keys, ['shellfish', 'corn'])
+  const versie = { ingredients_text: 'Kip 40%, glucosamine, rijst', reviewed_at: '2026-10-01T00:00:00Z', recipe_ingredients: [] }
+  assert.equal(productMatch(product({ recipe_versions: [versie] }), ['egg'], new Date('2026-10-14')).kind, 'suitable')
+  assert.equal(productMatch(product({ recipe_versions: [versie] }), ['shellfish'], new Date('2026-10-14')).kind, 'check')
+  assert.equal(productMatch(product({ recipe_versions: [versie] }), ['corn'], new Date('2026-10-14')).kind, 'check')
+  setCustomTerms([])
+})
+test('een eiwitwoord na een genoemde diergroep verbergt alleen die groep', () => {
+  // "gevogelte-eiwit" noemt de groep wel: kip, kalkoen en eend blijven onbeslist,
+  // rund niet.
+  const gevogelte = assessLabel('Gevogelte-eiwit (gehydrolyseerd), rijst, mineralen')
+  for (const key of ['poultry', 'chicken', 'turkey', 'duck']) assert.equal(gevogelte.keys.includes(key), true, key)
+  assert.equal(gevogelte.keys.includes('beef'), false)
+  // "Dierlijk eiwit" kan geen ei, melk of vis zijn, wel elk landdier.
+  const dierlijk = assessLabel('Dierlijk eiwit, rijst, mineralen')
+  assert.equal(dierlijk.keys.includes('beef'), true)
+  assert.equal(dierlijk.keys.includes('egg'), false)
+  assert.equal(dierlijk.keys.includes('milk'), false)
+  assert.equal(dierlijk.keys.includes('fish'), false)
+  // Een vetwoord houdt zijn eigen, bredere afweging: visolie kan achter vet zitten.
+  assert.equal(assessLabel('Dierlijk vet, rijst').keys.includes('fish'), true)
+})
+
 test('zonder allergenenkeuze vraagt een onduidelijk etiket om controle', () => {
   const onduidelijk = product({ recipe_versions: [{ ingredients_text: 'Kip 40%, cooked broth, mineralen', reviewed_at: '2026-10-01T00:00:00Z', recipe_ingredients: [] }] })
   // Geen keuze: dan is de vraag "noemt dit etiket elke bron?" en het antwoord is nee.
@@ -131,8 +160,20 @@ test('algemene categorie sluit ook de specifieke bronnen uit', () => {
   assert.equal(productMatch(kip, ['grains'], new Date('2026-10-14')).kind, 'suitable')
 })
 test('elke allergeen in de keuzelijst is ook echt te herkennen', () => {
-  const tekst = 'kip kalkoen rund lam eend varken konijn hert paard vis zalm kabeljauw ei melk weipoeder tarwe mais rijst gerst haver soja erwt aardappel kikkererwt gevogelte granen'
-  assert.deepEqual(detectIngredientSignals(tekst).allergens, ALLERGENS.map(({ key }) => key))
+  for (const { key, label } of ALLERGENS) {
+    const woord = sampleForAllergen(key)
+    assert.ok(woord, `${label} heeft geen voorbeeldwoord in de woordenschat`)
+    assert.ok(detectIngredientSignals(woord).allergens.includes(key), `${label} ("${woord}") wordt niet herkend`)
+  }
+})
+
+test('schaaldieren en insecten zijn eigen bronnen', () => {
+  assert.deepEqual(detectIngredientSignals('Kip, garnalen, kreeften, mosselen').allergens, ['chicken', 'shellfish'])
+  assert.deepEqual(detectIngredientSignals('Insectorolie, meelwormen, rijst').allergens, ['insect', 'rice'])
+  // Geen valse bronnen: een oesterzwam is geen oester en johannesbroodpitmeel
+  // (locust bean gum) is geen sprinkhaan.
+  assert.deepEqual(detectIngredientSignals('Oesterzwam, rijst').allergens, ['rice'])
+  assert.deepEqual(detectIngredientSignals('Locust bean gum, rijst').allergens, ['rice'])
 })
 
 test('meervoudsvormen zoals aardappelen en eieren worden herkend', () => {
@@ -207,8 +248,12 @@ test('delen onder een kop met een genoemde bron zijn herleidbaar', () => {
   assert.deepEqual(assessLabel('Maïs, eiwit, mineralen').risky, ['eiwit'])
 })
 
-test('gierst, spelt, rogge en sorghum horen bij granen', () => {
-  assert.deepEqual(detectIngredientSignals('Gierst, spelt, rogge, sorghum, triticale, millet').allergens, ['grains'])
+test('gierst, spelt en rogge zijn eigen granen en sorghum valt onder granen', () => {
+  assert.deepEqual(detectIngredientSignals('Gierst, spelt, rogge, sorghum, triticale, millet').allergens, ['millet', 'grains', 'rye', 'spelt'])
+  // Wie "Granen (algemeen)" kiest, bedoelt spelt er ook bij.
+  const versie = { ingredients_text: 'Spelt 40%, rijst, mineralen', reviewed_at: '2026-10-01T00:00:00Z', recipe_ingredients: [] }
+  assert.equal(productMatch(product({ recipe_versions: [versie] }), ['grains'], new Date('2026-10-14')).kind, 'excluded')
+  assert.equal(productMatch(product({ recipe_versions: [versie] }), ['spelt'], new Date('2026-10-14')).kind, 'excluded')
 })
 
 test('de keuring meldt woorden die ze niet kent', () => {
