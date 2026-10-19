@@ -123,7 +123,7 @@ async function haalLiveCatalogus() {
     console.log('       Geef ze mee om dubbele producten vooraf te vangen: VITE_SUPABASE_URL=... VITE_SUPABASE_PUBLISHABLE_KEY=... node scripts/maak-import-sql.mjs')
     return null
   }
-  const antwoord = await fetch(`${url.replace(/\/$/, '')}/rest/v1/products?select=brand,name,package_size,gtin`, { headers: { apikey: key, authorization: `Bearer ${key}` } })
+  const antwoord = await fetch(`${url.replace(/\/$/, '')}/rest/v1/products?select=brand,name,package_size,gtin,recipe_versions(ingredients_text,is_current)`, { headers: { apikey: key, authorization: `Bearer ${key}` } })
   if (!antwoord.ok) {
     console.log(`LET OP: de live catalogus kon niet worden opgehaald (${antwoord.status}); de controle op bestaande producten is overgeslagen.`)
     return null
@@ -179,17 +179,33 @@ for (const bestand of bestanden) {
 const live = await haalLiveCatalogus()
 if (live) {
   const bestaand = new Map()
+  // Ook de tekst zelf: twee producten met een verschillende naam maar precies
+  // dezelfde etiket tekst zijn hetzelfde product (bijvoorbeeld "Original" en
+  // "Original 23/12"). Zulke dubbele rijen wil je niet naast elkaar op de site.
+  const teksten = new Map()
   for (const rij of live) {
     bestaand.set(`${rij.brand.toLowerCase()}|${rij.name.toLowerCase()}|${netteVerpakking(rij.package_size).toLowerCase()}`, 'de live database')
     if (rij.gtin) bestaand.set(`gtin:${rij.gtin}`, 'de live database')
+    for (const versie of rij.recipe_versions ?? []) {
+      if (!versie.is_current) continue
+      const tekst = normaliseer(versie.ingredients_text).toLowerCase()
+      if (tekst.length > 40) teksten.set(tekst, `${rij.brand} | ${rij.name}${rij.package_size ? ` | ${rij.package_size}` : ''}`)
+    }
   }
   for (const [bestand, producten] of perBestand) {
     perBestand.set(bestand, producten.filter((product) => {
       const sleutel = `${product.merk.toLowerCase()}|${product.naam.toLowerCase()}|${verpakkingssleutel(product)}`
       const treffer = bestaand.get(sleutel) ?? (product.gtin ? bestaand.get(`gtin:${product.gtin}`) : undefined)
-      if (!treffer) return true
-      waarschuwingen.push(`${product.merk} — ${product.naam}: staat al in ${treffer} en is overgeslagen`)
-      return false
+      if (treffer) {
+        waarschuwingen.push(`${product.merk} — ${product.naam}: staat al in ${treffer} en is overgeslagen`)
+        return false
+      }
+      const zelfdeTekst = teksten.get(normaliseer(product.etiketNl).toLowerCase())
+      if (zelfdeTekst) {
+        waarschuwingen.push(`${product.merk} — ${product.naam}: dezelfde etiket tekst staat al op de site (${zelfdeTekst}) en is overgeslagen`)
+        return false
+      }
+      return true
     }))
   }
   console.log(`Live catalogus gelezen: ${live.length} producten.`)

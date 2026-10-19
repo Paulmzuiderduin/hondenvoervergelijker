@@ -1,0 +1,126 @@
+{
+  "bron": "https://prinspetfoods.com",
+  "opgehaald": "2026-10-19",
+  "producten": [
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Puppy & Junior",
+      "voertype": "kibble",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://prinspetfoods.com/product/procare-puppy-junior/",
+      "etiketOrigineel": "Poultry meal (21.0%), corn, wheat, sorghum, beef tallow, hydrolysed poultry protein (7.5%), dried chicory pulp, cellulose, sunflower oil, fructooligosaccharides (FOS), algae oil (0.3%), hydrolysed yeast.",
+      "etiketNl": "Gevogeltemeel (21,0%), maïs, tarwe, sorghum, rundertalg, gehydrolyseerd gevogelte-eiwit (7,5%), gedroogde cichoreipulp, cellulose, zonnebloemolie, fructo-oligosachariden (FOS), algenolie (0,3%), gehydrolyseerde gist.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Standard Fit",
+      "voertype": "kibble",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://prinspetfoods.com/product/procare-standard-fit/",
+      "etiketOrigineel": "Poultry meal (21.0%), corn, wheat, sorghum, hydrolysed poultry protein (4.5%), dried chicory pulp (2.0%), beef tallow, cellulose, sunflower oil, fructo-oligosaccharides (FOS) (0.5%), algae oil (0.2%), hydrolysed yeast.",
+      "etiketNl": "Gevogeltemeel (21,0%), maïs, tarwe, sorghum, gehydrolyseerd gevogelte-eiwit (4,5%), gedroogde cichoreipulp (2,0%), rundertalg, cellulose, zonnebloemolie, fructo-oligosachariden (FOS) (0,5%), algenolie (0,2%), gehydrolyseerde gist.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Mini Standard Fit",
+      "voertype": "kibble",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://prinspetfoods.com/product/procare-mini-standard-fit/",
+      "etiketOrigineel": "Poultry meal (21.0%), corn, wheat, sorghum, hydrolysed poultry protein (4.5%), dried chicory pulp (2.0%), beef tallow, cellulose, sunflower oil, fructo-oligosaccharides (FOS) (0.5%), algae oil (0.2%), hydrolysed yeast.",
+      "etiketNl": "Gevogeltemeel (21,0%), maïs, tarwe, sorghum, gehydrolyseerd gevogelte-eiwit (4,5%), gedroogde cichoreipulp (2,0%), rundertalg, cellulose, zonnebloemolie, fructo-oligosachariden (FOS) (0,5%), algenolie (0,2%), gehydrolyseerde gist.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Super Active",
+      "voertype": "kibble",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://prinspetfoods.com/product/procare-super-active/",
+      "etiketOrigineel": "Poultry meal (21.0%), corn, wheat, sorghum, beef tallow, hydrolysed poultry protein (7.5%), dried chicory pulp (2.0%), cellulose, sunflower oil, fructooligosaccharides (FOS) (0.5%), algae oil (0.2%), hydrolysed yeast.",
+      "etiketNl": "Gevogeltemeel (21,0%), maïs, tarwe, sorghum, rundertalg, gehydrolyseerd gevogelte-eiwit (7,5%), gedroogde cichoreipulp (2,0%), cellulose, zonnebloemolie, fructo-oligosachariden (FOS) (0,5%), algenolie (0,2%), gehydrolyseerde gist.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Senior Support",
+      "voertype": "kibble",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://prinspetfoods.com/product/procare-senior-support/",
+      "etiketOrigineel": "Corn, poultry meal (11.0%), hydrolysed poultry protein (10.0%), wheat, sorghum, beef fat, dried chicory pulp, cellulose, potato starch, sunflower oil, fructo-oligosaccharides (FOS), hydrolysed yeast, algae oil (0.2%), glucosamine (0.05%), chondroitin (0.05%).",
+      "etiketNl": "Maïs, gevogeltemeel (11,0%), gehydrolyseerd gevogelte-eiwit (10,0%), tarwe, sorghum, rundervet, gedroogde cichoreipulp, cellulose, aardappelzetmeel, zonnebloemolie, fructo-oligosachariden (FOS), gehydrolyseerde gist, algenolie (0,2%), glucosamine (0,05%), chondroïtine (0,05%).",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Light Low calorie",
+      "voertype": "kibble",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://prinspetfoods.com/product/procare-light-low-calorie/",
+      "etiketOrigineel": "Poultry meal (26.0%), wheat, corn, cellulose (8.8%), corn gluten, hydrolysed poultry protein (4.5%), dried chicory pulp (4.0%), beef fat, sunflower oil, fructooligosaccharides (FOS) (0.5%), hydrolysed yeast, algae oil (0.2%).",
+      "etiketNl": "Gevogeltemeel (26,0%), tarwe, maïs, cellulose (8,8%), maïsgluten, gehydrolyseerd gevogelte-eiwit (4,5%), gedroogde cichoreipulp (4,0%), rundervet, zonnebloemolie, fructo-oligosachariden (FOS) (0,5%), gehydrolyseerde gist, algenolie (0,2%).",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Lamb & Rice",
+      "voertype": "kibble",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://prinspetfoods.com/product/procare-lamb-rice/",
+      "etiketOrigineel": "Corn, rice (21.0%), lamb meal (18.0%), beef tallow, corn gluten, potato protein, potato starch, dried chicory pulp (2.0%), cellulose, sunflower oil, fructo-oligosaccharides (FOS) (0.5%), algae oil (0.2%), hydrolysed yeast.",
+      "etiketNl": "Maïs, rijst (21,0%), lamsmeel (18,0%), rundertalg, maïsgluten, aardappeleiwit, aardappelzetmeel, gedroogde cichoreipulp (2,0%), cellulose, zonnebloemolie, fructo-oligosachariden (FOS) (0,5%), algenolie (0,2%), gehydrolyseerde gist.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Grainfree Sensible",
+      "voertype": "kibble",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://prinspetfoods.com/product/procare-grainfree-sensible/",
+      "etiketOrigineel": "Dehydrated duck (29.0%), potato starch, pea, beef tallow, potato protein, dried chicory pulp, cellulose, sunflower oil, fructo-oligosaccharides (FOS), potassium chloride, algae oil (0.3%), hydrolysed yeast.",
+      "etiketNl": "Gedehydrateerde eend (29,0%), aardappelzetmeel, erwten, rundertalg, aardappeleiwit, gedroogde cichoreipulp, cellulose, zonnebloemolie, fructo-oligosachariden (FOS), kaliumchloride, algenolie (0,3%), gehydrolyseerde gist.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Sport-Life Excellent",
+      "voertype": "kibble",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://prinspetfoods.com/product/procare-sport-life-excellent/",
+      "etiketOrigineel": "Dehydrated chicken and turkey (30%), corn, wheat, animal fat (beef), corn gluten, poultry protein hydrolysate (4.5%), maltodextrin, haemoglobin powder, dried chicory pulp, salmon oil, sunflower oil, inulin, yeast hydrolysate.",
+      "etiketNl": "Gedehydrateerde kip en kalkoen (30%), maïs, tarwe, dierlijk vet (rund), maïsgluten, gehydrolyseerd gevogelte-eiwit (4,5%), maltodextrine, hemoglobinepoeder, gedroogde cichoreipulp, zalmolie, zonnebloemolie, inuline, gisthydrolysaat.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Fit Selection Chicken & Rice",
+      "voertype": "kibble",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://prinspetfoods.com/product/fit-selection-chicken-rice/",
+      "etiketOrigineel": "Dehydrated chicken (25%), corn, wheat, rice (9%), animal fat (chicken), beet pulp (2.3%), hydrolysed liver, fish oil (0.5%), yeast, potassiumchloride, sodiumchloride, yucca schidigera extract (0.1%).",
+      "etiketNl": "Gedehydrateerde kip (25%), maïs, tarwe, rijst (9%), dierlijk vet (kip), bietenpulp (2,3%), gehydrolyseerde lever, visolie (0,5%), gist, kaliumchloride, natriumchloride, yucca schidigera-extract (0,1%).",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    }
+  ]
+}
