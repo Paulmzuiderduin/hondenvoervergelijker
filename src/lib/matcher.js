@@ -1,52 +1,78 @@
-import { ALLERGEN_IMPLIES, assessLabel } from './allergens.js'
+import { ALLERGEN_IMPLIES, ALLERGEN_LABELS, assessLabel, detectIngredientSignals, expandAllergenKeys } from './allergens.js'
 
 const SIX_MONTHS_MS = 183 * 24 * 60 * 60 * 1000
-
-// "Gevogelte (algemeen)" sluit ook kip, kalkoen en eend uit; "Granen (algemeen)"
-// ook tarwe, gerst, haver, mais en rijst. Andersom geldt dat niet: kies je één
-// specifieke bron, dan telt alleen die bron.
-function expandSelection(selectedAllergens) {
-  const wanted = new Set(selectedAllergens)
-  for (const key of selectedAllergens) {
-    for (const implied of ALLERGEN_IMPLIES[key] ?? []) wanted.add(implied)
-  }
-  return wanted
-}
 
 export function isReviewOverdue(checkedAt, now = new Date()) {
   if (!checkedAt) return true
   return now.getTime() - new Date(checkedAt).getTime() > SIX_MONTHS_MS
 }
 
+// Het oordeel per gekozen allergeen. Voor elk allergeen is er precies één van
+// drie antwoorden:
+//   aanwezig  de bron staat in de ingrediëntenlijst (of de beheerder heeft hem
+//             bevestigd) → het product is uitgesloten;
+//   onbekend  het etiket noemt een bron niet of noemt een woord dat de keuring
+//             niet kent, en dat kan net dit allergeen verbergen → controleer;
+//   afwezig   het etiket noemt de bron nergens en niets onduidelijks kan hem
+//             verbergen → geschikt.
+// "Onbekend" blijft staan ook als een beheerder het product al heeft nagekeken:
+// nagekeken betekent "deze tekst is tegen de bron gecontroleerd", niet "het
+// allergeen is er niet". Alleen het etiket of de fabrikant kan dat laatste zeggen.
 export function productMatch(product, selectedAllergens, now = new Date()) {
   const version = product.recipe_versions?.[0]
-  const ingredients = version?.recipe_ingredients ?? []
-  const wanted = expandSelection(selectedAllergens)
-  const matches = ingredients.filter((ingredient) => wanted.has(ingredient.allergen_key))
-  if (matches.length) {
-    return { kind: 'excluded', reasons: matches.map(({ allergen_key }) => allergen_key) }
-  }
+  const text = version?.ingredients_text || ''
+  const assessment = assessLabel(text)
+  const stored = version?.recipe_ingredients ?? []
 
-  // Een product is alleen "geschikt" als de ingrediëntenlijst aantoonbaar volledig
-  // is nagelopen. Ontbrekende gegevens zijn geen bewijs dat een allergeen afwezig is.
-  const reasons = []
-  if (!version) {
-    reasons.push('Er is nog geen ingrediëntenlijst ingevoerd')
-  } else {
-    if (!version.ingredients_mapped) reasons.push('Deze ingrediëntenlijst is nog niet door de beheerder nagelopen')
-    // De vlag in de database is de administratie; de etikettekst zelf is het
-    // bewijs. Staat er een bron in die niet bij name is genoemd ("dierlijk vet",
-    // "granen", "bouillon"), dan geldt het product als onzeker, ook als de vlag
-    // nog niet is bijgewerkt.
-    const unclearText = !version.ingredients_text || assessLabel(version.ingredients_text).status === 'aandacht'
-    const uncertain = version.has_uncertain_ingredients
-      || unclearText
-      || ingredients.some(({ certainty }) => certainty !== 'confirmed')
-    if (uncertain) reasons.push('Ingrediënt of categorie is niet volledig te herleiden')
-  }
-  if (isReviewOverdue(product.last_checked_at, now)) reasons.push('Ingrediënten zijn langer dan zes maanden niet bevestigd')
+  // Aanwezig is wat de beheerder heeft bevestigd plus wat de tekst zelf noemt;
+  // onbekend is wat de keuring niet kan uitsluiten (plus eerdere twijfelrijen).
+  const present = new Set()
+  const unknown = new Set()
+  for (const row of stored) (row.certainty === 'confirmed' ? present : unknown).add(row.allergen_key)
+  for (const key of detectIngredientSignals(text).allergens) present.add(key)
+  for (const key of assessment.keys) unknown.add(key)
+  const presentKeys = new Set(expandAllergenKeys(present))
+  const unknownKeys = new Set(expandAllergenKeys(unknown))
 
-  return reasons.length
-    ? { kind: 'check', reasons }
-    : { kind: 'suitable', reasons: ['Ingrediëntenlijst is volledig in kaart gebracht en bevat geen van de gekozen allergenen'] }
+  // Waarom een allergeen onbekend is: het woord dat geen bron noemt, het woord
+  // dat de keuring niet kent, of een eerdere twijfel van een beheerder.
+  const openWords = (members) => [
+    ...assessment.hidden.filter(({ keys }) => keys.some((key) => members.includes(key))).map(({ word }) => word),
+    ...assessment.unknown,
+    ...stored.filter((row) => row.certainty !== 'confirmed' && members.includes(row.allergen_key)).map((row) => ALLERGEN_LABELS[row.allergen_key] ?? row.allergen_key)
+  ]
+
+  const states = selectedAllergens.map((key) => {
+    const members = [key, ...(ALLERGEN_IMPLIES[key] ?? [])]
+    const found = members.filter((member) => presentKeys.has(member))
+    if (found.length) return { key, state: 'present', members: found, words: [] }
+    const open = members.filter((member) => unknownKeys.has(member))
+    if (open.length) return { key, state: 'unknown', members: open, words: [...new Set(openWords(open))] }
+    return { key, state: 'absent', members: [], words: [] }
+  })
+
+  const reviewed = Boolean(version?.reviewed_at)
+  const hasLabel = Boolean(text)
+  const stale = isReviewOverdue(product.last_checked_at, now)
+  const presentStates = states.filter((state) => state.state === 'present')
+  const unknownStates = states.filter((state) => state.state === 'unknown')
+
+  // Zonder gecontroleerde tekst is er geen bewijs: dan is er niets "geschikt".
+  let kind = 'suitable'
+  if (presentStates.length) kind = 'excluded'
+  else if (unknownStates.length || !hasLabel || !reviewed || stale) kind = 'check'
+
+  return {
+    kind,
+    states,
+    presentStates,
+    unknownStates,
+    reviewed,
+    hasLabel,
+    stale,
+    // Wat het etiket niet bij name noemt, los van de keuze van de bezoeker: dit
+    // bepaalt de rode woorden en de opmerking onder aan de kaart.
+    hidden: assessment.hidden,
+    unknownWords: assessment.unknown
+  }
 }
