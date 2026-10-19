@@ -66,7 +66,7 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
   const [repairing, setRepairing] = useState(false)
   const [working, setWorking] = useState(false)
   const [editingId, setEditingId] = useState(null)
-  const [keuring, setKeuring] = useState({ rijen: [], teDoen: [], klaar: [], woorden: [] })
+  const [keuring, setKeuring] = useState({ rijen: [], teDoen: [], teControleren: [], klaar: [], woorden: [] })
   const [keuze, setKeuze] = useState({})
   const [keuzeKeys, setKeuzeKeys] = useState({})
   const [labelAdvies, setLabelAdvies] = useState(() => assessLabel(''))
@@ -114,7 +114,7 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
       if (!woorden.has(woord)) woorden.set(woord, [])
       woorden.get(woord).push(rij.product)
     }
-    setKeuring({ rijen, teDoen: rijen.filter(({ taken }) => taken.length), klaar: rijen.filter(({ taken }) => !taken.length), woorden: [...woorden].map(([woord, producten]) => ({ woord, producten })) })
+    setKeuring({ rijen, teDoen: rijen.filter(({ taken }) => taken.length), teControleren: rijen.filter(({ taken, automatisch }) => automatisch && !taken.length), klaar: rijen.filter(({ taken }) => !taken.length), woorden: [...woorden].map(([woord, producten]) => ({ woord, producten })) })
   }, [catalogue, terms])
 
   const repairAllergens = async () => {
@@ -253,7 +253,7 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
     <button disabled={saving}>{saving ? 'Opslaan…' : 'Opslaan'}</button>{editingId && <button type="button" onClick={reset}>Annuleren</button>}{message && <p aria-live="polite">{message}</p>}
 
     <h2>Wat vraagt aandacht ({keuring.teDoen.length})</h2>
-    <p><small>{catalogue.length} producten · {keuring.klaar.length} klaar · {keuring.teDoen.length} met een openstaand punt. Een product is klaar als de tekst van de bron komt (nagekeken of automatisch overgenomen) en de keuring geen woorden meer over heeft.</small></p>
+    <p><small>{catalogue.length} producten · {keuring.klaar.length} klaar (waarvan {keuring.teControleren.length} automatisch overgenomen en nog niet nagelopen) · {keuring.teDoen.length} met een openstaand punt. Een product is klaar als de tekst van de bron komt (nagekeken of automatisch overgenomen) en de keuring geen woorden meer over heeft.</small></p>
     {catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : keuring.teDoen.length ? keuring.teDoen.map(({ product, version, openWoorden, onbekend, taken, nagelopen, automatisch, herkomst, verouderd, schoon }) => {
       // Het etiket zelf moet nog langs de bron, of alleen een woord wacht nog op
       // een indeling. Dat verschil bepaalt welke knop hier iets oplost.
@@ -290,6 +290,17 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
         </div>
       })}
     </>}
+
+    <h3>Automatisch overgenomen, nog na te lopen ({keuring.teControleren.length})</h3>
+    {keuring.teControleren.length ? <details><summary>Deze etiketten doen al mee op de site, met de regel "automatisch overgenomen · nog niet door een mens nagelopen"</summary>
+      <p><small>Nalopen hoeft niet: de site claimt nergens een menselijke controle. Heb je een etiket naast de bronpagina gelegd en klopt het, dan leg je dat hier per product vast. Doe dat alleen als je het echt hebt gezien — deze knop geldt voor één product tegelijk, nooit voor een hele lijst.</small></p>
+      {keuring.teControleren.map(({ product, version, openWoorden, onbekend, taken }) => <div className="admin-row" key={product.id}>
+        <span>{product.brand} — {product.name}{!product.published && ' (concept)'} · {version?.imported_at ? `overgenomen op ${new Date(version.imported_at).toLocaleDateString('nl-NL')}` : 'automatisch overgenomen'}{openWoorden.length ? ` · etiket noemt geen bron voor: ${openWoorden.slice(0, 4).join(', ')}${openWoorden.length > 4 ? ` en ${openWoorden.length - 4} meer` : ''}` : ''}</span>
+        <button type="button" disabled={working} onClick={() => markReviewed({ product, version, openWoorden, onbekend, taken })}>Nagelopen</button>
+        {product.source_url?.startsWith('http') && <a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">bron</a>}
+        <button type="button" onClick={() => edit(product)}>Bewerken</button>
+      </div>)}
+    </details> : <p><small>Geen openstaande etiketten: alles wat automatisch is overgenomen, is door een mens nagelopen.</small></p>}
 
     <h3>Klaar ({keuring.klaar.length})</h3>
     {keuring.klaar.length ? <details><summary>Deze producten vragen nu niets</summary>{keuring.klaar.map(({ product, version, openWoorden, nagelopen, herkomst }) => <div className="admin-row" key={product.id}>
