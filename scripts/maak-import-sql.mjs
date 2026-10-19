@@ -21,6 +21,10 @@
 //
 // Gebruik:  node scripts/maak-import-sql.mjs
 //           VITE_SUPABASE_URL=... VITE_SUPABASE_PUBLISHABLE_KEY=... node scripts/maak-import-sql.mjs
+//           node scripts/maak-import-sql.mjs --bestanden=bosch,hills
+//
+// Met --bestanden= worden alleen de genoemde bestanden meegenomen; handig als
+// er onderweg nieuwe merken binnenkomen die nog niet zijn nagelopen.
 
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
@@ -37,6 +41,21 @@ const VERTAALNOTE = 'Nederlandse vertaling van de etiket tekst; origineel staat 
 const problemen = []
 const waarschuwingen = []
 const overgeslagen = []
+
+const argumenten = new Map(
+  process.argv
+    .slice(2)
+    .filter((ruw) => ruw.startsWith('--'))
+    .map((ruw) => {
+      const [naam, waarde] = ruw.replace(/^--/, '').split('=')
+      return [naam, waarde ?? '']
+    })
+)
+const alleenBestanden = (argumenten.get('bestanden') ?? '')
+  .split(',')
+  .map((naam) => naam.trim())
+  .filter(Boolean)
+  .map((naam) => (naam.endsWith('.json') ? naam : `${naam}.json`))
 
 function normaliseer(tekst = '') {
   return String(tekst).replace(/\s+/g, ' ').trim()
@@ -112,7 +131,9 @@ async function haalLiveCatalogus() {
   return antwoord.json()
 }
 
-const bestanden = existsSync(IMPORT) ? readdirSync(IMPORT).filter((naam) => naam.endsWith('.json')).sort() : []
+const bestanden = (existsSync(IMPORT) ? readdirSync(IMPORT).filter((naam) => naam.endsWith('.json')).sort() : []).filter(
+  (naam) => !alleenBestanden.length || alleenBestanden.includes(naam)
+)
 if (!bestanden.length) {
   console.log(`Geen importbestanden gevonden in ${IMPORT}.`)
   process.exit(1)
@@ -121,7 +142,15 @@ if (!bestanden.length) {
 const gezien = new Map()
 const perBestand = new Map()
 for (const bestand of bestanden) {
-  const inhoud = JSON.parse(readFileSync(join(IMPORT, bestand), 'utf8'))
+  let inhoud
+  try {
+    inhoud = JSON.parse(readFileSync(join(IMPORT, bestand), 'utf8'))
+  } catch (fout) {
+    // Bijvoorbeeld een bestand dat nog geschreven wordt; het wordt overgeslagen
+    // in plaats van het hele gereedschap te laten stoppen.
+    problemen.push(`${bestand}: kon niet worden gelezen (${fout.message})`)
+    continue
+  }
   const producten = Array.isArray(inhoud.producten) ? inhoud.producten : []
   const goedgekeurd = []
   for (const product of producten) {

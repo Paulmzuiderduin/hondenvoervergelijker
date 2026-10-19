@@ -48,6 +48,11 @@ const argumenten = new Map(
     })
 )
 const filterMerk = (argumenten.get('merk') ?? '').toLowerCase()
+const alleenBestanden = (argumenten.get('bestanden') ?? '')
+  .split(',')
+  .map((naam) => naam.trim())
+  .filter(Boolean)
+  .map((naam) => (naam.endsWith('.json') ? naam : `${naam}.json`))
 const limiet = Number(argumenten.get('limiet') ?? 0) || 0
 const pauze = Number(argumenten.get('pauze') ?? 0) || 1100
 
@@ -102,7 +107,7 @@ function vergelijkbaar(tekst) {
 function leesProducten() {
   if (!existsSync(IMPORT)) return []
   const rijen = []
-  for (const bestand of readdirSync(IMPORT).filter((naam) => naam.endsWith('.json')).sort()) {
+  for (const bestand of readdirSync(IMPORT).filter((naam) => naam.endsWith('.json') && (!alleenBestanden.length || alleenBestanden.includes(naam))).sort()) {
     let inhoud
     try {
       inhoud = JSON.parse(readFileSync(join(IMPORT, bestand), 'utf8'))

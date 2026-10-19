@@ -1,0 +1,78 @@
+{
+  "bron": "https://www.bosch-tiernahrung.de",
+  "opgehaald": "2026-10-19",
+  "producten": [
+    {
+      "merk": "bosch",
+      "naam": "Adult met gevogelte & gierst",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 15 kg",
+      "gtin": null,
+      "bronUrl": "https://www.bosch-tiernahrung.de/bosch_de_de/hpc-adult-gefluegel-hirse.html",
+      "etiketOrigineel": "Frisches Geflügel (30 %), Hirse (17,5 %), Gerste, Mais, Geflügelprotein (getrocknet), Reis, Proteinhydrolysat, Rübentrockenschnitzel (entzuckert), Fischmehl, Geflügelfett, Erbsen (getrocknet), Hefe (getrocknet, inkl. 0,1 % Mannanoligosaccharide, 0,06 % Beta-Glucane), Fischöl, Natriumchlorid, Kaliumchlorid, Grünlippmuscheln (getrocknet, 0,1 %), Chicorée (getrocknet).",
+      "etiketNl": "Vers gevogelte (30%), gierst (17,5%), gerst, maïs, gevogelte-eiwit (gedroogd), rijst, eiwithydrolysaat, gedroogde bietenpulp (ontsuikerd), vismeel, gevogeltevet, erwten (gedroogd), gist (gedroogd, incl. 0,1% mannan-oligosachariden, 0,06% bèta-glucanen), visolie, natriumchloride, kaliumchloride, groenlipmosselen (gedroogd, 0,1%), cichorei (gedroogd).",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "bosch",
+      "naam": "Adult met lam & rijst",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 15 kg",
+      "gtin": null,
+      "bronUrl": "https://www.bosch-tiernahrung.de/bosch_de_de/hpc-adult-lamm-reis.html",
+      "etiketOrigineel": "Frisches Geflügel (20 %), Reis (16 %), Gerste, Mais, Hirse (Milo), Geflügelprotein (getrocknet), Lammprotein (getrocknet, 4 %), Fischöl (2 %), Rübentrockenschnitzel (entzuckert), Proteinhydrolysat, Geflügelfett, Hefe (getrocknet, inkl. 0,1 % Mannanoligosaccharide, 0,06 % Beta-Glucane), Natriumchlorid, Kaliumchlorid, Grünlippmuscheln (getrocknet, 0,1 %), Chicorée (getrocknet).",
+      "etiketNl": "Vers gevogelte (20%), rijst (16%), gerst, maïs, gierst (Milo), gevogelte-eiwit (gedroogd), lamseiwit (gedroogd, 4%), visolie (2%), gedroogde bietenpulp (ontsuikerd), eiwithydrolysaat, gevogeltevet, gist (gedroogd, incl. 0,1% mannan-oligosachariden, 0,06% bèta-glucanen), natriumchloride, kaliumchloride, groenlipmosselen (gedroogd, 0,1%), cichorei (gedroogd).",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "bosch",
+      "naam": "Sensitive met lam & rijst",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 15 kg",
+      "gtin": null,
+      "bronUrl": "https://www.bosch-tiernahrung.de/bosch_de_de/hpc-sensitive-lamm-reis.html",
+      "etiketOrigineel": "Reis (37,5 %), Lammprotein (getrocknet, 20 %), Kartoffeln (getrocknet), Geflügelfett, Rübentrockenschnitzel (entzuckert), Erbsenprotein, Kartoffelprotein, Reisprotein, Leinsamen, Proteinhydrolysat, Erbsen (getrocknet), Hefe (getrocknet, inkl. 0,1 % Mannanoligosaccharide, 0,06 % Beta-Glucane), Fischöl, Cellulose, Natriumchlorid, Kaliumchlorid, Grünlippmuscheln (getrocknet, 0,1 %), Chicorée (getrocknet).",
+      "etiketNl": "Rijst (37,5%), lamseiwit (gedroogd, 20%), aardappelen (gedroogd), gevogeltevet, gedroogde bietenpulp (ontsuikerd), erwteneiwit, aardappeleiwit, rijsteiwit, lijnzaad, eiwithydrolysaat, erwten (gedroogd), gist (gedroogd, incl. 0,1% mannan-oligosachariden, 0,06% bèta-glucanen), visolie, cellulose, natriumchloride, kaliumchloride, groenlipmosselen (gedroogd, 0,1%), cichorei (gedroogd).",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "bosch",
+      "naam": "Junior met lam & rijst",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 15 kg",
+      "gtin": null,
+      "bronUrl": "https://www.bosch-tiernahrung.de/bosch_de_de/hpc-junior-lamm-reis.html",
+      "etiketOrigineel": "Frisches Geflügel (25 %), Reis (20 %), Vollkornreis, Lammprotein (getrocknet, 10 %), Reismehl, Grieben (getrocknet), Geflügelprotein (getrocknet), Geflügelfett, Proteinhydrolysat, Rübentrockenschnitzel (entzuckert), Erbsen (getrocknet), Leinsamen, Reisprotein, Fischöl, Hefe (getrocknet, 0,1 % Mannanoligosaccharide, 0,06 % Beta-Glucane), Kolostrum (0,2 %), Kaliumchlorid, Natriumchlorid, Grünlippmuscheln (getrocknet, 0,1 %), Chicorée (getrocknet).",
+      "etiketNl": "Vers gevogelte (25%), rijst (20%), volkorenrijst, lamseiwit (gedroogd, 10%), rijstmeel, grieben (gedroogd), gevogelte-eiwit (gedroogd), gevogeltevet, eiwithydrolysaat, gedroogde bietenpulp (ontsuikerd), erwten (gedroogd), lijnzaad, rijsteiwit, visolie, gist (gedroogd, 0,1% mannan-oligosachariden, 0,06% bèta-glucanen), colostrum (0,2%), kaliumchloride, natriumchloride, groenlipmosselen (gedroogd, 0,1%), cichorei (gedroogd).",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "bosch",
+      "naam": "Soft Adult met kip & banaan",
+      "voertype": "kibble",
+      "verpakking": "1 / 2,5 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.bosch-tiernahrung.de/bosch_de_de/soft-adult-huehnchen-banane.html",
+      "etiketOrigineel": "Frisches Hühnchen (60 %), Kartoffelmehl, Kochbanane (getrocknet, 9 %), Kartoffelstärke, Kartoffelprotein, Erbsen (getrocknet), Erbsenfasern, Geflügelfett, Proteinhydrolysat (vegetarisch), Fenchel (getrocknet), Kräuter (getrocknet), Chicorée (getrocknet, 0,25 %), Flohsamen (Psyllium), Hefe (getrocknet, inkl. 0,04 % Beta-Glucane), Glucosamin, Chondroitinsulfat, Yucca (getrocknet).",
+      "etiketNl": "Verse kip (60%), aardappelmeel, kookbanaan (gedroogd, 9%), aardappelzetmeel, aardappeleiwit, erwten (gedroogd), erwtenvezels, gevogeltevet, eiwithydrolysaat (vegetarisch), venkel (gedroogd), kruiden (gedroogd), cichorei (gedroogd, 0,25%), vlozaad (psyllium), gist (gedroogd, incl. 0,04% bèta-glucanen), glucosamine, chondroïtinesulfaat, yucca (gedroogd).",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "bosch",
+      "naam": "Soft Junior met kip & zoete aardappel",
+      "voertype": "kibble",
+      "verpakking": "1 / 2,5 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.bosch-tiernahrung.de/bosch_de_de/soft-junior-huehnchen-suesskartoffel.html",
+      "etiketOrigineel": "Frisches Hühnchen (70 %), Süßkartoffel (getrocknet, 10 %), Kartoffelmehl, Kartoffelprotein, Kartoffelstärke, Proteinhydrolysat (vegetarisch), Rübentrockenschnitzel (entzuckert), Fenchel (getrocknet), Kräuter (getrocknet), Chicorée (getrocknet, 0,3 %), Erbsen (getrocknet), Cellulose, Hefe (getrocknet, inkl. 0,04 % Beta-Glucane), Algen (getrocknet), Yucca (getrocknet), Flohsamen (Psyllium), Glucosamin, Chondroitinsulfat.",
+      "etiketNl": "Verse kip (70%), zoete aardappel (gedroogd, 10%), aardappelmeel, aardappeleiwit, aardappelzetmeel, eiwithydrolysaat (vegetarisch), gedroogde bietenpulp (ontsuikerd), venkel (gedroogd), kruiden (gedroogd), cichorei (gedroogd, 0,3%), erwten (gedroogd), cellulose, gist (gedroogd, incl. 0,04% bèta-glucanen), algen (gedroogd), yucca (gedroogd), vlozaad (psyllium), glucosamine, chondroïtinesulfaat.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    }
+  ]
+}
