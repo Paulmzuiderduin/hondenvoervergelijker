@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { isReviewOverdue, productMatch } from '../../src/lib/matcher.js'
-import { ALLERGENS, detectIngredientSignals, markUncertainIngredients, missingAllergenKeys } from '../../src/lib/allergens.js'
+import { ALLERGENS, assessLabel, detectIngredientSignals, markUncertainIngredients, missingAllergenKeys } from '../../src/lib/allergens.js'
 
 const product = (overrides = {}) => ({
   last_checked_at: '2026-10-01',
@@ -92,4 +92,49 @@ test('markeert ook woorden met diakritische tekens', () => {
   const segmenten = markUncertainIngredients('Oliën en vetten (5%), pluimveevlees')
   assert.deepEqual(segmenten.filter((segment) => segment.uncertain).map((segment) => segment.text), ['Oliën en vetten', 'pluimveevlees'])
   assert.equal(segmenten.map((segment) => segment.text).join(''), 'Oliën en vetten (5%), pluimveevlees')
+})
+
+test('een etiket met alleen bronnen bij name is automatisch te beoordelen', () => {
+  const uitslag = assessLabel('Verse kip 41%, aardappelen, erwten, kippenvet, lijnzaad, mineralen')
+  assert.equal(uitslag.status, 'schoon')
+  assert.deepEqual(uitslag.vague, [])
+  assert.deepEqual(uitslag.risky, [])
+})
+
+test('dierlijk vet en gevogeltevet maken een etiket onduidelijk', () => {
+  const uitslag = assessLabel('Maïs, tarwe, kip (9%), dierlijk vet, mineralen')
+  assert.equal(uitslag.status, 'aandacht')
+  assert.deepEqual(uitslag.vague, ['dierlijk'])
+  assert.deepEqual(uitslag.risky, ['vet'])
+  assert.equal(detectIngredientSignals('Maïs, kip, dierlijk vet').uncertain, true)
+  assert.equal(detectIngredientSignals('Maïs, kip, gevogeltevet').uncertain, true)
+})
+
+test('een vet of eiwit zonder bron blokkeert, met een genoemde bron niet', () => {
+  assert.deepEqual(assessLabel('Vleesmix (33%), mais').risky, ['vleesmix'])
+  assert.deepEqual(assessLabel('Gedroogde kip, sorghum, havervlokken').risky, [])
+  assert.deepEqual(assessLabel('Ontsloten mais, gevogeltevet, zalmolie').risky, [])
+  assert.deepEqual(assessLabel('Tarwe, vet, mineralen').risky, ['vet'])
+  assert.deepEqual(assessLabel('Rundvet, zonnebloemolie').risky, [])
+})
+
+test('een bron tussen haakjes heft het verzamelwoord op', () => {
+  assert.equal(assessLabel('Gedroogd dierlijk eiwit (rund 21%, kip 4%), mais').status, 'schoon')
+  assert.equal(assessLabel('Granen (tarwe, maïs, rijst)').status, 'schoon')
+  assert.equal(assessLabel('Granen (volkoren granen 63%), kip').status, 'aandacht')
+  assert.equal(assessLabel('Vlees en dierlijke bijproducten (8%), rundvlees').status, 'aandacht')
+})
+
+test('de algemene categorie verklaart een verzamelwoord niet', () => {
+  assert.equal(assessLabel('Kalkoenmeel (totaal 14% gevogelte), maïs').status, 'aandacht')
+})
+
+test('gierst, spelt, rogge en sorghum horen bij granen', () => {
+  assert.deepEqual(detectIngredientSignals('Gierst, spelt, rogge, sorghum, triticale, millet').allergens, ['grains'])
+})
+
+test('een bron zonder naam wordt rood gemarkeerd', () => {
+  const segmenten = markUncertainIngredients('Maïs, kip (9%), dierlijk vet, bouillon, mineralen')
+  assert.deepEqual(segmenten.filter((segment) => segment.uncertain).map((segment) => segment.text), ['dierlijk vet', 'bouillon'])
+  assert.equal(segmenten.map((segment) => segment.text).join(''), 'Maïs, kip (9%), dierlijk vet, bouillon, mineralen')
 })

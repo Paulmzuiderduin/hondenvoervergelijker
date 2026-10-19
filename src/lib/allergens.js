@@ -54,16 +54,16 @@ export const ALLERGEN_IMPLIES = {
 // plantaardig eiwitextract) onterecht als eiallergeen gelden.
 const ALLERGEN_SYNONYMS = {
   chicken: ['kip*', 'chicken'], turkey: ['kalkoen*', 'turkey'], beef: ['rund*', 'beef'],
-  lamb: ['lam*', 'lamb'], duck: ['eend*', 'duck'], pork: ['varken*', 'pork'],
+  lamb: ['lam*', 'lamb', 'schaap*', 'mutton'], duck: ['eend*', 'duck'], pork: ['varken*', 'pork'],
   rabbit: ['konijn*', 'rabbit'], venison: ['hert*', 'venison'], horse: ['paard*', 'horse'],
-  poultry: ['gevogelte*', 'pluimvee*', 'poultry'],
+  poultry: ['gevogelte*', 'pluimvee*', 'poultry', 'gans*', 'goose', 'fazant*', 'pheasant', 'kwartel*', 'quail'],
   fish: ['vis*', 'zalm*', 'salmon', 'kabeljauw*', 'tonijn*', 'haring*', 'forel*', 'makreel*', 'sardine*', 'ansjovis*', 'heek', 'wijting*'],
   salmon: ['zalm*', 'salmon'],
   whitefish: ['witvis', 'kabeljauw*', 'schelvis*', 'koolvis*', 'heek', 'wijting*', 'zeeduivel*'],
   egg: ['ei', 'eier*', 'eigeel', 'eidooier', 'eipoeder'],
   milk: ['melk*', 'wei', 'weipoeder', 'lactose*', 'yoghurt*', 'kwark*', 'kaas*', 'caseine*', 'caseinaat*', 'room*', 'boter*'],
   wheat: ['tarwe*', 'wheat'], corn: ['mais*', 'maize', 'corn'], rice: ['rijst*', 'rice'],
-  barley: ['gerst*', 'barley'], grains: ['granen*', 'cereals*'], oats: ['haver*', 'oat*', 'oats'], soy: ['soja*', 'soy*', 'soya*'],
+  barley: ['gerst*', 'barley'], grains: ['granen*', 'cereals*', 'gierst*', 'millet', 'spelt*', 'rogge*', 'rye', 'sorghum*', 'triticale*'], oats: ['haver*', 'oat*', 'oats'], soy: ['soja*', 'soy*', 'soya*'],
   pea: ['erwt*', 'spliterwt*', 'pea', 'peas'], potato: ['aardappel*', 'potato*'],
   chickpea: ['kikkererwt*', 'chickpea*', 'garbanzo*']
 }
@@ -73,7 +73,45 @@ const ALLERGEN_SYNONYMS = {
 const UNCERTAIN_INGREDIENT_TERMS = [
   'dierlijke bijproducten', 'vlees en dierlijke bijproducten', 'dierlijke derivaten',
   'plantaardige bijproducten', 'derivaten van plantaardige oorsprong', 'plantaardige eiwitextracten',
-  'olien en vetten', 'granen*', 'gevogelte*', 'pluimvee*'
+  'olien en vetten', 'granen*', 'gevogelte*', 'pluimvee*',
+  // Verzamelwoorden die een dier- of plantensoort verbergen, ook in anderstalige
+  // etiketten: "dierlijk vet", "animal protein", "poultry protein".
+  'dierlijk*', 'plantaardig*', 'bijproduct*', 'derivaat*', 'cereals*',
+  'animal', 'poultry', 'vegetable', 'plant'
+]
+
+// Risicowoorden: woorden die een allergeenbron kunnen verbergen zonder hem te
+// noemen ("dierlijk vet", "bouillon", "plantaardige olie", "10% vlees"). Staat
+// zo'n woord direct achter een genoemde bron ("beef stock", "zonnebloemolie"),
+// dan is het wel te herleiden. Anders blokkeert het een automatische
+// goedkeuring: zo'n etiket moet een mens nalezen.
+const RISK_TERMS = [
+  // eiwitten zonder bron
+  'eiwit', 'eiwitten', 'eiwitisolaat', 'proteine', 'proteinen', 'protein', 'proteins',
+  // koolhydraten zonder bron
+  'meel', 'meelsoort', 'meelsoorten', 'zetmeel', 'zetmelen', 'gluten', 'gries', 'griesmeel',
+  'bloem', 'semolina', 'vlokken', 'zemel', 'zemelen',
+  // vetten en oliën zonder bron
+  'olie', 'olien', 'oil', 'oils', 'vet', 'vetten', 'fat', 'fats', 'talg', 'reuzel', 'smout',
+  // extracten, poeders en concentraten zonder bron
+  'extract', 'extracten', 'concentraat', 'concentraten', 'poeder', 'powder',
+  // dierlijke reststromen en kookvocht
+  'bouillon', 'broth', 'stock', 'jus', 'vleesnat', 'vlees*', 'meat*', 'gelatine', 'collageen',
+  'bloed', 'bloedmeel', 'beendermeel', 'vleesmeel', 'verenmeel', 'digest',
+  // rest
+  'onbekend', 'diversen', 'overig', 'overige'
+]
+
+// Bronnen die de keuring als "bij name genoemd" ziet, maar die geen allergeen in
+// onze lijst zijn. Zonder deze lijst zou "zonnebloemolie" geblokkeerd worden.
+const OTHER_SOURCE_TERMS = [
+  'zonnebloem*', 'sunflower*', 'koolzaad*', 'raapzaad*', 'rapeseed*', 'lijnzaad*', 'flax*', 'lijnolie*',
+  'kokos*', 'coconut*', 'palm*', 'olijf*', 'olive*', 'druivenpit*', 'sesam*', 'sesame*', 'hennep*', 'hemp*',
+  'tapioca*', 'quinoa*', 'boekweit*', 'buckwheat*', 'amarant*', 'teff*', 'tomaat*', 'tomato*', 'wortel*',
+  'carrot*', 'biet*', 'beet*', 'citrus*', 'appel*', 'apple*', 'peer*', 'banaan*', 'banana*', 'bosbes*',
+  'blueberry*', 'cranberry*', 'pompoen*', 'pumpkin*', 'spinazie*', 'spinach*', 'broccoli*', 'courgette*',
+  'zucchini*', 'prei*', 'andijvie*', 'rozemarijn*', 'rosemary*', 'tijm*', 'thyme*', 'peterselie*', 'knoflook*',
+  'garlic*', 'gist*', 'yeast*', 'algen*', 'algae*', 'insect*', 'meelworm*', 'bsf*'
 ]
 
 function normaliseText(value = '') {
@@ -85,14 +123,31 @@ function normaliseText(value = '') {
     .trim()
 }
 
-function tokenize(value = '') {
-  return normaliseText(value).split(' ').filter(Boolean)
+// Als normaliseText, maar met haakjes en komma's als aparte merktekens. Daarmee
+// ziet de keuring wat er tussen haakjes staat en waar een opsomming eindigt.
+const OPEN = '\u0001'
+const CLOSE = '\u0002'
+const BREAK = '\u0003'
+const MARKER = { [OPEN]: '(', [CLOSE]: ')', [BREAK]: ',' }
+
+function markedTokens(value = '') {
+  return String(value)
+    .toLocaleLowerCase('nl-NL')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\(/g, ` ${OPEN} `)
+    .replace(/\)/g, ` ${CLOSE} `)
+    .replace(/[,;.!?]/g, ` ${BREAK} `)
+    .replace(new RegExp(`[^a-z0-9${OPEN}${CLOSE}${BREAK}]+`, 'g'), ' ')
+    .split(' ')
+    .filter(Boolean)
+    .map((token) => MARKER[token] ?? token)
 }
 
 function compileTerm(term) {
   const prefix = term.endsWith('*')
   const parts = normaliseText(prefix ? term.slice(0, -1) : term).split(' ').filter(Boolean)
-  return { parts, prefix }
+  return { parts, prefix, term }
 }
 
 function termMatches(tokens, { parts, prefix }) {
@@ -110,18 +165,103 @@ function termMatches(tokens, { parts, prefix }) {
 const COMPILED_ALLERGEN_TERMS = Object.entries(ALLERGEN_SYNONYMS)
   .map(([key, terms]) => ({ key, terms: terms.map(compileTerm) }))
 const COMPILED_UNCERTAIN_TERMS = UNCERTAIN_INGREDIENT_TERMS.map(compileTerm)
+const COMPILED_RISK_TERMS = RISK_TERMS.map(compileTerm)
+
+// Bronnen die een verzamelwoord kunnen toelichten. De algemene categorieën
+// (granen, gevogelte) tellen hier bewust niet mee: die verklaren niets.
+const CONCRETE_SOURCE_TERMS = [
+  ...Object.entries(ALLERGEN_SYNONYMS).filter(([key]) => key !== 'grains' && key !== 'poultry').flatMap(([, terms]) => terms),
+  ...OTHER_SOURCE_TERMS
+].map(compileTerm)
+
+function isConcreteSource(token) {
+  return CONCRETE_SOURCE_TERMS.some((term) => termMatches([token], term))
+}
+
+// Een verzamel- of risicowoord is toegelicht als er in dezelfde opsomming tussen
+// haakjes een bron bij name staat: "dierlijk eiwit (rund 21%, kip 4%)" of
+// "granen (tarwe, maïs, rijst)". Zonder die toelichting houdt het woord tegen.
+function explainedByParenthetical(tokens, depthBefore, breakBefore, index) {
+  let opened = false
+  for (let cursor = index + 1; cursor < tokens.length; cursor += 1) {
+    if (depthBefore[cursor] > 0) {
+      opened = true
+      if (isConcreteSource(tokens[cursor])) return true
+      continue
+    }
+    if (opened || breakBefore[cursor]) return false
+  }
+  return false
+}
+
+// Hét oordeel over één etiket, in één keer: welke woorden niet te herleiden zijn
+// (voor de rode markering op de site), of de lijst een onduidelijke categorie
+// noemt (de vlag in de database) en of het etiket automatisch te beoordelen is
+// ("schoon": elke allergeenbron is bij name genoemd). Doordat alles uit deze
+// ene functie komt, kunnen die drie nooit uit elkaar lopen.
+export function assessLabel(ingredientsText = '') {
+  const tokens = []
+  const depthBefore = []
+  const breakBefore = []
+  let depth = 0
+  let pendingBreak = false
+  for (const token of markedTokens(ingredientsText)) {
+    if (token === '(') { depth += 1; continue }
+    if (token === ')') { depth = Math.max(0, depth - 1); continue }
+    if (token === ',') { if (depth === 0) pendingBreak = true; continue }
+    tokens.push(token)
+    depthBefore.push(depth)
+    breakBefore.push(pendingBreak)
+    pendingBreak = false
+  }
+
+  const vagueIndexes = []
+  for (const term of COMPILED_UNCERTAIN_TERMS) {
+    if (term.parts.length === 1) {
+      tokens.forEach((token, index) => { if (termMatches([token], term)) vagueIndexes.push(index) })
+      continue
+    }
+    for (let start = 0; start + term.parts.length <= tokens.length; start += 1) {
+      if (!term.parts.every((part, offset) => tokens[start + offset] === part)) continue
+      for (let offset = 0; offset < term.parts.length; offset += 1) vagueIndexes.push(start + offset)
+    }
+  }
+  const riskyIndexes = []
+  tokens.forEach((token, index) => {
+    if (!COMPILED_RISK_TERMS.some((term) => termMatches([token], term))) return
+    const previous = tokens[index - 1]
+    // "beef stock" en "zonnebloemolie" zijn herleidbaar; "tarwe, vet" niet,
+    // want daar staat een komma tussen.
+    if (previous && !breakBefore[index] && isConcreteSource(previous)) return
+    riskyIndexes.push(index)
+  })
+
+  const keep = (index) => !explainedByParenthetical(tokens, depthBefore, breakBefore, index)
+  const vague = [...new Set(vagueIndexes.filter(keep))].sort((first, second) => first - second)
+  const risky = [...new Set(riskyIndexes.filter(keep))].sort((first, second) => first - second)
+  const readWords = (indexes) => [...new Set(indexes.map((index) => tokens[index]))]
+
+  return {
+    tokens,
+    vagueIndexes: vague,
+    riskyIndexes: risky,
+    vague: readWords(vague),
+    risky: readWords(risky),
+    flagged: tokens.map((_, index) => vague.includes(index) || risky.includes(index)),
+    status: vague.length || risky.length ? 'aandacht' : 'schoon'
+  }
+}
 
 // Zelfde volgorde als in de keuzelijst, zodat de uitkomst voorspelbaar is.
 const ALLERGEN_ORDER = new Map(ALLERGENS.map(({ key }, index) => [key, index]))
 
 export function detectIngredientSignals(ingredientsText) {
-  const tokens = tokenize(ingredientsText)
+  const { tokens, status } = assessLabel(ingredientsText)
   const allergens = COMPILED_ALLERGEN_TERMS
     .filter(({ terms }) => terms.some((term) => termMatches(tokens, term)))
     .map(({ key }) => key)
     .sort((first, second) => (ALLERGEN_ORDER.get(first) ?? Number.MAX_SAFE_INTEGER) - (ALLERGEN_ORDER.get(second) ?? Number.MAX_SAFE_INTEGER))
-  const uncertain = COMPILED_UNCERTAIN_TERMS.some((term) => termMatches(tokens, term))
-  return { allergens, uncertain }
+  return { allergens, uncertain: status === 'aandacht' }
 }
 
 // Welke allergenen staan wél in de etikettekst, maar nog niet in de opgeslagen
@@ -168,26 +308,10 @@ function searchWords(normalised) {
   return words
 }
 
-function termRanges(words, { parts, prefix }) {
-  const ranges = []
-  if (parts.length === 1) {
-    const [stem] = parts
-    for (const { word, start, end } of words) {
-      if (prefix ? word.startsWith(stem) : word === stem) ranges.push([start, end])
-    }
-    return ranges
-  }
-  for (let index = 0; index + parts.length <= words.length; index += 1) {
-    if (parts.every((part, offset) => words[index + offset].word === part)) {
-      ranges.push([words[index].start, words[index + parts.length - 1].end])
-    }
-  }
-  return ranges
-}
-
-// Splist de tekst in stukken; de stukken met uncertain: true zijn woorden die
+// Splitst de tekst in stukken; de stukken met uncertain: true zijn woorden die
 // geen eenduidige dier- of plantensoort aanwijzen. De stukken samen zijn altijd
-// exact de ingevoerde tekst.
+// exact de ingevoerde tekst. Welke woorden dat zijn komt uit assessLabel(), dus
+// de rode woorden op de site en de vlag in de database lopen nooit uiteen.
 export function markUncertainIngredients(text = '') {
   const source = String(text)
   if (!source.trim()) return source ? [{ text: source, uncertain: false }] : []
@@ -195,18 +319,17 @@ export function markUncertainIngredients(text = '') {
   const { normalised, positions } = buildSearchIndex(source)
   const words = searchWords(normalised)
 
-  const ranges = []
-  for (const term of COMPILED_UNCERTAIN_TERMS) ranges.push(...termRanges(words, term))
-
-  const merged = ranges
-    .map(([start, end]) => [positions[start], positions[end - 1] + 1])
-    .sort((a, b) => a[0] - b[0])
-    .reduce((all, range) => {
-      const previous = all[all.length - 1]
-      if (previous && range[0] <= previous[1]) previous[1] = Math.max(previous[1], range[1])
-      else all.push([range[0], range[1]])
-      return all
-    }, [])
+  const flagged = assessLabel(source).flagged
+  const merged = []
+  flagged.forEach((flag, index) => {
+    if (!flag || !words[index]) return
+    const range = [positions[words[index].start], positions[words[index].end - 1] + 1]
+    const previous = merged[merged.length - 1]
+    // Alleen woorden die door spaties gescheiden zijn horen bij elkaar ("oliën en
+    // vetten"); over een komma heen niet ("dierlijk vet, bouillon").
+    if (previous && /^\s*$/.test(source.slice(previous[1], range[0]))) previous[1] = range[1]
+    else merged.push(range)
+  })
 
   const segments = []
   let position = 0
