@@ -34,8 +34,11 @@ if (!batches.length) {
   console.log('Geen batchbestand gevonden in data/import/sql; maak er eerst een met scripts/maak-import-sql.mjs.')
   process.exit(1)
 }
-const laatsteBatch = batches[batches.length - 1]
-const batchTekst = readFileSync(join(IMPORT_SQL, laatsteBatch), 'utf8')
+// Alle batches van de nieuwste datum horen bij elkaar: een grote ronde wordt in
+// stukken van vijftig geknipt, maar de beheerder plakt alles in één keer.
+const nieuwsteDatum = batches[batches.length - 1].slice('batch-'.length, 'batch-'.length + 8)
+const tePlakken = batches.filter((naam) => naam.startsWith(`batch-${nieuwsteDatum}-`))
+const batchTekst = tePlakken.map((naam) => readFileSync(join(IMPORT_SQL, naam), 'utf8')).join('\n\n')
 const producten = (batchTekst.match(/^-- bron: /gm) ?? []).length
 const merken = [...new Set((batchTekst.match(/^-- ([^—\n]+) — /gm) ?? []).map((regel) => regel.replace(/^-- /, '').replace(/ — $/, '')))]
 
@@ -60,7 +63,7 @@ const kop = [
   '--',
   '-- Wat erin zit:',
   ...migratiePaden.map((pad, i) => `--   ${i + 1}. migratie ${pad.split('/').pop()}`),
-  `--   ${migratiePaden.length + 1}. importbatch ${laatsteBatch}: ${producten} producten van ${merken.join(', ')}`,
+  `--   ${migratiePaden.length + 1}. de importbatch: ${producten} producten van ${merken.join(', ')}`,
   '--',
   '-- Wat er daarna op de site staat:',
   '--   - de nieuwe producten doen meteen mee in de vergelijking;',
@@ -71,6 +74,8 @@ const kop = [
   '--     een mens in Beheer op die knop klikt.',
   '--',
   '-- Alles zit in één transactie. Gaat er iets mis, dan is er niets veranderd.',
+  '-- Heb je dit bestand al eerder geplakt, dan stopt hij met een melding over een',
+  '-- bestaande sleutel: dat betekent dat de producten er al staan.',
   '',
   'begin;',
   ''
@@ -91,8 +96,8 @@ const staart = [
   ''
 ].join('\n')
 
-const inhoud = [kop, ...migratiePaden.map((pad) => zonderEigenTransactie(readFileSync(pad, 'utf8'))), '', zonderControleblok(zonderEigenTransactie(batchTekst)), staart].join('\n\n')
+const inhoud = [kop, ...migratiePaden.map((pad) => zonderEigenTransactie(readFileSync(pad, 'utf8'))), ...tePlakken.map((naam) => zonderControleblok(zonderEigenTransactie(readFileSync(join(IMPORT_SQL, naam), 'utf8')))), staart].join('\n\n')
 writeFileSync(DOEL, inhoud)
 console.log(`Geschreven: data/import/sql/plak-dit-in-supabase.sql`)
 console.log(`  migraties: ${migratiePaden.length ? gevraagdeMigraties.join(', ') : 'geen'}`)
-console.log(`  batch: ${laatsteBatch} (${producten} producten van ${merken.join(', ')})`)
+console.log(`  batches: ${tePlakken.join(', ')} (${producten} producten van ${merken.join(', ')})`)

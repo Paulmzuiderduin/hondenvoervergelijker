@@ -1,0 +1,136 @@
+{
+  "bron": "https://www.purina.nl",
+  "opgehaald": "2026-10-19",
+  "producten": [
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "HA Hypoallergenic",
+      "voertype": "kibble",
+      "verpakking": "3 / 11 kg",
+      "gtin": null,
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-hypoallergeen",
+      "etiketOrigineel": "Samenstelling\nMaiszetmeel*\nGehydrolyseerd soja-eiwit**\nMineralen\nKokosolie\nSuiker*\nRaapzaadolie\nCellulose\nSojaolie\nVisolie\n*Gezuiverde koolhydraatbronnen.\n**Eiwitbron.",
+      "etiketNl": "Samenstelling\nMaiszetmeel*\nGehydrolyseerd soja-eiwit**\nMineralen\nKokosolie\nSuiker*\nRaapzaadolie\nCellulose\nSojaolie\nVisolie\n*Gezuiverde koolhydraatbronnen.\n**Eiwitbron.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "EN Gastrointestinal",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 5 / 12 kg",
+      "gtin": null,
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-gastrointestinaal",
+      "etiketOrigineel": "Samenstelling\nRijst*\nMais\nMaisglutenmeel*\nGedehydreerd gevogelte-eiwit*\nGedroogde bietenpulp\nDigest\nErwteneiwitconcentraat*\nMineralen\nKokosolie*(4%)\nDierlijk vet\nMono- en diglyceriden\nSojaolie\nVisolie\nInuline\n*Zeer goed verteerbare ingrediënten.",
+      "etiketNl": "Samenstelling\nRijst*\nMais\nMaisglutenmeel*\nGedehydreerd gevogelte-eiwit*\nGedroogde bietenpulp\nDigest\nErwteneiwitconcentraat*\nMineralen\nKokosolie*(4%)\nDierlijk vet\nMono- en diglyceriden\nSojaolie\nVisolie\nInuline\n*Zeer goed verteerbare ingrediënten.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "EN Gastrointestinal Natvoer",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-gastrointestinaal-natvoer",
+      "etiketOrigineel": "Samenstelling\nVarken\nRijstebloem\nGevogelte\nGedroogd ei\nMineralen\nKokosolie\nCellulosepoeder",
+      "etiketNl": "Samenstelling\nVarken\nRijstebloem\nGevogelte\nGedroogd ei\nMineralen\nKokosolie\nCellulosepoeder",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "DRM Dermatosis",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "gtin": null,
+      "bronUrl": "https://www.purina.nl/hond/hondennvoer/product-proplan-veterinary-diets-dermatose-vis",
+      "etiketOrigineel": "Samenstelling\nMaiszetmeel\nRaapzaadmeel*\nErwteneiwtconcentraat*\nGedehydrateerd haringeiwit*\nDierlijk vet\nDigest*\nMineralen\nVisolie\nRaapzaadolie\n*Bron van eiwitten.",
+      "etiketNl": "Samenstelling\nMaiszetmeel\nRaapzaadmeel*\nErwteneiwtconcentraat*\nGedehydrateerd haringeiwit*\nDierlijk vet\nDigest*\nMineralen\nVisolie\nRaapzaadolie\n*Bron van eiwitten.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "DM Diabetes Management",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "gtin": null,
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-diabetes-kip",
+      "etiketOrigineel": "Samenstelling\nGedehydrateerd gevogelte-eiwit\nGerst*\nMais*\nSojameel*\nErwtenvezel*\nMaisglutenmeel*\nErwteneiwitconcentraat\nDierlijk vet\nDigest\nGedroogde bietenpulp*\nCellulose\nVisolie\nMineralen\nWitte bonenextract (0,1%, bron van amylase-remmer)\n*Koolhydraatbronnen.",
+      "etiketNl": "Samenstelling\nGedehydrateerd gevogelte-eiwit\nGerst*\nMais*\nSojameel*\nErwtenvezel*\nMaisglutenmeel*\nErwteneiwitconcentraat\nDierlijk vet\nDigest\nGedroogde bietenpulp*\nCellulose\nVisolie\nMineralen\nWitte bonenextract (0,1%, bron van amylase-remmer)\n*Koolhydraatbronnen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "OM Obesity Management",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "gtin": null,
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-overgewicht",
+      "etiketOrigineel": "Samenstelling\nMais*\nSojameel*\nGedehydrateerd gevogelte-eiwit\nGerst*\nTarweglutenmeel\nErwtenvezel*\nCellulose\nDigest\nMineralen\nDierlijk vet\n* Koolhydraatbronnen.",
+      "etiketNl": "Samenstelling\nMais*\nSojameel*\nGedehydrateerd gevogelte-eiwit\nGerst*\nTarweglutenmeel\nErwtenvezel*\nCellulose\nDigest\nMineralen\nDierlijk vet\n* Koolhydraatbronnen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium Adult Sensitive Digestion Rijk aan Lam",
+      "voertype": "kibble",
+      "verpakking": "3 / 14 kg",
+      "gtin": null,
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-medium-sensitive-digestion-lam",
+      "etiketOrigineel": "Samenstelling\nLam (19%)\nMaïs\nGedehydreerd gevogelte-eiwit\nMaïsgries\nRijst (8%)\nDierlijk vet\nGedroogde bietenpulp\nSojameel\nDigest\nMaïsglutenmeel\nGedroogde ei\nMineralen\nVisolie",
+      "etiketNl": "Samenstelling\nLam (19%)\nMaïs\nGedehydreerd gevogelte-eiwit\nMaïsgries\nRijst (8%)\nDierlijk vet\nGedroogde bietenpulp\nSojameel\nDigest\nMaïsglutenmeel\nGedroogde ei\nMineralen\nVisolie",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Expert Care Digestion Care Rijk aan Lam",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "gtin": null,
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-expert-care-digestion-care-lam",
+      "etiketOrigineel": "Samenstelling\nLam (19%)\nMais\nGedehydrateerd gevogelte-eiwit\nMaisgrit\nRijst\nDierlijk vet\nSojameel\nGedroogde bietenpulp\nMaiseiwitmeel\nMineralen\nGedroogd ei\nDigest\nVisolie\nGedroogd colostrum (0,1%)",
+      "etiketNl": "Samenstelling\nLam (19%)\nMais\nGedehydrateerd gevogelte-eiwit\nMaisgrit\nRijst\nDierlijk vet\nSojameel\nGedroogde bietenpulp\nMaiseiwitmeel\nMineralen\nGedroogd ei\nDigest\nVisolie\nGedroogd colostrum (0,1%)",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium Adult Everyday Nutrition Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 14 kg",
+      "gtin": null,
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-medium-everyday-nutrition-kip",
+      "etiketOrigineel": "Samenstelling\nKip van hoge kwaliteit (20%) (inclusief rug en borst)\nTarwe\nGedroogd gevogelte-eiwit\nMaïs\nRijst (9%)\nDierlijke vetten\nGedroogde bietenpulp\nDigest\nSojameel\nMaïseiwitmeel\nTarwegluten\nMineralen\nGedroogd ei\nVisolie",
+      "etiketNl": "Samenstelling\nKip van hoge kwaliteit (20%) (inclusief rug en borst)\nTarwe\nGedroogd gevogelte-eiwit\nMaïs\nRijst (9%)\nDierlijke vetten\nGedroogde bietenpulp\nDigest\nSojameel\nMaïseiwitmeel\nTarwegluten\nMineralen\nGedroogd ei\nVisolie",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium & Large Adult Sensitive Digestion Graanvrij Rijk aan Kalkoen",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12 kg",
+      "gtin": null,
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-graan-vrij-medium-sensitive-digestion-kalkoen",
+      "etiketOrigineel": "Samenstelling\nKalkoen (16%)\nGedehydrateerd kippeneiwit\nErwtenzetmeel\nCassave (12%)\nGedroogde erwten\nDierlijk vet\nSojameel\nErwteneiwit\nGedroogde bietenpulp\nDigest\nGedroogd ei\nMineralen\nVisolie",
+      "etiketNl": "Samenstelling\nKalkoen (16%)\nGedehydrateerd kippeneiwit\nErwtenzetmeel\nCassave (12%)\nGedroogde erwten\nDierlijk vet\nSojameel\nErwteneiwit\nGedroogde bietenpulp\nDigest\nGedroogd ei\nMineralen\nVisolie",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "HA Hypoallergenic Natvoer",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-hypoallergeen-natvoer",
+      "aantekening": null,
+      "twijfel": "Deze natvoerpagina (400 g blik) toont dezelfde samenstelling als de droogvoeding, tot en met dezelfde voetnoten; de Britse zustersite toont voor hetzelfde blik (SKU 7613036689427) een andere samenstelling. Een mens moet nagaan wat het etiket van het Nederlandse blik werkelijk zegt; daarom is hier geen etikettekst overgenomen."
+    }
+  ]
+}

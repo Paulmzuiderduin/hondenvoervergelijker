@@ -1,0 +1,78 @@
+{
+  "bron": "https://www.josera.de",
+  "opgehaald": "2026-10-19",
+  "producten": [
+    {
+      "merk": "Josera",
+      "naam": "SensiPlus",
+      "voertype": "kibble",
+      "verpakking": "0,9 / 3 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.josera.de/josera-sensiplus.html",
+      "etiketOrigineel": "getrocknetes Geflügelprotein (Geflügel 24,0 %, Ente 4,0 %); Vollkornmais; Reis; Geflügelfett; Rübenfaser; hydrolysiertes Geflügelprotein; Mineralstoffe; gemahlene Chicorée-Wurzel (natürliche Quelle von Inulin)",
+      "etiketNl": "gedroogd gevogelte-eiwit (gevogelte 24,0%, eend 4,0%); volkorenmais; rijst; gevogeltevet; bietenvezel; gehydrolyseerd gevogelte-eiwit; mineralen; gemalen cichoreiwortel (natuurlijke bron van inuline)",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Josera",
+      "naam": "SensiJunior",
+      "voertype": "kibble",
+      "verpakking": "0,9 / 3 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.josera.de/josera-sensijunior.html",
+      "etiketOrigineel": "Reis; getrocknetes Geflügelprotein; Geflügelfett; getrocknetes Entenprotein (4%); getrocknetes Lachsprotein (4%); Kartoffeleiweiß; hydrolysiertes Geflügelprotein; Rübenfaser; Pflanzenfaser; Johannisbrotmehl; Mineralstoffe; Hefezellwände (0,5%); gemahlene Chicorée-Wurzel (natürliche Quelle von Inulin); Flohsamenschalen (Psyllium) (0,1%); getrocknetes Protein der neuseeländischen Grünlippmuschel (Perna canaliculus)",
+      "etiketNl": "rijst; gedroogd gevogelte-eiwit; gevogeltevet; gedroogd eendeneiwit (4%); gedroogd zalmeiwit (4%); aardappeleiwit; gehydrolyseerd gevogelte-eiwit; bietenvezel; plantaardige vezel; johannesbroodmeel; mineralen; gistcelwanden (0,5%); gemalen cichoreiwortel (natuurlijke bron van inuline); vlozaadschillen (psyllium) (0,1%); gedroogd eiwit van de Nieuw-Zeelandse groenlipmossel (Perna canaliculus)",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Josera",
+      "naam": "SensiAdult",
+      "voertype": "kibble",
+      "verpakking": "0,9 / 3 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.josera.de/josera-sensiadult.html",
+      "etiketOrigineel": "Reis; getrocknetes Geflügelprotein (Geflügel 21,0 %, Ente 4,0 %); Geflügelfett; getrocknetes Lachsprotein (4%); hydrolysiertes Geflügelprotein; Rübenfaser; Pflanzenfaser; Johannisbrotmehl; Mineralstoffe; Hefezellwände (0,5%); Kräuter, Früchte; gemahlene Chicorée-Wurzel (natürliche Quelle von Inulin); Flohsamenschalen (Psyllium) (0,1%); getrocknetes Protein der neuseeländischen Grünlippmuschel (Perna canaliculus)",
+      "etiketNl": "rijst; gedroogd gevogelte-eiwit (gevogelte 21,0%, eend 4,0%); gevogeltevet; gedroogd zalmeiwit (4%); gehydrolyseerd gevogelte-eiwit; bietenvezel; plantaardige vezel; johannesbroodmeel; mineralen; gistcelwanden (0,5%); kruiden, vruchten; gemalen cichoreiwortel (natuurlijke bron van inuline); vlozaadschillen (psyllium) (0,1%); gedroogd eiwit van de Nieuw-Zeelandse groenlipmossel (Perna canaliculus)",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Josera",
+      "naam": "YoungStar",
+      "voertype": "kibble",
+      "verpakking": "0,9 / 3 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.josera.de/josera-youngstar.html",
+      "etiketOrigineel": "getrocknete Kartoffel (42%); getrocknetes Geflügelprotein 30,0 % (davon Huhn 40,0 %); Geflügelfett; Rübenfaser; Johannisbrotmehl; hydrolysiertes Geflügelprotein; Hefe; hydrolysiertes pflanzliches Protein; Lachsöl (0,8%); Mineralstoffe; gemahlene Chicorée-Wurzel (natürliche Quelle von Inulin); getrocknetes Protein der neuseeländischen Grünlippmuschel (Perna canaliculus)",
+      "etiketNl": "gedroogde aardappel (42%); gedroogd gevogelte-eiwit 30,0% (waarvan kip 40,0%); gevogeltevet; bietenvezel; johannesbroodmeel; gehydrolyseerd gevogelte-eiwit; gist; gehydrolyseerd plantaardig eiwit; zalmolie (0,8%); mineralen; gemalen cichoreiwortel (natuurlijke bron van inuline); gedroogd eiwit van de Nieuw-Zeelandse groenlipmossel (Perna canaliculus)",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Josera",
+      "naam": "Active Nature",
+      "voertype": "kibble",
+      "verpakking": "0,9 / 3 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.josera.de/josera-active-nature.html",
+      "etiketOrigineel": "getrocknetes Geflügelprotein; Reis; Geflügelfett; Kartoffelstärke; Rübenfaser; Erbsenmehl; getrocknetes Lammprotein (4%); hydrolysiertes Geflügelprotein; Mineralstoffe; Apfelfaser; Hefezellwände (0,5%); Johannisbrotmehl; gemahlene Chicorée-Wurzel (natürliche Quelle von Inulin); Kräuter, Früchte (0,1%); getrocknetes Protein der neuseeländischen Grünlippmuschel (Perna canaliculus)",
+      "etiketNl": "gedroogd gevogelte-eiwit; rijst; gevogeltevet; aardappelzetmeel; bietenvezel; erwtenmeel; gedroogd lamseiwit (4%); gehydrolyseerd gevogelte-eiwit; mineralen; appelvezel; gistcelwanden (0,5%); johannesbroodmeel; gemalen cichoreiwortel (natuurlijke bron van inuline); kruiden, vruchten (0,1%); gedroogd eiwit van de Nieuw-Zeelandse groenlipmossel (Perna canaliculus)",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Josera",
+      "naam": "Senior Salmon & Rice",
+      "voertype": "kibble",
+      "verpakking": "0,9 / 3 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.josera.de/josera-seniorplus.html",
+      "etiketOrigineel": "Vollkornmais; Reis (22%); getrocknetes Geflügelprotein; Gerste; getrocknetes Lachsprotein (6%); Geflügelfett; Rübenfaser; hydrolysiertes tierisches Protein; Lachsöl (0,8%); Mineralstoffe; Hefezellwände (0,5%); Kräuter, Früchte; gemahlene Chicorée-Wurzel (natürliche Quelle von Inulin)",
+      "etiketNl": "volkorenmais; rijst (22%); gedroogd gevogelte-eiwit; gerst; gedroogd zalmeiwit (6%); gevogeltevet; bietenvezel; gehydrolyseerd dierlijk eiwit; zalmolie (0,8%); mineralen; gistcelwanden (0,5%); kruiden, vruchten; gemalen cichoreiwortel (natuurlijke bron van inuline)",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    }
+  ]
+}

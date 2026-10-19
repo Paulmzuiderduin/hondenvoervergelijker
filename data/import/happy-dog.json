@@ -1,0 +1,78 @@
+{
+  "bron": "https://happydog.de",
+  "opgehaald": "2026-10-19",
+  "producten": [
+    {
+      "merk": "Happy Dog",
+      "naam": "Sensible Ireland",
+      "voertype": "kibble",
+      "verpakking": "0,3 / 1 / 4 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://happydog.de/hundefutter/trockenfutter/happy-dog-sensible-ireland-60301",
+      "etiketOrigineel": "Hafer, Lachsmehl (13 %), Gerste, Mais, Kaninchenprotein* (8 %), Kartoffel*, Öle und Fette, Rübenmelasseschnitzel* (entzuckert), hydrolisiertes Protein, Hämoglobin*, Apfeltrester* (1,1 %), Trockenvollei, Kaliumchlorid, Hefe*, Natriumchlorid, Meeresalgen*, Leinsamen (0,15 %), Muschelfleisch* (0,05 %), Mariendistel, Yucca schidigera*, Hefe* (extrahiert), Artischocke, Löwenzahn, Ingwer (0,014 %), Birkenblätter, Brennnessel, Kamille, Koriander, Rosmarin, Salbei, Süßholzwurzel, Thymian, (Trockenkräuter gesamt: 0,17 %) *) getrocknet",
+      "etiketNl": "haver, zalmmeel (13%), gerst, maïs, konijneneiwit* (8%), aardappel*, oliën en vetten, bietenmelassepulp* (ontsuikerd), gehydrolyseerd eiwit, hemoglobine*, appelpulp* (1,1%), gedroogd heel ei, kaliumchloride, gist*, natriumchloride, zeewier*, lijnzaad (0,15%), mosselvlees* (0,05%), mariadistel, Yucca schidigera*, gist* (geëxtraheerd), artisjok, paardenbloem, gember (0,014%), berkenbladeren, brandnetel, kamille, koriander, rozemarijn, salie, zoethoutwortel, tijm, (gedroogde kruiden totaal: 0,17%) *) gedroogd",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Happy Dog",
+      "naam": "Sensible Toscana",
+      "voertype": "kibble",
+      "verpakking": "0,3 / 1 / 4 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://happydog.de/hundefutter/trockenfutter/happy-dog-sensible-toscana-60303",
+      "etiketOrigineel": "Entenprotein* (23 %), Maismehl, Mais, Reis, Lachsmehl (5%), Öle und Fette, hydrolisiertes Protein, Rübenmelasseschnitzel* (entzuckert), Apfeltrester* (0,8%), Kaliumchlorid, Hefe*, Natriumchlorid, Meeresalgen* (0,18%), Leinsamen (0,15%), Trockenvollei, Muschelfleisch* (0,05%), Holunderfrüchte, Mariendistel, Hefe* (extrahiert), Artischocke (0,015 %), Löwenzahn, Ingwer (0,015 %), Birkenblätter, Brennnessel, Kamille, Rosmarin, Salbei, Thymian, Bohnenkraut, Majoran, Koriander, Süßholzwurzel, Anisfrüchte, Basilikum, Fenchelfrüchte, Holunderblüten, Lavendelblüten (Trockenkräuter gesamt: 0,26 %) *) getrocknet",
+      "etiketNl": "eendeneiwit* (23%), maïsmeel, maïs, rijst, zalmmeel (5%), oliën en vetten, gehydrolyseerd eiwit, bietenmelassepulp* (ontsuikerd), appelpulp* (0,8%), kaliumchloride, gist*, natriumchloride, zeewier* (0,18%), lijnzaad (0,15%), gedroogd heel ei, mosselvlees* (0,05%), vlierbessen, mariadistel, gist* (geëxtraheerd), artisjok (0,015%), paardenbloem, gember (0,015%), berkenbladeren, brandnetel, kamille, rozemarijn, salie, tijm, bonenkruid, marjolein, koriander, zoethoutwortel, anisvruchten, basilicum, venkelvruchten, vlierbloesem, lavendelbloemen (gedroogde kruiden totaal: 0,26%) *) gedroogd",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Happy Dog",
+      "naam": "Sensible Montana",
+      "voertype": "kibble",
+      "verpakking": "0,3 / 1 / 4 / 10 kg",
+      "gtin": null,
+      "bronUrl": "https://happydog.de/hundefutter/trockenfutter/happy-dog-sensible-montana-60488",
+      "etiketOrigineel": "Kartoffel*, Pferdeprotein* (15%), Kartoffelprotein*, Öle und Fette, Rübenmelasseschnitzel* (entzuckert), hydrolisiertes Protein, Apfeltrester*, Natriumchlorid, Hefe* (extrahiert) *) getrocknet",
+      "etiketNl": "aardappel*, paardeneiwit* (15%), aardappeleiwit*, oliën en vetten, bietenmelassepulp* (ontsuikerd), gehydrolyseerd eiwit, appelpulp*, natriumchloride, gist* (geëxtraheerd) *) gedroogd",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Happy Dog",
+      "naam": "fit & vital - Sport",
+      "voertype": "kibble",
+      "verpakking": "1 / 14 kg",
+      "gtin": null,
+      "bronUrl": "https://happydog.de/hundefutter/trockenfutter/happy-dog-fit-vital-sport-60777",
+      "etiketOrigineel": "Tierische Proteine* (17,5% Geflügel, 4% Lamm), Maismehl, Mais, Öle und Fette, Reis, Gerste, Hämoglobin*, Fischmehl (4%, davon 50% Lachsmehl), Grieben, hydrolisiertes Protein, Rübenmelasseschnitzel* (entzuckert), Apfeltrester*, Kaliumchlorid, Hefe*, Natriumchlorid, Meeresalgen*, Leinsamen (0,15%), Trockenvollei (0,1%), Mariendistel, Hefe* (extrahiert), Muschelfleisch* (0,02%), Artischocke, Löwenzahn, Ingwer (0,017%), Birkenblätter, Brennnessel, Kamille, Koriander, Rosmarin, Salbei, Süßholzwurzel, Thymian, (Trockenkräuter gesamt: 0,17%) *) getrocknet",
+      "etiketNl": "dierlijke eiwitten* (17,5% gevogelte, 4% lam), maïsmeel, maïs, oliën en vetten, rijst, gerst, hemoglobine*, vismeel (4%, waarvan 50% zalmmeel), grieben, gehydrolyseerd eiwit, bietenmelassepulp* (ontsuikerd), appelpulp*, kaliumchloride, gist*, natriumchloride, zeewier*, lijnzaad (0,15%), gedroogd heel ei (0,1%), mariadistel, gist* (geëxtraheerd), mosselvlees* (0,02%), artisjok, paardenbloem, gember (0,017%), berkenbladeren, brandnetel, kamille, koriander, rozemarijn, salie, zoethoutwortel, tijm, (gedroogde kruiden totaal: 0,17%) *) gedroogd",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Happy Dog",
+      "naam": "NaturCroq Geflügel & Reis",
+      "voertype": "kibble",
+      "verpakking": "1 / 4 / 11 kg",
+      "gtin": null,
+      "bronUrl": "https://happydog.de/hundefutter/trockenfutter/happy-dog-naturcroq-gefluegel-reis-60513",
+      "etiketOrigineel": "Geflügelprotein* (24,5 %), Reis (17,0 %), Vollkornmais, Maismehl, Vollkorngerste, Öle und Fette, Rübenmelasseschnitzel* (entzuckert), hydrolysiertes Protein, Apfeltrester* (0,8 %), Hefe*, Kaliumchlorid, Karotten*, Natriumchlorid, Grünhafer*, Sonnenblumen* (0,07 %), Kresse*, Petersilie*, (Grünkräuter gesamt: 0,3 %) *) getrocknet",
+      "etiketNl": "gevogelte-eiwit* (24,5%), rijst (17,0%), volkorenmais, maïsmeel, volkorengerst, oliën en vetten, bietenmelassepulp* (ontsuikerd), gehydrolyseerd eiwit, appelpulp* (0,8%), gist*, kaliumchloride, wortel*, natriumchloride, groene haver*, zonnebloem* (0,07%), tuinkers*, peterselie*, (groene kruiden totaal: 0,3%) *) gedroogd",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Happy Dog",
+      "naam": "NaturCroq Senior",
+      "voertype": "kibble",
+      "verpakking": "4 / 15 kg",
+      "gtin": null,
+      "bronUrl": "https://happydog.de/hundefutter/trockenfutter/happy-dog-naturcroq-senior-60533",
+      "etiketOrigineel": "Geflügelprotein* (12 %), Weizenmehl, Vollkorngerste, Vollkornweizen, Vollkornmais, Maismehl, Reis, Öle und Fette, Grieben, Fischmehl, Rübenmelasseschnitzel* (entzuckert), hydrolisiertes Protein, Apfeltrester* (0,9 %), Hefe*, Karotten*, Natriumchlorid, Grünhafer*, Sonnenblumen* (0,07 %), Kresse*, Petersilie*, (Grünkräuter gesamt: 0,3 %) *) getrocknet",
+      "etiketNl": "gevogelte-eiwit* (12%), tarwemeel, volkorengerst, volkorentarwe, volkorenmais, maïsmeel, rijst, oliën en vetten, grieben, vismeel, bietenmelassepulp* (ontsuikerd), gehydrolyseerd eiwit, appelpulp* (0,9%), gist*, wortel*, natriumchloride, groene haver*, zonnebloem* (0,07%), tuinkers*, peterselie*, (groene kruiden totaal: 0,3%) *) gedroogd",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    }
+  ]
+}

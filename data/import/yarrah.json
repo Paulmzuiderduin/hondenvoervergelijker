@@ -1,0 +1,78 @@
+{
+  "bron": "https://www.yarrah.com",
+  "opgehaald": "2026-10-19",
+  "producten": [
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch Adult hondenvoer met kip",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 / 15 kg",
+      "gtin": null,
+      "bronUrl": "https://www.yarrah.com/biologisch-adult-hondenvoer-met-kip/",
+      "etiketOrigineel": "18% kipmeel*, 17% haver*, maïs*, tarwe*, kippenvet*, rijsteiwit*, sojaschilfers*, 4,0% erwten*, MSC-haringmeel¹, gehydrolyseerd eiwit*, baobab*, zonnebloemzaadschilfers*, biergist, mineralen, 0,5% MSC-visolie¹.\n\n* = biologisch\n¹Uit een MSC gecertificeerde duurzame visserij. www.msc.org/nl",
+      "etiketNl": "18% kipmeel*, 17% haver*, maïs*, tarwe*, kippenvet*, rijsteiwit*, sojaschilfers*, 4,0% erwten*, MSC-haringmeel¹, gehydrolyseerd eiwit*, baobab*, zonnebloemzaadschilfers*, biergist, mineralen, 0,5% MSC-visolie¹.\n\n* = biologisch\n¹Uit een MSC gecertificeerde duurzame visserij. www.msc.org/nl",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch Sensitive hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "gtin": null,
+      "bronUrl": "https://www.yarrah.com/biologisch-sensitive-hondenvoer/",
+      "etiketOrigineel": "Tarwevrije receptuur.\n65% paddy rijst*, 20% kipmeel*, rijsteiwit*, kippenvet*, gehydrolyseerd eiwit*, mineralen, MSC-visolie¹, 0,1% gedroogd zeewier*, 0,1% gedroogde spirulina*.\n\n* = biologisch.\n¹Uit een MSC-gecertificeerde duurzame visserij. www.msc.org/nl.",
+      "etiketNl": "Tarwevrije receptuur.\n65% paddy rijst*, 20% kipmeel*, rijsteiwit*, kippenvet*, gehydrolyseerd eiwit*, mineralen, MSC-visolie¹, 0,1% gedroogd zeewier*, 0,1% gedroogde spirulina*.\n\n* = biologisch.\n¹Uit een MSC-gecertificeerde duurzame visserij. www.msc.org/nl.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch Senior hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "gtin": null,
+      "bronUrl": "https://www.yarrah.com/biologisch-senior-hondenvoer/",
+      "etiketOrigineel": "17,5% kipmeel*, mais*, tarwe*, haver*, erwten*, sojaschilfers*, kippenvet*, zonnebloemzaadschilfers*, rijsteiwit*, MSC haringmeel¹, gehydrolyseerd eiwit*, biergist, mineralen, MSC visolie¹, kruiden* (0,13% gedroogde heermoes*, 0,13% gedroogde duivelsklauw*, 0,13% gedroogde rozenbottel*).\n\n* = biologisch\n¹Uit een MSC gecertificeerde duurzame visserij. www.msc.org/nl",
+      "etiketNl": "17,5% kipmeel*, mais*, tarwe*, haver*, erwten*, sojaschilfers*, kippenvet*, zonnebloemzaadschilfers*, rijsteiwit*, MSC haringmeel¹, gehydrolyseerd eiwit*, biergist, mineralen, MSC visolie¹, kruiden* (0,13% gedroogde heermoes*, 0,13% gedroogde duivelsklauw*, 0,13% gedroogde rozenbottel*).\n\n* = biologisch\n¹Uit een MSC gecertificeerde duurzame visserij. www.msc.org/nl",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch hondenvoer chunks met kip",
+      "voertype": "wet",
+      "verpakking": "405 / 820 g",
+      "gtin": null,
+      "bronUrl": "https://www.yarrah.com/biologisch-hondenvoer-chunks-met-kip/",
+      "etiketOrigineel": "35% kip* (karkas*, vlees*, lever*), tarwe*, mineralen, 0,1% gedroogde tomaat*, 0,1% gedroogde brandnetel*.\n\n* = biologisch",
+      "etiketNl": "35% kip* (karkas*, vlees*, lever*), tarwe*, mineralen, 0,1% gedroogde tomaat*, 0,1% gedroogde brandnetel*.\n\n* = biologisch",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch hondenvoer chunks met rund",
+      "voertype": "wet",
+      "verpakking": "405 / 820 g",
+      "gtin": null,
+      "bronUrl": "https://www.yarrah.com/biologisch-hondenvoer-chunks-met-rund/",
+      "etiketOrigineel": "26% kip* (karkas*, vlees*), tarwe*, 5,0% rund* (lever*, hart*, nier*), varkensvlees* (vlees*, hart*, nier*), mineralen, 0,1% gedroogde tomaat*, 0,1% gedroogde brandnetel*\n\n* = biologisch",
+      "etiketNl": "26% kip* (karkas*, vlees*), tarwe*, 5,0% rund* (lever*, hart*, nier*), varkensvlees* (vlees*, hart*, nier*), mineralen, 0,1% gedroogde tomaat*, 0,1% gedroogde brandnetel*\n\n* = biologisch",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch hondenvoer paté met kip en kalkoen",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g",
+      "gtin": null,
+      "bronUrl": "https://www.yarrah.com/biologisch-hondenvoer-pate-met-kip-en-kalkoen-alu/",
+      "etiketOrigineel": "Graanvrije receptuur.\n46% kip* (karkas*, lever*, vlees*, hart*, maag*), 10% kalkoen* (vlees*), mineralen, zonnebloemolie*, 0,0075% gedroogde aloë vera* (komt overeen met 1,5% aloë vera*).\n\n* = biologisch.",
+      "etiketNl": "Graanvrije receptuur.\n46% kip* (karkas*, lever*, vlees*, hart*, maag*), 10% kalkoen* (vlees*), mineralen, zonnebloemolie*, 0,0075% gedroogde aloë vera* (komt overeen met 1,5% aloë vera*).\n\n* = biologisch.",
+      "aantekening": null,
+      "twijfel": null
+    }
+  ]
+}

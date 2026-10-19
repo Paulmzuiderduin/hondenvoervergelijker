@@ -104,6 +104,30 @@ function vergelijkbaar(tekst) {
     .trim()
 }
 
+// Sommige sites (Edgard & Cooper) zetten het etiket alleen in de gegevens die
+// met de pagina meekomen, niet in de leesbare tekst. Dan is de tekst wél van de
+// fabrikant, maar staat hij in een scriptblok. Deze tweede lezing haalt de
+// scriptblokken er niet uit en zet ook \u-ontsnappingen om.
+function vergelijkbaarMetPaginadata(html) {
+  return decodeer(
+    String(html)
+      .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<!--[\s\S]*?-->/g, ' ')
+      .replace(/\\u([0-9a-f]{4})/gi, (heel, code) => String.fromCodePoint(parseInt(code, 16)))
+      .replace(/\\n|\\r|\\t/g, ' ')
+      .replace(/\\"/g, '"')
+      .replace(/\\\//g, '/')
+      .replace(/<[^>]*>/g, ' ')
+  )
+    .toLowerCase()
+    .replace(/[’‘`´]/g, "'")
+    .replace(/[“”]/g, '"')
+    .replace(/[–—]/g, '-')
+    .replace(/\s+/g, ' ')
+    .replace(/\s+([,;:.])/g, '$1')
+    .trim()
+}
+
 function leesProducten() {
   if (!existsSync(IMPORT)) return []
   const rijen = []
@@ -193,6 +217,10 @@ for (const product of producten) {
     }
     if (vergelijkbaar(uitkomst.tekst).includes(gezocht)) {
       meld(product, 'gelijk', poging > 1 ? 'bij de tweede poging' : '')
+      break
+    }
+    if (vergelijkbaarMetPaginadata(uitkomst.tekst).includes(gezocht)) {
+      meld(product, 'gelijk', 'staat in de gegevens van de pagina, niet in de leesbare tekst')
       break
     }
     if (poging === 2) {

@@ -1,0 +1,126 @@
+{
+  "bron": "https://darf.nl",
+  "opgehaald": "2026-10-19",
+  "producten": [
+    {
+      "merk": "DARF",
+      "naam": "KVV",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "gtin": "8721551950218",
+      "bronUrl": "https://darf.nl/product/darf-kvv-10-x-1-kg",
+      "etiketOrigineel": "Samenstelling: – 50% Kip*: bot, vlees – 30% Rund*: vlees, pens, long hart, lever, nier – 10% Lam*: vlees, bot, long, pens, lever – 10% Geit*: vlees, pens, long",
+      "etiketNl": "Samenstelling: – 50% Kip*: bot, vlees – 30% Rund*: vlees, pens, long hart, lever, nier – 10% Lam*: vlees, bot, long, pens, lever – 10% Geit*: vlees, pens, long",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "DARF",
+      "naam": "Zalm KVV",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "gtin": "8721551950669",
+      "bronUrl": "https://darf.nl/product/darf-zalm-kvv-10-x-1-kg",
+      "etiketOrigineel": "100% kant en klaar vlees: – 10% zalm: lijven, randen – 45% kip: bot, vlees -25% Geit: Vlees, Pens, Long – 10% rund: vlees. hart, pens, long, lever – 10% lam: bot, vlees, lever, long pens",
+      "etiketNl": "100% kant en klaar vlees: – 10% zalm: lijven, randen – 45% kip: bot, vlees -25% Geit: Vlees, Pens, Long – 10% rund: vlees. hart, pens, long, lever – 10% lam: bot, vlees, lever, long pens",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "DARF",
+      "naam": "Kalkoen KVV",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "gtin": "8721551950591",
+      "bronUrl": "https://darf.nl/product/darf-kalkoen-kvv-10-x-1-kg",
+      "etiketOrigineel": "100% Vers vlees: – 70% Vlees: 50% Kalkoen, 30% Rund, 10% Lam, 10% Geit – 10% Orgaanvlees: Rund: long, hart, nier, lever; Lam: long, lever; Geit: long – 20% bot: lam en kalkoen",
+      "etiketNl": "100% Vers vlees: – 70% Vlees: 50% Kalkoen, 30% Rund, 10% Lam, 10% Geit – 10% Orgaanvlees: Rund: long, hart, nier, lever; Lam: long, lever; Geit: long – 20% bot: lam en kalkoen",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "DARF",
+      "naam": "Geit Kip",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "gtin": "8721551950119",
+      "bronUrl": "https://darf.nl/product/darf-geit-kip-10-x-1-kg",
+      "etiketOrigineel": "Geit 49% Kip 50% Complex van sporenelementen en vitamines (premix) 1%",
+      "etiketNl": "Geit 49% Kip 50% Complex van sporenelementen en vitamines (premix) 1%",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "DARF",
+      "naam": "Hert",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "gtin": "8721551950133",
+      "bronUrl": "https://darf.nl/product/darf-hert-10-x-1-kg",
+      "etiketOrigineel": "Lam 30.77% Hert 23.08% Paard 30.77% Wilde gans 30.77% Complex van sporenelementen en vitamines (premix) 1%",
+      "etiketNl": "Lam 30.77% Hert 23.08% Paard 30.77% Wilde gans 30.77% Complex van sporenelementen en vitamines (premix) 1%",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "DARF",
+      "naam": "Wild KVV",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "gtin": "8721551950225",
+      "bronUrl": "https://darf.nl/product/darf-wild-kvv-10-x-1-kg",
+      "etiketOrigineel": "hert 30% Fazant 15% Konijn 14% Wilde gans 30% Ree 10% Complex van sporenelementen en vitamines (premix) 1%",
+      "etiketNl": "hert 30% Fazant 15% Konijn 14% Wilde gans 30% Ree 10% Complex van sporenelementen en vitamines (premix) 1%",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Active",
+      "voertype": "kibble",
+      "verpakking": "4 kg",
+      "gtin": "8721551950034",
+      "bronUrl": "https://darf.nl/product/darf-vol-active-4-kg",
+      "etiketOrigineel": "Ingrediënten: – 70%: (Rundvlees, Runderorganen, Rundervet) – 10%: gedroogde wortel rauw – 10%: appel rauw – 6%: gierst – 2%: krill – 1%: Zalmolie – 0.5%: Vocht – 0.5%: vitamine en mineralen preparaat: 0.5%, Bevattende:",
+      "etiketNl": "Ingrediënten: – 70%: (Rundvlees, Runderorganen, Rundervet) – 10%: gedroogde wortel rauw – 10%: appel rauw – 6%: gierst – 2%: krill – 1%: Zalmolie – 0.5%: Vocht – 0.5%: vitamine en mineralen preparaat: 0.5%, Bevattende:",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Light",
+      "voertype": "kibble",
+      "verpakking": "4 kg",
+      "gtin": "8721551950386",
+      "bronUrl": "https://darf.nl/product/darf-vol-light-4-kg",
+      "etiketOrigineel": "Ingrediënten: – 60% kippennekken, rundvlees, lamsvlees, geitenvlees, kippenvlees, runderhart, runderlong, runderpens, runderlever – 10% gedroogde wortel rauw – 9% gedroogde appel rauw – 5% gierst – 2% krill – 1% kokosolie – 1% brandnetel – 0,5% vitamine en mineralenprepaat, 0,5% vocht",
+      "etiketNl": "Ingrediënten: – 60% kippennekken, rundvlees, lamsvlees, geitenvlees, kippenvlees, runderhart, runderlong, runderpens, runderlever – 10% gedroogde wortel rauw – 9% gedroogde appel rauw – 5% gierst – 2% krill – 1% kokosolie – 1% brandnetel – 0,5% vitamine en mineralenprepaat, 0,5% vocht",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Regular",
+      "voertype": "kibble",
+      "verpakking": "4 kg",
+      "gtin": "8721551950447",
+      "bronUrl": "https://darf.nl/product/darf-vol-regular-4-kg",
+      "etiketOrigineel": "– 60%: Kipnekken, rundvlees, lamsvlees, geitvlees, kipvlees, runderhart, runderlong runderlever – 15%: gedroogde wortel – 14% gedroogde appel – 5% gierst – 2% krill – 2% kokosolie – 1% brandnetel",
+      "etiketNl": "– 60%: Kipnekken, rundvlees, lamsvlees, geitvlees, kipvlees, runderhart, runderlong runderlever – 15%: gedroogde wortel – 14% gedroogde appel – 5% gierst – 2% krill – 2% kokosolie – 1% brandnetel",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Zalm",
+      "voertype": "kibble",
+      "verpakking": "4 kg",
+      "gtin": "8721551950485",
+      "bronUrl": "https://darf.nl/product/darf-vol-zalm-4-kg",
+      "etiketOrigineel": "– 60%: Zalmranden, lamsvlees, lamsbot, lamsorganen en eieren – 15% gedroogde wortel rauw – 14% gedroogde appel rauw – 5% gierst – 2% krill – 2% kokosolie – 1% brandnetel",
+      "etiketNl": "– 60%: Zalmranden, lamsvlees, lamsbot, lamsorganen en eieren – 15% gedroogde wortel rauw – 14% gedroogde appel rauw – 5% gierst – 2% krill – 2% kokosolie – 1% brandnetel",
+      "aantekening": null,
+      "twijfel": null
+    }
+  ]
+}
