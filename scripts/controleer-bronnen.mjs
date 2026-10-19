@@ -18,6 +18,10 @@
 //                 pagina is veranderd (of dat de pagina nu via JavaScript laadt)
 //   onbereikbaar  de pagina gaf een fout of een blokkade
 //
+// Elke pagina wordt twee keer geprobeerd (met een paar seconden ertussen); pas
+// als de tekst twee keer ontbreekt, heet het "gewijzigd". Een site die een
+// verzoek even afwijst met een lege pagina geeft dus geen valse melding.
+//
 // Gebruik:
 //   node scripts/controleer-bronnen.mjs
 //   node scripts/controleer-bronnen.mjs --merk=Trovet --limiet=5
@@ -73,7 +77,11 @@ function htmlNaarTekst(html) {
       .replace(/<(script|style|noscript|svg|template)[\s\S]*?<\/\1>/gi, ' ')
       .replace(/<!--[\s\S]*?-->/g, ' ')
       .replace(/<br\s*\/?>/gi, ' ')
-      .replace(/<\/(p|div|li|td|th|dd|dt|h[1-6]|tr|section|article|span|strong|em)>/gi, ' ')
+      // Opmaak binnen een zin (vet, cursief, een link) mag geen spatie
+      // achterlaten: "Samenstelling" staat op de bronpagina vet, maar hoort
+      // gewoon tegen de dubbele punt te staan.
+      .replace(/<\/(span|strong|em|b|i|a|sup|sub|small)>/gi, '')
+      .replace(/<\/(p|div|li|td|th|dd|dt|h[1-6]|tr|section|article)>/gi, ' ')
       .replace(/<[^>]*>/g, ' ')
   )
 }
@@ -87,6 +95,7 @@ function vergelijkbaar(tekst) {
     .replace(/[“”]/g, '"')
     .replace(/[–—]/g, '-')
     .replace(/\s+/g, ' ')
+    .replace(/\s+([,;:.])/g, '$1')
     .trim()
 }
 
@@ -146,35 +155,44 @@ for (const product of producten) {
     meld(product, 'onbereikbaar', `${host} blokkeert deze bezoeker`)
     continue
   }
-  const wacht = pauze - (Date.now() - (laatsteVerzoekPerSite.get(host) ?? 0))
-  if (wacht > 0) await new Promise((klaar) => setTimeout(klaar, wacht))
-  laatsteVerzoekPerSite.set(host, Date.now())
-
-  let uitkomst
-  try {
-    uitkomst = await haalOp(product.bronUrl)
-  } catch (fout) {
-    uitkomst = { status: 0, fout: String(fout).slice(0, 120) }
-  }
-
-  if (uitkomst.status === 403 || uitkomst.status === 429) {
-    geblokkeerd.add(host)
-    meld(product, 'onbereikbaar', `status ${uitkomst.status}`)
-    continue
-  }
-  if (uitkomst.status !== 200) {
-    meld(product, 'onbereikbaar', uitkomst.fout ?? `status ${uitkomst.status}`)
-    continue
-  }
-
   const gezocht = vergelijkbaar(product.etiketOrigineel)
-  const pagina = vergelijkbaar(uitkomst.tekst)
   if (!gezocht) {
     meld(product, 'onbereikbaar', 'geen brontekst in het importbestand')
-  } else if (pagina.includes(gezocht)) {
-    meld(product, 'gelijk', '')
-  } else {
-    meld(product, 'gewijzigd', 'deze tekst staat niet meer op de pagina')
+    continue
+  }
+
+  // Twee pogingen: een site kan een verzoek tijdelijk beantwoorden met een
+  // pagina zonder etiket (drukte, een cookiemelding). Pas als het twee keer
+  // misgaat, is er iets om naar te kijken.
+  for (let poging = 1; poging <= 2; poging += 1) {
+    const wachttijd = poging === 1 ? pauze : Math.max(pauze, 5000)
+    const teWachten = wachttijd - (Date.now() - (laatsteVerzoekPerSite.get(host) ?? 0))
+    if (teWachten > 0) await new Promise((klaar) => setTimeout(klaar, teWachten))
+    laatsteVerzoekPerSite.set(host, Date.now())
+
+    let uitkomst
+    try {
+      uitkomst = await haalOp(product.bronUrl)
+    } catch (fout) {
+      uitkomst = { status: 0, fout: String(fout).slice(0, 120) }
+    }
+
+    if (uitkomst.status === 403 || uitkomst.status === 429) {
+      geblokkeerd.add(host)
+      meld(product, 'onbereikbaar', `status ${uitkomst.status}`)
+      break
+    }
+    if (uitkomst.status !== 200) {
+      meld(product, 'onbereikbaar', uitkomst.fout ?? `status ${uitkomst.status}`)
+      break
+    }
+    if (vergelijkbaar(uitkomst.tekst).includes(gezocht)) {
+      meld(product, 'gelijk', poging > 1 ? 'bij de tweede poging' : '')
+      break
+    }
+    if (poging === 2) {
+      meld(product, 'gewijzigd', 'deze tekst staat niet meer op de pagina')
+    }
   }
 }
 
