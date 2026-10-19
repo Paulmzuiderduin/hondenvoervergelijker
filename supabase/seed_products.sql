@@ -143,3 +143,12 @@ with p as (
 )
 insert into public.recipe_ingredients (recipe_version_id, allergen_key, certainty)
 select id, k, 'confirmed' from v, unnest(array['chicken','turkey','barley','corn','wheat','oats','egg']) k;
+
+-- Markeer de zojuist ingevoerde receptversies als volledig in kaart gebracht,
+-- behalve de versies met een onduidelijke categorie. Zonder deze bevestiging
+-- komt een product niet bij "Geschikt" te staan.
+update public.recipe_versions rv
+set ingredients_mapped = true
+where rv.is_current
+  and not rv.has_uncertain_ingredients
+  and exists (select 1 from public.recipe_ingredients ri where ri.recipe_version_id = rv.id);
