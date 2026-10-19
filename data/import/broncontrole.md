@@ -1,12 +1,12 @@
 # Broncontrole
 
-Uitgevoerd op 2026-10-19: 52 product(en) gecontroleerd.
+Uitgevoerd op 2026-10-19: 111 product(en) gecontroleerd.
 
 Deze controle kijkt of de bronpagina nog dezelfde etiket tekst toont als bij de import.
 Bij "gewijzigd" hoort een mens te kijken: misschien heeft de fabrikant het etiket aangepast,
 misschien laadt de pagina de tekst nu pas met JavaScript. De tekst op de site verandert niet vanzelf.
 
-- gelijk: 52
+- gelijk: 111
 - gewijzigd: 0
 - onbereikbaar: 0
 
@@ -17,6 +17,12 @@ Onveranderd:
 - Acana — Adult Small Breed Recipe
 - Acana — Light & Fit Recipe
 - Acana — Grasslands
+- bosch — Adult met gevogelte & gierst
+- bosch — Adult met lam & rijst
+- bosch — Sensitive met lam & rijst
+- bosch — Junior met lam & rijst
+- bosch — Soft Adult met kip & banaan
+- bosch — Soft Junior met kip & zoete aardappel
 - DARF — KVV 10 x 1 kg
 - DARF — Zalm KVV 10 x 1 kg
 - DARF — Kalkoen KVV 10 x 1 kg
@@ -27,6 +33,21 @@ Onveranderd:
 - DARF — Vol Light 4 kg
 - DARF — Vol Regular 4 kg
 - DARF — Vol Zalm 4 kg
+- Edgard & Cooper — Verse Kip
+- Edgard & Cooper — Vers Lam
+- Edgard & Cooper — Verse Eend
+- Edgard & Cooper — Kip & kalkoen
+- Edgard & Cooper — Wild & eend
+- Edgard & Cooper — Kwijl-in-Stijl Kip
+- Eukanuba — Veterinary Diets Dermatosis FP
+- Eukanuba — Veterinary Diets Intestinal
+- Eukanuba — Veterinary Diets Restricted Calorie
+- Eukanuba — Veterinary Diets Joint Mobility
+- Eukanuba — Puppy Middelgrote rassen Verse kip
+- Eukanuba — Senior Middelgrote rassen Verse kip
+- Eukanuba — Volwassen Grote rassen Verse kip
+- Eukanuba — Adult kleine/middelgrote rassen, zalm en gerst
+- Eukanuba — Adult rijk aan rund met pompoen
 - Farmina — Vet Life UltraHypo Adult
 - Farmina — Vet Life Hypoallergenic Ei & Rijst Adult
 - Farmina — Vet Life Gastrointestinal Adult
@@ -39,6 +60,14 @@ Onveranderd:
 - Happy Dog — fit & vital - Sport
 - Happy Dog — NaturCroq Geflügel & Reis
 - Happy Dog — NaturCroq Senior
+- Hill's Prescription Diet — z/d Hondenvoer Origineel
+- Hill's Prescription Diet — z/d Mini Hondenvoer
+- Hill's Prescription Diet — z/d Hondenvoer
+- Hill's Prescription Diet — z/d Low Fat Hondenvoer
+- Hill's Prescription Diet — d/d Hondenvoer met Eend & Rijst
+- Hill's Prescription Diet — d/d Natvoer voor Honden Eend
+- Hill's Science Plan — Small & Mini Adult Hondenvoer met Kip
+- Hill's Science Plan — Sensitive Stomach & Skin Medium & Large Breed Adult Hondenvoer met Kip
 - Josera — SensiPlus
 - Josera — SensiJunior
 - Josera — SensiAdult
@@ -49,6 +78,36 @@ Onveranderd:
 - Orijen — Six Fish
 - Orijen — Tundra
 - Orijen — Puppy
+- Purina Pro Plan Veterinary Diets — HA Hypoallergenic
+- Purina Pro Plan Veterinary Diets — EN Gastrointestinal
+- Purina Pro Plan Veterinary Diets — EN Gastrointestinal Natvoer
+- Purina Pro Plan Veterinary Diets — DRM Dermatosis
+- Purina Pro Plan Veterinary Diets — DM Diabetes Management
+- Purina Pro Plan Veterinary Diets — OM Obesity Management
+- Purina Pro Plan — Medium Adult Sensitive Digestion Rijk aan Lam
+- Purina Pro Plan — Expert Care Digestion Care Rijk aan Lam
+- Purina Pro Plan — Medium Adult Everyday Nutrition Rijk aan Kip
+- Purina Pro Plan — Medium & Large Adult Sensitive Digestion Graanvrij Rijk aan Kalkoen
+- Royal Canin — Hypoallergenic
+- Royal Canin — Hypoallergenic
+- Royal Canin — Anallergenic
+- Royal Canin — Sensitivity Control
+- Royal Canin — Sensitivity Control Kip met Rijst
+- Royal Canin — Mini Adult 8+
+- Specific — CDD Food Allergen Management
+- Specific — CDW Food Allergen Management
+- Specific — CDD-HY Food Allergen Management
+- Specific — CID Digestive Support
+- Specific — COD-HY Allergen Management Plus
+- Specific — CXD-M Adult Medium breed
+- Trovet — Hypoallergenic (Turkey)
+- Trovet — Hypoallergenic (Rich in Venison)
+- Trovet — Hypoallergenic (Rich in Rabbit)
+- Trovet — Hypoallergenic (Rich in Insect)
+- Trovet — Hypoallergenic (Rich in Horse)
+- Trovet — Exclusion
+- Trovet — Adult
+- Trovet — Dental
 - Wolfsblut — Adult Green Valley droogvoer
 - Wolfsblut — Adult Wild Pacific droogvoer
 - Wolfsblut — Adult Alaska Salmon droogvoer
