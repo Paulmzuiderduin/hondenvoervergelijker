@@ -157,4 +157,8 @@ test('een bron zonder naam wordt rood gemarkeerd', () => {
   const segmenten = markUncertainIngredients('Maïs, kip (9%), dierlijk vet, bouillon, mineralen')
   assert.deepEqual(segmenten.filter((segment) => segment.uncertain).map((segment) => segment.text), ['dierlijk vet', 'bouillon'])
   assert.equal(segmenten.map((segment) => segment.text).join(''), 'Maïs, kip (9%), dierlijk vet, bouillon, mineralen')
+  // Delen onder een soortkop blijven ongemarkeerd.
+  const onderKop = markUncertainIngredients('63% Konijn: 44% rug, 13% vlees, 6% oren; 35% Insect (BSF); 1% Zalmolie')
+  assert.deepEqual(onderKop.filter((segment) => segment.uncertain), [])
+  assert.equal(onderKop.map((segment) => segment.text).join(''), '63% Konijn: 44% rug, 13% vlees, 6% oren; 35% Insect (BSF); 1% Zalmolie')
 })
