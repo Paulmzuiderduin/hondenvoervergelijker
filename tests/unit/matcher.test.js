@@ -137,6 +137,18 @@ test('de algemene categorie verklaart een verzamelwoord niet', () => {
   assert.equal(assessLabel('Kalkoenmeel (totaal 14% gevogelte), maïs').status, 'aandacht')
 })
 
+test('delen onder een kop met een genoemde bron zijn herleidbaar', () => {
+  const konijn = assessLabel('63% Konijn: 44% rug, 13% vlees, 6% oren; 35% Insect (BSF); 1% Zalmolie; 1% Vitamines en mineralen.')
+  assert.equal(konijn.status, 'schoon')
+  assert.deepEqual(konijn.risky, [])
+  assert.equal(assessLabel('65% Kip: 38% ruggen, 15% hart, 12% maag; 33% Rund: 17% pens, 2,5% vet; 1% zalmolie.').status, 'schoon')
+  // De kop geldt niet meer na een puntkomma, en "gevogelte" is geen bron bij name.
+  assert.equal(assessLabel('65% Kip: 38% ruggen; 1% dierlijk vet').status, 'aandacht')
+  assert.equal(assessLabel('Gevogelte: 40% vlees').status, 'aandacht')
+  // Zonder dubbele punt blijft een los woord een risico, ook na een genoemde bron.
+  assert.deepEqual(assessLabel('Maïs, eiwit, mineralen').risky, ['eiwit'])
+})
+
 test('gierst, spelt, rogge en sorghum horen bij granen', () => {
   assert.deepEqual(detectIngredientSignals('Gierst, spelt, rogge, sorghum, triticale, millet').allergens, ['grains'])
 })

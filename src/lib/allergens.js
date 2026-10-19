@@ -123,12 +123,15 @@ function normaliseText(value = '') {
     .trim()
 }
 
-// Als normaliseText, maar met haakjes en komma's als aparte merktekens. Daarmee
-// ziet de keuring wat er tussen haakjes staat en waar een opsomming eindigt.
+// Als normaliseText, maar met haakjes, komma's, dubbele punten en zinseinden als
+// aparte merktekens. Daarmee ziet de keuring wat er tussen haakjes staat, waar een
+// opsomming eindigt en welke kop ("63% Konijn:") er boven een reeks delen staat.
 const OPEN = '\u0001'
 const CLOSE = '\u0002'
 const BREAK = '\u0003'
-const MARKER = { [OPEN]: '(', [CLOSE]: ')', [BREAK]: ',' }
+const COLON = '\u0004'
+const STOP = '\u0005'
+const MARKER = { [OPEN]: '(', [CLOSE]: ')', [BREAK]: ',', [COLON]: ':', [STOP]: ';' }
 
 function markedTokens(value = '') {
   return String(value)
@@ -137,8 +140,10 @@ function markedTokens(value = '') {
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/\(/g, ` ${OPEN} `)
     .replace(/\)/g, ` ${CLOSE} `)
-    .replace(/[,;.!?]/g, ` ${BREAK} `)
-    .replace(new RegExp(`[^a-z0-9${OPEN}${CLOSE}${BREAK}]+`, 'g'), ' ')
+    .replace(/,/g, ` ${BREAK} `)
+    .replace(/:/g, ` ${COLON} `)
+    .replace(/[;.!?]/g, ` ${STOP} `)
+    .replace(new RegExp(`[^a-z0-9${OPEN}${CLOSE}${BREAK}${COLON}${STOP}]+`, 'g'), ' ')
     .split(' ')
     .filter(Boolean)
     .map((token) => MARKER[token] ?? token)
@@ -203,15 +208,34 @@ export function assessLabel(ingredientsText = '') {
   const tokens = []
   const depthBefore = []
   const breakBefore = []
+  // De bron die boven de lopende reeks delen staat ("63% Konijn:"), of null.
+  const anchorBefore = []
+  let anchor = null
   let depth = 0
   let pendingBreak = false
   for (const token of markedTokens(ingredientsText)) {
     if (token === '(') { depth += 1; continue }
     if (token === ')') { depth = Math.max(0, depth - 1); continue }
     if (token === ',') { if (depth === 0) pendingBreak = true; continue }
+    if (token === ':') {
+      // "63% Konijn: 44% rug, 13% vlees" — de delen na de dubbele punt horen bij
+      // het dier dat er vóór staat.
+      if (depth === 0) {
+        const heading = tokens[tokens.length - 1]
+        anchor = heading && isConcreteSource(heading) ? heading : anchor
+        pendingBreak = true
+      }
+      continue
+    }
+    if (token === ';') {
+      // Een puntkomma of punt begint een nieuwe reeks: de kop vervalt.
+      if (depth === 0) { pendingBreak = true; anchor = null }
+      continue
+    }
     tokens.push(token)
     depthBefore.push(depth)
     breakBefore.push(pendingBreak)
+    anchorBefore.push(anchor)
     pendingBreak = false
   }
 
@@ -229,6 +253,9 @@ export function assessLabel(ingredientsText = '') {
   const riskyIndexes = []
   tokens.forEach((token, index) => {
     if (!COMPILED_RISK_TERMS.some((term) => termMatches([token], term))) return
+    // Delen onder een kop met een genoemde bron ("13% vlees" onder "63% Konijn:")
+    // horen bij die bron.
+    if (anchorBefore[index]) return
     const previous = tokens[index - 1]
     // "beef stock" en "zonnebloemolie" zijn herleidbaar; "tarwe, vet" niet,
     // want daar staat een komma tussen.
