@@ -27,6 +27,7 @@ drop function if exists public.classify_ingredient_term(text, text, text, text);
 alter table public.ingredient_terms drop constraint if exists ingredient_terms_bron_heeft_allergeen;
 alter table public.ingredient_terms drop column if exists allergen_key;
 
+alter table public.ingredient_terms drop constraint if exists ingredient_terms_keys_kloppen;
 alter table public.ingredient_terms add constraint ingredient_terms_keys_kloppen check (
   case kind
     when 'onschuldig' then allergen_keys is null
@@ -90,3 +91,30 @@ $$;
 
 revoke all on function public.classify_ingredient_term(text, text, text[], text) from public;
 grant execute on function public.classify_ingredient_term(text, text, text[], text) to authenticated;
+
+-- Twee woorden die al zijn opgezocht, zodat ze niet opnieuw langs de keuring
+-- komen. De indeling is "onduidelijk": de site zegt eerlijk "kan erin zitten"
+-- voor precies de bronnen hieronder, en de rest van het etiket wordt er niet
+-- door geraakt.
+--
+--   glucosamine   van schaaldieren of van mais (gefermenteerd); het etiket zegt
+--                 niet welke van de twee
+--   chondroitine  van kraakbeen van verschillende dieren; welke soort het is,
+--                 staat er niet op (ei, melk en schaaldieren kunnen het niet
+--                 zijn, dus die blijven vrij)
+--
+-- De aantekening is voor in het beheer; op de site staat bij zo'n woord gewoon
+-- "Controleer etiket/fabrikant".
+insert into public.ingredient_terms (term, kind, allergen_keys, note)
+values
+  ('glucosamine', 'onduidelijk', array['corn', 'shellfish'],
+   'kan van schaaldieren of van maïs gemaakt zijn; welke van de twee het is, moet bij de fabrikant nagevraagd worden'),
+  ('chondroitine', 'onduidelijk',
+   array['beef', 'chicken', 'duck', 'horse', 'kangaroo', 'lamb', 'ostrich', 'pork', 'poultry', 'rabbit', 'turkey', 'venison', 'fish'],
+   'kan van kraakbeen van verschillende dieren gemaakt zijn (rund, varken, kip, vis); welke bron het is, moet bij de fabrikant nagevraagd worden')
+on conflict (term) do update
+  set kind = excluded.kind,
+      allergen_keys = excluded.allergen_keys,
+      note = excluded.note,
+      created_by = excluded.created_by,
+      created_at = now();
