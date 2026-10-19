@@ -159,6 +159,11 @@ test('algemene categorie sluit ook de specifieke bronnen uit', () => {
   assert.equal(productMatch(kip, ['turkey'], new Date('2026-10-14')).kind, 'suitable')
   assert.equal(productMatch(kip, ['grains'], new Date('2026-10-14')).kind, 'suitable')
 })
+test('suiker, geit en waterbuffel zijn echte allergenen; ontsuikerd en glucosamine zijn geen suiker', () => {
+  assert.deepEqual(detectIngredientSignals('Suiker, geitenvlees, waterbuffel').allergens, ['goat', 'buffalo', 'sugar'])
+  assert.deepEqual(detectIngredientSignals('Gedroogde bietenpulp (ontsuikerd)').allergens, ['beetroot'])
+  assert.deepEqual(detectIngredientSignals('Glucosamine, xylitol').allergens, [])
+})
 test('elke allergeen in de keuzelijst is ook echt te herkennen', () => {
   for (const { key, label } of ALLERGENS) {
     const woord = sampleForAllergen(key)

@@ -8,9 +8,18 @@
 --   onduidelijk  het woord kan een allergeen verbergen dat er niet bij staat
 --   onschuldig   geen allergeen in onze lijst en verbergt er ook geen
 --
--- 129 woorden.
+-- Tweede ronde: geit, waterbuffel en suiker staan nu als allergeen in de
+-- keuring zelf, dus die woorden staan hier niet meer bij. Woorden als
+-- luzerne, isolaat, aminozuren, premix, lijven/randen, weefsels en honing
+-- zijn strenger geworden: ze kunnen iets verbergen en doen dat nu ook.
+--
+-- 121 woorden.
 
 begin;
+
+-- Woorden uit de eerste ronde die nu door de keuring zelf worden gedekt
+-- (geit, waterbuffel, suiker en hun vormen) of die vervangen zijn, gaan eruit.
+delete from public.ingredient_terms where term in ('geit', 'geitenvlees', 'geitvlees', 'waterbuffel', 'suiker', 'suikers', 'dextrose', 'xylose', 'vitamine b');
 
 insert into public.ingredient_terms (term, kind, allergen_keys, note) values
   ('groenlipmossel', 'bron', array['shellfish']::text[], 'Groenlipmossel is een mossel (schaaldier).'),
@@ -74,63 +83,55 @@ insert into public.ingredient_terms (term, kind, allergen_keys, note) values
   ('maltodextrine', 'onduidelijk', array['wheat', 'barley', 'oats', 'corn', 'rice', 'grains', 'millet', 'rye', 'spelt', 'buckwheat', 'quinoa', 'potato', 'sweetpotato', 'tapioca']::text[], 'Maltodextrine wordt van zetmeel gemaakt (maïs, tarwe of aardappel); de bron staat er niet bij.'),
   ('bessen', 'onduidelijk', array['strawberry', 'apple', 'banana', 'blueberry', 'blackberry', 'cranberry', 'date', 'raspberry', 'fruit', 'mango', 'papaya', 'pear', 'peach']::text[], 'Bessen zijn fruit, maar niet welke soort.'),
   ('bes', 'onduidelijk', array['strawberry', 'apple', 'banana', 'blueberry', 'blackberry', 'cranberry', 'date', 'raspberry', 'fruit', 'mango', 'papaya', 'pear', 'peach']::text[], 'Bes is fruit, maar niet welke soort.'),
+  ('weefsels', 'onduidelijk', array['chicken', 'turkey', 'beef', 'lamb', 'duck', 'pork', 'rabbit', 'venison', 'horse', 'kangaroo', 'ostrich', 'poultry']::text[], 'Weefsels kunnen van elk dier komen; het etiket noemt de soort niet.'),
+  ('lijven', 'onduidelijk', array['chicken', 'turkey', 'beef', 'lamb', 'duck', 'pork', 'rabbit', 'venison', 'horse', 'kangaroo', 'ostrich', 'poultry', 'fish']::text[], 'Lichaamsdelen van een dier zonder genoemde soort.'),
+  ('randen', 'onduidelijk', array['chicken', 'turkey', 'beef', 'lamb', 'duck', 'pork', 'rabbit', 'venison', 'horse', 'kangaroo', 'ostrich', 'poultry', 'fish']::text[], 'Snijresten van een dier zonder genoemde soort.'),
+  ('luzerne', 'onduidelijk', array['pea', 'bean', 'lentil', 'chickpea', 'lupin', 'soy', 'peanut']::text[], 'Luzerne (alfalfa) is een vlinderbloemige, net als erwt, boon, linze en soja.'),
+  ('luzernemeel', 'onduidelijk', array['pea', 'bean', 'lentil', 'chickpea', 'lupin', 'soy', 'peanut']::text[], 'Meel van luzerne, een vlinderbloemige (net als erwt, boon en soja).'),
+  ('isolaat', 'onduidelijk', array['anchovy', 'duck', 'trout', 'goat', 'poultry', 'herring', 'venison', 'insect', 'turkey', 'kangaroo', 'chicken', 'rabbit', 'lamb', 'mackerel', 'horse', 'beef', 'sardine', 'shellfish', 'ostrich', 'tuna', 'pork', 'fish', 'buffalo', 'whitefish', 'salmon', 'potato', 'buckwheat', 'bean', 'pea', 'barley', 'millet', 'grains', 'oats', 'chickpea', 'lentil', 'lupin', 'corn', 'quinoa', 'rice', 'rye', 'soy', 'spelt', 'sugar', 'tapioca', 'wheat', 'sweetpotato', 'asparagus', 'aubergine', 'beetroot', 'cauliflower', 'kale', 'broccoli', 'courgette', 'vegetables', 'garlic', 'cucumber', 'parsnip', 'paprika', 'pumpkin', 'leek', 'celery', 'spinach', 'tomato', 'onion', 'carrot', 'strawberry', 'apple', 'banana', 'blackberry', 'blueberry', 'cranberry', 'date', 'raspberry', 'fruit', 'mango', 'papaya', 'pear', 'peach', 'algae', 'egg', 'herbs', 'milk', 'mint', 'nuts', 'parsley', 'peanut', 'rosemary', 'sesame', 'thyme']::text[], 'Een isolaat is eiwit zonder genoemde bron; dat kan van elk dier of elke plant zijn.'),
+  ('aminozuren', 'onduidelijk', array['chicken', 'turkey', 'beef', 'lamb', 'duck', 'pork', 'rabbit', 'venison', 'horse', 'kangaroo', 'ostrich', 'poultry', 'soy']::text[], 'Aminozurenmengsels worden uit dierlijk eiwit of soja gemaakt; de bron staat er niet bij.'),
+  ('dha', 'onduidelijk', array['fish', 'algae']::text[], 'DHA (omega-3) komt van vis of van algen; de bron staat er niet bij.'),
+  ('docosahexaeenzuur', 'onduidelijk', array['fish', 'algae']::text[], 'DHA (omega-3) komt van vis of van algen; de bron staat er niet bij.'),
+  ('diglyceriden', 'onduidelijk', array['chicken', 'turkey', 'beef', 'lamb', 'duck', 'pork', 'rabbit', 'venison', 'horse', 'kangaroo', 'ostrich', 'poultry', 'soy', 'milk', 'fish', 'corn', 'nuts', 'peanut', 'sesame']::text[], 'Emulgator uit vetten; de bron van dat vet staat er niet bij.'),
+  ('premix', 'onduidelijk', array['wheat', 'corn', 'rice', 'grains', 'soy']::text[], 'Een premix (vitamines/mineralen) zit vaak op een drager van tarwe, maïs of soja; het etiket noemt die drager niet.'),
+  ('honing', 'onduidelijk', array['sugar']::text[], 'Honing bestaat grotendeels uit suikers.'),
   ('yucca', 'onschuldig', null, 'Yucca schidigera is een plant, geen allergeen in onze lijst.'),
   ('schidigera', 'onschuldig', null, 'Soortnaam van Yucca schidigera.'),
   ('aloe', 'onschuldig', null, 'Aloë is een plant.'),
   ('vera', 'onschuldig', null, 'Deel van de naam "aloë vera".'),
   ('tagetes', 'onschuldig', null, 'Tagetes (afrikaantje) is een plant.'),
-  ('luzerne', 'onschuldig', null, 'Luzerne (alfalfa) staat ook in de vaste lijst als andere bron.'),
-  ('luzernemeel', 'onschuldig', null, 'Meel van luzerne (alfalfa), geen allergeen in onze lijst.'),
   ('biergist', 'onschuldig', null, 'Gist is geen allergeen in onze lijst.'),
   ('saccharomyces', 'onschuldig', null, 'Saccharomyces cerevisiae is gist.'),
   ('cerevisiae', 'onschuldig', null, 'Soortnaam van gist (Saccharomyces cerevisiae).'),
-  ('honing', 'onschuldig', null, 'Honing is geen allergeen in onze lijst.'),
   ('borage', 'onschuldig', null, 'Borage (bernagie) is een plant.'),
   ('bernagieolie', 'onschuldig', null, 'Olie van bernagie; de bron staat erbij.'),
   ('kopraolie', 'onschuldig', null, 'Kopra is gedroogde kokos; geen allergeen in onze lijst.'),
-  ('ontsuikerd', 'onschuldig', null, 'Bereidingswoord (suiker eruit gehaald).'),
+  ('ontsuikerd', 'onschuldig', null, 'Bereidingswoord: de suiker is er juist uit gehaald.'),
   ('gecheleerde', 'onschuldig', null, 'Bereidingswoord uit de chemie (chelaat).'),
-  ('weefsels', 'onschuldig', null, 'Staat achter "dierlijke weefsels"; het woord "dierlijke" doet het werk al.'),
-  ('geit', 'onschuldig', null, 'Geit is geen allergeen in onze lijst.'),
-  ('geitenvlees', 'onschuldig', null, 'Geit is geen allergeen in onze lijst.'),
-  ('geitvlees', 'onschuldig', null, 'Geit is geen allergeen in onze lijst.'),
-  ('waterbuffel', 'onschuldig', null, 'Waterbuffel is geen allergeen in onze lijst.'),
   ('wilde', 'onschuldig', null, 'Bijvoeglijk naamwoord ("wilde gans"); het zelfstandige woord "wild" staat al in de lijst.'),
   ('witte', 'onschuldig', null, 'Kleurwoord ("witte rijst").'),
   ('zeelandse', 'onschuldig', null, 'Deel van de naam "Nieuw-Zeelandse groenlipmossel".'),
   ('antarctische', 'onschuldig', null, 'Deel van de naam "Antarctische krill"; krill staat al in de lijst.'),
-  ('lijven', 'onschuldig', null, 'Deel van een vis ("lijven, randen") onder een genoemde bron.'),
-  ('randen', 'onschuldig', null, 'Deel van een vis, onder een genoemde bron.'),
   ('overeen', 'onschuldig', null, 'Zinsdeel ("komt overeen met").'),
   ('uit', 'onschuldig', null, 'Voorzetsel uit een voetnoot.'),
   ('ingredienten', 'onschuldig', null, 'Kop boven de lijst.'),
-  ('premix', 'onschuldig', null, 'Staat tussen haakjes beschreven als complex van sporenelementen en vitamines.'),
   ('activbiome', 'onschuldig', null, 'Naam van een mix; de samenstelling staat er direct achter.'),
   ('digestion', 'onschuldig', null, 'Deel van de merknaam ActivBiome+ Digestion.'),
   ('auraguard', 'onschuldig', null, 'Naam van een mix; de samenstelling staat erachter.'),
   ('zeoliet', 'onschuldig', null, 'Mineraal.'),
-  ('amylase', 'onschuldig', null, 'Enzym.'),
-  ('aminozuren', 'onschuldig', null, 'Bouwstenen van eiwit, geen bron.'),
-  ('dha', 'onschuldig', null, 'Vetzuur (docosahexaeenzuur), geen allergeen in onze lijst.'),
-  ('docosahexaeenzuur', 'onschuldig', null, 'Vetzuur (DHA).'),
+  ('amylase', 'onschuldig', null, 'Enzym; staat hier als onderdeel van "amylase-remmer" uit witte bonenextract, en die bron staat erbij.'),
   ('omega', 'onschuldig', null, 'Deel van "omega-3-vetzuren".'),
-  ('isolaat', 'onschuldig', null, 'Bereidingswoord; het woord "eiwit" ervoor doet het werk al.'),
+  ('stearinezuur', 'onschuldig', null, 'Losse vetzuurnaam uit de chemie; een vetzuur verbergt geen eiwitbron en de vetbron (dierlijk vet) staat elders op het etiket.'),
   ('mono', 'onschuldig', null, 'Deel van "mono- en diglyceriden" (emulgator).'),
-  ('diglyceriden', 'onschuldig', null, 'Emulgator.'),
-  ('stearinezuur', 'onschuldig', null, 'Vetzuur.'),
   ('veresterd', 'onschuldig', null, 'Bereidingswoord uit de chemie.'),
   ('anhydraat', 'onschuldig', null, 'Vorm van een mineraalzout.'),
   ('monohydraat', 'onschuldig', null, 'Vorm van een mineraalzout.'),
   ('glycinehydraat', 'onschuldig', null, 'Vorm van een mineraalzout (chelaat van glycine).'),
   ('monodicalciumfosfaat', 'onschuldig', null, 'Mineraal.'),
-  ('dextrose', 'onschuldig', null, 'Suiker, geen allergeen in onze lijst.'),
-  ('xylose', 'onschuldig', null, 'Suiker, geen allergeen in onze lijst.'),
-  ('xylitol', 'onschuldig', null, 'Suikervervanger.'),
+  ('xylitol', 'onschuldig', null, 'Suikervervanger: dit is juist geen suiker.'),
   ('xylo', 'onschuldig', null, 'Deel van "xylo-oligosacchariden" (vezel).'),
-  ('sachariden', 'onschuldig', null, 'Deel van oligosacchariden (vezel).'),
+  ('sachariden', 'onschuldig', null, 'Deel van vezelnamen als fructo-oligosachariden; het programma behandelt zulke namen ook als onschuldig.'),
   ('glucanen', 'onschuldig', null, 'Deel van bèta-glucanen (vezel).'),
-  ('suiker', 'onschuldig', null, 'Suiker, geen allergeen in onze lijst.'),
-  ('suikers', 'onschuldig', null, 'Suikers, geen allergeen in onze lijst.'),
   ('psyllium', 'onschuldig', null, 'Vezel (vlozaad).'),
   ('psylliumschil', 'onschuldig', null, 'Schil van psyllium (vezel).'),
   ('psylliumschillen', 'onschuldig', null, 'Schillen van psyllium (vezel).'),

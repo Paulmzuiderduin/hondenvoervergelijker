@@ -3,11 +3,11 @@ export const ALLERGEN_GROUPS = [
     key: 'protein',
     label: 'Eiwitbron',
     allergenPairs: [
-      ['anchovy', 'Ansjovis'], ['duck', 'Eend'], ['trout', 'Forel'], ['poultry', 'Gevogelte (algemeen)'], ['herring', 'Haring'],
+      ['anchovy', 'Ansjovis'], ['duck', 'Eend'], ['trout', 'Forel'], ['goat', 'Geit'], ['poultry', 'Gevogelte (algemeen)'], ['herring', 'Haring'],
       ['venison', 'Hert'], ['insect', 'Insecten'], ['turkey', 'Kalkoen'], ['kangaroo', 'Kangoeroe'], ['chicken', 'Kip'],
       ['rabbit', 'Konijn'], ['lamb', 'Lam'], ['mackerel', 'Makreel'], ['horse', 'Paard'], ['beef', 'Rund'],
       ['sardine', 'Sardine'], ['shellfish', 'Schaaldieren'], ['ostrich', 'Struisvogel'], ['tuna', 'Tonijn'], ['pork', 'Varken'],
-      ['fish', 'Vis (alle soorten)'], ['whitefish', 'Witvis'], ['salmon', 'Zalm']
+      ['fish', 'Vis (alle soorten)'], ['buffalo', 'Waterbuffel'], ['whitefish', 'Witvis'], ['salmon', 'Zalm']
     ]
   },
   {
@@ -17,7 +17,7 @@ export const ALLERGEN_GROUPS = [
       ['potato', 'Aardappel'], ['buckwheat', 'Boekweit'], ['bean', 'Boon'], ['pea', 'Erwt'], ['barley', 'Gerst'],
       ['millet', 'Gierst'], ['grains', 'Granen (algemeen)'], ['oats', 'Haver'], ['chickpea', 'Kikkererwt'], ['lentil', 'Linze'],
       ['lupin', 'Lupine'], ['corn', 'Maïs'], ['quinoa', 'Quinoa'], ['rice', 'Rijst'], ['rye', 'Rogge'],
-      ['soy', 'Soja'], ['spelt', 'Spelt'], ['tapioca', 'Tapioca'], ['wheat', 'Tarwe'], ['sweetpotato', 'Zoete aardappel']
+      ['soy', 'Soja'], ['spelt', 'Spelt'], ['sugar', 'Suiker'], ['tapioca', 'Tapioca'], ['wheat', 'Tarwe'], ['sweetpotato', 'Zoete aardappel']
     ]
   },
   {
@@ -128,6 +128,10 @@ const ALLERGEN_SYNONYMS = {
   chicken: ['kip*', 'chicken'], turkey: ['kalkoen*', 'turkey'], beef: ['rund*', 'beef', 'runder*'],
   lamb: ['lam*', 'lamb', 'schaap*', 'mutton'], duck: ['eend*', 'duck'], pork: ['varken*', 'pork', 'everzwijn*'],
   rabbit: ['konijn*', 'rabbit'], venison: ['hert*', 'venison', 'ree*'], horse: ['paard*', 'horse'],
+  // Geit en waterbuffel staan als eigen allergeen in de lijst: soorten die op
+  // rauwvoer-etiketten staan en niet onder rund of lam vallen. Niet "buffel*",
+  // want dat zou ook "buffelworm" (soldaatvlieg) pakken.
+  goat: ['geit*', 'goat*'], buffalo: ['waterbuffel*', 'buffalo*', 'buffel', 'buffelvlees*'],
   kangaroo: ['kangoeroe*', 'kangaroo'], ostrich: ['struisvogel*', 'ostrich'],
   poultry: ['gevogelte*', 'pluimvee*', 'poultry', 'gans*', 'goose', 'fazant*', 'pheasant', 'kwartel*', 'quail'],
   fish: ['vis*', 'fish*', 'zalm*', 'salmon', 'kabeljauw*', 'tonijn*', 'tuna', 'haring*', 'herring', 'forel*', 'trout', 'makreel*', 'mackerel', 'sardine*', 'sardines', 'ansjovis*', 'anchovies', 'heek', 'wijting*', 'schelvis*', 'koolvis*', 'zeeduivel*'],
@@ -147,6 +151,10 @@ const ALLERGEN_SYNONYMS = {
   bean: ['boon*', 'bonen*', 'sperzieboon*', 'snijboon*', 'kidneyboon*', 'beans'],
   lentil: ['linze*', 'lentil*'], lupin: ['lupine*', 'lupin*', 'lupinen*'], potato: ['aardappel*', 'potato*'],
   sweetpotato: ['zoete aardappel', 'sweet potato'], tapioca: ['tapioca*', 'maniok*', 'cassave*', 'cassava*'],
+  // Suiker: elke vorm waarin suiker op een etiket kan staan. "Ontsuikerd" valt
+  // er bewust buiten (daar is de suiker juist uitgehaald) en glucosamine ook
+  // (dat begint met "glucos", niet met "glucose").
+  sugar: ['suiker*', 'sugar*', 'sacharose*', 'saccharose*', 'sucrose*', 'dextrose*', 'glucose*', 'fructose*', 'maltose*', 'xylose*', 'stroop*', 'siroop*', 'melasse*', 'syrup*', 'karamel*', 'caramel*', 'invertsuiker*', 'rietsuiker*', 'bietensuiker*', 'kandij*'],
   // Groente
   asparagus: ['asperge*', 'asparagus*'], aubergine: ['aubergine*', 'eggplant*'], beetroot: ['biet*', 'beetroot*', 'rode biet'],
   cauliflower: ['bloemkool*', 'cauliflower*'], kale: ['boerenkool*', 'kale'], broccoli: ['broccoli*'],
