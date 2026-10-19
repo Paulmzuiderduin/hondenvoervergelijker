@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Maakt één bestand dat in de Supabase SQL Editor geplakt kan worden: de
-// migratie(s) die nog moeten lopen, gevolgd door de nieuwste importbatch.
+// migratie(s) die nog moeten lopen, de nieuwste importbatch en de nieuwste
+// woordenlijst (de indeling van woorden die de keuring niet kende).
 //
 // Gebruik:
 //   node scripts/maak-plakbestand.mjs 20261019190000_import_herkomst.sql
@@ -42,6 +43,13 @@ const batchTekst = tePlakken.map((naam) => readFileSync(join(IMPORT_SQL, naam), 
 const producten = (batchTekst.match(/^-- bron: /gm) ?? []).length
 const merken = [...new Set((batchTekst.match(/^-- ([^—\n]+) — /gm) ?? []).map((regel) => regel.replace(/^-- /, '').replace(/ — $/, '')))]
 
+// De woordenlijst hoort bij dezelfde ronde: één plakactie zet zowel de nieuwe
+// producten als de indeling van de woorden goed.
+const woordenBestanden = existsSync(IMPORT_SQL) ? readdirSync(IMPORT_SQL).filter((n) => /^woorden-\d{8}-\d{2}\.sql$/.test(n)).sort() : []
+const woordenBestand = woordenBestanden.at(-1) ?? null
+const woordenTekst = woordenBestand ? readFileSync(join(IMPORT_SQL, woordenBestand), 'utf8') : ''
+const woordenAantal = (woordenTekst.match(/^  \('/gm) ?? []).length
+
 function zonderEigenTransactie(tekst) {
   return tekst
     .split('\n')
@@ -54,7 +62,7 @@ function zonderEigenTransactie(tekst) {
 // van het plakbestand zelf, zodat er niet twee tabellen tevoorschijn komen.
 function zonderControleblok(tekst) {
   const regels = tekst.split('\n')
-  const begin = regels.findIndex((regel) => /^-- Controle na het plakken/i.test(regel.trim()))
+  const begin = regels.findIndex((regel) => /^-- Controle/i.test(regel.trim()))
   return (begin >= 0 ? regels.slice(0, begin).join('\n') : tekst).trim()
 }
 
@@ -64,6 +72,7 @@ const kop = [
   '-- Wat erin zit:',
   ...migratiePaden.map((pad, i) => `--   ${i + 1}. migratie ${pad.split('/').pop()}`),
   `--   ${migratiePaden.length + 1}. de importbatch: ${producten} producten van ${merken.join(', ')}`,
+  ...(woordenBestand ? [`--   ${migratiePaden.length + 2}. de woordenlijst: ${woordenAantal} woorden (${woordenBestand})`] : []),
   '--',
   '-- Wat er daarna op de site staat:',
   '--   - de nieuwe producten doen meteen mee in de vergelijking;',
@@ -96,8 +105,10 @@ const staart = [
   ''
 ].join('\n')
 
-const inhoud = [kop, ...migratiePaden.map((pad) => zonderEigenTransactie(readFileSync(pad, 'utf8'))), ...tePlakken.map((naam) => zonderControleblok(zonderEigenTransactie(readFileSync(join(IMPORT_SQL, naam), 'utf8')))), staart].join('\n\n')
+const inhoud = [kop, ...migratiePaden.map((pad) => zonderEigenTransactie(readFileSync(pad, 'utf8'))), ...tePlakken.map((naam) => zonderControleblok(zonderEigenTransactie(readFileSync(join(IMPORT_SQL, naam), 'utf8')))), ...(woordenBestand ? [zonderControleblok(zonderEigenTransactie(woordenTekst))] : []), staart].join('\n\n')
 writeFileSync(DOEL, inhoud)
 console.log(`Geschreven: data/import/sql/plak-dit-in-supabase.sql`)
 console.log(`  migraties: ${migratiePaden.length ? gevraagdeMigraties.join(', ') : 'geen'}`)
 console.log(`  batches: ${tePlakken.join(', ')} (${producten} producten van ${merken.join(', ')})`)
+if (woordenBestand) console.log(`  woordenlijst: ${woordenBestand} (${woordenAantal} woorden)`)
+
