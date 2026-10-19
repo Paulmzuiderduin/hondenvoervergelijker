@@ -14,12 +14,29 @@
 --                niemand het weet
 --
 -- Bestaande rijen schuiven mee: elk ingedeeld woord houdt zijn allergeen.
+-- Opnieuw uitvoeren is veilig: de oude kolom bestaat dan niet meer en het
+-- overschrijven wordt overgeslagen.
 
 alter table public.ingredient_terms add column if not exists allergen_keys text[];
 
-update public.ingredient_terms
-set allergen_keys = array[allergen_key]
-where allergen_key is not null and allergen_keys is null;
+do $$
+begin
+  if exists (
+    select 1
+    from pg_attribute a
+    join pg_class c on c.oid = a.attrelid
+    join pg_namespace n on n.oid = c.relnamespace
+    where n.nspname = 'public'
+      and c.relname = 'ingredient_terms'
+      and a.attname = 'allergen_key'
+      and a.attnum > 0
+      and not a.attisdropped
+  ) then
+    update public.ingredient_terms
+    set allergen_keys = array[allergen_key]
+    where allergen_key is not null and allergen_keys is null;
+  end if;
+end $$;
 
 -- De oude functie noemt de oude kolom bij naam; eerst weg, dan de kolom.
 drop function if exists public.classify_ingredient_term(text, text, text, text);
