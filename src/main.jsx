@@ -231,16 +231,22 @@ function Admin({ terms, reloadTerms, onSaved }) {
 
     <h2>Wat vraagt aandacht ({keuring.teDoen.length})</h2>
     <p><small>{catalogue.length} producten · {keuring.klaar.length} klaar · {keuring.teDoen.length} met een openstaand punt. Een product is klaar als de tekst tegen de bron is gecontroleerd en de keuring geen woorden meer over heeft.</small></p>
-    {catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : keuring.teDoen.length ? keuring.teDoen.map(({ product, version, openWoorden, onbekend, taken, nagelopen, schoon }) => <div className="admin-row" key={product.id}>
-      <span><strong>{product.brand}</strong> — {product.name} {!product.published && '(concept)'} · {taken.join(' · ')}{openWoorden.length ? ` · etiket noemt geen bron voor: ${openWoorden.slice(0, 4).join(', ')}${openWoorden.length > 4 ? ` en ${openWoorden.length - 4} meer` : ''}` : ''}{!nagelopen && schoon ? ' · de keuring ziet hier geen open punten' : ''}{onbekend.length ? ` · onbekende woorden: ${onbekend.slice(0, 4).join(', ')}${onbekend.length > 4 ? ` en ${onbekend.length - 4} meer` : ''}` : ''}</span>
-      {version && <button type="button" disabled={working} onClick={() => markReviewed({ product, version, openWoorden, onbekend, taken })}>{version.reviewed_at ? 'Opnieuw nagelopen' : 'Nagelopen'}</button>}
-      {product.source_url?.startsWith('http') && <a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">bron</a>}
-      <button type="button" onClick={() => edit(product)}>Bewerken</button>
-    </div>) : <p>Niets te doen: elk product is nagekeken of heeft geen openstaand punt.</p>}
+    {catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : keuring.teDoen.length ? keuring.teDoen.map(({ product, version, openWoorden, onbekend, taken, nagelopen, verouderd, schoon }) => {
+      // Het etiket zelf moet nog langs de bron, of alleen een woord wacht nog op
+      // een indeling. Dat verschil bepaalt welke knop hier iets oplost.
+      const tekstNodig = !nagelopen || verouderd
+      return <div className="admin-row" key={product.id}>
+        <span><strong>{product.brand}</strong> — {product.name} {!product.published && '(concept)'} · {taken.join(' · ')}{openWoorden.length ? ` · etiket noemt geen bron voor: ${openWoorden.slice(0, 4).join(', ')}${openWoorden.length > 4 ? ` en ${openWoorden.length - 4} meer` : ''}` : ''}{!nagelopen && schoon ? ' · de keuring ziet hier geen open punten' : ''}{tekstNodig && onbekend.length ? ` · onbekende woorden: ${onbekend.slice(0, 4).join(', ')}${onbekend.length > 4 ? ` en ${onbekend.length - 4} meer` : ''}` : ''}{!tekstNodig ? ' · dit verdwijnt zodra je dat woord hieronder indeelt' : ''}</span>
+        {version && tekstNodig && <button type="button" disabled={working} onClick={() => markReviewed({ product, version, openWoorden, onbekend, taken })}>{version.reviewed_at ? 'Opnieuw nagelopen' : 'Nagelopen'}</button>}
+        {!tekstNodig && <a className="product-link" href="#woorden">naar de woordenlijst</a>}
+        {product.source_url?.startsWith('http') && <a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">bron</a>}
+        <button type="button" onClick={() => edit(product)}>Bewerken</button>
+      </div>
+    }) : <p>Niets te doen: elk product is nagekeken of heeft geen openstaand punt.</p>}
 
     {keuring.woorden.length > 0 && <>
-      <h3>Woorden die de keuring niet kent ({keuring.woorden.length})</h3>
-      <p><small>Eén indeling per woord geldt meteen voor alle producten met dat woord, op de site én in deze lijst.</small></p>
+      <h3 id="woorden">Woorden die de keuring niet kent ({keuring.woorden.length})</h3>
+      <p><small>Eén indeling per woord geldt meteen voor alle producten met dat woord, op de site én in deze takenlijst. Kies je <strong>Blijft onduidelijk</strong>, dan is het woord ingedeeld en verdwijnt het van deze lijst; de site blijft voor de allergenen die erachter kunnen zitten eerlijk "kan erin zitten" zeggen, want dat kan alleen het etiket of de fabrikant wegnemen. Weet je dat het woord geen van de allergenen in onze lijst is, kies dan <strong>Onschuldig</strong>. Weet je welke bron het is, kies dan <strong>Bron van …</strong>; de site noemt het dan als bron.</small></p>
       {keuring.woorden.map(({ woord, producten }) => <div className="admin-row" key={woord}>
         <span><strong>{woord}</strong> · {producten.length} product{producten.length === 1 ? '' : 'en'}: {producten.slice(0, 3).map(({ brand, name }) => `${brand} — ${name}`).join(' · ')}{producten.length > 3 ? ` en ${producten.length - 3} meer` : ''}</span>
         <select value={keuze[woord] || ''} onChange={(e) => setKeuze((old) => ({ ...old, [woord]: e.target.value }))}>
