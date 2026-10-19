@@ -13,6 +13,11 @@ function sourceDomain(url = '') {
   try { return new URL(url).hostname.replace(/^www\./, '') } catch { return '' }
 }
 
+function reviewStatus(version) {
+  if (!version?.ingredients_mapped) return 'nog niet nagelopen'
+  return version.has_uncertain_ingredients ? 'nagekeken, etiket blijft onduidelijk' : 'nagekeken'
+}
+
 function ProductCard({ product, match, excluded = false }) {
   const version = product.recipe_versions?.[0]
   return <article className={excluded ? 'product-card excluded' : 'product-card'}>
@@ -101,6 +106,8 @@ function Admin({ onSaved }) {
     setForm(blankForm); setEditingId(null); setMessage(wasEditing ? 'Product en nieuwe receptversie opgeslagen.' : 'Product opgeslagen.'); onSaved(); loadCatalogue()
   }
   const uncertainWords = useMemo(() => form.ingredients_text ? [...new Set(markUncertainIngredients(form.ingredients_text).filter((segment) => segment.uncertain).map((segment) => segment.text))] : [], [form.ingredients_text])
+  const openProducts = catalogue.filter(({ recipe_versions }) => !recipe_versions?.[0]?.ingredients_mapped).length
+  const unclearProducts = catalogue.filter(({ recipe_versions }) => recipe_versions?.[0]?.ingredients_mapped && recipe_versions?.[0]?.has_uncertain_ingredients).length
   return <form className="admin-form" onSubmit={save}>
     <h2>{editingId ? 'Product en nieuwe receptversie' : 'Product invoeren'}</h2><p>Voer de ingrediënten letterlijk vanaf het etiket in. Bij opslaan van een wijziging blijft de vorige receptversie bewaard.</p>
     <label>Merk<input required value={form.brand} onChange={(e) => change('brand', e.target.value)} /></label>
@@ -111,13 +118,14 @@ function Admin({ onSaved }) {
     <label>Bron (URL of notitie)<input value={form.source_url} onChange={(e) => change('source_url', e.target.value)} /></label>
     <label>Laatst gecontroleerd<input required type="date" value={form.last_checked_at} onChange={(e) => change('last_checked_at', e.target.value)} /></label>
     <label>Volledige ingrediëntenlijst<textarea required rows="5" value={form.ingredients_text} onChange={(e) => change('ingredients_text', e.target.value)} /></label>
-    <button type="button" onClick={detectIngredients}>Herken allergiebronnen uit ingrediënten</button><p><small>Plak de tekst precies zoals op het etiket. De herkenning is een voorstel op basis van woorden in de lijst; controleer de vinkjes altijd zelf en vink daarna "volledig in kaart gebracht" aan. Zonder die bevestiging komt het product nooit bij "Geschikt" te staan.</small></p>{uncertainWords.length > 0 && <p><small>Niet met zekerheid te herleiden (verschijnt rood op de site): {uncertainWords.slice(0, 8).join(', ')}{uncertainWords.length > 8 ? ` en ${uncertainWords.length - 8} meer` : ''}. Noemt de lijst alleen zo'n verzamelnaam, vink dan ook de algemene categorie aan, bijvoorbeeld "Gevogelte (algemeen)" of "Granen (algemeen)".</small></p>}
+    <button type="button" onClick={detectIngredients}>Herken allergiebronnen uit ingrediënten</button><p><small>Plak de tekst precies zoals op het etiket. De herkenning is een voorstel op basis van woorden in de lijst; controleer de vinkjes altijd zelf en vink daarna "nagekeken" aan. Zonder die bevestiging komt het product nooit bij "Geschikt" te staan.</small></p>{uncertainWords.length > 0 && <p><small>Niet met zekerheid te herleiden (verschijnt rood op de site): {uncertainWords.slice(0, 8).join(', ')}{uncertainWords.length > 8 ? ` en ${uncertainWords.length - 8} meer` : ''}. Noemt de lijst alleen zo'n verzamelnaam, vink dan ook de algemene categorie aan, bijvoorbeeld "Gevogelte (algemeen)" of "Granen (algemeen)".</small></p>}
     <fieldset><legend>Bevestigd aanwezige allergiebronnen</legend>{ALLERGEN_GROUPS.map((group) => <fieldset className="allergen-group" key={group.key}><legend>{group.label}</legend>{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={form.allergens.includes(key)} onChange={(e) => change('allergens', e.target.checked ? [...form.allergens, key] : form.allergens.filter((item) => item !== key))} />{label}</label>)}</fieldset>)}</fieldset>
-    <label className="inline"><input type="checkbox" checked={form.mapped} onChange={(e) => change('mapped', e.target.checked)} />Ingrediëntenlijst is volledig in kaart gebracht (geen allergeen gemist)</label>
-    <label className="inline"><input type="checkbox" checked={form.uncertain} onChange={(e) => change('uncertain', e.target.checked)} />Ingrediëntenlijst bevat een onduidelijke categorie</label>
+    <label className="inline"><input type="checkbox" checked={form.mapped} onChange={(e) => change('mapped', e.target.checked)} />Ik heb deze ingrediëntenlijst nagelopen</label>
+    <label className="inline"><input type="checkbox" checked={form.uncertain} onChange={(e) => change('uncertain', e.target.checked)} />Het etiket noemt een onduidelijke categorie (product blijft bij "Controleer etiket/fabrikant")</label>
+    <p><small>Die twee staan los van elkaar. Blijft er na het nalezen een onduidelijke categorie over, vink dan <strong>beide</strong> aan: het product is dan voor jou afgehandeld (het komt niet meer bij "nog niet nagelopen" te staan) en blijft voor bezoekers eerlijk bij "Controleer etiket/fabrikant" staan. Je hoeft het niet opnieuw na te lopen.</small></p>
     <label className="inline"><input type="checkbox" checked={form.published} onChange={(e) => change('published', e.target.checked)} />Publiceren</label>
     <button disabled={saving}>{saving ? 'Opslaan…' : 'Opslaan'}</button>{editingId && <button type="button" onClick={reset}>Annuleren</button>}{message && <p aria-live="polite">{message}</p>}
-    <h2>Catalogus beheren</h2><p><button type="button" disabled={repairing} onClick={repairAllergens}>{repairing ? 'Bezig…' : 'Ontbrekende allergenen aanvullen'}</button> <small>Vult allergenen aan die volgens de huidige herkenning in de etiketten staan maar nog niet zijn aangevinkt, bijvoorbeeld meervoudsvormen als "aardappelen". Bestaande vinkjes blijven staan.</small></p>{catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : catalogue.length ? catalogue.map((product) => <div className="admin-row" key={product.id}><span>{product.brand} — {product.name} {!product.published && '(concept)'} {product.recipe_versions?.[0]?.ingredients_mapped ? '' : '· nog niet bevestigd'}</span><button type="button" onClick={() => edit(product)}>Bewerken</button></div>) : <p>Nog geen producten ingevoerd.</p>}
+    <h2>Catalogus beheren</h2><p><small>{catalogue.length} producten · {catalogue.length - openProducts} nagelopen{unclearProducts ? ` (waarvan ${unclearProducts} met een onduidelijk etiket)` : ''} · {openProducts} nog niet nagelopen.</small></p><p><button type="button" disabled={repairing} onClick={repairAllergens}>{repairing ? 'Bezig…' : 'Ontbrekende allergenen aanvullen'}</button> <small>Vult allergenen aan die volgens de huidige herkenning in de etiketten staan maar nog niet zijn aangevinkt, bijvoorbeeld meervoudsvormen als "aardappelen". Bestaande vinkjes blijven staan.</small></p>{catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : catalogue.length ? catalogue.map((product) => <div className="admin-row" key={product.id}><span>{product.brand} — {product.name} {!product.published && '(concept)'} · {reviewStatus(product.recipe_versions?.[0])}</span><button type="button" onClick={() => edit(product)}>Bewerken</button></div>) : <p>Nog geen producten ingevoerd.</p>}
   </form>
 }
 

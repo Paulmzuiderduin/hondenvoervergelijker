@@ -33,7 +33,7 @@ export function productMatch(product, selectedAllergens, now = new Date()) {
   if (!version) {
     reasons.push('Er is nog geen ingrediëntenlijst ingevoerd')
   } else {
-    if (!version.ingredients_mapped) reasons.push('De ingrediëntenlijst is nog niet volledig in kaart gebracht')
+    if (!version.ingredients_mapped) reasons.push('Deze ingrediëntenlijst is nog niet door de beheerder nagelopen')
     const uncertain = version.has_uncertain_ingredients || ingredients.some(({ certainty }) => certainty !== 'confirmed')
     if (uncertain) reasons.push('Ingrediënt of categorie is niet volledig te herleiden')
   }

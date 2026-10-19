@@ -30,6 +30,13 @@ test('een onzeker bevonden allergeenrij vraagt om controle', () => {
   assert.equal(result.kind, 'check')
 })
 
+test('nagekeken met een onduidelijke categorie blijft bij controleer', () => {
+  const onduidelijk = product({ recipe_versions: [{ ingredients_mapped: true, has_uncertain_ingredients: true, recipe_ingredients: [] }] })
+  assert.equal(productMatch(onduidelijk, [], new Date('2026-10-14')).kind, 'check')
+  assert.equal(productMatch(onduidelijk, ['chicken'], new Date('2026-10-14')).kind, 'check')
+  const schoon = product({ recipe_versions: [{ ingredients_mapped: true, has_uncertain_ingredients: false, recipe_ingredients: [] }] })
+  assert.equal(productMatch(schoon, [], new Date('2026-10-14')).kind, 'suitable')
+})
 test('ingredient detection recognises synonyms and uncertain categories', () => {
   const result = detectIngredientSignals('Zalm (20%), erwten, dierlijke bijproducten')
   assert.deepEqual(result.allergens, ['fish', 'salmon', 'pea'])
