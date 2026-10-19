@@ -1,4 +1,4 @@
-import { ALLERGEN_IMPLIES } from './allergens.js'
+import { ALLERGEN_IMPLIES, assessLabel } from './allergens.js'
 
 const SIX_MONTHS_MS = 183 * 24 * 60 * 60 * 1000
 
@@ -34,7 +34,14 @@ export function productMatch(product, selectedAllergens, now = new Date()) {
     reasons.push('Er is nog geen ingrediëntenlijst ingevoerd')
   } else {
     if (!version.ingredients_mapped) reasons.push('Deze ingrediëntenlijst is nog niet door de beheerder nagelopen')
-    const uncertain = version.has_uncertain_ingredients || ingredients.some(({ certainty }) => certainty !== 'confirmed')
+    // De vlag in de database is de administratie; de etikettekst zelf is het
+    // bewijs. Staat er een bron in die niet bij name is genoemd ("dierlijk vet",
+    // "granen", "bouillon"), dan geldt het product als onzeker, ook als de vlag
+    // nog niet is bijgewerkt.
+    const unclearText = !version.ingredients_text || assessLabel(version.ingredients_text).status === 'aandacht'
+    const uncertain = version.has_uncertain_ingredients
+      || unclearText
+      || ingredients.some(({ certainty }) => certainty !== 'confirmed')
     if (uncertain) reasons.push('Ingrediënt of categorie is niet volledig te herleiden')
   }
   if (isReviewOverdue(product.last_checked_at, now)) reasons.push('Ingrediënten zijn langer dan zes maanden niet bevestigd')

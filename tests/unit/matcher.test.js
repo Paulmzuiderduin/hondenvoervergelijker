@@ -5,15 +5,15 @@ import { ALLERGENS, assessLabel, detectIngredientSignals, markUncertainIngredien
 
 const product = (overrides = {}) => ({
   last_checked_at: '2026-10-01',
-  recipe_versions: [{ has_uncertain_ingredients: false, ingredients_mapped: true, recipe_ingredients: [] }],
+  recipe_versions: [{ ingredients_text: 'Kip 40%, tarwe, erwten', has_uncertain_ingredients: false, ingredients_mapped: true, recipe_ingredients: [] }],
   ...overrides
 })
 
 test('explicit allergen excludes a product', () => {
-  const result = productMatch(product({ recipe_versions: [{ recipe_ingredients: [{ allergen_key: 'chicken', certainty: 'confirmed' }] }] }), ['chicken'], new Date('2026-10-14'))
+  const result = productMatch(product({ recipe_versions: [{ ingredients_text: 'Kip 40%, tarwe', recipe_ingredients: [{ allergen_key: 'chicken', certainty: 'confirmed' }] }] }), ['chicken'], new Date('2026-10-14'))
   assert.equal(result.kind, 'excluded')
 })
-test('uncertain ingredient requires checking', () => assert.equal(productMatch(product({ recipe_versions: [{ has_uncertain_ingredients: true, recipe_ingredients: [] }] }), [], new Date('2026-10-14')).kind, 'check'))
+test('uncertain ingredient requires checking', () => assert.equal(productMatch(product({ recipe_versions: [{ ingredients_text: 'Kip 40%, tarwe', has_uncertain_ingredients: true, recipe_ingredients: [] }] }), [], new Date('2026-10-14')).kind, 'check'))
 test('a current fully mapped product is suitable', () => assert.equal(productMatch(product(), ['beef'], new Date('2026-10-14')).kind, 'suitable'))
 test('six-month threshold requires a review', () => assert.equal(isReviewOverdue('2026-03-01', new Date('2026-10-14')), true))
 
@@ -22,20 +22,28 @@ test('een product zonder receptversie is nooit geschikt', () => {
   assert.equal(result.kind, 'check')
 })
 test('een niet volledig in kaart gebrachte lijst is nooit geschikt', () => {
-  const result = productMatch(product({ recipe_versions: [{ has_uncertain_ingredients: false, ingredients_mapped: false, recipe_ingredients: [] }] }), ['chicken'], new Date('2026-10-14'))
+  const result = productMatch(product({ recipe_versions: [{ ingredients_text: 'Kip 40%, tarwe', has_uncertain_ingredients: false, ingredients_mapped: false, recipe_ingredients: [] }] }), ['chicken'], new Date('2026-10-14'))
   assert.equal(result.kind, 'check')
 })
 test('een onzeker bevonden allergeenrij vraagt om controle', () => {
-  const result = productMatch(product({ recipe_versions: [{ ingredients_mapped: true, recipe_ingredients: [{ allergen_key: 'chicken', certainty: 'uncertain' }] }] }), ['beef'], new Date('2026-10-14'))
+  const result = productMatch(product({ recipe_versions: [{ ingredients_text: 'Kip 40%, tarwe', ingredients_mapped: true, recipe_ingredients: [{ allergen_key: 'chicken', certainty: 'uncertain' }] }] }), ['beef'], new Date('2026-10-14'))
   assert.equal(result.kind, 'check')
 })
 
 test('nagekeken met een onduidelijke categorie blijft bij controleer', () => {
-  const onduidelijk = product({ recipe_versions: [{ ingredients_mapped: true, has_uncertain_ingredients: true, recipe_ingredients: [] }] })
+  const onduidelijk = product({ recipe_versions: [{ ingredients_text: 'Kip 40%, tarwe', ingredients_mapped: true, has_uncertain_ingredients: true, recipe_ingredients: [] }] })
   assert.equal(productMatch(onduidelijk, [], new Date('2026-10-14')).kind, 'check')
   assert.equal(productMatch(onduidelijk, ['chicken'], new Date('2026-10-14')).kind, 'check')
-  const schoon = product({ recipe_versions: [{ ingredients_mapped: true, has_uncertain_ingredients: false, recipe_ingredients: [] }] })
+  const schoon = product({ recipe_versions: [{ ingredients_text: 'Kip 40%, tarwe', ingredients_mapped: true, has_uncertain_ingredients: false, recipe_ingredients: [] }] })
   assert.equal(productMatch(schoon, [], new Date('2026-10-14')).kind, 'suitable')
+})
+test('een etiket met een bron zonder naam is nooit geschikt', () => {
+  const dierlijkVet = product({ recipe_versions: [{ ingredients_text: 'Maïs, tarwe, kip (9%), dierlijk vet', ingredients_mapped: true, has_uncertain_ingredients: false, recipe_ingredients: [] }] })
+  const resultaat = productMatch(dierlijkVet, ['beef'], new Date('2026-10-14'))
+  assert.equal(resultaat.kind, 'check')
+  assert.match(resultaat.reasons.join(' '), /niet volledig te herleiden/)
+  const metBron = product({ recipe_versions: [{ ingredients_text: 'Maïs, kip (9%), dierlijk vet (rund)', ingredients_mapped: true, has_uncertain_ingredients: false, recipe_ingredients: [{ allergen_key: 'beef', certainty: 'confirmed' }] }] })
+  assert.equal(productMatch(metBron, [], new Date('2026-10-14')).kind, 'suitable')
 })
 test('ingredient detection recognises synonyms and uncertain categories', () => {
   const result = detectIngredientSignals('Zalm (20%), erwten, dierlijke bijproducten')
@@ -57,8 +65,8 @@ test('detectie mist een onbekende diersoort niet stilzwijgend', () => {
   assert.equal(result.uncertain, true)
 })
 test('algemene categorie sluit ook de specifieke bronnen uit', () => {
-  const kip = product({ recipe_versions: [{ ingredients_mapped: true, recipe_ingredients: [{ allergen_key: 'chicken', certainty: 'confirmed' }] }] })
-  const tarwe = product({ recipe_versions: [{ ingredients_mapped: true, recipe_ingredients: [{ allergen_key: 'wheat', certainty: 'confirmed' }] }] })
+  const kip = product({ recipe_versions: [{ ingredients_text: 'Kip 40%, erwten', ingredients_mapped: true, recipe_ingredients: [{ allergen_key: 'chicken', certainty: 'confirmed' }] }] })
+  const tarwe = product({ recipe_versions: [{ ingredients_text: 'Tarwe, erwten', ingredients_mapped: true, recipe_ingredients: [{ allergen_key: 'wheat', certainty: 'confirmed' }] }] })
   assert.equal(productMatch(kip, ['poultry'], new Date('2026-10-14')).kind, 'excluded')
   assert.equal(productMatch(tarwe, ['grains'], new Date('2026-10-14')).kind, 'excluded')
   assert.equal(productMatch(kip, ['turkey'], new Date('2026-10-14')).kind, 'suitable')
