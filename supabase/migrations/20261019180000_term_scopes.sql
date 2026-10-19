@@ -92,6 +92,11 @@ $$;
 revoke all on function public.classify_ingredient_term(text, text, text[], text) from public;
 grant execute on function public.classify_ingredient_term(text, text, text[], text) to authenticated;
 
+-- Proefregels opruimen: "test" en "veel" zijn ooit ingedeeld om de knop te
+-- proberen en komen in geen enkel etiket voor. Ze staan hier zodat de
+-- woordenlijst weer alleen echte woorden bevat.
+delete from public.ingredient_terms where term in ('test', 'veel');
+
 -- Twee woorden die al zijn opgezocht, zodat ze niet opnieuw langs de keuring
 -- komen. De indeling is "onduidelijk": de site zegt eerlijk "kan erin zitten"
 -- voor precies de bronnen hieronder, en de rest van het etiket wordt er niet
