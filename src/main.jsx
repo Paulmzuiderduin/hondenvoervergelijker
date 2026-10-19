@@ -32,6 +32,11 @@ function ProductCard({ product, match, excluded = false }) {
   const openWords = [...new Set([...match.hidden.map(({ word }) => word), ...match.unknownWords])]
   const hiddenKeys = [...new Set(match.hidden.flatMap(({ keys }) => keys))]
   const hydrolysed = match.hydrolysed ?? { present: false, words: [], keys: [] }
+  // Alleen "aanwezig" en "kan erin zitten" komen los te staan: daar hoort uitleg
+  // bij (welke bron, welk woord). Alles wat nergens genoemd wordt gaat op één
+  // regel, want anders wordt de kaart bij een ruime keuze tientallen regels lang.
+  const detailStates = match.states.filter((state) => state.state !== 'absent')
+  const absentStates = match.states.filter((state) => state.state === 'absent')
   // De herkomst staat los van het oordeel: een automatisch overgenomen etiket
   // zegt nooit dat een mens ernaar gekeken heeft, en een nagekeken etiket houdt
   // zijn "tekst nagelopen". Zo kan de bezoeker zien wat hij in handen heeft.
@@ -45,14 +50,13 @@ function ProductCard({ product, match, excluded = false }) {
   return <article className={excluded ? 'product-card excluded' : 'product-card'}>
     <div><strong>{product.brand}</strong> — {product.name}</div>
     <small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]}{product.package_size ? ` · ${product.package_size}` : ''}{hydrolysed.present ? ' · gehydrolyseerd eiwit' : ''}</small>
-    {match.states.length > 0 && <ul className="verdicts">{match.states.map((state) => <li key={state.key} className={`verdict ${state.state}`}>
+    {detailStates.length > 0 && <ul className="verdicts">{detailStates.map((state) => <li key={state.key} className={`verdict ${state.state}`}>
       <strong>{ALLERGEN_LABELS[state.key]}</strong>
       {state.state === 'present'
         ? ` staat in de lijst${state.members.some((member) => member !== state.key) ? ` (${labelList(state.members)})` : ''}`
-        : state.state === 'unknown'
-          ? <> kan erin zitten: het etiket noemt geen bron voor {state.words.length > 5 ? `${state.words.slice(0, 5).join(', ')} en ${state.words.length - 5} meer` : state.words.length ? state.words.join(', ') : 'een ingrediënt'}</>
-          : ' wordt nergens genoemd'}
+        : <> kan erin zitten: het etiket noemt geen bron voor {state.words.length > 5 ? `${state.words.slice(0, 5).join(', ')} en ${state.words.length - 5} meer` : state.words.length ? state.words.join(', ') : 'een ingrediënt'}</>}
     </li>)}</ul>}
+    {absentStates.length > 0 && <p className="nergens-genoemd"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 100)}</p>}
     <Ingredients text={version?.ingredients_text} />
     {match.importNote && <p className="import-note"><small>{match.importNote}</small></p>}
     {hydrolysed.present && <p className="note-hydrolysed"><strong>Gehydrolyseerd eiwit:</strong> {hydrolysed.words.length ? `dit etiket noemt ${hydrolysed.words.join(', ')} in gehydrolyseerde vorm` : 'dit etiket noemt gehydrolyseerde eiwitten'}: de eiwitketens zijn opgeknipt, waardoor het lichaam ze vaak niet meer als allergeen herkent. Dierenartsen kiezen zo'n voer juist bij een allergie; deze site telt de bron toch mee, want alleen je dierenarts kan beoordelen of het in jouw geval werkt.</p>}
