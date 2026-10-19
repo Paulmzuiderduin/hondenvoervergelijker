@@ -90,3 +90,7 @@ pas door het SQL-bestand gezet.
   `import_note` (de vertaalaantekening).
 - Producten met een gevulde `twijfel` komen niet in het SQL-bestand; die worden
   apart gemeld zodat een mens ernaar kan kijken.
+- `scripts/controleer-bronnen.mjs` kijkt daarna of de bronpagina nog dezelfde
+  etiket tekst toont (bronbewaking). Verandert een pagina, dan staat dat in
+  `data/import/broncontrole.md`; de tekst op de site verandert niet vanzelf en
+  er wordt niets stilzwijgend overschreven.
