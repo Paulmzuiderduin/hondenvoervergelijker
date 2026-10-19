@@ -87,7 +87,8 @@ const UNCERTAIN_INGREDIENT_TERMS = [
 // goedkeuring: zo'n etiket moet een mens nalezen.
 const RISK_TERMS = [
   // eiwitten zonder bron
-  'eiwit', 'eiwitten', 'eiwitisolaat', 'proteine', 'proteinen', 'protein', 'proteins',
+  'eiwit', 'eiwitten', 'eiwitisolaat', 'eiwitextract', 'eiwitextracten', 'eiwithydrolysaat', 'eiwithydrolysaten',
+  'proteine', 'proteinen', 'proteinehydrolysaat', 'proteinehydrolysaten', 'protein', 'proteins',
   // koolhydraten zonder bron
   'meel', 'meelsoort', 'meelsoorten', 'zetmeel', 'zetmelen', 'gluten', 'gries', 'griesmeel',
   'bloem', 'semolina', 'vlokken', 'zemel', 'zemelen',
@@ -98,6 +99,13 @@ const RISK_TERMS = [
   // dierlijke reststromen en kookvocht
   'bouillon', 'broth', 'stock', 'jus', 'vleesnat', 'vlees*', 'meat*', 'gelatine', 'collageen',
   'bloed', 'bloedmeel', 'beendermeel', 'vleesmeel', 'verenmeel', 'digest',
+  'hydrolysaat', 'hydrolysaten', 'hydrolysate', 'hydrolysates',
+  // dierlijke delen zonder genoemde soort ("44% rug, 13% vlees")
+  'rug', 'ruggen', 'rugstuk', 'hart', 'harten', 'pens', 'pensen', 'maag', 'magen', 'nier', 'nieren',
+  'tong', 'tongen', 'tongbot', 'oor', 'oren', 'rib', 'ribben', 'lever', 'levers', 'long', 'longen',
+  'karkas', 'karkassen', 'bot', 'botten', 'spier', 'spieren', 'orgaan', 'organen', 'kop', 'koppen',
+  'poot', 'poten', 'staart', 'staarten', 'bevleesd*', 'cartilage',
+  'heart', 'liver', 'kidney', 'lung', 'tongue', 'tripe', 'gizzard', 'neck', 'bone', 'bones', 'marrow',
   // rest
   'onbekend', 'diversen', 'overig', 'overige'
 ]
@@ -111,7 +119,42 @@ const OTHER_SOURCE_TERMS = [
   'carrot*', 'biet*', 'beet*', 'citrus*', 'appel*', 'apple*', 'peer*', 'banaan*', 'banana*', 'bosbes*',
   'blueberry*', 'cranberry*', 'pompoen*', 'pumpkin*', 'spinazie*', 'spinach*', 'broccoli*', 'courgette*',
   'zucchini*', 'prei*', 'andijvie*', 'rozemarijn*', 'rosemary*', 'tijm*', 'thyme*', 'peterselie*', 'knoflook*',
-  'garlic*', 'gist*', 'yeast*', 'algen*', 'algae*', 'insect*', 'meelworm*', 'bsf*'
+  'garlic*', 'gist*', 'yeast*', 'algen*', 'algae*', 'insect*', 'meelworm*', 'bsf*',
+  // Plantaardige toevoegingen die op etiketten veel voorkomen.
+  'mango*', 'aardbei*', 'strawberry*', 'braam*', 'blackberry*', 'framboos*', 'raspberry*', 'goudsbloem*',
+  'marigold*', 'brandnetel*', 'nettle*', 'venkel*', 'fennel*', 'karwij*', 'caraway*', 'kurkuma*', 'turmeric*',
+  'kamille*', 'chamomile*', 'melisse*', 'melissa*', 'pastinaak*', 'parsnip*', 'rose hip', 'rosehip*',
+  'rozenbottel*', 'chicorei*', 'chicory*', 'cichorei*', 'lucern*', 'alfalfa*', 'kelp', 'zeewier*',
+  'wier*', 'seaweed*', 'kruid*', 'specerij*', 'spice*', 'veenbes*', 'bosvruchten*', 'tomaten*'
+]
+
+// Bereidings- en vulwoorden: ze zeggen niets over de bron van een allergeen.
+const PROCESS_TERMS = [
+  'vers', 'verse', 'fresh', 'gedroogd*', 'dried', 'gedehydreerd*', 'gedehydrateerd*', 'dehydrated',
+  'gedehydeerd*', 'gehydroliseerd*', 'gehydrolyseerd*', 'hydrolysed', 'cooked',
+  'ontsloten*', 'gemalen*', 'gekookt*', 'geperst*', 'gestoomd', 'verrijkt*', 'verwerkt*', 'bevroren*', 'frozen',
+  'gegrild*', 'gebakken*', 'gemengd*', 'gedeeltelijk*', 'totaal', 'totale', 'min', 'max', 'minimaal', 'maximaal',
+  'gelijkwaardig', 'gerehydrateerd*', 'gehydrateerd*', 'volkoren', 'wholegrain', 'heel', 'hele',
+  'stuk', 'stukken', 'deel', 'delen', 'gedeelte', 'gedeelten', 'daarvan', 'waarvan', 'which', 'waaronder',
+  'met', 'en', 'of', 'van', 'in', 'op', 'aan', 'het', 'de', 'een', 'zijn', 'eigen', 'als', 'bron',
+  'natuurlijk*', 'the', 'and', 'with', 'its', 'own', 'of', 'juice', 'sap', 'vocht',
+  'vezels', 'vezel', 'fiber', 'fibre', 'texturate', 'texturaat', 'toegevoegd*',
+  'melding', 'pagina', 'meldt', 'ook', 'eiwitbron', 'eiwitbronnen'
+]
+
+// Ingrediënten die geen allergeen kunnen zijn en er ook geen kunnen verbergen:
+// water, vitaminen, mineralen, zouten en hulpstoffen. Bewust streng: alles wat
+// dierlijk of plantaardig kán zijn, staat hier niet in.
+const INERT_INGREDIENT_TERMS = [
+  'water', 'vitamine*', 'vitamin*', 'mineraal*', 'mineral*', 'sporenelement*', 'spoorelement*',
+  'calcium*', 'carbonate*', 'kalium*', 'natrium*', 'sodium*', 'chloride*', 'fosfor*', 'fosfaat*', 'magnesium*',
+  'zink*', 'zinc*', 'ijzer*', 'iron*', 'koper*', 'copper*', 'mangaan*', 'manganese*', 'jodium*',
+  'iodine*', 'selenium*', 'biotine*', 'biotin*', 'taurine', 'carnitine', 'choline', 'inositol',
+  'arginine', 'lysine', 'methionine', 'threonine', 'tryptofaan', 'tryptophan',
+  'azijn*', 'vinegar*', 'citroenzuur*', 'citric*', 'ascorbinezuur*', 'ascorbic*', 'tocoferol*', 'tocopherol*',
+  'caroteen*', 'beta', 'antioxidant*', 'conserveermiddel*', 'emulgator*', 'stabilisator*', 'verdikkingsmiddel*',
+  'oligosachariden*', 'oligosaccharide*', 'sacchariden*', 'mannan*', 'manno*', 'oligo*', 'fructo*', 'inuline*', 'inulin*',
+  'prebioticum*', 'probioticum*', 'cellulose*', 'kalk', 'zout', 'zouten', 'mos', 'fos'
 ]
 
 function normaliseText(value = '') {
@@ -171,6 +214,37 @@ const COMPILED_ALLERGEN_TERMS = Object.entries(ALLERGEN_SYNONYMS)
   .map(([key, terms]) => ({ key, terms: terms.map(compileTerm) }))
 const COMPILED_UNCERTAIN_TERMS = UNCERTAIN_INGREDIENT_TERMS.map(compileTerm)
 const COMPILED_RISK_TERMS = RISK_TERMS.map(compileTerm)
+
+// Alles wat de keuring van een ingrediëntwoord kan plaatsen: een allergeenbron,
+// een verzamel- of risicowoord, een andere bron, een onschuldig bestanddeel of een
+// bereidingswoord. Elk woord dat hier niet in voorkomt, is een openstaande vraag
+// voor een mens. Let op: "herkend" is niet hetzelfde als "in orde" — een
+// verzamelwoord als "granen" is bekend, maar blokkeert nog steeds de goedkeuring.
+const COMPILED_KNOWN_TERMS = [
+  ...Object.values(ALLERGEN_SYNONYMS).flatMap((terms) => terms.map(compileTerm)),
+  ...UNCERTAIN_INGREDIENT_TERMS.map(compileTerm),
+  ...RISK_TERMS.map(compileTerm),
+  ...OTHER_SOURCE_TERMS.map(compileTerm),
+  ...INERT_INGREDIENT_TERMS.map(compileTerm),
+  ...PROCESS_TERMS.map(compileTerm)
+]
+
+// Welke woorden van een lijst herkent de keuring? Meerwoords- termen ("rose hip")
+// tellen als geheel.
+function markKnownWords(tokens) {
+  const known = tokens.map(() => false)
+  for (const term of COMPILED_KNOWN_TERMS) {
+    if (term.parts.length === 1) {
+      tokens.forEach((token, index) => { if (!known[index] && termMatches([token], term)) known[index] = true })
+      continue
+    }
+    for (let start = 0; start + term.parts.length <= tokens.length; start += 1) {
+      if (!term.parts.every((part, offset) => tokens[start + offset] === part)) continue
+      for (let offset = 0; offset < term.parts.length; offset += 1) known[start + offset] = true
+    }
+  }
+  return known
+}
 
 // Bronnen die een verzamelwoord kunnen toelichten. De algemene categorieën
 // (granen, gevogelte) tellen hier bewust niet mee: die verklaren niets.
@@ -268,12 +342,24 @@ export function assessLabel(ingredientsText = '') {
   const risky = [...new Set(riskyIndexes.filter(keep))].sort((first, second) => first - second)
   const readWords = (indexes) => [...new Set(indexes.map((index) => tokens[index]))]
 
+  // Dekking: herkent de keuring elk ingrediëntwoord? Een onbekend woord kan een
+  // allergeen verbergen dat niet in de lijst staat, dus zolang er zo'n woord is,
+  // mag niemand beweren dat de allergeenlijst compleet is.
+  const known = markKnownWords(tokens)
+  const unknown = []
+  tokens.forEach((token, index) => {
+    if (known[index] || /^\d+$/.test(token) || unknown.includes(token)) return
+    unknown.push(token)
+  })
+
   return {
     tokens,
     vagueIndexes: vague,
     riskyIndexes: risky,
     vague: readWords(vague),
     risky: readWords(risky),
+    unknown,
+    covered: unknown.length === 0,
     flagged: tokens.map((_, index) => vague.includes(index) || risky.includes(index)),
     status: vague.length || risky.length ? 'aandacht' : 'schoon'
   }

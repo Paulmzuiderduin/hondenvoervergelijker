@@ -153,6 +153,21 @@ test('gierst, spelt, rogge en sorghum horen bij granen', () => {
   assert.deepEqual(detectIngredientSignals('Gierst, spelt, rogge, sorghum, triticale, millet').allergens, ['grains'])
 })
 
+test('de keuring meldt woorden die ze niet kent', () => {
+  assert.deepEqual(assessLabel('Kip 40%, glucosamine, erwten').unknown, ['glucosamine'])
+  assert.equal(assessLabel('Kip 40%, glucosamine, erwten').covered, false)
+  assert.equal(assessLabel('Kip 40%, aardappelen, vitaminen, mineralen').covered, true)
+  assert.equal(assessLabel('Rose hip (0,2%), sodium chloride, vinegar, calcium carbonate').covered, true)
+})
+
+test('een dierlijk deel zonder genoemde soort is een risico', () => {
+  assert.equal(assessLabel('44% rug, 13% vlees').status, 'aandacht')
+  assert.deepEqual(assessLabel('44% rug, 13% vlees').risky, ['rug', 'vlees'])
+  assert.equal(assessLabel('63% Konijn: 44% rug, 13% vlees').status, 'schoon')
+  assert.deepEqual(assessLabel('Beef heart 6%, beef liver 1,5%').risky, [])
+  assert.deepEqual(assessLabel('Tarwe, eiwithydrolysaat, mineralen').risky, ['eiwithydrolysaat'])
+})
+
 test('een bron zonder naam wordt rood gemarkeerd', () => {
   const segmenten = markUncertainIngredients('Maïs, kip (9%), dierlijk vet, bouillon, mineralen')
   assert.deepEqual(segmenten.filter((segment) => segment.uncertain).map((segment) => segment.text), ['dierlijk vet', 'bouillon'])

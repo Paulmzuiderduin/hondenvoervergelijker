@@ -82,15 +82,29 @@ function Admin({ onSaved }) {
     const rows = catalogue.map((product) => {
       const version = product.recipe_versions?.[0]
       const uitslag = version?.ingredients_text ? assessLabel(version.ingredients_text) : null
-      return { product, version, uitslag, onduidelijk: uitslag?.status === 'aandacht' }
+      const open = (uitslag && [...new Set([...uitslag.vague, ...uitslag.risky])].filter((woord) => woord.length > 2)) || []
+      const onbekend = uitslag?.unknown ?? []
+      return {
+        product,
+        version,
+        uitslag,
+        open,
+        onbekend,
+        onduidelijk: uitslag?.status === 'aandacht',
+        // Bewijsbaar zonder mensenhand: elk ingrediëntwoord is herkend én elke
+        // allergeenbron is bij name genoemd. Alleen dan mag de lijst op
+        // "nagekeken" zonder dat iemand ernaar gekeken heeft.
+        bewezen: Boolean(uitslag) && uitslag.status === 'schoon' && !onbekend.length
+      }
     })
-    const open = rows.filter(({ version }) => !version?.ingredients_mapped)
+    const nietNagelopen = rows.filter(({ version }) => !version?.ingredients_mapped)
     return {
       rows,
       eenduidig: rows.filter(({ uitslag }) => uitslag?.status === 'schoon').length,
       onduidelijk: rows.filter(({ onduidelijk }) => onduidelijk).length,
-      schoon: open.filter(({ uitslag }) => uitslag?.status === 'schoon'),
-      blijftOnduidelijk: open.filter(({ onduidelijk }) => onduidelijk),
+      metOnbekendeWoorden: rows.filter(({ onbekend }) => onbekend.length).length,
+      bewezen: nietNagelopen.filter(({ bewezen }) => bewezen),
+      mensenwerk: nietNagelopen.filter(({ bewezen }) => !bewezen),
       vlagWijktAf: rows.filter(({ version, uitslag }) => uitslag && version?.ingredients_mapped && version.has_uncertain_ingredients !== (uitslag.status === 'aandacht'))
     }
   }, [catalogue])
@@ -113,6 +127,23 @@ function Admin({ onSaved }) {
     const { error } = await callSetRecipeReview(rows, mapped, uncertain, touch)
     setReviewing(false)
     reportReview(rows, error)
+  }
+  // Eén product als "nagekeken" vastleggen. Dit is een menselijke uitspraak: de
+  // beheerder heeft de lijst bekeken, ook de woorden die de keuring niet kent.
+  const markReviewed = async ({ product, version, uitslag, onbekend, open, bewezen }) => {
+    if (!supabase) return setMessage('Voeg eerst de Supabase-omgevingsvariabelen toe.')
+    if (reviewing) return
+    const vraag = [
+      `${product.brand} — ${product.name}`,
+      onbekend.length ? `De keuring herkent deze woorden niet: ${onbekend.join(', ')}. Zitten daar geen allergeenbronnen tussen?` : 'De keuring herkent alle ingrediëntwoorden.',
+      open.length ? `Het etiket noemt geen bron voor: ${open.join(', ')}. Het product blijft daarom bij "Controleer etiket/fabrikant" staan.` : 'Elke allergeenbron is bij name genoemd.',
+      'Als nagekeken vastleggen?'
+    ].filter(Boolean).join('\n')
+    if (!window.confirm(vraag)) return
+    setReviewing(true)
+    const { error } = await callSetRecipeReview([{ version }], true, uitslag ? uitslag.status === 'aandacht' : false, true)
+    setReviewing(false)
+    reportReview([{ version, product, uitslag, onbekend, open, bewezen }], error)
   }
   const syncUnclearFlag = async () => {
     const rows = review.vlagWijktAf
@@ -174,16 +205,20 @@ function Admin({ onSaved }) {
     <label>Bron (URL of notitie)<input value={form.source_url} onChange={(e) => change('source_url', e.target.value)} /></label>
     <label>Laatst gecontroleerd<input required type="date" value={form.last_checked_at} onChange={(e) => change('last_checked_at', e.target.value)} /></label>
     <label>Volledige ingrediëntenlijst<textarea required rows="5" value={form.ingredients_text} onChange={(e) => change('ingredients_text', e.target.value)} /></label>
-    <button type="button" onClick={detectIngredients}>Herken allergiebronnen uit ingrediënten</button><p><small>Plak de tekst precies zoals op het etiket. De herkenning is een voorstel op basis van woorden in de lijst; controleer de vinkjes altijd zelf en vink daarna "nagekeken" aan. Zonder die bevestiging komt het product nooit bij "Geschikt" te staan.</small></p><p><small>Etiketcontrole: {labelAdvies.status === 'schoon' ? 'elke allergeenbron in deze lijst staat bij name genoemd.' : `deze lijst noemt een bron die niet bij name staat${uncertainWords.length ? `: ${uncertainWords.slice(0, 8).join(', ')}${uncertainWords.length > 8 ? ` en ${uncertainWords.length - 8} meer` : ''}` : ''}. Die woorden staan rood op de site en het product blijft bij "Controleer etiket/fabrikant" staan — ook als je het nagekeken hebt. Noemt de lijst zo'n verzamelnaam, vink dan ook de algemene categorie aan ("Gevogelte (algemeen)", "Granen (algemeen)"). Weet je van de fabrikant welke bron het is, zet die dan tussen haakjes in de lijst, bijvoorbeeld "dierlijk vet (rund)"; dan is het etiket wel eenduidig.`}</small></p>
+    <button type="button" onClick={detectIngredients}>Herken allergiebronnen uit ingrediënten</button><p><small>Plak de tekst precies zoals op het etiket. De herkenning is een voorstel op basis van woorden in de lijst; controleer de vinkjes altijd zelf en vink daarna "nagekeken" aan. Zonder die bevestiging komt het product nooit bij "Geschikt" te staan.</small></p><p><small>Etiketcontrole: {labelAdvies.status === 'schoon' ? 'elke allergeenbron in deze lijst staat bij name genoemd.' : `deze lijst noemt een bron die niet bij name staat${uncertainWords.length ? `: ${uncertainWords.slice(0, 8).join(', ')}${uncertainWords.length > 8 ? ` en ${uncertainWords.length - 8} meer` : ''}` : ''}. Die woorden staan rood op de site en het product blijft bij "Controleer etiket/fabrikant" staan — ook als je het nagekeken hebt. Noemt de lijst zo'n verzamelnaam, vink dan ook de algemene categorie aan ("Gevogelte (algemeen)", "Granen (algemeen)"). Weet je van de fabrikant welke bron het is, zet die dan tussen haakjes in de lijst, bijvoorbeeld "dierlijk vet (rund)"; dan is het etiket wel eenduidig.`}</small></p><p><small>Woorden: {labelAdvies.unknown.length ? `de keuring herkent deze woorden niet: ${labelAdvies.unknown.slice(0, 8).join(', ')}${labelAdvies.unknown.length > 8 ? ` en ${labelAdvies.unknown.length - 8} meer` : ''}. Bekijk of daar een allergeenbron in kan zitten; herken je ze en klopt de lijst, dan kun je het product nagekeken vastleggen.` : 'elk ingrediëntwoord in deze lijst is herkend.'}</small></p>
     <fieldset><legend>Bevestigd aanwezige allergiebronnen</legend>{ALLERGEN_GROUPS.map((group) => <fieldset className="allergen-group" key={group.key}><legend>{group.label}</legend>{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={form.allergens.includes(key)} onChange={(e) => change('allergens', e.target.checked ? [...form.allergens, key] : form.allergens.filter((item) => item !== key))} />{label}</label>)}</fieldset>)}</fieldset>
     <label className="inline"><input type="checkbox" checked={form.mapped} onChange={(e) => change('mapped', e.target.checked)} />Ik heb deze ingrediëntenlijst nagelopen</label>
-    <p><small>De vlag "onduidelijke categorie" hoef je niet meer zelf te zetten: die volgt uit de etikettekst (zie "Etiketcontrole" hierboven). Zo staan de rode woorden op de site en het oordeel "Controleer etiket/fabrikant" altijd op één lijn. Een lijst die je nagekeken hebt maar waarin zo'n bron blijft staan, komt niet meer bij "nog niet nagelopen" te staan en blijft voor bezoekers eerlijk bij "Controleer etiket/fabrikant".</small></p>
+    <p><small>Het vinkje "nagekeken" is jouw uitspraak dat de allergeenlijst compleet is: ofwel de keuring herkent elk woord en ziet elke bron bij name genoemd (dan gebeurt het ook automatisch), ofwel jij hebt de openstaande punten hierboven beoordeeld. De vlag "onduidelijke categorie" hoef je niet zelf te zetten — die volgt uit de etikettekst, zodat de rode woorden op de site en het oordeel "Controleer etiket/fabrikant" altijd op één lijn staan.</small></p>
     <label className="inline"><input type="checkbox" checked={form.published} onChange={(e) => change('published', e.target.checked)} />Publiceren</label>
     <button disabled={saving}>{saving ? 'Opslaan…' : 'Opslaan'}</button>{editingId && <button type="button" onClick={reset}>Annuleren</button>}{message && <p aria-live="polite">{message}</p>}
-    <h2>Catalogus beheren</h2><p><small>{catalogue.length} producten · {catalogue.length - openProducts} nagelopen{unclearProducts ? ` (waarvan ${unclearProducts} met een onduidelijk etiket)` : ''} · {openProducts} nog niet nagelopen. Etiketcontrole: {review.eenduidig} etiketten zijn eenduidig, {review.onduidelijk} noemen een bron die niet bij name staat.</small></p><p><button type="button" disabled={repairing} onClick={repairAllergens}>{repairing ? 'Bezig…' : 'Ontbrekende allergenen aanvullen'}</button> <small>Vult allergenen aan die volgens de huidige herkenning in de etiketten staan maar nog niet zijn aangevinkt, bijvoorbeeld meervoudsvormen als "aardappelen". Bestaande vinkjes blijven staan.</small></p><p><button type="button" disabled={reviewing || !review.schoon.length} onClick={() => applyReview(review.schoon, { mapped: true, uncertain: false, touch: true, vraag: `De etiketten van deze ${review.schoon.length} product${review.schoon.length === 1 ? '' : 'en'} noemen elke allergeenbron bij name. Ze als "nagekeken" vastleggen?` })}>Eenduidige etiketten goedkeuren ({review.schoon.length})</button> <button type="button" disabled={reviewing || !review.blijftOnduidelijk.length} onClick={() => applyReview(review.blijftOnduidelijk, { mapped: true, uncertain: true, touch: false, vraag: `De etiketten van deze ${review.blijftOnduidelijk.length} product${review.blijftOnduidelijk.length === 1 ? '' : 'en'} noemen een bron die niet bij name staat. Ze als nagekeken vastleggen? Ze blijven bij "Controleer etiket/fabrikant" staan.` })}>Nagekeken, bron blijft onduidelijk ({review.blijftOnduidelijk.length})</button> <button type="button" disabled={reviewing || !review.vlagWijktAf.length} onClick={syncUnclearFlag}>Etiketvlag rechtzetten ({review.vlagWijktAf.length})</button></p><p><small>Deze drie knoppen doen het handwerk voor de hele catalogus in één keer: <strong>goedkeuren</strong> zet etiketten waarin elke bron bij name staat op "nagekeken", <strong>nagekeken</strong> haalt lijsten met een blijvend onduidelijke bron van de takenlijst, en <strong>rechtzetten</strong> zet de vlag "onduidelijke categorie" gelijk met de etikettekst (bijvoorbeeld "dierlijk vet", "granen", "gevogeltevet"). Voer je nieuwe producten in, dan hoef je alleen de etiketten na te lopen waarvoor de keuring "onduidelijk" zegt.</small></p>{catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : catalogue.length ? review.rows.map(({ product, version, uitslag }) => {
-      const woorden = uitslag?.status === 'aandacht' ? [...uitslag.vague, ...uitslag.risky] : []
+    <h2>Catalogus beheren</h2>
+    <p><small>{catalogue.length} producten · {catalogue.length - openProducts} nagelopen{unclearProducts ? ` (waarvan ${unclearProducts} met een onduidelijk etiket)` : ''} · {openProducts} nog niet nagelopen. Etiketcontrole: {review.eenduidig} etiketten zijn eenduidig, {review.onduidelijk} noemen geen bron; bij {review.metOnbekendeWoorden} producten staan woorden die de keuring niet kent.</small></p>
+    <p><button type="button" disabled={repairing} onClick={repairAllergens}>{repairing ? 'Bezig…' : 'Ontbrekende allergenen aanvullen'}</button> <small>Vult allergenen aan die volgens de huidige herkenning in de etiketten staan maar nog niet zijn aangevinkt, bijvoorbeeld meervoudsvormen als "aardappelen". Bestaande vinkjes blijven staan.</small></p>
+    <p><button type="button" disabled={reviewing || !review.bewezen.length} onClick={() => applyReview(review.bewezen, { mapped: true, uncertain: false, touch: true, vraag: `Van deze ${review.bewezen.length} product${review.bewezen.length === 1 ? '' : 'en'} herkent de keuring elk ingrediëntwoord én staat elke allergeenbron bij name. Zonder mensenhand goedkeuren?` })}>Zonder mensenhand goedkeuren ({review.bewezen.length})</button> <button type="button" disabled={reviewing || !review.vlagWijktAf.length} onClick={syncUnclearFlag}>Etiketvlag rechtzetten ({review.vlagWijktAf.length})</button></p>
+    <p><small>De eerste knop is geen gok: hij verschijnt alleen als de keuring elk ingrediëntwoord herkent én elke allergeenbron bij name ziet genoemd. Staat er iets open, dan blijft het product op de takenlijst en beoordeel je het per stuk — de regel eronder zegt precies welk woord of welke bron nog open is. "Etiketvlag rechtzetten" zet de vlag gelijk met de etikettekst zelf.</small></p>
+    {catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : catalogue.length ? review.rows.map(({ product, version, uitslag, open, onbekend, bewezen }) => {
       const wijktAf = uitslag && version.ingredients_mapped && version.has_uncertain_ingredients !== (uitslag.status === 'aandacht')
-      return <div className="admin-row" key={product.id}><span>{product.brand} — {product.name} {!product.published && '(concept)'} · {reviewStatus(version)}{woorden.length ? ` · etiket noemt: ${woorden.slice(0, 4).join(', ')}${woorden.length > 4 ? ` en ${woorden.length - 4} meer` : ''}` : uitslag ? ' · etiket is eenduidig' : ''}{wijktAf ? ' · vlag wijkt af van de tekst' : ''}</span><button type="button" onClick={() => edit(product)}>Bewerken</button></div>
+      return <div className="admin-row" key={product.id}><span>{product.brand} — {product.name} {!product.published && '(concept)'} · {reviewStatus(version)}{uitslag ? (uitslag.status === 'schoon' ? ' · etiket is eenduidig' : ` · etiket noemt geen bron voor: ${open.slice(0, 4).join(', ')}${open.length > 4 ? ` en ${open.length - 4} meer` : ''}`) : ' · geen etiket'}{onbekend.length ? ` · ${version.ingredients_mapped ? 'let op, woorden die de keuring niet kent' : 'nog te beoordelen woorden'}: ${onbekend.slice(0, 4).join(', ')}${onbekend.length > 4 ? ` en ${onbekend.length - 4} meer` : ''}` : ' · alle ingrediëntwoorden herkend'}{wijktAf ? ' · vlag wijkt af van de tekst' : ''}{bewezen && !version.ingredients_mapped ? ' · zonder mensenhand goed te keuren' : ''}</span>{!version.ingredients_mapped && <button type="button" disabled={reviewing} onClick={() => markReviewed({ product, version, uitslag, onbekend, open, bewezen })}>Nagelopen</button>}<button type="button" onClick={() => edit(product)}>Bewerken</button></div>
     }) : <p>Nog geen producten ingevoerd.</p>}
   </form>
 }
