@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { isReviewOverdue, productMatch } from '../../src/lib/matcher.js'
-import { detectIngredientSignals } from '../../src/lib/allergens.js'
+import { ALLERGENS, detectIngredientSignals, markUncertainIngredients } from '../../src/lib/allergens.js'
 
 const product = (overrides = {}) => ({
   last_checked_at: '2026-10-01',
@@ -37,15 +37,45 @@ test('ingredient detection recognises synonyms and uncertain categories', () => 
 })
 test('detectie herkent Nederlandse samenstellingen en meervouden', () => {
   const result = detectIngredientSignals('Vers eendenvlees, kippenlever, melkpoeder, weipoeder, visolie')
-  assert.deepEqual(result.allergens, ['chicken', 'duck', 'fish', 'milk'])
+  assert.deepEqual(result.allergens, ['duck', 'chicken', 'fish', 'milk'])
 })
 test('"eiwit" is geen eiallergeen en gevogelte is onzeker', () => {
   const result = detectIngredientSignals('Gedroogd dierlijk eiwit (rund 21%, kip 4%), gevogeltevet')
-  assert.deepEqual(result.allergens, ['chicken', 'beef'])
+  assert.deepEqual(result.allergens, ['poultry', 'chicken', 'beef'])
   assert.equal(result.uncertain, true)
 })
 test('detectie mist een onbekende diersoort niet stilzwijgend', () => {
   const result = detectIngredientSignals('Vleesmix (33%), mais, tarwe, gevogelte (9%), gehydrolyseerde kippenlever')
-  assert.deepEqual(result.allergens, ['chicken', 'wheat', 'corn'])
+  assert.deepEqual(result.allergens, ['poultry', 'chicken', 'corn', 'wheat'])
   assert.equal(result.uncertain, true)
+})
+test('algemene categorie sluit ook de specifieke bronnen uit', () => {
+  const kip = product({ recipe_versions: [{ ingredients_mapped: true, recipe_ingredients: [{ allergen_key: 'chicken', certainty: 'confirmed' }] }] })
+  const tarwe = product({ recipe_versions: [{ ingredients_mapped: true, recipe_ingredients: [{ allergen_key: 'wheat', certainty: 'confirmed' }] }] })
+  assert.equal(productMatch(kip, ['poultry'], new Date('2026-10-14')).kind, 'excluded')
+  assert.equal(productMatch(tarwe, ['grains'], new Date('2026-10-14')).kind, 'excluded')
+  assert.equal(productMatch(kip, ['turkey'], new Date('2026-10-14')).kind, 'suitable')
+  assert.equal(productMatch(kip, ['grains'], new Date('2026-10-14')).kind, 'suitable')
+})
+test('elke allergeen in de keuzelijst is ook echt te herkennen', () => {
+  const tekst = 'kip kalkoen rund lam eend varken konijn hert paard vis zalm kabeljauw ei melk weipoeder tarwe mais rijst gerst haver soja erwt aardappel kikkererwt gevogelte granen'
+  assert.deepEqual(detectIngredientSignals(tekst).allergens, ALLERGENS.map(({ key }) => key))
+})
+
+test('markeert niet te herleiden delen en laat de etiket tekst exact intact', () => {
+  const tekst = 'Granen (volkoren granen 63%), vlees en dierlijke bijproducten (8% *), gevogeltevet, kip (10%)'
+  const segmenten = markUncertainIngredients(tekst)
+  assert.equal(segmenten.map((segment) => segment.text).join(''), tekst)
+  assert.deepEqual(segmenten.filter((segment) => segment.uncertain).map((segment) => segment.text), [
+    'Granen', 'granen', 'vlees en dierlijke bijproducten', 'gevogeltevet'
+  ])
+})
+test('markeert niets in een lijst met alleen herleidbare bronnen', () => {
+  assert.deepEqual(markUncertainIngredients('Kip 40%, tarwe, erwten'), [{ text: 'Kip 40%, tarwe, erwten', uncertain: false }])
+  assert.deepEqual(markUncertainIngredients(''), [])
+})
+test('markeert ook woorden met diakritische tekens', () => {
+  const segmenten = markUncertainIngredients('Oliën en vetten (5%), pluimveevlees')
+  assert.deepEqual(segmenten.filter((segment) => segment.uncertain).map((segment) => segment.text), ['Oliën en vetten', 'pluimveevlees'])
+  assert.equal(segmenten.map((segment) => segment.text).join(''), 'Oliën en vetten (5%), pluimveevlees')
 })

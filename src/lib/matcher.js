@@ -1,4 +1,17 @@
+import { ALLERGEN_IMPLIES } from './allergens.js'
+
 const SIX_MONTHS_MS = 183 * 24 * 60 * 60 * 1000
+
+// "Gevogelte (algemeen)" sluit ook kip, kalkoen en eend uit; "Granen (algemeen)"
+// ook tarwe, gerst, haver, mais en rijst. Andersom geldt dat niet: kies je één
+// specifieke bron, dan telt alleen die bron.
+function expandSelection(selectedAllergens) {
+  const wanted = new Set(selectedAllergens)
+  for (const key of selectedAllergens) {
+    for (const implied of ALLERGEN_IMPLIES[key] ?? []) wanted.add(implied)
+  }
+  return wanted
+}
 
 export function isReviewOverdue(checkedAt, now = new Date()) {
   if (!checkedAt) return true
@@ -8,7 +21,8 @@ export function isReviewOverdue(checkedAt, now = new Date()) {
 export function productMatch(product, selectedAllergens, now = new Date()) {
   const version = product.recipe_versions?.[0]
   const ingredients = version?.recipe_ingredients ?? []
-  const matches = ingredients.filter((ingredient) => selectedAllergens.includes(ingredient.allergen_key))
+  const wanted = expandSelection(selectedAllergens)
+  const matches = ingredients.filter((ingredient) => wanted.has(ingredient.allergen_key))
   if (matches.length) {
     return { kind: 'excluded', reasons: matches.map(({ allergen_key }) => allergen_key) }
   }
