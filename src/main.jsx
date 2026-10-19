@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { memo, useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, assessLabel, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients, missingAllergenKeys, setCustomTerms, sortAllergenKeys } from './lib/allergens'
 import { isReviewOverdue, productMatch } from './lib/matcher'
@@ -18,6 +18,14 @@ function labelList(keys = [], max = 5) {
   const labels = keys.map((key) => ALLERGEN_LABELS[key] ?? key)
   return `${labels.slice(0, max).join(', ')}${labels.length > max ? ` en ${labels.length - max} meer` : ''}`
 }
+
+// De etikettekst zelf verandert nooit tijdens het vergelijken; alleen het oordeel
+// erboven. Zonder deze memo zou elke kaart bij elk vinkje de hele
+// ingrediëntenlijst opnieuw opbouwen — honderden stukjes tekst per kaart.
+const Ingredients = memo(function Ingredients({ text }) {
+  if (!text) return <p>Geen ingrediëntenlijst ingevoerd.</p>
+  return <p>{markUncertainIngredients(text).map((segment, index) => segment.uncertain ? <mark className="uncertain-ingredient" key={index}>{segment.text}</mark> : segment.text)}</p>
+})
 
 function ProductCard({ product, match, excluded = false }) {
   const version = product.recipe_versions?.[0]
@@ -45,7 +53,7 @@ function ProductCard({ product, match, excluded = false }) {
           ? <> kan erin zitten: het etiket noemt geen bron voor {state.words.length > 5 ? `${state.words.slice(0, 5).join(', ')} en ${state.words.length - 5} meer` : state.words.length ? state.words.join(', ') : 'een ingrediënt'}</>
           : ' wordt nergens genoemd'}
     </li>)}</ul>}
-    <p>{version?.ingredients_text ? markUncertainIngredients(version.ingredients_text).map((segment, index) => segment.uncertain ? <mark className="uncertain-ingredient" key={index}>{segment.text}</mark> : segment.text) : 'Geen ingrediëntenlijst ingevoerd.'}</p>
+    <Ingredients text={version?.ingredients_text} />
     {match.importNote && <p className="import-note"><small>{match.importNote}</small></p>}
     {hydrolysed.present && <p className="note-hydrolysed"><strong>Gehydrolyseerd eiwit:</strong> {hydrolysed.words.length ? `dit etiket noemt ${hydrolysed.words.join(', ')} in gehydrolyseerde vorm` : 'dit etiket noemt gehydrolyseerde eiwitten'}: de eiwitketens zijn opgeknipt, waardoor het lichaam ze vaak niet meer als allergeen herkent. Dierenartsen kiezen zo'n voer juist bij een allergie; deze site telt de bron toch mee, want alleen je dierenarts kan beoordelen of het in jouw geval werkt.</p>}
     <small>{herkomst}</small>

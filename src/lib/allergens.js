@@ -3,7 +3,7 @@ export const ALLERGEN_GROUPS = [
     key: 'protein',
     label: 'Eiwitbron',
     allergenPairs: [
-      ['anchovy', 'Ansjovis'], ['duck', 'Eend'], ['trout', 'Forel'], ['goat', 'Geit'], ['poultry', 'Gevogelte (algemeen)'], ['herring', 'Haring'],
+      ['anchovy', 'Ansjovis'], ['duck', 'Eend'], ['trout', 'Forel'], ['goose', 'Gans'], ['goat', 'Geit'], ['poultry', 'Gevogelte (algemeen)'], ['herring', 'Haring'],
       ['venison', 'Hert'], ['insect', 'Insecten'], ['turkey', 'Kalkoen'], ['kangaroo', 'Kangoeroe'], ['chicken', 'Kip'],
       ['rabbit', 'Konijn'], ['lamb', 'Lam'], ['mackerel', 'Makreel'], ['horse', 'Paard'], ['beef', 'Rund'],
       ['sardine', 'Sardine'], ['shellfish', 'Schaaldieren'], ['ostrich', 'Struisvogel'], ['tuna', 'Tonijn'], ['pork', 'Varken'],
@@ -62,12 +62,12 @@ export const FOOD_TYPES = [
 export const ALLERGEN_LABELS = Object.fromEntries(ALLERGENS.map(({ key, label }) => [key, label]))
 
 // Algemene categorieën: wie "Gevogelte (algemeen)" kiest bedoelt ook kip,
-// kalkoen en eend; wie "Granen (algemeen)" kiest bedoelt ook tarwe, gerst,
-// haver, mais en rijst; wie "Groenten (algemeen)" kiest bedoelt ook wortel,
-// pompoen en spinazie. En "Vis (alle soorten)" dekt zalm, witvis en tonijn.
-// Kiest iemand één specifieke bron, dan geldt alleen die bron.
+// kalkoen, eend en gans; wie "Granen (algemeen)" kiest bedoelt ook tarwe,
+// gerst, haver, mais en rijst; wie "Groenten (algemeen)" kiest bedoelt ook
+// wortel, pompoen en spinazie. En "Vis (alle soorten)" dekt zalm, witvis en
+// tonijn. Kiest iemand één specifieke bron, dan geldt alleen die bron.
 export const ALLERGEN_IMPLIES = {
-  poultry: ['chicken', 'turkey', 'duck'],
+  poultry: ['chicken', 'turkey', 'duck', 'goose'],
   grains: ['wheat', 'barley', 'oats', 'corn', 'rice', 'millet', 'rye', 'spelt', 'buckwheat', 'quinoa'],
   fish: ['salmon', 'whitefish', 'tuna', 'trout', 'herring', 'mackerel', 'anchovy', 'sardine'],
   vegetables: ['asparagus', 'aubergine', 'beetroot', 'cauliflower', 'kale', 'broccoli', 'courgette', 'garlic', 'cucumber', 'parsnip', 'paprika', 'pumpkin', 'leek', 'celery', 'spinach', 'tomato', 'onion', 'carrot'],
@@ -86,7 +86,7 @@ export function sortAllergenKeys(keys) {
 // tarwe en gerst, maar nooit kip. Daardoor gaat "Controleer etiket/fabrikant"
 // alleen nog over de allergenen die de bezoeker zelf heeft gekozen.
 const ALL_KEYS = ALLERGENS.map(({ key }) => key)
-const MEAT_KEYS = ['chicken', 'turkey', 'beef', 'lamb', 'duck', 'pork', 'rabbit', 'venison', 'horse', 'kangaroo', 'ostrich', 'poultry']
+const MEAT_KEYS = ['chicken', 'turkey', 'beef', 'lamb', 'duck', 'goose', 'pork', 'rabbit', 'venison', 'horse', 'kangaroo', 'ostrich', 'poultry']
 const GRAIN_KEYS = ['wheat', 'barley', 'oats', 'corn', 'rice', 'grains', 'millet', 'rye', 'spelt', 'buckwheat', 'quinoa']
 const PLANT_KEYS = ['pea', 'potato', 'soy', 'chickpea', 'bean', 'lentil', 'lupin', 'sweetpotato', 'tapioca']
 const VEG_KEYS = ['asparagus', 'aubergine', 'beetroot', 'cauliflower', 'kale', 'broccoli', 'courgette', 'vegetables', 'garlic', 'cucumber', 'parsnip', 'paprika', 'pumpkin', 'leek', 'celery', 'spinach', 'tomato', 'onion', 'carrot']
@@ -111,7 +111,7 @@ const ANIMAL_PART_KEYS = [...MEAT_KEYS, 'fish', 'shellfish', 'insect']
 // aangetoonde bron, ook al bevatten ze zelf geen allergeenwoord.
 const UMBRELLA_KEYS = new Set(['grains', 'poultry', 'vegetables', 'fruit', 'herbs'])
 
-// "Gevogelte" verbergt ook kip, kalkoen en eend; "vis" ook zalm en witvis.
+// "Gevogelte" verbergt ook kip, kalkoen, eend en gans; "vis" ook zalm en witvis.
 export function expandAllergenKeys(keys) {
   const wanted = new Set(keys)
   for (const key of keys) for (const implied of ALLERGEN_IMPLIES[key] ?? []) wanted.add(implied)
@@ -133,7 +133,10 @@ const ALLERGEN_SYNONYMS = {
   // want dat zou ook "buffelworm" (soldaatvlieg) pakken.
   goat: ['geit*', 'goat*'], buffalo: ['waterbuffel*', 'buffalo*', 'buffel', 'buffelvlees*'],
   kangaroo: ['kangoeroe*', 'kangaroo'], ostrich: ['struisvogel*', 'ostrich'],
-  poultry: ['gevogelte*', 'pluimvee*', 'poultry', 'gans*', 'ganzen*', 'goose', 'fazant*', 'pheasant', 'kwartel*', 'quail'],
+  // Gans staat als eigen allergeen in de lijst (net als geit en waterbuffel).
+  // "ganzen*" is nodig omdat "gans*" de z-vorm niet matcht.
+  goose: ['gans*', 'ganzen*', 'goose'],
+  poultry: ['gevogelte*', 'pluimvee*', 'poultry', 'fazant*', 'pheasant', 'kwartel*', 'quail'],
   fish: ['vis*', 'fish*', 'zalm*', 'salmon', 'kabeljauw*', 'tonijn*', 'tuna', 'haring*', 'herring', 'forel*', 'trout', 'makreel*', 'mackerel', 'sardine*', 'sardines', 'ansjovis*', 'anchovies', 'heek', 'wijting*', 'schelvis*', 'koolvis*', 'zeeduivel*'],
   whitefish: ['witvis', 'kabeljauw*', 'schelvis*', 'koolvis*', 'heek', 'wijting*', 'zeeduivel*'],
   salmon: ['zalm*', 'salmon'], tuna: ['tonijn*', 'tuna'], trout: ['forel*', 'trout'], herring: ['haring*', 'herring'],
@@ -356,6 +359,10 @@ function termMatches(tokens, { parts, prefix }) {
 // alle producten, zodat een nieuw woord nooit per product opnieuw beoordeeld
 // hoeft te worden.
 let customTerms = []
+// Verandert de woordenlijst, dan verandert elke keuring. De twee caches verderop
+// hangen aan dit nummer, zodat ze na een nieuwe indeling automatisch vervallen.
+let vocabularyVersion = 0
+let termsSignature = ''
 let COMPILED_ALLERGEN_TERMS = []
 let COMPILED_UNCERTAIN_TERMS = []
 let COMPILED_RISK_TERMS = []
@@ -424,7 +431,15 @@ function sourceKeysOf(word) {
 // een allergeen verbergen; met allergen_keys erbij weet de beheerder welke dat
 // kunnen zijn (leeg of ontbrekend = elk allergeen).
 export function setCustomTerms(terms = []) {
-  customTerms = Array.isArray(terms) ? terms.filter(({ term, kind }) => term && kind) : []
+  const volgende = Array.isArray(terms) ? terms.filter(({ term, kind }) => term && kind) : []
+  // De site geeft bij elke allergenenwissel dezelfde woordenlijst opnieuw door.
+  // Zonder deze controle zou elke wissel de bewaarde keuringen hieronder wissen
+  // en alle 228 etiketten opnieuw laten doorrekenen.
+  const kenmerk = JSON.stringify(volgende.map(({ term, kind, allergen_keys }) => [term, kind, allergen_keys ?? []]))
+  if (kenmerk === termsSignature) return
+  termsSignature = kenmerk
+  customTerms = volgende
+  vocabularyVersion += 1
   buildVocabulary()
 }
 
@@ -475,11 +490,30 @@ function explainedByParenthetical(tokens, depthBefore, breakBefore, index) {
   return false
 }
 
+// Het keuren van een etiket is rekenwerk: tientallen woorden langs honderden
+// termen. De uitslag hangt alleen van de tekst en de woordenlijst af, dus we
+// bewaren hem: bij het wisselen van een allergeen hoeft geen enkel etiket
+// opnieuw door de keuring. De bewaarde uitslag wordt door alle kaarten gedeeld
+// en mag daarom nooit worden aangepast.
+const RESULT_CACHE_LIMIT = 2000
+const assessCache = new Map()
+const markCache = new Map()
+function remember(cache, sleutel, waarde) {
+  if (cache.size >= RESULT_CACHE_LIMIT) cache.clear()
+  cache.set(sleutel, waarde)
+  return waarde
+}
+
 // Hét oordeel over één etiket, in één keer: welke woorden geen bron noemen (voor
 // de rode markering op de site), welke allergenen daardoor niet uitgesloten zijn
 // (voor het oordeel per allergeen) en of de keuring elk ingrediëntwoord herkent.
 // Doordat alles uit deze ene functie komt, kunnen die drie nooit uit elkaar lopen.
 export function assessLabel(ingredientsText = '') {
+  const tekst = String(ingredientsText)
+  const cachesleutel = `${vocabularyVersion}\u0000${tekst}`
+  const bewaard = assessCache.get(cachesleutel)
+  if (bewaard) return bewaard
+
   const tokens = []
   const depthBefore = []
   const breakBefore = []
@@ -488,7 +522,7 @@ export function assessLabel(ingredientsText = '') {
   let anchor = null
   let depth = 0
   let pendingBreak = false
-  for (const token of markedTokens(ingredientsText)) {
+  for (const token of markedTokens(tekst)) {
     if (token === '(') { depth += 1; continue }
     if (token === ')') { depth = Math.max(0, depth - 1); continue }
     if (token === ',') { if (depth === 0) pendingBreak = true; continue }
@@ -618,8 +652,18 @@ export function assessLabel(ingredientsText = '') {
     keys: sortAllergenKeys([...hydrolysedKeys])
   }
 
-  return {
+  // Welke allergenen noemt het etiket zelf? Dit gebeurde eerst in een aparte
+  // ronde door alle woorden (detectIngredientSignals); nu levert één keuring
+  // alles wat de site nodig heeft.
+  const allergens = sortAllergenKeys(COMPILED_ALLERGEN_TERMS
+    .filter(({ terms }) => terms.some((term) => termMatches(tokens, term)))
+    .map(({ key }) => key))
+
+  return remember(assessCache, cachesleutel, {
     tokens,
+    // De bronnen die het etiket noemt: de vergelijking gebruikt ze voor
+    // "aanwezig". Gedeeld met alle kaarten, dus niet aanpassen.
+    allergens,
     vagueIndexes: vague,
     riskyIndexes: risky,
     vague: readWords(vague),
@@ -637,16 +681,14 @@ export function assessLabel(ingredientsText = '') {
     // die op de kaart hoort te staan. Het oordeel per allergeen verandert er
     // niets door: de genoemde bron blijft gewoon meetellen.
     hydrolysed
-  }
+  })
 }
 
 export function detectIngredientSignals(ingredientsText) {
-  const { tokens, status } = assessLabel(ingredientsText)
-  const allergens = COMPILED_ALLERGEN_TERMS
-    .filter(({ terms }) => terms.some((term) => termMatches(tokens, term)))
-    .map(({ key }) => key)
-    .sort((first, second) => (ALLERGEN_ORDER.get(first) ?? Number.MAX_SAFE_INTEGER) - (ALLERGEN_ORDER.get(second) ?? Number.MAX_SAFE_INTEGER))
-  return { allergens, uncertain: status === 'aandacht' }
+  // De allergenenlijst komt uit de keuring hierboven. Die uitslag is gedeeld, dus
+  // krijgt elke aanroeper een kopie: de beheerpagina bewaart hem in zijn staat.
+  const { allergens, status } = assessLabel(ingredientsText)
+  return { allergens: [...allergens], uncertain: status === 'aandacht' }
 }
 
 // Voor de test die controleert dat elke keuze in de allergenenlijst ook echt te
@@ -708,6 +750,9 @@ function searchWords(normalised) {
 export function markUncertainIngredients(text = '') {
   const source = String(text)
   if (!source.trim()) return source ? [{ text: source, uncertain: false }] : []
+  const cachesleutel = `${vocabularyVersion}\u0000${source}`
+  const bewaard = markCache.get(cachesleutel)
+  if (bewaard) return bewaard
 
   const { normalised, positions } = buildSearchIndex(source)
   const words = searchWords(normalised)
@@ -732,5 +777,5 @@ export function markUncertainIngredients(text = '') {
     position = end
   }
   if (position < source.length) segments.push({ text: source.slice(position), uncertain: false })
-  return segments
+  return remember(markCache, cachesleutel, segments)
 }

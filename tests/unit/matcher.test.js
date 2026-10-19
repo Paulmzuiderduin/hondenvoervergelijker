@@ -106,12 +106,13 @@ test('een eiwitwoord na een genoemde diergroep verbergt alleen die groep', () =>
   assert.equal(assessLabel('Dierlijk vet, rijst').keys.includes('fish'), true)
 })
 
-test('ganzenvlees telt als gevogelte', () => {
+test('ganzenvlees telt als gans', () => {
   // "gans*" alleen matcht "ganzen" niet (gans/ganzen heeft een z, geen s);
-  // daarom staat "ganzen*" er ook bij.
+  // daarom staat "ganzen*" er ook bij. Gans is een eigen allergeen, net als
+  // geit en waterbuffel.
   const ganzenvlees = assessLabel('Ganzenvlees 31%, rijst')
   assert.deepEqual(ganzenvlees.unknown, [])
-  assert.deepEqual(detectIngredientSignals('Ganzenvlees 31%, rijst').allergens, ['poultry', 'rice'])
+  assert.deepEqual(detectIngredientSignals('Ganzenvlees 31%, rijst').allergens, ['goose', 'rice'])
 })
 
 test('zonder allergenenkeuze vraagt een onduidelijk etiket om controle', () => {

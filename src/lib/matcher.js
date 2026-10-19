@@ -1,4 +1,4 @@
-import { ALLERGEN_IMPLIES, ALLERGEN_LABELS, assessLabel, detectIngredientSignals, expandAllergenKeys } from './allergens.js'
+import { ALLERGEN_IMPLIES, ALLERGEN_LABELS, assessLabel, expandAllergenKeys } from './allergens.js'
 
 const SIX_MONTHS_MS = 183 * 24 * 60 * 60 * 1000
 
@@ -35,7 +35,7 @@ export function productMatch(product, selectedAllergens, now = new Date()) {
   const present = new Set()
   const unknown = new Set()
   for (const row of stored) (row.certainty === 'confirmed' ? present : unknown).add(row.allergen_key)
-  for (const key of detectIngredientSignals(text).allergens) present.add(key)
+  for (const key of assessment.allergens) present.add(key)
   for (const key of assessment.keys) unknown.add(key)
   const presentKeys = new Set(expandAllergenKeys(present))
   const unknownKeys = new Set(expandAllergenKeys(unknown))
