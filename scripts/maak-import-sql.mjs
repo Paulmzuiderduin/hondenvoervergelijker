@@ -46,6 +46,20 @@ function hashVan(tekst) {
   return `sha256:${createHash('sha256').update(normaliseer(tekst)).digest('hex')}`
 }
 
+// Verpakkingsmaten komen van verschillende bronnen binnen ("1.5 kg" van de
+// Engelse decimaalpunt, "3/10 kg" zonder spaties). Op de site horen ze in
+// dezelfde Nederlandse notatie te staan.
+function netteVerpakking(waarde) {
+  return normaliseer(waarde)
+    .replace(/(\d)\.(\d)/g, '$1,$2')
+    .replace(/\s*\/\s*/g, ' / ')
+    .replace(/\s*\+\s*/g, ' + ')
+}
+
+function verpakkingssleutel(product) {
+  return netteVerpakking(product.verpakking).toLowerCase()
+}
+
 function sqlTekst(waarde) {
   if (waarde === null || waarde === undefined || waarde === '') return 'null'
   return `'${String(waarde).replace(/'/g, "''")}'`
@@ -117,7 +131,7 @@ for (const bestand of bestanden) {
     }
     product.opgehaald = normaliseer(product.opgehaald ?? inhoud.opgehaald ?? '')
     if (!controleer(product, bestand)) continue
-    const sleutel = `${normaliseer(product.merk).toLowerCase()}|${normaliseer(product.naam).toLowerCase()}|${normaliseer(product.verpakking ?? '').toLowerCase()}`
+    const sleutel = `${normaliseer(product.merk).toLowerCase()}|${normaliseer(product.naam).toLowerCase()}|${verpakkingssleutel(product)}`
     if (gezien.has(sleutel)) {
       problemen.push(`${bestand} → ${product.merk} — ${product.naam}: staat al in ${gezien.get(sleutel)}`)
       continue
@@ -137,12 +151,12 @@ const live = await haalLiveCatalogus()
 if (live) {
   const bestaand = new Map()
   for (const rij of live) {
-    bestaand.set(`${rij.brand.toLowerCase()}|${rij.name.toLowerCase()}|${(rij.package_size ?? '').toLowerCase()}`, 'de live database')
+    bestaand.set(`${rij.brand.toLowerCase()}|${rij.name.toLowerCase()}|${netteVerpakking(rij.package_size).toLowerCase()}`, 'de live database')
     if (rij.gtin) bestaand.set(`gtin:${rij.gtin}`, 'de live database')
   }
   for (const [bestand, producten] of perBestand) {
     perBestand.set(bestand, producten.filter((product) => {
-      const sleutel = `${product.merk.toLowerCase()}|${product.naam.toLowerCase()}|${(product.verpakking ?? '').toLowerCase()}`
+      const sleutel = `${product.merk.toLowerCase()}|${product.naam.toLowerCase()}|${verpakkingssleutel(product)}`
       const treffer = bestaand.get(sleutel) ?? (product.gtin ? bestaand.get(`gtin:${product.gtin}`) : undefined)
       if (!treffer) return true
       waarschuwingen.push(`${product.merk} — ${product.naam}: staat al in ${treffer} en is overgeslagen`)
@@ -187,12 +201,13 @@ for (let start = 0; start < alleProducten.length; start += MAX_PER_BATCH) {
   ]
   for (const product of producten) {
     const opgehaald = product.opgehaald || vandaag
+    const verpakking = netteVerpakking(product.verpakking)
     regels.push(
-      `-- ${product.merk} — ${product.naam}${product.verpakking ? ` (${product.verpakking})` : ''}`,
+      `-- ${product.merk} — ${product.naam}${verpakking ? ` (${verpakking})` : ''}`,
       `-- bron: ${product.bronUrl}`,
       'with p as (',
       '  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)',
-      `  values (${sqlTekst(product.merk)}, ${sqlTekst(product.naam)}, ${sqlTekst(product.voertype)}, ${sqlTekst(product.verpakking)}, ${sqlTekst(product.gtin)}, ${sqlTekst(product.bronUrl)}, date ${sqlTekst(opgehaald)}, true)`,
+      `  values (${sqlTekst(product.merk)}, ${sqlTekst(product.naam)}, ${sqlTekst(product.voertype)}, ${sqlTekst(verpakking)}, ${sqlTekst(product.gtin)}, ${sqlTekst(product.bronUrl)}, date ${sqlTekst(opgehaald)}, true)`,
       '  returning id',
       ')',
       'insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)',
