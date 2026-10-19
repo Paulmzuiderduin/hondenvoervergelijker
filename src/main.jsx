@@ -32,11 +32,17 @@ function ProductCard({ product, match, excluded = false }) {
   const openWords = [...new Set([...match.hidden.map(({ word }) => word), ...match.unknownWords])]
   const hiddenKeys = [...new Set(match.hidden.flatMap(({ keys }) => keys))]
   const hydrolysed = match.hydrolysed ?? { present: false, words: [], keys: [] }
-  // Alleen "aanwezig" en "kan erin zitten" komen los te staan: daar hoort uitleg
-  // bij (welke bron, welk woord). Alles wat nergens genoemd wordt gaat op één
-  // regel, want anders wordt de kaart bij een ruime keuze tientallen regels lang.
-  const detailStates = match.states.filter((state) => state.state !== 'absent')
+  // Het oordeel staat in hooguit drie regels: één per uitkomst. Een regel per
+  // allergeen zou de kaart bij een ruime keuze tientallen regels lang maken;
+  // alle namen blijven wel staan (ook als het er twintig zijn).
+  const presentStates = match.states.filter((state) => state.state === 'present')
+  const unknownStates = match.states.filter((state) => state.state === 'unknown')
   const absentStates = match.states.filter((state) => state.state === 'absent')
+  const onbekendeWoorden = [...new Set(unknownStates.flatMap((state) => state.words))]
+    // Dezelfde bron kan bij verschillende allergenen net anders genoteerd staan
+    // ("oliën" en "oliën en vetten"). Is een langere variant al genoemd, dan
+    // zegt de korte niets extra.
+    .filter((woord, _, alle) => !alle.some((ander) => ander.length > woord.length && ander.toLowerCase().includes(woord.toLowerCase())))
   // De herkomst staat los van het oordeel: een automatisch overgenomen etiket
   // zegt nooit dat een mens ernaar gekeken heeft, en een nagekeken etiket houdt
   // zijn "tekst nagelopen". Zo kan de bezoeker zien wat hij in handen heeft.
@@ -47,16 +53,15 @@ function ProductCard({ product, match, excluded = false }) {
     : !match.reviewed && !match.imported ? 'Deze ingrediëntenlijst is nog niet tegen de bron gecontroleerd.'
       : match.stale ? 'Deze ingrediëntenlijst is langer dan zes maanden niet gecontroleerd.'
         : !match.transparent && !match.states.some((state) => state.state === 'unknown') ? 'Dit etiket noemt een ingrediënt zonder te zeggen waar het vandaan komt (zoals "dierlijk vet" of "granen").' : ''
+  // Staat alles op "nergens genoemd", dan zegt de regel onderaan de kaart dat al
+  // ("Geen van de gekozen allergenen staat in deze lijst").
+  const toonAfwezig = absentStates.length > 0 && !(absentStates.length === match.states.length && !checkReason)
   return <article className={excluded ? 'product-card excluded' : 'product-card'}>
     <div><strong>{product.brand}</strong> — {product.name}</div>
     <small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]}{product.package_size ? ` · ${product.package_size}` : ''}{hydrolysed.present ? ' · gehydrolyseerd eiwit' : ''}</small>
-    {detailStates.length > 0 && <ul className="verdicts">{detailStates.map((state) => <li key={state.key} className={`verdict ${state.state}`}>
-      <strong>{ALLERGEN_LABELS[state.key]}</strong>
-      {state.state === 'present'
-        ? ` staat in de lijst${state.members.some((member) => member !== state.key) ? ` (${labelList(state.members)})` : ''}`
-        : <> kan erin zitten: het etiket noemt geen bron voor {state.words.length > 5 ? `${state.words.slice(0, 5).join(', ')} en ${state.words.length - 5} meer` : state.words.length ? state.words.join(', ') : 'een ingrediënt'}</>}
-    </li>)}</ul>}
-    {absentStates.length > 0 && <p className="nergens-genoemd"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 100)}</p>}
+    {presentStates.length > 0 && !excluded && <p className="verdict present"><strong>Staat in de lijst:</strong> {presentStates.map((state) => `${ALLERGEN_LABELS[state.key]}${state.members.some((member) => member !== state.key) ? ` via ${labelList(state.members.filter((member) => member !== state.key))}` : ''}`).join(', ')}</p>}
+    {unknownStates.length > 0 && <p className="verdict unknown"><strong>Kan erin zitten:</strong> {labelList(unknownStates.map((state) => state.key), 100)} — het etiket noemt geen bron voor {onbekendeWoorden.length > 5 ? `${onbekendeWoorden.slice(0, 5).join(', ')} en ${onbekendeWoorden.length - 5} meer` : onbekendeWoorden.length ? onbekendeWoorden.join(', ') : 'een ingrediënt'}</p>}
+    {toonAfwezig && <p className="verdict absent"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 100)}</p>}
     <Ingredients text={version?.ingredients_text} />
     {match.importNote && <p className="import-note"><small>{match.importNote}</small></p>}
     {hydrolysed.present && <p className="note-hydrolysed"><strong>Gehydrolyseerd eiwit:</strong> {hydrolysed.words.length ? `dit etiket noemt ${hydrolysed.words.join(', ')} in gehydrolyseerde vorm` : 'dit etiket noemt gehydrolyseerde eiwitten'}: de eiwitketens zijn opgeknipt, waardoor het lichaam ze vaak niet meer als allergeen herkent. Dierenartsen kiezen zo'n voer juist bij een allergie; deze site telt de bron toch mee, want alleen je dierenarts kan beoordelen of het in jouw geval werkt.</p>}
