@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { isReviewOverdue, productMatch } from '../../src/lib/matcher.js'
-import { ALLERGENS, detectIngredientSignals, markUncertainIngredients } from '../../src/lib/allergens.js'
+import { ALLERGENS, detectIngredientSignals, markUncertainIngredients, missingAllergenKeys } from '../../src/lib/allergens.js'
 
 const product = (overrides = {}) => ({
   last_checked_at: '2026-10-01',
@@ -62,6 +62,13 @@ test('elke allergeen in de keuzelijst is ook echt te herkennen', () => {
   assert.deepEqual(detectIngredientSignals(tekst).allergens, ALLERGENS.map(({ key }) => key))
 })
 
+test('meervoudsvormen zoals aardappelen en eieren worden herkend', () => {
+  assert.deepEqual(detectIngredientSignals('Gedroogde aardappelen, erwten, eieren').allergens, ['potato', 'pea', 'egg'])
+})
+test('vult ontbrekende allergenen aan zonder bestaande vinkjes te raken', () => {
+  assert.deepEqual(missingAllergenKeys('Aardappelen, kip, tarwe', ['chicken']), ['potato', 'wheat'])
+  assert.deepEqual(missingAllergenKeys('Aardappelen, kip', []), ['chicken', 'potato'])
+})
 test('markeert niet te herleiden delen en laat de etiket tekst exact intact', () => {
   const tekst = 'Granen (volkoren granen 63%), vlees en dierlijke bijproducten (8% *), gevogeltevet, kip (10%)'
   const segmenten = markUncertainIngredients(tekst)

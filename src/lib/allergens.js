@@ -124,6 +124,16 @@ export function detectIngredientSignals(ingredientsText) {
   return { allergens, uncertain }
 }
 
+// Welke allergenen staan wél in de etikettekst, maar nog niet in de opgeslagen
+// rijen? Wordt gebruikt om bestaande producten bij te werken nadat de
+// herkenning is verbeterd. Er wordt alleen aangevuld: bestaande vinkjes (ook
+// handmatige) blijven staan, want die kunnen bewuste kennis van de beheerder zijn.
+export function missingAllergenKeys(ingredientsText, storedKeys = []) {
+  const stored = new Set(storedKeys)
+  const allowed = new Set(ALLERGENS.map(({ key }) => key))
+  return detectIngredientSignals(ingredientsText).allergens.filter((key) => allowed.has(key) && !stored.has(key))
+}
+
 // --- Rood markeren van wat niet te herleiden is ---------------------------
 // Om een woord in de originele etikettekst te kunnen markeren zonder de tekst
 // te veranderen, maken we eerst een opgeschoonde versie (kleine letters, zonder

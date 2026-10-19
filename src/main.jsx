@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ALLERGEN_GROUPS, ALLERGEN_LABELS, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients } from './lib/allergens'
+import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients, missingAllergenKeys } from './lib/allergens'
 import { productMatch } from './lib/matcher'
 import { supabase } from './lib/supabase'
 import './styles.css'
@@ -31,6 +31,7 @@ function Admin({ onSaved }) {
   const [catalogue, setCatalogue] = useState([])
   const [catalogueError, setCatalogueError] = useState('')
   const [saving, setSaving] = useState(false)
+  const [repairing, setRepairing] = useState(false)
   const [editingId, setEditingId] = useState(null)
   const change = (field, value) => setForm((old) => ({ ...old, [field]: value }))
   const detectIngredients = () => {
@@ -46,6 +47,27 @@ function Admin({ onSaved }) {
     setCatalogueError(''); setCatalogue(data || [])
   }
   useEffect(() => { loadCatalogue() }, [])
+  const repairAllergens = async () => {
+    if (!supabase) return setMessage('Voeg eerst de Supabase-omgevingsvariabelen toe.')
+    if (repairing) return
+    setRepairing(true)
+    const missing = []
+    let products = 0
+    for (const product of catalogue) {
+      const version = product.recipe_versions?.[0]
+      if (!version?.ingredients_text) continue
+      const keys = missingAllergenKeys(version.ingredients_text, (version.recipe_ingredients || []).map(({ allergen_key }) => allergen_key))
+      if (!keys.length) continue
+      products += 1
+      missing.push(...keys.map((allergen_key) => ({ recipe_version_id: version.id, allergen_key, certainty: 'confirmed' })))
+    }
+    if (!missing.length) { setRepairing(false); return setMessage('Alle receptversies bevatten al alle allergenen die in de etiketten staan.') }
+    const { error } = await supabase.from('recipe_ingredients').insert(missing)
+    setRepairing(false)
+    if (error) return setMessage(error.message)
+    setMessage(`Allergenen aangevuld bij ${products} product${products === 1 ? '' : 'en'} (${missing.length} regels). Loop de vinkjes na en verwijder wat niet klopt.`)
+    loadCatalogue()
+  }
   const reset = () => { setEditingId(null); setForm(blankForm); setMessage('') }
   const edit = (product) => {
     const version = product.recipe_versions?.[0]
@@ -95,7 +117,7 @@ function Admin({ onSaved }) {
     <label className="inline"><input type="checkbox" checked={form.uncertain} onChange={(e) => change('uncertain', e.target.checked)} />Ingrediëntenlijst bevat een onduidelijke categorie</label>
     <label className="inline"><input type="checkbox" checked={form.published} onChange={(e) => change('published', e.target.checked)} />Publiceren</label>
     <button disabled={saving}>{saving ? 'Opslaan…' : 'Opslaan'}</button>{editingId && <button type="button" onClick={reset}>Annuleren</button>}{message && <p aria-live="polite">{message}</p>}
-    <h2>Catalogus beheren</h2>{catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : catalogue.length ? catalogue.map((product) => <div className="admin-row" key={product.id}><span>{product.brand} — {product.name} {!product.published && '(concept)'} {product.recipe_versions?.[0]?.ingredients_mapped ? '' : '· nog niet bevestigd'}</span><button type="button" onClick={() => edit(product)}>Bewerken</button></div>) : <p>Nog geen producten ingevoerd.</p>}
+    <h2>Catalogus beheren</h2><p><button type="button" disabled={repairing} onClick={repairAllergens}>{repairing ? 'Bezig…' : 'Ontbrekende allergenen aanvullen'}</button> <small>Vult allergenen aan die volgens de huidige herkenning in de etiketten staan maar nog niet zijn aangevinkt, bijvoorbeeld meervoudsvormen als "aardappelen". Bestaande vinkjes blijven staan.</small></p>{catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : catalogue.length ? catalogue.map((product) => <div className="admin-row" key={product.id}><span>{product.brand} — {product.name} {!product.published && '(concept)'} {product.recipe_versions?.[0]?.ingredients_mapped ? '' : '· nog niet bevestigd'}</span><button type="button" onClick={() => edit(product)}>Bewerken</button></div>) : <p>Nog geen producten ingevoerd.</p>}
   </form>
 }
 
