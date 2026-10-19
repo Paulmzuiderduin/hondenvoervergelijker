@@ -106,6 +106,14 @@ test('een eiwitwoord na een genoemde diergroep verbergt alleen die groep', () =>
   assert.equal(assessLabel('Dierlijk vet, rijst').keys.includes('fish'), true)
 })
 
+test('ganzenvlees telt als gevogelte', () => {
+  // "gans*" alleen matcht "ganzen" niet (gans/ganzen heeft een z, geen s);
+  // daarom staat "ganzen*" er ook bij.
+  const ganzenvlees = assessLabel('Ganzenvlees 31%, rijst')
+  assert.deepEqual(ganzenvlees.unknown, [])
+  assert.deepEqual(detectIngredientSignals('Ganzenvlees 31%, rijst').allergens, ['poultry', 'rice'])
+})
+
 test('zonder allergenenkeuze vraagt een onduidelijk etiket om controle', () => {
   const onduidelijk = product({ recipe_versions: [{ ingredients_text: 'Kip 40%, cooked broth, mineralen', reviewed_at: '2026-10-01T00:00:00Z', recipe_ingredients: [] }] })
   // Geen keuze: dan is de vraag "noemt dit etiket elke bron?" en het antwoord is nee.

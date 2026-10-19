@@ -133,7 +133,7 @@ const ALLERGEN_SYNONYMS = {
   // want dat zou ook "buffelworm" (soldaatvlieg) pakken.
   goat: ['geit*', 'goat*'], buffalo: ['waterbuffel*', 'buffalo*', 'buffel', 'buffelvlees*'],
   kangaroo: ['kangoeroe*', 'kangaroo'], ostrich: ['struisvogel*', 'ostrich'],
-  poultry: ['gevogelte*', 'pluimvee*', 'poultry', 'gans*', 'goose', 'fazant*', 'pheasant', 'kwartel*', 'quail'],
+  poultry: ['gevogelte*', 'pluimvee*', 'poultry', 'gans*', 'ganzen*', 'goose', 'fazant*', 'pheasant', 'kwartel*', 'quail'],
   fish: ['vis*', 'fish*', 'zalm*', 'salmon', 'kabeljauw*', 'tonijn*', 'tuna', 'haring*', 'herring', 'forel*', 'trout', 'makreel*', 'mackerel', 'sardine*', 'sardines', 'ansjovis*', 'anchovies', 'heek', 'wijting*', 'schelvis*', 'koolvis*', 'zeeduivel*'],
   whitefish: ['witvis', 'kabeljauw*', 'schelvis*', 'koolvis*', 'heek', 'wijting*', 'zeeduivel*'],
   salmon: ['zalm*', 'salmon'], tuna: ['tonijn*', 'tuna'], trout: ['forel*', 'trout'], herring: ['haring*', 'herring'],
