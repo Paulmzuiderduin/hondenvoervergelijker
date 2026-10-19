@@ -35,7 +35,7 @@ function ProductCard({ product, match, excluded = false }) {
       {state.state === 'present'
         ? ` staat in de lijst${state.members.some((member) => member !== state.key) ? ` (${labelList(state.members)})` : ''}`
         : state.state === 'unknown'
-          ? <> kan erin zitten: het etiket noemt geen bron voor {state.words.length ? state.words.join(', ') : 'een ingrediënt'}</>
+          ? <> kan erin zitten: het etiket noemt geen bron voor {state.words.length > 5 ? `${state.words.slice(0, 5).join(', ')} en ${state.words.length - 5} meer` : state.words.length ? state.words.join(', ') : 'een ingrediënt'}</>
           : ' wordt nergens genoemd'}
     </li>)}</ul>}
     <p>{version?.ingredients_text ? markUncertainIngredients(version.ingredients_text).map((segment, index) => segment.uncertain ? <mark className="uncertain-ingredient" key={index}>{segment.text}</mark> : segment.text) : 'Geen ingrediëntenlijst ingevoerd.'}</p>
