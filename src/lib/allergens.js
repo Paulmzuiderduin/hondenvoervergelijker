@@ -264,6 +264,16 @@ const PROCESS_TERMS = [
   'melding', 'pagina', 'meldt', 'ook', 'eiwitbron', 'eiwitbronnen'
 ]
 
+// Woorden die zeggen dat de eiwitten al in stukjes zijn geknipt. Dat is geen
+// allergeen en ook geen bron, maar voor een allergiehond wel het verschil dat
+// een dierenarts wil weten: gehydrolyseerd eiwit wordt vaak niet meer herkend.
+// De site vermeldt het apart op de kaart. Het oordeel per allergeen verandert er
+// niets door: gehydrolyseerd kip blijft kip, want alleen de dierenarts kan
+// beoordelen of het in een specifiek geval werkt.
+const HYDROLYSED_TERMS = [
+  'gehydrolyseerd*', 'gehydroliseerd*', 'hydrolyse*', 'hydrolysaat*', 'hydrolysate*', 'laagmoleculair*'
+]
+
 // Ingrediënten die geen allergeen kunnen zijn en er ook geen kunnen verbergen:
 // water, vitaminen, mineralen, zouten en hulpstoffen. Bewust streng: alles wat
 // dierlijk of plantaardig kán zijn, staat hier niet in.
@@ -343,6 +353,7 @@ let COMPILED_UNCERTAIN_TERMS = []
 let COMPILED_RISK_TERMS = []
 let COMPILED_KNOWN_TERMS = []
 let CONCRETE_SOURCE_TERMS = []
+let COMPILED_HYDROLYSED_TERMS = []
 
 // Alles wat de keuring van een ingrediëntwoord kan plaatsen: een allergeenbron,
 // een verzamel- of risicowoord, een andere bron, een onschuldig bestanddeel of een
@@ -385,6 +396,18 @@ function buildVocabulary() {
     ...OTHER_SOURCE_TERMS,
     ...onschuldig.map((term) => term.term)
   ].map(compileTerm)
+  COMPILED_HYDROLYSED_TERMS = HYDROLYSED_TERMS.map(compileTerm)
+}
+
+// Welke allergeenbron wijst dit woord aan? "kip*" wel, "gevogelte" ook (dan is de
+// groep genoemd), "eiwit" niet. Wordt gebruikt om bij een hydrolysewoord de bron
+// te vinden die er in dezelfde reeks bij staat.
+function sourceKeysOf(word) {
+  const keys = []
+  for (const { key, terms } of COMPILED_ALLERGEN_TERMS) {
+    if (terms.some((term) => termMatches([word], term))) keys.push(key)
+  }
+  return keys
 }
 
 // Woorden die het beheer zelf heeft ingedeeld. "onschuldig" betekent: geen bron
@@ -560,6 +583,33 @@ export function assessLabel(ingredientsText = '') {
   // onzekerheid voor elk allergeen in de lijst.
   if (unknown.length) for (const key of ALL_KEYS) hiddenKeys.add(key)
 
+  // Gehydrolyseerd eiwit: de eiwitten zijn al geknipt. De site vermeldt het
+  // apart op de kaart, met de bron die er in dezelfde reeks bij staat
+  // ("gehydrolyseerd kippeneiwit", "zalm-eiwit hydrolysaat", "eiwit (gevogelte)"
+  // of "gevogelte-eiwit (gehydrolyseerd)"). Zonder zo'n bron in dezelfde reeks
+  // blijft het bij de algemene vermelding.
+  const hydrolysedWords = new Set()
+  const hydrolysedKeys = new Set()
+  tokens.forEach((token, index) => {
+    if (!COMPILED_HYDROLYSED_TERMS.some((term) => termMatches([token], term))) return
+    const collectSource = (cursor) => {
+      if (COMPILED_HYDROLYSED_TERMS.some((term) => termMatches([tokens[cursor]], term))) return
+      const keys = sourceKeysOf(tokens[cursor])
+      if (!keys.length) return
+      hydrolysedWords.add(tokens[cursor])
+      keys.forEach((key) => hydrolysedKeys.add(key))
+    }
+    // Niet over een komma heen: "zalm, eiwithydrolysaat" zegt niet dat het
+    // hydrolysaat van zalm is.
+    for (let cursor = index - 1; cursor >= 0 && index - cursor <= 6 && !breakBefore[cursor + 1]; cursor -= 1) collectSource(cursor)
+    for (let cursor = index + 1; cursor < tokens.length && cursor - index <= 6 && !breakBefore[cursor]; cursor += 1) collectSource(cursor)
+  })
+  const hydrolysed = {
+    present: tokens.some((token) => COMPILED_HYDROLYSED_TERMS.some((term) => termMatches([token], term))),
+    words: [...hydrolysedWords],
+    keys: sortAllergenKeys([...hydrolysedKeys])
+  }
+
   return {
     tokens,
     vagueIndexes: vague,
@@ -574,7 +624,11 @@ export function assessLabel(ingredientsText = '') {
     // risicowoord, of alles zolang er een woord onbekend is. De vergelijking
     // gebruikt dit per allergeen; hidden zegt per woord waar het vandaan komt.
     hidden,
-    keys: sortAllergenKeys([...hiddenKeys])
+    keys: sortAllergenKeys([...hiddenKeys]),
+    // Gehydrolyseerd eiwit is geen allergeen en geen bron, maar wel informatie
+    // die op de kaart hoort te staan. Het oordeel per allergeen verandert er
+    // niets door: de genoemde bron blijft gewoon meetellen.
+    hydrolysed
   }
 }
 

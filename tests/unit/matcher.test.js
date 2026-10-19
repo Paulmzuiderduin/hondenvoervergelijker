@@ -280,3 +280,40 @@ test('een bron zonder naam wordt rood gemarkeerd', () => {
   assert.deepEqual(onderKop.filter((segment) => segment.uncertain), [])
   assert.equal(onderKop.map((segment) => segment.text).join(''), '63% Konijn: 44% rug, 13% vlees, 6% oren; 35% Insect (BSF); 1% Zalmolie')
 })
+
+test('gehydrolyseerd eiwit wordt vermeld met de bron die erbij staat', () => {
+  const kip = assessLabel('Gehydrolyseerd kippeneiwit, rijst, mineralen')
+  assert.equal(kip.hydrolysed.present, true)
+  assert.deepEqual(kip.hydrolysed.keys, ['chicken'])
+  assert.deepEqual(kip.hydrolysed.words, ['kippeneiwit'])
+  // De groep die er staat telt ook ("gevogelte-eiwit (gehydrolyseerd)").
+  assert.deepEqual(assessLabel('Gevogelte-eiwit (gehydrolyseerd), rijst').hydrolysed.keys, ['poultry'])
+  // Zonder bron in dezelfde reeks blijft het bij de algemene vermelding, en een
+  // bron vóór de komma hoort er niet bij.
+  assert.deepEqual(assessLabel('Eiwithydrolysaat, rijst, mineralen').hydrolysed.words, [])
+  assert.deepEqual(assessLabel('Zalm, eiwithydrolysaat').hydrolysed.words, [])
+  assert.equal(assessLabel('Kip 40%, rijst, mineralen').hydrolysed.present, false)
+})
+
+test('het oordeel verandert niet door een hydrolyse-vermelding', () => {
+  const versie = { ingredients_text: 'Gehydrolyseerd kippeneiwit, rijst, mineralen', reviewed_at: '2026-10-01T00:00:00Z', recipe_ingredients: [] }
+  const kip = productMatch(product({ recipe_versions: [versie] }), ['chicken'], new Date('2026-10-14'))
+  assert.equal(kip.kind, 'excluded')
+  assert.equal(kip.hydrolysed.present, true)
+  // Kip blijft een genoemde bron: de site zegt niet dat het veilig is.
+  assert.equal(productMatch(product({ recipe_versions: [versie] }), ['beef'], new Date('2026-10-14')).kind, 'suitable')
+})
+
+test('een automatisch overgenomen etiket vraagt geen menselijke klik', () => {
+  const versie = { ingredients_text: 'Kip 40%, tarwe, erwten', imported_at: '2026-10-19T08:00:00Z', import_note: 'Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.', recipe_ingredients: [] }
+  const uitslag = productMatch(product({ recipe_versions: [versie] }), ['beef'], new Date('2026-10-20'))
+  assert.equal(uitslag.kind, 'suitable')
+  assert.equal(uitslag.reviewed, false)
+  assert.equal(uitslag.imported, true)
+  assert.match(uitslag.importNote, /Nederlandse vertaling/)
+  // Zonder import en zonder review blijft het een open vraag.
+  const handmatig = { ingredients_text: 'Kip 40%, tarwe, erwten', recipe_ingredients: [] }
+  assert.equal(productMatch(product({ recipe_versions: [handmatig] }), ['beef'], new Date('2026-10-20')).kind, 'check')
+  // En een verouderde import vraagt opnieuw om een blik.
+  assert.equal(productMatch({ last_checked_at: '2026-03-01', recipe_versions: [versie] }, ['beef'], new Date('2026-10-20')).kind, 'check')
+})

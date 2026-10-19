@@ -23,13 +23,20 @@ function ProductCard({ product, match, excluded = false }) {
   const version = product.recipe_versions?.[0]
   const openWords = [...new Set([...match.hidden.map(({ word }) => word), ...match.unknownWords])]
   const hiddenKeys = [...new Set(match.hidden.flatMap(({ keys }) => keys))]
+  const hydrolysed = match.hydrolysed ?? { present: false, words: [], keys: [] }
+  // De herkomst staat los van het oordeel: een automatisch overgenomen etiket
+  // zegt nooit dat een mens ernaar gekeken heeft, en een nagekeken etiket houdt
+  // zijn "tekst nagelopen". Zo kan de bezoeker zien wat hij in handen heeft.
+  const herkomst = match.imported
+    ? `Automatisch overgenomen${sourceDomain(product.source_url) ? ` van ${sourceDomain(product.source_url)}` : ''} op ${new Date(match.importedAt).toLocaleDateString('nl-NL')}${match.reviewed ? ` · nagekeken op ${new Date(version.reviewed_at).toLocaleDateString('nl-NL')}` : ' · nog niet door een mens nagelopen'}`
+    : `Laatst gecontroleerd: ${product.last_checked_at ? new Date(product.last_checked_at).toLocaleDateString('nl-NL') : 'onbekend'}${match.reviewed ? ' · tekst nagelopen' : ''}`
   const checkReason = !match.hasLabel ? 'Er is nog geen ingrediëntenlijst ingevoerd.'
-    : !match.reviewed ? 'Deze ingrediëntenlijst is nog niet tegen de bron gecontroleerd.'
+    : !match.reviewed && !match.imported ? 'Deze ingrediëntenlijst is nog niet tegen de bron gecontroleerd.'
       : match.stale ? 'Deze ingrediëntenlijst is langer dan zes maanden niet gecontroleerd.'
         : !match.transparent && !match.states.some((state) => state.state === 'unknown') ? 'Dit etiket noemt een bron die niet bij name staat.' : ''
   return <article className={excluded ? 'product-card excluded' : 'product-card'}>
     <div><strong>{product.brand}</strong> — {product.name}</div>
-    <small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]}{product.package_size ? ` · ${product.package_size}` : ''}</small>
+    <small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]}{product.package_size ? ` · ${product.package_size}` : ''}{hydrolysed.present ? ' · gehydrolyseerd eiwit' : ''}</small>
     {match.states.length > 0 && <ul className="verdicts">{match.states.map((state) => <li key={state.key} className={`verdict ${state.state}`}>
       <strong>{ALLERGEN_LABELS[state.key]}</strong>
       {state.state === 'present'
@@ -39,7 +46,9 @@ function ProductCard({ product, match, excluded = false }) {
           : ' wordt nergens genoemd'}
     </li>)}</ul>}
     <p>{version?.ingredients_text ? markUncertainIngredients(version.ingredients_text).map((segment, index) => segment.uncertain ? <mark className="uncertain-ingredient" key={index}>{segment.text}</mark> : segment.text) : 'Geen ingrediëntenlijst ingevoerd.'}</p>
-    <small>Laatst gecontroleerd: {product.last_checked_at ? new Date(product.last_checked_at).toLocaleDateString('nl-NL') : 'onbekend'}{match.reviewed ? ' · tekst nagelopen' : ''}</small>
+    {match.importNote && <p className="import-note"><small>{match.importNote}</small></p>}
+    {hydrolysed.present && <p className="note-hydrolysed"><strong>Gehydrolyseerd eiwit:</strong> {hydrolysed.words.length ? `dit etiket noemt ${hydrolysed.words.join(', ')} in gehydrolyseerde vorm` : 'dit etiket noemt gehydrolyseerde eiwitten'}: de eiwitketens zijn opgeknipt, waardoor het lichaam ze vaak niet meer als allergeen herkent. Dierenartsen kiezen zo'n voer juist bij een allergie; deze site telt de bron toch mee, want alleen je dierenarts kan beoordelen of het in jouw geval werkt.</p>}
+    <small>{herkomst}</small>
     {product.source_url?.startsWith('http') && <p><a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">Bekijk product{sourceDomain(product.source_url) ? ` (${sourceDomain(product.source_url)})` : ''}</a></p>}
     {excluded && <p className="reason excluded">Uitgesloten vanwege: {match.presentStates.map((state) => ALLERGEN_LABELS[state.key]).join(' · ')}</p>}
     {!excluded && checkReason && <p className="reason">Controleer: {checkReason}</p>}
@@ -79,21 +88,27 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
 
   // De takenlijst komt volledig uit de etikettekst, het review-record en de
   // woordenschat. Er valt hier niets gelijk te zetten: wat klaar is, is klaar.
+  // Een automatisch overgenomen etiket (import) is geen openstaande taak: het
+  // vraagt geen menselijke klik, maar blijft wel zichtbaar als zódanig — de site
+  // mag nooit een controle claimen die niet gebeurd is.
   useEffect(() => {
     const rijen = catalogue.map((product) => {
       const version = product.recipe_versions?.[0]
       const uitslag = version?.ingredients_text ? assessLabel(version.ingredients_text) : null
       const nagelopen = Boolean(version?.reviewed_at)
+      const automatisch = Boolean(version?.imported_at) && !nagelopen
       const verouderd = isReviewOverdue(product.last_checked_at)
       const openWoorden = uitslag ? [...new Set(uitslag.hidden.map(({ word }) => word))] : []
       const onbekend = uitslag?.unknown ?? []
       const taken = []
       if (!version?.ingredients_text) taken.push('nog geen ingrediëntenlijst')
-      else if (!nagelopen) taken.push('nog niet tegen de bron gecontroleerd')
+      else if (!nagelopen && !automatisch) taken.push('nog niet tegen de bron gecontroleerd')
       if (version?.ingredients_text && verouderd) taken.push('langer dan zes maanden niet gecontroleerd')
       if (onbekend.length) taken.push(`woorden die de keuring niet kent: ${onbekend.join(', ')}`)
-      return { product, version, uitslag, nagelopen, verouderd, openWoorden, onbekend, taken, schoon: uitslag?.status === 'schoon' && !onbekend.length }
-    })
+      const herkomst = automatisch
+        ? `automatisch overgenomen${sourceDomain(product.source_url) ? ` van ${sourceDomain(product.source_url)}` : ''}${version?.imported_at ? ` op ${new Date(version.imported_at).toLocaleDateString('nl-NL')}` : ''} · nog niet door een mens nagelopen`
+        : ''
+      return { product, version, uitslag, nagelopen, automatisch, herkomst, verouderd, openWoorden, onbekend, taken, schoon: uitslag?.status === 'schoon' && !onbekend.length }    })
     const woorden = new Map()
     for (const rij of rijen) for (const woord of rij.onbekend) {
       if (!woorden.has(woord)) woorden.set(woord, [])
@@ -229,6 +244,7 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
     <button type="button" onClick={() => { const detected = detectIngredientSignals(form.ingredients_text); change('allergens', detected.allergens); setMessage(detected.allergens.length ? `Herkenning ingevuld: ${detected.allergens.map((key) => ALLERGEN_LABELS[key]).join(', ')}. Controleer dit altijd.` : 'Geen bekende allergiebronnen herkend. Controleer de lijst handmatig.') }}>Herken allergiebronnen uit ingrediënten</button><p><small>Plak de tekst precies zoals op het etiket. De herkenning is een voorstel op basis van woorden in de lijst; controleer de vinkjes altijd zelf.</small></p>
     <p><small>Etiketcontrole: {labelAdvies.status === 'schoon' ? 'elke allergeenbron in deze lijst staat bij name genoemd.' : `deze lijst noemt een bron die niet bij name staat${uncertainWords.length ? `: ${uncertainWords.slice(0, 8).join(', ')}${uncertainWords.length > 8 ? ` en ${uncertainWords.length - 8} meer` : ''}` : ''}. Die woorden staan rood op de site en het product blijft voor die allergenen bij "Controleer etiket/fabrikant" staan — ook als je het nagekeken hebt. Weet je van de fabrikant welke bron het is, zet die dan tussen haakjes in de lijst, bijvoorbeeld "dierlijk vet (rund)"; dan is het etiket wel eenduidig.`}</small></p>
     <p><small>Woorden: {labelAdvies.unknown.length ? `de keuring herkent deze woorden niet: ${labelAdvies.unknown.slice(0, 8).join(', ')}${labelAdvies.unknown.length > 8 ? ` en ${labelAdvies.unknown.length - 8} meer` : ''}. Je kunt ze één keer indelen in de takenlijst onderaan.` : 'elk ingrediëntwoord in deze lijst is herkend.'}</small></p>
+    {labelAdvies.hydrolysed?.present && <p><small>Dit etiket noemt gehydrolyseerd eiwit{labelAdvies.hydrolysed.words.length ? ` (${labelAdvies.hydrolysed.words.join(', ')})` : ''}. De site vermeldt dat op de kaart; het oordeel per allergeen verandert er niet door.</small></p>}
     <fieldset><legend>Bevestigd aanwezige allergiebronnen</legend>{ALLERGEN_GROUPS.map((group) => <fieldset className="allergen-group" key={group.key}><legend>{group.label}</legend>{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={form.allergens.includes(key)} onChange={(e) => change('allergens', e.target.checked ? [...form.allergens, key] : form.allergens.filter((item) => item !== key))} />{label}</label>)}</fieldset>)}</fieldset>
     <label className="inline"><input type="checkbox" checked={form.reviewed} onChange={(e) => change('reviewed', e.target.checked)} />Ik heb deze ingrediëntenlijst tegen de bron gecontroleerd</label>
     <label>Aantekening (optioneel)<input value={form.review_note} placeholder="bijv. nagevraagd bij de fabrikant op 12-10" onChange={(e) => change('review_note', e.target.value)} /></label>
@@ -237,19 +253,19 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
     <button disabled={saving}>{saving ? 'Opslaan…' : 'Opslaan'}</button>{editingId && <button type="button" onClick={reset}>Annuleren</button>}{message && <p aria-live="polite">{message}</p>}
 
     <h2>Wat vraagt aandacht ({keuring.teDoen.length})</h2>
-    <p><small>{catalogue.length} producten · {keuring.klaar.length} klaar · {keuring.teDoen.length} met een openstaand punt. Een product is klaar als de tekst tegen de bron is gecontroleerd en de keuring geen woorden meer over heeft.</small></p>
-    {catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : keuring.teDoen.length ? keuring.teDoen.map(({ product, version, openWoorden, onbekend, taken, nagelopen, verouderd, schoon }) => {
+    <p><small>{catalogue.length} producten · {keuring.klaar.length} klaar · {keuring.teDoen.length} met een openstaand punt. Een product is klaar als de tekst van de bron komt (nagekeken of automatisch overgenomen) en de keuring geen woorden meer over heeft.</small></p>
+    {catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : keuring.teDoen.length ? keuring.teDoen.map(({ product, version, openWoorden, onbekend, taken, nagelopen, automatisch, herkomst, verouderd, schoon }) => {
       // Het etiket zelf moet nog langs de bron, of alleen een woord wacht nog op
       // een indeling. Dat verschil bepaalt welke knop hier iets oplost.
-      const tekstNodig = !nagelopen || verouderd
+      const tekstNodig = (!nagelopen && !automatisch) || verouderd
       return <div className="admin-row" key={product.id}>
-        <span><strong>{product.brand}</strong> — {product.name} {!product.published && '(concept)'} · {taken.join(' · ')}{openWoorden.length ? ` · etiket noemt geen bron voor: ${openWoorden.slice(0, 4).join(', ')}${openWoorden.length > 4 ? ` en ${openWoorden.length - 4} meer` : ''}` : ''}{!nagelopen && schoon ? ' · de keuring ziet hier geen open punten' : ''}{tekstNodig && onbekend.length ? ` · onbekende woorden: ${onbekend.slice(0, 4).join(', ')}${onbekend.length > 4 ? ` en ${onbekend.length - 4} meer` : ''}` : ''}{!tekstNodig ? ' · dit verdwijnt zodra je dat woord hieronder indeelt' : ''}</span>
+        <span><strong>{product.brand}</strong> — {product.name} {!product.published && '(concept)'} · {taken.join(' · ')}{herkomst ? ` · ${herkomst}` : ''}{openWoorden.length ? ` · etiket noemt geen bron voor: ${openWoorden.slice(0, 4).join(', ')}${openWoorden.length > 4 ? ` en ${openWoorden.length - 4} meer` : ''}` : ''}{tekstNodig && !automatisch && schoon ? ' · de keuring ziet hier geen open punten' : ''}{tekstNodig && onbekend.length ? ` · onbekende woorden: ${onbekend.slice(0, 4).join(', ')}${onbekend.length > 4 ? ` en ${onbekend.length - 4} meer` : ''}` : ''}{!tekstNodig ? ' · dit verdwijnt zodra je dat woord hieronder indeelt' : ''}</span>
         {version && tekstNodig && <button type="button" disabled={working} onClick={() => markReviewed({ product, version, openWoorden, onbekend, taken })}>{version.reviewed_at ? 'Opnieuw nagelopen' : 'Nagelopen'}</button>}
         {!tekstNodig && <a className="product-link" href="#woorden">naar de woordenlijst</a>}
         {product.source_url?.startsWith('http') && <a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">bron</a>}
         <button type="button" onClick={() => edit(product)}>Bewerken</button>
       </div>
-    }) : <p>Niets te doen: elk product is nagekeken of heeft geen openstaand punt.</p>}
+    }) : <p>Niets te doen: elk product is nagekeken of automatisch overgenomen, en de keuring heeft geen open woorden meer.</p>}
 
     {keuring.woorden.length > 0 && <>
       <h3 id="woorden">Woorden die de keuring niet kent ({keuring.woorden.length})</h3>
@@ -276,8 +292,12 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
     </>}
 
     <h3>Klaar ({keuring.klaar.length})</h3>
-    {keuring.klaar.length ? <details><summary>Deze producten vragen nu niets</summary>{keuring.klaar.map(({ product, version, openWoorden, nagelopen, taken }) => <div className="admin-row" key={product.id}>
-      <span>{product.brand} — {product.name}{!product.published && ' (concept)'} · {!nagelopen ? 'keuring ziet geen open punten, nog niet vastgelegd' : openWoorden.length ? `nagekeken ${new Date(version.reviewed_at).toLocaleDateString('nl-NL')}; etiket noemt geen bron voor: ${openWoorden.join(', ')}` : `nagekeken ${new Date(version.reviewed_at).toLocaleDateString('nl-NL')}; etiket is eenduidig`}</span>
+    {keuring.klaar.length ? <details><summary>Deze producten vragen nu niets</summary>{keuring.klaar.map(({ product, version, openWoorden, nagelopen, herkomst }) => <div className="admin-row" key={product.id}>
+      <span>{product.brand} — {product.name}{!product.published && ' (concept)'} · {nagelopen
+        ? `${openWoorden.length ? `nagekeken ${new Date(version.reviewed_at).toLocaleDateString('nl-NL')}; etiket noemt geen bron voor: ${openWoorden.join(', ')}` : `nagekeken ${new Date(version.reviewed_at).toLocaleDateString('nl-NL')}; etiket is eenduidig`}`
+        : herkomst
+          ? `${herkomst}; ${openWoorden.length ? `etiket noemt geen bron voor: ${openWoorden.join(', ')}` : 'de keuring ziet geen open punten'}`
+          : 'keuring ziet geen open punten, nog niet vastgelegd'}</span>
       <button type="button" onClick={() => edit(product)}>Bewerken</button>
     </div>)}</details> : <p>Nog geen producten die klaar zijn.</p>}
 

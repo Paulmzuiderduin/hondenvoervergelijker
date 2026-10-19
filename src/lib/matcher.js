@@ -18,6 +18,12 @@ export function isReviewOverdue(checkedAt, now = new Date()) {
 // "Onbekend" blijft staan ook als een beheerder het product al heeft nagekeken:
 // nagekeken betekent "deze tekst is tegen de bron gecontroleerd", niet "het
 // allergeen is er niet". Alleen het etiket of de fabrikant kan dat laatste zeggen.
+//
+// Een etiket dat automatisch van de bronpagina is overgenomen (imported_at) telt
+// als gecontroleerde tekst voor de vraag "is hier nog een open vraag?" — de
+// herkomst staat dan op de kaart ("automatisch overgenomen van <domein> op
+// <datum> · nog niet door een mens nagelopen"), zodat er nooit een menselijke
+// controle geclaimd wordt die niet gebeurd is.
 export function productMatch(product, selectedAllergens, now = new Date()) {
   const version = product.recipe_versions?.[0]
   const text = version?.ingredients_text || ''
@@ -52,6 +58,7 @@ export function productMatch(product, selectedAllergens, now = new Date()) {
   })
 
   const reviewed = Boolean(version?.reviewed_at)
+  const imported = Boolean(version?.imported_at)
   const hasLabel = Boolean(text)
   const stale = isReviewOverdue(product.last_checked_at, now)
   const presentStates = states.filter((state) => state.state === 'present')
@@ -63,7 +70,7 @@ export function productMatch(product, selectedAllergens, now = new Date()) {
   // Zonder gecontroleerde tekst is er geen bewijs: dan is er niets "geschikt".
   let kind = 'suitable'
   if (presentStates.length) kind = 'excluded'
-  else if (unknownStates.length || !hasLabel || !reviewed || stale) kind = 'check'
+  else if (unknownStates.length || !hasLabel || !(reviewed || imported) || stale) kind = 'check'
   // Zonder allergenenkeuze is er geen vraag om te beantwoorden; dan zegt
   // "Geschikt" alleen: dit etiket noemt elke bron. Zodra er wél iets gekozen is,
   // hangt het oordeel aan die allergenen en niet meer aan het hele etiket.
@@ -75,9 +82,16 @@ export function productMatch(product, selectedAllergens, now = new Date()) {
     presentStates,
     unknownStates,
     reviewed,
+    imported,
+    importedAt: version?.imported_at ?? null,
+    importNote: version?.import_note ?? null,
     hasLabel,
     stale,
     transparent,
+    // Gehydrolyseerd eiwit: geen allergeen en geen bron, maar het hoort op de
+    // kaart te staan omdat een dierenarts er juist op stuurt. Het oordeel
+    // verandert er niets door.
+    hydrolysed: assessment.hydrolysed,
     // Wat het etiket niet bij name noemt, los van de keuze van de bezoeker: dit
     // bepaalt de rode woorden en de opmerking onder aan de kaart.
     hidden: assessment.hidden,
