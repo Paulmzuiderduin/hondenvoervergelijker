@@ -1,0 +1,126 @@
+{
+  "bron": "https://animonda.de",
+  "opgehaald": "2026-10-19",
+  "producten": [
+    {
+      "merk": "Animonda",
+      "naam": "Integra Protect Renal droogvoer voor honden",
+      "voertype": "kibble",
+      "verpakking": "700 g",
+      "gtin": "4017721864435",
+      "bronUrl": "https://animonda.de/product/integra-protect-adult-renal/86443-0",
+      "etiketOrigineel": "Reis, Mais, Geflügelprotein (getrocknet), Geflügelfett, Rindertalg, Rübenschnitzel, Geflügelprotein (hydrol.), Geflügelleber, Lachsöl, Leinsamen, Vollei (getr.), Fructooligosaccharide, Calciumcarbonat, Bierhefe, Kaliumchlorid, Yucca schidigera.",
+      "etiketNl": "rijst, maïs, gevogelte-eiwit (gedroogd), gevogeltevet, rundvet, bietenpulp, gevogelte-eiwit (gehydrolyseerd), gevogeltelever, zalmolie, lijnzaad, heel ei (gedroogd), fructo-oligosachariden, calciumcarbonaat, biergist, kaliumchloride, yucca schidigera.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Animonda",
+      "naam": "Integra Protect Sensitive droogvoer voor honden",
+      "voertype": "kibble",
+      "verpakking": "700 g",
+      "gtin": "4017721864473",
+      "bronUrl": "https://animonda.de/product/integra-protect-adult-sensitive/86447-0",
+      "etiketOrigineel": "Mais, Putenprotein (getrocknet), Geflügelfett, Putenleber, Maiskleber, Lachsöl, Kaliumchlorid, DL-Methionin.",
+      "etiketNl": "maïs, kalkoeneiwit (gedroogd), gevogeltevet, kalkoenlever, maïsgluten, zalmolie, kaliumchloride, DL-methionine.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Animonda",
+      "naam": "Integra Protect Intestinal droogvoer voor honden",
+      "voertype": "kibble",
+      "verpakking": "4 kg",
+      "gtin": "4017721864152",
+      "bronUrl": "https://animonda.de/product/integra-protect-adult-intestinal/86415-0",
+      "etiketOrigineel": "Mais, Geflügelprotein (getrocknet), Reis, Geflügelprotein hydrol., Geflügelleber, Vollei (getr.), Bierhefe, Geflügelfett, Rindertalg, Lachsöl, Rübenschnitzel, Leinsamen, Haferfasern, Fructoligosaccharide, Natriumchlorid, Kaliumchlorid, Calciumcarbonat, Yucca schidigera. Leicht verdauliche Ausgangsquellen: Geflügelprotein (getrocknet), Geflügelprotein hydrol., Reis.",
+      "etiketNl": "maïs, gevogelte-eiwit (gedroogd), rijst, gevogelte-eiwit gehydrolyseerd, gevogeltelever, heel ei (gedroogd), biergist, gevogeltevet, rundvet, zalmolie, bietenpulp, lijnzaad, havervezels, fructo-oligosachariden, natriumchloride, kaliumchloride, calciumcarbonaat, yucca schidigera. Licht verteerbare uitgangsbronnen: gevogelte-eiwit (gedroogd), gevogelte-eiwit gehydrolyseerd, rijst.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Animonda",
+      "naam": "Integra Protect Renal met kip",
+      "voertype": "wet",
+      "verpakking": "11 x 150 g",
+      "gtin": "4017721864008",
+      "bronUrl": "https://animonda.de/product/integra-protect-adult-renal-mit-huhn/86400-0",
+      "etiketOrigineel": "Fleisch und tierische Nebenerzeugnisse (22 % Huhn, Schwein, Rind), Öle und Fette, Gemüse (Kartoffeln), pflanzliche Nebenerzeugnisse, Mineralstoffe. Proteinquellen: Huhn, Schwein, Rind.",
+      "etiketNl": "vlees en dierlijke bijproducten (22 % kip, varken, rund), oliën en vetten, groenten (aardappelen), plantaardige bijproducten, mineralen. Eiwitbronnen: kip, varken, rund.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Animonda",
+      "naam": "Integra Protect Sensitive kip + pastinaak",
+      "voertype": "wet",
+      "verpakking": "11 x 150 g",
+      "gtin": "4017721865388",
+      "bronUrl": "https://animonda.de/product/integra-protect-adult-sensitive-huhn-pastinaken/86538-0",
+      "etiketOrigineel": "63 % Huhn, 5 % Pastinaken, Calciumcarbonat, 0,5 % Rapsöl, Natriumchlorid.",
+      "etiketNl": "63 % kip, 5 % pastinaak, calciumcarbonaat, 0,5 % koolzaadolie, natriumchloride.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Animonda",
+      "naam": "Integra Protect Intestinal pure kip",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "gtin": "4017721864145",
+      "bronUrl": "https://animonda.de/product/integra-protect-adult-intestinal-huhn-pur/86414-0",
+      "etiketOrigineel": "Huhn (67 %), Reis (1 %), Mineralstoffe.",
+      "etiketNl": "kip (67 %), rijst (1 %), mineralen.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Animonda",
+      "naam": "GranCarno Adult rund + kip",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "gtin": "4017721827324",
+      "bronUrl": "https://animonda.de/product/grancarno-adult-rind-huhn/82732-0",
+      "etiketOrigineel": "38 % Rind (Lunge, Leber, Fleisch, Herz, Niere, Euter), 30 % Huhn (Fleisch, Herz, Magen, Leber, Hals), Mine­ralstoffe, Distelöl.",
+      "etiketNl": "38 % rund (long, lever, vlees, hart, nier, uier), 30 % kip (vlees, hart, maag, lever, nek), mineralen, distelolie.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Animonda",
+      "naam": "GranCarno Senior rund + lam",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "gtin": "4017721827379",
+      "bronUrl": "https://animonda.de/product/grancarno-senior-rind-lamm/82737-0",
+      "etiketOrigineel": "43 % Rind (Lunge, Fleisch, Herz, Euter, Nie­re), 25 % Lamm (Leber, Pansen), Mineralstoffe, Distelöl, Lachsöl.",
+      "etiketNl": "43 % rund (long, vlees, hart, uier, nier), 25 % lam (lever, pens), mineralen, distelolie, zalmolie.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Animonda",
+      "naam": "GranCarno Junior gevogelte + lam droogvoer",
+      "voertype": "kibble",
+      "verpakking": "1 kg",
+      "gtin": "4017721829441",
+      "bronUrl": "https://animonda.de/product/grancarno-junior-gefluegel-lamm/82944-0",
+      "etiketOrigineel": "23% Geflügelprotein (getrocknet), 15% frisches Geflügelfleisch, Kartoffelflocken, Erbsen, Kartoffelstärke, 6,2% Geflügelfett, 4% Lammprotein (getrocknet), Favabohnen, 3% Geflügelproteinhydrolysat, Leinsamen, Rübentrockenschnitzel, 0,4% Lachsöl, Mineralstoffe.",
+      "etiketNl": "23% gevogelte-eiwit (gedroogd), 15% vers gevogeltevlees, aardappelvlokken, erwten, aardappelzetmeel, 6,2% gevogeltevet, 4% lameiwit (gedroogd), tuinbonen, 3% gevogelte-eiwit hydrolysaat, lijnzaad, gedroogde bietenpulp, 0,4% zalmolie, mineralen.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "Animonda",
+      "naam": "BugBell Adult HighSensitive droogvoer",
+      "voertype": "kibble",
+      "verpakking": "800 g",
+      "gtin": "4260704280818",
+      "bronUrl": "https://animonda.de/product/bugbell-adult-trockenfutter-highsensitive/85004-0",
+      "etiketOrigineel": "Tapioka (57 %), Insektenprotein (Hermetia illucens 28 %), Mineralstoffe (7 %), Rapsöl (4,8 %), Leinöl (3 %).",
+      "etiketNl": "tapioca (57 %), insecteneiwit (Hermetia illucens 28 %), mineralen (7 %), koolzaadolie (4,8 %), lijnzaadolie (3 %).",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    }
+  ]
+}

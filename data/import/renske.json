@@ -1,0 +1,126 @@
+{
+  "bron": "https://www.renske.com",
+  "opgehaald": "2026-10-19",
+  "producten": [
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Kip met rund",
+      "voertype": "wet",
+      "verpakking": "95 / 185 / 375 g",
+      "gtin": null,
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/kip-met-rund-375g",
+      "etiketOrigineel": "Kip 50%, rund 10%, gebroken rijst 3,5%, wortelen 3%, erwten 1%, gedroogde algen (fucus vesiculosus) 0,06%, Xylo-oligosacchariden, duindoorn, yucca schidigera extract.",
+      "etiketNl": "Kip 50%, rund 10%, gebroken rijst 3,5%, wortelen 3%, erwten 1%, gedroogde algen (fucus vesiculosus) 0,06%, Xylo-oligosacchariden, duindoorn, yucca schidigera extract.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Lam graanvrij",
+      "voertype": "wet",
+      "verpakking": "95 / 185 / 375 g",
+      "gtin": null,
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/lam-graanvrij-375g",
+      "etiketOrigineel": "Lam 70%, aardappel 4%, olijfolie 2,4%, erwten 1%, wortelen 1%, mineralen 0,5%, gedroogde algen (fucus vesiculosus) 0,3%, Xylo-oligosacchariden, duindoorn, yucca schidigera extract.",
+      "etiketNl": "Lam 70%, aardappel 4%, olijfolie 2,4%, erwten 1%, wortelen 1%, mineralen 0,5%, gedroogde algen (fucus vesiculosus) 0,3%, Xylo-oligosacchariden, duindoorn, yucca schidigera extract.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Zalm graanvrij",
+      "voertype": "wet",
+      "verpakking": "95 / 185 / 375 g",
+      "gtin": null,
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/zalm-graanvrij-375g",
+      "etiketOrigineel": "Zalm 55%, aardappel 10%, gedroogde algen (fucus vesiculosus) 0,06%, mineralen 0,04%, Xylo-oligosacchariden, duindoorn, yucca schidigera extract.",
+      "etiketNl": "Zalm 55%, aardappel 10%, gedroogde algen (fucus vesiculosus) 0,06%, mineralen 0,04%, Xylo-oligosacchariden, duindoorn, yucca schidigera extract.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Konijn met eend",
+      "voertype": "wet",
+      "verpakking": "95 / 185 / 375 g",
+      "gtin": null,
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/konijn-met-eend-375g",
+      "etiketOrigineel": "Konijn 40%, eend 20%, erwten 3%, wortelen 1%, gedroogde algen (fucus vesiculosus) 0,06%, Xylo-oligosacchariden, duindoorn, yucca schidigera extract.",
+      "etiketNl": "Konijn 40%, eend 20%, erwten 3%, wortelen 1%, gedroogde algen (fucus vesiculosus) 0,06%, Xylo-oligosacchariden, duindoorn, yucca schidigera extract.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers gestoomde Kip",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "gtin": null,
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/kip-395g",
+      "etiketOrigineel": "Vers gestoomde kip (80%), erwten (3%), bruine rijst (2%), wortelen (1%), mineralen, gedroogd zeewier (0,45%), peterselie, rozemarijn, cichoreiwortel extract (als bron van prebiotica fructo-oligosacchariden), glucosamine (0,05%), chondroitine (0,05%) ,yucca extract.",
+      "etiketNl": "Vers gestoomde kip (80%), erwten (3%), bruine rijst (2%), wortelen (1%), mineralen, gedroogd zeewier (0,45%), peterselie, rozemarijn, cichoreiwortel extract (als bron van prebiotica fructo-oligosacchariden), glucosamine (0,05%), chondroitine (0,05%) ,yucca extract.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers gestoomde Eend met konijn",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "gtin": null,
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/eend-met-konijn-395g",
+      "etiketOrigineel": "Eend (62%), konijn (18%), erwten (3%), bruine rijst (2%), wortelen (1%), mineralen, gedroogd zeewier (0,45%), peterselie, rozemarijn, cichoreiwortel extract (als bron van prebiotica fructo-oligosacchariden), glucosamine (50 mg/kg), chondroitine (50 mg/kg) ,yucca extract.",
+      "etiketNl": "Eend (62%), konijn (18%), erwten (3%), bruine rijst (2%), wortelen (1%), mineralen, gedroogd zeewier (0,45%), peterselie, rozemarijn, cichoreiwortel extract (als bron van prebiotica fructo-oligosacchariden), glucosamine (50 mg/kg), chondroitine (50 mg/kg) ,yucca extract.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Renske",
+      "naam": "Biologisch Vers Gestoomde Kip",
+      "voertype": "wet",
+      "verpakking": "500 g",
+      "gtin": null,
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/renske-biologische-hondenvoeding/vers-gestoomde-kip-500g",
+      "etiketOrigineel": "Biologisch gecertificeerde kip (vleugels, nek, lever, karkas) (68%), biologische boekweit, biologische kalkoen (vleugels, nek, karkas) (5%), biologische wortelen, biologisch lijnzaad (5%), biologische kruidenmix (brandnetel, rozenbottel, anijs, kamille, melisse, Echinacea) (1%), mineralen.",
+      "etiketNl": "Biologisch gecertificeerde kip (vleugels, nek, lever, karkas) (68%), biologische boekweit, biologische kalkoen (vleugels, nek, karkas) (5%), biologische wortelen, biologisch lijnzaad (5%), biologische kruidenmix (brandnetel, rozenbottel, anijs, kamille, melisse, Echinacea) (1%), mineralen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers Ingevroren Kip & Rund",
+      "voertype": "raw",
+      "verpakking": "600 g",
+      "gtin": null,
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/renske-vers-ingevroren/kip-rund-600g",
+      "etiketOrigineel": "Vers ingevroren kippenvlees (43%), vers ingevroren rund (35%) (long, maag, lever), wortel (8%), spinazie (6%), lijnzaad (4%), rode bessen (2%), mineralen, koolzaadolie.",
+      "etiketNl": "Vers ingevroren kippenvlees (43%), vers ingevroren rund (35%) (long, maag, lever), wortel (8%), spinazie (6%), lijnzaad (4%), rode bessen (2%), mineralen, koolzaadolie.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Renske",
+      "naam": "Super Premium Vers bereide Kip",
+      "voertype": "kibble",
+      "verpakking": "600 g / 2 / 6,5 / 12 kg",
+      "gtin": null,
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/super-premium/vers-bereide-kip",
+      "etiketOrigineel": "Vers bereide kip (26%), gedroogd gevogelte (19%), aardappel (15%), zoete aardappel, bietenpulp, gevogeltevet, gedroogde krill, gedroogd ei, kippenbouillon, biergist, mineralen, lijnzaad (1,2%), zeewier, beta-glucanen, gedroogde cranberries (0,04%), gedroogde appel (0,04%), gedroogde peer (0,04%), gedroogde broccoli (0,04%), gedroogde tomaat, glucosamine (170 mg/kg), methylsulfonylmethaan (MSM) (170 mg/kg), chondroïtinesulfaat (120 mg/kg).",
+      "etiketNl": "Vers bereide kip (26%), gedroogd gevogelte (19%), aardappel (15%), zoete aardappel, bietenpulp, gevogeltevet, gedroogde krill, gedroogd ei, kippenbouillon, biergist, mineralen, lijnzaad (1,2%), zeewier, beta-glucanen, gedroogde cranberries (0,04%), gedroogde appel (0,04%), gedroogde peer (0,04%), gedroogde broccoli (0,04%), gedroogde tomaat, glucosamine (170 mg/kg), methylsulfonylmethaan (MSM) (170 mg/kg), chondroïtinesulfaat (120 mg/kg).",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Renske",
+      "naam": "M.O.P. Vers bereide Kip & Rijst",
+      "voertype": "kibble",
+      "verpakking": "600 g / 3 / 6,5 / 12 kg",
+      "gtin": null,
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/mop-droogvoer/vers-bereide-kip-met-rijst",
+      "etiketOrigineel": "Verse kip (30%), rijst (28%), gedroogd gevogelte (12%), havermeel uit gepelde zaden, maïs, lijnzaad (5%), erwtenmeel, bietenpulp, gemalen zeezoöplankton (krill) (3%), gedroogde biergist, gedroogd johannesbroodmeel, dicalciumfosfaat, gevogeltevet, plantaardige oliën (palm en kokosnoot), gevogeltelever (gehydroliseerd), steenzout.",
+      "etiketNl": "Verse kip (30%), rijst (28%), gedroogd gevogelte (12%), havermeel uit gepelde zaden, maïs, lijnzaad (5%), erwtenmeel, bietenpulp, gemalen zeezoöplankton (krill) (3%), gedroogde biergist, gedroogd johannesbroodmeel, dicalciumfosfaat, gevogeltevet, plantaardige oliën (palm en kokosnoot), gevogeltelever (gehydroliseerd), steenzout.",
+      "aantekening": null,
+      "twijfel": null
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "bron": "https://smuldier.nl",
+  "opgehaald": "2026-10-19",
+  "producten": [
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Vlees",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://smuldier.nl/product/smuldier-complete-maaltijd-400g-vlees/",
+      "etiketOrigineel": "Kippenvlees (28,3%), runderpens 25,0%, bevleesde kippenkarkassen 20,5%, bevleesde runderribben 12,5%, runderlever 5,0%, rundermilten 3,8%, rundernieren 3,1%, vitamines en mineralen 1,0%, zonnebloemolie 0,8%.",
+      "etiketNl": "Kippenvlees (28,3%), runderpens 25,0%, bevleesde kippenkarkassen 20,5%, bevleesde runderribben 12,5%, runderlever 5,0%, rundermilten 3,8%, rundernieren 3,1%, vitamines en mineralen 1,0%, zonnebloemolie 0,8%.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Pens & Vlees",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://smuldier.nl/product/smuldier-complete-maaltijd-400g-pens-vlees/",
+      "etiketOrigineel": "Runderpens 49,4%, bevleesde kippenkarkassen 31,9%, runderlever 10,0%, rundermilten 3,8%, rundernieren 3,1%, vitamines en mineralen 1,0%, zonnebloemolie 0,8%.",
+      "etiketNl": "Runderpens 49,4%, bevleesde kippenkarkassen 31,9%, runderlever 10,0%, rundermilten 3,8%, rundernieren 3,1%, vitamines en mineralen 1,0%, zonnebloemolie 0,8%.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Kip",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://smuldier.nl/product/kip-complete-maaltijd-400g/",
+      "etiketOrigineel": "Bevleesde kippenkarkassen 57,6%, kippenvlees 37,5%, rijst 3,1%, vitamines en mineralen 1,0%, zonnebloemolie 0,8%.",
+      "etiketNl": "Bevleesde kippenkarkassen 57,6%, kippenvlees 37,5%, rijst 3,1%, vitamines en mineralen 1,0%, zonnebloemolie 0,8%.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Lam",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://smuldier.nl/product/smuldier-complete-maaltijd-400g-lam/",
+      "etiketOrigineel": "Lamspens 37,5%, bevleesde kippenkarkassen 21,5%, kippenvlees 18,7%, lamsvlees 12,5%, lamsorganen 8,8%, vitamines en mineralen 1%.",
+      "etiketNl": "Lamspens 37,5%, bevleesde kippenkarkassen 21,5%, kippenvlees 18,7%, lamsvlees 12,5%, lamsorganen 8,8%, vitamines en mineralen 1%.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Eend",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://smuldier.nl/product/smuldier-complete-maaltijd-400g-eend/",
+      "etiketOrigineel": "Bevleesde eendenkarkassen 59%, kippenvlees 30%, kippenlever 7,5%, kippenhart 2,5%, vitamines en mineralen 1%.",
+      "etiketNl": "Bevleesde eendenkarkassen 59%, kippenvlees 30%, kippenlever 7,5%, kippenhart 2,5%, vitamines en mineralen 1%.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Hart",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://smuldier.nl/product/hart-complete-maaltijd-400g/",
+      "etiketOrigineel": "Bevleesde kippenkarkassen 53,1%, runderhart 26,3%, kippenvlees 18,8%, vitamines en mineralen 1,0%, zonnebloemolie 0,8%.",
+      "etiketNl": "Bevleesde kippenkarkassen 53,1%, runderhart 26,3%, kippenvlees 18,8%, vitamines en mineralen 1,0%, zonnebloemolie 0,8%.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Pens & Hart",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://smuldier.nl/product/pens-hart-complete-maaltijd-400g/",
+      "etiketOrigineel": "Runderpens 36,3%, bevleesde kippenkarkassen 35,6%, runderhart 26,3%, vitamines en mineralen 1,0%, zonnebloemolie 0,8%.",
+      "etiketNl": "Runderpens 36,3%, bevleesde kippenkarkassen 35,6%, runderhart 26,3%, vitamines en mineralen 1,0%, zonnebloemolie 0,8%.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Eend & Rund",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://smuldier.nl/product/smuldier-complete-maaltijd-400g-eend-rund/",
+      "etiketOrigineel": "Kippenvlees 34,0%, bevleesde eendenkarkassen 27,7%, bevleesde runderribben 20,0%, runderlever 8,0%, rundernieren 4,0%, rundermilten 4,0%, zonnebloemolie 1,3%, vitamines en mineralen 1,0%.",
+      "etiketNl": "Kippenvlees 34,0%, bevleesde eendenkarkassen 27,7%, bevleesde runderribben 20,0%, runderlever 8,0%, rundernieren 4,0%, rundermilten 4,0%, zonnebloemolie 1,3%, vitamines en mineralen 1,0%.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Vers vlees Maaltijd Rund",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "gtin": null,
+      "bronUrl": "https://smuldier.nl/product/smuldier-vers-vlees-maaltijd-300g-rund/",
+      "etiketOrigineel": "Rund 70% (rundvlees, runderlong, runderlever, runderpens), bouillon, vitamines & mineralen.",
+      "etiketNl": "Rund 70% (rundvlees, runderlong, runderlever, runderpens), bouillon, vitamines & mineralen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Vers vlees Maaltijd Kip",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "gtin": null,
+      "bronUrl": "https://smuldier.nl/product/smuldier-vers-vlees-maaltijd-300g-kip/",
+      "etiketOrigineel": "Kip 70% (kippenhart, kippenvlees, kippenmaag, kippenlever, kippennek, kippenvet), bouillon, vitamines & mineralen.",
+      "etiketNl": "Kip 70% (kippenhart, kippenvlees, kippenmaag, kippenlever, kippennek, kippenvet), bouillon, vitamines & mineralen.",
+      "aantekening": null,
+      "twijfel": null
+    }
+  ]
+}
