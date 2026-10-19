@@ -292,6 +292,11 @@ test('gehydrolyseerd eiwit wordt vermeld met de bron die erbij staat', () => {
   // bron vóór de komma hoort er niet bij.
   assert.deepEqual(assessLabel('Eiwithydrolysaat, rijst, mineralen').hydrolysed.words, [])
   assert.deepEqual(assessLabel('Zalm, eiwithydrolysaat').hydrolysed.words, [])
+  // Schrijfwijze met een i komt ook voor ("gevogelte hydrolisaat", Trovet).
+  const trovet = assessLabel('Gevogelte hydrolisaat, rijst, mineralen')
+  assert.equal(trovet.hydrolysed.present, true)
+  assert.deepEqual(trovet.hydrolysed.keys, ['poultry'])
+  assert.deepEqual(trovet.unknown, [])
   assert.equal(assessLabel('Kip 40%, rijst, mineralen').hydrolysed.present, false)
 })
 

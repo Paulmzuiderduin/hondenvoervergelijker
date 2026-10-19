@@ -207,7 +207,7 @@ const RISK_TERM_GROUPS = [
   { keys: ALL_KEYS, words: [
     'eiwit', 'eiwitten', 'eiwitisolaat', 'eiwitextract', 'eiwitextracten', 'eiwithydrolysaat', 'eiwithydrolysaten',
     'proteine', 'proteinen', 'proteinehydrolysaat', 'proteinehydrolysaten', 'protein', 'proteins',
-    'hydrolysaat', 'hydrolysaten', 'hydrolysate', 'hydrolysates',
+    'hydrolysaat', 'hydrolysaten', 'hydrolisaat', 'hydrolisaten', 'hydrolysate', 'hydrolysates',
     'extract', 'extracten', 'concentraat', 'concentraten', 'poeder', 'powder',
     'onbekend', 'diversen', 'overig', 'overige'
   ] },
@@ -271,7 +271,7 @@ const PROCESS_TERMS = [
 // niets door: gehydrolyseerd kip blijft kip, want alleen de dierenarts kan
 // beoordelen of het in een specifiek geval werkt.
 const HYDROLYSED_TERMS = [
-  'gehydrolyseerd*', 'gehydroliseerd*', 'hydrolyse*', 'hydrolysaat*', 'hydrolysate*', 'laagmoleculair*'
+  'gehydrolyseerd*', 'gehydroliseerd*', 'hydrolyse*', 'hydrolysaat*', 'hydrolisaat*', 'hydrolysate*', 'laagmoleculair*'
 ]
 
 // Ingrediënten die geen allergeen kunnen zijn en er ook geen kunnen verbergen:
