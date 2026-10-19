@@ -77,6 +77,17 @@ test('een zelf ingedeeld woord geldt meteen voor alle producten', () => {
   setCustomTerms([])
   assert.deepEqual(assessLabel('Kip 40%, glucosamine, erwten').unknown, ['glucosamine'])
 })
+test('zonder allergenenkeuze vraagt een onduidelijk etiket om controle', () => {
+  const onduidelijk = product({ recipe_versions: [{ ingredients_text: 'Kip 40%, cooked broth, mineralen', reviewed_at: '2026-10-01T00:00:00Z', recipe_ingredients: [] }] })
+  // Geen keuze: dan is de vraag "noemt dit etiket elke bron?" en het antwoord is nee.
+  assert.equal(productMatch(onduidelijk, [], new Date('2026-10-14')).kind, 'check')
+  // Met een keuze doet alleen dat allergeen nog mee: bouillon kan geen tarwe zijn.
+  assert.equal(productMatch(onduidelijk, ['wheat'], new Date('2026-10-14')).kind, 'suitable')
+  assert.equal(productMatch(onduidelijk, ['beef'], new Date('2026-10-14')).kind, 'check')
+  // En een etiket dat elke bron noemt is zonder keuze wel geschikt.
+  const helder = product({ recipe_versions: [{ ingredients_text: 'Kip 40%, tarwe, erwten', reviewed_at: '2026-10-01T00:00:00Z', recipe_ingredients: [] }] })
+  assert.equal(productMatch(helder, [], new Date('2026-10-14')).kind, 'suitable')
+})
 test('een allergeen dat de beheerder bevestigt telt ook zonder etiketwoord', () => {
   const versie = { ingredients_text: 'Rijst, aardappel, mineralen', reviewed_at: '2026-10-01T00:00:00Z', recipe_ingredients: [{ allergen_key: 'beef', certainty: 'confirmed' }] }
   assert.equal(productMatch(product({ recipe_versions: [versie] }), ['beef'], new Date('2026-10-14')).kind, 'excluded')

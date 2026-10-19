@@ -56,11 +56,18 @@ export function productMatch(product, selectedAllergens, now = new Date()) {
   const stale = isReviewOverdue(product.last_checked_at, now)
   const presentStates = states.filter((state) => state.state === 'present')
   const unknownStates = states.filter((state) => state.state === 'unknown')
+  // Noemt dit etiket elke allergeenbron bij name? Dat is de productbrede vraag,
+  // los van de keuze van de bezoeker.
+  const transparent = assessment.hidden.length === 0 && assessment.unknown.length === 0
 
   // Zonder gecontroleerde tekst is er geen bewijs: dan is er niets "geschikt".
   let kind = 'suitable'
   if (presentStates.length) kind = 'excluded'
   else if (unknownStates.length || !hasLabel || !reviewed || stale) kind = 'check'
+  // Zonder allergenenkeuze is er geen vraag om te beantwoorden; dan zegt
+  // "Geschikt" alleen: dit etiket noemt elke bron. Zodra er wél iets gekozen is,
+  // hangt het oordeel aan die allergenen en niet meer aan het hele etiket.
+  else if (!selectedAllergens.length && !transparent) kind = 'check'
 
   return {
     kind,
@@ -70,6 +77,7 @@ export function productMatch(product, selectedAllergens, now = new Date()) {
     reviewed,
     hasLabel,
     stale,
+    transparent,
     // Wat het etiket niet bij name noemt, los van de keuze van de bezoeker: dit
     // bepaalt de rode woorden en de opmerking onder aan de kaart.
     hidden: assessment.hidden,

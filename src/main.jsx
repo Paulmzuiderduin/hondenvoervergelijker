@@ -26,7 +26,7 @@ function ProductCard({ product, match, excluded = false }) {
   const checkReason = !match.hasLabel ? 'Er is nog geen ingrediëntenlijst ingevoerd.'
     : !match.reviewed ? 'Deze ingrediëntenlijst is nog niet tegen de bron gecontroleerd.'
       : match.stale ? 'Deze ingrediëntenlijst is langer dan zes maanden niet gecontroleerd.'
-        : ''
+        : !match.transparent && !match.states.some((state) => state.state === 'unknown') ? 'Dit etiket noemt een bron die niet bij name staat.' : ''
   return <article className={excluded ? 'product-card excluded' : 'product-card'}>
     <div><strong>{product.brand}</strong> — {product.name}</div>
     <small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]}{product.package_size ? ` · ${product.package_size}` : ''}</small>
@@ -43,7 +43,7 @@ function ProductCard({ product, match, excluded = false }) {
     {product.source_url?.startsWith('http') && <p><a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">Bekijk product{sourceDomain(product.source_url) ? ` (${sourceDomain(product.source_url)})` : ''}</a></p>}
     {excluded && <p className="reason excluded">Uitgesloten vanwege: {match.presentStates.map((state) => ALLERGEN_LABELS[state.key]).join(' · ')}</p>}
     {!excluded && checkReason && <p className="reason">Controleer: {checkReason}</p>}
-    {!excluded && !checkReason && match.kind === 'suitable' && <p className="reason">Geen van de gekozen allergenen staat in deze lijst.</p>}
+    {!excluded && !checkReason && match.kind === 'suitable' && <p className="reason">{match.states.length ? 'Geen van de gekozen allergenen staat in deze lijst.' : 'Dit etiket noemt elke allergeenbron bij name. Kies je allergenen om te vergelijken.'}</p>}
     {hiddenKeys.length > 0 && !match.states.some((state) => state.state === 'unknown') && <p className="reason"><small>Let op: dit etiket noemt geen bron voor {openWords.join(', ')}. {labelList(hiddenKeys)} kunnen daar in zitten.</small></p>}
   </article>
 }
@@ -301,7 +301,7 @@ function App() {
       <aside><strong>Belangrijk:</strong> deze tool vergelijkt ingevoerde etiketinformatie. Hij is geen dierenartsadvies en geeft geen garantie. Controleer altijd de verpakking en overleg bij twijfel met een dierenarts.</aside>
       <section><h2>Allergieën van je hond</h2>{ALLERGEN_GROUPS.map((group) => <fieldset className="allergen-group" key={group.key}><legend>{group.label}</legend><div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => setAllergens(e.target.checked ? [...allergens, key] : allergens.filter((item) => item !== key))} />{label}</label>)}</div></fieldset>)}<h2>Type voer</h2><div className="choices">{FOOD_TYPES.map(([key, label]) => <label className="inline" key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div></section>
       {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : loading ? <p>Laden…</p> : <>{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">rood</mark> = het etiket noemt de bron van dat ingrediënt niet ("dierlijk vet", "granen"). Het oordeel gaat per allergeen: een product komt alleen bij "Controleer" als zo'n onduidelijkheid jouw allergeen kan bevatten. Reken op het etiket en de fabrikant, niet op deze site.</p>
-        <section><h2>Geschikt ({suitable.length})</h2>{suitable.length ? suitable.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} />) : <p>Geen producten waarin de gekozen allergenen aantoonbaar ontbreken.</p>}</section>
+        <section><h2>Geschikt ({suitable.length})</h2>{suitable.length ? suitable.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} />) : <p>{allergens.length ? 'Geen producten waarin de gekozen allergenen aantoonbaar ontbreken.' : 'Geen enkel etiket noemt elke allergeenbron bij name.'}</p>}</section>
         <section><h2>Controleer etiket/fabrikant ({check.length})</h2>{check.length ? check.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} />) : <p>Geen producten met een open vraag bij de gekozen allergenen.</p>}</section>
         <section><h2>Uitgesloten ({excluded.length})</h2>{excluded.length ? excluded.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} excluded />) : <p>Geen enkel product bevat de gekozen allergenen.</p>}</section></>}
     </>}</main>
