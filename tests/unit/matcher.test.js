@@ -336,3 +336,55 @@ test('een automatisch overgenomen etiket vraagt geen menselijke klik', () => {
   // En een verouderde import vraagt opnieuw om een blik.
   assert.equal(productMatch({ last_checked_at: '2026-03-01', recipe_versions: [versie] }, ['beef'], new Date('2026-10-20')).kind, 'check')
 })
+
+test('een bron achter het woord telt als genoemd', () => {
+  const rund = assessLabel('Spiervlees van rund (20%), hart van rund (15%), lever van rund (9%)')
+  assert.deepEqual(rund.unknown, [])
+  assert.deepEqual(rund.hidden, [])
+  assert.equal(rund.allergens.includes('beef'), true)
+  const kalkoen = assessLabel('Spiervlees van kalkoen, rijst')
+  assert.deepEqual(kalkoen.hidden, [])
+  const lam = assessLabel('Lam hart (23%), spiervlees lammeren (15%), long van lam (14%)')
+  assert.deepEqual(lam.hidden, [])
+  // Zonder bron blijft het een open vraag.
+  const bronloos = assessLabel('Spiervlees (20%), hart (10%), bouillon (5%)')
+  assert.deepEqual(bronloos.hidden.map(({ word }) => word).sort(), ['bouillon', 'hart', 'spiervlees'])
+})
+
+test('een komma scheidt het volgende ingrediënt van de bron', () => {
+  const uitslag = assessLabel('Bouillon, gierst, eiwit, maïs')
+  assert.deepEqual(uitslag.hidden.map(({ word }) => word).sort(), ['bouillon', 'eiwit'])
+  // "Dierlijk vet" is één begrip; het volgende ingrediënt is niet de bron.
+  assert.equal(assessLabel('Dierlijk vet, sojaolie').hidden.some(({ word }) => word === 'vet'), true)
+})
+
+test('ontbrekende dieren en planten worden herkend', () => {
+  assert.equal(assessLabel('Kalfshart 30%, kalfslong 10%').allergens.includes('beef'), true)
+  assert.equal(assessLabel('Edelhert 20%').allergens.includes('venison'), true)
+  assert.equal(assessLabel('Pangasius 20%').allergens.includes('whitefish'), true)
+  assert.equal(assessLabel('Zeealgen 0,4%').allergens.includes('algae'), true)
+  assert.equal(assessLabel('Bleekselderij 1%').allergens.includes('celery'), true)
+  assert.equal(assessLabel('Oesterschelp 1%').allergens.includes('shellfish'), true)
+  assert.equal(assessLabel('Eischaalpoeder 0,7%').allergens.includes('egg'), true)
+  assert.equal(assessLabel('Meel pompoenzaad 1%').allergens.includes('pumpkin'), true)
+})
+
+test('gewone etiketwoorden zijn bekend', () => {
+  const uitslag = assessLabel('Bestaande uit: abrikoos, basilicum, dille, bieslook, pollen, andeszout, psylliumvezels, klei, bakkersgist, cordial')
+  assert.deepEqual(uitslag.unknown, [])
+})
+
+test('delen zonder soort verbergen alleen dierlijke eiwitten', () => {
+  const spiervlees = assessLabel('Spiervlees 20%, rijst')
+  assert.deepEqual(spiervlees.hidden.map(({ word }) => word), ['spiervlees'])
+  assert.equal(spiervlees.hidden[0].keys.includes('beef'), true)
+  assert.equal(spiervlees.hidden[0].keys.includes('wheat'), false)
+  assert.equal(assessLabel('Kraakbeen 2%, rijst').hidden.some(({ word }) => word === 'kraakbeen'), true)
+  const glycosaminoglycanen = assessLabel('Glycosaminoglycanen 1%, rijst')
+  assert.equal(glycosaminoglycanen.hidden.some(({ word }) => word === 'glycosaminoglycanen'), true)
+  assert.equal(glycosaminoglycanen.unknown.includes('glycosaminoglycanen'), false)
+})
+
+test('een hydrolysewoord noemt de bron die ernaast staat', () => {
+  assert.deepEqual(assessLabel('Gehydrolyseerd witviseiwit').hydrolysed.keys, ['whitefish'])
+})
