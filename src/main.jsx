@@ -19,6 +19,23 @@ function labelList(keys = [], max = 5) {
   return `${labels.slice(0, max).join(', ')}${labels.length > max ? ` en ${labels.length - max} meer` : ''}`
 }
 
+// "dierlijk" en "vet" zijn twee treffers, maar één begrip. Staat de combinatie
+// zo in het etiket, dan noemen we hem ook zo. Langere varianten ("oliën en
+// vetten") winnen van de korte ("oliën").
+function bronlozeWoorden(tekst, hidden) {
+  const klein = tekst.toLowerCase()
+  const uniek = [...new Set(hidden.map(({ word }) => word))]
+    .filter((woord, _, alle) => !alle.some((ander) => ander.length > woord.length && ander.toLowerCase().includes(woord.toLowerCase())))
+    .sort((eerste, tweede) => klein.indexOf(eerste.toLowerCase()) - klein.indexOf(tweede.toLowerCase()))
+  const uit = []
+  for (const woord of uniek) {
+    const vorige = uit[uit.length - 1]
+    if (vorige && klein.includes(`${vorige.toLowerCase()} ${woord.toLowerCase()}`)) uit[uit.length - 1] = `${vorige} ${woord}`
+    else uit.push(woord)
+  }
+  return uit
+}
+
 // De etikettekst zelf verandert nooit tijdens het vergelijken; alleen het oordeel
 // erboven. Zonder deze memo zou elke kaart bij elk vinkje de hele
 // ingrediëntenlijst opnieuw opbouwen — honderden stukjes tekst per kaart.
@@ -29,8 +46,10 @@ const Ingredients = memo(function Ingredients({ text }) {
 
 function ProductCard({ product, match, excluded = false }) {
   const version = product.recipe_versions?.[0]
-  const openWords = [...new Set([...match.hidden.map(({ word }) => word), ...match.unknownWords])]
-  const hiddenKeys = [...new Set(match.hidden.flatMap(({ keys }) => keys))]
+  const verborgenWoorden = bronlozeWoorden(version?.ingredients_text ?? '', match.hidden)
+  const verborgenKeys = [...new Set(match.hidden.flatMap(({ keys }) => keys))]
+  const dektElkAllergeen = verborgenKeys.length >= ALLERGENS.length
+  const nietHerkendeWoorden = [...new Set(match.unknownWords)]
   const hydrolysed = match.hydrolysed ?? { present: false, words: [], keys: [] }
   // Het oordeel staat in hooguit drie regels: één per uitkomst. Een regel per
   // allergeen zou de kaart bij een ruime keuze tientallen regels lang maken;
@@ -49,10 +68,12 @@ function ProductCard({ product, match, excluded = false }) {
   const herkomst = match.imported
     ? `Automatisch overgenomen${sourceDomain(product.source_url) ? ` van ${sourceDomain(product.source_url)}` : ''} op ${new Date(match.importedAt).toLocaleDateString('nl-NL')}${match.reviewed ? ` · nagekeken op ${new Date(version.reviewed_at).toLocaleDateString('nl-NL')}` : ' · nog niet door een mens nagelopen'}`
     : `Laatst gecontroleerd: ${product.last_checked_at ? new Date(product.last_checked_at).toLocaleDateString('nl-NL') : 'onbekend'}${match.reviewed ? ' · tekst nagelopen' : ''}`
+  // Een etiket dat een bron niet noemt, krijgt één regel: de concrete woorden
+  // ("geen bron voor bouillon") plus de allergenen die daar in kunnen zitten.
+  // De algemene uitleg die hier eerder stond, zei hetzelfde en is vervallen.
   const checkReason = !match.hasLabel ? 'Er is nog geen ingrediëntenlijst ingevoerd.'
     : !match.reviewed && !match.imported ? 'Deze ingrediëntenlijst is nog niet tegen de bron gecontroleerd.'
-      : match.stale ? 'Deze ingrediëntenlijst is langer dan zes maanden niet gecontroleerd.'
-        : !match.transparent && !match.states.some((state) => state.state === 'unknown') ? 'Dit etiket noemt een ingrediënt zonder te zeggen waar het vandaan komt (zoals "dierlijk vet" of "granen").' : ''
+      : match.stale ? 'Deze ingrediëntenlijst is langer dan zes maanden niet gecontroleerd.' : ''
   return <article className={excluded ? 'product-card excluded' : 'product-card'}>
     <div><strong>{product.brand}</strong> — {product.name}</div>
     <small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]}{product.package_size ? ` · ${product.package_size}` : ''}{hydrolysed.present ? ' · gehydrolyseerd eiwit' : ''}</small>
@@ -67,7 +88,9 @@ function ProductCard({ product, match, excluded = false }) {
     {excluded && <p className="reason excluded">Uitgesloten vanwege: {match.presentStates.map((state) => ALLERGEN_LABELS[state.key]).join(' · ')}</p>}
     {!excluded && checkReason && <p className="reason">Controleer: {checkReason}</p>}
     {!excluded && !checkReason && match.kind === 'suitable' && !match.states.length && <p className="reason">Dit etiket noemt bij elk ingrediënt waar het vandaan komt. Kies je allergenen om te vergelijken.</p>}
-    {hiddenKeys.length > 0 && !match.states.some((state) => state.state === 'unknown') && <p className="reason"><small>Let op: dit etiket noemt geen bron voor {openWords.join(', ')}. {labelList(hiddenKeys)} kunnen daar in zitten.</small></p>}
+    {!match.states.length && (verborgenWoorden.length > 0 || nietHerkendeWoorden.length > 0) && <p className="reason"><small>Let op: {verborgenWoorden.length
+      ? `dit etiket noemt geen bron voor ${verborgenWoorden.join(', ')}. ${nietHerkendeWoorden.length ? 'Omdat er ook woorden in staan die de keuring niet kent, kan elk allergeen erin zitten.' : dektElkAllergeen ? 'Daardoor kan elk allergeen erin zitten.' : `${labelList(verborgenKeys)} kunnen daar in zitten.`}`
+      : 'dit etiket bevat woorden die de keuring niet kent. Daardoor kan elk allergeen erin zitten.'}</small></p>}
   </article>
 }
 
