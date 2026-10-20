@@ -376,9 +376,16 @@ function App() {
   const [products, setProducts] = useState([]); const [loading, setLoading] = useState(true); const [loadError, setLoadError] = useState('')
   const [terms, setTerms] = useState([]); const [termsError, setTermsError] = useState(''); const [termsOud, setTermsOud] = useState(false)
   const [allergens, setAllergens] = useState([]); const [types, setTypes] = useState(FOOD_TYPES.map(([key]) => key))
+  const [selectedBrands, setSelectedBrands] = useState(null); const [brandSearch, setBrandSearch] = useState('')
   const [admin, setAdmin] = useState(false); const [session, setSession] = useState(null); const [isAdmin, setIsAdmin] = useState(false); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [authMessage, setAuthMessage] = useState(''); const [recovery, setRecovery] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery'); const [newPassword, setNewPassword] = useState(''); const [repeatPassword, setRepeatPassword] = useState('')
   const [matches, setMatches] = useState([])
   const [tab, setTab] = useState('schoon'); const [page, setPage] = useState(1)
+  const alleMerken = useMemo(() => [...new Set(products.map(({ brand }) => brand).filter(Boolean))].sort((eerste, tweede) => eerste.localeCompare(tweede, 'nl', { sensitivity: 'base' })), [products])
+  const merkTellingen = useMemo(() => {
+    const tellingen = new Map()
+    for (const product of products.filter(({ food_type }) => types.includes(food_type))) tellingen.set(product.brand, (tellingen.get(product.brand) ?? 0) + 1)
+    return tellingen
+  }, [products, types])
   const load = async () => { if (!supabase) { setLoadError('Supabase is nog niet geconfigureerd, dus er kunnen geen producten worden geladen.'); setLoading(false); return }; setLoading(true); const { data, error } = await supabase.from('products').select('*, recipe_versions(*, recipe_ingredients(*))').eq('published', true).eq('recipe_versions.is_current', true); if (error) { setLoadError(error.message); setProducts([]) } else { setLoadError(''); setProducts(data || []) }; setLoading(false) }
   // De woordenschat komt als ruwe rij binnen. Zo blijft de site werken zolang de
   // laatste migratie (20261019180000_term_scopes.sql) nog niet is uitgevoerd: een
@@ -398,11 +405,11 @@ function App() {
   // De woordenschat (eigen indelingen) moet bekend zijn vóór het vergelijken.
   useEffect(() => {
     setCustomTerms(terms)
-    setMatches(products.filter((product) => types.includes(product.food_type)).map((product) => ({ product, match: productMatch(product, allergens) })))
-  }, [products, allergens, types, terms])
+    setMatches(products.filter((product) => types.includes(product.food_type) && (selectedBrands === null || selectedBrands.includes(product.brand))).map((product) => ({ product, match: productMatch(product, allergens) })))
+  }, [products, allergens, types, terms, selectedBrands])
   // Elke nieuwe keuze begint weer bovenaan. Zonder keuze bestaat de tab
   // "Uitgesloten" niet; dan valt de pagina terug op de eerste tab.
-  useEffect(() => { setPage(1) }, [allergens, types])
+  useEffect(() => { setPage(1) }, [allergens, types, selectedBrands])
   useEffect(() => {
     if (!allergens.length && !['schoon', 'controleer'].includes(tab)) setTab('schoon')
     if (allergens.length && tab === 'schoon') setTab('geschikt')
@@ -424,6 +431,16 @@ function App() {
   const zichtbareProducten = actieveSectie.items.slice((huidigePagina - 1) * PAGE_SIZE, huidigePagina * PAGE_SIZE)
   const gaNaarPagina = (nieuw) => { setPage(Math.min(Math.max(1, nieuw), aantalPaginas)); document.getElementById('resultaten')?.scrollIntoView({ block: 'start' }) }
   const kiesTab = (key) => { setTab(key); setPage(1); document.getElementById('resultaten')?.scrollIntoView({ block: 'start' }) }
+  const merkActief = (merk) => selectedBrands === null || selectedBrands.includes(merk)
+  const wisselMerk = (merk, aangevinkt) => setSelectedBrands((huidig) => {
+    const basis = huidig ?? alleMerken
+    const volgende = aangevinkt ? [...new Set([...basis, merk])] : basis.filter((item) => item !== merk)
+    return volgende.length === alleMerken.length ? null : volgende
+  })
+  const geenMerken = Array.isArray(selectedBrands) && selectedBrands.length === 0
+  const geenTypes = types.length === 0
+  const filterMelding = geenMerken && geenTypes ? 'Kies links minstens één merk en één voertype.' : geenMerken ? 'Kies links minstens één merk om producten te vergelijken.' : 'Kies links minstens één voertype om producten te vergelijken.'
+  const zichtbareMerken = alleMerken.filter((merk) => merk.toLowerCase().includes(brandSearch.trim().toLowerCase()))
   const login = async (event) => { event.preventDefault(); if (!supabase) return setAuthMessage('Supabase is nog niet geconfigureerd.'); const { error } = await supabase.auth.signInWithPassword({ email, password }); setAuthMessage(error ? error.message : '') }
   const updatePassword = async (event) => {
     event.preventDefault()
@@ -438,23 +455,52 @@ function App() {
   return <main><header><h1>Hondenvoervergelijker</h1><button className="link" onClick={() => { if (admin) { load(); loadTerms() } setAdmin(!admin) }}>{admin ? 'Terug naar vergelijken' : 'Beheer'}</button></header>
     {recovery ? <form className="login" onSubmit={updatePassword}><h2>Nieuw wachtwoord instellen</h2><p>Kies hieronder een nieuw wachtwoord voor het beheerdersaccount.</p><label>Nieuw wachtwoord<input type="password" required minLength="8" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} /></label><label>Herhaal wachtwoord<input type="password" required minLength="8" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} /></label><button>Wachtwoord opslaan</button>{authMessage && <p aria-live="polite">{authMessage}</p>}</form> : admin ? (isAdmin ? <Admin terms={terms} termsOud={termsOud} reloadTerms={loadTerms} onSaved={load} /> : session ? <section><h2>Geen beheerdersrechten</h2><p>Dit account mag geen producten beheren.</p><button onClick={() => supabase.auth.signOut()}>Uitloggen</button></section> : <form className="login" onSubmit={login}><h2>Beheer inloggen</h2><label>E-mail<input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} /></label><label>Wachtwoord<input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} /></label><button>Inloggen</button>{authMessage && <p>{authMessage}</p>}</form>) : <>
       <aside><strong>Belangrijk:</strong> deze tool vergelijkt ingevoerde etiketinformatie. Hij is geen dierenartsadvies en geeft geen garantie. Controleer altijd de verpakking en overleg bij twijfel met een dierenarts.</aside>
-      <section><h2>Allergieën van je hond</h2><p><small>Kies wat je wilt vermijden. De lijst is fijnmazig — één groente, één vissoort of één kruid kan ook — dus open de groep die je nodig hebt.</small></p>{ALLERGEN_GROUPS.map((group) => {
-        const gekozen = group.allergens.filter(({ key }) => allergens.includes(key)).length
-        return <details className="allergen-group" key={group.key}>
-          <summary>{group.label} {gekozen ? `· ${gekozen} gekozen` : `(${group.allergens.length})`}</summary>
-          <div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => setAllergens(e.target.checked ? [...allergens, key] : allergens.filter((item) => item !== key))} />{label}</label>)}</div>
-        </details>
-      })}<h2>Type voer</h2><div className="choices">{FOOD_TYPES.map(([key, label]) => <label className="inline" key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div></section>
-      {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : loading ? <p>Laden…</p> : <>{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">rood</mark> = het etiket noemt de bron van dat ingrediënt niet ("dierlijk vet", "granen"). {allergens.length ? 'Het oordeel gaat per allergeen: een product komt alleen bij "Controleer" als zo\'n onduidelijkheid jouw allergeen kan bevatten.' : 'Je hebt nog geen allergeen gekozen, dus beoordelen we het hele etiket: bij "Etiket noemt elke bron" staat alleen een lijst die elke bron noemt en waarvan de tekst is nagelopen of automatisch overgenomen. Kies een allergeen om te zien welke producten daarvoor geschikt zijn.'} Reken op het etiket en de fabrikant, niet op deze site.</p>
-        <nav className="result-tabs" aria-label="Producten per oordeel">
-          {secties.map(({ key, titel, items }) => <button type="button" key={key} className={key === actieveSectie.key ? 'active' : ''} aria-pressed={key === actieveSectie.key} onClick={() => kiesTab(key)}>{titel} <span className="count">({items.length})</span></button>)}
-        </nav>
-        <section id="resultaten">
-          <h2>{actieveSectie.titel} ({actieveSectie.items.length})</h2>
-          <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
-          {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} excluded={actieveSectie.excluded} />) : <p>{actieveSectie.leeg}</p>}
-          <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
-        </section></>}
+      <div className="layout">
+        <aside className="filters" aria-label="Filters">
+          <h2>Filters</h2>
+          <div className="filter-block">
+            <h3>Merken</h3>
+            <p className="filter-summary">{selectedBrands === null ? `Alle ${alleMerken.length} merken doen mee` : `${selectedBrands.length} van ${alleMerken.length} merken geselecteerd`}</p>
+            <div className="filter-actions">
+              <button type="button" className={selectedBrands === null ? 'active' : ''} aria-pressed={selectedBrands === null} onClick={() => setSelectedBrands(null)}>Alles</button>
+              <button type="button" className={geenMerken ? 'active' : ''} aria-pressed={geenMerken} onClick={() => setSelectedBrands([])}>Niets</button>
+            </div>
+            <label className="brand-search-label">Zoek merk<input type="search" value={brandSearch} placeholder="Bijv. Acana" onChange={(event) => setBrandSearch(event.target.value)} /></label>
+            <div className="brand-list">
+              {zichtbareMerken.length ? zichtbareMerken.map((merk) => <label className="brand-row" key={merk}>
+                <span><input type="checkbox" checked={merkActief(merk)} onChange={(event) => wisselMerk(merk, event.target.checked)} /> {merk}</span>
+                <span className="brand-count">{merkTellingen.get(merk) ?? 0}</span>
+              </label>) : <p><small>Geen merk gevonden.</small></p>}
+            </div>
+          </div>
+          <div className="filter-block">
+            <h3>Type voer</h3>
+            <div className="choices">{FOOD_TYPES.map(([key, label]) => <label className="inline" key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div>
+          </div>
+        </aside>
+        <div className="content">
+          <section><h2>Allergieën van je hond</h2><p><small>Kies wat je wilt vermijden. De lijst is fijnmazig — één groente, één vissoort of één kruid kan ook — dus open de groep die je nodig hebt.</small></p>{ALLERGEN_GROUPS.map((group) => {
+            const gekozen = group.allergens.filter(({ key }) => allergens.includes(key)).length
+            return <details className="allergen-group" key={group.key}>
+              <summary>{group.label} {gekozen ? `· ${gekozen} gekozen` : `(${group.allergens.length})`}</summary>
+              <div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => setAllergens(e.target.checked ? [...allergens, key] : allergens.filter((item) => item !== key))} />{label}</label>)}</div>
+            </details>
+          })}</section>
+          {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : loading ? <p>Laden…</p> : <>{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">rood</mark> = het etiket noemt de bron van dat ingrediënt niet ("dierlijk vet", "granen"). {allergens.length ? 'Het oordeel gaat per allergeen: een product komt alleen bij "Controleer" als zo\'n onduidelijkheid jouw allergeen kan bevatten.' : 'Je hebt nog geen allergeen gekozen, dus beoordelen we het hele etiket: bij "Etiket noemt elke bron" staat alleen een lijst die elke bron noemt en waarvan de tekst is nagelopen of automatisch overgenomen. Kies een allergeen om te zien welke producten daarvoor geschikt zijn.'} Reken op het etiket en de fabrikant, niet op deze site.</p>
+            {geenMerken || geenTypes ? <section id="resultaten"><h2>Geen producten</h2><p>{filterMelding}</p></section> : <>
+              <nav className="result-tabs" aria-label="Producten per oordeel">
+                {secties.map(({ key, titel, items }) => <button type="button" key={key} className={key === actieveSectie.key ? 'active' : ''} aria-pressed={key === actieveSectie.key} onClick={() => kiesTab(key)}>{titel} <span className="count">({items.length})</span></button>)}
+              </nav>
+              <section id="resultaten">
+                <h2>{actieveSectie.titel} ({actieveSectie.items.length})</h2>
+                <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
+                {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} excluded={actieveSectie.excluded} />) : <p>{actieveSectie.leeg}</p>}
+                <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
+              </section>
+            </>}
+          </>}
+        </div>
+      </div>
     </>}</main>
 }
 createRoot(document.getElementById('root')).render(<App />)
