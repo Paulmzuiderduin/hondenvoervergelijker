@@ -45,7 +45,9 @@ const Ingredients = memo(function Ingredients({ text }) {
   return <p>{markUncertainIngredients(text).map((segment, index) => segment.uncertain ? <mark className="uncertain-ingredient" key={index}>{segment.text}</mark> : segment.text)}</p>
 })
 
-function ProductCard({ product, match, excluded = false }) {
+function ProductCard({ product, match }) {
+  const excluded = match.kind === 'excluded'
+  const verdict = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controleer etiket/fabrikant' : match.states.length ? 'Geschikt' : 'Etiket noemt elke bron'
   const version = product.recipe_versions?.[0]
   const verborgenWoorden = bronlozeWoorden(version?.ingredients_text ?? '', match.hidden)
   const verborgenKeys = [...new Set(match.hidden.flatMap(({ keys }) => keys))]
@@ -77,7 +79,7 @@ function ProductCard({ product, match, excluded = false }) {
       : match.stale ? 'Deze ingrediëntenlijst is langer dan zes maanden niet gecontroleerd.' : ''
   return <article className={excluded ? 'product-card excluded' : 'product-card'}>
     <div><strong>{product.brand}</strong> — {product.name}</div>
-    <small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]}{product.package_size ? ` · ${product.package_size}` : ''}{hydrolysed.present ? ' · gehydrolyseerd eiwit' : ''}</small>
+    <small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]}{product.package_size ? ` · ${product.package_size}` : ''}{hydrolysed.present ? ' · gehydrolyseerd eiwit' : ''}{' '}<span className={`verdict-badge ${match.kind}`}>{verdict}</span></small>
     {presentStates.length > 0 && !excluded && <p className="verdict present"><strong>Staat in de lijst:</strong> {presentStates.map((state) => `${ALLERGEN_LABELS[state.key]}${state.members.some((member) => member !== state.key) ? ` via ${labelList(state.members.filter((member) => member !== state.key))}` : ''}`).join(', ')}</p>}
     {unknownStates.length > 0 && <p className="verdict unknown"><strong>Kan erin zitten:</strong> {labelList(unknownStates.map((state) => state.key), 100)} — het etiket noemt geen bron voor {onbekendeWoorden.length > 5 ? `${onbekendeWoorden.slice(0, 5).join(', ')} en ${onbekendeWoorden.length - 5} meer` : onbekendeWoorden.length ? onbekendeWoorden.join(', ') : 'een ingrediënt'}</p>}
     {absentStates.length > 0 && <p className="verdict absent"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 100)}</p>}
@@ -379,7 +381,7 @@ function App() {
   const [selectedBrands, setSelectedBrands] = useState(null); const [brandSearch, setBrandSearch] = useState('')
   const [admin, setAdmin] = useState(false); const [session, setSession] = useState(null); const [isAdmin, setIsAdmin] = useState(false); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [authMessage, setAuthMessage] = useState(''); const [recovery, setRecovery] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery'); const [newPassword, setNewPassword] = useState(''); const [repeatPassword, setRepeatPassword] = useState('')
   const [matches, setMatches] = useState([])
-  const [tab, setTab] = useState('schoon'); const [page, setPage] = useState(1)
+  const [page, setPage] = useState(1)
   const alleMerken = useMemo(() => [...new Set(products.map(({ brand }) => brand).filter(Boolean))].sort((eerste, tweede) => eerste.localeCompare(tweede, 'nl', { sensitivity: 'base' })), [products])
   const merkTellingen = useMemo(() => {
     const tellingen = new Map()
@@ -407,30 +409,17 @@ function App() {
     setCustomTerms(terms)
     setMatches(products.filter((product) => types.includes(product.food_type) && (selectedBrands === null || selectedBrands.includes(product.brand))).map((product) => ({ product, match: productMatch(product, allergens) })))
   }, [products, allergens, types, terms, selectedBrands])
-  // Elke nieuwe keuze begint weer bovenaan. Zonder keuze bestaat de tab
-  // "Uitgesloten" niet; dan valt de pagina terug op de eerste tab.
+  // Elke nieuwe keuze begint weer bovenaan.
   useEffect(() => { setPage(1) }, [allergens, types, selectedBrands])
-  useEffect(() => {
-    if (!allergens.length && !['schoon', 'controleer'].includes(tab)) setTab('schoon')
-    if (allergens.length && tab === 'schoon') setTab('geschikt')
-  }, [allergens.length, tab])
   const suitable = matches.filter(({ match }) => match.kind === 'suitable'); const check = matches.filter(({ match }) => match.kind === 'check'); const excluded = matches.filter(({ match }) => match.kind === 'excluded')
-  const secties = allergens.length
-    ? [
-        { key: 'geschikt', titel: 'Geschikt voor jouw keuze', items: suitable, excluded: false, leeg: 'Geen producten waarin de gekozen allergenen aantoonbaar ontbreken.' },
-        { key: 'controleer', titel: 'Controleer etiket/fabrikant', items: check, excluded: false, leeg: 'Geen producten met een open vraag bij de gekozen allergenen.' },
-        { key: 'uitgesloten', titel: 'Uitgesloten', items: excluded, excluded: true, leeg: 'Geen enkel product bevat de gekozen allergenen.' }
-      ]
-    : [
-        { key: 'schoon', titel: 'Etiket noemt elke bron', items: suitable, excluded: false, leeg: 'Geen enkel etiket noemt bij elk ingrediënt waar het vandaan komt.' },
-        { key: 'controleer', titel: 'Controleer etiket/fabrikant', items: check, excluded: false, leeg: 'Elk etiket noemt elke bron. Kies een allergeen om te vergelijken.' }
-      ]
-  const actieveSectie = secties.find(({ key }) => key === tab) ?? secties[0]
-  const aantalPaginas = Math.max(1, Math.ceil(actieveSectie.items.length / PAGE_SIZE))
+  const opNaam = (eerste, tweede) => eerste.product.brand.localeCompare(tweede.product.brand, 'nl', { sensitivity: 'base' }) || eerste.product.name.localeCompare(tweede.product.name, 'nl', { sensitivity: 'base' })
+  // Eén lijst in vaste volgorde: eerst geschikt, dan controleren, dan
+  // uitgesloten. Zo blijft de pagina voorspelbaar zonder tabs.
+  const alleResultaten = [...suitable].sort(opNaam).concat([...check].sort(opNaam), [...excluded].sort(opNaam))
+  const aantalPaginas = Math.max(1, Math.ceil(alleResultaten.length / PAGE_SIZE))
   const huidigePagina = Math.min(page, aantalPaginas)
-  const zichtbareProducten = actieveSectie.items.slice((huidigePagina - 1) * PAGE_SIZE, huidigePagina * PAGE_SIZE)
+  const zichtbareProducten = alleResultaten.slice((huidigePagina - 1) * PAGE_SIZE, huidigePagina * PAGE_SIZE)
   const gaNaarPagina = (nieuw) => { setPage(Math.min(Math.max(1, nieuw), aantalPaginas)); document.getElementById('resultaten')?.scrollIntoView({ block: 'start' }) }
-  const kiesTab = (key) => { setTab(key); setPage(1); document.getElementById('resultaten')?.scrollIntoView({ block: 'start' }) }
   const merkActief = (merk) => selectedBrands === null || selectedBrands.includes(merk)
   const wisselMerk = (merk, aangevinkt) => setSelectedBrands((huidig) => {
     const basis = huidig ?? alleMerken
@@ -487,17 +476,20 @@ function App() {
             </details>
           })}</section>
           {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : loading ? <p>Laden…</p> : <>{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">rood</mark> = het etiket noemt de bron van dat ingrediënt niet ("dierlijk vet", "granen"). {allergens.length ? 'Het oordeel gaat per allergeen: een product komt alleen bij "Controleer" als zo\'n onduidelijkheid jouw allergeen kan bevatten.' : 'Je hebt nog geen allergeen gekozen, dus beoordelen we het hele etiket: bij "Etiket noemt elke bron" staat alleen een lijst die elke bron noemt en waarvan de tekst is nagelopen of automatisch overgenomen. Kies een allergeen om te zien welke producten daarvoor geschikt zijn.'} Reken op het etiket en de fabrikant, niet op deze site.</p>
-            {geenMerken || geenTypes ? <section id="resultaten"><h2>Geen producten</h2><p>{filterMelding}</p></section> : <>
-              <nav className="result-tabs" aria-label="Producten per oordeel">
-                {secties.map(({ key, titel, items }) => <button type="button" key={key} className={key === actieveSectie.key ? 'active' : ''} aria-pressed={key === actieveSectie.key} onClick={() => kiesTab(key)}>{titel} <span className="count">({items.length})</span></button>)}
-              </nav>
+            {geenMerken || geenTypes ? <section id="resultaten"><h2>Geen producten</h2><p>{filterMelding}</p></section> : (
               <section id="resultaten">
-                <h2>{actieveSectie.titel} ({actieveSectie.items.length})</h2>
+                <h2>Producten ({alleResultaten.length})</h2>
+                <p className="result-summary">
+                  <span className="summary-pill suitable">{allergens.length ? 'Geschikt' : 'Etiket noemt elke bron'}: {suitable.length}</span>
+                  <span className="summary-pill check">Controleer: {check.length}</span>
+                  {allergens.length > 0 && <span className="summary-pill excluded">Uitgesloten: {excluded.length}</span>}
+                </p>
+                <p className="result-order"><small>{allergens.length ? 'Eerst geschikt, dan controleren, dan uitgesloten.' : 'Eerst etiketten die elke bron noemen, dan etiketten om te controleren.'}</small></p>
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
-                {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} excluded={actieveSectie.excluded} />) : <p>{actieveSectie.leeg}</p>}
+                {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} />) : <p>Geen producten gevonden voor deze keuze.</p>}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
               </section>
-            </>}
+            )}
           </>}
         </div>
       </div>
