@@ -2,7 +2,7 @@
 
 /* Filterpaneel links, resultaten rechts. Het paneel blijft zichtbaar terwijl
    je door de producten scrolt; op smalle schermen stapelen de kolommen. */
-.layout { display:grid; grid-template-columns:280px minmax(0,1fr); gap:1.5rem; align-items:start; margin-top:1rem; }
+.layout { display:grid; grid-template-columns:260px minmax(0,1fr); gap:1.25rem; align-items:start; margin-top:1rem; }
 .content { min-width:0; }
 .filters { position:sticky; top:1rem; max-height:calc(100vh - 2rem); overflow:auto; background:#fff; border:1px solid #cfd7ce; border-radius:6px; padding:1rem; }
 .filters h2 { margin:0; font-size:1.15rem; }
@@ -19,7 +19,8 @@
 .brand-row > span:first-child { display:flex; align-items:center; gap:.4rem; min-width:0; flex:1; }
 .brand-row input { width:auto; margin:0; flex:0 0 auto; }
 .brand-count { color:#556158; font-size:.8rem; min-width:1.5rem; text-align:right; flex:0 0 auto; }
-@media (max-width:900px) { .layout { grid-template-columns:1fr; } .filters { position:static; max-height:none; } .brand-list { max-height:220px; } }
+@media (max-width:1100px) { .layout { grid-template-columns:240px minmax(0,1fr); gap:1rem; } }
+@media (max-width:720px) { .layout { grid-template-columns:1fr; } .filters { position:static; max-height:none; } .brand-list { max-height:220px; } }
 .product-card details { max-width:none; }
 .ingredients { margin:.45rem 0; }
 .ingredients summary { font-size:.9rem; color:#175b30; }
