@@ -7,6 +7,7 @@ import './styles.css'
 
 const MISSING_RPC = /PGRST202|Could not find the function|schema cache/i
 const TERMS_HINT = 'De woordenlijst kon niet worden geladen; de keuring gebruikt dan alleen de ingebouwde woorden. Dat is strenger, niet soepeler.'
+const PAGE_SIZE = 8
 
 const blankForm = { brand: '', name: '', food_type: 'kibble', package_size: '', gtin: '', ingredients_text: '', source_url: '', last_checked_at: new Date().toISOString().slice(0, 10), published: false, reviewed: false, review_note: '', allergens: [] }
 
@@ -80,7 +81,7 @@ function ProductCard({ product, match, excluded = false }) {
     {presentStates.length > 0 && !excluded && <p className="verdict present"><strong>Staat in de lijst:</strong> {presentStates.map((state) => `${ALLERGEN_LABELS[state.key]}${state.members.some((member) => member !== state.key) ? ` via ${labelList(state.members.filter((member) => member !== state.key))}` : ''}`).join(', ')}</p>}
     {unknownStates.length > 0 && <p className="verdict unknown"><strong>Kan erin zitten:</strong> {labelList(unknownStates.map((state) => state.key), 100)} — het etiket noemt geen bron voor {onbekendeWoorden.length > 5 ? `${onbekendeWoorden.slice(0, 5).join(', ')} en ${onbekendeWoorden.length - 5} meer` : onbekendeWoorden.length ? onbekendeWoorden.join(', ') : 'een ingrediënt'}</p>}
     {absentStates.length > 0 && <p className="verdict absent"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 100)}</p>}
-    <Ingredients text={version?.ingredients_text} />
+    <details className="ingredients"><summary>Ingrediëntenlijst</summary><Ingredients text={version?.ingredients_text} /></details>
     {match.importNote && <p className="import-note"><small>{match.importNote}</small></p>}
     {hydrolysed.present && <p className="note-hydrolysed"><strong>Gehydrolyseerd eiwit:</strong> {hydrolysed.words.length ? `dit etiket noemt ${hydrolysed.words.join(', ')} in gehydrolyseerde vorm` : 'dit etiket noemt gehydrolyseerde eiwitten'}: de eiwitketens zijn opgeknipt, waardoor het lichaam ze vaak niet meer als allergeen herkent. Dierenartsen kiezen zo'n voer juist bij een allergie; deze site telt de bron toch mee, want alleen je dierenarts kan beoordelen of het in jouw geval werkt.</p>}
     <small>{herkomst}</small>
@@ -92,6 +93,18 @@ function ProductCard({ product, match, excluded = false }) {
       ? `dit etiket noemt geen bron voor ${verborgenWoorden.join(', ')}. ${nietHerkendeWoorden.length ? 'Omdat er ook woorden in staan die de keuring niet kent, kan elk allergeen erin zitten.' : dektElkAllergeen ? 'Daardoor kan elk allergeen erin zitten.' : `${labelList(verborgenKeys)} kunnen daar in zitten.`}`
       : 'dit etiket bevat woorden die de keuring niet kent. Daardoor kan elk allergeen erin zitten.'}</small></p>}
   </article>
+}
+
+// Eén pagina met producten tegelijk. Bij 271 producten was de lijst anders
+// duizenden pixels lang; nu zie je steeds acht kaarten en kun je gericht
+// verder bladeren.
+function Pagination({ page, total, onChange }) {
+  if (total <= 1) return null
+  return <nav className="pager" aria-label="Productpagina's">
+    <button type="button" onClick={() => onChange(page - 1)} disabled={page <= 1}>Vorige</button>
+    <label>Pagina <select value={page} aria-label="Kies een pagina" onChange={(event) => onChange(Number(event.target.value))}>{Array.from({ length: total }, (_, index) => <option key={index + 1} value={index + 1}>{index + 1}</option>)}</select> van {total}</label>
+    <button type="button" onClick={() => onChange(page + 1)} disabled={page >= total}>Volgende</button>
+  </nav>
 }
 
 function Admin({ terms, termsOud, reloadTerms, onSaved }) {
@@ -365,6 +378,7 @@ function App() {
   const [allergens, setAllergens] = useState([]); const [types, setTypes] = useState(FOOD_TYPES.map(([key]) => key))
   const [admin, setAdmin] = useState(false); const [session, setSession] = useState(null); const [isAdmin, setIsAdmin] = useState(false); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [authMessage, setAuthMessage] = useState(''); const [recovery, setRecovery] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery'); const [newPassword, setNewPassword] = useState(''); const [repeatPassword, setRepeatPassword] = useState('')
   const [matches, setMatches] = useState([])
+  const [tab, setTab] = useState('schoon'); const [page, setPage] = useState(1)
   const load = async () => { if (!supabase) { setLoadError('Supabase is nog niet geconfigureerd, dus er kunnen geen producten worden geladen.'); setLoading(false); return }; setLoading(true); const { data, error } = await supabase.from('products').select('*, recipe_versions(*, recipe_ingredients(*))').eq('published', true).eq('recipe_versions.is_current', true); if (error) { setLoadError(error.message); setProducts([]) } else { setLoadError(''); setProducts(data || []) }; setLoading(false) }
   // De woordenschat komt als ruwe rij binnen. Zo blijft de site werken zolang de
   // laatste migratie (20261019180000_term_scopes.sql) nog niet is uitgevoerd: een
@@ -386,7 +400,30 @@ function App() {
     setCustomTerms(terms)
     setMatches(products.filter((product) => types.includes(product.food_type)).map((product) => ({ product, match: productMatch(product, allergens) })))
   }, [products, allergens, types, terms])
+  // Elke nieuwe keuze begint weer bovenaan. Zonder keuze bestaat de tab
+  // "Uitgesloten" niet; dan valt de pagina terug op de eerste tab.
+  useEffect(() => { setPage(1) }, [allergens, types])
+  useEffect(() => {
+    if (!allergens.length && !['schoon', 'controleer'].includes(tab)) setTab('schoon')
+    if (allergens.length && tab === 'schoon') setTab('geschikt')
+  }, [allergens.length, tab])
   const suitable = matches.filter(({ match }) => match.kind === 'suitable'); const check = matches.filter(({ match }) => match.kind === 'check'); const excluded = matches.filter(({ match }) => match.kind === 'excluded')
+  const secties = allergens.length
+    ? [
+        { key: 'geschikt', titel: 'Geschikt voor jouw keuze', items: suitable, excluded: false, leeg: 'Geen producten waarin de gekozen allergenen aantoonbaar ontbreken.' },
+        { key: 'controleer', titel: 'Controleer etiket/fabrikant', items: check, excluded: false, leeg: 'Geen producten met een open vraag bij de gekozen allergenen.' },
+        { key: 'uitgesloten', titel: 'Uitgesloten', items: excluded, excluded: true, leeg: 'Geen enkel product bevat de gekozen allergenen.' }
+      ]
+    : [
+        { key: 'schoon', titel: 'Etiket noemt elke bron', items: suitable, excluded: false, leeg: 'Geen enkel etiket noemt bij elk ingrediënt waar het vandaan komt.' },
+        { key: 'controleer', titel: 'Controleer etiket/fabrikant', items: check, excluded: false, leeg: 'Elk etiket noemt elke bron. Kies een allergeen om te vergelijken.' }
+      ]
+  const actieveSectie = secties.find(({ key }) => key === tab) ?? secties[0]
+  const aantalPaginas = Math.max(1, Math.ceil(actieveSectie.items.length / PAGE_SIZE))
+  const huidigePagina = Math.min(page, aantalPaginas)
+  const zichtbareProducten = actieveSectie.items.slice((huidigePagina - 1) * PAGE_SIZE, huidigePagina * PAGE_SIZE)
+  const gaNaarPagina = (nieuw) => { setPage(Math.min(Math.max(1, nieuw), aantalPaginas)); document.getElementById('resultaten')?.scrollIntoView({ block: 'start' }) }
+  const kiesTab = (key) => { setTab(key); setPage(1); document.getElementById('resultaten')?.scrollIntoView({ block: 'start' }) }
   const login = async (event) => { event.preventDefault(); if (!supabase) return setAuthMessage('Supabase is nog niet geconfigureerd.'); const { error } = await supabase.auth.signInWithPassword({ email, password }); setAuthMessage(error ? error.message : '') }
   const updatePassword = async (event) => {
     event.preventDefault()
@@ -403,15 +440,21 @@ function App() {
       <aside><strong>Belangrijk:</strong> deze tool vergelijkt ingevoerde etiketinformatie. Hij is geen dierenartsadvies en geeft geen garantie. Controleer altijd de verpakking en overleg bij twijfel met een dierenarts.</aside>
       <section><h2>Allergieën van je hond</h2><p><small>Kies wat je wilt vermijden. De lijst is fijnmazig — één groente, één vissoort of één kruid kan ook — dus open de groep die je nodig hebt.</small></p>{ALLERGEN_GROUPS.map((group) => {
         const gekozen = group.allergens.filter(({ key }) => allergens.includes(key)).length
-        return <details className="allergen-group" key={group.key} open={group.key === 'protein'}>
+        return <details className="allergen-group" key={group.key}>
           <summary>{group.label} {gekozen ? `· ${gekozen} gekozen` : `(${group.allergens.length})`}</summary>
           <div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => setAllergens(e.target.checked ? [...allergens, key] : allergens.filter((item) => item !== key))} />{label}</label>)}</div>
         </details>
       })}<h2>Type voer</h2><div className="choices">{FOOD_TYPES.map(([key, label]) => <label className="inline" key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div></section>
       {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : loading ? <p>Laden…</p> : <>{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">rood</mark> = het etiket noemt de bron van dat ingrediënt niet ("dierlijk vet", "granen"). {allergens.length ? 'Het oordeel gaat per allergeen: een product komt alleen bij "Controleer" als zo\'n onduidelijkheid jouw allergeen kan bevatten.' : 'Je hebt nog geen allergeen gekozen, dus beoordelen we het hele etiket: bij "Etiket noemt elke bron" staat alleen een lijst die elke bron noemt en waarvan de tekst is nagelopen of automatisch overgenomen. Kies een allergeen om te zien welke producten daarvoor geschikt zijn.'} Reken op het etiket en de fabrikant, niet op deze site.</p>
-        <section><h2>{allergens.length ? `Geschikt voor jouw keuze (${suitable.length})` : `Etiket noemt elke bron (${suitable.length})`}</h2>{suitable.length ? suitable.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} />) : <p>{allergens.length ? 'Geen producten waarin de gekozen allergenen aantoonbaar ontbreken.' : 'Geen enkel etiket noemt bij elk ingrediënt waar het vandaan komt.'}</p>}</section>
-        <section><h2>Controleer etiket/fabrikant ({check.length})</h2>{check.length ? check.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} />) : <p>{allergens.length ? 'Geen producten met een open vraag bij de gekozen allergenen.' : 'Elk etiket noemt elke bron. Kies een allergeen om te vergelijken.'}</p>}</section>
-        {allergens.length > 0 && <section><h2>Uitgesloten ({excluded.length})</h2>{excluded.length ? excluded.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} excluded />) : <p>Geen enkel product bevat de gekozen allergenen.</p>}</section>}</>}
+        <nav className="result-tabs" aria-label="Producten per oordeel">
+          {secties.map(({ key, titel, items }) => <button type="button" key={key} className={key === actieveSectie.key ? 'active' : ''} aria-pressed={key === actieveSectie.key} onClick={() => kiesTab(key)}>{titel} <span className="count">({items.length})</span></button>)}
+        </nav>
+        <section id="resultaten">
+          <h2>{actieveSectie.titel} ({actieveSectie.items.length})</h2>
+          <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
+          {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} excluded={actieveSectie.excluded} />) : <p>{actieveSectie.leeg}</p>}
+          <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
+        </section></>}
     </>}</main>
 }
 createRoot(document.getElementById('root')).render(<App />)
