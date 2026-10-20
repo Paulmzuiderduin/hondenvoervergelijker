@@ -364,9 +364,42 @@ test('ontbrekende dieren en planten worden herkend', () => {
   assert.equal(assessLabel('Pangasius 20%').allergens.includes('whitefish'), true)
   assert.equal(assessLabel('Zeealgen 0,4%').allergens.includes('algae'), true)
   assert.equal(assessLabel('Bleekselderij 1%').allergens.includes('celery'), true)
-  assert.equal(assessLabel('Oesterschelp 1%').allergens.includes('shellfish'), true)
-  assert.equal(assessLabel('Eischaalpoeder 0,7%').allergens.includes('egg'), true)
+  assert.equal(assessLabel('Abrikoos 4%').allergens.includes('apricot'), true)
+  assert.equal(assessLabel('Gist 0,5%').allergens.includes('yeast'), true)
+  assert.equal(assessLabel('Psylliumvezels 2%').allergens.includes('psyllium'), true)
   assert.equal(assessLabel('Meel pompoenzaad 1%').allergens.includes('pumpkin'), true)
+})
+
+test('oesterschelp en eierschaal zijn mineralen, geen dierlijke bron', () => {
+  for (const tekst of ['Oesterschelp 1%', 'Oesterschaal 1%', 'Eischaalpoeder 0,7%', 'Eierschaalpoeder 0,7%', 'Eierschalen 1%']) {
+    const uitslag = assessLabel(tekst)
+    assert.deepEqual(uitslag.allergens, [], tekst)
+    assert.deepEqual(uitslag.unknown, [], tekst)
+    assert.equal(uitslag.status, 'schoon', tekst)
+  }
+})
+
+test('voedingsmiddelen uit de woordenlijst zijn eigen allergenen', () => {
+  const uitslag = assessLabel('Abrikoos, basilicum, dille, pollen, honing, gist, psyllium').allergens
+  for (const key of ['apricot', 'basil', 'dill', 'pollen', 'honey', 'sugar', 'yeast', 'psyllium']) {
+    assert.equal(uitslag.includes(key), true, key)
+  }
+})
+
+test('honing is suiker voor wie suiker vermijdt', () => {
+  const metHoning = product({ recipe_versions: [{ ingredients_text: 'Honing, rijst', reviewed_at: '2026-10-01T00:00:00Z', recipe_ingredients: [] }] })
+  assert.equal(productMatch(metHoning, ['sugar'], new Date('2026-10-14')).kind, 'excluded')
+})
+
+test('een "vrij"-woord is geen bron', () => {
+  const uitslag = assessLabel('Graanvrije, tarwevrije, rijst')
+  assert.deepEqual(uitslag.allergens, ['rice'])
+  assert.deepEqual(uitslag.unknown, [])
+})
+
+test('een plant die met een dier- of boonwoord begint is geen dier of boon', () => {
+  assert.deepEqual(assessLabel('Paardenbloem, bonenkruid').allergens, ['dandelion', 'savory'])
+  assert.deepEqual(assessLabel('Paardenvlees, bonen').allergens, ['horse', 'bean'])
 })
 
 test('gewone etiketwoorden zijn bekend', () => {
