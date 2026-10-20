@@ -53,15 +53,12 @@ function ProductCard({ product, match, excluded = false }) {
     : !match.reviewed && !match.imported ? 'Deze ingrediëntenlijst is nog niet tegen de bron gecontroleerd.'
       : match.stale ? 'Deze ingrediëntenlijst is langer dan zes maanden niet gecontroleerd.'
         : !match.transparent && !match.states.some((state) => state.state === 'unknown') ? 'Dit etiket noemt een ingrediënt zonder te zeggen waar het vandaan komt (zoals "dierlijk vet" of "granen").' : ''
-  // Staat alles op "nergens genoemd", dan zegt de regel onderaan de kaart dat al
-  // ("Geen van de gekozen allergenen staat in deze lijst").
-  const toonAfwezig = absentStates.length > 0 && !(absentStates.length === match.states.length && !checkReason)
   return <article className={excluded ? 'product-card excluded' : 'product-card'}>
     <div><strong>{product.brand}</strong> — {product.name}</div>
     <small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]}{product.package_size ? ` · ${product.package_size}` : ''}{hydrolysed.present ? ' · gehydrolyseerd eiwit' : ''}</small>
     {presentStates.length > 0 && !excluded && <p className="verdict present"><strong>Staat in de lijst:</strong> {presentStates.map((state) => `${ALLERGEN_LABELS[state.key]}${state.members.some((member) => member !== state.key) ? ` via ${labelList(state.members.filter((member) => member !== state.key))}` : ''}`).join(', ')}</p>}
     {unknownStates.length > 0 && <p className="verdict unknown"><strong>Kan erin zitten:</strong> {labelList(unknownStates.map((state) => state.key), 100)} — het etiket noemt geen bron voor {onbekendeWoorden.length > 5 ? `${onbekendeWoorden.slice(0, 5).join(', ')} en ${onbekendeWoorden.length - 5} meer` : onbekendeWoorden.length ? onbekendeWoorden.join(', ') : 'een ingrediënt'}</p>}
-    {toonAfwezig && <p className="verdict absent"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 100)}</p>}
+    {absentStates.length > 0 && <p className="verdict absent"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 100)}</p>}
     <Ingredients text={version?.ingredients_text} />
     {match.importNote && <p className="import-note"><small>{match.importNote}</small></p>}
     {hydrolysed.present && <p className="note-hydrolysed"><strong>Gehydrolyseerd eiwit:</strong> {hydrolysed.words.length ? `dit etiket noemt ${hydrolysed.words.join(', ')} in gehydrolyseerde vorm` : 'dit etiket noemt gehydrolyseerde eiwitten'}: de eiwitketens zijn opgeknipt, waardoor het lichaam ze vaak niet meer als allergeen herkent. Dierenartsen kiezen zo'n voer juist bij een allergie; deze site telt de bron toch mee, want alleen je dierenarts kan beoordelen of het in jouw geval werkt.</p>}
@@ -69,7 +66,7 @@ function ProductCard({ product, match, excluded = false }) {
     {product.source_url?.startsWith('http') && <p><a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">Bekijk product{sourceDomain(product.source_url) ? ` (${sourceDomain(product.source_url)})` : ''}</a></p>}
     {excluded && <p className="reason excluded">Uitgesloten vanwege: {match.presentStates.map((state) => ALLERGEN_LABELS[state.key]).join(' · ')}</p>}
     {!excluded && checkReason && <p className="reason">Controleer: {checkReason}</p>}
-    {!excluded && !checkReason && match.kind === 'suitable' && <p className="reason">{match.states.length ? 'Geen van de gekozen allergenen staat in deze lijst.' : 'Dit etiket noemt bij elk ingrediënt waar het vandaan komt. Kies je allergenen om te vergelijken.'}</p>}
+    {!excluded && !checkReason && match.kind === 'suitable' && !match.states.length && <p className="reason">Dit etiket noemt bij elk ingrediënt waar het vandaan komt. Kies je allergenen om te vergelijken.</p>}
     {hiddenKeys.length > 0 && !match.states.some((state) => state.state === 'unknown') && <p className="reason"><small>Let op: dit etiket noemt geen bron voor {openWords.join(', ')}. {labelList(hiddenKeys)} kunnen daar in zitten.</small></p>}
   </article>
 }
