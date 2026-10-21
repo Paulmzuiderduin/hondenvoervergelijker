@@ -2,7 +2,7 @@
 
 Deze producten kwamen niet in de SQL omdat er iets te controleren valt:
 
-- **Bonzo — Adult Menubrokken met Rund, Kip en Groenten** (bonzo.json): Hetzelfde product staat al op de site als "Menubrokken Adult Kip & Groenten" (15 kg) met de tekst van een winkelpagina; die is nagekeken. De fabrikantspagina (purina.nl) geeft een nieuwere samenstelling, onder meer met 2% Rund. Een mens moet kiezen welke tekst geldt; daarom komt dit product er nu niet dubbel op.
-  bron: https://www.purina.nl/hond/hondenvoer/product-bonzo-honden-brokken-menu-brokken-rund-kip
-- **Purina Pro Plan Veterinary Diets — HA Hypoallergenic Natvoer** (purina.json): Deze natvoerpagina (400 g blik) toont dezelfde samenstelling als de droogvoeding, tot en met dezelfde voetnoten; de Britse zustersite toont voor hetzelfde blik (SKU 7613036689427) een andere samenstelling. Een mens moet nagaan wat het etiket van het Nederlandse blik werkelijk zegt; daarom is hier geen etikettekst overgenomen.
-  bron: https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-hypoallergeen-natvoer
+- **Jarco — Verse Hondenworst Kip-Lam** (jarco.json): De samenstelling op de pagina noemt zalm (4,7%) in plaats van lam, terwijl het product Kip-Lam heet. De lijst is daarom niet overgenomen; controleer het etiket.
+  bron: https://jarco.nl/products/verse-hondenworst-kip-lam-750-gram
+- **Jarco — Verse Hondenworst Kip-Zalm** (jarco.json): De samenstelling op de pagina is identiek aan die van Verse Hondenworst Kip (Kip 80,9%, rijst 17,3%) en noemt geen zalm. De lijst is daarom niet overgenomen; controleer het etiket.
+  bron: https://jarco.nl/products/verse-hondenworst-kip-zalm-750-gram

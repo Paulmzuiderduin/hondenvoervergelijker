@@ -1,6 +1,6 @@
 {
   "bron": "https://www.carocroc.nl",
-  "opgehaald": "2026-10-19",
+  "opgehaald": "2026-10-20",
   "producten": [
     {
       "merk": "CaroCroc",
@@ -107,6 +107,90 @@
       "bronUrl": "https://www.carocroc.nl/producten/speciale-aandacht/carocroc-superior/",
       "etiketOrigineel": "Lam (44%, waarvan minstens 4% verse lam), maïs, rijst, maïsgluten, gehydrolyseerde kippenlever, bietenpulp (2,7%), dierlijk vet (rund, gevogelte), gist, mineralen, lijnzaadolie.",
       "etiketNl": "Lam (44%, waarvan minstens 4% verse lam), maïs, rijst, maïsgluten, gehydrolyseerde kippenlever, bietenpulp (2,7%), dierlijk vet (rund, gevogelte), gist, mineralen, lijnzaadolie.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Original",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.carocroc.nl/producten/premium/original/",
+      "etiketOrigineel": "Vleesmix (33%), mais, tarwe, dierlijk eiwitextract (13%), gevogelte (9%), dierlijk vet (gevogelte, rund), rijstzemelen, rijst, tarwegries, bietenpulp, gehydrolyseerde kippenlever, lijnzaad, mineralen, cellulose.",
+      "etiketNl": "Vleesmix (33%), mais, tarwe, dierlijk eiwitextract (13%), gevogelte (9%), dierlijk vet (gevogelte, rund), rijstzemelen, rijst, tarwegries, bietenpulp, gehydrolyseerde kippenlever, lijnzaad, mineralen, cellulose.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "High Energy",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.carocroc.nl/producten/premium/high-energy/",
+      "etiketOrigineel": "Gevogelte (52%), dierlijk eiwitextract (10%), gerst, dierlijk vet (gevogelte, rund), tarwe, mais, rijst, bietenpulp, rijstzemelen, geëxtraheerde sojabonen (getoast), hemoglobine, cellulose, mineralen, gehydrolyseerde kippenlever, lijnzaad.",
+      "etiketNl": "Gevogelte (52%), dierlijk eiwitextract (10%), gerst, dierlijk vet (gevogelte, rund), tarwe, mais, rijst, bietenpulp, rijstzemelen, geëxtraheerde sojabonen (getoast), hemoglobine, cellulose, mineralen, gehydrolyseerde kippenlever, lijnzaad.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Grain Free",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.carocroc.nl/producten/speciale-aandacht/grain-free/",
+      "etiketOrigineel": "Gevogelte (51%, waarvan minstens 4% verse kip), aardappel (26%), bietenpulp (5,5%), eipoeder, dierlijk vet (gevogelte), gehydrolyseerde kippenlever, aardappelzetmeel, aardappeleiwit, gist, lijnzaad, visolie (zalm) (0,6%), kruiden (peterselie, rozemarijn, brandnetel, kamille, salie, tijm, koriander, paardenbloem, zoethout), mineralen, inuline (bron van FOS).",
+      "etiketNl": "Gevogelte (51%, waarvan minstens 4% verse kip), aardappel (26%), bietenpulp (5,5%), eipoeder, dierlijk vet (gevogelte), gehydrolyseerde kippenlever, aardappelzetmeel, aardappeleiwit, gist, lijnzaad, visolie (zalm) (0,6%), kruiden (peterselie, rozemarijn, brandnetel, kamille, salie, tijm, koriander, paardenbloem, zoethout), mineralen, inuline (bron van FOS).",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Mobility Support",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.carocroc.nl/producten/speciale-aandacht/mobility-support/",
+      "etiketOrigineel": "Gevogelte (54%, waarvan minstens 4% verse kip), maïs, ei (8,2%), rijst, gehydrolyseerde kippenlever, visolie (zalm) (1,1%), gist, mineralen, cellulose, bietenpulp, dierlijk vet (gevogelte), lijnzaad, glucosamine (0,02%), chondroïtinesulfaat (0,02%).",
+      "etiketNl": "Gevogelte (54%, waarvan minstens 4% verse kip), maïs, ei (8,2%), rijst, gehydrolyseerde kippenlever, visolie (zalm) (1,1%), gist, mineralen, cellulose, bietenpulp, dierlijk vet (gevogelte), lijnzaad, glucosamine (0,02%), chondroïtinesulfaat (0,02%).",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Skin Support",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.carocroc.nl/producten/speciale-aandacht/carocroc-skin-support/",
+      "etiketOrigineel": "Gevogelte (37%), maïs, vis (21%, waarvan minstens 4% verse zalm), bietenpulp, rijstzemelen, rijst, dierlijk vet (rund, gevogelte), visolie (zalm) (1,4%), gehydrolyseerde kippenlever, gist, lijnzaad, mineralen.",
+      "etiketNl": "Gevogelte (37%), maïs, vis (21%, waarvan minstens 4% verse zalm), bietenpulp, rijstzemelen, rijst, dierlijk vet (rund, gevogelte), visolie (zalm) (1,4%), gehydrolyseerde kippenlever, gist, lijnzaad, mineralen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Worst met kip",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://www.carocroc.nl/producten/worsten/carocroc-worst-met-kip/",
+      "etiketOrigineel": "Kip 80%, rund 4%, granen, mineralen.",
+      "etiketNl": "Kip 80%, rund 4%, granen, mineralen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Worst met lam",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://www.carocroc.nl/producten/worsten/carocroc-worst-met-lam/",
+      "etiketOrigineel": "Vlees en dierlijke bijproducten (75%, waarvan 35% lam), granen, oliën en vetten (schapenvet 1,5%), mineralen.",
+      "etiketNl": "Vlees en dierlijke bijproducten (75%, waarvan 35% lam), granen, oliën en vetten (schapenvet 1,5%), mineralen.",
       "aantekening": null,
       "twijfel": null
     }

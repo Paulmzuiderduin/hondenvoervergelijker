@@ -37,6 +37,12 @@ const SQL_MAP = join(IMPORT, 'sql')
 const VOERTYPES = ['kibble', 'wet', 'raw']
 const MAX_PER_BATCH = 50
 const VERTAALNOTE = 'Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.'
+// Soms heeft een bestaand live-product een andere naam dan de fabrikant nu
+// gebruikt. Alleen deze bekende gevallen worden als hetzelfde product gezien;
+// varianten met een andere naam (Large Breed, Puppy, enz.) blijven apart.
+const liveAlias = new Map([
+  ['carocroc|original', 'original 23/12']
+])
 
 const problemen = []
 const waarschuwingen = []
@@ -179,30 +185,25 @@ for (const bestand of bestanden) {
 const live = await haalLiveCatalogus()
 if (live) {
   const bestaand = new Map()
-  // Ook de tekst zelf: twee producten met een verschillende naam maar precies
-  // dezelfde etiket tekst zijn hetzelfde product (bijvoorbeeld "Original" en
-  // "Original 23/12"). Zulke dubbele rijen wil je niet naast elkaar op de site.
-  const teksten = new Map()
+  const bestaandeNamen = new Set()
   for (const rij of live) {
     bestaand.set(`${rij.brand.toLowerCase()}|${rij.name.toLowerCase()}|${netteVerpakking(rij.package_size).toLowerCase()}`, 'de live database')
+    bestaandeNamen.add(`${rij.brand.toLowerCase()}|${rij.name.toLowerCase()}`)
     if (rij.gtin) bestaand.set(`gtin:${rij.gtin}`, 'de live database')
-    for (const versie of rij.recipe_versions ?? []) {
-      if (!versie.is_current) continue
-      const tekst = normaliseer(versie.ingredients_text).toLowerCase()
-      if (tekst.length > 40) teksten.set(tekst, `${rij.brand} | ${rij.name}${rij.package_size ? ` | ${rij.package_size}` : ''}`)
-    }
   }
   for (const [bestand, producten] of perBestand) {
     perBestand.set(bestand, producten.filter((product) => {
-      const sleutel = `${product.merk.toLowerCase()}|${product.naam.toLowerCase()}|${verpakkingssleutel(product)}`
+      const merk = product.merk.toLowerCase()
+      const naam = product.naam.toLowerCase()
+      const alias = liveAlias.get(`${merk}|${naam}`)
+      if (alias && bestaandeNamen.has(`${merk}|${alias}`)) {
+        waarschuwingen.push(`${product.merk} — ${product.naam}: staat al in de live database als "${alias}" en is overgeslagen`)
+        return false
+      }
+      const sleutel = `${merk}|${naam}|${verpakkingssleutel(product)}`
       const treffer = bestaand.get(sleutel) ?? (product.gtin ? bestaand.get(`gtin:${product.gtin}`) : undefined)
       if (treffer) {
         waarschuwingen.push(`${product.merk} — ${product.naam}: staat al in ${treffer} en is overgeslagen`)
-        return false
-      }
-      const zelfdeTekst = teksten.get(normaliseer(product.etiketNl).toLowerCase())
-      if (zelfdeTekst) {
-        waarschuwingen.push(`${product.merk} — ${product.naam}: dezelfde etiket tekst staat al op de site (${zelfdeTekst}) en is overgeslagen`)
         return false
       }
       return true

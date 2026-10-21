@@ -1,0 +1,114 @@
+{
+  "bron": "https://www.farmfood.nl",
+  "opgehaald": "2026-10-20",
+  "producten": [
+    {
+      "merk": "Farm Food",
+      "naam": "HE Classic",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12 / 15 kg (standaard brok 8 mm); 2 / 4 / 12 kg (mini brok 6 mm)",
+      "gtin": null,
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-he-classic/",
+      "etiketOrigineel": "Ontsloten mais, hemoglobinepoeder, ontsloten tarwe, ontsloten rijst, vleesmeel, rundvet, weipoeder, biergist, plantaardige vezels, koudgeperste zonnebloemolie, mineralen, lecithine, koudgeperste lijnzaadolie, inuline, vitaminen en sporenelementen.",
+      "etiketNl": "Ontsloten mais, hemoglobinepoeder, ontsloten tarwe, ontsloten rijst, vleesmeel, rundvet, weipoeder, biergist, plantaardige vezels, koudgeperste zonnebloemolie, mineralen, lecithine, koudgeperste lijnzaadolie, inuline, vitaminen en sporenelementen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "HE Glutenvrij",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12 / 15 kg (standaard brok 8 mm); 2 / 4 kg (mini brok 6 mm)",
+      "gtin": null,
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-he-glutenvrij/",
+      "etiketOrigineel": "Ontsloten mais, hemoglobinepoeder, ontsloten sorghum (10%), ontsloten rijst, vleesmeel, rundvet, weipoeder, biergist, plantaardige vezels, koudgeperste zonnebloemolie, mineralen, lecithine, 1% Schotse Zalmolie, inuline, vitaminen en sporenelementen.",
+      "etiketNl": "Ontsloten mais, hemoglobinepoeder, ontsloten sorghum (10%), ontsloten rijst, vleesmeel, rundvet, weipoeder, biergist, plantaardige vezels, koudgeperste zonnebloemolie, mineralen, lecithine, 1% Schotse Zalmolie, inuline, vitaminen en sporenelementen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "HE met Schotse Zalmolie",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12 / 15 kg (standaard brok 8 mm); 2 / 4 / 12 kg (mini brok 6 mm)",
+      "gtin": null,
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-he-met-schotse-zalmolie/",
+      "etiketOrigineel": "Ontsloten mais, hemoglobinepoeder, ontsloten tarwe, ontsloten rijst, vleesmeel, rundvet, weipoeder, biergist, plantaardige vezels, koudgeperste zonnebloemolie, mineralen, 1% Schotse Zalmolie, lecithine, inuline, vitaminen en sporenelementen.",
+      "etiketNl": "Ontsloten mais, hemoglobinepoeder, ontsloten tarwe, ontsloten rijst, vleesmeel, rundvet, weipoeder, biergist, plantaardige vezels, koudgeperste zonnebloemolie, mineralen, 1% Schotse Zalmolie, lecithine, inuline, vitaminen en sporenelementen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "HE Schaap",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12 / 15 kg (standaard brok 8 mm); 2 / 4 kg (mini brok 6 mm)",
+      "gtin": null,
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-he-schaap/",
+      "etiketOrigineel": "Ontsloten mais, hemoglobinepoeder, ontsloten tarwe, ontsloten rijst, schapenvleesmeel (11%), rundvet, weipoeder, biergist, plantaardige vezels, koudgeperste zonnebloemolie, mineralen, lecithine, koudgeperste lijnzaadolie, inuline, vitaminen en sporenelementen.",
+      "etiketNl": "Ontsloten mais, hemoglobinepoeder, ontsloten tarwe, ontsloten rijst, schapenvleesmeel (11%), rundvet, weipoeder, biergist, plantaardige vezels, koudgeperste zonnebloemolie, mineralen, lecithine, koudgeperste lijnzaadolie, inuline, vitaminen en sporenelementen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "Fresh Menu Schaap (zacht gestoomd)",
+      "voertype": "wet",
+      "verpakking": "125 / 300 g",
+      "gtin": null,
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-fresh-menu-schaap-zacht-gestoomd/",
+      "etiketOrigineel": "Schapenpens, Boullion, 23 % Schapenhart, Schapenlever, 5 % Schapenvlees, Rijst, Mineralen, Saffloerolie, 0,3 % Levertraanolie.",
+      "etiketNl": "Schapenpens, Boullion, 23 % Schapenhart, Schapenlever, 5 % Schapenvlees, Rijst, Mineralen, Saffloerolie, 0,3 % Levertraanolie.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "Fresh Menu Pens & Hart Compleet (zacht gestoomd)",
+      "voertype": "wet",
+      "verpakking": "125 / 300 g",
+      "gtin": null,
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-pens-hart-compleet-zacht-gestoomd/",
+      "etiketOrigineel": "Runderpens (44%), runderbouillon, runderhart (19%), runderlever, rijst, schotse zalmolie (0,3%), zonnebloemolie (koudgeperst), mineralen, vitaminen, sporenelementen",
+      "etiketNl": "Runderpens (44%), runderbouillon, runderhart (19%), runderlever, rijst, schotse zalmolie (0,3%), zonnebloemolie (koudgeperst), mineralen, vitaminen, sporenelementen",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "Fresh Menu Rundvlees Compleet (zacht gestoomd)",
+      "voertype": "wet",
+      "verpakking": "125 / 300 g",
+      "gtin": null,
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-rundvlees-compleet-zacht-gestoomd/",
+      "etiketOrigineel": "Runderhart (32%), runderbouillon, runderpens, rundvlees (9%), runderlever, rijst, schotse zalmolie (0,3%), zonnebloemolie (koudgeperst), mineralen, vitaminen, sporenelementen",
+      "etiketNl": "Runderhart (32%), runderbouillon, runderpens, rundvlees (9%), runderlever, rijst, schotse zalmolie (0,3%), zonnebloemolie (koudgeperst), mineralen, vitaminen, sporenelementen",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "Fresh Pens & Hart Compleet (diepvries)",
+      "voertype": "raw",
+      "verpakking": "9 x 110 g / 2 x 400 g / 550 g (pouch, blokjes à ± 25 g) / 250 g / 500 g / 1 kg (worst)",
+      "gtin": null,
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-pens-hart-compleet-diepvries/",
+      "etiketOrigineel": "Runderpens (75%), runderhart (8%), rundvlees, runderlever, schapenvet, rijst, zonnebloemolie (koudgeperst), lijnzaadolie (koudgeperst), vitaminen, mineralen, sporenelementen.",
+      "etiketNl": "Runderpens (75%), runderhart (8%), rundvlees, runderlever, schapenvet, rijst, zonnebloemolie (koudgeperst), lijnzaadolie (koudgeperst), vitaminen, mineralen, sporenelementen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "Fresh Rundvlees Compleet (diepvries)",
+      "voertype": "raw",
+      "verpakking": "9 x 110 g / 2 x 400 g / 550 g (pouch, blokjes à ± 25 g) / 250 g / 500 g / 1 kg (worst)",
+      "gtin": null,
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-rundvlees-compleet-diepvries/",
+      "etiketOrigineel": "Rundvlees (63%), runderpens, runderhart (7%), runderlever, schapenvet, rijst, zonnebloemolie (koudgeperst), lijnzaadolie (koudgeperst), vitaminen, mineralen, sporenelementen.",
+      "etiketNl": "Rundvlees (63%), runderpens, runderhart (7%), runderlever, schapenvet, rijst, zonnebloemolie (koudgeperst), lijnzaadolie (koudgeperst), vitaminen, mineralen, sporenelementen.",
+      "aantekening": null,
+      "twijfel": null
+    }
+  ]
+}

@@ -34,7 +34,8 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const WORTEL = dirname(dirname(fileURLToPath(import.meta.url)))
-const IMPORT = join(WORTEL, 'data', 'import')
+const GEBRUIK_UITBREIDING = process.argv.includes('--uitbreiding')
+const IMPORT = GEBRUIK_UITBREIDING ? join(WORTEL, 'data', 'import', 'uitbreiding') : join(WORTEL, 'data', 'import')
 const RAPPORT = join(IMPORT, 'broncontrole.md')
 const UA = 'HondenvoervergelijkerBot/0.1 (contact: paulzuiderduin@gmail.com)'
 
@@ -101,6 +102,8 @@ function vergelijkbaar(tekst) {
     .replace(/[–—]/g, '-')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,;:.])/g, '$1')
+    .replace(/\(\s+/g, '(')
+    .replace(/\s+\)/g, ')')
     .trim()
 }
 
@@ -125,6 +128,8 @@ function vergelijkbaarMetPaginadata(html) {
     .replace(/[–—]/g, '-')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,;:.])/g, '$1')
+    .replace(/\(\s+/g, '(')
+    .replace(/\s+\)/g, ')')
     .trim()
 }
 
@@ -260,5 +265,5 @@ if (gelijk) {
 writeFileSync(RAPPORT, `${regels.join('\n')}\n`)
 
 console.log(`\n${gelijk} onveranderd, ${gewijzigd.length} gewijzigd, ${onbereikbaar.length} onbereikbaar.`)
-console.log(`Rapport: data/import/broncontrole.md`)
+console.log(`Rapport: ${RAPPORT.replace(WORTEL + '/', '')}`)
 process.exit(gewijzigd.length || onbereikbaar.length ? 1 : 0)

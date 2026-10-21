@@ -83,7 +83,10 @@ pas door het SQL-bestand gezet.
 - `scripts/maak-import-sql.mjs` controleert elk product (verplichte velden,
   dubbele namen, dubbele GTIN's, bestaande producten in de live database) en
   maakt één SQL-bestand per batch van maximaal 50 producten in
-  `data/import/sql/`.
+  `data/import/sql/`. Twee varianten met dezelfde ingrediëntenlijst zijn niet
+  automatisch hetzelfde product: kleine-rassenvoer kan dezelfde formule hebben
+  als het standaardvoer. Er wordt daarom ontdubbeld op merk, naam en
+  verpakking, niet op alleen de etiket tekst.
 - Dat bestand zet per product: het product (gepubliceerd), de receptversie met
   de Nederlandse tekst, `imported_at` (het moment van plakken), `import_hash`
   (vingerafdruk van de originele tekst, voor de bronbewaking later) en
