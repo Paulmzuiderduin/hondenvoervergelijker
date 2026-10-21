@@ -21,9 +21,10 @@ export function isReviewOverdue(checkedAt, now = new Date()) {
 //
 // Een etiket dat automatisch van de bronpagina is overgenomen (imported_at) telt
 // als gecontroleerde tekst voor de vraag "is hier nog een open vraag?" — de
-// herkomst staat dan op de kaart ("automatisch overgenomen van <domein> op
-// <datum> · nog niet door een mens nagelopen"), zodat er nooit een menselijke
-// controle geclaimd wordt die niet gebeurd is.
+// herkomst staat in de disclaimer, niet op elke kaart. Alleen een handmatige
+// controle (reviewed_at) krijgt op de kaart de badge "Door een mens
+// gecontroleerd", zodat er nooit een menselijke controle geclaimd wordt die niet
+// gebeurd is.
 export function productMatch(product, selectedAllergens, now = new Date()) {
   const version = product.recipe_versions?.[0]
   const text = version?.ingredients_text || ''

@@ -3,9 +3,10 @@
 //
 // De site mag nooit een menselijke controle claimen die niet gebeurd is. Dit
 // gereedschap zet daarom alleen de herkomst (imported_at, import_hash,
-// import_note) en zet published = true, zodat het product meteen mee kan doen —
-// met de eerlijke regel "automatisch overgenomen van <domein> op <datum> · nog
-// niet door een mens nagelopen" op de kaart.
+// import_note) en zet published = true, zodat het product meteen mee kan doen.
+// De automatische herkomst staat in de disclaimer, niet op elke kaart. Alleen
+// een handmatige review (reviewed_at) krijgt later de badge "Door een mens
+// gecontroleerd".
 //
 // Wat het controleert:
 //   - verplichte velden en toegestane voertypes;
@@ -239,9 +240,9 @@ for (let start = 0; start < alleProducten.length; start += MAX_PER_BATCH) {
     '-- Plak dit bestand in de Supabase SQL Editor, nadat de migraties tot en met',
     '-- 20261019190000_import_herkomst.sql zijn uitgevoerd.',
     '--',
-    '-- Elk product komt van de bronpagina die eronder staat. De site zegt daarna:',
-    '-- "automatisch overgenomen van <domein> op <datum> · nog niet door een mens',
-    '-- nagelopen". Er wordt hier geen enkele controle door een mens geclaimd.',
+    '-- Elk product komt van de bronpagina die eronder staat. De site noemt de',
+    '-- automatische herkomst in de disclaimer; er wordt hier geen enkele controle',
+    '-- door een mens geclaimd. Alleen een handmatige review krijgt een badge.',
     'begin;',
     ''
   ]

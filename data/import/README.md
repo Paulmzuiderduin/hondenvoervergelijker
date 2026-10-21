@@ -5,11 +5,11 @@ Hier komen de producten die automatisch van een bronpagina zijn overgenomen:
 `scripts/maak-import-sql.mjs` een SQL-bestand dat in de Supabase SQL Editor
 geplakt wordt (ná de migraties).
 
-De site toont zo'n product als "Automatisch overgenomen van <domein> op <datum>
-· nog niet door een mens nagelopen". Het krijgt nooit de status "nagekeken"
-zonder menselijke klik: de menselijke uitspraak staat in `reviewed_at` en wordt
-hier niet gezet. De herkomst (`imported_at`, `import_hash`, `import_note`) wordt
-pas door het SQL-bestand gezet.
+De site noemt de automatische herkomst in de disclaimer, niet op elke kaart.
+Een product krijgt nooit de badge "Door een mens gecontroleerd" zonder
+menselijke klik: die uitspraak staat in `reviewed_at` en wordt hier niet gezet.
+De herkomst (`imported_at`, `import_hash`, `import_note`) wordt pas door het
+SQL-bestand gezet.
 
 ## Vorm
 

@@ -65,12 +65,11 @@ function ProductCard({ product, match }) {
     // ("oliën" en "oliën en vetten"). Is een langere variant al genoemd, dan
     // zegt de korte niets extra.
     .filter((woord, _, alle) => !alle.some((ander) => ander.length > woord.length && ander.toLowerCase().includes(woord.toLowerCase())))
-  // De herkomst staat los van het oordeel: een automatisch overgenomen etiket
-  // zegt nooit dat een mens ernaar gekeken heeft, en een nagekeken etiket houdt
-  // zijn "tekst nagelopen". Zo kan de bezoeker zien wat hij in handen heeft.
-  const herkomst = match.imported
-    ? `Automatisch overgenomen${sourceDomain(product.source_url) ? ` van ${sourceDomain(product.source_url)}` : ''} op ${new Date(match.importedAt).toLocaleDateString('nl-NL')}${match.reviewed ? ` · nagekeken op ${new Date(version.reviewed_at).toLocaleDateString('nl-NL')}` : ' · nog niet door een mens nagelopen'}`
-    : `Laatst gecontroleerd: ${product.last_checked_at ? new Date(product.last_checked_at).toLocaleDateString('nl-NL') : 'onbekend'}${match.reviewed ? ' · tekst nagelopen' : ''}`
+  // De herkomst van automatisch overgenomen etiketten staat in de disclaimer
+  // bovenaan, niet op elke kaart. Alleen een handmatige controle krijgt een
+  // badge; zo blijft "door een mens gecontroleerd" een uitzondering die je
+  // echt kunt zien.
+  const reviewedOp = version?.reviewed_at ? new Date(version.reviewed_at).toLocaleDateString('nl-NL') : ''
   // Een etiket dat een bron niet noemt, krijgt één regel: de concrete woorden
   // ("geen bron voor bouillon") plus de allergenen die daar in kunnen zitten.
   // De algemene uitleg die hier eerder stond, zei hetzelfde en is vervallen.
@@ -79,14 +78,13 @@ function ProductCard({ product, match }) {
       : match.stale ? 'Deze ingrediëntenlijst is langer dan zes maanden niet gecontroleerd.' : ''
   return <article className={excluded ? 'product-card excluded' : 'product-card'}>
     <div><strong>{product.brand}</strong> — {product.name}</div>
-    <small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]}{product.package_size ? ` · ${product.package_size}` : ''}{hydrolysed.present ? ' · gehydrolyseerd eiwit' : ''}{' '}<span className={`verdict-badge ${match.kind}`}>{verdict}</span></small>
+    <small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]}{product.package_size ? ` · ${product.package_size}` : ''}{hydrolysed.present ? ' · gehydrolyseerd eiwit' : ''}{' '}<span className={`verdict-badge ${match.kind}`}>{verdict}</span>{match.reviewed && <span className="human-badge" title={`Ingrediëntenlijst handmatig tegen de bron gecontroleerd${reviewedOp ? ` op ${reviewedOp}` : ''}.`}>Door een mens gecontroleerd</span>}</small>
     {presentStates.length > 0 && !excluded && <p className="verdict present"><strong>Staat in de lijst:</strong> {presentStates.map((state) => `${ALLERGEN_LABELS[state.key]}${state.members.some((member) => member !== state.key) ? ` via ${labelList(state.members.filter((member) => member !== state.key))}` : ''}`).join(', ')}</p>}
     {unknownStates.length > 0 && <p className="verdict unknown"><strong>Kan erin zitten:</strong> {labelList(unknownStates.map((state) => state.key), 100)} — het etiket noemt geen bron voor {onbekendeWoorden.length > 5 ? `${onbekendeWoorden.slice(0, 5).join(', ')} en ${onbekendeWoorden.length - 5} meer` : onbekendeWoorden.length ? onbekendeWoorden.join(', ') : 'een ingrediënt'}</p>}
     {absentStates.length > 0 && <p className="verdict absent"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 100)}</p>}
     <details className="ingredients"><summary>Ingrediëntenlijst</summary><Ingredients text={version?.ingredients_text} /></details>
     {match.importNote && <p className="import-note"><small>{match.importNote}</small></p>}
     {hydrolysed.present && <p className="note-hydrolysed"><strong>Gehydrolyseerd eiwit:</strong> {hydrolysed.words.length ? `dit etiket noemt ${hydrolysed.words.join(', ')} in gehydrolyseerde vorm` : 'dit etiket noemt gehydrolyseerde eiwitten'}: de eiwitketens zijn opgeknipt, waardoor het lichaam ze vaak niet meer als allergeen herkent. Dierenartsen kiezen zo'n voer juist bij een allergie; deze site telt de bron toch mee, want alleen je dierenarts kan beoordelen of het in jouw geval werkt.</p>}
-    <small>{herkomst}</small>
     {product.source_url?.startsWith('http') && <p><a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">Bekijk product{sourceDomain(product.source_url) ? ` (${sourceDomain(product.source_url)})` : ''}</a></p>}
     {excluded && <p className="reason excluded">Uitgesloten vanwege: {match.presentStates.map((state) => ALLERGEN_LABELS[state.key]).join(' · ')}</p>}
     {!excluded && checkReason && <p className="reason">Controleer: {checkReason}</p>}
@@ -344,7 +342,7 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
     </>}
 
     <h3>Automatisch overgenomen, nog na te lopen ({keuring.teControleren.length})</h3>
-    {keuring.teControleren.length ? <details><summary>Deze etiketten doen al mee op de site, met de regel "automatisch overgenomen · nog niet door een mens nagelopen"</summary>
+    {keuring.teControleren.length ? <details><summary>Deze etiketten doen al mee op de site; een handmatige controle is nog niet vastgelegd</summary>
       <p><small>Nalopen hoeft niet: de site claimt nergens een menselijke controle. Heb je een etiket naast de bronpagina gelegd en klopt het, dan leg je dat hier per product vast. Doe dat alleen als je het echt hebt gezien — deze knop geldt voor één product tegelijk, nooit voor een hele lijst.</small></p>
       {keuring.teControleren.map(({ product, version, openWoorden, onbekend, taken }) => <div className="admin-row" key={product.id}>
         <span>{product.brand} — {product.name}{!product.published && ' (concept)'} · {version?.imported_at ? `overgenomen op ${new Date(version.imported_at).toLocaleDateString('nl-NL')}` : 'automatisch overgenomen'}{openWoorden.length ? ` · etiket noemt geen bron voor: ${openWoorden.slice(0, 4).join(', ')}${openWoorden.length > 4 ? ` en ${openWoorden.length - 4} meer` : ''}` : ''}</span>
@@ -443,7 +441,7 @@ function App() {
   }
   return <main><header className="site-header">
     <div className="site-header-row"><h1>Hondenvoervergelijker</h1><button className="link" onClick={() => { if (admin) { load(); loadTerms() } setAdmin(!admin) }}>{admin ? 'Terug naar vergelijken' : 'Beheer'}</button></div>
-    {!recovery && !admin && <p className="site-note"><strong>Belangrijk:</strong> deze tool vergelijkt etiketinformatie. Geen dierenartsadvies of garantie: controleer de verpakking en overleg bij twijfel.</p>}
+    {!recovery && !admin && <p className="site-note"><strong>Belangrijk:</strong> deze tool vergelijkt etiketinformatie. De allergenen worden automatisch uit de ingrediëntenlijsten gehaald. Geen dierenartsadvies of garantie: controleer de verpakking en overleg bij twijfel.</p>}
   </header>
     {recovery ? <form className="login" onSubmit={updatePassword}><h2>Nieuw wachtwoord instellen</h2><p>Kies hieronder een nieuw wachtwoord voor het beheerdersaccount.</p><label>Nieuw wachtwoord<input type="password" required minLength="8" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} /></label><label>Herhaal wachtwoord<input type="password" required minLength="8" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} /></label><button>Wachtwoord opslaan</button>{authMessage && <p aria-live="polite">{authMessage}</p>}</form> : admin ? (isAdmin ? <Admin terms={terms} termsOud={termsOud} reloadTerms={loadTerms} onSaved={load} /> : session ? <section><h2>Geen beheerdersrechten</h2><p>Dit account mag geen producten beheren.</p><button onClick={() => supabase.auth.signOut()}>Uitloggen</button></section> : <form className="login" onSubmit={login}><h2>Beheer inloggen</h2><label>E-mail<input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} /></label><label>Wachtwoord<input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} /></label><button>Inloggen</button>{authMessage && <p>{authMessage}</p>}</form>) : <>
       <div className="layout">
@@ -477,7 +475,7 @@ function App() {
               <div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => setAllergens(e.target.checked ? [...allergens, key] : allergens.filter((item) => item !== key))} />{label}</label>)}</div>
             </details>
           })}</section>
-          {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : loading ? <p>Laden…</p> : <>{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">rood</mark> = het etiket noemt de bron van dat ingrediënt niet ("dierlijk vet", "granen"). {allergens.length ? 'Het oordeel gaat per allergeen: een product komt alleen bij "Controleer" als zo\'n onduidelijkheid jouw allergeen kan bevatten.' : 'Je hebt nog geen allergeen gekozen, dus beoordelen we het hele etiket: bij "Etiket noemt elke bron" staat alleen een lijst die elke bron noemt en waarvan de tekst is nagelopen of automatisch overgenomen. Kies een allergeen om te zien welke producten daarvoor geschikt zijn.'} Reken op het etiket en de fabrikant, niet op deze site.</p>
+          {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : loading ? <p>Laden…</p> : <>{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">rood</mark> = het etiket noemt de bron van dat ingrediënt niet ("dierlijk vet", "granen"). {allergens.length ? 'Het oordeel gaat per allergeen: een product komt alleen bij "Controleer" als zo\'n onduidelijkheid jouw allergeen kan bevatten.' : 'Je hebt nog geen allergeen gekozen, dus beoordelen we het hele etiket: bij "Etiket noemt elke bron" staat alleen een lijst die elke bron noemt. Kies een allergeen om te zien welke producten daarvoor geschikt zijn.'} Reken op het etiket en de fabrikant, niet op deze site.</p>
             {geenMerken || geenTypes ? <section id="resultaten"><h2>Geen producten</h2><p>{filterMelding}</p></section> : (
               <section id="resultaten">
                 <h2>Producten ({alleResultaten.length})</h2>

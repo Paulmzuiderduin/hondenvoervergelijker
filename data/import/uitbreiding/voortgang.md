@@ -61,4 +61,4 @@ ontbrekende recepten in het werkbestand staan.
 - Eén product per recept/smaak/formule; verpakkingsmaten worden gebundeld.
 - Alleen complete hondenvoeding: kibble, wet of raw. Geen snacks, kattenvoer, supplementen of verzorging.
 - Bij voorkeur de Nederlandse fabrikantpagina; anders de officiële internationale pagina met een Nederlandse vertaling en aantekening.
-- Geen menselijke controle claimen: alles blijft automatisch overgenomen.
+- Geen menselijke controle claimen: automatisch overgenomen producten krijgen geen badge. Alleen een handmatige review in Beheer zet `reviewed_at` en de badge "Door een mens gecontroleerd".
