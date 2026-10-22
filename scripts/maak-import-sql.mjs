@@ -42,7 +42,8 @@ const VERTAALNOTE = 'Nederlandse vertaling van de etiket tekst; origineel staat 
 // gebruikt. Alleen deze bekende gevallen worden als hetzelfde product gezien;
 // varianten met een andere naam (Large Breed, Puppy, enz.) blijven apart.
 const liveAlias = new Map([
-  ['carocroc|original', 'original 23/12']
+  ['carocroc|original', 'original 23/12'],
+  ['wooof|regular hondenvoer - geperst', 'regular geperst']
 ])
 
 const problemen = []
@@ -84,6 +85,32 @@ function netteVerpakking(waarde) {
 
 function verpakkingssleutel(product) {
   return netteVerpakking(product.verpakking).toLowerCase()
+}
+
+// "2 / 6 / 11,4 kg" betekent 2 kg, 6 kg en 11,4 kg. De eenheid staat vaak
+// alleen achter de laatste maat. Deze functie vult de ontbrekende eenheden aan
+// en houdt "10 x 1 kg" als één maat.
+function pakketDelen(tekst) {
+  const delen = netteVerpakking(tekst)
+    .split(/\s*\/\s*|\s*\+\s*/)
+    .map((deel) => deel.trim())
+    .filter(Boolean)
+  let eenheid = ''
+  for (let i = delen.length - 1; i >= 0; i -= 1) {
+    const match = delen[i].match(/(kg|g)$/i)
+    if (match) eenheid = match[1].toLowerCase()
+    else if (eenheid) delen[i] = `${delen[i]} ${eenheid}`
+  }
+  return new Set(delen.map((deel) => deel.toLowerCase()))
+}
+
+// Mag de live-verpakking vervangen worden door de bundel uit de import? Alleen
+// als elke bestaande maat ook in de nieuwe bundel voorkomt. Anders zou een
+// import per ongeluk een maat laten verdwijnen.
+function pakketBevat(nieuweBundel, oudeBundel) {
+  const nieuw = pakketDelen(nieuweBundel)
+  const oud = pakketDelen(oudeBundel)
+  return oud.size > 0 && [...oud].every((deel) => nieuw.has(deel))
 }
 
 function sqlTekst(waarde) {
@@ -183,13 +210,15 @@ for (const bestand of bestanden) {
   perBestand.set(bestand, goedgekeurd)
 }
 
+const pakketUpdates = new Map()
 const live = await haalLiveCatalogus()
 if (live) {
   const bestaand = new Map()
-  const bestaandeNamen = new Set()
+  const bestaandeNamen = new Map()
   for (const rij of live) {
     bestaand.set(`${rij.brand.toLowerCase()}|${rij.name.toLowerCase()}|${netteVerpakking(rij.package_size).toLowerCase()}`, 'de live database')
-    bestaandeNamen.add(`${rij.brand.toLowerCase()}|${rij.name.toLowerCase()}`)
+    const naamSleutel = `${rij.brand.toLowerCase()}|${rij.name.toLowerCase()}`
+    if (!bestaandeNamen.has(naamSleutel)) bestaandeNamen.set(naamSleutel, rij)
     if (rij.gtin) bestaand.set(`gtin:${rij.gtin}`, 'de live database')
   }
   for (const [bestand, producten] of perBestand) {
@@ -197,8 +226,37 @@ if (live) {
       const merk = product.merk.toLowerCase()
       const naam = product.naam.toLowerCase()
       const alias = liveAlias.get(`${merk}|${naam}`)
-      if (alias && bestaandeNamen.has(`${merk}|${alias}`)) {
-        waarschuwingen.push(`${product.merk} — ${product.naam}: staat al in de live database als "${alias}" en is overgeslagen`)
+      const doelNaam = alias ?? naam
+      const liveRij = bestaandeNamen.get(`${merk}|${doelNaam}`)
+      if (liveRij) {
+        const importPakket = netteVerpakking(product.verpakking)
+        const livePakket = netteVerpakking(liveRij.package_size ?? '')
+        if (importPakket && livePakket && verpakkingssleutel({ verpakking: importPakket }) !== verpakkingssleutel({ verpakking: livePakket })) {
+          if (pakketBevat(importPakket, livePakket)) {
+            const updateSleutel = `${liveRij.brand.toLowerCase()}|${liveRij.name.toLowerCase()}`
+            if (!pakketUpdates.has(updateSleutel)) {
+              pakketUpdates.set(updateSleutel, {
+                brand: liveRij.brand,
+                name: liveRij.name,
+                oud: livePakket,
+                nieuw: importPakket,
+                bronUrl: product.bronUrl,
+                opgehaald: product.opgehaald || ''
+              })
+              waarschuwingen.push(`${product.merk} — ${product.naam}: staat al live; verpakkingsmaat wordt bijgewerkt van "${livePakket}" naar "${importPakket}"`)
+            }
+          } else {
+            waarschuwingen.push(`${product.merk} — ${product.naam}: staat al live met verpakking "${livePakket}"; import heeft "${importPakket}", maar de bestaande maat ontbreekt in de import en wordt niet overschreven`)
+          }
+        } else if (alias) {
+          waarschuwingen.push(`${product.merk} — ${product.naam}: staat al in de live database als "${liveRij.name}" en is overgeslagen`)
+        } else {
+          waarschuwingen.push(`${product.merk} — ${product.naam}: staat al in de live database en is overgeslagen`)
+        }
+        const huidig = liveRij.recipe_versions?.find((versie) => versie.is_current)
+        if (huidig?.ingredients_text && normaliseer(huidig.ingredients_text) !== normaliseer(product.etiketNl)) {
+          waarschuwingen.push(`${product.merk} — ${product.naam}: de brontekst verschilt van de live-tekst; de bestaande tekst is niet automatisch overschreven`)
+        }
         return false
       }
       const sleutel = `${merk}|${naam}|${verpakkingssleutel(product)}`
@@ -276,6 +334,41 @@ for (let start = 0; start < alleProducten.length; start += MAX_PER_BATCH) {
   const naam = `${bestandsPrefix}${String(batchnummer).padStart(2, '0')}.sql`
   writeFileSync(join(SQL_MAP, naam), regels.join('\n'))
   console.log(`Geschreven: data/import/sql/${naam} (${producten.length} producten)`)
+}
+
+if (pakketUpdates.size) {
+  const regels = [
+    `-- Verpakkingsmaten van bestaande producten bijwerken (${pakketUpdates.size} producten).`,
+    '-- Alleen de maat, bron en controledatum veranderen; de ingrediëntenlijst en',
+    '-- een eventuele menselijke review blijven ongewijzigd.',
+    'begin;',
+    ''
+  ]
+  for (const update of pakketUpdates.values()) {
+    const opgehaald = update.opgehaald || vandaag
+    regels.push(
+      `-- ${update.brand} — ${update.name}: ${update.oud || 'geen maat'} → ${update.nieuw}`,
+      'update public.products',
+      `   set package_size = ${sqlTekst(update.nieuw)},`,
+      `       source_url = coalesce(${sqlTekst(update.bronUrl)}, source_url),`,
+      `       last_checked_at = date ${sqlTekst(opgehaald)}`,
+      ` where brand = ${sqlTekst(update.brand)} and name = ${sqlTekst(update.name)};`,
+      ''
+    )
+  }
+  regels.push(
+    'commit;',
+    '',
+    '-- Controle:',
+    'select brand, name, package_size, source_url, last_checked_at',
+    '  from public.products',
+    ` where (brand, name) in (${[...pakketUpdates.values()].map((update) => `(${sqlTekst(update.brand)}, ${sqlTekst(update.name)})`).join(', ')})`,
+    ' order by brand, name;',
+    ''
+  )
+  const naam = `pakket-updates-${vandaag}.sql`
+  writeFileSync(join(SQL_MAP, naam), regels.join('\n'))
+  console.log(`Geschreven: data/import/sql/${naam} (${pakketUpdates.size} verpakkingsmaten)`)
 }
 
 if (overgeslagen.length) {

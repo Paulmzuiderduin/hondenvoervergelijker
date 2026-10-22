@@ -64,7 +64,7 @@ const ENTITEITEN = {
   aacute: 'á', agrave: 'à', acirc: 'â', auml: 'ä', aring: 'å', atilde: 'ã', aelig: 'æ',
   ccedil: 'ç', eacute: 'é', egrave: 'è', ecirc: 'ê', euml: 'ë', iacute: 'í', igrave: 'ì',
   icirc: 'î', iuml: 'ï', ntilde: 'ñ', oacute: 'ó', ograve: 'ò', ocirc: 'ô', ouml: 'ö',
-  oslash: 'ø', otilde: 'õ', ssharp: 'ß', uacute: 'ú', ugrave: 'ù', ucirc: 'û', uuml: 'ü',
+  oslash: 'ø', otilde: 'õ', ssharp: 'ß', szlig: 'ß', uacute: 'ú', ugrave: 'ù', ucirc: 'û', uuml: 'ü',
   yacute: 'ý', yuml: 'ÿ', oelig: 'œ', sup2: '²', sup3: '³', reset: ''
 }
 
@@ -104,6 +104,22 @@ function vergelijkbaar(tekst) {
     .replace(/\s+([,;:.])/g, '$1')
     .replace(/\(\s+/g, '(')
     .replace(/\s+\)/g, ')')
+    .trim()
+}
+
+// Sommige fabrikanten zetten de voetnoten van een samengesteld etiket één keer
+// onder de laatste smaak, terwijl ze voor elke smaak gelden. Dan staat de
+// samenstelling zelf wel op de pagina, maar de volledige tekst met voetnoten
+// niet. Deze kern laat alleen de voetnoten weg; de samenstelling blijft
+// verplicht letterlijk aanwezig. Alleen als fallback gebruiken, nooit in plaats
+// van de exacte controle.
+function vergelijkbaarKern(tekst) {
+  const zonderVoetnoten = String(tekst)
+    .split(/\r?\n/)
+    .filter((regel) => !/^\s*[\^*]/.test(regel))
+    .join('\n')
+  return vergelijkbaar(zonderVoetnoten)
+    .replace(/\s+\*[^*]{0,240}$/, '')
     .trim()
 }
 
@@ -190,6 +206,7 @@ for (const product of producten) {
     continue
   }
   const gezocht = vergelijkbaar(product.etiketOrigineel)
+  const kern = vergelijkbaarKern(product.etiketOrigineel)
   if (!gezocht) {
     meld(product, 'onbereikbaar', 'geen brontekst in het importbestand')
     continue
@@ -226,6 +243,10 @@ for (const product of producten) {
     }
     if (vergelijkbaarMetPaginadata(uitkomst.tekst).includes(gezocht)) {
       meld(product, 'gelijk', 'staat in de gegevens van de pagina, niet in de leesbare tekst')
+      break
+    }
+    if (kern.length >= 40 && vergelijkbaar(uitkomst.tekst).includes(kern)) {
+      meld(product, 'gelijk', 'zelfde samenstelling; gedeelde voetnoten staan elders op de pagina')
       break
     }
     if (poging === 2) {

@@ -52,7 +52,15 @@ function leesBestand(pad) {
   }
 }
 
-const werkBestanden = readdirSync(WERK).filter((naam) => naam.endsWith('.json') && naam !== 'merken.json').sort()
+const alleenBestanden = (process.argv.find((arg) => arg.startsWith('--bestanden='))?.split('=')[1] ?? '')
+  .split(',')
+  .map((naam) => naam.trim())
+  .filter(Boolean)
+  .map((naam) => (naam.endsWith('.json') ? naam : `${naam}.json`))
+const werkBestanden = readdirSync(WERK)
+  .filter((naam) => naam.endsWith('.json') && naam !== 'merken.json')
+  .filter((naam) => !alleenBestanden.length || alleenBestanden.includes(naam))
+  .sort()
 if (!werkBestanden.length) {
   console.log('Geen werkbestanden gevonden.')
   process.exit(0)
@@ -80,8 +88,14 @@ for (const werknaam of werkBestanden) {
   for (const p of bestaandeProducten) {
     gezien.add(`${sleutel(p.merk)}|${sleutel(p.naam)}|${sleutel(p.verpakking)}`)
   }
+  const perNaam = new Map()
+  bestaandeProducten.forEach((p, index) => {
+    const naamSleutel = `${sleutel(p.merk)}|${sleutel(p.naam)}`
+    if (!perNaam.has(naamSleutel)) perNaam.set(naamSleutel, index)
+  })
 
   let toegevoegd = 0
+  let vervangen = 0
   let overgeslagen = 0
   const toeTeVoegen = []
   for (const ruw of producten) {
@@ -89,6 +103,27 @@ for (const werknaam of werkBestanden) {
     if (!perSlug.get(doelRij.slug)?.canonical.has(product.merk)) {
       console.log(`WAARSCHUWING ${werknaam}: merk "${ruw.merk}" hoort niet bij ${doelRij.slug}; overgeslagen`)
       overgeslagen++
+      continue
+    }
+    const naamSleutel = `${sleutel(product.merk)}|${sleutel(product.naam)}`
+    const bestaandeIndex = perNaam.get(naamSleutel)
+    if (bestaandeIndex !== undefined) {
+      const oud = bestaandeProducten[bestaandeIndex]
+      // Zelfde merk en receptnaam: dit is hetzelfde product, ook als de
+      // fabrikant intussen meer verpakkingsmaten noemt. Het werkbestand is de
+      // actuele bron, dus vervang het oude record in plaats van een tweede rij
+      // met dezelfde naam toe te voegen.
+      const samen = {
+        ...product,
+        verpakking: product.verpakking || oud.verpakking,
+        gtin: product.gtin || oud.gtin
+      }
+      if (sleutel(samen.verpakking) !== sleutel(oud.verpakking) || norm(samen.etiketOrigineel) !== norm(oud.etiketOrigineel)) {
+        bestaandeProducten[bestaandeIndex] = samen
+        vervangen++
+      } else {
+        overgeslagen++
+      }
       continue
     }
     const k = `${sleutel(product.merk)}|${sleutel(product.naam)}|${sleutel(product.verpakking)}`
@@ -101,7 +136,7 @@ for (const werknaam of werkBestanden) {
     toegevoegd++
   }
 
-  if (toegevoegd) {
+  if (toegevoegd || vervangen) {
     const datums = [bestaand.opgehaald, werk.opgehaald].filter(Boolean).sort()
     const nieuw = {
       ...bestaand,
@@ -109,14 +144,14 @@ for (const werknaam of werkBestanden) {
       opgehaald: datums.at(-1) || werk.opgehaald,
       producten: [...bestaandeProducten, ...toeTeVoegen]
     }
-    resultaat.push({ werknaam, doelPad, bestaand: bestaandeProducten.length, toegevoegd, overgeslagen, nieuw })
+    resultaat.push({ werknaam, doelPad, bestaand: bestaandeProducten.length - vervangen, toegevoegd, vervangen, overgeslagen, nieuw })
   } else {
-    resultaat.push({ werknaam, doelPad, bestaand: bestaandeProducten.length, toegevoegd: 0, overgeslagen, nieuw: null })
+    resultaat.push({ werknaam, doelPad, bestaand: bestaandeProducten.length, toegevoegd: 0, vervangen: 0, overgeslagen, nieuw: null })
   }
 }
 
 for (const r of resultaat) {
-  console.log(`${r.werknaam} → ${r.doelPad.replace(WORTEL + '/', '')}: ${r.toegevoegd} nieuw, ${r.overgeslagen} overgeslagen, ${r.bestaand} bestaand`)
+  console.log(`${r.werknaam} → ${r.doelPad.replace(WORTEL + '/', '')}: ${r.toegevoegd} nieuw, ${r.vervangen} vervangen, ${r.overgeslagen} overgeslagen, ${r.bestaand} bestaand`)
 }
 if (SCHRIJVEN) {
   for (const r of resultaat) {

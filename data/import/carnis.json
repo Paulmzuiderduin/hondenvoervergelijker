@@ -1,0 +1,210 @@
+{
+  "bron": "https://www.carnis.nl",
+  "opgehaald": "2026-10-21",
+  "producten": [
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Kip Regular",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-kip-regular-2kg/a1864",
+      "etiketOrigineel": "28% kippenmeel, ontsloten maïs, ontsloten rijstmeel, havermoutmeel, bietenpulp, gefractioneerd vetpoeder, rundvet, vitamine- en mineralen mix, johannesbroodmeel, pensmeel, 0,5% Schotse zalmolie",
+      "etiketNl": "28% kippenmeel, ontsloten maïs, ontsloten rijstmeel, havermoutmeel, bietenpulp, gefractioneerd vetpoeder, rundvet, vitamine- en mineralen mix, johannesbroodmeel, pensmeel, 0,5% Schotse zalmolie",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Kip Small",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-kip-small-2kg/a1867",
+      "etiketOrigineel": "28% kippenmeel, ontsloten maïs, ontsloten rijstmeel, havermoutmeel, bietenpulp, gefractioneerd vetpoeder, rundvet, vitamine- en mineralen mix, johannesbroodmeel, pensmeel, 0,5% Schotse zalmolie",
+      "etiketNl": "28% kippenmeel, ontsloten maïs, ontsloten rijstmeel, havermoutmeel, bietenpulp, gefractioneerd vetpoeder, rundvet, vitamine- en mineralen mix, johannesbroodmeel, pensmeel, 0,5% Schotse zalmolie",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Konijn Regular",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-konijn-regular-2kg/a1876",
+      "etiketOrigineel": "30% konijnenmeel, 25% ontsloten haver, ontsloten sorghum, johannesbroodmeel, bietenpulp, kokosvet, biergist, vitamine- en mineralenmix, rundvet, zalmolie",
+      "etiketNl": "30% konijnenmeel, 25% ontsloten haver, ontsloten sorghum, johannesbroodmeel, bietenpulp, kokosvet, biergist, vitamine- en mineralenmix, rundvet, zalmolie",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Konijn Small",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-konijn-small-2kg/a1880",
+      "etiketOrigineel": "30% konijnenmeel, 25% ontsloten haver, ontsloten sorghum, johannesbroodmeel, bietenpulp, kokosvet, biergist, vitamine- en mineralenmix, rundvet, zalmolie",
+      "etiketNl": "30% konijnenmeel, 25% ontsloten haver, ontsloten sorghum, johannesbroodmeel, bietenpulp, kokosvet, biergist, vitamine- en mineralenmix, rundvet, zalmolie",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Rijk aan Lam Regular",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-rijk-aan-lam-regular-2kg/a1873",
+      "etiketOrigineel": "ontsloten sorghum, 16% lamsmeel, zalmmeel, johannesbroodmeel, bietenpulp, rundvet, 3% biergist, gefractioneerd vetpoeder, vitamine- en mineralen mix, eipoeder, dextrose, 0,6% Schotse zalmolie",
+      "etiketNl": "ontsloten sorghum, 16% lamsmeel, zalmmeel, johannesbroodmeel, bietenpulp, rundvet, 3% biergist, gefractioneerd vetpoeder, vitamine- en mineralen mix, eipoeder, dextrose, 0,6% Schotse zalmolie",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Rijk aan Lam Small",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-rijk-aan-lam-small-2kg/a1882",
+      "etiketOrigineel": "ontsloten sorghum, 16% lamsmeel, zalmmeel, johannesbroodmeel, bietenpulp, rundvet, 3% biergist, gefractioneerd vetpoeder, vitamine- en mineralen mix, eipoeder, dextrose, 0,6% Schotse zalmolie",
+      "etiketNl": "ontsloten sorghum, 16% lamsmeel, zalmmeel, johannesbroodmeel, bietenpulp, rundvet, 3% biergist, gefractioneerd vetpoeder, vitamine- en mineralen mix, eipoeder, dextrose, 0,6% Schotse zalmolie",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Zalm Regular",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-zalm-regular-2kg/a1870",
+      "etiketOrigineel": "26% zalmmeel, ontsloten rijstmeel, ontsloten mais, ontsloten sorghum, ontsloten haver, rundvet, bietenpulp, vitamine- en mineralen mix, gefractioneerd vetpoeder, kippenmeel, 0,5% zonnebloemolie, 0,05% chondroïtine, 0,05% glucosamine",
+      "etiketNl": "26% zalmmeel, ontsloten rijstmeel, ontsloten mais, ontsloten sorghum, ontsloten haver, rundvet, bietenpulp, vitamine- en mineralen mix, gefractioneerd vetpoeder, kippenmeel, 0,5% zonnebloemolie, 0,05% chondroïtine, 0,05% glucosamine",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Zalm Small",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-zalm-small-2kg/a1885",
+      "etiketOrigineel": "26% zalmmeel, ontsloten rijstmeel, ontsloten mais, ontsloten sorghum, ontsloten haver, rundvet, bietenpulp, vitamine- en mineralen mix, gefractioneerd vetpoeder, kippenmeel, 0,5% zonnebloemolie, 0,05% chondroïtine, 0,05% glucosamine",
+      "etiketNl": "26% zalmmeel, ontsloten rijstmeel, ontsloten mais, ontsloten sorghum, ontsloten haver, rundvet, bietenpulp, vitamine- en mineralen mix, gefractioneerd vetpoeder, kippenmeel, 0,5% zonnebloemolie, 0,05% chondroïtine, 0,05% glucosamine",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Gestoomde Vleesworst Eend",
+      "voertype": "wet",
+      "verpakking": "400 g / 15 x 400 g",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/gestoomde-vleesworst-eend-400g/a9701",
+      "etiketOrigineel": "78% eend (karkas, 26% vlees, maag, lever), boekweitmeel, mineralen",
+      "etiketNl": "78% eend (karkas, 26% vlees, maag, lever), boekweitmeel, mineralen",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Gestoomde Vleesworst Kabeljauw met Zalm",
+      "voertype": "wet",
+      "verpakking": "400 g / 15 x 400 g",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/gestoomde-vleesworst-kabeljauw-met-zalm-400g/a9700",
+      "etiketOrigineel": "67% kabeljauw (vlees) en 10% zalm (karkas, hoofd, staart, vlees), boekweitmeel, mineralen, lijnzaadolie, zonnebloemolie",
+      "etiketNl": "67% kabeljauw (vlees) en 10% zalm (karkas, hoofd, staart, vlees), boekweitmeel, mineralen, lijnzaadolie, zonnebloemolie",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Gestoomde Vleesworst Kip",
+      "voertype": "wet",
+      "verpakking": "400 g / 15 x 400 g",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/gestoomde-vleesworst-kip-400g/a9702",
+      "etiketOrigineel": "83% kip (40% vlees, karkas, lever, maag), boekweitmeel, mineralen",
+      "etiketNl": "83% kip (40% vlees, karkas, lever, maag), boekweitmeel, mineralen",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Gestoomde Vleesworst Kip met Zalm",
+      "voertype": "wet",
+      "verpakking": "400 g / 15 x 400 g",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/gestoomde-vleesworst-kip-met-zalm-400g/a9697",
+      "etiketOrigineel": "67% kip (36% vlees, karkas, lever, maag), 10% zalm (karkas, kop, staart, vlees), boekweitmeel, mineralen, lijnzaadolie",
+      "etiketNl": "67% kip (36% vlees, karkas, lever, maag), 10% zalm (karkas, kop, staart, vlees), boekweitmeel, mineralen, lijnzaadolie",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Gestoomde Vleesworst Lam",
+      "voertype": "wet",
+      "verpakking": "400 g / 15 x 400 g",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/gestoomde-vleesworst-lam-400g/a9698",
+      "etiketOrigineel": "75% lam (35% vlees, long, hart, lever, pens), boekweitmeel, mineralen, lijnzaadolie",
+      "etiketNl": "75% lam (35% vlees, long, hart, lever, pens), boekweitmeel, mineralen, lijnzaadolie",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Gestoomde Vleesworst Rund",
+      "voertype": "wet",
+      "verpakking": "400 g / 15 x 400 g",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/gestoomde-vleesworst-rund-400g/a9699",
+      "etiketOrigineel": "78% rund (40% vlees, long, uier, pens, lever), boekweitmeel, mineralen",
+      "etiketNl": "78% rund (40% vlees, long, uier, pens, lever), boekweitmeel, mineralen",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Compleet diepvries vlees Voorjaarsmenu",
+      "voertype": "raw",
+      "verpakking": "20 x 500 g",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/compleet-diepvries-vlees-voorjaarsmenu-20-x-500g/a9656",
+      "twijfel": "De officiële productpagina voor deze complete diepvriesvariant (20 x 500 g) geeft HTTP 404; de samenstelling staat niet op de overgebleven pagina. Alleen de variantnaam en verpakkingsmaat zijn via de officiële sitemap bevestigd, daarom zijn geen etiketvelden opgenomen."
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Compleet diepvries vlees Paard/Lam",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg / 24 x 200 g",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/compleet-diepvries-vlees-paard-lam-10-x-1000g/a2045",
+      "twijfel": "De officiële productpagina's voor deze complete diepvriesvariant (10 x 1 kg en 24 x 200 g) geven HTTP 404; de samenstelling staat niet op de overgebleven pagina. Alleen de variantnaam en verpakkingsmaten zijn via de officiële sitemap bevestigd, daarom zijn geen etiketvelden opgenomen."
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Compleet diepvries vlees Zalm/Kip",
+      "voertype": "raw",
+      "verpakking": "24 x 200 g",
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/compleet-diepvries-vlees-zalm-kip-24-x-200g/a2040",
+      "twijfel": "De officiële productpagina voor deze complete diepvriesvariant (24 x 200 g) geeft HTTP 404; de samenstelling staat niet op de overgebleven pagina. Alleen de variantnaam en verpakkingsmaat zijn via de officiële sitemap bevestigd, daarom zijn geen etiketvelden opgenomen."
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Compleet diepvries vlees Rund/Kip",
+      "voertype": "raw",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://www.carnis.nl/nl/diepvries-hondenvoer-van-carnis/l254c31",
+      "twijfel": "Van deze complete diepvriesvariant is geen productpagina gevonden; alleen de officiële artikelpagina over diepvriesvoeding noemt de combinatie rund/kip. De samenstelling staat daar niet, daarom zijn geen etiketvelden opgenomen."
+    }
+  ]
+}
