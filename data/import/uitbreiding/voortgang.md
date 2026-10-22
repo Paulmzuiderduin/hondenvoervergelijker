@@ -33,15 +33,15 @@ Peildatum: 2026-10-22. Aantal = gepubliceerde producten in de live database; 0 b
 | Rodi | 0 | https://rodi-petfood.nl/ | nieuw |
 | Royal Canin | 7 | https://www.royalcanin.com/nl | uitbreiden |
 | Sanimed | 0 | https://www.sanimed.nl/ | nieuw |
-| Smølke | 0 | https://www.smolke.nl/ | nieuw |
+| Smølke | 27 | https://www.smolke.nl/ | klaar — 27 records, 27 nieuw |
 | Smuldier | 19 | https://www.smuldier.nl/ | klaar — 19 records, 9 nieuw; 2 verpakkingen aangevuld |
 | Specific | 6 | https://www.specific.nl/ | uitbreiden |
 | Trovet | 8 | https://www.trovet.nl/ | uitbreiden |
 | WOOOF | 27 | https://wooof.nl/ | klaar — 27 records, 26 nieuw |
 | Yarrah | 6 | https://www.yarrah.com/nl/ | uitbreiden |
-| Yora | 0 | https://yorapets.be/ | nieuw |
+| Yora | 9 | https://yorapets.be/ | klaar — 9 records, 9 nieuw |
 
-De live database bevat nu 813 gepubliceerde producten bij 44 merken. Eén dubbel record van Edgard & Cooper (Wild & eend, 400 g naast 400 / 800 g) is verwijderd omdat de etiketten identiek waren. Bonzo, Prins Petfoods, Renske en Smuldier zijn toegevoegd; de Prins-labels zijn apart in de browser tegen de officiële pagina's gecontroleerd omdat de site Node-verzoeken blokkeert.
+De live database bevat nu 849 gepubliceerde producten bij 46 merken. Eén dubbel record van Edgard & Cooper (Wild & eend, 400 g naast 400 / 800 g) is verwijderd omdat de etiketten identiek waren. Bonzo, Prins Petfoods, Renske en Smuldier zijn toegevoegd; daarna Smølke en Yora. De Prins- en Smølke-labels zijn apart in de browser tegen de officiële pagina's gecontroleerd omdat die sites Node-verzoeken blokkeren.
 
 ## Bestaande merken
 
