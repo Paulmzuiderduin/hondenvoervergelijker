@@ -115,6 +115,11 @@ function pakketBevat(nieuweBundel, oudeBundel) {
   return oud.size > 0 && [...oud].every((deel) => nieuw.has(deel))
 }
 
+function pakketSamen(eerste, tweede) {
+  const delen = new Set([...pakketDelen(eerste), ...pakketDelen(tweede)])
+  return [...delen].join(' / ')
+}
+
 function sqlTekst(waarde) {
   if (waarde === null || waarde === undefined || waarde === '') return 'null'
   return `'${String(waarde).replace(/'/g, "''")}'`
@@ -241,6 +246,45 @@ if (live) {
         }
         const importPakket = netteVerpakking(product.verpakking)
         const livePakket = netteVerpakking(liveRij.package_size ?? '')
+        const tekstGelijk = !huidig?.ingredients_text || normaliseer(huidig.ingredients_text) === normaliseer(product.etiketNl)
+        const importBevatLive = importPakket && livePakket && pakketBevat(importPakket, livePakket)
+        const liveBevatImport = importPakket && livePakket && pakketBevat(livePakket, importPakket)
+        const losseMaten = Boolean(importPakket && livePakket && !importBevatLive && !liveBevatImport)
+
+        // Dezelfde productnaam met een niet-overlappende verpakking en een
+        // andere etikettekst is een apart recept, geen verpakkingsuitbreiding.
+        // Denk aan DARF Houdbaar worst 200 g en 800 g. Alleen een menselijke
+        // review houdt zo'n bestaande rij tegen.
+        if (losseMaten && !alias) {
+          if (tekstGelijk) {
+            const updateSleutel = `${liveRij.brand.toLowerCase()}|${liveRij.name.toLowerCase()}`
+            if (!pakketUpdates.has(updateSleutel)) {
+              const samen = pakketSamen(livePakket, importPakket)
+              pakketUpdates.set(updateSleutel, {
+                brand: liveRij.brand,
+                name: liveRij.name,
+                oud: livePakket,
+                nieuw: samen,
+                bronUrl: product.bronUrl,
+                opgehaald: product.opgehaald || ''
+              })
+              waarschuwingen.push(`${product.merk} — ${product.naam}: zelfde etikettekst; verpakkingsmaten worden samengevoegd tot "${samen}"`)
+            }
+            return false
+          }
+          if (!huidig?.reviewed_at) {
+            waarschuwingen.push(`${product.merk} — ${product.naam}: zelfde naam maar andere verpakking en andere etikettekst; als apart recept toegevoegd`)
+            return true
+          }
+          overgeslagen.push({
+            bestand,
+            product,
+            reden: `Zelfde naam als het bestaande product "${liveRij.name}" (${livePakket}), maar een niet-overlappende verpakking (${importPakket}) en een andere etikettekst. De bestaande rij is menselijk nagekeken; een mens moet beoordelen of dit een apart recept is.`
+          })
+          waarschuwingen.push(`${product.merk} — ${product.naam}: bestaande review en afwijkende maat/tekst; niet automatisch toegevoegd`)
+          return false
+        }
+
         if (importPakket && !livePakket) {
           // Bestaande seed-producten hebben soms helemaal geen verpakking. De
           // officiële bron vult die leemte; dat is geen overschrijven.
@@ -278,7 +322,7 @@ if (live) {
         } else {
           waarschuwingen.push(`${product.merk} — ${product.naam}: staat al in de live database en is overgeslagen`)
         }
-        if (huidig?.ingredients_text && normaliseer(huidig.ingredients_text) !== normaliseer(product.etiketNl)) {
+        if (!tekstGelijk) {
           waarschuwingen.push(`${product.merk} — ${product.naam}: de brontekst verschilt van de live-tekst; de bestaande tekst is niet automatisch overschreven`)
         }
         return false

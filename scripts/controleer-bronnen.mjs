@@ -96,6 +96,7 @@ function htmlNaarTekst(html) {
 // opmaak van de pagina. Zo maakt een tab, een enter of een spatie geen verschil.
 function vergelijkbaar(tekst) {
   return decodeer(htmlNaarTekst(tekst))
+    .normalize('NFC')
     .toLowerCase()
     .replace(/[’‘`´]/g, "'")
     .replace(/[“”]/g, '"')
@@ -138,6 +139,7 @@ function vergelijkbaarMetPaginadata(html) {
       .replace(/\\\//g, '/')
       .replace(/<[^>]*>/g, ' ')
   )
+    .normalize('NFC')
     .toLowerCase()
     .replace(/[’‘`´]/g, "'")
     .replace(/[“”]/g, '"')
