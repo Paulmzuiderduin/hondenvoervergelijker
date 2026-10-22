@@ -144,7 +144,7 @@ for (const werknaam of werkBestanden) {
       opgehaald: datums.at(-1) || werk.opgehaald,
       producten: [...bestaandeProducten, ...toeTeVoegen]
     }
-    resultaat.push({ werknaam, doelPad, bestaand: bestaandeProducten.length - vervangen, toegevoegd, vervangen, overgeslagen, nieuw })
+    resultaat.push({ werknaam, doelPad, bestaand: bestaandeProducten.length, toegevoegd, vervangen, overgeslagen, nieuw })
   } else {
     resultaat.push({ werknaam, doelPad, bestaand: bestaandeProducten.length, toegevoegd: 0, vervangen: 0, overgeslagen, nieuw: null })
   }

@@ -43,7 +43,8 @@ const VERTAALNOTE = 'Nederlandse vertaling van de etiket tekst; origineel staat 
 // varianten met een andere naam (Large Breed, Puppy, enz.) blijven apart.
 const liveAlias = new Map([
   ['carocroc|original', 'original 23/12'],
-  ['wooof|regular hondenvoer - geperst', 'regular geperst']
+  ['wooof|regular hondenvoer - geperst', 'regular geperst'],
+  ['bonzo|adult menubrokken met rund, kip en groenten', 'menubrokken adult kip & groenten']
 ])
 
 const problemen = []
@@ -77,6 +78,7 @@ function hashVan(tekst) {
 // Engelse decimaalpunt, "3/10 kg" zonder spaties). Op de site horen ze in
 // dezelfde Nederlandse notatie te staan.
 function netteVerpakking(waarde) {
+  if (waarde == null || String(waarde).trim().toLowerCase() === 'null') return ''
   return normaliseer(waarde)
     .replace(/(\d)\.(\d)/g, '$1,$2')
     .replace(/\s*\/\s*/g, ' / ')
@@ -229,9 +231,32 @@ if (live) {
       const doelNaam = alias ?? naam
       const liveRij = bestaandeNamen.get(`${merk}|${doelNaam}`)
       if (liveRij) {
+        const huidig = liveRij.recipe_versions?.find((versie) => versie.is_current)
+        // Bij een afwijkende naam kunnen we niet zeker weten of het echt
+        // hetzelfde product is. Is de live-versie door een mens nagekeken, dan
+        // laten we naam, recept en verpakking met rust en melden we het apart.
+        if (alias && huidig?.reviewed_at) {
+          waarschuwingen.push(`${product.merk} — ${product.naam}: staat al live als "${liveRij.name}" en is menselijk nagekeken; niet automatisch toegevoegd of overschreven`)
+          return false
+        }
         const importPakket = netteVerpakking(product.verpakking)
         const livePakket = netteVerpakking(liveRij.package_size ?? '')
-        if (importPakket && livePakket && verpakkingssleutel({ verpakking: importPakket }) !== verpakkingssleutel({ verpakking: livePakket })) {
+        if (importPakket && !livePakket) {
+          // Bestaande seed-producten hebben soms helemaal geen verpakking. De
+          // officiële bron vult die leemte; dat is geen overschrijven.
+          const updateSleutel = `${liveRij.brand.toLowerCase()}|${liveRij.name.toLowerCase()}`
+          if (!pakketUpdates.has(updateSleutel)) {
+            pakketUpdates.set(updateSleutel, {
+              brand: liveRij.brand,
+              name: liveRij.name,
+              oud: '',
+              nieuw: importPakket,
+              bronUrl: product.bronUrl,
+              opgehaald: product.opgehaald || ''
+            })
+            waarschuwingen.push(`${product.merk} — ${product.naam}: staat al live zonder verpakking; verpakkingsmaat wordt aangevuld met "${importPakket}"`)
+          }
+        } else if (importPakket && livePakket && verpakkingssleutel({ verpakking: importPakket }) !== verpakkingssleutel({ verpakking: livePakket })) {
           if (pakketBevat(importPakket, livePakket)) {
             const updateSleutel = `${liveRij.brand.toLowerCase()}|${liveRij.name.toLowerCase()}`
             if (!pakketUpdates.has(updateSleutel)) {
@@ -253,7 +278,6 @@ if (live) {
         } else {
           waarschuwingen.push(`${product.merk} — ${product.naam}: staat al in de live database en is overgeslagen`)
         }
-        const huidig = liveRij.recipe_versions?.find((versie) => versie.is_current)
         if (huidig?.ingredients_text && normaliseer(huidig.ingredients_text) !== normaliseer(product.etiketNl)) {
           waarschuwingen.push(`${product.merk} — ${product.naam}: de brontekst verschilt van de live-tekst; de bestaande tekst is niet automatisch overschreven`)
         }
@@ -290,8 +314,10 @@ let batchnummer = (existsSync(SQL_MAP) ? readdirSync(SQL_MAP) : []).reduce(
   (hoogste, naam) => (naam.startsWith(bestandsPrefix) ? Math.max(hoogste, Number(naam.slice(bestandsPrefix.length, -4)) || 0) : hoogste),
   0
 )
+let nieuweBatches = 0
 for (let start = 0; start < alleProducten.length; start += MAX_PER_BATCH) {
   batchnummer += 1
+  nieuweBatches += 1
   const producten = alleProducten.slice(start, start + MAX_PER_BATCH)
   const regels = [
     `-- Automatisch overgenomen etiketten, batch ${batchnummer} van ${vandaag} (${producten.length} producten).`,
@@ -366,7 +392,12 @@ if (pakketUpdates.size) {
     ' order by brand, name;',
     ''
   )
-  const naam = `pakket-updates-${vandaag}.sql`
+  let naam = `pakket-updates-${vandaag}.sql`
+  let volgnummer = 2
+  while (existsSync(join(SQL_MAP, naam))) {
+    naam = `pakket-updates-${vandaag}-${String(volgnummer).padStart(2, '0')}.sql`
+    volgnummer += 1
+  }
   writeFileSync(join(SQL_MAP, naam), regels.join('\n'))
   console.log(`Geschreven: data/import/sql/${naam} (${pakketUpdates.size} verpakkingsmaten)`)
 }
@@ -381,5 +412,5 @@ if (overgeslagen.length) {
   console.log(`\n${overgeslagen.length} product(en) overgeslagen; zie data/import/twijfel.md`)
 }
 
-console.log(`\nKlaar: ${alleProducten.length} product(en) in ${batchnummer || 0} batch(es), ${problemen.length} afgekeurd, ${overgeslagen.length} overgeslagen.`)
+console.log(`\nKlaar: ${alleProducten.length} product(en) in ${nieuweBatches} batch(es), ${problemen.length} afgekeurd, ${overgeslagen.length} overgeslagen.`)
 if (problemen.length) process.exit(1)

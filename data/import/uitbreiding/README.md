@@ -17,7 +17,7 @@ vinden. De hoofdagent controleert en voegt daarna samen met `data/import/`.
 
 ## Ook de bestaande merken
 
-De opdracht geldt voor **alle 34 merken op de lijst**, dus ook de merken die al
+De opdracht geldt voor **alle merken op de lijst**, dus ook de merken die al
 in de app staan. Een bestaand importbestand of een bestaande live-productrij is
 géén bewijs dat het assortiment compleet is.
 

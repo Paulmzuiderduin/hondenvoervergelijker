@@ -750,9 +750,14 @@ export function assessLabel(ingredientsText = '') {
   // allergeen verbergen dat niet in de lijst staat, dus zolang er zo'n woord is,
   // mag niemand beweren dat de allergeenlijst compleet is.
   const known = markKnownWords(tokens)
+  // Hoeveelheden en losse letters zijn geen ingrediënt. "500mg", "2,5 g" en
+  // "vitamine E" mogen de keuring niet op "onbekend woord" laten slaan.
+  const isInertToken = (token) => /^\d+(?:[,.]\d+)?(?:mg|g|kg|iu|ie|ml|%)?$/.test(token)
+    || /^(?:mg|g|kg|iu|ie|ml|%)$/.test(token)
+    || /^[a-z]$/.test(token)
   const unknown = []
   tokens.forEach((token, index) => {
-    if (known[index] || /^\d+$/.test(token) || /^\d+x\d+$/.test(token) || unknown.includes(token)) return
+    if (known[index] || isInertToken(token) || /^\d+x\d+$/.test(token) || unknown.includes(token)) return
     unknown.push(token)
   })
 

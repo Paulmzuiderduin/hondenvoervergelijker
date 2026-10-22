@@ -275,6 +275,9 @@ test('de keuring meldt woorden die ze niet kent', () => {
   assert.equal(assessLabel('Kip 40%, glucosamine, erwten').covered, false)
   assert.equal(assessLabel('Kip 40%, aardappelen, vitaminen, mineralen').covered, true)
   assert.equal(assessLabel('Rose hip (0,2%), sodium chloride, vinegar, calcium carbonate').covered, true)
+  // Hoeveelheden en losse letters zijn geen ingrediënt en mogen de keuring niet
+  // op een onbekend woord laten vastlopen.
+  assert.deepEqual(assessLabel('Kip 40%, 500mg, 2,5 g, 400 IU, vitamine E').unknown, [])
 })
 
 test('een dierlijk deel zonder genoemde soort is een risico', () => {
