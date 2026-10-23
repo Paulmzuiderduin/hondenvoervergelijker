@@ -38,10 +38,10 @@ Peildatum: 2026-10-22. Aantal = gepubliceerde producten in de live database; 0 b
 | Specific | 6 | https://www.specific.nl/ | uitbreiden |
 | Trovet | 8 | https://www.trovet.nl/ | uitbreiden |
 | WOOOF | 27 | https://wooof.nl/ | klaar — 27 records, 26 nieuw |
-| Yarrah | 6 | https://www.yarrah.com/nl/ | uitbreiden |
+| Yarrah | 18 | https://www.yarrah.com/ | klaar — 18 records, 12 nieuw; 1 extra product via sitemap gevonden |
 | Yora | 9 | https://yorapets.be/ | klaar — 9 records, 9 nieuw |
 
-De live database bevat nu 914 gepubliceerde producten bij 46 merken. Eén dubbel record van Edgard & Cooper (Wild & eend, 400 g naast 400 / 800 g) is verwijderd omdat de etiketten identiek waren. Bonzo, Prins Petfoods, Renske en Smuldier zijn toegevoegd; daarna Smølke, Yora en Eukanuba. De Prins- en Smølke-labels zijn apart in de browser tegen de officiële pagina's gecontroleerd omdat die sites Node-verzoeken blokkeren.
+De live database bevat nu 926 gepubliceerde producten bij 46 merken. Eén dubbel record van Edgard & Cooper (Wild & eend, 400 g naast 400 / 800 g) is verwijderd omdat de etiketten identiek waren. Bonzo, Prins Petfoods, Renske en Smuldier zijn toegevoegd; daarna Smølke, Yora, Eukanuba en Yarrah. De Prins-, Smølke- en Yarrah-labels zijn apart in de browser tegen de officiële pagina's gecontroleerd omdat die sites Node-verzoeken blokkeren.
 
 Eukanuba heeft 74 officiële records en 65 nieuwe producten opgeleverd. De live-teller staat op 75 omdat het oude product `Active Adult Medium Breed kip` (12 kg) nog in de database staat; dat is dezelfde formule als `Volwassen Middelgrote rassen Verse kip` en is daarom niet als extra recept geïmporteerd. Het oude record is bewust niet verwijderd.
 
