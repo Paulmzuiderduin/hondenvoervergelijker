@@ -14,7 +14,7 @@ Peildatum: 2026-10-22. Aantal = gepubliceerde producten in de live database; 0 b
 | Cavom | 10 | https://www.cavom.nl/ | klaar — 9 records, ongewijzigd |
 | DARF | 51 | https://www.darf.nl/ | klaar — 68 records, 41 nieuw, 23 twijfel, 10 bestaand |
 | Edgard & Cooper | 38 | https://www.edgardcooper.com/nl/ | klaar — 37 records, 32 nieuw |
-| Eukanuba | 10 | https://www.eukanuba.nl/ | uitbreiden |
+| Eukanuba | 75 | https://www.eukanuba.nl/ | klaar — 74 records, 65 nieuw; live bevat één oude naam met dezelfde formule |
 | Farm Food | 0 | https://www.farmfood.nl/ | klaar — 9 records |
 | Greenheart-Premiums | 0 | https://www.greenheart-premiums.nl/ | klaar — 20 records |
 | Hill's Science Plan | 3 | https://www.hillspet.nl/ | uitbreiden |
@@ -41,7 +41,9 @@ Peildatum: 2026-10-22. Aantal = gepubliceerde producten in de live database; 0 b
 | Yarrah | 6 | https://www.yarrah.com/nl/ | uitbreiden |
 | Yora | 9 | https://yorapets.be/ | klaar — 9 records, 9 nieuw |
 
-De live database bevat nu 849 gepubliceerde producten bij 46 merken. Eén dubbel record van Edgard & Cooper (Wild & eend, 400 g naast 400 / 800 g) is verwijderd omdat de etiketten identiek waren. Bonzo, Prins Petfoods, Renske en Smuldier zijn toegevoegd; daarna Smølke en Yora. De Prins- en Smølke-labels zijn apart in de browser tegen de officiële pagina's gecontroleerd omdat die sites Node-verzoeken blokkeren.
+De live database bevat nu 914 gepubliceerde producten bij 46 merken. Eén dubbel record van Edgard & Cooper (Wild & eend, 400 g naast 400 / 800 g) is verwijderd omdat de etiketten identiek waren. Bonzo, Prins Petfoods, Renske en Smuldier zijn toegevoegd; daarna Smølke, Yora en Eukanuba. De Prins- en Smølke-labels zijn apart in de browser tegen de officiële pagina's gecontroleerd omdat die sites Node-verzoeken blokkeren.
+
+Eukanuba heeft 74 officiële records en 65 nieuwe producten opgeleverd. De live-teller staat op 75 omdat het oude product `Active Adult Medium Breed kip` (12 kg) nog in de database staat; dat is dezelfde formule als `Volwassen Middelgrote rassen Verse kip` en is daarom niet als extra recept geïmporteerd. Het oude record is bewust niet verwijderd.
 
 ## Bestaande merken
 
