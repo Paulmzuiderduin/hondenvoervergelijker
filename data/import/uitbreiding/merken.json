@@ -19,7 +19,7 @@
   { "lijst": "Orijen", "canonical": "Orijen", "slug": "orijen", "bron": "https://emea.orijenpetfoods.com/nl-NL/", "groep": "bestaand" },
   { "lijst": "Pedigree", "canonical": "Pedigree", "slug": "pedigree", "bron": "https://www.pedigree.nl/", "groep": "nieuw" },
   { "lijst": "Prins Petfoods", "canonical": "Prins Petfoods", "slug": "prins", "bron": "https://www.prinspetfoods.nl/", "groep": "bestaand" },
-  { "lijst": "Profine", "canonical": "Profine", "slug": "profine", "bron": "https://www.profine.com/", "groep": "nieuw" },
+  { "lijst": "Profine", "canonical": "Profine", "slug": "profine", "bron": "https://profinepetfood.com/", "groep": "nieuw" },
   { "lijst": "Purina Pro Plan", "canonical": "Purina Pro Plan", "slug": "purina", "bron": "https://www.purina.nl/proplan", "groep": "bestaand" },
   { "lijst": "Purina Pro Plan Veterinary Diets", "canonical": "Purina Pro Plan Veterinary Diets", "slug": "purina", "bron": "https://www.purina.nl/proplan", "groep": "bestaand" },
   { "lijst": "RAW4DOGS", "canonical": "RAW4DOGS", "slug": "raw4dogs", "bron": "https://www.raw4dogs.nl/", "groep": "nieuw" },

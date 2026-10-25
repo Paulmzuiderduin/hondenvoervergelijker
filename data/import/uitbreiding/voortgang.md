@@ -1,6 +1,6 @@
 # Voortgang uitbreiding merken
 
-Peildatum: 2026-10-22. Aantal = gepubliceerde producten in de live database; 0 betekent: merk staat nog niet in de app. “Klaar” betekent: officieel assortiment opnieuw gecontroleerd en werkbestand gevalideerd.
+Peildatum: 2026-10-24. Aantal = gepubliceerde producten in de live database; 0 betekent: merk staat nog niet in de app. “Klaar” betekent: officieel assortiment opnieuw gecontroleerd en werkbestand gevalideerd.
 
 | Merk | Live | Officiële bron | Status |
 |---|---:|---|---|
@@ -24,7 +24,7 @@ Peildatum: 2026-10-22. Aantal = gepubliceerde producten in de live database; 0 b
 | Orijen | 12 | https://emea.orijenpetfoods.com/nl-NL/ | klaar — 12 records, 8 nieuw |
 | Pedigree | 35 | https://www.pedigree.nl/ | klaar — 37 records, 35 nieuw, 2 twijfel |
 | Prins Petfoods | 72 | https://www.prinspetfoods.nl/ | klaar — 72 records, 62 nieuw; 10 bestaande verpakkingen aangevuld |
-| Profine | 0 | https://www.profine.com/ | nieuw |
+| Profine | 29 | https://profinepetfood.com/ | klaar — 29 records, 29 nieuw |
 | Purina Pro Plan | 5 | https://www.purina.nl/proplan | uitbreiden |
 | Purina Pro Plan Veterinary Diets | 6 | https://www.purina.nl/proplan | uitbreiden |
 | RAW4DOGS | 0 | https://www.raw4dogs.nl/ | nieuw |
@@ -41,9 +41,11 @@ Peildatum: 2026-10-22. Aantal = gepubliceerde producten in de live database; 0 b
 | Yarrah | 18 | https://www.yarrah.com/ | klaar — 18 records, 12 nieuw; 1 extra product via sitemap gevonden |
 | Yora | 9 | https://yorapets.be/ | klaar — 9 records, 9 nieuw |
 
-De live database bevat nu 926 gepubliceerde producten bij 46 merken. Eén dubbel record van Edgard & Cooper (Wild & eend, 400 g naast 400 / 800 g) is verwijderd omdat de etiketten identiek waren. Bonzo, Prins Petfoods, Renske en Smuldier zijn toegevoegd; daarna Smølke, Yora, Eukanuba en Yarrah. De Prins-, Smølke- en Yarrah-labels zijn apart in de browser tegen de officiële pagina's gecontroleerd omdat die sites Node-verzoeken blokkeren.
+De live database bevat nu 955 gepubliceerde producten bij 47 merken. Eén dubbel record van Edgard & Cooper (Wild & eend, 400 g naast 400 / 800 g) is verwijderd omdat de etiketten identiek waren. Bonzo, Prins Petfoods, Renske en Smuldier zijn toegevoegd; daarna Smølke, Yora, Eukanuba, Yarrah en Profine. De Prins-, Smølke- en Yarrah-labels zijn apart in de browser tegen de officiële pagina's gecontroleerd omdat die sites Node-verzoeken blokkeren.
 
 Eukanuba heeft 74 officiële records en 65 nieuwe producten opgeleverd. De live-teller staat op 75 omdat het oude product `Active Adult Medium Breed kip` (12 kg) nog in de database staat; dat is dezelfde formule als `Volwassen Middelgrote rassen Verse kip` en is daarom niet als extra recept geïmporteerd. Het oude record is bewust niet verwijderd.
+
+Profine heeft 29 officiële recepten opgeleverd: 13 droogvoer en 16 natvoer. Alle 29 zijn nieuw en in één batch toegevoegd. De 39 afzonderlijke verpakkingen zijn gebundeld tot 29 records; de samenstelling is per maat vergeleken en gelijk. De officiële winkel staat op `profinepetfood.com`, niet op het geparkeerde `profine.com`.
 
 ## Bestaande merken
 
