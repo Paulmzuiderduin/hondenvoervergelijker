@@ -27,12 +27,12 @@ Peildatum: 2026-10-24. Aantal = gepubliceerde producten in de live database; 0 b
 | Profine | 29 | https://profinepetfood.com/ | klaar — 29 records, 29 nieuw |
 | Purina Pro Plan | 5 | https://www.purina.nl/proplan | uitbreiden |
 | Purina Pro Plan Veterinary Diets | 6 | https://www.purina.nl/proplan | uitbreiden |
-| RAW4DOGS | 0 | https://www.raw4dogs.nl/ | nieuw |
+| RAW4DOGS | 7 | https://www.raw4dogs.nl/ | klaar — 7 records, 7 nieuw |
 | Renske | 44 | https://www.renske.com/nl/ | klaar — 44 records, 34 nieuw; 1 verpakking gecorrigeerd |
 | Riverwood | 0 | https://www.riverwoodpetfood.com/ | klaar — 28 records |
-| Rodi | 0 | https://rodi-petfood.nl/ | nieuw |
+| Rodi | 12 | https://rodi-petfood.nl/ | klaar — 12 records, 12 nieuw |
 | Royal Canin | 7 | https://www.royalcanin.com/nl | uitbreiden |
-| Sanimed | 0 | https://www.sanimed.nl/ | nieuw |
+| Sanimed | 22 | https://www.sanimed.nl/ | klaar — 22 records, 22 nieuw |
 | Smølke | 27 | https://www.smolke.nl/ | klaar — 27 records, 27 nieuw |
 | Smuldier | 19 | https://www.smuldier.nl/ | klaar — 19 records, 9 nieuw; 2 verpakkingen aangevuld |
 | Specific | 6 | https://www.specific.nl/ | uitbreiden |
@@ -41,11 +41,13 @@ Peildatum: 2026-10-24. Aantal = gepubliceerde producten in de live database; 0 b
 | Yarrah | 18 | https://www.yarrah.com/ | klaar — 18 records, 12 nieuw; 1 extra product via sitemap gevonden |
 | Yora | 9 | https://yorapets.be/ | klaar — 9 records, 9 nieuw |
 
-De live database bevat nu 955 gepubliceerde producten bij 47 merken. Eén dubbel record van Edgard & Cooper (Wild & eend, 400 g naast 400 / 800 g) is verwijderd omdat de etiketten identiek waren. Bonzo, Prins Petfoods, Renske en Smuldier zijn toegevoegd; daarna Smølke, Yora, Eukanuba, Yarrah en Profine. De Prins-, Smølke- en Yarrah-labels zijn apart in de browser tegen de officiële pagina's gecontroleerd omdat die sites Node-verzoeken blokkeren.
+De live database bevat nu 996 gepubliceerde producten bij 50 merken. Eén dubbel record van Edgard & Cooper (Wild & eend, 400 g naast 400 / 800 g) is verwijderd omdat de etiketten identiek waren. Bonzo, Prins Petfoods, Renske en Smuldier zijn toegevoegd; daarna Smølke, Yora, Eukanuba, Yarrah, Profine, RAW4DOGS, Rodi en Sanimed. De Prins-, Smølke- en Yarrah-labels zijn apart in de browser tegen de officiële pagina's gecontroleerd omdat die sites Node-verzoeken blokkeren.
 
 Eukanuba heeft 74 officiële records en 65 nieuwe producten opgeleverd. De live-teller staat op 75 omdat het oude product `Active Adult Medium Breed kip` (12 kg) nog in de database staat; dat is dezelfde formule als `Volwassen Middelgrote rassen Verse kip` en is daarom niet als extra recept geïmporteerd. Het oude record is bewust niet verwijderd.
 
 Profine heeft 29 officiële recepten opgeleverd: 13 droogvoer en 16 natvoer. Alle 29 zijn nieuw en in één batch toegevoegd. De 39 afzonderlijke verpakkingen zijn gebundeld tot 29 records; de samenstelling is per maat vergeleken en gelijk. De officiële winkel staat op `profinepetfood.com`, niet op het geparkeerde `profine.com`.
+
+RAW4DOGS heeft 7 complete rauwvoerrecepten, Rodi 12 recepten (8 natvoer, 4 rauw) en Sanimed 22 recepten (16 droogvoer, 6 natvoer). Deze 41 producten zijn samen in batch `20261025-01` toegevoegd. Sanimed had één dubbele URL: `clinical-choice-pure-duck/` verwijst door naar `clinical-choice-pure-duck-worst/` en is daarom één keer opgenomen. Alle 41 bronpagina's zijn na het samenstellen opnieuw gecontroleerd en ongewijzigd.
 
 ## Bestaande merken
 

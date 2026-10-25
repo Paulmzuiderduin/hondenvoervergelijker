@@ -1,0 +1,150 @@
+{
+  "bron": "https://rodi-petfood.nl/",
+  "opgehaald": "2026-10-25",
+  "producten": [
+    {
+      "merk": "Rodi",
+      "naam": "Power Rund",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://rodi-petfood.nl/product/rodi-power/",
+      "etiketOrigineel": "Rund (60%) (hart, vlees, lever, long, pens), skyr (4%), erwteneiwit, mineralen, sesamzaad (0,5%), sesamolie.",
+      "etiketNl": "Rund (60%) (hart, vlees, lever, long, pens), skyr (4%), erwteneiwit, mineralen, sesamzaad (0,5%), sesamolie.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Rodi",
+      "naam": "Shine Kip met Zalm",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://rodi-petfood.nl/product/rodi-shine/",
+      "etiketOrigineel": "Kip (46%) (hart, vlees, maag, lever, nek, vet), zalm (14%), zoete aardappel (4%), wortel, heel ei, mineralen, bosbessen (1%), biergist, zalmolie (0,1%), zeealgen.",
+      "etiketNl": "Kip (46%) (hart, vlees, maag, lever, nek, vet), zalm (14%), zoete aardappel (4%), wortel, heel ei, mineralen, bosbessen (1%), biergist, zalmolie (0,1%), zeealgen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Rodi",
+      "naam": "Balance Gevogelte",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://rodi-petfood.nl/product/rodi-balance/",
+      "etiketOrigineel": "Kalkoen (30%) (hart, vlees, maag, lever, nek), kip (30%) (hart, vlees, maag, lever, nek, vet), courgette (4%), rijst, peer (1,5%), mineralen, cellulose, zonnebloemolie.",
+      "etiketNl": "Kalkoen (30%) (hart, vlees, maag, lever, nek), kip (30%) (hart, vlees, maag, lever, nek, vet), courgette (4%), rijst, peer (1,5%), mineralen, cellulose, zonnebloemolie.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Rodi",
+      "naam": "Sensitive Lam",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://rodi-petfood.nl/product/rodi-sensitive/",
+      "etiketOrigineel": "Lam (60%) (lever, long, vlees, hart, pens), boekweit, boerenkool (4%), mineralen, gember (0,2%), inuline (0,2%), bernagieolie.",
+      "etiketNl": "Lam (60%) (lever, long, vlees, hart, pens), boekweit, boerenkool (4%), mineralen, gember (0,2%), inuline (0,2%), bernagieolie.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Rodi",
+      "naam": "Vitality Kip",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://rodi-petfood.nl/product/rodi-vitality/",
+      "etiketOrigineel": "Kip (60%) (hart, vlees, lever, maag, nek, vet), quinoa, zoete aardappel (2%), appel (2%), mineralen, aardbei (1%), perzik (1%), zalmolie.",
+      "etiketNl": "Kip (60%) (hart, vlees, lever, maag, nek, vet), quinoa, zoete aardappel (2%), appel (2%), mineralen, aardbei (1%), perzik (1%), zalmolie.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Rodi",
+      "naam": "Lam met Rijst",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://rodi-petfood.nl/product/lam-met-rijst/",
+      "etiketOrigineel": "Vlees en dierlijke bijproducten (72%, 32% lam), granen (9% rijst), oliën en vetten (1% schapenvet), mineralen.",
+      "etiketNl": "Vlees en dierlijke bijproducten (72%, 32% lam), granen (9% rijst), oliën en vetten (1% schapenvet), mineralen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Rodi",
+      "naam": "Kip met Rund",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://rodi-petfood.nl/product/kip-met-rund/",
+      "etiketOrigineel": "Vlees en dierlijke bijproducten (81% verse kip, 4% runderlever), granen (rijst), mineralen.",
+      "etiketNl": "Vlees en dierlijke bijproducten (81% verse kip, 4% runderlever), granen (rijst), mineralen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Rodi",
+      "naam": "Kip met Kaas",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "gtin": null,
+      "bronUrl": "https://rodi-petfood.nl/product/kip-met-kaas/",
+      "etiketOrigineel": "Vlees en dierlijke bijproducten (75% verse kip), granen (rijst), melk- en melkbijproducten (4% kaasblokjes), mineralen.",
+      "etiketNl": "Vlees en dierlijke bijproducten (75% verse kip), granen (rijst), melk- en melkbijproducten (4% kaasblokjes), mineralen.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Rodi",
+      "naam": "Maaltijdburgers Kip met Rijst",
+      "voertype": "raw",
+      "verpakking": "1 kg",
+      "gtin": null,
+      "bronUrl": "https://rodi-petfood.nl/product/daily-basics-hart/",
+      "etiketOrigineel": "Kip (75%) (kippenvlees, kipkarkas, kippenmaag, kippenlever), gewelde gepofte rijst (12%), gemalen wortels, gemalen erwten, vitamine- en mineralenmix, erwtenvezels, lijnzaadolie.",
+      "etiketNl": "Kip (75%) (kippenvlees, kipkarkas, kippenmaag, kippenlever), gewelde gepofte rijst (12%), gemalen wortels, gemalen erwten, vitamine- en mineralenmix, erwtenvezels, lijnzaadolie.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Rodi",
+      "naam": "Maaltijdburgers Rund met Pens",
+      "voertype": "raw",
+      "verpakking": "1 kg",
+      "gtin": null,
+      "bronUrl": "https://rodi-petfood.nl/product/daily-basics-rund/",
+      "etiketOrigineel": "Rund (79%) (runderpens (26%), runderlong, rundvet, rundvlees, rundercollageen), gemalen wortels, gemalen spinazie, vitamine- en mineralen mix, erwtenvezels, lijnzaadolie.",
+      "etiketNl": "Rund (79%) (runderpens (26%), runderlong, rundvet, rundvlees, rundercollageen), gemalen wortels, gemalen spinazie, vitamine- en mineralen mix, erwtenvezels, lijnzaadolie.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Rodi",
+      "naam": "Maaltijdburgers Lam met Rijst",
+      "voertype": "raw",
+      "verpakking": "1 kg",
+      "gtin": null,
+      "bronUrl": "https://rodi-petfood.nl/product/daily-basics-lam-met-rijst/",
+      "etiketOrigineel": "Lam (75%) (lamsvlees, lamspens, lamshart, lamslong), gewelde gepofte rijst (12%) gemalen wortels, gemalen spinazie, vitamine-en mineralen mix, erwtenvezels, lijnzaadolie.",
+      "etiketNl": "Lam (75%) (lamsvlees, lamspens, lamshart, lamslong), gewelde gepofte rijst (12%) gemalen wortels, gemalen spinazie, vitamine-en mineralen mix, erwtenvezels, lijnzaadolie.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Rodi",
+      "naam": "Maaltijdburgers Rund met Hart",
+      "voertype": "raw",
+      "verpakking": "1 kg",
+      "gtin": null,
+      "bronUrl": "https://rodi-petfood.nl/product/daily-basics-rund-met-pens/",
+      "etiketOrigineel": "Rund (70%) (runderlong, rundernier, runderhart (8%), rundvlees, rundermilt, rundercollageen), gemalen wortels, gemalen erwten, vitamine-en mineralen mix, erwtenvezels, lijnzaadolie.",
+      "etiketNl": "Rund (70%) (runderlong, rundernier, runderhart (8%), rundvlees, rundermilt, rundercollageen), gemalen wortels, gemalen erwten, vitamine-en mineralen mix, erwtenvezels, lijnzaadolie.",
+      "aantekening": null,
+      "twijfel": null
+    }
+  ]
+}

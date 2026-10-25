@@ -1,0 +1,90 @@
+{
+  "bron": "https://www.raw4dogs.nl/",
+  "opgehaald": "2026-10-25",
+  "producten": [
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Chicken",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "gtin": null,
+      "bronUrl": "https://www.raw4dogs.nl/producten/chicken",
+      "etiketOrigineel": "Kip (87%) - bevleesde kippenrug, kippenmaag, kippenhart Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Zalmolie (1%) Vitaminen en mineralen mix, cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "etiketNl": "Kip (87%) - bevleesde kippenrug, kippenmaag, kippenhart Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Zalmolie (1%) Vitaminen en mineralen mix, cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Beef & chicken",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "gtin": null,
+      "bronUrl": "https://www.raw4dogs.nl/producten/beef-chicken",
+      "etiketOrigineel": "Rund (45%) - bevleesde tongbotjes, runderpens, runderhart Kip (42%) - bevleesde kippenrug Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Zalmolie (1%) Vitaminen en mineralen mix Cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "etiketNl": "Rund (45%) - bevleesde tongbotjes, runderpens, runderhart Kip (42%) - bevleesde kippenrug Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Zalmolie (1%) Vitaminen en mineralen mix Cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Lamb",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "gtin": null,
+      "bronUrl": "https://www.raw4dogs.nl/producten/lamb",
+      "etiketOrigineel": "Lam (87%) - lamspens, lamsorganen, lamsvlees, bevleesde lamsribben, lamsvet Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Zalmolie (1%) Vitaminen en mineralen mix Cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "etiketNl": "Lam (87%) - lamspens, lamsorganen, lamsvlees, bevleesde lamsribben, lamsvet Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Zalmolie (1%) Vitaminen en mineralen mix Cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Duck",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "gtin": null,
+      "bronUrl": "https://www.raw4dogs.nl/producten/duck",
+      "etiketOrigineel": "Eend (87%) - bevleesde eendenrug, eendenvlees, eendennek, eendenhart Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Zalmolie (1%) Vitaminen en mineralen mix Cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "etiketNl": "Eend (87%) - bevleesde eendenrug, eendenvlees, eendennek, eendenhart Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Zalmolie (1%) Vitaminen en mineralen mix Cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Fish Mix",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "gtin": null,
+      "bronUrl": "https://www.raw4dogs.nl/producten/fish-mix",
+      "etiketOrigineel": "Zalm (58%) - zalmlijven, zalmkoppen Hele ansjovis (15%) Hele haring (15%) Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Vitaminen en mineralen mix Cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "etiketNl": "Zalm (58%) - zalmlijven, zalmkoppen Hele ansjovis (15%) Hele haring (15%) Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Vitaminen en mineralen mix Cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Game Mix",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "gtin": null,
+      "bronUrl": "https://www.raw4dogs.nl/producten/game-mix",
+      "etiketOrigineel": "Fazant (37%) - bevleesd fazantenkarkas, fazantenorganen Haas (30%) - bevleesd hazenkarkas, hazenorganen Hert (20%) - gemalen hertenvlees Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Zalmolie (1%) Vitaminen en mineralen mix Cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "etiketNl": "Fazant (37%) - bevleesd fazantenkarkas, fazantenorganen Haas (30%) - bevleesd hazenkarkas, hazenorganen Hert (20%) - gemalen hertenvlees Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Zalmolie (1%) Vitaminen en mineralen mix Cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Barf 5 Mix",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "gtin": null,
+      "bronUrl": "https://www.raw4dogs.nl/producten/barf-5-mix",
+      "etiketOrigineel": "Kip (22%) - bevleesde kippenrug Zalm (20%) - zalmkoppen Eend (20%) - bevleesde eendenrug Lam (15%) - lamsorganen Rund (10%) - runderhart Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Zalmolie (1%) Vitaminen en mineralen mix Cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "etiketNl": "Kip (22%) - bevleesde kippenrug Zalm (20%) - zalmkoppen Eend (20%) - bevleesde eendenrug Lam (15%) - lamsorganen Rund (10%) - runderhart Groentemix (10%) - bloemkool, wortel, spinazie Zeewier (1%) Zalmolie (1%) Vitaminen en mineralen mix Cranberry (0,01%) Vitamine A 3.000 IE, Vitamine D3 300 IE, Vitamine E 100 mg, Vitamine C 30 mg, Biotine 50 μg",
+      "aantekening": null,
+      "twijfel": null
+    }
+  ]
+}
