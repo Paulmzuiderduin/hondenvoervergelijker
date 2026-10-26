@@ -69,6 +69,7 @@ export const ALLERGEN_GROUPS = [
     allergenPairs: [
       ['algae', 'Algen/zeewier'], ['egg', 'Ei'], ['milk', 'Melk/zuivel'], ['nuts', 'Noten'], ['peanut', 'Pinda'], ['sesame', 'Sesam'],
       ['yeast', 'Gist'], ['honey', 'Honing'], ['pollen', 'Pollen'], ['psyllium', 'Psyllium'],
+      ['xylitol', 'Xylitol'], ['sorbitol', 'Sorbitol'], ['glycerol', 'Glycerol/glycerine'], ['propyleenglycol', 'Propyleenglycol'],
       ['sunflower', 'Zonnebloem'], ['rapeseed', 'Koolzaad'], ['flax', 'Lijnzaad'], ['chia', 'Chia'], ['hemp', 'Hennep'], ['palm', 'Palm']
     ]
   }
@@ -277,7 +278,11 @@ const ALLERGEN_SYNONYMS = {
   rapeseed: ['koolzaad*', 'raapzaad*', 'raapolie*', 'rapeseed*', 'canola*'],
   flax: ['lijnzaad*', 'lijnzaden*', 'lijnolie*', 'flax*', 'linseed*'],
   chia: ['chia*', 'chiazaad*'], hemp: ['hennep*', 'hennepzaad*', 'hemp*'],
-  palm: ['palm', 'palmolie*', 'palmvet*', 'palmkern*', 'palmkernel*', 'palmpit*']
+  palm: ['palm', 'palmolie*', 'palmvet*', 'palmkern*', 'palmkernel*', 'palmpit*'],
+  xylitol: ['xylitol*', 'xylit', 'e967'],
+  sorbitol: ['sorbitol*', 'e420'],
+  glycerol: ['glycerol*', 'glycerine*', 'glycerin*', 'e422'],
+  propyleenglycol: ['propyleenglycol*', 'propylene glycol', 'e490']
 }
 
 // Zoektermen voor de allergenenlijst: het label plus de synoniemen die de

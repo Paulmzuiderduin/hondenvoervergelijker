@@ -73,4 +73,4 @@ ontbrekende recepten in het werkbestand staan.
 
 ## Woordenlijst
 
-Op 2026-10-26 zijn 294 + 8 nieuwe woorden ingedeeld. De live keuring telt nu 662 termen en 0 onbekende woorden in 1413 recepten.
+Op 2026-10-26 zijn 294 + 8 nieuwe woorden ingedeeld. Daarna zijn xylitol, sorbitol, glycerol/glycerine en propyleenglycol als eigen allergenen onder "Overig" toegevoegd. De live keuring telt nu 670 termen en 0 onbekende woorden in 1413 recepten.
