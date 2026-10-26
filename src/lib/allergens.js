@@ -280,6 +280,14 @@ const ALLERGEN_SYNONYMS = {
   palm: ['palm', 'palmolie*', 'palmvet*', 'palmkern*', 'palmkernel*', 'palmpit*']
 }
 
+// Zoektermen voor de allergenenlijst: het label plus de synoniemen die de
+// keuring al gebruikt. Zo vindt "schaap" het allergeen "Lam" en "zwijn" het
+// allergeen "Varken", ook al staat dat woord niet in het label.
+export function allergenSearchTerms(key, label) {
+  const synoniemen = (ALLERGEN_SYNONYMS[key] ?? []).map((term) => term.replace(/\*$/, ''))
+  return [label, ...synoniemen]
+}
+
 // Verzamelwoorden die geen dier- of plantensoort noemen. Ze kunnen nooit door
 // een mens worden goedgekeurd: alleen het etiket of de fabrikant kan zeggen wat
 // erin zit. Elke regel zegt welke allergenen zo'n woord kan verbergen.

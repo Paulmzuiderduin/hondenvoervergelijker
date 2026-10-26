@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, assessLabel, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients, missingAllergenKeys, setCustomTerms, sortAllergenKeys } from './lib/allergens'
+import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, allergenSearchTerms, assessLabel, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients, missingAllergenKeys, setCustomTerms, sortAllergenKeys } from './lib/allergens'
 import { isReviewOverdue, productMatch } from './lib/matcher'
 import { supabase } from './lib/supabase'
 import './styles.css'
@@ -90,23 +90,38 @@ function ProductCard({ product, match }) {
   // De algemene uitleg die hier eerder stond, zei hetzelfde en is vervallen.
   const checkReason = !match.hasLabel ? 'Er is nog geen ingrediëntenlijst ingevoerd.'
     : !match.reviewed && !match.imported ? 'Deze ingrediëntenlijst is nog niet tegen de bron gecontroleerd.'
-      : match.stale ? 'Deze ingrediëntenlijst is langer dan zes maanden niet gecontroleerd.' : ''
-  return <article className={excluded ? 'product-card excluded' : 'product-card'}>
-    <div><strong>{product.brand}</strong> — {product.name}</div>
-    <small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]}{product.package_size ? ` · ${product.package_size}` : ''}{hydrolysed.present ? ' · gehydrolyseerd eiwit' : ''}{' '}<span className={`verdict-badge ${match.kind}`}>{verdict}</span>{match.reviewed && <span className="human-badge" title={`Ingrediëntenlijst handmatig tegen de bron gecontroleerd${reviewedOp ? ` op ${reviewedOp}` : ''}.`}>Door een mens gecontroleerd</span>}</small>
+      : match.sourceChanged ? 'De bronpagina bij de fabrikant is gewijzigd en wordt opnieuw gecontroleerd.'
+        : match.stale ? 'Deze ingrediëntenlijst is langer dan zes maanden niet gecontroleerd.' : ''
+  const foodTypeLabel = FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]
+  return <article className={excluded ? 'product-card excluded' : `product-card ${match.kind}`}>
+    <div className="product-card-top">
+      <div className="product-title-group">
+        <span className="product-brand">{product.brand}</span>
+        <h3 className="product-name">{product.name}</h3>
+      </div>
+      <div className="product-badges">
+        <span className={`verdict-badge ${match.kind}`}>{verdict}</span>
+        {match.reviewed && <span className="human-badge" title={`Ingrediëntenlijst handmatig tegen de bron gecontroleerd${reviewedOp ? ` op ${reviewedOp}` : ''}.`}>Door een mens gecontroleerd</span>}
+      </div>
+    </div>
+    <div className="product-meta">
+      {foodTypeLabel && <span className="meta-pill">{foodTypeLabel}</span>}
+      {product.package_size && <span className="meta-pill">{product.package_size}</span>}
+      {hydrolysed.present && <span className="meta-pill hydrolysed-pill">Gehydrolyseerd eiwit</span>}
+    </div>
     {presentStates.length > 0 && !excluded && <p className="verdict present"><strong>Staat in de lijst:</strong> {presentStates.map((state) => `${ALLERGEN_LABELS[state.key]}${state.members.some((member) => member !== state.key) ? ` via ${labelList(state.members.filter((member) => member !== state.key))}` : ''}`).join(', ')}</p>}
     {unknownStates.length > 0 && <p className="verdict unknown"><strong>Kan erin zitten:</strong> {labelList(unknownStates.map((state) => state.key), 100)} — het etiket noemt geen bron voor {onbekendeWoorden.length > 5 ? `${onbekendeWoorden.slice(0, 5).join(', ')} en ${onbekendeWoorden.length - 5} meer` : onbekendeWoorden.length ? onbekendeWoorden.join(', ') : 'een ingrediënt'}</p>}
     {absentStates.length > 0 && <p className="verdict absent"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 100)}</p>}
-    <details className="ingredients"><summary>Ingrediëntenlijst</summary><Ingredients text={version?.ingredients_text} /></details>
+    <details className="ingredients"><summary>Volledige ingrediëntenlijst bekijken</summary><Ingredients text={version?.ingredients_text} /></details>
     {match.importNote && <p className="import-note"><small>{match.importNote}</small></p>}
     {hydrolysed.present && <p className="note-hydrolysed"><strong>Gehydrolyseerd eiwit:</strong> {hydrolysed.words.length ? `dit etiket noemt ${hydrolysed.words.join(', ')} in gehydrolyseerde vorm` : 'dit etiket noemt gehydrolyseerde eiwitten'}: de eiwitketens zijn opgeknipt, waardoor het lichaam ze vaak niet meer als allergeen herkent. Dierenartsen kiezen zo'n voer juist bij een allergie; deze site telt de bron toch mee, want alleen je dierenarts kan beoordelen of het in jouw geval werkt.</p>}
-    {product.source_url?.startsWith('http') && <p><a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">Bekijk product{sourceDomain(product.source_url) ? ` (${sourceDomain(product.source_url)})` : ''}</a></p>}
     {excluded && <p className="reason excluded">Uitgesloten vanwege: {match.presentStates.map((state) => ALLERGEN_LABELS[state.key]).join(' · ')}</p>}
     {!excluded && checkReason && <p className="reason">Controleer: {checkReason}</p>}
-    {!excluded && !checkReason && match.kind === 'suitable' && !match.states.length && <p className="reason">Dit etiket noemt bij elk ingrediënt waar het vandaan komt. Kies je allergenen om te vergelijken.</p>}
+    {!excluded && !checkReason && match.kind === 'suitable' && !match.states.length && <p className="reason suitable-reason">Dit etiket noemt bij elk ingrediënt waar het vandaan komt. Kies je allergenen om te vergelijken.</p>}
     {!match.states.length && (verborgenWoorden.length > 0 || nietHerkendeWoorden.length > 0) && <p className="reason"><small>Let op: {verborgenWoorden.length
       ? `dit etiket noemt geen bron voor ${verborgenWoorden.join(', ')}. ${nietHerkendeWoorden.length ? 'Omdat er ook woorden in staan die de keuring niet kent, kan elk allergeen erin zitten.' : dektElkAllergeen ? 'Daardoor kan elk allergeen erin zitten.' : `${labelList(verborgenKeys)} kunnen daar in zitten.`}`
       : 'dit etiket bevat woorden die de keuring niet kent. Daardoor kan elk allergeen erin zitten.'}</small></p>}
+    {product.source_url?.startsWith('http') && <div className="product-card-footer"><a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">Officiële productpagina bekijken{sourceDomain(product.source_url) ? ` (${sourceDomain(product.source_url)})` : ''} ↗</a></div>}
   </article>
 }
 
@@ -407,7 +422,7 @@ function App() {
     if (!zoek) return ALLERGEN_GROUPS
     return ALLERGEN_GROUPS.map((group) => {
       const groepMatch = group.label.toLowerCase().includes(zoek)
-      const allergens = groepMatch ? group.allergens : group.allergens.filter(({ label }) => label.toLowerCase().includes(zoek))
+      const allergens = groepMatch ? group.allergens : group.allergens.filter(({ key, label }) => allergenSearchTerms(key, label).some((term) => term.toLowerCase().includes(zoek)))
       return { ...group, allergens }
     }).filter((group) => group.allergens.length)
   }, [allergenSearch])
@@ -494,7 +509,7 @@ function App() {
         </aside>
         <div className="content">
           <section><h2>Allergieën van je hond</h2><p><small>Kies wat je wilt vermijden. De lijst is fijnmazig — één groente, één vissoort of één kruid kan ook — dus open de groep die je nodig hebt of zoek direct op naam.</small></p>
-            <label className="brand-search-label">Zoek allergeen<input type="search" value={allergenSearch} onChange={(e) => setAllergenSearch(e.target.value)} placeholder="Bijv. kip, rijst of zalm" /></label>
+            <label className="brand-search-label allergen-search-label">Zoek allergeen<input type="search" value={allergenSearch} onChange={(e) => setAllergenSearch(e.target.value)} placeholder="Bijv. kip, rijst of zalm" /></label>
             {gezochteAllergenen.length ? gezochteAllergenen.map((group) => {
               const gekozen = group.allergens.filter(({ key }) => allergens.includes(key)).length
               return <details className="allergen-group" key={group.key} open={allergenSearch.trim() ? true : undefined}>
