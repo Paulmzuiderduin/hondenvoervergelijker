@@ -392,6 +392,7 @@ function App() {
   const [terms, setTerms] = useState([]); const [termsError, setTermsError] = useState(''); const [termsOud, setTermsOud] = useState(false)
   const [allergens, setAllergens] = useState([]); const [types, setTypes] = useState(FOOD_TYPES.map(([key]) => key))
   const [selectedBrands, setSelectedBrands] = useState(null); const [brandSearch, setBrandSearch] = useState('')
+  const [allergenSearch, setAllergenSearch] = useState('')
   const [admin, setAdmin] = useState(false); const [session, setSession] = useState(null); const [isAdmin, setIsAdmin] = useState(false); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [authMessage, setAuthMessage] = useState(''); const [recovery, setRecovery] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery'); const [newPassword, setNewPassword] = useState(''); const [repeatPassword, setRepeatPassword] = useState('')
   const [matches, setMatches] = useState([])
   const [page, setPage] = useState(1)
@@ -401,6 +402,15 @@ function App() {
     for (const product of products.filter(({ food_type }) => types.includes(food_type))) tellingen.set(product.brand, (tellingen.get(product.brand) ?? 0) + 1)
     return tellingen
   }, [products, types])
+  const gezochteAllergenen = useMemo(() => {
+    const zoek = allergenSearch.trim().toLowerCase()
+    if (!zoek) return ALLERGEN_GROUPS
+    return ALLERGEN_GROUPS.map((group) => {
+      const groepMatch = group.label.toLowerCase().includes(zoek)
+      const allergens = groepMatch ? group.allergens : group.allergens.filter(({ label }) => label.toLowerCase().includes(zoek))
+      return { ...group, allergens }
+    }).filter((group) => group.allergens.length)
+  }, [allergenSearch])
   const load = async () => { if (!supabase) { setLoadError('Supabase is nog niet geconfigureerd, dus er kunnen geen producten worden geladen.'); setLoading(false); return }; setLoading(true); const { data, error } = await haalAlleRijen(() => supabase.from('products').select('*, recipe_versions(*, recipe_ingredients(*))').eq('published', true).eq('recipe_versions.is_current', true)); if (error) { setLoadError(error.message); setProducts([]) } else { setLoadError(''); setProducts(data || []) }; setLoading(false) }
   // De woordenschat komt als ruwe rij binnen. Zo blijft de site werken zolang de
   // laatste migratie (20261019180000_term_scopes.sql) nog niet is uitgevoerd: een
@@ -483,13 +493,16 @@ function App() {
           </div>
         </aside>
         <div className="content">
-          <section><h2>Allergieën van je hond</h2><p><small>Kies wat je wilt vermijden. De lijst is fijnmazig — één groente, één vissoort of één kruid kan ook — dus open de groep die je nodig hebt.</small></p>{ALLERGEN_GROUPS.map((group) => {
-            const gekozen = group.allergens.filter(({ key }) => allergens.includes(key)).length
-            return <details className="allergen-group" key={group.key}>
-              <summary>{group.label} {gekozen ? `· ${gekozen} gekozen` : `(${group.allergens.length})`}</summary>
-              <div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => setAllergens(e.target.checked ? [...allergens, key] : allergens.filter((item) => item !== key))} />{label}</label>)}</div>
-            </details>
-          })}</section>
+          <section><h2>Allergieën van je hond</h2><p><small>Kies wat je wilt vermijden. De lijst is fijnmazig — één groente, één vissoort of één kruid kan ook — dus open de groep die je nodig hebt of zoek direct op naam.</small></p>
+            <label className="brand-search-label">Zoek allergeen<input type="search" value={allergenSearch} onChange={(e) => setAllergenSearch(e.target.value)} placeholder="Bijv. kip, rijst of zalm" /></label>
+            {gezochteAllergenen.length ? gezochteAllergenen.map((group) => {
+              const gekozen = group.allergens.filter(({ key }) => allergens.includes(key)).length
+              return <details className="allergen-group" key={group.key} open={allergenSearch.trim() ? true : undefined}>
+                <summary>{group.label} {gekozen ? `· ${gekozen} gekozen` : `(${group.allergens.length})`}</summary>
+                <div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => setAllergens(e.target.checked ? [...allergens, key] : allergens.filter((item) => item !== key))} />{label}</label>)}</div>
+              </details>
+            }) : <p><small>Geen allergeen gevonden voor “{allergenSearch}”.</small></p>}
+          </section>
           {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : loading ? <p>Laden…</p> : <>{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">rood</mark> = het etiket noemt de bron van dat ingrediënt niet ("dierlijk vet", "granen"). {allergens.length ? 'Het oordeel gaat per allergeen: een product komt alleen bij "Controleer" als zo\'n onduidelijkheid jouw allergeen kan bevatten.' : 'Je hebt nog geen allergeen gekozen, dus beoordelen we het hele etiket: bij "Etiket noemt elke bron" staat alleen een lijst die elke bron noemt. Kies een allergeen om te zien welke producten daarvoor geschikt zijn.'} Reken op het etiket en de fabrikant, niet op deze site.</p>
             {geenMerken || geenTypes ? <section id="resultaten"><h2>Geen producten</h2><p>{filterMelding}</p></section> : (
               <section id="resultaten">
