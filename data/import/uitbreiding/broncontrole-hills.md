@@ -1,0 +1,155 @@
+# Broncontrole
+
+Uitgevoerd op 2026-10-26: 140 product(en) gecontroleerd.
+
+Deze controle kijkt of de bronpagina nog dezelfde etiket tekst toont als bij de import.
+Bij "gewijzigd" hoort een mens te kijken: misschien heeft de fabrikant het etiket aangepast,
+misschien laadt de pagina de tekst nu pas met JavaScript. De tekst op de site verandert niet vanzelf.
+
+- gelijk: 140
+- gewijzigd: 0
+- onbereikbaar: 0
+
+
+Onveranderd:
+
+- Hill's Prescription Diet — a/d Urgent Care Hondenvoer met Kip
+- Hill's Prescription Diet — b/d Hondenvoer met Kip
+- Hill's Prescription Diet — c/d Multicare Stoofpotje voor Honden met Kip & toegevoegde Groenten
+- Hill's Prescription Diet — c/d Multicare + Metabolic Hondenvoer
+- Hill's Prescription Diet — c/d Multicare Natvoer voor Honden met Kip
+- Hill's Prescription Diet — c/d Multicare Hondenvoer met Kip
+- Hill's Prescription Diet — d/d Hondenvoer met Eend & Rijst
+- Hill's Prescription Diet — d/d Natvoer voor Honden Eend
+- Hill's Prescription Diet — Derm Complete Puppyvoer
+- Hill's Prescription Diet — Derm Defense Hondenvoer met Kip
+- Hill's Prescription Diet — Gastrointestinal Biome Stoofpotje voor Honden met Kip & toegevoegde Wortelen
+- Hill's Prescription Diet — Gastrointestinal Biome Digestive Care Natvoer voor Honden met Kip
+- Hill's Prescription Diet — Gastrointestinal Biome Hondenvoer met Kip
+- Hill's Prescription Diet — Gastrointestinal Biome Mini Hondenvoer met Kip
+- Hill's Prescription Diet — i/d Stoofpotje voor Honden
+- Hill's Prescription Diet — i/d Natvoer voor Honden met Kalkoen
+- Hill's Prescription Diet — i/d Hondenvoer met Kip
+- Hill's Prescription Diet — i/d Low Fat Natvoer voor Honden
+- Hill's Prescription Diet — i/d Low Fat Hondenvoer met Kip
+- Hill's Prescription Diet — i/d Low Fat Stoofpotje voor Honden met Kipsmaak & Groenten
+- Hill's Prescription Diet — i/d Puppyvoer
+- Hill's Prescription Diet — i/d Puppyvoer
+- Hill's Prescription Diet — i/d Sensitive Hondenvoer
+- Hill's Prescription Diet — i/d Stress Natvoer voor Honden Met Kipsmaak
+- Hill's Prescription Diet — i/d Stress Mini Hondenvoer met Kip
+- Hill's Prescription Diet — i/d Stress Mini Stoofpotje voor Honden met Kipsmaak & Groenten
+- Hill's Prescription Diet — j/d Natvoer voor Honden met Kip
+- Hill's Prescription Diet — j/d Hondenvoer
+- Hill's Prescription Diet — j/d Reduced Calorie Hondenvoer met Kip
+- Hill's Prescription Diet — k/d Kidney Care Stoofpotje voor Honden met Kip & toegevoegde Groenten
+- Hill's Prescription Diet — k/d Kidney Care Natvoer voor Honden
+- Hill's Prescription Diet — k/d Kidney Care Hondenvoer
+- Hill's Prescription Diet — k/d + Mobility Hondenvoer
+- Hill's Prescription Diet — k/d + Mobilty Natvoer met Kipsmaak
+- Hill's Prescription Diet — l/d Natvoer voor Honden
+- Hill's Prescription Diet — l/d Hondenvoer
+- Hill's Prescription Diet — Metabolic Natvoer voor Honden met Rund
+- Hill's Prescription Diet — Metabolic Hondenvoer met Lam & Rijst
+- Hill's Prescription Diet — Metabolic Mini Hondenvoer
+- Hill's Prescription Diet — Metabolic + Mobility Mini Hondenvoer
+- Hill's Prescription Diet — Metabolic + Mobility Natvoer voor Honden
+- Hill's Prescription Diet — Metabolic + Mobility Hondenvoer
+- Hill's Prescription Diet — Metabolic Stoofpotje voor Honden
+- Hill's Prescription Diet — Metabolic Stoofpotje voor Honden met Kipsmaak & Groenten
+- Hill's Prescription Diet — Metabolic Natvoer voor Honden met Kipsmaak
+- Hill's Prescription Diet — Metabolic Hondenvoer
+- Hill's Prescription Diet — On-Care Hondenvoer met Kip
+- Hill's Prescription Diet — On-Care Stoofpotje voor Honden met Kip & toegevoegde Groenten
+- Hill's Prescription Diet — r/d Natvoer voor Honden
+- Hill's Prescription Diet — r/d Hondenvoer met Kip
+- Hill's Prescription Diet — t/d Hondenvoer met Kip
+- Hill's Prescription Diet — t/d Mini Hondenvoer met Kip
+- Hill's Prescription Diet — u/d Natvoer voor Honden
+- Hill's Prescription Diet — u/d Hondenvoer Origineel
+- Hill's Prescription Diet — w/d Hondenvoer met Kip
+- Hill's Prescription Diet — w/d Natvoer voor Honden met Kip
+- Hill's Prescription Diet — z/d Hondenvoer
+- Hill's Prescription Diet — z/d Hondenvoer Origineel
+- Hill's Prescription Diet — z/d Low Fat Hondenvoer
+- Hill's Prescription Diet — z/d Mini Hondenvoer
+- Hill's Science Plan — Multi-Benefit + Dental Adult 1+ Medium & Large Breed Hondenvoer
+- Hill's Science Plan — Multi-Benefit + Dental Adult 1+ Small & Mini Hondenvoer
+- Hill's Science Plan — Multi-Benefit + Digestion Adult 1+ Large Breed Hondenvoer
+- Hill's Science Plan — Multi-Benefit + Digestion Adult 1+ Medium Hondenvoer
+- Hill's Science Plan — Multi-Benefit + Digestion Adult 1+ Small & Mini Hondenvoer
+- Hill's Science Plan — Multi-Benefit + Weight Adult 1+ Natvoer voor Honden
+- Hill's Science Plan — Multi-Benefit + Weight Adult 1+ Large Breed Hondenvoer
+- Hill's Science Plan — Multi-Benefit + Weight Adult 1+ Medium Hondenvoer
+- Hill's Science Plan — Multi-Benefit + Weight Adult 1+ Small & Mini Hondenvoer
+- Hill's Science Plan — Senior Vitality Large Breed Mature Adult 6+ Hondenvoer met Kip & Rijst
+- Hill's Science Plan — Youthful Vitality Medium Mature Adult 7+ Hondenvoer met Kip & Rijst
+- Hill's Science Plan — Adult Natvoer Hond met Rund
+- Hill's Science Plan — Adult Natvoer Hond met Kip
+- Hill's Science Plan — Multi-Benefit Adult hondenvoer met Kip en Groenten
+- Hill's Science Plan — Adult Stoofpotje Hond met Kip & toegevoegde Groenten
+- Hill's Science Plan — Healthy Mobility Large Breed Adult Hondenvoer met Kip
+- Hill's Science Plan — Healthy Mobility Medium Adult Hondenvoer met Kip
+- Hill's Science Plan — Healthy Mobility Small & Mini Adult Hondenvoer met Kip
+- Hill's Science Plan — Medium Adult Hondenvoer met Lam & Rijst
+- Hill's Science Plan — Large Breed Adult Hondenvoer met Kip
+- Hill's Science Plan — Multi-Benefit Adult Large Breed Hondenvoer
+- Hill's Science Plan — Light Adult Natvoer Hond met Kip
+- Hill's Science Plan — Light Medium Adult Hondenvoer met Kip
+- Hill's Science Plan — Light Large Breed Adult Hondenvoer met Kip
+- Hill's Science Plan — Light Small & Mini Adult Hondenvoer met Kip
+- Hill's Science Plan — Medium Adult Hondenvoer met Kip
+- Hill's Science Plan — Multi-Benefit Adult Medium Hondenvoer
+- Hill's Science Plan — Oral Care Adult Hondenvoer met Kip
+- Hill's Science Plan — Perfect Digestion Adult Natvoer Hond met Kip & Groenten
+- Hill's Science Plan — Perfect Digestion Large Breed Adult Hondenvoer met Kip & bruine Rijst
+- Hill's Science Plan — Perfect Digestion Medium Adult Hondenvoer met Kip & bruine Rijst
+- Hill's Science Plan — Perfect Digestion Small & Mini Adult Natvoer Hond met Kalkoen
+- Hill's Science Plan — Perfect Digestion Small & Mini Adult Hondenvoer met Kip
+- Hill's Science Plan — Perfect Weight & Active Mobility Large Breed Adult Hondenvoer met Kip
+- Hill's Science Plan — Perfect Weight & Active Mobility Medium Adult Hondenvoer met Kip
+- Hill's Science Plan — Perfect Weight & Active Mobility Small & Mini Adult Hondenvoer met Kip
+- Hill's Science Plan — Perfect Weight Adult Natvoer Hond met Kip & Groenten
+- Hill's Science Plan — Perfect Weight Large Breed Adult Hondenvoer met Kip
+- Hill's Science Plan — Perfect Weight Medium Adult Hondenvoer met Kip
+- Hill's Science Plan — Perfect Weight Small & Mini Adult Hondenvoer met Kip
+- Hill's Science Plan — Perfect Weight Small & Mini Adult Natvoer Hond met Kalkoen
+- Hill's Science Plan — Performance Adult Hondenvoer met Kip
+- Hill's Science Plan — Sensitive Stomach & Skin Adult Hond Natvoer met Kip
+- Hill's Science Plan — Sensitive Stomach & Skin Medium & Large Breed Adult Hondenvoer met Kip
+- Hill's Science Plan — Sensitive Stomach & Skin Small & Mini Adult Mousse Hond met Kalkoen
+- Hill's Science Plan — Sensitive Stomach & Skin Small & Mini Adult Hondenvoer met Kip
+- Hill's Science Plan — Small & Mini Adult Natvoer Hond met Kip
+- Hill's Science Plan — Small & Mini Adult Hondenvoer met Kip
+- Hill's Science Plan — Multi-Benefit Adult Small & Mini Hondenvoer
+- Hill's Science Plan — Small & Mini Adult Hondenvoer met Lam & Rijst
+- Hill's Science Plan — Adult Natvoer Hond met Kalkoen
+- Hill's Science Plan — Hypoallergenic Adult Natvoer Hond met Zalm
+- Hill's Science Plan — Hypoallergenic Large Breed Adult Hondenvoer met Zalm
+- Hill's Science Plan — Large Breed Mature Adult Hondenvoer met Kip
+- Hill's Science Plan — Light Medium Mature Adult Hondenvoer met Kip
+- Hill's Science Plan — Light Small & Mini Mature Adult Hondenvoer met Kip
+- Hill's Science Plan — Medium Mature Adult Hondenvoer met Kip
+- Hill's Science Plan — Medium Mature Adult Hondenvoer met Lam & Rijst
+- Hill's Science Plan — Small & Mini Mature Adult Natvoer Hond met Rund
+- Hill's Science Plan — Small & Mini Mature Adult Natvoer Hond met Kip
+- Hill's Science Plan — Small & Mini Mature Adult Hondenvoer met Kip
+- Hill's Science Plan — Mature Adult Natvoer Hond met Rund
+- Hill's Science Plan — Multi-Benefit Mature Adult Natvoer voor Honden
+- Hill's Science Plan — Mature Adult Natvoer Hond met Kip
+- Hill's Science Plan — Mature Adult Stoofpotje Hond met Kip & toegevoegde Groenten
+- Hill's Science Plan — Multi-Benefit + Senior Health Mature Adult 7+ Medium & Large Breed Hondenvoer
+- Hill's Science Plan — Multi-Benefit + Senior Health Mature Adult 7+ Small & Mini Hondenvoer
+- Hill's Science Plan — Hypoallergenic Medium Adult Hondenvoer met Zalm
+- Hill's Science Plan — Puppy Natvoer met Rund
+- Hill's Science Plan — Puppy Natvoer met Kip
+- Hill's Science Plan — Puppy Stoofpotje met Kip & toegevoegde Groenten
+- Hill's Science Plan — Multi-Benefit Puppy Natvoer
+- Hill's Science Plan — Medium Puppyvoer met Lam & Rijst
+- Hill's Science Plan — Large Breed Puppyvoer met Kip
+- Hill's Science Plan — Medium Puppyvoer met Kip
+- Hill's Science Plan — Puppy & Mother Tender Mousse met Kip
+- Hill's Science Plan — Small & Mini Puppyvoer met Kip
+- Hill's Science Plan — Small & Mini Puppyvoer met Lam & Rijst
+- Hill's Science Plan — Small & Mini Senior Hondenvoer met Kip
+- Hill's Science Plan — Hypoallergenic Small & Mini Adult Hondenvoer met Zalm

@@ -44,7 +44,10 @@ const VERTAALNOTE = 'Nederlandse vertaling van de etiket tekst; origineel staat 
 const liveAlias = new Map([
   ['carocroc|original', 'original 23/12'],
   ['wooof|regular hondenvoer - geperst', 'regular geperst'],
-  ['bonzo|adult menubrokken met rund, kip en groenten', 'menubrokken adult kip & groenten']
+  ['bonzo|adult menubrokken met rund, kip en groenten', 'menubrokken adult kip & groenten'],
+  ["hill's science plan|medium adult hondenvoer met kip", 'adult medium met kip'],
+  ['purina pro plan|medium adult sensitive skin rijk aan zalm', 'medium adult sensitive skin zalm'],
+  ['trovet|unique protein (turkey)', 'hypoallergenic (turkey)']
 ])
 
 const problemen = []
@@ -146,7 +149,8 @@ function controleer(product, bestand) {
   }
   const tekst = normaliseer(product.etiketNl)
   const origineel = normaliseer(product.etiketOrigineel)
-  if (tekst.length < 30) problemen.push(`${waar}: de Nederlandse tekst is verdacht kort (${tekst.length} tekens)`)
+  if (tekst.length < 10) problemen.push(`${waar}: de Nederlandse tekst is verdacht kort (${tekst.length} tekens)`)
+  else if (tekst.length < 30) waarschuwingen.push(`${waar}: korte maar mogelijke officiële ingrediëntenlijst (${tekst.length} tekens); controleer de bron`)
   if (/<\/?[a-z][^>]*>/i.test(tekst) || /&(amp|nbsp|quot|#\d+);/.test(tekst)) problemen.push(`${waar}: de tekst bevat nog HTML`)
   if (!tekst.includes(',') && !tekst.includes('%')) waarschuwingen.push(`${waar}: geen komma en geen percentage in de tekst; klopt dat?`)
   if (/(heerlijk|ideaal|jouw hond|onze unieke|perfect voor)/i.test(tekst)) waarschuwingen.push(`${waar}: de tekst bevat reclametaal; is dit wel de ingrediëntenlijst?`)
@@ -164,12 +168,22 @@ async function haalLiveCatalogus() {
     console.log('       Geef ze mee om dubbele producten vooraf te vangen: VITE_SUPABASE_URL=... VITE_SUPABASE_PUBLISHABLE_KEY=... node scripts/maak-import-sql.mjs')
     return null
   }
-  const antwoord = await fetch(`${url.replace(/\/$/, '')}/rest/v1/products?select=brand,name,package_size,gtin,recipe_versions(ingredients_text,is_current)`, { headers: { apikey: key, authorization: `Bearer ${key}` } })
-  if (!antwoord.ok) {
-    console.log(`LET OP: de live catalogus kon niet worden opgehaald (${antwoord.status}); de controle op bestaande producten is overgeslagen.`)
-    return null
+  const basis = `${url.replace(/\/$/, '')}/rest/v1/products?select=brand,name,food_type,package_size,gtin,recipe_versions(ingredients_text,is_current,reviewed_at)`
+  const rijen = []
+  // PostgREST geeft standaard maximaal 1000 rijen terug. Zonder paginatie
+  // zouden producten na de eerste 1000 onzichtbaar blijven en kunnen er
+  // ongemerkt dubbele records in een batch belanden.
+  for (let offset = 0; ; offset += 1000) {
+    const antwoord = await fetch(`${basis}&limit=1000&offset=${offset}`, { headers: { apikey: key, authorization: `Bearer ${key}` } })
+    if (!antwoord.ok) {
+      console.log(`LET OP: de live catalogus kon niet worden opgehaald (${antwoord.status}); de controle op bestaande producten is overgeslagen.`)
+      return null
+    }
+    const deel = await antwoord.json()
+    rijen.push(...deel)
+    if (deel.length < 1000) break
   }
-  return antwoord.json()
+  return rijen
 }
 
 const bestanden = (existsSync(IMPORT) ? readdirSync(IMPORT).filter((naam) => naam.endsWith('.json')).sort() : []).filter(
@@ -225,6 +239,10 @@ if (live) {
   for (const rij of live) {
     bestaand.set(`${rij.brand.toLowerCase()}|${rij.name.toLowerCase()}|${netteVerpakking(rij.package_size).toLowerCase()}`, 'de live database')
     const naamSleutel = `${rij.brand.toLowerCase()}|${rij.name.toLowerCase()}`
+    // Droogvoer en natvoer kunnen dezelfde productnaam hebben (bijvoorbeeld
+    // Royal Canin Hypoallergenic). Match daarom eerst op voertype.
+    const typeSleutel = `${naamSleutel}|${rij.food_type ?? ''}`
+    if (!bestaandeNamen.has(typeSleutel)) bestaandeNamen.set(typeSleutel, rij)
     if (!bestaandeNamen.has(naamSleutel)) bestaandeNamen.set(naamSleutel, rij)
     if (rij.gtin) bestaand.set(`gtin:${rij.gtin}`, 'de live database')
   }
@@ -234,7 +252,7 @@ if (live) {
       const naam = product.naam.toLowerCase()
       const alias = liveAlias.get(`${merk}|${naam}`)
       const doelNaam = alias ?? naam
-      const liveRij = bestaandeNamen.get(`${merk}|${doelNaam}`)
+      const liveRij = bestaandeNamen.get(`${merk}|${doelNaam}|${product.voertype}`) ?? bestaandeNamen.get(`${merk}|${doelNaam}`)
       if (liveRij) {
         const huidig = liveRij.recipe_versions?.find((versie) => versie.is_current)
         // Bij een afwijkende naam kunnen we niet zeker weten of het echt

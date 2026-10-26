@@ -2,5 +2,5 @@
 
 Deze producten kwamen niet in de SQL omdat er iets te controleren valt:
 
-- **Bonzo — Adult Menubrokken met Rund, Kip en Groenten** (bonzo.json): Hetzelfde product staat al op de site als "Menubrokken Adult Kip & Groenten" (15 kg) met de tekst van een winkelpagina; die is nagekeken. De fabrikantspagina (purina.nl) geeft een nieuwere samenstelling, onder meer met 2% Rund. Een mens moet kiezen welke tekst geldt; daarom komt dit product er nu niet dubbel op.
-  bron: https://www.purina.nl/hond/hondenvoer/product-bonzo-honden-brokken-menu-brokken-rund-kip
+- **Royal Canin — Dachshund Adult in Loaf (paté)** (royal-canin.json): De bronpagina toont in het samenstellingsveld de wettelijke productbeschrijving in plaats van de ingrediëntenlijst.
+  bron: https://www.royalcanin.com/nl/dogs/products/retail-products/dachshund-2042

@@ -98,7 +98,9 @@ for (const bestand of bestanden) {
     }
     const origineel = norm(product.etiketOrigineel)
     const nederlands = norm(product.etiketNl)
-    if (nederlands.length < 30) fouten.push(`${waar}: Nederlandse tekst is korter dan 30 tekens`)
+    if (nederlands.length < 10) fouten.push(`${waar}: Nederlandse tekst is korter dan 10 tekens`)
+    else if (nederlands.length < 30) waarschuwingen.push(`${waar}: korte maar mogelijke officiële ingrediëntenlijst (${nederlands.length} tekens)`)
+
     if (/<\/?[a-z][^>]*>/i.test(nederlands) || /&(amp|nbsp|quot|#\d+);/.test(nederlands)) {
       fouten.push(`${waar}: Nederlandse tekst bevat HTML`)
     }
