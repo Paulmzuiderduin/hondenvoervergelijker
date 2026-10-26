@@ -97,3 +97,27 @@ SQL-bestand gezet.
   etiket tekst toont (bronbewaking). Verandert een pagina, dan staat dat in
   `data/import/broncontrole.md`; de tekst op de site verandert niet vanzelf en
   er wordt niets stilzwijgend overschreven.
+
+## Automatische bronbewaking (sinds 2026-10-26)
+
+De bronbewaking draait elke maandag automatisch via
+`.github/workflows/broncontrole.yml` en schrijft het resultaat ook terug naar
+Supabase:
+
+| uitkomst | wat er in de database gebeurt |
+|---|---|
+| `gelijk` | `last_checked_at` wordt vandaag en `source_status` wordt `ok`. Hierdoor verlopen ongewijzigde etiketten niet na zes maanden. |
+| `gewijzigd` | `source_status` wordt `gewijzigd` met een korte `source_note`. De etiket tekst blijft staan; het product verschijnt bovenaan in Beheer bij "Wat vraagt aandacht". |
+| `onbereikbaar` | Alleen `source_note` wordt gevuld; `last_checked_at` blijft staan. |
+
+- De koppeling gebruikt de RPC `record_source_checks` met het geheim
+  `BRONCONTROLE_TOKEN` (staat in `public.sync_config` en in de GitHub-secrets).
+- Merken waarvan de site automatische verzoeken blokkeert (Prins, Smølke,
+  Yarrah) worden standaard overgeslagen. Controleer die incidenteel handmatig
+  met `node scripts/controleer-bronnen.mjs --ook-browser-sites --merk=Prins`.
+- Het script controleert verschillende sites parallel (standaard 6) maar houdt
+  per site minimaal 1,5 seconde pauze aan. Zo blijven 1.400+ producten binnen
+  enkele minuten gecontroleerd en blijft het verzoekgedrag beleefd.
+- Zodra een beheerder een product opslaat of "Nagelopen" klikt, zet
+  `save_product_with_recipe`/`set_recipe_reviewed` de status weer op `ok`.
+

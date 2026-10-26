@@ -591,13 +591,17 @@ function App() {
         </div>
         <div className="footer-col">
           <h3>Transparantie, Privacy &amp; Contact</h3>
-          <p>Deze website plaatst geen tracking-cookies en verkoopt geen bezoekersgegevens. Sommige uitgaande links naar webwinkels kunnen affiliate-links zijn; de selectie, sortering en beoordeling van voeding worden hier nooit door beïnvloed.</p>
+          <p>Deze website plaatst geen tracking-cookies en verkoopt geen bezoekersgegevens. Sommige uitgaande links naar webwinkels kunnen affiliate-links zijn; de selectie, sortering en beoordeling van voeding worden hier nooit door beïnvloed. Lees het volledige <a href="/privacybeleid.html">privacybeleid en de cookieverklaring</a>.</p>
           <p className="footer-meta">Beheer &amp; redactie: Paul Zuiderduin · Contact: <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a></p>
         </div>
       </div>
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Hondenvoervergelijker — Alle ingrediëntdata onder voorbehoud van wijzigingen door de fabrikant.</span>
-        <button type="button" className="footer-admin-link" onClick={() => { if (admin) { load(); loadTerms() } setAdmin(!admin); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>{admin ? 'Sluit beheer' : 'Beheer'}</button>
+        <span className="footer-links">
+          <a href="/privacybeleid.html">Privacybeleid</a>
+          <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">Contact</a>
+          <button type="button" className="footer-admin-link" onClick={() => { if (admin) { load(); loadTerms() } setAdmin(!admin); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>{admin ? 'Sluit beheer' : 'Beheer'}</button>
+        </span>
       </div>
     </footer>
   </main>
