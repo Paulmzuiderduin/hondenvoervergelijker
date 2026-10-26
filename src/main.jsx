@@ -8,6 +8,21 @@ import './styles.css'
 const MISSING_RPC = /PGRST202|Could not find the function|schema cache/i
 const TERMS_HINT = 'De woordenlijst kon niet worden geladen; de keuring gebruikt dan alleen de ingebouwde woorden. Dat is strenger, niet soepeler.'
 const PAGE_SIZE = 8
+const HAAL_PAGINA = 1000
+
+// PostgREST geeft standaard maximaal 1000 rijen per verzoek terug. Zonder
+// paginatie zouden producten na de eerste 1000 onzichtbaar blijven op de site
+// en in Beheer. Vraag daarom in brokken van 1000 tot het einde.
+async function haalAlleRijen(makeQuery) {
+  const rijen = []
+  for (let offset = 0; ; offset += HAAL_PAGINA) {
+    const { data, error } = await makeQuery().range(offset, offset + HAAL_PAGINA - 1)
+    if (error) return { data: null, error }
+    rijen.push(...(data || []))
+    if (!data || data.length < HAAL_PAGINA) break
+  }
+  return { data: rijen, error: null }
+}
 
 const blankForm = { brand: '', name: '', food_type: 'kibble', package_size: '', gtin: '', ingredients_text: '', source_url: '', last_checked_at: new Date().toISOString().slice(0, 10), published: false, reviewed: false, review_note: '', allergens: [] }
 
@@ -124,7 +139,7 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
 
   const loadCatalogue = async () => {
     if (!supabase) return setCatalogueError('Supabase is nog niet geconfigureerd.')
-    const { data, error } = await supabase.from('products').select('*, recipe_versions(*, recipe_ingredients(*))').eq('recipe_versions.is_current', true).order('brand').order('name')
+    const { data, error } = await haalAlleRijen(() => supabase.from('products').select('*, recipe_versions(*, recipe_ingredients(*))').eq('recipe_versions.is_current', true).order('brand').order('name'))
     if (error) { setCatalogueError(error.message); setCatalogue([]); return }
     setCatalogueError(''); setCatalogue(data || [])
   }
@@ -386,7 +401,7 @@ function App() {
     for (const product of products.filter(({ food_type }) => types.includes(food_type))) tellingen.set(product.brand, (tellingen.get(product.brand) ?? 0) + 1)
     return tellingen
   }, [products, types])
-  const load = async () => { if (!supabase) { setLoadError('Supabase is nog niet geconfigureerd, dus er kunnen geen producten worden geladen.'); setLoading(false); return }; setLoading(true); const { data, error } = await supabase.from('products').select('*, recipe_versions(*, recipe_ingredients(*))').eq('published', true).eq('recipe_versions.is_current', true); if (error) { setLoadError(error.message); setProducts([]) } else { setLoadError(''); setProducts(data || []) }; setLoading(false) }
+  const load = async () => { if (!supabase) { setLoadError('Supabase is nog niet geconfigureerd, dus er kunnen geen producten worden geladen.'); setLoading(false); return }; setLoading(true); const { data, error } = await haalAlleRijen(() => supabase.from('products').select('*, recipe_versions(*, recipe_ingredients(*))').eq('published', true).eq('recipe_versions.is_current', true)); if (error) { setLoadError(error.message); setProducts([]) } else { setLoadError(''); setProducts(data || []) }; setLoading(false) }
   // De woordenschat komt als ruwe rij binnen. Zo blijft de site werken zolang de
   // laatste migratie (20261019180000_term_scopes.sql) nog niet is uitgevoerd: een
   // ingedeeld woord houdt dan zijn ene allergeen, en "onduidelijk" verbergt alles
@@ -394,7 +409,7 @@ function App() {
   // moet gebeuren.
   const loadTerms = async () => {
     if (!supabase) return
-    const { data, error } = await supabase.from('ingredient_terms').select('*').order('term')
+    const { data, error } = await haalAlleRijen(() => supabase.from('ingredient_terms').select('*').order('term'))
     if (error) { setTermsError(TERMS_HINT); setTerms([]); return }
     setTermsError('')
     setTerms((data || []).map((term) => ({ term: term.term, kind: term.kind, note: term.note, allergen_keys: Array.isArray(term.allergen_keys) ? term.allergen_keys.filter(Boolean) : term.allergen_key ? [term.allergen_key] : [] })))
