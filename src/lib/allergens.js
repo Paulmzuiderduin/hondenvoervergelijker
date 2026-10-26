@@ -4,9 +4,9 @@ export const ALLERGEN_GROUPS = [
     label: 'Eiwitbron',
     allergenPairs: [
       ['anchovy', 'Ansjovis'], ['duck', 'Eend'], ['trout', 'Forel'], ['goose', 'Gans'], ['goat', 'Geit'], ['poultry', 'Gevogelte (algemeen)'], ['herring', 'Haring'],
-      ['venison', 'Hert'], ['insect', 'Insecten'], ['turkey', 'Kalkoen'], ['kangaroo', 'Kangoeroe'], ['chicken', 'Kip'],
-      ['rabbit', 'Konijn'], ['lamb', 'Lam'], ['mackerel', 'Makreel'], ['horse', 'Paard'], ['beef', 'Rund'],
-      ['sardine', 'Sardine'], ['shellfish', 'Schaaldieren'], ['ostrich', 'Struisvogel'], ['tuna', 'Tonijn'], ['pork', 'Varken'],
+      ['venison', 'Hert'], ['rendier', 'Rendier'], ['insect', 'Insecten'], ['turkey', 'Kalkoen'], ['kangaroo', 'Kangoeroe'], ['chicken', 'Kip'],
+      ['rabbit', 'Konijn'], ['haas', 'Haas'], ['lamb', 'Lam'], ['schaap', 'Schaap'], ['mackerel', 'Makreel'], ['horse', 'Paard'], ['beef', 'Rund'], ['kalf', 'Kalf'], ['bizon', 'Bizon'],
+      ['sardine', 'Sardine'], ['shellfish', 'Schaaldieren'], ['ostrich', 'Struisvogel'], ['tuna', 'Tonijn'], ['pork', 'Varken'], ['wildzwijn', 'Wild zwijn'],
       ['fish', 'Vis (alle soorten)'], ['buffalo', 'Waterbuffel'], ['whitefish', 'Witvis'], ['salmon', 'Zalm']
     ]
   },
@@ -160,11 +160,15 @@ export function expandAllergenKeys(keys) {
 // kippenvet en kippenei. Termen zonder * moeten exact overeenkomen.
 // Let op: "ei" staat er bewust zonder *, anders zou "eiwit" (dierlijk eiwit,
 // plantaardig eiwitextract) onterecht als eiallergeen gelden.
-const ALLERGEN_SYNONYMS = {
+export const ALLERGEN_SYNONYMS = {
   // Eiwitbron
-  chicken: ['kip*', 'chicken'], turkey: ['kalkoen*', 'turkey'], beef: ['rund*', 'beef', 'runder*', 'kalf*'],
-  lamb: ['lam*', 'lamb', 'schaap*', 'mutton'], duck: ['eend*', 'duck'], pork: ['varken*', 'pork', 'everzwijn*'],
-  rabbit: ['konijn*', 'rabbit'], venison: ['hert*', 'venison', 'ree*', 'edelhert*'],
+  chicken: ['kip*', 'chicken'], turkey: ['kalkoen*', 'turkey'], beef: ['rund*', 'beef', 'runder*'],
+  kalf: ['kalf*', 'veal'], bizon: ['bizon*', 'bison*'],
+  lamb: ['lam*', 'lamb'], schaap: ['schaap*', 'schapen*', 'mutton'],
+  duck: ['eend*', 'duck'], pork: ['varken*', 'pork'],
+  wildzwijn: ['wildzwijn*', 'everzwijn*', 'zwijn*', 'boar*'],
+  rabbit: ['konijn*', 'rabbit'], haas: ['haas*', 'hazen*', 'hare*'],
+  venison: ['hert*', 'venison', 'ree*', 'edelhert*'], rendier: ['rendier*', 'reindeer*'],
   // "paard*" zou ook "paardenbloem" (paardenbloem) pakken; daarom alleen de
   // vleesvormen. "paard" en "paarden" los blijven paardenvlees.
   horse: ['paard', 'paarden', 'paardenvlees*', 'paardenbouillon*', 'paardeneiwit*', 'paardenspier*', 'paardenvet*', 'paardenlever*',

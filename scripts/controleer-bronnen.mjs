@@ -35,7 +35,7 @@ const GEEN_DB = process.argv.includes('--geen-db')
 const INCLUSIEF_BROWSER_SITES = process.argv.includes('--ook-browser-sites')
 const IMPORT = GEBRUIK_UITBREIDING ? join(WORTEL, 'data', 'import', 'uitbreiding') : join(WORTEL, 'data', 'import')
 const RAPPORT = join(IMPORT, 'broncontrole.md')
-const UA = 'HondenvoervergelijkerBot/0.1 (contact: paulzuiderduin@gmail.com)'
+const UA = 'HondenvoervergelijkerBot/0.1 (contact: hondenvoervergelijker@paulzuiderduin.com)'
 
 // Deze drie fabrikantensites blokkeren geautomatiseerde server-verzoeken via
 // Cloudflare/WAF (HTTP 403/429) en kunnen alleen vanuit een echte browsersessie

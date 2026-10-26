@@ -362,7 +362,7 @@ test('een komma scheidt het volgende ingrediënt van de bron', () => {
 })
 
 test('ontbrekende dieren en planten worden herkend', () => {
-  assert.equal(assessLabel('Kalfshart 30%, kalfslong 10%').allergens.includes('beef'), true)
+  assert.equal(assessLabel('Kalfshart 30%, kalfslong 10%').allergens.includes('kalf'), true)
   assert.equal(assessLabel('Edelhert 20%').allergens.includes('venison'), true)
   assert.equal(assessLabel('Pangasius 20%').allergens.includes('whitefish'), true)
   assert.equal(assessLabel('Zeealgen 0,4%').allergens.includes('algae'), true)

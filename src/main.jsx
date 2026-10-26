@@ -592,7 +592,7 @@ function App() {
         <div className="footer-col">
           <h3>Transparantie, Privacy &amp; Contact</h3>
           <p>Deze website plaatst geen tracking-cookies en verkoopt geen bezoekersgegevens. Sommige uitgaande links naar webwinkels kunnen affiliate-links zijn; de selectie, sortering en beoordeling van voeding worden hier nooit door beïnvloed.</p>
-          <p className="footer-meta">Beheer &amp; redactie: Paul Zuiderduin · Contact: <a href="mailto:paulzuiderduin@gmail.com">paulzuiderduin@gmail.com</a></p>
+          <p className="footer-meta">Beheer &amp; redactie: Paul Zuiderduin · Contact: <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a></p>
         </div>
       </div>
       <div className="footer-bottom">
