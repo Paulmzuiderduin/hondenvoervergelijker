@@ -118,7 +118,7 @@ export function sortAllergenKeys(keys) {
 // tarwe en gerst, maar nooit kip. Daardoor gaat "Controleer etiket/fabrikant"
 // alleen nog over de allergenen die de bezoeker zelf heeft gekozen.
 const ALL_KEYS = ALLERGENS.map(({ key }) => key)
-const MEAT_KEYS = ['chicken', 'turkey', 'beef', 'lamb', 'duck', 'goose', 'pork', 'rabbit', 'venison', 'horse', 'kangaroo', 'ostrich', 'poultry']
+const MEAT_KEYS = ['chicken', 'turkey', 'beef', 'lamb', 'schaap', 'kalf', 'bizon', 'duck', 'goose', 'pork', 'wildzwijn', 'rabbit', 'haas', 'venison', 'rendier', 'horse', 'kangaroo', 'ostrich', 'goat', 'buffalo', 'poultry']
 const GRAIN_KEYS = ['wheat', 'barley', 'oats', 'corn', 'rice', 'grains', 'millet', 'rye', 'spelt', 'buckwheat', 'quinoa', 'amaranth', 'teff']
 const PLANT_KEYS = ['pea', 'potato', 'soy', 'chickpea', 'bean', 'lentil', 'lupin', 'sweetpotato', 'tapioca', 'carob', 'alfalfa']
 const VEG_KEYS = ['asparagus', 'aubergine', 'beetroot', 'cauliflower', 'kale', 'broccoli', 'courgette', 'vegetables', 'garlic', 'cucumber', 'parsnip', 'paprika', 'pumpkin', 'leek', 'celery', 'spinach', 'tomato', 'onion', 'carrot',
