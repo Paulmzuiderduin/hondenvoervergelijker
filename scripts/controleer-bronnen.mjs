@@ -7,27 +7,23 @@
 // een fabrikant het etiket aan, dan staat er op de site nog de oude tekst met
 // de datum van de import. Deze controle vindt dat verschil.
 //
-// Hoe: de overgenomen tekst uit data/import/*.json wordt vergeleken met de
-// tekst van de bronpagina (HTML-tags gestript, entiteiten omgezet, witruimte
-// samengevat, kleine letters). De tekst uit het importbestand is de
-// brontekst, dus in de taal van de fabrikant.
-//
-// Uitkomsten:
-//   gelijk        de brontekst staat nog op de pagina
-//   gewijzigd     niet meer gevonden; een mens moet kijken of het etiket of de
-//                 pagina is veranderd (of dat de pagina nu via JavaScript laadt)
-//   onbereikbaar  de pagina gaf een fout of een blokkade
-//
-// Elke pagina wordt twee keer geprobeerd (met een paar seconden ertussen); pas
-// als de tekst twee keer ontbreekt, heet het "gewijzigd". Een site die een
-// verzoek even afwijst met een lege pagina geeft dus geen valse melding.
+// Wat er gebeurt bij een controle:
+//   gelijk        de brontekst staat nog op de pagina -> last_checked_at wordt
+//                 in Supabase (indien geconfigureerd) op vandaag gezet en
+//                 source_status op 'ok'.
+//   gewijzigd     niet meer gevonden -> source_status wordt 'gewijzigd' zodat
+//                 het product bovenaan in Beheer ("Wat vraagt aandacht")
+//                 verschijnt. De tekst op de site verandert NIET vanzelf.
+//   onbereikbaar  de pagina gaf een fout of een blokkade (bijv. Cloudflare 403/429).
 //
 // Gebruik:
 //   node scripts/controleer-bronnen.mjs
 //   node scripts/controleer-bronnen.mjs --merk=Trovet --limiet=5
+//   node scripts/controleer-bronnen.mjs --parallel=6 --pauze=1500
 //
-// Het script is bewust langzaam: per site hooguit één verzoek per seconde, en
-// het stopt met een site zodra die 403 of 429 antwoordt.
+// Het script is beleefd per site (standaard minstens 1100 ms tussen twee
+// verzoeken naar dezelfde host), maar controleert verschillende hosts parallel
+// zodat 1400+ producten binnen enkele minuten klaar zijn.
 
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -35,9 +31,25 @@ import { fileURLToPath } from 'node:url'
 
 const WORTEL = dirname(dirname(fileURLToPath(import.meta.url)))
 const GEBRUIK_UITBREIDING = process.argv.includes('--uitbreiding')
+const GEEN_DB = process.argv.includes('--geen-db')
+const INCLUSIEF_BROWSER_SITES = process.argv.includes('--ook-browser-sites')
 const IMPORT = GEBRUIK_UITBREIDING ? join(WORTEL, 'data', 'import', 'uitbreiding') : join(WORTEL, 'data', 'import')
 const RAPPORT = join(IMPORT, 'broncontrole.md')
 const UA = 'HondenvoervergelijkerBot/0.1 (contact: paulzuiderduin@gmail.com)'
+
+// Deze drie fabrikantensites blokkeren geautomatiseerde server-verzoeken via
+// Cloudflare/WAF (HTTP 403/429) en kunnen alleen vanuit een echte browsersessie
+// gecontroleerd worden (zie data/import/uitbreiding/broncontrole-*.md).
+// Standaard slaat de automatische run ze over zodat de wekelijkse controle geen
+// vals alarm geeft; met --ook-browser-sites of --merk=... doen ze wel mee.
+const BROWSER_ONLY_HOSTS = new Set([
+  'www.prinspetfoods.nl',
+  'prinspetfoods.nl',
+  'www.smolke.nl',
+  'smolke.nl',
+  'www.yarrah.com',
+  'yarrah.com'
+])
 
 const argumenten = new Map(
   process.argv
@@ -56,6 +68,7 @@ const alleenBestanden = (argumenten.get('bestanden') ?? '')
   .map((naam) => (naam.endsWith('.json') ? naam : `${naam}.json`))
 const limiet = Number(argumenten.get('limiet') ?? 0) || 0
 const pauze = Number(argumenten.get('pauze') ?? 0) || 1100
+const parallel = Math.max(1, Math.min(12, Number(argumenten.get('parallel') ?? 6) || 6))
 
 const ENTITEITEN = {
   amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', euro: '€', hellip: '…',
@@ -152,8 +165,10 @@ function vergelijkbaarMetPaginadata(html) {
 }
 
 function leesProducten() {
-  if (!existsSync(IMPORT)) return []
+  if (!existsSync(IMPORT)) return { actief: [], overgeslagenBrowser: [] }
   const rijen = []
+  const overgeslagenBrowser = []
+  const explicietGevraagd = Boolean(filterMerk || alleenBestanden.length || INCLUSIEF_BROWSER_SITES)
   for (const bestand of readdirSync(IMPORT).filter((naam) => naam.endsWith('.json') && (!alleenBestanden.length || alleenBestanden.includes(naam))).sort()) {
     let inhoud
     try {
@@ -166,25 +181,40 @@ function leesProducten() {
       if (!product.bronUrl || !product.etiketOrigineel) continue
       if (String(product.twijfel ?? '').trim()) continue
       if (filterMerk && !String(product.merk ?? '').toLowerCase().includes(filterMerk)) continue
+      let host = ''
+      try { host = new URL(product.bronUrl).host.toLowerCase() } catch { /* wordt later gemeld */ }
+      if (!explicietGevraagd && BROWSER_ONLY_HOSTS.has(host)) {
+        overgeslagenBrowser.push({ bestand, ...product })
+        continue
+      }
       rijen.push({ bestand, ...product })
     }
   }
-  return limiet ? rijen.slice(0, limiet) : rijen
+  return {
+    actief: limiet ? rijen.slice(0, limiet) : rijen,
+    overgeslagenBrowser
+  }
 }
 
 async function haalOp(url) {
-  const antwoord = await fetch(url, { headers: { 'user-agent': UA, accept: 'text/html,*/*' }, redirect: 'follow' })
+  const signaal = AbortSignal.timeout ? AbortSignal.timeout(20000) : undefined
+  const antwoord = await fetch(url, { headers: { 'user-agent': UA, accept: 'text/html,*/*' }, redirect: 'follow', signal: signaal })
   if (!antwoord.ok) return { status: antwoord.status }
   return { status: antwoord.status, tekst: await antwoord.text() }
 }
 
-const producten = leesProducten()
+const { actief: producten, overgeslagenBrowser } = leesProducten()
 if (!producten.length) {
   console.log('Geen producten met een bronpagina gevonden in data/import; niets te controleren.')
   process.exit(0)
 }
 
-console.log(`${producten.length} product(en) om te controleren, per site hooguit één verzoek per ${pauze} ms.\n`)
+console.log(`${producten.length} product(en) om te controleren (${parallel} sites parallel, per site minstens ${pauze} ms pauze).`)
+if (overgeslagenBrowser.length) {
+  console.log(`${overgeslagenBrowser.length} product(en) van Cloudflare-geblokkeerde sites (Prins, Smølke, Yarrah) overgeslagen (gebruik --ook-browser-sites om ze mee te nemen).\n`)
+} else {
+  console.log('')
+}
 
 const uitkomsten = []
 const laatsteVerzoekPerSite = new Map()
@@ -195,28 +225,18 @@ function meld(product, status, detail) {
   console.log(`${status.padEnd(12)} ${product.merk} — ${product.naam}${detail ? ` (${detail})` : ''}`)
 }
 
-for (const product of producten) {
-  let host
-  try {
-    host = new URL(product.bronUrl).host
-  } catch {
-    meld(product, 'onbereikbaar', 'geen geldig adres')
-    continue
-  }
+async function controleerProduct(product, host) {
   if (geblokkeerd.has(host)) {
     meld(product, 'onbereikbaar', `${host} blokkeert deze bezoeker`)
-    continue
+    return
   }
   const gezocht = vergelijkbaar(product.etiketOrigineel)
   const kern = vergelijkbaarKern(product.etiketOrigineel)
   if (!gezocht) {
     meld(product, 'onbereikbaar', 'geen brontekst in het importbestand')
-    continue
+    return
   }
 
-  // Twee pogingen: een site kan een verzoek tijdelijk beantwoorden met een
-  // pagina zonder etiket (drukte, een cookiemelding). Pas als het twee keer
-  // misgaat, is er iets om naar te kijken.
   for (let poging = 1; poging <= 2; poging += 1) {
     const wachttijd = poging === 1 ? pauze : Math.max(pauze, 5000)
     const teWachten = wachttijd - (Date.now() - (laatsteVerzoekPerSite.get(host) ?? 0))
@@ -256,6 +276,94 @@ for (const product of producten) {
     }
   }
 }
+
+// Groepeer per host zodat elke host zijn eigen wachtrij heeft en de beleefdheidspauze
+// per site strikt wordt nageleefd, terwijl verschillende merken naast elkaar lopen.
+const perHost = new Map()
+for (const product of producten) {
+  let host
+  try {
+    host = new URL(product.bronUrl).host.toLowerCase()
+  } catch {
+    meld(product, 'onbereikbaar', 'geen geldig adres')
+    continue
+  }
+  if (!perHost.has(host)) perHost.set(host, [])
+  perHost.get(host).push(product)
+}
+
+const hostWachtrijen = [...perHost.entries()]
+let hostIndex = 0
+async function verwerkHostWachtrij() {
+  while (hostIndex < hostWachtrijen.length) {
+    const [host, lijst] = hostWachtrijen[hostIndex++]
+    for (const product of lijst) {
+      await controleerProduct(product, host)
+    }
+  }
+}
+
+await Promise.all(Array.from({ length: Math.min(parallel, hostWachtrijen.length) }, () => verwerkHostWachtrij()))
+
+// Synchroniseer de uitkomsten met Supabase als de omgevingsvariabelen aanwezig zijn.
+async function schrijfNaarDatabase(resultaten) {
+  if (GEEN_DB) return
+  let env = {}
+  const envPad = join(WORTEL, '.env.local')
+  if (existsSync(envPad)) {
+    for (const regel of readFileSync(envPad, 'utf8').split(/\r?\n/)) {
+      const idx = regel.indexOf('=')
+      if (idx > 0 && !regel.trim().startsWith('#')) {
+        env[regel.slice(0, idx).trim()] = regel.slice(idx + 1).trim()
+      }
+    }
+  }
+  const url = (process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL || env.VITE_SUPABASE_URL || '').replace(/\/$/, '')
+  const key = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || env.VITE_SUPABASE_PUBLISHABLE_KEY || ''
+  const token = process.env.BRONCONTROLE_TOKEN || env.BRONCONTROLE_TOKEN || ''
+  if (!url || !key || !token) {
+    console.log('\nDatabase-sync overgeslagen (geen SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY of BRONCONTROLE_TOKEN ingesteld).')
+    return
+  }
+
+  const payload = resultaten.map(({ product, status, detail }) => ({
+    merk: product.merk,
+    naam: product.naam,
+    bronUrl: product.bronUrl,
+    status,
+    detail: detail || null
+  }))
+
+  let okTotaal = 0
+  let gewijzigdTotaal = 0
+  for (let i = 0; i < payload.length; i += 200) {
+    const deel = payload.slice(i, i + 200)
+    try {
+      const r = await fetch(`${url}/rest/v1/rpc/record_source_checks`, {
+        method: 'POST',
+        headers: {
+          apikey: key,
+          authorization: `Bearer ${key}`,
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({ p_token: token, p_checks: deel })
+      })
+      if (!r.ok) {
+        console.log(`\nLet op: database-sync gaf HTTP ${r.status}: ${await r.text()}`)
+        return
+      }
+      const res = await r.json()
+      okTotaal += Number(res?.ok_updated ?? 0)
+      gewijzigdTotaal += Number(res?.changed_updated ?? 0)
+    } catch (fout) {
+      console.log(`\nLet op: database-sync mislukt (${fout.message}).`)
+      return
+    }
+  }
+  console.log(`\nDatabase bijgewerkt: ${okTotaal} product(en) op vandaag gecontroleerd gezet, ${gewijzigdTotaal} als gewijzigd gemarkeerd.`)
+}
+
+await schrijfNaarDatabase(uitkomsten)
 
 const gelijk = uitkomsten.filter((r) => r.status === 'gelijk').length
 const gewijzigd = uitkomsten.filter((r) => r.status === 'gewijzigd')

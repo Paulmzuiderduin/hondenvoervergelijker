@@ -178,17 +178,19 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
       const nagelopen = Boolean(version?.reviewed_at)
       const automatisch = Boolean(version?.imported_at) && !nagelopen
       const verouderd = isReviewOverdue(product.last_checked_at)
+      const bronGewijzigd = product.source_status === 'gewijzigd'
       const openWoorden = uitslag ? [...new Set(uitslag.hidden.map(({ word }) => word))] : []
       const onbekend = uitslag?.unknown ?? []
       const taken = []
       if (!version?.ingredients_text) taken.push('nog geen ingrediëntenlijst')
       else if (!nagelopen && !automatisch) taken.push('nog niet tegen de bron gecontroleerd')
+      if (bronGewijzigd) taken.push('bronpagina bij de fabrikant is gewijzigd')
       if (version?.ingredients_text && verouderd) taken.push('langer dan zes maanden niet gecontroleerd')
       if (onbekend.length) taken.push(`woorden die de keuring niet kent: ${onbekend.join(', ')}`)
       const herkomst = automatisch
         ? `automatisch overgenomen${sourceDomain(product.source_url) ? ` van ${sourceDomain(product.source_url)}` : ''}${version?.imported_at ? ` op ${new Date(version.imported_at).toLocaleDateString('nl-NL')}` : ''} · nog niet door een mens nagelopen`
         : ''
-      return { product, version, uitslag, nagelopen, automatisch, herkomst, verouderd, openWoorden, onbekend, taken, schoon: uitslag?.status === 'schoon' && !onbekend.length }    })
+      return { product, version, uitslag, nagelopen, automatisch, herkomst, verouderd, bronGewijzigd, openWoorden, onbekend, taken, schoon: uitslag?.status === 'schoon' && !onbekend.length }    })
     const woorden = new Map()
     for (const rij of rijen) for (const woord of rij.onbekend) {
       if (!woorden.has(woord)) woorden.set(woord, [])
@@ -334,13 +336,13 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
 
     <h2>Wat vraagt aandacht ({keuring.teDoen.length})</h2>
     <p><small>{catalogue.length} producten · {keuring.klaar.length} klaar (waarvan {keuring.teControleren.length} automatisch overgenomen en nog niet nagelopen) · {keuring.teDoen.length} met een openstaand punt. Een product is klaar als de tekst van de bron komt (nagekeken of automatisch overgenomen) en de keuring geen woorden meer over heeft.</small></p>
-    {catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : keuring.teDoen.length ? keuring.teDoen.map(({ product, version, openWoorden, onbekend, taken, nagelopen, automatisch, herkomst, verouderd, schoon }) => {
+    {catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : keuring.teDoen.length ? keuring.teDoen.map(({ product, version, openWoorden, onbekend, taken, nagelopen, automatisch, herkomst, verouderd, bronGewijzigd, schoon }) => {
       // Het etiket zelf moet nog langs de bron, of alleen een woord wacht nog op
       // een indeling. Dat verschil bepaalt welke knop hier iets oplost.
-      const tekstNodig = (!nagelopen && !automatisch) || verouderd
+      const tekstNodig = (!nagelopen && !automatisch) || verouderd || bronGewijzigd
       return <div className="admin-row" key={product.id}>
         <span><strong>{product.brand}</strong> — {product.name} {!product.published && '(concept)'} · {taken.join(' · ')}{herkomst ? ` · ${herkomst}` : ''}{openWoorden.length ? ` · etiket noemt geen bron voor: ${openWoorden.slice(0, 4).join(', ')}${openWoorden.length > 4 ? ` en ${openWoorden.length - 4} meer` : ''}` : ''}{tekstNodig && !automatisch && schoon ? ' · de keuring ziet hier geen open punten' : ''}{tekstNodig && onbekend.length ? ` · onbekende woorden: ${onbekend.slice(0, 4).join(', ')}${onbekend.length > 4 ? ` en ${onbekend.length - 4} meer` : ''}` : ''}{!tekstNodig ? ' · dit verdwijnt zodra je dat woord hieronder indeelt' : ''}</span>
-        {version && tekstNodig && <button type="button" disabled={working} onClick={() => markReviewed({ product, version, openWoorden, onbekend, taken })}>{version.reviewed_at ? 'Opnieuw nagelopen' : 'Nagelopen'}</button>}
+        {version && tekstNodig && <button type="button" disabled={working} onClick={() => markReviewed({ product, version, openWoorden, onbekend, taken })}>{version.reviewed_at || bronGewijzigd ? 'Opnieuw nagelopen' : 'Nagelopen'}</button>}
         {!tekstNodig && <a className="product-link" href="#woorden">naar de woordenlijst</a>}
         {product.source_url?.startsWith('http') && <a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">bron</a>}
         <button type="button" onClick={() => edit(product)}>Bewerken</button>
@@ -480,13 +482,44 @@ function App() {
     setRecovery(false); setNewPassword(''); setRepeatPassword(''); setAuthMessage('Wachtwoord gewijzigd. Je bent nu ingelogd.')
   }
   return <main><header className="site-header">
-    <div className="site-header-row"><h1>Hondenvoervergelijker</h1><button className="link" onClick={() => { if (admin) { load(); loadTerms() } setAdmin(!admin) }}>{admin ? 'Terug naar vergelijken' : 'Beheer'}</button></div>
-    {!recovery && !admin && <p className="site-note"><strong>Belangrijk:</strong> deze tool vergelijkt etiketinformatie. De allergenen worden automatisch uit de ingrediëntenlijsten gehaald. Geen dierenartsadvies of garantie: controleer de verpakking en overleg bij twijfel.</p>}
+    <div className="site-header-row">
+      <div className="site-brand">
+        <img src="/favicon.svg" alt="" width="34" height="34" className="site-logo" />
+        <div>
+          <h1>Hondenvoervergelijker</h1>
+          <p className="site-tagline">Onafhankelijk hondenvoer vergelijken op ingrediënten en allergenen</p>
+        </div>
+      </div>
+      <nav className="site-nav" aria-label="Snelmenu">
+        {!recovery && !admin && <>
+          <a href="#vergelijken">Allergenen kiezen</a>
+          <a href="#resultaten">Producten ({products.length || '…'})</a>
+          <a href="#over-deze-site">Hoe het werkt</a>
+        </>}
+        {admin && <button type="button" className="link" onClick={() => { load(); loadTerms(); setAdmin(false) }}>Terug naar vergelijken</button>}
+      </nav>
+    </div>
+    {!recovery && !admin && <p className="site-note"><strong>Onafhankelijke etiketvergelijking:</strong> wij analyseren de officiële ingrediëntenlijsten van {alleMerken.length || 50} merken ({products.length || '1.400+'} recepten). Geen dierenartsadvies of garantie: controleer altijd de verpakking en overleg bij klachten met je dierenarts.</p>}
   </header>
     {recovery ? <form className="login" onSubmit={updatePassword}><h2>Nieuw wachtwoord instellen</h2><p>Kies hieronder een nieuw wachtwoord voor het beheerdersaccount.</p><label>Nieuw wachtwoord<input type="password" required minLength="8" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} /></label><label>Herhaal wachtwoord<input type="password" required minLength="8" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} /></label><button>Wachtwoord opslaan</button>{authMessage && <p aria-live="polite">{authMessage}</p>}</form> : admin ? (isAdmin ? <Admin terms={terms} termsOud={termsOud} reloadTerms={loadTerms} onSaved={load} /> : session ? <section><h2>Geen beheerdersrechten</h2><p>Dit account mag geen producten beheren.</p><button onClick={() => supabase.auth.signOut()}>Uitloggen</button></section> : <form className="login" onSubmit={login}><h2>Beheer inloggen</h2><label>E-mail<input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} /></label><label>Wachtwoord<input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} /></label><button>Inloggen</button>{authMessage && <p>{authMessage}</p>}</form>) : <>
+      <section className="hero-banner" aria-label="Overzicht">
+        <div className="hero-text">
+          <h2>Vind direct welk hondenvoer past bij het eliminatiedieet of de allergie van jouw hond</h2>
+          <p>Veel verpakkingen gebruiken verzameltermen zoals <em>“vlees en dierlijke bijproducten”</em>, <em>“granen”</em> of <em>“dierlijk vet”</em>. Deze vergelijker leest elk woord op het officiële fabrikant-etiket en laat direct zien welk voer <strong>geschikt</strong> is, welk voer <strong>uitgesloten</strong> is en waar een ingrediënt een verborgen bron kan bevatten.</p>
+        </div>
+        <div className="hero-stats">
+          <div className="stat-box"><strong>{products.length || '1.400+'}</strong><span>volledige recepten</span></div>
+          <div className="stat-box"><strong>{alleMerken.length || '50'}</strong><span>voedingsmerken</span></div>
+          <div className="stat-box"><strong>{ALLERGENS.length}</strong><span>allergenen &amp; bronnen</span></div>
+        </div>
+      </section>
       <div className="layout">
         <aside className="filters" aria-label="Filters">
           <h2>Filters</h2>
+          <div className="filter-block">
+            <h3>Type voer</h3>
+            <div className="choices food-type-choices">{FOOD_TYPES.map(([key, label]) => <label className="inline" key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div>
+          </div>
           <div className="filter-block">
             <h3>Merken</h3>
             <p className="filter-summary">{selectedBrands === null ? `Alle ${alleMerken.length} merken doen mee` : `${selectedBrands.length} van ${alleMerken.length} merken geselecteerd`}</p>
@@ -494,7 +527,7 @@ function App() {
               <button type="button" className={selectedBrands === null ? 'active' : ''} aria-pressed={selectedBrands === null} onClick={() => setSelectedBrands(null)}>Alles</button>
               <button type="button" className={geenMerken ? 'active' : ''} aria-pressed={geenMerken} onClick={() => setSelectedBrands([])}>Niets</button>
             </div>
-            <label className="brand-search-label">Zoek merk<input type="search" value={brandSearch} placeholder="Bijv. Acana" onChange={(event) => setBrandSearch(event.target.value)} /></label>
+            <label className="brand-search-label">Zoek merk<input type="search" value={brandSearch} placeholder="Bijv. Acana, Royal Canin, Hill's" onChange={(event) => setBrandSearch(event.target.value)} /></label>
             <div className="brand-list">
               {zichtbareMerken.length ? zichtbareMerken.map((merk) => <label className="brand-row" key={merk}>
                 <span><input type="checkbox" checked={merkActief(merk)} onChange={(event) => wisselMerk(merk, event.target.checked)} /> {merk}</span>
@@ -502,32 +535,41 @@ function App() {
               </label>) : <p><small>Geen merk gevonden.</small></p>}
             </div>
           </div>
-          <div className="filter-block">
-            <h3>Type voer</h3>
-            <div className="choices">{FOOD_TYPES.map(([key, label]) => <label className="inline" key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div>
-          </div>
         </aside>
         <div className="content">
-          <section><h2>Allergieën van je hond</h2><p><small>Kies wat je wilt vermijden. De lijst is fijnmazig — één groente, één vissoort of één kruid kan ook — dus open de groep die je nodig hebt of zoek direct op naam.</small></p>
-            <label className="brand-search-label allergen-search-label">Zoek allergeen<input type="search" value={allergenSearch} onChange={(e) => setAllergenSearch(e.target.value)} placeholder="Bijv. kip, rijst of zalm" /></label>
+          <section id="vergelijken" className="allergen-panel">
+            <div className="allergen-panel-header">
+              <div>
+                <h2>Allergieën van je hond</h2>
+                <p><small>Kies wat je wilt vermijden. De lijst is fijnmazig — één groente, één vissoort of één kruid kan ook — dus open de groep die je nodig hebt of zoek direct op naam.</small></p>
+              </div>
+              {allergens.length > 0 && <button type="button" className="clear-allergens" onClick={() => setAllergens([])}>Wis selectie ({allergens.length})</button>}
+            </div>
+            {allergens.length > 0 && <div className="selected-allergens" aria-label="Gekozen allergenen">
+              <span className="selected-label">Je vermijdt nu:</span>
+              {allergens.map((key) => <button type="button" key={key} className="allergen-chip" onClick={() => setAllergens(allergens.filter((item) => item !== key))} title={`Verwijder ${ALLERGEN_LABELS[key]}`}>{ALLERGEN_LABELS[key]} <span aria-hidden="true">×</span></button>)}
+            </div>}
+            <label className="brand-search-label allergen-search-label">Zoek allergeen<input type="search" value={allergenSearch} onChange={(e) => setAllergenSearch(e.target.value)} placeholder="Bijv. kip, rund, rijst, zalm of erwten" /></label>
             {gezochteAllergenen.length ? gezochteAllergenen.map((group) => {
               const gekozen = group.allergens.filter(({ key }) => allergens.includes(key)).length
               return <details className="allergen-group" key={group.key} open={allergenSearch.trim() ? true : undefined}>
-                <summary>{group.label} {gekozen ? `· ${gekozen} gekozen` : `(${group.allergens.length})`}</summary>
+                <summary><span>{group.label}</span> <span className={gekozen ? 'group-count active' : 'group-count'}>{gekozen ? `${gekozen} gekozen` : `${group.allergens.length} opties`}</span></summary>
                 <div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => setAllergens(e.target.checked ? [...allergens, key] : allergens.filter((item) => item !== key))} />{label}</label>)}</div>
               </details>
             }) : <p><small>Geen allergeen gevonden voor “{allergenSearch}”.</small></p>}
           </section>
-          {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : loading ? <p>Laden…</p> : <>{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">rood</mark> = het etiket noemt de bron van dat ingrediënt niet ("dierlijk vet", "granen"). {allergens.length ? 'Het oordeel gaat per allergeen: een product komt alleen bij "Controleer" als zo\'n onduidelijkheid jouw allergeen kan bevatten.' : 'Je hebt nog geen allergeen gekozen, dus beoordelen we het hele etiket: bij "Etiket noemt elke bron" staat alleen een lijst die elke bron noemt. Kies een allergeen om te zien welke producten daarvoor geschikt zijn.'} Reken op het etiket en de fabrikant, niet op deze site.</p>
+          {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : loading ? <p>Laden…</p> : <>{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">Rood gemarkeerd</mark> = het etiket noemt de specifieke dier- of plantbron van dit ingrediënt niet (bijv. “dierlijk vet” of “granen”). {allergens.length ? 'Het oordeel geldt per gekozen allergeen: een product staat alleen op “Controleer” als zo\'n niet-gespecificeerd ingrediënt jouw gekozen allergeen kan bevatten.' : 'Kies hierboven één of meer allergenen om direct te filteren op geschikte hondenvoeding.'}</p>
             {geenMerken || geenTypes ? <section id="resultaten"><h2>Geen producten</h2><p>{filterMelding}</p></section> : (
               <section id="resultaten">
-                <h2>Producten ({alleResultaten.length})</h2>
-                <p className="result-summary">
-                  <span className="summary-pill suitable">{allergens.length ? 'Geschikt' : 'Etiket noemt elke bron'}: {suitable.length}</span>
-                  <span className="summary-pill check">Controleer: {check.length}</span>
-                  {allergens.length > 0 && <span className="summary-pill excluded">Uitgesloten: {excluded.length}</span>}
-                </p>
-                <p className="result-order"><small>{allergens.length ? 'Eerst geschikt, dan controleren, dan uitgesloten.' : 'Eerst etiketten die elke bron noemen, dan etiketten om te controleren.'}</small></p>
+                <div className="results-header">
+                  <h2>Producten ({alleResultaten.length})</h2>
+                  <p className="result-summary">
+                    <span className="summary-pill suitable">{allergens.length ? 'Geschikt' : 'Etiket noemt elke bron'}: {suitable.length}</span>
+                    <span className="summary-pill check">Controleer: {check.length}</span>
+                    {allergens.length > 0 && <span className="summary-pill excluded">Uitgesloten: {excluded.length}</span>}
+                  </p>
+                </div>
+                <p className="result-order"><small>{allergens.length ? 'Gesorteerd op geschiktheid: eerst geschikt, daarna controleren en als laatste uitgesloten.' : 'Eerst etiketten die elke bron bij naam noemen, daarna etiketten met verzameltermen.'}</small></p>
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
                 {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} />) : <p>Geen producten gevonden voor deze keuze.</p>}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
@@ -536,6 +578,28 @@ function App() {
           </>}
         </div>
       </div>
-    </>}</main>
+    </>}
+    <footer className="site-footer" id="over-deze-site">
+      <div className="footer-grid">
+        <div className="footer-col">
+          <h3>Over Hondenvoervergelijker</h3>
+          <p>Hondenvoervergelijker helpt hondeneigenaren en dierenartsen bij het vinden van complete hondenvoeding (brokken, natvoer en versvlees/KVV) zonder specifieke allergenen. Alle samenstellingen zijn rechtstreeks overgenomen van de officiële productpagina's van de fabrikanten en wekelijks gecontroleerd op wijzigingen.</p>
+        </div>
+        <div className="footer-col">
+          <h3>Onafhankelijke werkwijze</h3>
+          <p>Elk etiket wordt woord voor woord geanalyseerd op meer dan {ALLERGENS.length} dierlijke, plantaardige en overige ingrediëntbronnen. Bevat een etiket een vage verzamelterm (zoals <em>“dierlijke bijproducten”</em> of <em>“oliën en vetten”</em>) die een gekozen allergeen kan verbergen, dan krijgt het product nooit het label “Geschikt”.</p>
+        </div>
+        <div className="footer-col">
+          <h3>Transparantie, Privacy &amp; Contact</h3>
+          <p>Deze website plaatst geen tracking-cookies en verkoopt geen bezoekersgegevens. Sommige uitgaande links naar webwinkels kunnen affiliate-links zijn; de selectie, sortering en beoordeling van voeding worden hier nooit door beïnvloed.</p>
+          <p className="footer-meta">Beheer &amp; redactie: Paul Zuiderduin · Contact: <a href="mailto:paulzuiderduin@gmail.com">paulzuiderduin@gmail.com</a></p>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <span>© {new Date().getFullYear()} Hondenvoervergelijker — Alle ingrediëntdata onder voorbehoud van wijzigingen door de fabrikant.</span>
+        <button type="button" className="footer-admin-link" onClick={() => { if (admin) { load(); loadTerms() } setAdmin(!admin); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>{admin ? 'Sluit beheer' : 'Beheer'}</button>
+      </div>
+    </footer>
+  </main>
 }
 createRoot(document.getElementById('root')).render(<App />)

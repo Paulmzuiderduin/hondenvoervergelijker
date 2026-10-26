@@ -28,7 +28,11 @@ jobs:
       - name: Bronpagina's vergelijken met de importbestanden
         id: vergelijken
         continue-on-error: true
-        run: node scripts/controleer-bronnen.mjs --pauze=2000
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
+          BRONCONTROLE_TOKEN: ${{ secrets.BRONCONTROLE_TOKEN }}
+        run: node scripts/controleer-bronnen.mjs --parallel=6 --pauze=1500
       - name: Melding maken of bijwerken
         if: steps.vergelijken.outcome == 'failure'
         env:

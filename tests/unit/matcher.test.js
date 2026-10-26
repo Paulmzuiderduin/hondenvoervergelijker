@@ -424,3 +424,10 @@ test('delen zonder soort verbergen alleen dierlijke eiwitten', () => {
 test('een hydrolysewoord noemt de bron die ernaast staat', () => {
   assert.deepEqual(assessLabel('Gehydrolyseerd witviseiwit').hydrolysed.keys, ['whitefish'])
 })
+
+test('een gewijzigde bronpagina vraagt om controle totdat het etiket opnieuw is bekeken', () => {
+  const gewijzigd = product({ source_status: 'gewijzigd' })
+  const uitslag = productMatch(gewijzigd, ['beef'], new Date('2026-10-14'))
+  assert.equal(uitslag.kind, 'check')
+  assert.equal(uitslag.sourceChanged, true)
+})

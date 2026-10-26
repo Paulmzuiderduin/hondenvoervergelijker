@@ -62,6 +62,7 @@ export function productMatch(product, selectedAllergens, now = new Date()) {
   const imported = Boolean(version?.imported_at)
   const hasLabel = Boolean(text)
   const stale = isReviewOverdue(product.last_checked_at, now)
+  const sourceChanged = product.source_status === 'gewijzigd'
   const presentStates = states.filter((state) => state.state === 'present')
   const unknownStates = states.filter((state) => state.state === 'unknown')
   // Noemt dit etiket elke allergeenbron bij name? Dat is de productbrede vraag,
@@ -71,7 +72,7 @@ export function productMatch(product, selectedAllergens, now = new Date()) {
   // Zonder gecontroleerde tekst is er geen bewijs: dan is er niets "geschikt".
   let kind = 'suitable'
   if (presentStates.length) kind = 'excluded'
-  else if (unknownStates.length || !hasLabel || !(reviewed || imported) || stale) kind = 'check'
+  else if (unknownStates.length || !hasLabel || !(reviewed || imported) || stale || sourceChanged) kind = 'check'
   // Zonder allergenenkeuze is er geen vraag om te beantwoorden; dan zegt
   // "Geschikt" alleen: dit etiket noemt elke bron. Zodra er wél iets gekozen is,
   // hangt het oordeel aan die allergenen en niet meer aan het hele etiket.
@@ -88,6 +89,7 @@ export function productMatch(product, selectedAllergens, now = new Date()) {
     importNote: version?.import_note ?? null,
     hasLabel,
     stale,
+    sourceChanged,
     transparent,
     // Gehydrolyseerd eiwit: geen allergeen en geen bron, maar het hoort op de
     // kaart te staan omdat een dierenarts er juist op stuurt. Het oordeel
