@@ -118,12 +118,16 @@ Supabase:
   `scripts/controleer-bronnen-browser.mjs`. Dat draait automatisch in dezelfde
   workflow en werkt zonder betaalde dienst: `playwright-core` gebruikt de Chrome
   die al op de machine staat.
+- **Edgard & Cooper** geeft vanaf een datacenter-IP een andere pagina dan vanaf
+  een gewoon thuisnetwerk. De wekelijkse browsercontrole herkent dat als
+  "onbereikbaar" en verandert niets op de site. Draai daarom af en toe lokaal
+  `npm run check:bronnen:browser`: vanaf je eigen verbinding worden die
+  producten wél bijgewerkt.
 - **Prins Petfoods** laat ook die browser niet door: de site toont een
   Cloudflare-controle. De browsercontrole herkent dat, markeert de producten als
   "onbereikbaar" (zonder de status op de site te veranderen) en gaat verder.
-  Controleer Prins daarom periodiek handmatig in je eigen browser. Gebruik
-  daarna `npm run check:bronnen:browser -- --merk=Prins --headful` als je Chrome
-  lokaal wél door de controle komt, of werk de controledatum bij via Beheer.
+  Controleer Prins periodiek handmatig in je eigen browser en werk de
+  controledatum daarna bij via Beheer.
 - Als vrijwel alle producten van één site tegelijk "gewijzigd" lijken, gaat het
   vrijwel zeker om botbeveiliging en niet om etiketten. Beide scripts behandelen
   zo'n uitkomst als "onbereikbaar" en veranderen de status op de site dan niet.
