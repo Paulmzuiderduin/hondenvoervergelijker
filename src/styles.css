@@ -900,6 +900,16 @@ button:disabled {
   margin: 0.3rem 0;
 }
 
+.ingredients .import-note {
+  margin: 0.6rem 0 0.1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e3ebe5;
+}
+
+.ingredients .import-note small {
+  font-size: 0.8rem;
+}
+
 .reason {
   margin: 0.4rem 0;
   color: #5c4707;
