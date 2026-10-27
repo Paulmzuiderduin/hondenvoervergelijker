@@ -19,7 +19,7 @@ concurrency:
 jobs:
   controle:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -34,7 +34,7 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
           BRONCONTROLE_TOKEN: ${{ secrets.BRONCONTROLE_TOKEN }}
-        run: node scripts/controleer-bronnen.mjs --parallel=6 --pauze=1500
+        run: node scripts/controleer-bronnen.mjs --parallel=8 --pauze=1500
       - name: Geblokkeerde sites in een echte browser controleren
         id: browser
         continue-on-error: true
