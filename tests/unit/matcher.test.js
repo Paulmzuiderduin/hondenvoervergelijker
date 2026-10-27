@@ -262,8 +262,8 @@ test('delen onder een kop met een genoemde bron zijn herleidbaar', () => {
   assert.deepEqual(assessLabel('Maïs, eiwit, mineralen').risky, ['eiwit'])
 })
 
-test('gierst, spelt en rogge zijn eigen granen en sorghum valt onder granen', () => {
-  assert.deepEqual(detectIngredientSignals('Gierst, spelt, rogge, sorghum, triticale, millet').allergens, ['millet', 'grains', 'rye', 'spelt'])
+test('gierst, spelt, rogge en sorghum zijn eigen granen', () => {
+  assert.deepEqual(detectIngredientSignals('Gierst, spelt, rogge, sorghum, triticale, millet').allergens, ['millet', 'grains', 'rye', 'spelt', 'sorghum'])
   // Wie "Granen (algemeen)" kiest, bedoelt spelt er ook bij.
   const versie = { ingredients_text: 'Spelt 40%, rijst, mineralen', reviewed_at: '2026-10-01T00:00:00Z', recipe_ingredients: [] }
   assert.equal(productMatch(product({ recipe_versions: [versie] }), ['grains'], new Date('2026-10-14')).kind, 'excluded')

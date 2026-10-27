@@ -9,6 +9,14 @@ const MISSING_RPC = /PGRST202|Could not find the function|schema cache/i
 const TERMS_HINT = 'De woordenlijst kon niet worden geladen; de keuring gebruikt dan alleen de ingebouwde woorden. Dat is strenger, niet soepeler.'
 const PAGE_SIZE = 8
 const HAAL_PAGINA = 1000
+const GROEP_ZOEKTERMEN = {
+  protein: ['eiwit', 'eiwitten', 'eiwitbron'],
+  carbohydrate: ['koolhydraat', 'koolhydraten'],
+  vegetable: ['groente', 'groenten'],
+  fruit: ['fruit'],
+  herbs: ['kruid', 'kruiden'],
+  other: ['overig']
+}
 
 // PostgREST geeft standaard maximaal 1000 rijen per verzoek terug. Zonder
 // paginatie zouden producten na de eerste 1000 onzichtbaar blijven op de site
@@ -422,9 +430,15 @@ function App() {
   const gezochteAllergenen = useMemo(() => {
     const zoek = allergenSearch.trim().toLowerCase()
     if (!zoek) return ALLERGEN_GROUPS
+    const zoekDelen = zoek.split(/\s+/).filter(Boolean)
     return ALLERGEN_GROUPS.map((group) => {
-      const groepMatch = group.label.toLowerCase().includes(zoek)
-      const allergens = groepMatch ? group.allergens : group.allergens.filter(({ key, label }) => allergenSearchTerms(key, label).some((term) => term.toLowerCase().includes(zoek)))
+      const groepMatch = [group.label.toLowerCase(), ...(GROEP_ZOEKTERMEN[group.key] ?? [])].includes(zoek)
+      const allergens = groepMatch ? group.allergens : group.allergens.filter(({ key, label }) => allergenSearchTerms(key, label).some((term) => {
+        const waarde = term.toLowerCase()
+        if (waarde === zoek) return true
+        const delen = waarde.split(/[^a-z0-9]+/).filter(Boolean)
+        return zoekDelen.every((deel) => delen.some((token) => token.startsWith(deel)))
+      }))
       return { ...group, allergens }
     }).filter((group) => group.allergens.length)
   }, [allergenSearch])

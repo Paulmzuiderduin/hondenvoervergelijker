@@ -73,4 +73,4 @@ ontbrekende recepten in het werkbestand staan.
 
 ## Woordenlijst
 
-Op 2026-10-26 zijn 294 + 8 nieuwe woorden ingedeeld. Daarna zijn xylitol, sorbitol, glycerol/glycerine en propyleenglycol als eigen allergenen onder "Overig" toegevoegd. Schaap, kalf, wild zwijn, rendier, haas en bizon zijn nu eigen eiwitbronnen; woorden als salie (sage), sinaasappel (citrus) en raapstelen (turnipgreens) zijn naar hun bestaande specifieke sleutel verplaatst. De live keuring telt nu 678 termen en 0 onbekende woorden in 1413 recepten.
+Op 2026-10-26 zijn 294 + 8 nieuwe woorden ingedeeld. Daarna zijn xylitol, sorbitol, glycerol/glycerine en propyleenglycol als eigen allergenen onder "Overig" toegevoegd. Schaap, kalf, wild zwijn, rendier, haas en bizon zijn nu eigen eiwitbronnen; woorden als salie (sage), sinaasappel (citrus) en raapstelen (turnipgreens) zijn naar hun bestaande specifieke sleutel verplaatst. Kool, pruim, aalbes, moerbei, goji, pecannoot, kastanje, sorghum en smeerwortel zijn nu ook losse allergenen. De live keuring telt nu 687 termen en 0 onbekende woorden in 1413 recepten.

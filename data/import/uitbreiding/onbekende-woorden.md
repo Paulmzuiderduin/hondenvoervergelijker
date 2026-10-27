@@ -3,7 +3,7 @@
 Momentopname: 2026-10-26.
 
 - 1413 huidige recepten
-- 678 ingedeelde woorden in `ingredient_terms`
+- 687 ingedeelde woorden in `ingredient_terms`
 - 0 onbekende woorden
 - 0 recepten met minimaal één onbekend woord
 
