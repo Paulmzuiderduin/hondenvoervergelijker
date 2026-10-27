@@ -7,9 +7,14 @@ geen Node.js-server of database op mijn.host nodig.
 ## Wat er al klaarstaat
 
 - `.htaccess` — caching, compressie, 404-pagina en veiligheidsheaders.
-- `.github/workflows/deploy-mijnhost.yml` — handmatige deploy via FTP.
+- `.github/workflows/deploy-mijnhost.yml` — automatische deploy bij elke push
+  naar `main` (en handmatig via workflow_dispatch).
+- De DNS van `hondenvoervergelijker` wijst naar `109.163.225.23`.
+- HTTPS is actief met een Let's Encrypt-certificaat en HTTP wordt doorgestuurd.
+- GitHub Pages staat als terugvaloptie klaar; de Pages-workflow start niet meer
+  automatisch.
 
-## Stappen
+## Stappen (eenmalig, al uitgevoerd)
 
 1. **SSL activeren** in het mijn.host-paneel voor
    `hondenvoervergelijker.paulzuiderduin.com`. Wacht tot het certificaat actief

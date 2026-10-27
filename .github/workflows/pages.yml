@@ -1,8 +1,9 @@
-name: Deploy GitHub Pages
+name: Deploy GitHub Pages (terugvaloptie)
 
+# De live site draait op mijn.host. Deze workflow staat alleen nog klaar als
+# terugvaloptie en start daarom niet meer automatisch. Voor een terugrol zet je
+# de DNS weer naar GitHub Pages en start je deze workflow handmatig.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:

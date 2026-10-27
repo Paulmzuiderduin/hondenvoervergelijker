@@ -1,17 +1,19 @@
 name: Deploy naar mijn.host
 
-# Alleen handmatig starten. Zo blijft de bestaande GitHub Pages-deploy werken
-# tot je definitief overstapt en de DNS hebt omgezet.
+# Elke push naar main gaat automatisch naar de live site op mijn.host.
+# Handmatig starten kan ook, bijvoorbeeld na een storing of voor een test.
 #
 # Benodigde repository-secrets:
-#   FTP_SERVER        bijv. ftp.mijn.host of het serveradres uit het paneel
-#   FTP_USERNAME      de FTP-gebruiker van het hostingpakket
-#   FTP_PASSWORD      het wachtwoord van die FTP-gebruiker
-#   FTP_SERVER_DIR    de map die de webroot is, bijv. /public_html/ (optioneel)
+#   FTP_SERVER        h25.mijn.host
+#   FTP_USERNAME      deploy@hondenvoervergelijker.paulzuiderduin.com
+#   FTP_PASSWORD      wachtwoord van die FTP-gebruiker
+#   FTP_SERVER_DIR    ./ (de FTP-gebruiker staat al in public_html)
 #
 # De secrets VITE_SUPABASE_URL en VITE_SUPABASE_PUBLISHABLE_KEY bestaan al.
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -19,12 +21,12 @@ permissions:
 
 concurrency:
   group: mijnhost
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -47,9 +49,8 @@ jobs:
           local-dir: ./dist/
           server-dir: ${{ secrets.FTP_SERVER_DIR || './' }}
           dangerous-clean-slate: false
-      # Zolang de DNS nog naar GitHub Pages wijst, controleren we de upload via
-      # de server zelf: het juiste domein als Host-header, maar verbinding met
-      # het IP-adres van de server.
+      # Controleer eerst de server zelf (zonder DNS-cache), daarna de publieke
+      # site. Zo merken we een verkeerde upload én een verkeerde DNS-stand.
       - name: Controleer de upload op de server
         env:
           DOMEIN: hondenvoervergelijker.paulzuiderduin.com
@@ -59,6 +60,11 @@ jobs:
             IP=$(getent hosts h25.mijn.host | awk '/^[0-9]+\./ {print $1; exit}')
           fi
           echo "Server-IP: $IP"
-          CODE=$(curl -s -o /dev/null -w "%{http_code}" --resolve "$DOMEIN:80:$IP" "http://$DOMEIN/")
-          echo "HTTP $CODE voor http://$DOMEIN/ via $IP"
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" --resolve "$DOMEIN:443:$IP" "https://$DOMEIN/")
+          echo "HTTPS $CODE voor https://$DOMEIN/ via $IP"
           test "$CODE" = "200"
+      - name: Controleer alle sitemap-URL's
+        run: node scripts/controleer-sitemap.mjs --basis=https://hondenvoervergelijker.paulzuiderduin.com
+      - name: Meld URL's bij IndexNow (Bing)
+        continue-on-error: true
+        run: node scripts/indexnow.mjs
