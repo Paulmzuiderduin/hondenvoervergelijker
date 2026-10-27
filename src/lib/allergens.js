@@ -528,16 +528,69 @@ function compileTerm(term) {
   return { parts, prefix, term }
 }
 
-function termMatches(tokens, { parts, prefix }) {
-  if (!parts.length) return false
-  if (parts.length === 1) {
-    const [stem] = parts
-    return prefix ? tokens.some((token) => token.startsWith(stem)) : tokens.includes(stem)
+// De woordenschat wordt per etiket honderden keren doorzocht. In plaats van
+// elke keer alle termen langs te lopen, bouwen we één keer een index:
+//   exact   token → termen die precies zo heten
+//   prefix  eerste twee letters → termen met een * (kip* hoort bij kippenlever)
+//   kort    termen met een eenletterige stam
+//   multi   eerste woord → termen van meerdere woorden ("zoete aardappel")
+function maakTermIndex(terms) {
+  const exact = new Map()
+  const prefix = new Map()
+  const kort = []
+  const multi = new Map()
+  for (const term of terms) {
+    if (term.parts.length === 1) {
+      const [stam] = term.parts
+      if (term.prefix) {
+        if (stam.length < 2) {
+          kort.push(term)
+        } else {
+          const sleutel = stam.slice(0, 2)
+          const lijst = prefix.get(sleutel)
+          if (lijst) lijst.push(term)
+          else prefix.set(sleutel, [term])
+        }
+      } else {
+        const lijst = exact.get(stam)
+        if (lijst) lijst.push(term)
+        else exact.set(stam, [term])
+      }
+    } else {
+      const lijst = multi.get(term.parts[0])
+      if (lijst) lijst.push(term)
+      else multi.set(term.parts[0], [term])
+    }
   }
-  for (let start = 0; start + parts.length <= tokens.length; start += 1) {
-    if (parts.every((part, offset) => tokens[start + offset] === part)) return true
+  return { exact, prefix, kort, multi }
+}
+
+function heeftTerm(index, token) {
+  if (index.exact.has(token)) return true
+  if (token.length >= 2) {
+    const lijst = index.prefix.get(token.slice(0, 2))
+    if (lijst) for (const term of lijst) if (token.startsWith(term.parts[0])) return true
   }
+  for (const term of index.kort) if (token.startsWith(term.parts[0])) return true
   return false
+}
+
+function termTreffers(index, token) {
+  const treffers = []
+  const exact = index.exact.get(token)
+  if (exact) treffers.push(...exact)
+  if (token.length >= 2) {
+    const lijst = index.prefix.get(token.slice(0, 2))
+    if (lijst) for (const term of lijst) if (token.startsWith(term.parts[0])) treffers.push(term)
+  }
+  for (const term of index.kort) if (token.startsWith(term.parts[0])) treffers.push(term)
+  return treffers
+}
+
+function multiTreffers(index, tokens, start) {
+  const kandidaten = index.multi.get(tokens[start])
+  if (!kandidaten) return []
+  return kandidaten.filter((term) => term.parts.every((part, offset) => tokens[start + offset] === part))
 }
 
 // De woordenschat wordt opgebouwd uit de vaste lijsten hierboven plus de
@@ -559,6 +612,15 @@ let COMPILED_INERT_CUSTOM_TERMS = []
 let CONCRETE_SOURCE_TERMS = []
 let COMPILED_PART_SOURCE_TERMS = []
 let COMPILED_HYDROLYSED_TERMS = []
+let KNOWN_INDEX = maakTermIndex([])
+let UNCERTAIN_INDEX = maakTermIndex([])
+let RISK_INDEX = maakTermIndex([])
+let INERT_INDEX = maakTermIndex([])
+let INERT_CUSTOM_INDEX = maakTermIndex([])
+let CONCRETE_INDEX = maakTermIndex([])
+let PART_SOURCE_INDEX = maakTermIndex([])
+let HYDROLYSED_INDEX = maakTermIndex([])
+let ALLERGEN_INDEX = maakTermIndex([])
 
 // Alles wat de keuring van een ingrediëntwoord kan plaatsen: een allergeenbron,
 // een verzamel- of risicowoord, een andere bron, een onschuldig bestanddeel of een
@@ -609,6 +671,15 @@ function buildVocabulary() {
   ].filter((term) => !GENERIC_ANIMAL_SOURCES.has(normaliseText(term.replace(/\*$/, '')))).map(compileTerm)
   COMPILED_HYDROLYSED_TERMS = HYDROLYSED_TERMS.map(compileTerm)
   COMPILED_INERT_TERMS = INERT_INGREDIENT_TERMS.map(compileTerm)
+  KNOWN_INDEX = maakTermIndex(COMPILED_KNOWN_TERMS)
+  UNCERTAIN_INDEX = maakTermIndex(COMPILED_UNCERTAIN_TERMS)
+  RISK_INDEX = maakTermIndex(COMPILED_RISK_TERMS)
+  INERT_INDEX = maakTermIndex(COMPILED_INERT_TERMS)
+  INERT_CUSTOM_INDEX = maakTermIndex(COMPILED_INERT_CUSTOM_TERMS)
+  CONCRETE_INDEX = maakTermIndex(CONCRETE_SOURCE_TERMS)
+  PART_SOURCE_INDEX = maakTermIndex(COMPILED_PART_SOURCE_TERMS)
+  HYDROLYSED_INDEX = maakTermIndex(COMPILED_HYDROLYSED_TERMS)
+  ALLERGEN_INDEX = maakTermIndex(COMPILED_ALLERGEN_TERMS.flatMap(({ key, terms }) => terms.map((term) => ({ ...term, key }))))
 }
 
 // Een mineraal ("eierschaal", "oesterschelp") of een "vrij"-woord
@@ -622,11 +693,7 @@ function isNonSourceToken(token) {
 // te vinden die er in dezelfde reeks bij staat.
 function sourceKeysOf(word) {
   if (isInertToken(word)) return []
-  const keys = []
-  for (const { key, terms } of COMPILED_ALLERGEN_TERMS) {
-    if (terms.some((term) => termMatches([word], term))) keys.push(key)
-  }
-  return keys
+  return [...new Set(termTreffers(ALLERGEN_INDEX, word).map(({ key }) => key))]
 }
 
 // Woorden die het beheer zelf heeft ingedeeld. "onschuldig" betekent: geen bron
@@ -658,14 +725,9 @@ function openTermKeys(term) {
 // Welke woorden van een lijst herkent de keuring? Meerwoords- termen ("rose hip")
 // tellen als geheel.
 function markKnownWords(tokens) {
-  const known = tokens.map(() => false)
-  for (const term of COMPILED_KNOWN_TERMS) {
-    if (term.parts.length === 1) {
-      tokens.forEach((token, index) => { if (!known[index] && termMatches([token], term)) known[index] = true })
-      continue
-    }
-    for (let start = 0; start + term.parts.length <= tokens.length; start += 1) {
-      if (!term.parts.every((part, offset) => tokens[start + offset] === part)) continue
+  const known = tokens.map((token) => heeftTerm(KNOWN_INDEX, token))
+  for (let start = 0; start < tokens.length; start += 1) {
+    for (const term of multiTreffers(KNOWN_INDEX, tokens, start)) {
       for (let offset = 0; offset < term.parts.length; offset += 1) known[start + offset] = true
     }
   }
@@ -673,37 +735,35 @@ function markKnownWords(tokens) {
 }
 
 function isInertCustomToken(token) {
-  return COMPILED_INERT_CUSTOM_TERMS.some((term) => termMatches([token], term))
+  return heeftTerm(INERT_CUSTOM_INDEX, token)
 }
 
 function isInertToken(token) {
-  return isInertCustomToken(token) || COMPILED_INERT_TERMS.some((term) => termMatches([token], term))
+  return isInertCustomToken(token) || heeftTerm(INERT_INDEX, token)
 }
 
 function isConcreteSource(token) {
-  return !isInertToken(token) && CONCRETE_SOURCE_TERMS.some((term) => termMatches([token], term))
+  return !isInertToken(token) && heeftTerm(CONCRETE_INDEX, token)
 }
 
 // Is dit een woord dat zelf een deel of risico noemt ("pens", "lever")? Zulke
 // woorden zijn geen bron, maar ze onderbreken de zoektocht naar de diersoort niet.
 function isRiskToken(token) {
-  return COMPILED_RISK_TERMS.some((term) => term.parts.length === 1 && termMatches([token], term))
+  return heeftTerm(RISK_INDEX, token)
 }
 
 // Noemt dit woord een concrete diersoort waar een orgaan bij kan horen?
 // "Kip", "lamsvlees" en "zalm" wel; "vis" en "gevogelte" niet.
 function isAnimalPartSource(token) {
-  return !isInertToken(token) && COMPILED_PART_SOURCE_TERMS.some((term) => termMatches([token], term))
+  return !isInertToken(token) && heeftTerm(PART_SOURCE_INDEX, token)
 }
 
 // Hoort dit woord bij een meerwoordige bron die de keuring kent
 // ("rauwe bot", "zwarte bes")? Dan is het zelf de bron en geen risicowoord.
 function insideConcreteSourcePhrase(tokens, index) {
-  for (const term of CONCRETE_SOURCE_TERMS) {
-    if (term.parts.length < 2) continue
-    const eerste = Math.max(0, index - term.parts.length + 1)
-    for (let start = eerste; start <= index && start + term.parts.length <= tokens.length; start += 1) {
-      if (term.parts.every((part, offset) => tokens[start + offset] === part)) return true
+  for (let start = 0; start <= index; start += 1) {
+    for (const term of multiTreffers(CONCRETE_INDEX, tokens, start)) {
+      if (start + term.parts.length > index) return true
     }
   }
   return false
@@ -898,19 +958,13 @@ export function assessLabel(ingredientsText = '') {
   // Welke verzamel- en risicowoorden staan er in de lijst, en waar horen ze bij?
   // Van elk gevonden woord houden we de plaats bij, zodat de keuring kan zien of
   // een bron in dezelfde opsomming of onder een soortkop alsnog genoemd wordt.
-  const collect = (terms) => {
+  const collect = (index) => {
     const matches = []
-    for (const term of terms) {
-      if (term.parts.length === 1) {
-        tokens.forEach((token, index) => { if (termMatches([token], term)) matches.push({ start: index, end: index + 1, term }) })
-        continue
-      }
-      for (let start = 0; start + term.parts.length <= tokens.length; start += 1) {
-        if (!term.parts.every((part, offset) => tokens[start + offset] === part)) continue
-        matches.push({ start, end: start + term.parts.length, term })
-      }
-    }
-    return matches
+    tokens.forEach((token, start) => {
+      for (const term of termTreffers(index, token)) matches.push({ start, end: start + 1, term })
+      for (const term of multiTreffers(index, tokens, start)) matches.push({ start, end: start + term.parts.length, term })
+    })
+    return matches.sort((eerste, tweede) => eerste.start - tweede.start || eerste.end - tweede.end)
   }
 
   const keep = (index) => !explainedByParenthetical(tokens, depthBefore, breakBefore, index)
@@ -952,11 +1006,11 @@ export function assessLabel(ingredientsText = '') {
   const precedingScope = (index) => {
     const token = tokens[index]
     if (!token) return null
-    const term = COMPILED_UNCERTAIN_TERMS.find((item) => item.parts.length === 1 && termMatches([token], item))
+    const term = termTreffers(UNCERTAIN_INDEX, token)[0]
     return term ? expandAllergenKeys(term.keys ?? ALL_KEYS) : null
   }
-  const vagueMatches = collect(COMPILED_UNCERTAIN_TERMS).filter(({ start }) => keep(start))
-  const riskyMatches = collect(COMPILED_RISK_TERMS).flatMap((match) => {
+  const vagueMatches = collect(UNCERTAIN_INDEX).filter(({ start }) => keep(start))
+  const riskyMatches = collect(RISK_INDEX).flatMap((match) => {
     // Delen onder een kop met een genoemde bron ("13% vlees" onder "63% Konijn:")
     // horen bij die bron.
     if (anchorBefore[match.start]) return []
@@ -1028,9 +1082,9 @@ export function assessLabel(ingredientsText = '') {
   const hydrolysedWords = new Set()
   const hydrolysedKeys = new Set()
   tokens.forEach((token, index) => {
-    if (!COMPILED_HYDROLYSED_TERMS.some((term) => termMatches([token], term))) return
+    if (!heeftTerm(HYDROLYSED_INDEX, token)) return
     const collectSource = (cursor) => {
-      if (COMPILED_HYDROLYSED_TERMS.some((term) => termMatches([tokens[cursor]], term))) return
+      if (heeftTerm(HYDROLYSED_INDEX, tokens[cursor])) return
       const keys = sourceKeysOf(tokens[cursor])
       if (!keys.length) return
       hydrolysedWords.add(tokens[cursor])
@@ -1042,7 +1096,7 @@ export function assessLabel(ingredientsText = '') {
     for (let cursor = index + 1; cursor < tokens.length && cursor - index <= 6 && !breakBefore[cursor]; cursor += 1) collectSource(cursor)
   })
   const hydrolysed = {
-    present: tokens.some((token) => COMPILED_HYDROLYSED_TERMS.some((term) => termMatches([token], term))),
+    present: tokens.some((token) => heeftTerm(HYDROLYSED_INDEX, token)),
     words: [...hydrolysedWords],
     keys: sortAllergenKeys([...hydrolysedKeys])
   }
@@ -1053,9 +1107,12 @@ export function assessLabel(ingredientsText = '') {
   // Een mineraal of een "vrij"-woord telt niet als bron, ook al bevat het een
   // allergeenwoord: "eierschaal" is geen ei en "graanvrije" is geen graan.
   const sourceTokens = tokens.filter((token) => !isNonSourceToken(token))
-  const allergens = sortAllergenKeys(COMPILED_ALLERGEN_TERMS
-    .filter(({ terms }) => terms.some((term) => termMatches(sourceTokens, term)))
-    .map(({ key }) => key))
+  const gevondenAllergenen = new Set()
+  sourceTokens.forEach((token, start) => {
+    for (const term of termTreffers(ALLERGEN_INDEX, token)) gevondenAllergenen.add(term.key)
+    for (const term of multiTreffers(ALLERGEN_INDEX, sourceTokens, start)) gevondenAllergenen.add(term.key)
+  })
+  const allergens = sortAllergenKeys([...gevondenAllergenen])
 
   return remember(assessCache, cachesleutel, {
     tokens,

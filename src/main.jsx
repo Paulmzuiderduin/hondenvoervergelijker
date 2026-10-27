@@ -2,6 +2,7 @@ import React, { memo, useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, allergenSearchTerms, assessLabel, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients, missingAllergenKeys, setCustomTerms, sortAllergenKeys } from './lib/allergens'
 import { isReviewOverdue, productMatch } from './lib/matcher'
+import { leesCatalogusCache, schrijfProductenCache, schrijfTermenCache } from './lib/catalogCache'
 import { leesAllergenen, leesMerken, schrijfFilters } from './lib/urlFilters'
 import { supabase } from './lib/supabase'
 import './styles.css'
@@ -29,6 +30,35 @@ async function haalAlleRijen(makeQuery) {
     if (error) return { data: null, error }
     rijen.push(...(data || []))
     if (!data || data.length < HAAL_PAGINA) break
+  }
+  return { data: rijen, error: null }
+}
+
+const PRODUCT_SELECT = 'id,brand,name,food_type,package_size,source_url,source_status,last_checked_at,recipe_versions(ingredients_text,imported_at,reviewed_at,import_note,recipe_ingredients(allergen_key,certainty))'
+
+// De catalogus is groter dan één pagina. Vraag de eerste twee pagina's meteen
+// samen op, zodat de tweede niet op de eerste hoeft te wachten. Daarna gaan
+// volgende paren pagina's ook parallel.
+async function haalProducten() {
+  const pagina = (offset) => supabase.from('products')
+    .select(PRODUCT_SELECT)
+    .eq('published', true)
+    .eq('recipe_versions.is_current', true)
+    .order('id')
+    .range(offset, offset + HAAL_PAGINA - 1)
+
+  const [eerste, tweede] = await Promise.all([pagina(0), pagina(HAAL_PAGINA)])
+  if (eerste.error) return { data: null, error: eerste.error }
+  if (tweede.error) return { data: null, error: tweede.error }
+  const rijen = [...(eerste.data || []), ...(tweede.data || [])]
+  if ((tweede.data || []).length < HAAL_PAGINA) return { data: rijen, error: null }
+
+  for (let offset = 2 * HAAL_PAGINA; ; offset += 2 * HAAL_PAGINA) {
+    const [a, b] = await Promise.all([pagina(offset), pagina(offset + HAAL_PAGINA)])
+    if (a.error) return { data: null, error: a.error }
+    if (b.error) return { data: null, error: b.error }
+    rijen.push(...(a.data || []), ...(b.data || []))
+    if ((a.data || []).length < HAAL_PAGINA || (b.data || []).length < HAAL_PAGINA) break
   }
   return { data: rijen, error: null }
 }
@@ -454,14 +484,25 @@ function zetFiltersInUrl(brands, gekozenAllergenen, alleMerken, brandMode) {
 }
 
 function App() {
-  const [products, setProducts] = useState([]); const [loading, setLoading] = useState(true); const [loadError, setLoadError] = useState('')
-  const [terms, setTerms] = useState([]); const [termsError, setTermsError] = useState(''); const [termsOud, setTermsOud] = useState(false)
+  // De vorige catalogus staat meteen klaar; de nieuwste versie wordt op de
+  // achtergrond opgehaald en vervangt die stilzwijgend.
+  const [cacheBijStart] = useState(leesCatalogusCache)
+  const [products, setProducts] = useState(cacheBijStart?.products ?? [])
+  const [productenKlaar, setProductenKlaar] = useState(Boolean(cacheBijStart?.products))
+  const [loadError, setLoadError] = useState('')
+  const [verversFout, setVerversFout] = useState('')
+  const [verversen, setVerversen] = useState(false)
+  const [terms, setTerms] = useState(cacheBijStart?.terms ?? [])
+  const [termenKlaar, setTermenKlaar] = useState(Boolean(cacheBijStart?.terms))
+  const [termsError, setTermsError] = useState(''); const [termsOud, setTermsOud] = useState(false)
+  const loading = !productenKlaar || !termenKlaar
   const [allergens, setAllergens] = useState(leesAllergenenUitUrl); const [types, setTypes] = useState(FOOD_TYPES.map(([key]) => key))
   const [selectedBrands, setSelectedBrands] = useState(null); const [brandMode, setBrandMode] = useState('include'); const [brandSearch, setBrandSearch] = useState('')
   const [allergenSearch, setAllergenSearch] = useState('')
   const [urlKlaar, setUrlKlaar] = useState(false)
   const [admin, setAdmin] = useState(false); const [session, setSession] = useState(null); const [isAdmin, setIsAdmin] = useState(false); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [authMessage, setAuthMessage] = useState(''); const [recovery, setRecovery] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery'); const [newPassword, setNewPassword] = useState(''); const [repeatPassword, setRepeatPassword] = useState('')
   const [matches, setMatches] = useState([])
+  const [matchesKlaar, setMatchesKlaar] = useState(false)
   const [page, setPage] = useState(1)
   const diepeLinkToegepast = useRef(false)
   // Een merkpagina of een gedeelde link kan verwijzen naar /?merk=Royal%20Canin.
@@ -529,26 +570,69 @@ function App() {
       .sort((a, b) => a.groepScore - b.groepScore || a.index - b.index)
       .map(({ groepScore, index, ...group }) => group)
   }, [allergenSearch])
-  const load = async () => { if (!supabase) { setLoadError('Supabase is nog niet geconfigureerd, dus er kunnen geen producten worden geladen.'); setLoading(false); return }; setLoading(true); const { data, error } = await haalAlleRijen(() => supabase.from('products').select('id,brand,name,food_type,package_size,source_url,source_status,last_checked_at,recipe_versions(ingredients_text,imported_at,reviewed_at,import_note,recipe_ingredients(allergen_key,certainty))').eq('published', true).eq('recipe_versions.is_current', true)); if (error) { setLoadError(error.message); setProducts([]) } else { setLoadError(''); setProducts(data || []) }; setLoading(false) }
+  const load = async () => {
+    if (!supabase) {
+      setLoadError('Supabase is nog niet geconfigureerd, dus er kunnen geen producten worden geladen.')
+      setProductenKlaar(true)
+      return
+    }
+    try {
+      const { data, error } = await haalProducten()
+      if (error) {
+        // Een bewaarde catalogus is beter dan geen catalogus; meld wel dat hij
+        // niet is bijgewerkt.
+        if (cacheBijStart?.products?.length) setVerversFout('De nieuwste productgegevens konden niet worden opgehaald. Je ziet de laatst bewaarde versie.')
+        else { setLoadError(error.message); setProducts([]) }
+      } else {
+        setLoadError('')
+        setVerversFout('')
+        setProducts(data || [])
+        schrijfProductenCache(data || [])
+      }
+    } catch (error) {
+      if (cacheBijStart?.products?.length) setVerversFout('De nieuwste productgegevens konden niet worden opgehaald. Je ziet de laatst bewaarde versie.')
+      else setLoadError(error?.message || 'De producten konden niet worden geladen.')
+    } finally {
+      setProductenKlaar(true)
+    }
+  }
   // De woordenschat komt als ruwe rij binnen. Zo blijft de site werken zolang de
   // laatste migratie (20261019180000_term_scopes.sql) nog niet is uitgevoerd: een
   // ingedeeld woord houdt dan zijn ene allergeen, en "onduidelijk" verbergt alles
   // — strenger, niet soepeler. In het beheer staat dan een regel met wat er nog
   // moet gebeuren.
   const loadTerms = async () => {
-    if (!supabase) return
-    const { data, error } = await haalAlleRijen(() => supabase.from('ingredient_terms').select('*').order('term'))
-    if (error) { setTermsError(TERMS_HINT); setTerms([]); return }
-    setTermsError('')
-    setTerms((data || []).map((term) => ({ term: term.term, kind: term.kind, note: term.note, allergen_keys: Array.isArray(term.allergen_keys) ? term.allergen_keys.filter(Boolean) : term.allergen_key ? [term.allergen_key] : [] })))
-    setTermsOud(data?.length > 0 && !('allergen_keys' in data[0]))
+    if (!supabase) { setTermenKlaar(true); return }
+    try {
+      const { data, error } = await haalAlleRijen(() => supabase.from('ingredient_terms').select('*').order('term'))
+      if (error) {
+        setTermsError(TERMS_HINT)
+        if (!cacheBijStart?.terms?.length) setTerms([])
+        return
+      }
+      const gemapt = (data || []).map((term) => ({ term: term.term, kind: term.kind, note: term.note, allergen_keys: Array.isArray(term.allergen_keys) ? term.allergen_keys.filter(Boolean) : term.allergen_key ? [term.allergen_key] : [] }))
+      setTermsError('')
+      setTerms(gemapt)
+      schrijfTermenCache(gemapt)
+      setTermsOud(data?.length > 0 && !('allergen_keys' in data[0]))
+    } catch {
+      setTermsError(TERMS_HINT)
+      if (!cacheBijStart?.terms?.length) setTerms([])
+    } finally {
+      setTermenKlaar(true)
+    }
   }
-  useEffect(() => { load(); loadTerms(); supabase?.auth.getSession().then(({ data }) => setSession(data.session)); const { data } = supabase?.auth.onAuthStateChange((event, next) => { setSession(next); if (event === 'PASSWORD_RECOVERY') setRecovery(true) }) || {}; return () => data?.subscription.unsubscribe() }, [])
+  useEffect(() => {
+    setVerversen(true)
+    Promise.allSettled([load(), loadTerms()]).finally(() => setVerversen(false))
+    supabase?.auth.getSession().then(({ data }) => setSession(data.session)); const { data } = supabase?.auth.onAuthStateChange((event, next) => { setSession(next); if (event === 'PASSWORD_RECOVERY') setRecovery(true) }) || {}; return () => data?.subscription.unsubscribe()
+  }, [])
   useEffect(() => { const checkAdmin = async () => { if (!session || !supabase) return setIsAdmin(false); const { data } = await supabase.from('admins').select('user_id').eq('user_id', session.user.id).maybeSingle(); setIsAdmin(Boolean(data)) }; checkAdmin() }, [session])
   // De woordenschat (eigen indelingen) moet bekend zijn vóór het vergelijken.
   useEffect(() => {
     setCustomTerms(terms)
     setMatches(products.filter((product) => types.includes(product.food_type) && (selectedBrands === null || selectedBrands.includes(product.brand))).map((product) => ({ product, match: productMatch(product, allergens) })))
+    setMatchesKlaar(true)
   }, [products, allergens, types, terms, selectedBrands])
   // Elke nieuwe keuze begint weer bovenaan.
   useEffect(() => { setPage(1) }, [allergens, types, selectedBrands])
@@ -677,7 +761,7 @@ function App() {
               </details>
             }) : <p><small>Geen allergeen gevonden voor “{allergenSearch}”.</small></p>}
           </section>
-          {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : loading ? <p>Laden…</p> : <>{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">Rood gemarkeerd</mark> = het etiket noemt de specifieke dier- of plantbron van dit ingrediënt niet (bijv. “dierlijk vet” of “granen”). {allergens.length ? 'Het oordeel geldt per gekozen allergeen: een product staat alleen op “Controleer” als zo\'n niet-gespecificeerd ingrediënt jouw gekozen allergeen kan bevatten.' : 'Kies hierboven één of meer allergenen om direct te filteren op geschikte hondenvoeding.'}</p>
+          {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : (loading || !matchesKlaar) ? <p>Laden…</p> : <>{verversFout && <p role="alert" className="cache-note">{verversFout}</p>}{verversen && <p className="cache-note"><small>Nieuwste gegevens worden opgehaald…</small></p>}{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">Rood gemarkeerd</mark> = het etiket noemt de specifieke dier- of plantbron van dit ingrediënt niet (bijv. “dierlijk vet” of “granen”). {allergens.length ? 'Het oordeel geldt per gekozen allergeen: een product staat alleen op “Controleer” als zo\'n niet-gespecificeerd ingrediënt jouw gekozen allergeen kan bevatten.' : 'Kies hierboven één of meer allergenen om direct te filteren op geschikte hondenvoeding.'}</p>
             {geenMerken || geenTypes ? <section id="resultaten"><h2>Geen producten</h2><p>{filterMelding}</p></section> : (
               <section id="resultaten">
                 <div className="results-header">

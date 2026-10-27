@@ -585,6 +585,10 @@ button:disabled {
 }
 
 /* Resultaten & Productkaarten */
+.cache-note {
+  margin: 0.6rem 0;
+  color: #5b6b60;
+}
 .legend {
   margin: 1rem 0;
   padding: 0.6rem 0.8rem;
