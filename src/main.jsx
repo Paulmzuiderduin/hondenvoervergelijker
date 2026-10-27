@@ -431,16 +431,29 @@ function App() {
     const zoek = allergenSearch.trim().toLowerCase()
     if (!zoek) return ALLERGEN_GROUPS
     const zoekDelen = zoek.split(/\s+/).filter(Boolean)
-    return ALLERGEN_GROUPS.map((group) => {
+    const pastZoek = (waarde) => {
+      const tekst = waarde.toLowerCase()
+      if (tekst === zoek) return true
+      const delen = tekst.split(/[^a-z0-9]+/).filter(Boolean)
+      return zoekDelen.every((deel) => delen.some((token) => token.startsWith(deel)))
+    }
+    const score = (label) => {
+      const tekst = label.toLowerCase()
+      if (tekst === zoek) return 0
+      const eerste = tekst.split(/[^a-z0-9]+/).filter(Boolean)[0] ?? ''
+      return eerste.startsWith(zoekDelen[0] ?? '') ? 1 : 2
+    }
+    const groepen = ALLERGEN_GROUPS.map((group) => {
       const groepMatch = [group.label.toLowerCase(), ...(GROEP_ZOEKTERMEN[group.key] ?? [])].includes(zoek)
-      const allergens = groepMatch ? group.allergens : group.allergens.filter(({ key, label }) => allergenSearchTerms(key, label).some((term) => {
-        const waarde = term.toLowerCase()
-        if (waarde === zoek) return true
-        const delen = waarde.split(/[^a-z0-9]+/).filter(Boolean)
-        return zoekDelen.every((deel) => delen.some((token) => token.startsWith(deel)))
-      }))
+      const labelMatches = group.allergens.filter(({ label }) => pastZoek(label)).sort((a, b) => score(a.label) - score(b.label))
+      const synonymMatches = group.allergens.filter(({ key, label }) => allergenSearchTerms(key, label).slice(1).some(pastZoek))
+      return { group, groepMatch, labelMatches, synonymMatches }
+    })
+    const heeftLabelMatch = groepen.some(({ groepMatch, labelMatches }) => groepMatch || labelMatches.length)
+    return groepen.map(({ group, groepMatch, labelMatches, synonymMatches }) => {
+      const allergens = groepMatch ? group.allergens : (heeftLabelMatch ? labelMatches : synonymMatches)
       return { ...group, allergens }
-    }).filter((group) => group.allergens.length)
+    }).filter(({ allergens }) => allergens.length)
   }, [allergenSearch])
   const load = async () => { if (!supabase) { setLoadError('Supabase is nog niet geconfigureerd, dus er kunnen geen producten worden geladen.'); setLoading(false); return }; setLoading(true); const { data, error } = await haalAlleRijen(() => supabase.from('products').select('*, recipe_versions(*, recipe_ingredients(*))').eq('published', true).eq('recipe_versions.is_current', true)); if (error) { setLoadError(error.message); setProducts([]) } else { setLoadError(''); setProducts(data || []) }; setLoading(false) }
   // De woordenschat komt als ruwe rij binnen. Zo blijft de site werken zolang de
