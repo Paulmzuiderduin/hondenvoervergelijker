@@ -1,0 +1,57 @@
+name: Controle live site
+
+# Elke zes uur een korte rooktest van de publieke site. Zo merken we een storing
+# of een kapotte pagina ook als er niets is gedeployed. Bij een fout komt er een
+# issue; verdwijnt de fout, dan sluiten we het issue niet automatisch.
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: controle-site
+  cancel-in-progress: false
+
+jobs:
+  controle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Rooktest van de live site
+        id: rooktest
+        continue-on-error: true
+        run: node scripts/controleer-site.mjs --basis=https://hondenvoervergelijker.paulzuiderduin.com
+      - name: Melding maken of bijwerken
+        if: steps.rooktest.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          titel="Rooktest van de live site is mislukt"
+          bestaand=$(gh issue list --state open --search "in:title ${titel}" --json number --jq '.[0].number')
+          melding=$(mktemp)
+          {
+            echo "De automatische rooktest van https://hondenvoervergelijker.paulzuiderduin.com is mislukt."
+            echo ''
+            echo 'Controleer de actielog voor de exacte regel:'
+            echo "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo ''
+            echo 'Mogelijke oorzaken: hosting, DNS, certificaat, Supabase of een fout in de laatste deploy.'
+            echo 'De site is statisch; bij twijfel kun je tijdelijk terugvallen op GitHub Pages.'
+          } > "$melding"
+          if [ -n "$bestaand" ]; then
+            gh issue comment "$bestaand" --body-file "$melding"
+          else
+            gh issue create --title "$titel" --body-file "$melding"
+          fi
+      - name: Laat de taak falen bij een mislukte controle
+        if: steps.rooktest.outcome == 'failure'
+        run: exit 1
