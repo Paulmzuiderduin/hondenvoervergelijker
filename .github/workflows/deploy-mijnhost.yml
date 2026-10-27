@@ -54,7 +54,10 @@ jobs:
         env:
           DOMEIN: hondenvoervergelijker.paulzuiderduin.com
         run: |
-          IP=$(getent hosts h25.mijn.host | awk '{print $1}' | head -1)
+          IP=$(getent ahostsv4 h25.mijn.host | awk '{print $1}' | head -1)
+          if [ -z "$IP" ]; then
+            IP=$(getent hosts h25.mijn.host | awk '/^[0-9]+\./ {print $1; exit}')
+          fi
           echo "Server-IP: $IP"
           CODE=$(curl -s -o /dev/null -w "%{http_code}" --resolve "$DOMEIN:80:$IP" "http://$DOMEIN/")
           echo "HTTP $CODE voor http://$DOMEIN/ via $IP"
