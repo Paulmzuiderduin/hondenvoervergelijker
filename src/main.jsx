@@ -38,6 +38,19 @@ function sourceDomain(url = '') {
   try { return new URL(url).hostname.replace(/^www\./, '') } catch { return '' }
 }
 
+// Zelfde regels als scripts/maak-seo-paginas.mjs, zodat een merknaam naar de
+// juiste statische merkpagina linkt.
+function merkSlug(naam = '') {
+  return String(naam)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/&/g, ' en ')
+    .replace(/['’`]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
 function labelList(keys = [], max = 5) {
   const labels = keys.map((key) => ALLERGEN_LABELS[key] ?? key)
   return `${labels.slice(0, max).join(', ')}${labels.length > max ? ` en ${labels.length - max} meer` : ''}`
@@ -104,7 +117,7 @@ function ProductCard({ product, match }) {
   return <article className={excluded ? 'product-card excluded' : `product-card ${match.kind}`}>
     <div className="product-card-top">
       <div className="product-title-group">
-        <span className="product-brand">{product.brand}</span>
+        <a className="product-brand" href={`/merken/${merkSlug(product.brand)}.html`} title={`Alle producten van ${product.brand}`}>{product.brand}</a>
         <h3 className="product-name">{product.name}</h3>
       </div>
       <div className="product-badges">

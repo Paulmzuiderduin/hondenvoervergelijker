@@ -680,6 +680,12 @@ button:disabled {
   letter-spacing: 0.06em;
   color: #4a6252;
   margin-bottom: 0.1rem;
+  text-decoration: none;
+}
+
+.product-brand:hover {
+  color: #175b30;
+  text-decoration: underline;
 }
 
 .product-name {
