@@ -643,9 +643,28 @@ function explainedByParenthetical(tokens, depthBefore, breakBefore, index) {
 // Delen tussen haakjes horen bij de bron die er vlak vóór staat:
 // "Kip (lever, hart)" en "kippeningewanden (lever, hart)".
 function parentheticalSource(tokens, depthBefore, breakBefore, index) {
-  if (depthBefore[index] === 0 || breakBefore[index]) return false
-  for (let cursor = index - 1; cursor >= 0; cursor -= 1) {
-    if (depthBefore[cursor] === 0) return isConcreteSource(tokens[cursor])
+  if (depthBefore[index] === 0) return false
+  // Zoek het eerste woord van deze haakjesgroep. Een komma vóór de groep
+  // ("Kip, (lever, hart)") betekent: een nieuw ingrediënt, dus geen bron.
+  let first = index
+  while (first > 0 && depthBefore[first - 1] > 0) first -= 1
+  if (breakBefore[first]) return false
+
+  // Zoek het laatste woord vóór de haakjes. Sla hoeveelheden over, zodat
+  // "Kip 25% (lever, hart)" ook bij kip hoort.
+  let before = first - 1
+  while (before >= 0 && depthBefore[before] !== 0) before -= 1
+  if (before < 0) return false
+
+  // "Kip, 25% (lever, hart)": een komma vóór een losse hoeveelheid betekent
+  // dat de haakjesgroep een nieuw ingrediënt begint.
+  if (/^\d+$/.test(tokens[before]) && breakBefore[before]) return false
+
+  // Loop terug over hoeveelheden. Een bron die zelf na een komma begint
+  // ("..., rund (lever, hart)") is wél de bron van deze haakjesgroep.
+  for (let cursor = before; cursor >= 0; cursor -= 1) {
+    if (depthBefore[cursor] !== 0 || /^\d+$/.test(tokens[cursor])) continue
+    return isConcreteSource(tokens[cursor])
   }
   return false
 }
