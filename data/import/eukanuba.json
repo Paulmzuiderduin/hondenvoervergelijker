@@ -954,6 +954,18 @@
       "etiketNl": "kip (65%), mineralen, bietenpulp (0.5%), inuline (0.3%), MOS (0.3%).",
       "aantekening": null,
       "twijfel": null
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Active Adult Medium Breed kip",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "gtin": "8710255201900",
+      "bronUrl": "https://www.eukanuba.eu/dog/dry-food/life-care/adult-medium-breed-rich-in-fresh-chicken",
+      "etiketOrigineel": "dried chicken and turkey (25% including chicken 18%, a natural source of glucosamine, chondroitin and taurine), fresh chicken (16%), barley, maize, wheat, poultry fat, sorghum, oats, dried beet pulp (3%), chicken gravy, minerals (including sodium hexametaphosphate 0.35%), fructooligosaccharides (0.25%, a natural prebiotic), dried whole egg.",
+      "etiketNl": "Gedroogde kip en kalkoen (25% waaronder kip 18%, een natuurlijke bron van glucosamine, chondroïtine en taurine), verse kip (16%), gerst, maïs, tarwe, gevogeltevet, sorghum, havervlokken, gedroogde bietenpulp (3%), kippenjus, mineralen (waaronder natriumhexametafosfaat 0.35%), fructo-oligosachariden (0,25%, een natuurlijk prebioticum), gedroogde hele eieren.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
     }
   ]
 }
