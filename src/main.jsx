@@ -607,8 +607,8 @@ function App() {
           <section id="vergelijken" className="allergen-panel">
             <div className="allergen-panel-header">
               <div>
-                <h2>Allergieën van je hond</h2>
-                <p><small>Kies wat je wilt vermijden. De lijst is fijnmazig — één groente, één vissoort of één kruid kan ook — dus open de groep die je nodig hebt of zoek direct op naam.</small></p>
+                <h2>Allergieën en intoleranties</h2>
+                <p><small>Selecteer de ingrediënten die je wilt uitsluiten. De lijst is zeer gedetailleerd: je kunt filteren op specifieke groenten, eiwitbronnen of kruiden. Klap simpelweg de gewenste categorie open om je filters in te stellen, of gebruik het zoekveld om direct op naam te zoeken.</small></p>
               </div>
               {allergens.length > 0 && <button type="button" className="clear-allergens" onClick={() => setAllergens([])}>Wis selectie ({allergens.length})</button>}
             </div>
