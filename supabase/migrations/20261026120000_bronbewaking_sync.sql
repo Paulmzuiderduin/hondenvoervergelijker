@@ -211,24 +211,27 @@ begin
       set last_checked_at = current_date,
           source_status = 'ok',
           source_note = null
-      where (v_url is not null and p.source_url = v_url)
-         or (v_brand is not null and v_name is not null and lower(p.brand) = lower(v_brand) and lower(p.name) = lower(v_name));
+      where (v_brand is not null and v_name is not null
+             and lower(p.brand) = lower(v_brand) and lower(p.name) = lower(v_name))
+         or ((v_brand is null or v_name is null) and v_url is not null and p.source_url = v_url);
       get diagnostics v_rows = row_count;
       v_ok_count := v_ok_count + v_rows;
     elsif v_status = 'gewijzigd' then
       update public.products p
       set source_status = 'gewijzigd',
           source_note = coalesce(v_note, 'Tekst op de bronpagina wijkt af van de laatst gecontroleerde tekst.')
-      where (v_url is not null and p.source_url = v_url)
-         or (v_brand is not null and v_name is not null and lower(p.brand) = lower(v_brand) and lower(p.name) = lower(v_name));
+      where (v_brand is not null and v_name is not null
+             and lower(p.brand) = lower(v_brand) and lower(p.name) = lower(v_name))
+         or ((v_brand is null or v_name is null) and v_url is not null and p.source_url = v_url);
       get diagnostics v_rows = row_count;
       v_changed_count := v_changed_count + v_rows;
     elsif v_status = 'onbereikbaar' then
       -- Alleen noteren als er geen tijdelijke 403/429 bot-blokkade is, en last_checked_at intact laten.
       update public.products p
       set source_note = coalesce(v_note, 'Bronpagina tijdelijk onbereikbaar.')
-      where (v_url is not null and p.source_url = v_url)
-         or (v_brand is not null and v_name is not null and lower(p.brand) = lower(v_brand) and lower(p.name) = lower(v_name));
+      where (v_brand is not null and v_name is not null
+             and lower(p.brand) = lower(v_brand) and lower(p.name) = lower(v_name))
+         or ((v_brand is null or v_name is null) and v_url is not null and p.source_url = v_url);
       get diagnostics v_rows = row_count;
       v_unreachable_count := v_unreachable_count + v_rows;
     end if;
