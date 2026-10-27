@@ -54,6 +54,13 @@ const slug = (tekst = '') =>
   String(tekst)
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[øØ]/g, 'o')
+    .replace(/[æÆ]/g, 'ae')
+    .replace(/[œŒ]/g, 'oe')
+    .replace(/[ß]/g, 'ss')
+    .replace(/[đĐðÐ]/g, 'd')
+    .replace(/[þÞ]/g, 'th')
+    .replace(/[łŁ]/g, 'l')
     .replace(/&/g, ' en ')
     .replace(/['’`]/g, '')
     .toLowerCase()
@@ -319,7 +326,7 @@ function productRegel(product) {
           </li>`
 }
 
-function merkPagina(brand, producten) {
+function merkPagina(brand, producten, buren = []) {
   const slugBrand = slug(brand)
   const laatste = producten.map((p) => p.last_checked_at).filter(Boolean).sort().at(-1)
   const controledatum = datumNl(laatste)
@@ -381,6 +388,12 @@ ${producten.map(productRegel).join('\n')}
       <h2>Over deze merkpagina</h2>
       <p>De ingrediëntenlijsten komen van de officiële productpagina's van ${escapeHtml(brand)}. De vergelijker neemt de tekst letterlijk over en beoordeelt per allergeen of de bron bij name genoemd is. Kies in de vergelijker de allergenen van jouw hond om te zien welke recepten geschikt zijn, welke uitgesloten zijn en waar je het etiket moet controleren.</p>
       <p><a class="cta" href="/?merk=${encodeURIComponent(brand)}">Open ${escapeHtml(brand)} in de vergelijker</a> <a class="cta secondary" href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a></p>
+
+      ${buren.length ? `<h2>Andere merken</h2>
+      <ul>
+${buren.map((buur) => `        <li><a href="/merken/${buur.slugBrand}.html">${escapeHtml(buur.brand)}</a> — ${buur.aantal} recept${buur.aantal === 1 ? '' : 'en'}</li>`).join('\n')}
+      </ul>
+      <p><a href="/merken/">Bekijk alle merken</a></p>` : ''}
 
       <p class="updated">Deze pagina wordt automatisch bijgewerkt wanneer de productdata verandert. Klopt er iets niet? Mail <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a>.</p>`
 
@@ -482,11 +495,12 @@ if (producten?.length) {
     .sort((a, b) => a.brand.localeCompare(b.brand, 'nl', { sensitivity: 'base' }))
 
   mkdirSync(join(DIST, 'merken'), { recursive: true })
-  for (const merk of merken) {
-    const { pad, html } = merkPagina(merk.brand, merk.lijst)
+  merken.forEach((merk, index) => {
+    const buren = Array.from({ length: Math.min(8, merken.length - 1) }, (_, offset) => merken[(index + offset + 1) % merken.length])
+    const { pad, html } = merkPagina(merk.brand, merk.lijst, buren)
     writeFileSync(join(DIST, pad.replace(/^\//, '')), html)
     adressen.push({ loc: `${SITE}${pad}`, prioriteit: '0.7' })
-  }
+  })
   writeFileSync(join(DIST, 'merken', 'index.html'), merkenIndex(merken))
   console.log(`Geschreven: ${merken.length} merkpagina's en /merken/`)
 } else if (existsSync(join(WORTEL, 'public', 'sitemap.xml'))) {

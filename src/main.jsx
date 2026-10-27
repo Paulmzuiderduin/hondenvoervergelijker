@@ -44,6 +44,13 @@ function merkSlug(naam = '') {
   return String(naam)
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[øØ]/g, 'o')
+    .replace(/[æÆ]/g, 'ae')
+    .replace(/[œŒ]/g, 'oe')
+    .replace(/[ß]/g, 'ss')
+    .replace(/[đĐðÐ]/g, 'd')
+    .replace(/[þÞ]/g, 'th')
+    .replace(/[łŁ]/g, 'l')
     .replace(/&/g, ' en ')
     .replace(/['’`]/g, '')
     .toLowerCase()
@@ -175,7 +182,7 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
 
   const loadCatalogue = async () => {
     if (!supabase) return setCatalogueError('Supabase is nog niet geconfigureerd.')
-    const { data, error } = await haalAlleRijen(() => supabase.from('products').select('*, recipe_versions(*, recipe_ingredients(*))').eq('recipe_versions.is_current', true).order('brand').order('name'))
+    const { data, error } = await haalAlleRijen(() => supabase.from('products').select('id,brand,name,food_type,package_size,gtin,source_url,source_status,source_note,last_checked_at,published,recipe_versions(id,ingredients_text,imported_at,reviewed_at,review_note,import_note,source_changed_at,recipe_ingredients(allergen_key,certainty))').eq('recipe_versions.is_current', true).order('brand').order('name'))
     if (error) { setCatalogueError(error.message); setCatalogue([]); return }
     setCatalogueError(''); setCatalogue(data || [])
   }
@@ -484,7 +491,7 @@ function App() {
       return { ...group, allergens }
     }).filter(({ allergens }) => allergens.length)
   }, [allergenSearch])
-  const load = async () => { if (!supabase) { setLoadError('Supabase is nog niet geconfigureerd, dus er kunnen geen producten worden geladen.'); setLoading(false); return }; setLoading(true); const { data, error } = await haalAlleRijen(() => supabase.from('products').select('*, recipe_versions(*, recipe_ingredients(*))').eq('published', true).eq('recipe_versions.is_current', true)); if (error) { setLoadError(error.message); setProducts([]) } else { setLoadError(''); setProducts(data || []) }; setLoading(false) }
+  const load = async () => { if (!supabase) { setLoadError('Supabase is nog niet geconfigureerd, dus er kunnen geen producten worden geladen.'); setLoading(false); return }; setLoading(true); const { data, error } = await haalAlleRijen(() => supabase.from('products').select('id,brand,name,food_type,package_size,source_url,source_status,last_checked_at,recipe_versions(ingredients_text,imported_at,reviewed_at,import_note,recipe_ingredients(allergen_key,certainty))').eq('published', true).eq('recipe_versions.is_current', true)); if (error) { setLoadError(error.message); setProducts([]) } else { setLoadError(''); setProducts(data || []) }; setLoading(false) }
   // De woordenschat komt als ruwe rij binnen. Zo blijft de site werken zolang de
   // laatste migratie (20261019180000_term_scopes.sql) nog niet is uitgevoerd: een
   // ingedeeld woord houdt dan zijn ene allergeen, en "onduidelijk" verbergt alles
