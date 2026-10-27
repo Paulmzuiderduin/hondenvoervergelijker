@@ -553,11 +553,9 @@ function App() {
   return <main><header className="site-header">
     <div className="site-header-row">
       <div className="site-brand">
-        <img src="/logo-dog.png" alt="" width="29" height="46" className="site-logo" />
-        <div>
-          <h1>Hondenvoervergelijker</h1>
-          <p className="site-tagline">Onafhankelijk hondenvoer vergelijken op ingrediënten en allergenen</p>
-        </div>
+        <h1 className="site-brand-title">
+          <img src="/logo-hondenvoervergelijker.png" alt="Hondenvoervergelijker — Onafhankelijk hondenvoer vergelijken" width="277" height="58" className="site-logo-full" />
+        </h1>
       </div>
       <nav className="site-nav" aria-label="Snelmenu">
         {!recovery && !admin && <>
