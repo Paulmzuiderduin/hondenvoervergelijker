@@ -40,6 +40,10 @@ jobs:
       - uses: actions/checkout@v4
       - id: deployment
         uses: actions/deploy-pages@v4
+      # Controleert of elke pagina uit de sitemap echt bestaat voordat we URL's
+      # bij zoekmachines melden.
+      - name: Sitemap-URL's controleren
+        run: node scripts/controleer-sitemap.mjs
       # Gratis aanvulling op de sitemap: meldt de URL's bij IndexNow, dat Bing
       # en andere deelnemers gebruiken. Google leest de sitemap in Search Console.
       # De site moet live staan voordat dit draait, anders faalt de sleutelcheck.
