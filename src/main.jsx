@@ -553,7 +553,7 @@ function App() {
   return <main><header className="site-header">
     <div className="site-header-row">
       <div className="site-brand">
-        <img src="/favicon.svg" alt="" width="34" height="34" className="site-logo" />
+        <img src="/logo-dog.png" alt="" width="29" height="46" className="site-logo" />
         <div>
           <h1>Hondenvoervergelijker</h1>
           <p className="site-tagline">Onafhankelijk hondenvoer vergelijken op ingrediënten en allergenen</p>

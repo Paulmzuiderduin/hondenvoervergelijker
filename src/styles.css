@@ -152,7 +152,8 @@ button:disabled {
 }
 
 .site-logo {
-  border-radius: 2px;
+  height: 46px;
+  width: auto;
   flex-shrink: 0;
 }
 
