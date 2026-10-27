@@ -63,9 +63,7 @@ if (!ja) {
 }
 
 const checks = producten.map((product) => ({
-  merk: product.merk,
-  naam: product.naam,
-  bronUrl: product.bronUrl,
+  product: { merk: product.merk, naam: product.naam, bronUrl: product.bronUrl },
   status: 'gelijk',
   detail: 'handmatig gecontroleerd'
 }))
