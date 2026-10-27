@@ -636,6 +636,63 @@ button:disabled {
   margin: 0.15rem 0 0.7rem;
 }
 
+/* Waarschuwing wanneer geen enkel product de uitslag "geschikt" haalt. */
+.no-suitable {
+  margin: 0 0 0.9rem;
+  padding: 0.85rem 1rem;
+  background: #fdf8ea;
+  border: 1px solid #e3cf9d;
+  border-left: 3px solid #b8860b;
+  border-radius: 2px;
+}
+
+.no-suitable strong {
+  display: block;
+  color: #5b4508;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.no-suitable p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #5c4a12;
+  white-space: normal;
+}
+
+.no-suitable-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-top: 0.6rem;
+}
+
+.no-suitable-actions button {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  background: #fff;
+  color: #5b4508;
+  border: 1px solid #cdb679;
+}
+
+.no-suitable-actions button:hover:not(:disabled) {
+  background: #fdf3d6;
+}
+
+.no-suitable-actions a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #6b4b00;
+  text-decoration: none;
+  border-bottom: 1px solid #b8860b;
+}
+
+.no-suitable-actions a:hover {
+  color: #4d3600;
+}
+
 .product-card {
   border: 1px solid #ccd6ce;
   border-radius: 2px;

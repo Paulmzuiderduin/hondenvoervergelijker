@@ -637,6 +637,21 @@ function App() {
                   </p>
                 </div>
                 <p className="result-order"><small>{allergens.length ? 'Gesorteerd op geschiktheid: eerst geschikt, daarna controleren en als laatste uitgesloten.' : 'Eerst etiketten die elke bron bij naam noemen, daarna etiketten met verzameltermen.'}</small></p>
+                {suitable.length === 0 && alleResultaten.length > 0 && <div className="no-suitable" role="status">
+                  <strong>{allergens.length ? 'Geen enkel product is op basis van het etiket precies geschikt.' : 'Geen enkel etiket noemt alle bronnen bij name.'}</strong>
+                  <p>{allergens.length
+                    ? (check.length === 0
+                      ? (excluded.length === 1
+                        ? <>Het enige product in deze selectie bevat minstens één van de gekozen allergenen. Pas je selectie of merkfilter aan, of overleg met je dierenarts over een passend eliminatiedieet.</>
+                        : <>Alle {excluded.length} producten in deze selectie bevatten minstens één van de gekozen allergenen. Pas je selectie of merkfilter aan, of overleg met je dierenarts over een passend eliminatiedieet.</>)
+                      : <>Bij {check.length === 1 ? 'het overgebleven product' : `de ${check.length} overgebleven producten`} noemt het etiket niet elke bron, of staat er een woord in dat de keuring niet kent.{excluded.length ? ` Daarnaast ${excluded.length === 1 ? 'is 1 product' : `zijn ${excluded.length} producten`} uitgesloten omdat er een gekozen allergeen in zit.` : ''} Vraag de fabrikant om uitsluitsel of overleg met je dierenarts voordat je een product kiest.</>)
+                    : <>Elk etiket in deze selectie bevat minstens één verzamelterm (zoals “dierlijk vet” of “granen”) die een allergeen kan verbergen. Kies de allergenen die je wilt vermijden om te zien welke producten daarvoor wél geschikt zijn.</>}</p>
+                  <div className="no-suitable-actions">
+                    {allergens.length > 0 && <button type="button" onClick={() => setAllergens([])}>Allergenen wissen</button>}
+                    <button type="button" onClick={() => { setSelectedBrands(null); setBrandSearch(''); setTypes(FOOD_TYPES.map(([key]) => key)) }}>Alle merken en voertypes</button>
+                    <a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a>
+                  </div>
+                </div>}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
                 {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} />) : <p>Geen producten gevonden voor deze keuze.</p>}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
