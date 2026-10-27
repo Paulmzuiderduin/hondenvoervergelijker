@@ -21,13 +21,20 @@
 //   node scripts/controleer-bronnen.mjs --merk=Trovet --limiet=5
 //   node scripts/controleer-bronnen.mjs --parallel=6 --pauze=1500
 //
-// Het script is beleefd per site (standaard minstens 1100 ms tussen twee
-// verzoeken naar dezelfde host), maar controleert verschillende hosts parallel
-// zodat 1400+ producten binnen enkele minuten klaar zijn.
+// Sites die geautomatiseerde verzoeken blokkeren, worden standaard overgeslagen;
+// daarvoor is scripts/controleer-bronnen-browser.mjs.
 
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import {
+  BROWSER_ONLY_HOSTS,
+  UA,
+  vergelijkbaar,
+  vergelijkbaarKern,
+  vergelijkbaarMetPaginadata
+} from './lib/bronvergelijking.mjs'
+import { schrijfNaarDatabase } from './lib/bron-sync.mjs'
 
 const WORTEL = dirname(dirname(fileURLToPath(import.meta.url)))
 const GEBRUIK_UITBREIDING = process.argv.includes('--uitbreiding')
@@ -35,28 +42,6 @@ const GEEN_DB = process.argv.includes('--geen-db')
 const INCLUSIEF_BROWSER_SITES = process.argv.includes('--ook-browser-sites')
 const IMPORT = GEBRUIK_UITBREIDING ? join(WORTEL, 'data', 'import', 'uitbreiding') : join(WORTEL, 'data', 'import')
 const RAPPORT = join(IMPORT, 'broncontrole.md')
-const UA = 'HondenvoervergelijkerBot/0.1 (contact: hondenvoervergelijker@paulzuiderduin.com)'
-
-// Deze sites blokkeren of vervormen geautomatiseerde verzoeken vanuit een
-// datacenter (Cloudflare/WAF, HTTP 403/429, of een pagina zonder de echte
-// inhoud). Ze worden standaard overgeslagen zodat de wekelijkse controle geen
-// vals alarm geeft; met --ook-browser-sites of --merk=... doen ze wel mee.
-// Controleer ze periodiek vanaf je eigen computer:
-//   npm run check:bronnen:lokaal
-const BROWSER_ONLY_HOSTS = new Set([
-  'www.prinspetfoods.nl',
-  'prinspetfoods.nl',
-  'www.smolke.nl',
-  'smolke.nl',
-  'www.yarrah.com',
-  'yarrah.com',
-  'www.edgardcooper.com',
-  'edgardcooper.com',
-  'wooof.com',
-  'www.wooof.com',
-  'wooof.nl',
-  'www.wooof.nl'
-])
 
 const argumenten = new Map(
   process.argv
@@ -76,100 +61,6 @@ const alleenBestanden = (argumenten.get('bestanden') ?? '')
 const limiet = Number(argumenten.get('limiet') ?? 0) || 0
 const pauze = Number(argumenten.get('pauze') ?? 0) || 1100
 const parallel = Math.max(1, Math.min(12, Number(argumenten.get('parallel') ?? 6) || 6))
-
-const ENTITEITEN = {
-  amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', euro: '€', hellip: '…',
-  ndash: '–', mdash: '—', lsquo: '‘', rsquo: '’', ldquo: '“', rdquo: '”', middot: '·',
-  bull: '•', deg: '°', plusmn: '±', frac12: '½', frac14: '¼', frac34: '¾', times: '×',
-  aacute: 'á', agrave: 'à', acirc: 'â', auml: 'ä', aring: 'å', atilde: 'ã', aelig: 'æ',
-  ccedil: 'ç', eacute: 'é', egrave: 'è', ecirc: 'ê', euml: 'ë', iacute: 'í', igrave: 'ì',
-  icirc: 'î', iuml: 'ï', ntilde: 'ñ', oacute: 'ó', ograve: 'ò', ocirc: 'ô', ouml: 'ö',
-  oslash: 'ø', otilde: 'õ', ssharp: 'ß', szlig: 'ß', uacute: 'ú', ugrave: 'ù', ucirc: 'û', uuml: 'ü',
-  yacute: 'ý', yuml: 'ÿ', oelig: 'œ', sup2: '²', sup3: '³', reset: ''
-}
-
-function decodeer(tekst) {
-  return String(tekst).replace(/&(#\d+|#x[0-9a-f]+|[a-z][a-z0-9]*);/gi, (heel, code) => {
-    const klein = code.toLowerCase()
-    if (klein.startsWith('#x')) return String.fromCodePoint(parseInt(klein.slice(2), 16))
-    if (klein.startsWith('#')) return String.fromCodePoint(Number(klein.slice(1)))
-    return Object.prototype.hasOwnProperty.call(ENTITEITEN, klein) ? ENTITEITEN[klein] : heel
-  })
-}
-
-function htmlNaarTekst(html) {
-  return decodeer(
-    String(html)
-      .replace(/<(script|style|noscript|svg|template)[\s\S]*?<\/\1>/gi, ' ')
-      .replace(/<!--[\s\S]*?-->/g, ' ')
-      .replace(/<br\s*\/?>/gi, ' ')
-      // Opmaak binnen een zin (vet, cursief, een link) mag geen spatie
-      // achterlaten: "Samenstelling" staat op de bronpagina vet, maar hoort
-      // gewoon tegen de dubbele punt te staan.
-      .replace(/<\/(span|strong|em|b|i|a|sup|sub|small)>/gi, '')
-      .replace(/<\/(p|div|li|td|th|dd|dt|h[1-6]|tr|section|article)>/gi, ' ')
-      .replace(/<[^>]*>/g, ' ')
-  )
-}
-
-// Vergelijken gebeurt ruim: alleen de woorden en leestekens tellen, niet de
-// opmaak van de pagina. Zo maakt een tab, een enter of een spatie geen verschil.
-function vergelijkbaar(tekst) {
-  return decodeer(htmlNaarTekst(tekst))
-    .normalize('NFC')
-    .toLowerCase()
-    .replace(/[’‘`´]/g, "'")
-    .replace(/[“”]/g, '"')
-    .replace(/[–—]/g, '-')
-    .replace(/\s+/g, ' ')
-    .replace(/\s+([,;:.])/g, '$1')
-    .replace(/\(\s+/g, '(')
-    .replace(/\s+\)/g, ')')
-    .trim()
-}
-
-// Sommige fabrikanten zetten de voetnoten van een samengesteld etiket één keer
-// onder de laatste smaak, terwijl ze voor elke smaak gelden. Dan staat de
-// samenstelling zelf wel op de pagina, maar de volledige tekst met voetnoten
-// niet. Deze kern laat alleen de voetnoten weg; de samenstelling blijft
-// verplicht letterlijk aanwezig. Alleen als fallback gebruiken, nooit in plaats
-// van de exacte controle.
-function vergelijkbaarKern(tekst) {
-  const zonderVoetnoten = String(tekst)
-    .split(/\r?\n/)
-    .filter((regel) => !/^\s*[\^*]/.test(regel))
-    .join('\n')
-  return vergelijkbaar(zonderVoetnoten)
-    .replace(/\s+\*[^*]{0,240}$/, '')
-    .trim()
-}
-
-// Sommige sites (Edgard & Cooper) zetten het etiket alleen in de gegevens die
-// met de pagina meekomen, niet in de leesbare tekst. Dan is de tekst wél van de
-// fabrikant, maar staat hij in een scriptblok. Deze tweede lezing haalt de
-// scriptblokken er niet uit en zet ook \u-ontsnappingen om.
-function vergelijkbaarMetPaginadata(html) {
-  return decodeer(
-    String(html)
-      .replace(/<style[\s\S]*?<\/style>/gi, ' ')
-      .replace(/<!--[\s\S]*?-->/g, ' ')
-      .replace(/\\u([0-9a-f]{4})/gi, (heel, code) => String.fromCodePoint(parseInt(code, 16)))
-      .replace(/\\n|\\r|\\t/g, ' ')
-      .replace(/\\"/g, '"')
-      .replace(/\\\//g, '/')
-      .replace(/<[^>]*>/g, ' ')
-  )
-    .normalize('NFC')
-    .toLowerCase()
-    .replace(/[’‘`´]/g, "'")
-    .replace(/[“”]/g, '"')
-    .replace(/[–—]/g, '-')
-    .replace(/\s+/g, ' ')
-    .replace(/\s+([,;:.])/g, '$1')
-    .replace(/\(\s+/g, '(')
-    .replace(/\s+\)/g, ')')
-    .trim()
-}
 
 function leesProducten() {
   if (!existsSync(IMPORT)) return { actief: [], overgeslagenBrowser: [] }
@@ -218,7 +109,7 @@ if (!producten.length) {
 
 console.log(`${producten.length} product(en) om te controleren (${parallel} sites parallel, per site minstens ${pauze} ms pauze).`)
 if (overgeslagenBrowser.length) {
-  console.log(`${overgeslagenBrowser.length} product(en) van Cloudflare-geblokkeerde sites (Prins, Smølke, Yarrah) overgeslagen (gebruik --ook-browser-sites om ze mee te nemen).\n`)
+  console.log(`${overgeslagenBrowser.length} product(en) van geblokkeerde sites overgeslagen; die controleert de browsercontrole.\n`)
 } else {
   console.log('')
 }
@@ -284,8 +175,8 @@ async function controleerProduct(product, host) {
   }
 }
 
-// Groepeer per host zodat elke host zijn eigen wachtrij heeft en de beleefdheidspauze
-// per site strikt wordt nageleefd, terwijl verschillende merken naast elkaar lopen.
+// Groepeer per host zodat elke host zijn eigen wachtrij heeft en de
+// beleefdheidspauze per site strikt wordt nageleefd.
 const perHost = new Map()
 for (const product of producten) {
   let host
@@ -315,8 +206,7 @@ await Promise.all(Array.from({ length: Math.min(parallel, hostWachtrijen.length)
 // Vangnet tegen vals alarm: als vrijwel alle producten van één site "gewijzigd"
 // lijken, is dat geen etiketwijziging maar vrijwel zeker een botbeveiliging die
 // een andere pagina teruggeeft. Zulke uitkomsten worden "onbereikbaar" (alleen
-// een aantekening, geen statuswijziging op de site). Bij een echte wijziging
-// gaat het normaal om één of enkele producten van een merk.
+// een aantekening, geen statuswijziging op de site).
 const perHostUitkomsten = new Map()
 for (const rij of uitkomsten) {
   let host = ''
@@ -335,65 +225,7 @@ for (const [host, rijen] of perHostUitkomsten) {
   console.log(`\nLet op: ${host} gaf ${gewijzigdOpHost.length} van ${rijen.length} keer een afwijkende pagina. Behandeld als onbereikbaar, niet als gewijzigd.`)
 }
 
-// Synchroniseer de uitkomsten met Supabase als de omgevingsvariabelen aanwezig zijn.
-async function schrijfNaarDatabase(resultaten) {
-  if (GEEN_DB) return
-  let env = {}
-  const envPad = join(WORTEL, '.env.local')
-  if (existsSync(envPad)) {
-    for (const regel of readFileSync(envPad, 'utf8').split(/\r?\n/)) {
-      const idx = regel.indexOf('=')
-      if (idx > 0 && !regel.trim().startsWith('#')) {
-        env[regel.slice(0, idx).trim()] = regel.slice(idx + 1).trim()
-      }
-    }
-  }
-  const url = (process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL || env.VITE_SUPABASE_URL || '').replace(/\/$/, '')
-  const key = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || env.VITE_SUPABASE_PUBLISHABLE_KEY || ''
-  const token = process.env.BRONCONTROLE_TOKEN || env.BRONCONTROLE_TOKEN || ''
-  if (!url || !key || !token) {
-    console.log('\nDatabase-sync overgeslagen (geen SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY of BRONCONTROLE_TOKEN ingesteld).')
-    return
-  }
-
-  const payload = resultaten.map(({ product, status, detail }) => ({
-    merk: product.merk,
-    naam: product.naam,
-    bronUrl: product.bronUrl,
-    status,
-    detail: detail || null
-  }))
-
-  let okTotaal = 0
-  let gewijzigdTotaal = 0
-  for (let i = 0; i < payload.length; i += 200) {
-    const deel = payload.slice(i, i + 200)
-    try {
-      const r = await fetch(`${url}/rest/v1/rpc/record_source_checks`, {
-        method: 'POST',
-        headers: {
-          apikey: key,
-          authorization: `Bearer ${key}`,
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify({ p_token: token, p_checks: deel })
-      })
-      if (!r.ok) {
-        console.log(`\nLet op: database-sync gaf HTTP ${r.status}: ${await r.text()}`)
-        return
-      }
-      const res = await r.json()
-      okTotaal += Number(res?.ok_updated ?? 0)
-      gewijzigdTotaal += Number(res?.changed_updated ?? 0)
-    } catch (fout) {
-      console.log(`\nLet op: database-sync mislukt (${fout.message}).`)
-      return
-    }
-  }
-  console.log(`\nDatabase bijgewerkt: ${okTotaal} product(en) op vandaag gecontroleerd gezet, ${gewijzigdTotaal} als gewijzigd gemarkeerd.`)
-}
-
-await schrijfNaarDatabase(uitkomsten)
+await schrijfNaarDatabase(uitkomsten, { geenDb: GEEN_DB })
 
 const gelijk = uitkomsten.filter((r) => r.status === 'gelijk').length
 const gewijzigd = uitkomsten.filter((r) => r.status === 'gewijzigd')

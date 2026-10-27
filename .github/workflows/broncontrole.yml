@@ -33,15 +33,29 @@ jobs:
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
           BRONCONTROLE_TOKEN: ${{ secrets.BRONCONTROLE_TOKEN }}
         run: node scripts/controleer-bronnen.mjs --parallel=6 --pauze=1500
+      - name: Geblokkeerde sites in een echte browser controleren
+        id: browser
+        continue-on-error: true
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
+          BRONCONTROLE_TOKEN: ${{ secrets.BRONCONTROLE_TOKEN }}
+        run: node scripts/controleer-bronnen-browser.mjs --parallel=3 --pauze=2000
       - name: Melding maken of bijwerken
-        if: steps.vergelijken.outcome == 'failure'
+        if: steps.vergelijken.outcome == 'failure' || steps.browser.outcome == 'failure'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           titel="Broncontrole vindt gewijzigde of onbereikbare bronpagina"
           melding=melding.md
           {
-            sed '/^Onveranderd:/,$d' data/import/broncontrole.md
+            if [ -f data/import/broncontrole.md ]; then
+              sed '/^Onveranderd:/,$d' data/import/broncontrole.md
+            fi
+            if [ -f data/import/broncontrole-browser.md ]; then
+              echo ''
+              cat data/import/broncontrole-browser.md
+            fi
             echo ''
             echo '---'
             echo "Actielog: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
@@ -61,4 +75,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: broncontrole
-          path: data/import/broncontrole.md
+          path: |
+            data/import/broncontrole.md
+            data/import/broncontrole-browser.md

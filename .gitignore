@@ -6,3 +6,6 @@ playwright-report/
 test-results/
 .DS_Store
 supabase/.temp/
+
+# Gegenereerd door de wekelijkse browsercontrole; het rapport gaat als artifact mee.
+data/import/broncontrole-browser.md

@@ -20,10 +20,10 @@
       "voertype": "kibble",
       "verpakking": "3 kg / 12 kg",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/brit_care/1579266",
-      "etiketOrigineel": "Gedroogd konijn (36%), rijst (35%), gedroogde appelpulp (12%), lignocellulose (10%), kippenvet, natuurlijk aroma, biergist, zalmolie (1%), psyllium husks & seeds (0,5%), erwtenmeel, glucosamine (300 mg/kg), fructooligosacchariden (230 mg/kg), chondroïtinesulfaat (230 mg/kg), mannan-oligosacchariden (180 mg/kg), Mojave yucca (180 mg/kg), mariadistelzaad (110 mg/kg), β-glucanen (60 mg/kg), gedroogd zeegras (60 mg/kg), gedroogde duindoorn (60 mg/kg), probioticum Lactobacillus helveticus HA - 122 geïnactiveerd (15x109 cellen/kg)",
+      "bronUrl": "https://brit-petfood.com/en/products/dogs/991648-brit-care-dog-hypoallergenic-weight-loss",
+      "etiketOrigineel": "Dehydrated rabbit (36%), rice (35%), dried apple pulp (12%), lignocellulose (10%), chicken fat, natural flavour, brewer’s yeast, salmon oil (1%), psyllium husk & seeds (0.5%), pea flour, glucosamine (300 mg/kg), fructo-oligosaccharides (230 mg/kg), chondroitin sulphate (230 mg/kg), mannan-oligosaccharides (180 mg/kg), Mojave yucca (180 mg/kg), milk thistle seed (110 mg/kg), β-glucans (60 mg/kg), dried motherwort (60 mg/kg), dried sea buckthorn (60 mg/kg), Lactobacillus helveticus HA – 122 inactivated (15x109 cells/kg).",
       "etiketNl": "Gedroogd konijn (36%), rijst (35%), gedroogde appelpulp (12%), lignocellulose (10%), kippenvet, natuurlijk aroma, biergist, zalmolie (1%), psyllium husks & seeds (0,5%), erwtenmeel, glucosamine (300 mg/kg), fructooligosacchariden (230 mg/kg), chondroïtinesulfaat (230 mg/kg), mannan-oligosacchariden (180 mg/kg), Mojave yucca (180 mg/kg), mariadistelzaad (110 mg/kg), β-glucanen (60 mg/kg), gedroogd zeegras (60 mg/kg), gedroogde duindoorn (60 mg/kg), probioticum Lactobacillus helveticus HA - 122 geïnactiveerd (15x109 cellen/kg)",
-      "aantekening": null,
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
       "twijfel": null
     },
     {
@@ -116,10 +116,10 @@
       "voertype": "wet",
       "verpakking": "48 x 85 g",
       "gtin": "8595602554850",
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/brit/2679422",
-      "etiketOrigineel": "Vlees en organen in filetvorm (77%, 4% zalm, 4% haring), erwtenmeel (2,7%), gedroogde bosbessen (1,5%), lignocellulose (0,9%), gedroogde kruidnagel (0,4%), gedroogde citrusvruchten (0,4%), gedroogde rozemarijn (0,4%), gedroogde kurkuma (0,4%), calciumcarbonaat (0,2%)",
+      "bronUrl": "https://brit-petfood.com/en/products/dogs/281356-brit-care-mini-salmon-and-herring-fillets-in-gravy-for-sterilised-dogs",
+      "etiketOrigineel": "77% meat and animal by-products in fillets, fish and fish by-products (of which 4% salmon, 4% herring), 2.7% pea flour, 1.5% dried blueberries, 0.9% lignocellulose, 0.4% dried cloves, 0.4% dried citrus fruits, 0.4% dried rosemary, 0.4% dried turmeric, 0.2% calcium carbonate.",
       "etiketNl": "Vlees en organen in filetvorm (77%, 4% zalm, 4% haring), erwtenmeel (2,7%), gedroogde bosbessen (1,5%), lignocellulose (0,9%), gedroogde kruidnagel (0,4%), gedroogde citrusvruchten (0,4%), gedroogde rozemarijn (0,4%), gedroogde kurkuma (0,4%), calciumcarbonaat (0,2%)",
-      "aantekening": null,
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
       "twijfel": null
     }
   ]

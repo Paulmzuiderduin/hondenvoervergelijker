@@ -112,17 +112,24 @@ Supabase:
 
 - De koppeling gebruikt de RPC `record_source_checks` met het geheim
   `BRONCONTROLE_TOKEN` (staat in `public.sync_config` en in de GitHub-secrets).
-- Sites die automatische verzoeken blokkeren of vervormen (Prins, Smølke,
-  Yarrah, Edgard & Cooper, WOOOF) worden in de wekelijkse run overgeslagen.
-  Controleer die periodiek vanaf je eigen computer met
-  `npm run check:bronnen:lokaal`. Dat werkt vanaf een gewoon thuisnetwerk wel en
-  zet dezelfde controledatums in Supabase.
+- Sites die gewone verzoeken blokkeren (Smølke, Yarrah, Edgard & Cooper en
+  WOOOF) worden daarna in een echte Chrome gecontroleerd met
+  `scripts/controleer-bronnen-browser.mjs`. Dat draait automatisch in dezelfde
+  workflow en werkt zonder betaalde dienst: `playwright-core` gebruikt de Chrome
+  die al op de machine staat.
+- **Prins Petfoods** laat ook die browser niet door: de site toont een
+  Cloudflare-controle. De browsercontrole herkent dat, markeert de producten als
+  "onbereikbaar" (zonder de status op de site te veranderen) en gaat verder.
+  Controleer Prins daarom periodiek handmatig in je eigen browser. Gebruik
+  daarna `npm run check:bronnen:browser -- --merk=Prins --headful` als je Chrome
+  lokaal wél door de controle komt, of werk de controledatum bij via Beheer.
 - Als vrijwel alle producten van één site tegelijk "gewijzigd" lijken, gaat het
-  vrijwel zeker om botbeveiliging en niet om etiketten. Het script behandelt zo'n
-  uitkomst als "onbereikbaar" en verandert de status op de site dan niet.
-- Het script controleert verschillende sites parallel (standaard 6) maar houdt
-  per site minimaal 1,5 seconde pauze aan. Zo blijven 1.400+ producten binnen
-  enkele minuten gecontroleerd en blijft het verzoekgedrag beleefd.
+  vrijwel zeker om botbeveiliging en niet om etiketten. Beide scripts behandelen
+  zo'n uitkomst als "onbereikbaar" en veranderen de status op de site dan niet.
+- De fetch-controle draait verschillende sites parallel (standaard 6) met per
+  site minimaal 1,5 seconde pauze; de browsercontrole gebruikt 3 tabbladen en
+  2 seconden per verzoek. Zo blijven 1.400+ producten binnen enkele minuten
+  gecontroleerd en blijft het verzoekgedrag beleefd.
 - Zodra een beheerder een product opslaat of "Nagelopen" klikt, zet
   `save_product_with_recipe`/`set_recipe_reviewed` de status weer op `ok`.
 
