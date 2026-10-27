@@ -847,6 +847,7 @@ function App() {
         <span className="footer-links">
           <a href="/merken/">Alle merken</a>
           <a href="/hondenvoer-allergieen.html">Hondenvoer &amp; allergieën</a>
+          <a href="/hondenvoer-zonder.html">Zonder allergeen</a>
           <a href="/hoe-wij-vergelijken.html">Onze methode</a>
           <a href="/privacybeleid.html">Privacybeleid</a>
           <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">Contact</a>

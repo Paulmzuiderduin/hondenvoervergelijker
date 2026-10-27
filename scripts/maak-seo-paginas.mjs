@@ -13,7 +13,8 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { ALLERGEN_LABELS, FOOD_TYPES, assessLabel, markUncertainIngredients } from '../src/lib/allergens.js'
+import { ALLERGEN_LABELS, ALLERGENS, FOOD_TYPES, assessLabel, markUncertainIngredients, setCustomTerms } from '../src/lib/allergens.js'
+import { productMatch } from '../src/lib/matcher.js'
 
 const WORTEL = dirname(dirname(fileURLToPath(import.meta.url)))
 const DIST = join(WORTEL, 'dist')
@@ -121,6 +122,7 @@ ${inhoud}
           <a href="/">Vergelijker</a>
           <a href="/merken/">Alle merken</a>
           <a href="/hondenvoer-allergieen.html">Hondenvoer en allergieën</a>
+          <a href="/hondenvoer-zonder.html">Zonder allergeen</a>
           <a href="/hoe-wij-vergelijken.html">Hoe wij vergelijken</a>
           <a href="/privacybeleid.html">Privacybeleid</a>
         </nav>
@@ -227,7 +229,7 @@ const allergiePagina = () => {
       </div>
 
       <div class="callout">
-        <p><strong>Verder lezen:</strong> ontdek <a href="/hoe-wij-vergelijken.html">hoe wij etiketten overnemen en controleren</a>, of bekijk direct <a href="/merken/">alle merken</a> en hun recepten.</p>
+        <p><strong>Verder lezen:</strong> ontdek <a href="/hoe-wij-vergelijken.html">hoe wij etiketten overnemen en controleren</a>, bekijk direct <a href="/merken/">alle merken</a> en hun recepten, of zoek <a href="/hondenvoer-zonder.html">hondenvoer zonder een specifiek allergeen</a>.</p>
       </div>`
 
   return shell({
@@ -291,6 +293,16 @@ const methodePagina = () => {
 /* ------------------------------------------------------------------ */
 /* Merkpagina's                                                        */
 /* ------------------------------------------------------------------ */
+
+async function haalTermen() {
+  if (!SUPABASE_URL || !SUPABASE_KEY) return []
+  const antwoord = await fetch(`${SUPABASE_URL}/rest/v1/ingredient_terms?select=term,kind,allergen_keys&order=term`, {
+    headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}` }
+  })
+  if (!antwoord.ok) throw new Error(`HTTP ${antwoord.status}`)
+  const rijen = await antwoord.json()
+  return rijen.map((term) => ({ term: term.term, kind: term.kind, allergen_keys: Array.isArray(term.allergen_keys) ? term.allergen_keys.filter(Boolean) : [] }))
+}
 
 async function haalProducten() {
   if (!SUPABASE_URL || !SUPABASE_KEY) return null
@@ -460,6 +472,168 @@ ${regels}
 }
 
 /* ------------------------------------------------------------------ */
+/* Allergeenpagina's                                                   */
+/* ------------------------------------------------------------------ */
+
+const ALLERGEEN_KEUZE = [
+  ['chicken', 'kip'],
+  ['beef', 'rund'],
+  ['lamb', 'lam'],
+  ['turkey', 'kalkoen'],
+  ['duck', 'eend'],
+  ['fish', 'vis'],
+  ['salmon', 'zalm'],
+  ['wheat', 'tarwe'],
+  ['grains', 'granen'],
+  ['milk', 'melk'],
+  ['egg', 'ei'],
+  ['soy', 'soja'],
+  ['corn', 'maïs'],
+  ['rice', 'rijst'],
+  ['potato', 'aardappel'],
+  ['pea', 'erwt'],
+  ['insect', 'insecten'],
+  ['horse', 'paard']
+]
+
+const VOORBEELDEN = {
+  chicken: '“kippenvet”, “gevogelte”, “bouillon” of “dierlijk eiwit”',
+  beef: '“rundvet”, “dierlijk vet” of “bouillon”',
+  lamb: '“lamsvet”, “dierlijk vet” of “bouillon”',
+  turkey: '“gevogelte”, “gevogeltevet” of “bouillon”',
+  duck: '“gevogelte”, “gevogeltevet” of “bouillon”',
+  fish: '“vismeel”, “visolie” of “dierlijk vet”',
+  salmon: '“visolie”, “vismeel” of “vis”',
+  wheat: '“granen”, “tarwegluten” of “meel”',
+  grains: '“granen”, “graanproducten” of “meel”',
+  milk: '“zuivel”, “wei” of “melkpoeder”',
+  egg: '“ei”, “eipoeder” of “eialbumine”',
+  soy: '“plantaardige eiwitten”, “sojaolie” of “plantaardige olie”',
+  corn: '“granen”, “maïsmeel” of “zetmeel”',
+  rice: '“granen”, “rijstmeel” of “zetmeel”',
+  potato: '“zetmeel”, “aardappeleiwit” of “plantaardige bijproducten”',
+  pea: '“plantaardige eiwitten”, “erwteneiwit” of “plantaardige bijproducten”',
+  insect: '“dierlijke eiwitten”, “insecten” of “bijproducten”',
+  horse: '“dierlijk vet”, “bouillon” of “dierlijke bijproducten”'
+}
+
+function allergeenPagina(key, kort, producten) {
+  const rijen = producten
+    .map((product) => ({ product, match: productMatch(product, [key]) }))
+    .filter(({ match }) => match.kind === 'suitable')
+    .sort((a, b) =>
+      a.product.brand.localeCompare(b.product.brand, 'nl', { sensitivity: 'base' }) ||
+      a.product.name.localeCompare(b.product.name, 'nl', { sensitivity: 'base' })
+    )
+
+  if (rijen.length < 10) return null
+
+  const laatste = rijen.map(({ product }) => product.last_checked_at).filter(Boolean).sort().at(-1)
+  const pad = `/hondenvoer-zonder-${slug(kort)}.html`
+  const voorbeeld = VOORBEELDEN[key] ?? '“dierlijk vet”, “granen” of “bijproducten”'
+
+  const lijst = rijen.map(({ product }) => {
+    const versie = product.recipe_versions?.[0]
+    const uitslag = assessLabel(versie?.ingredients_text ?? '')
+    const bronnen = (uitslag.allergens ?? []).map((k) => ALLERGEN_LABELS[k] ?? k)
+    const bronTekst = bronnen.length
+      ? `Etiket noemt: ${bronnen.slice(0, 6).join(', ')}${bronnen.length > 6 ? ` en ${bronnen.length - 6} meer` : ''}`
+      : 'Geen bekende allergeenbron in de lijst'
+    const type = typeLabel(product.food_type)
+    const maat = product.package_size ? ` · ${escapeHtml(product.package_size)}` : ''
+    return `          <li>
+            <span>
+              <span class="name">${escapeHtml(product.name)}</span><br />
+              <span class="meta"><a href="/merken/${slug(product.brand)}.html">${escapeHtml(product.brand)}</a> · ${escapeHtml(type)}${maat} · ${escapeHtml(bronTekst)}</span>
+            </span>
+            <span class="tag ok">${escapeHtml(ALLERGEN_LABELS[key] ?? kort)} niet genoemd</span>
+          </li>`
+  }).join('\n')
+
+  const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › <a href="/hondenvoer-zonder.html">Zonder allergeen</a> › ${escapeHtml(ALLERGEN_LABELS[key] ?? kort)}</p>
+      <p class="eyebrow">Allergeen</p>
+      <h1>Hondenvoer zonder ${escapeHtml(kort)}</h1>
+      <p class="lead">${rijen.length} recepten van ${new Set(rijen.map(({ product }) => product.brand)).size} merken waarbij het etiket ${escapeHtml(ALLERGEN_LABELS[key] ?? kort).toLowerCase()} niet noemt en geen onduidelijke term voorkomt die ${escapeHtml(kort)} kan verbergen.${laatste ? ` Laatst gecontroleerd op ${datumNl(laatste)}.` : ''}</p>
+      <p><a class="cta" href="/?allergeen=${encodeURIComponent(key)}">Vergelijk zelf zonder ${escapeHtml(kort)}</a></p>
+
+      <div class="callout">
+        <p><strong>Wat betekent dit?</strong> Deze producten noemen ${escapeHtml(kort)} nergens in de ingrediëntenlijst. Dat is geen garantie dat het product geschikt is voor jouw hond: een dierenarts beoordeelt dat. Controleer altijd de verpakking, want fabrikanten kunnen een recept aanpassen.</p>
+      </div>
+
+      <h2>Geschikte recepten zonder ${escapeHtml(kort)}</h2>
+      <ul class="product-list">
+${lijst}
+      </ul>
+
+      <h2>Waar let je op bij “zonder ${escapeHtml(kort)}”?</h2>
+      <p>Een ingrediëntenlijst noemt niet altijd de bron. Woorden als ${voorbeeld} zeggen niet welke dier- of plantsoort erachter zit. Onze keuring markeert zulke woorden en laat het product alleen als “geschikt” zien als ${escapeHtml(kort)} daar aantoonbaar niet achter kan zitten.</p>
+      <p>Let ook op kruisbesmetting in de fabriek en op snacks of beloningen naast de hoofdmaaltijd. Die staan niet in deze lijst.</p>
+
+      <h2>Andere allergenen</h2>
+      <p><a href="/hondenvoer-zonder.html">Bekijk alle overzichten zonder een specifiek allergeen</a>, of lees <a href="/hondenvoer-allergieen.html">hoe je een etiket leest</a>.</p>`
+
+  return {
+    pad,
+    aantal: rijen.length,
+    kort,
+    key,
+    html: shell({
+      titel: `Hondenvoer zonder ${kort}: ${rijen.length} geschikte recepten | Hondenvoervergelijker`,
+      beschrijving: `${rijen.length} hondenvoeders waarbij het etiket ${ALLERGEN_LABELS[key] ?? kort} niet noemt en geen onduidelijke term die ${kort} kan verbergen. Onafhankelijk gecontroleerd${laatste ? ` op ${datumNl(laatste)}` : ''}.`,
+      pad,
+      inhoud,
+      jsonLd: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Hondenvoervergelijker', item: `${SITE}/` },
+            { '@type': 'ListItem', position: 2, name: 'Zonder allergeen', item: `${SITE}/hondenvoer-zonder.html` },
+            { '@type': 'ListItem', position: 3, name: ALLERGEN_LABELS[key] ?? kort, item: `${SITE}${pad}` }
+          ]
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: `Hondenvoer zonder ${kort}`,
+          numberOfItems: rijen.length,
+          itemListElement: rijen.slice(0, 50).map(({ product }, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: `${product.brand} — ${product.name}`
+          }))
+        }
+      ]
+    })
+  }
+}
+
+function zonderHub(paginas) {
+  const regels = [...paginas]
+    .map(({ pad, kort, aantal }) => `          <li><a href="${pad}">Hondenvoer zonder ${escapeHtml(kort)}</a> <span class="meta">(${aantal} recepten)</span></li>`)
+    .join('\n')
+
+  const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › Zonder allergeen</p>
+      <p class="eyebrow">Overzicht</p>
+      <h1>Hondenvoer zonder een specifiek allergeen</h1>
+      <p class="lead">Kies het ingrediënt dat je wilt vermijden. Per allergeen zie je hoeveel recepten het etiket dat ingrediënt niet noemt en waarbij geen onduidelijke term het kan verbergen.</p>
+      <div class="card">
+        <ul class="product-list">
+${regels}
+        </ul>
+      </div>
+      <p><a class="cta" href="/">Vergelijk op alle allergenen tegelijk</a></p>`
+
+  return shell({
+    titel: 'Hondenvoer zonder kip, rund, granen en meer | Hondenvoervergelijker',
+    beschrijving: `Overzichten van hondenvoer zonder kip, rund, lam, vis, tarwe, granen, melk, ei, soja en meer. Onafhankelijk gecontroleerd op de officiële etiketten.`,
+    pad: '/hondenvoer-zonder.html',
+    inhoud,
+    jsonLd: [{ '@context': 'https://schema.org', ...organisatie }]
+  })
+}
+
+/* ------------------------------------------------------------------ */
 /* Uitvoeren                                                           */
 /* ------------------------------------------------------------------ */
 
@@ -507,6 +681,31 @@ if (producten?.length) {
   })
   writeFileSync(join(DIST, 'merken', 'index.html'), merkenIndex(merken))
   console.log(`Geschreven: ${merken.length} merkpagina's en /merken/`)
+
+  // Allergeenpagina's gebruiken dezelfde keuring als de site, inclusief de
+  // woordenlijst uit de database. Zonder die lijst zouden ze strenger zijn dan
+  // de site en onterecht producten missen.
+  let termen = []
+  try {
+    termen = await haalTermen()
+  } catch (fout) {
+    console.log(`Let op: woordenlijst niet opgehaald (${fout.message}); allergeenpagina's gebruiken de ingebouwde woorden.`)
+  }
+  setCustomTerms(termen)
+
+  const allergeenPaginas = []
+  for (const [key, kort] of ALLERGEEN_KEUZE) {
+    const pagina = allergeenPagina(key, kort, producten)
+    if (!pagina) continue
+    writeFileSync(join(DIST, pagina.pad.replace(/^\//, '')), pagina.html)
+    adressen.push({ loc: `${SITE}${pagina.pad}`, prioriteit: '0.8' })
+    allergeenPaginas.push(pagina)
+  }
+  if (allergeenPaginas.length) {
+    writeFileSync(join(DIST, 'hondenvoer-zonder.html'), zonderHub(allergeenPaginas))
+    adressen.push({ loc: `${SITE}/hondenvoer-zonder.html`, prioriteit: '0.9' })
+    console.log(`Geschreven: ${allergeenPaginas.length} allergeenpagina's en /hondenvoer-zonder.html`)
+  }
 } else if (existsSync(join(WORTEL, 'public', 'sitemap.xml'))) {
   const basis = readFileSync(join(WORTEL, 'public', 'sitemap.xml'), 'utf8')
   for (const treffer of basis.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)) {
