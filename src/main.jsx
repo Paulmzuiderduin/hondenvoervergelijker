@@ -2,6 +2,7 @@ import React, { memo, useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, allergenSearchTerms, assessLabel, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients, missingAllergenKeys, setCustomTerms, sortAllergenKeys } from './lib/allergens'
 import { isReviewOverdue, productMatch } from './lib/matcher'
+import { leesAllergenen, leesMerken, schrijfFilters } from './lib/urlFilters'
 import { supabase } from './lib/supabase'
 import './styles.css'
 
@@ -436,34 +437,16 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
 }
 
 function leesAllergenenUitUrl() {
-  const raw = new URLSearchParams(window.location.search).get('allergenen')
-  if (!raw) return []
-  const geldig = new Set(ALLERGENS.map(({ key }) => key))
-  return [...new Set(raw.split(',').map((key) => key.trim().toLowerCase()).filter((key) => geldig.has(key)))]
+  return leesAllergenen(new URLSearchParams(window.location.search))
 }
 
-function zetFiltersInUrl(brands, gekozenAllergenen, alleMerken) {
-  const params = new URLSearchParams(window.location.search)
-  params.delete('merk')
-  params.delete('nietmerk')
-  params.delete('geenmerken')
-  if (brands === null) {
-    // Alle merken: geen merkparameter.
-  } else if (brands.length === 0) {
-    params.set('geenmerken', '1')
-  } else {
-    const alle = Array.isArray(alleMerken) ? alleMerken : []
-    const gekozen = new Set(brands)
-    const uitgesloten = alle.filter((brand) => !gekozen.has(brand))
-    // Houd de URL kort: noem de kleinste van de twee groepen.
-    if (alle.length && uitgesloten.length < brands.length) {
-      for (const brand of uitgesloten) params.append('nietmerk', brand)
-    } else {
-      for (const brand of brands) params.append('merk', brand)
-    }
-  }
-  if (gekozenAllergenen.length) params.set('allergenen', gekozenAllergenen.join(','))
-  else params.delete('allergenen')
+function zetFiltersInUrl(brands, gekozenAllergenen, alleMerken, brandMode) {
+  const params = schrijfFilters(new URLSearchParams(window.location.search), {
+    brands,
+    mode: brandMode,
+    allergenen: gekozenAllergenen,
+    alleMerken
+  })
   const zoek = params.toString()
   const volgende = `${window.location.pathname}${zoek ? `?${zoek}` : ''}${window.location.hash}`
   const huidig = `${window.location.pathname}${window.location.search}${window.location.hash}`
@@ -474,7 +457,7 @@ function App() {
   const [products, setProducts] = useState([]); const [loading, setLoading] = useState(true); const [loadError, setLoadError] = useState('')
   const [terms, setTerms] = useState([]); const [termsError, setTermsError] = useState(''); const [termsOud, setTermsOud] = useState(false)
   const [allergens, setAllergens] = useState(leesAllergenenUitUrl); const [types, setTypes] = useState(FOOD_TYPES.map(([key]) => key))
-  const [selectedBrands, setSelectedBrands] = useState(null); const [brandSearch, setBrandSearch] = useState('')
+  const [selectedBrands, setSelectedBrands] = useState(null); const [brandMode, setBrandMode] = useState('include'); const [brandSearch, setBrandSearch] = useState('')
   const [allergenSearch, setAllergenSearch] = useState('')
   const [urlKlaar, setUrlKlaar] = useState(false)
   const [admin, setAdmin] = useState(false); const [session, setSession] = useState(null); const [isAdmin, setIsAdmin] = useState(false); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [authMessage, setAuthMessage] = useState(''); const [recovery, setRecovery] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery'); const [newPassword, setNewPassword] = useState(''); const [repeatPassword, setRepeatPassword] = useState('')
@@ -488,33 +471,12 @@ function App() {
     diepeLinkToegepast.current = true
     const params = new URLSearchParams(window.location.search)
     const alle = [...new Set(products.map(({ brand }) => brand).filter(Boolean))]
-    if (params.get('geenmerken') === '1') {
-      setSelectedBrands([])
-      setBrandSearch('')
-      setUrlKlaar(true)
-      return
-    }
-    const nietmerken = params.getAll('nietmerk').map((merk) => merk.trim()).filter(Boolean)
-    if (nietmerken.length) {
-      const uitgesloten = new Set(nietmerken.map((merk) => merk.toLowerCase()))
-      const gevonden = alle.filter((brand) => !uitgesloten.has(brand.toLowerCase()))
-      setSelectedBrands(gevonden.length === alle.length ? null : gevonden)
-      setBrandSearch('')
-      setUrlKlaar(true)
-      return
-    }
-    const merken = params.getAll('merk').map((merk) => merk.trim()).filter(Boolean)
-    if (!merken.length) {
-      setUrlKlaar(true)
-      return
-    }
-    const gevonden = alle.filter((brand) => merken.some((merk) => merk.toLowerCase() === brand.toLowerCase()))
-    if (gevonden.length) {
-      setSelectedBrands(gevonden.length === alle.length ? null : gevonden)
-      setBrandSearch('')
-      if (gevonden.length === 1) {
-        window.setTimeout(() => document.getElementById('resultaten')?.scrollIntoView({ block: 'start' }), 100)
-      }
+    const { brands, mode } = leesMerken(params, alle)
+    setSelectedBrands(brands)
+    setBrandMode(mode)
+    setBrandSearch('')
+    if (Array.isArray(brands) && brands.length === 1) {
+      window.setTimeout(() => document.getElementById('resultaten')?.scrollIntoView({ block: 'start' }), 100)
     }
     setUrlKlaar(true)
   }, [products])
@@ -524,8 +486,8 @@ function App() {
   // gedeelde link dezelfde selectie laat zien.
   useEffect(() => {
     if (!urlKlaar) return
-    zetFiltersInUrl(selectedBrands, allergens, alleMerken)
-  }, [selectedBrands, allergens, urlKlaar, alleMerken])
+    zetFiltersInUrl(selectedBrands, allergens, alleMerken, brandMode)
+  }, [selectedBrands, allergens, urlKlaar, alleMerken, brandMode])
   useEffect(() => {
     document.title = Array.isArray(selectedBrands) && selectedBrands.length === 1
       ? `${selectedBrands[0]} hondenvoer vergelijken op allergenen | Hondenvoervergelijker`
@@ -600,11 +562,30 @@ function App() {
   const zichtbareProducten = alleResultaten.slice((huidigePagina - 1) * PAGE_SIZE, huidigePagina * PAGE_SIZE)
   const gaNaarPagina = (nieuw) => { setPage(Math.min(Math.max(1, nieuw), aantalPaginas)); document.getElementById('resultaten')?.scrollIntoView({ block: 'start' }) }
   const merkActief = (merk) => selectedBrands === null || selectedBrands.includes(merk)
-  const wisselMerk = (merk, aangevinkt) => setSelectedBrands((huidig) => {
-    const basis = huidig ?? alleMerken
-    const volgende = aangevinkt ? [...new Set([...basis, merk])] : basis.filter((item) => item !== merk)
-    return volgende.length === alleMerken.length ? null : volgende
-  })
+  const wisselMerk = (merk, aangevinkt) => {
+    const basis = selectedBrands ?? alleMerken
+    if (aangevinkt) {
+      const volgende = [...new Set([...basis, merk])]
+      if (volgende.length >= alleMerken.length) {
+        setSelectedBrands(null)
+        setBrandMode('include')
+      } else {
+        setSelectedBrands(volgende)
+      }
+      return
+    }
+    const volgende = basis.filter((item) => item !== merk)
+    if (selectedBrands === null) {
+      // Vanuit "alle merken" één merk uitvinken: vanaf nu is het een uitsluitlijst.
+      setSelectedBrands(volgende)
+      setBrandMode('exclude')
+    } else if (!volgende.length) {
+      setSelectedBrands([])
+      setBrandMode('include')
+    } else {
+      setSelectedBrands(volgende)
+    }
+  }
   const geenMerken = Array.isArray(selectedBrands) && selectedBrands.length === 0
   const geenTypes = types.length === 0
   const filterMelding = geenMerken && geenTypes ? 'Kies links minstens één merk en één voertype.' : geenMerken ? 'Kies links minstens één merk om producten te vergelijken.' : 'Kies links minstens één voertype om producten te vergelijken.'
@@ -662,8 +643,8 @@ function App() {
             <h3>Merken <a className="filter-heading-link" href="/merken/">alle merken</a></h3>
             <p className="filter-summary">{selectedBrands === null ? `Alle ${alleMerken.length} merken doen mee` : `${selectedBrands.length} van ${alleMerken.length} merken geselecteerd`}</p>
             <div className="filter-actions">
-              <button type="button" className={selectedBrands === null ? 'active' : ''} aria-pressed={selectedBrands === null} onClick={() => { setSelectedBrands(null); setBrandSearch('') }}>Alles</button>
-              <button type="button" className={geenMerken ? 'active' : ''} aria-pressed={geenMerken} onClick={() => setSelectedBrands([])}>Niets</button>
+              <button type="button" className={selectedBrands === null ? 'active' : ''} aria-pressed={selectedBrands === null} onClick={() => { setSelectedBrands(null); setBrandMode('include'); setBrandSearch('') }}>Alles</button>
+              <button type="button" className={geenMerken ? 'active' : ''} aria-pressed={geenMerken} onClick={() => { setSelectedBrands([]); setBrandMode('include') }}>Niets</button>
             </div>
             <label className="brand-search-label">Zoek merk<input type="search" value={brandSearch} placeholder="Bijv. Acana, Royal Canin, Hill's" onChange={(event) => setBrandSearch(event.target.value)} /></label>
             <div className="brand-list">
@@ -719,7 +700,7 @@ function App() {
                     : <>Elk etiket in deze selectie bevat minstens één verzamelterm (zoals “dierlijk vet” of “granen”) die een allergeen kan verbergen. Kies de allergenen die je wilt vermijden om te zien welke producten daarvoor wél geschikt zijn.</>}</p>
                   <div className="no-suitable-actions">
                     {allergens.length > 0 && <button type="button" onClick={() => setAllergens([])}>Allergenen wissen</button>}
-                    <button type="button" onClick={() => { setSelectedBrands(null); setBrandSearch(''); setTypes(FOOD_TYPES.map(([key]) => key)) }}>Alle merken en voertypes</button>
+                    <button type="button" onClick={() => { setSelectedBrands(null); setBrandMode('include'); setBrandSearch(''); setTypes(FOOD_TYPES.map(([key]) => key)) }}>Alle merken en voertypes</button>
                     <a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a>
                   </div>
                 </div>}
