@@ -78,7 +78,12 @@ function shell({ titel, beschrijving, pad, inhoud, jsonLd = [], extraKop = '' })
     <meta property="og:title" content="${escapeHtml(titel)}" />
     <meta property="og:description" content="${escapeHtml(beschrijving)}" />
     <meta property="og:url" content="${canonical}" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="${SITE}/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Hondenvoervergelijker: hondenvoer vergelijken op allergenen" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="${SITE}/og-image.png" />
     <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
     <link rel="stylesheet" href="/pagina.css" />
     <title>${escapeHtml(titel)}</title>

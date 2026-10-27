@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#175b30" />
+  <g fill="#ffffff" font-family="Helvetica, Arial, sans-serif">
+    <text x="80" y="120" font-size="28" font-weight="700" letter-spacing="4" fill="#b9dcc4">HONDENVOERVERGELIJKER</text>
+    <text x="80" y="218" font-size="64" font-weight="700">Hondenvoer vergelijken</text>
+    <text x="80" y="294" font-size="64" font-weight="700">op allergenen</text>
+    <text x="80" y="366" font-size="30" fill="#dcebe0">1.400+ recepten van 50 merken, op basis van</text>
+    <text x="80" y="408" font-size="30" fill="#dcebe0">de officiële ingrediëntenlijsten van fabrikanten.</text>
+  </g>
+  <g font-family="Helvetica, Arial, sans-serif">
+    <rect x="80" y="470" width="310" height="58" rx="3" fill="#f2c94c" />
+    <text x="104" y="507" font-size="23" font-weight="700" fill="#14371f">Onafhankelijk · gratis</text>
+    <text x="418" y="507" font-size="22" fill="#cfe4d5">Controleer altijd het etiket</text>
+  </g>
+  <g transform="translate(1004 80)">
+    <rect width="116" height="116" rx="16" fill="#0f3d20" />
+    <g transform="translate(26 26)">
+      <g transform="rotate(-24 32 24)" fill="#f4c542">
+        <rect x="19" y="21" width="26" height="7" rx="3.5" />
+        <circle cx="19" cy="21" r="4" />
+        <circle cx="19" cy="28" r="4" />
+        <circle cx="45" cy="21" r="4" />
+        <circle cx="45" cy="28" r="4" />
+      </g>
+      <rect x="8" y="38" width="48" height="9" rx="4.5" fill="#fafbf8" />
+      <path d="M12 47h40c-1.5 10-8 15-20 15s-18.5-5-20-15z" fill="#fafbf8" />
+    </g>
+  </g>
+</svg>
