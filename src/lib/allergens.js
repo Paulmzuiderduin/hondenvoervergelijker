@@ -395,7 +395,7 @@ const PROCESS_TERMS = [
   'vers', 'verse', 'fresh', 'gedroogd*', 'dried', 'gedehydreerd*', 'gedehydrateerd*', 'dehydrated',
   'gedehydeerd*', 'gehydroliseerd*', 'gehydrolyseerd*', 'hydrolysed', 'cooked', 'getextureerd*', 'getextrudeerd*',
   'ontsloten*', 'gemalen*', 'gekookt*', 'geperst*', 'gestoomd', 'verrijkt*', 'verwerkt*', 'bevroren*', 'frozen',
-  'gegrild*', 'gebakken*', 'gemengd*', 'gedeeltelijk*', 'totaal', 'totale', 'min', 'max', 'minimaal', 'maximaal',
+  'gegrild*', 'gebakken*', 'gemengd*', 'gedeeltelijk*', 'totaal', 'totale', 'min', 'max', 'ca', 'minimaal', 'maximaal',
   'gelijkwaardig', 'gerehydrateerd*', 'gehydrateerd*', 'volkoren', 'wholegrain', 'heel', 'hele',
   'stuk', 'stukken', 'deel', 'delen', 'gedeelte', 'gedeelten', 'daarvan', 'waarvan', 'which', 'waaronder',
   'met', 'en', 'of', 'van', 'in', 'op', 'aan', 'het', 'de', 'een', 'zijn', 'eigen', 'als', 'bron',
@@ -439,6 +439,10 @@ const INERT_INGREDIENT_TERMS = [
   'eierschaal*', 'eierschalen*', 'eischaal*', 'eischalen*', 'oesterschelp*', 'oesterschaal*',
   // Johannesbroodpitmeel is een verdikkingsmiddel (E410), geen johannesbroodvrucht.
   'johannesbroodpitmeel*',
+  // Planten die met een dier- of zuivelwoord beginnen, maar zelf geen dier of
+  // zuivel zijn. Zonder deze uitzondering zou "eendenkroos" als eend gelden.
+  'eendenkroos*', 'ganzenvoet*', 'ganzenbloem*', 'kippenkruid*', 'melkdistel*', 'krabbenscheer*',
+  'boterbloem*', 'kaasjeskruid*', 'hertshooi*', 'varkensgras*', 'geitenkruid*', 'konijnenkruid*', 'honingklaver*',
   'andeszout*', 'palmitinezuur*', 'stearinezuur*'
 ]
 
@@ -461,11 +465,23 @@ const COLON = '\u0004'
 const STOP = '\u0005'
 const MARKER = { [OPEN]: '(', [CLOSE]: ')', [BREAK]: ',', [COLON]: ':', [STOP]: ';' }
 
+// Woorden die tussen een bron en een haakjesgroep of "van" mogen staan zonder
+// zelf de bron te zijn: lidwoorden, bereidingswoorden en hoeveelheidswoorden.
+const SOURCE_FILLERS = new Set([
+  'de', 'het', 'een', 's', 't',
+  'vrije', 'uitloop', 'biologische', 'biologisch', 'rauwe', 'rauw', 'verse', 'vers', 'hele', 'heel',
+  'gedroogde', 'gedroogd', 'gekookte', 'gekookt',
+  'min', 'max', 'ca', 'circa', 'ongeveer', 'tenminste', 'minstens', 'ten', 'minste', 'hoogste', 'laagste'
+])
+
 function markedTokens(value = '') {
   return String(value)
     .toLocaleLowerCase('nl-NL')
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
+    // "min." en "ca." zijn afkortingen, geen zinseinde.
+    .replace(/\b(min|max|ca|incl|excl|bijv|resp)\./g, ' $1 ')
+    .replace(/\s+[-–—]\s+/g, ` ${COLON} `)
     .replace(/\(/g, ` ${OPEN} `)
     .replace(/\)/g, ` ${CLOSE} `)
     .replace(/,/g, ` ${BREAK} `)
@@ -510,6 +526,7 @@ let COMPILED_UNCERTAIN_TERMS = []
 let COMPILED_RISK_TERMS = []
 let COMPILED_KNOWN_TERMS = []
 let COMPILED_INERT_TERMS = []
+let COMPILED_INERT_CUSTOM_TERMS = []
 let CONCRETE_SOURCE_TERMS = []
 let COMPILED_HYDROLYSED_TERMS = []
 
@@ -546,13 +563,13 @@ function buildVocabulary() {
     // bekend: het staat niet meer als open vraag in de takenlijst.
     ...bron.map((term) => compileTerm(term.term))
   ]
+  COMPILED_INERT_CUSTOM_TERMS = onschuldig.map((term) => compileTerm(term.term))
   CONCRETE_SOURCE_TERMS = [
     ...Object.entries(ALLERGEN_SYNONYMS)
       .filter(([key]) => !UMBRELLA_KEYS.has(key))
       .flatMap(([, terms]) => terms)
       .concat(bron.filter((term) => !(term.allergen_keys ?? []).some((key) => UMBRELLA_KEYS.has(key))).map((term) => term.term)),
-    ...OTHER_SOURCE_TERMS,
-    ...onschuldig.map((term) => term.term)
+    ...OTHER_SOURCE_TERMS
   ].map(compileTerm)
   COMPILED_HYDROLYSED_TERMS = HYDROLYSED_TERMS.map(compileTerm)
   COMPILED_INERT_TERMS = INERT_INGREDIENT_TERMS.map(compileTerm)
@@ -561,13 +578,14 @@ function buildVocabulary() {
 // Een mineraal ("eierschaal", "oesterschelp") of een "vrij"-woord
 // ("graanvrije") is geen bron, ook al zit er een allergeenwoord in.
 function isNonSourceToken(token) {
-  return /vrij(e)?$/.test(token) || COMPILED_INERT_TERMS.some((term) => termMatches([token], term))
+  return /vrij(e)?$/.test(token) || isInertToken(token)
 }
 
 // Welke allergeenbron wijst dit woord aan? "kip*" wel, "gevogelte" ook (dan is de
 // groep genoemd), "eiwit" niet. Wordt gebruikt om bij een hydrolysewoord de bron
 // te vinden die er in dezelfde reeks bij staat.
 function sourceKeysOf(word) {
+  if (isInertToken(word)) return []
   const keys = []
   for (const { key, terms } of COMPILED_ALLERGEN_TERMS) {
     if (terms.some((term) => termMatches([word], term))) keys.push(key)
@@ -618,8 +636,16 @@ function markKnownWords(tokens) {
   return known
 }
 
+function isInertCustomToken(token) {
+  return COMPILED_INERT_CUSTOM_TERMS.some((term) => termMatches([token], term))
+}
+
+function isInertToken(token) {
+  return isInertCustomToken(token) || COMPILED_INERT_TERMS.some((term) => termMatches([token], term))
+}
+
 function isConcreteSource(token) {
-  return CONCRETE_SOURCE_TERMS.some((term) => termMatches([token], term))
+  return !isInertToken(token) && CONCRETE_SOURCE_TERMS.some((term) => termMatches([token], term))
 }
 
 buildVocabulary()
@@ -656,15 +682,14 @@ function parentheticalSource(tokens, depthBefore, breakBefore, index) {
   while (before >= 0 && depthBefore[before] !== 0) before -= 1
   if (before < 0) return false
 
-  // "Kip, 25% (lever, hart)": een komma vóór een losse hoeveelheid betekent
-  // dat de haakjesgroep een nieuw ingrediënt begint.
-  if (/^\d+$/.test(tokens[before]) && breakBefore[before]) return false
-
-  // Loop terug over hoeveelheden. Een bron die zelf na een komma begint
-  // ("..., rund (lever, hart)") is wél de bron van deze haakjesgroep.
+  // Loop terug over hoeveelheden en vulwoorden. Een bron die zelf na een komma
+  // begint ("..., rund (lever, hart)") is wél de bron van deze haakjesgroep.
   for (let cursor = before; cursor >= 0; cursor -= 1) {
-    if (depthBefore[cursor] !== 0 || /^\d+$/.test(tokens[cursor])) continue
-    return isConcreteSource(tokens[cursor])
+    if (depthBefore[cursor] !== 0) continue
+    if (isConcreteSource(tokens[cursor])) return true
+    if (breakBefore[cursor]) return false
+    if (/^\d+$/.test(tokens[cursor]) || SOURCE_FILLERS.has(tokens[cursor])) continue
+    return false
   }
   return false
 }
@@ -707,13 +732,23 @@ export function assessLabel(ingredientsText = '') {
     if (token === ',') { if (depth === 0) pendingBreak = true; continue }
     if (token === ':') {
       // "63% Konijn: 44% rug, 13% vlees" — de delen na de dubbele punt horen bij
-      // het dier dat er vóór staat.
+      // het dier dat er vóór staat. Sla hoeveelheden en vulwoorden over, zodat
+      // "Kip 25%: lever, hart" ook bij kip hoort.
       if (depth === 0) {
-        const heading = tokens[tokens.length - 1]
+        let cursor = tokens.length - 1
+        while (cursor >= 0 && (/^\d+$/.test(tokens[cursor]) || SOURCE_FILLERS.has(tokens[cursor]))) cursor -= 1
+        const heading = tokens[cursor]
         anchor = heading && isConcreteSource(heading) ? heading : anchor
         pendingBreak = true
       }
       continue
+    }
+    if (token === 'met' && depth === 0) {
+      // "Kip met lever en hart": de delen na "met" horen bij de kip.
+      let cursor = tokens.length - 1
+      while (cursor >= 0 && (/^\d+$/.test(tokens[cursor]) || SOURCE_FILLERS.has(tokens[cursor]))) cursor -= 1
+      const heading = tokens[cursor]
+      if (heading && isConcreteSource(heading)) { anchor = heading; continue }
     }
     if (token === ';') {
       // Een puntkomma of punt begint een nieuwe reeks: de kop vervalt.
@@ -769,8 +804,14 @@ export function assessLabel(ingredientsText = '') {
     const startsPhrase = start === 0 || breakBefore[start] || depthBefore[start] > 0 || /^\d+$/.test(tokens[start - 1] ?? '')
     if (startsPhrase && isConcreteSource(tokens[end]) && endsPhrase(end)) return true
     if (!['van', 'from', 'of'].includes(tokens[end])) return false
-    const bron = tokens[end + 1]
-    return Boolean(bron) && (sourceKeysOf(bron).length > 0 || isConcreteSource(bron))
+    // "hart van de kip", "lever van het rund", "hart van vrije uitloop kip":
+    // sla lidwoorden, bereidingswoorden en hoeveelheden over.
+    for (let cursor = end + 1; cursor < tokens.length; cursor += 1) {
+      if (breakBefore[cursor] || depthBefore[cursor] > 0) return false
+      if (isConcreteSource(tokens[cursor])) return true
+      if (!SOURCE_FILLERS.has(tokens[cursor])) return false
+    }
+    return false
   }
   // Staat er vlak vóór een risicowoord een verzamelwoord ("gevogelte-eiwit",
   // "dierlijk eiwit"), dan is de bron wél genoemd, alleen niet welke soort. Dan

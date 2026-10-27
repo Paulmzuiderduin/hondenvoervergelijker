@@ -77,6 +77,20 @@ test('een zelf ingedeeld woord geldt meteen voor alle producten', () => {
   setCustomTerms([])
   assert.deepEqual(assessLabel('Kip 40%, glucosamine, erwten').unknown, ['glucosamine'])
 })
+test('een onschuldig plantwoord wordt geen dierlijke bron', () => {
+  setCustomTerms([
+    { term: 'eendenkroos', kind: 'onschuldig' },
+    { term: 'ganzenvoet', kind: 'onschuldig' },
+    { term: 'kippenkruid', kind: 'onschuldig' }
+  ])
+  for (const tekst of ['Eendenkroos', 'Ganzenvoet', 'Kippenkruid']) {
+    assert.deepEqual(assessLabel(tekst).allergens, [], tekst)
+  }
+  assert.deepEqual(assessLabel('Dierlijk vet (eendenkroos)').allergens, [])
+  assert.equal(assessLabel('Dierlijk vet (eendenkroos)').status, 'aandacht')
+  setCustomTerms([])
+})
+
 test('een onduidelijk woord kan ook juist een paar allergenen verbergen', () => {
   // Glucosamine komt van schaaldieren of van mais; een ei kan er niet achter
   // zitten. Zonder die keuze zou de site ook voor ei om controle vragen.
@@ -281,6 +295,26 @@ test('delen tussen haakjes erven de diersoort ervoor', () => {
   assert.equal(assessLabel('Gevogelte (lever, hart)').status, 'aandacht')
 })
 
+test('een bron na "van" mag lidwoorden en bereidingswoorden hebben', () => {
+  assert.deepEqual(assessLabel('Hart van de kip').allergens, ['chicken'])
+  assert.deepEqual(assessLabel('Hart van de kip').hidden, [])
+  assert.deepEqual(assessLabel('Lever van het rund').allergens, ['beef'])
+  assert.deepEqual(assessLabel('Lever van het rund').hidden, [])
+  assert.deepEqual(assessLabel('Hart van vrije uitloop kip').allergens, ['chicken'])
+  assert.deepEqual(assessLabel('Hart van vrije uitloop kip').hidden, [])
+})
+
+test('koppen met percentage, streepje of "met" blijven bij de bron', () => {
+  for (const tekst of ['Kip 25%: lever, hart', 'Kip - lever, hart', 'Kip met lever en hart', 'Kip min. 25% (lever, hart)']) {
+    const u = assessLabel(tekst)
+    assert.deepEqual(u.allergens, ['chicken'], tekst)
+    assert.deepEqual(u.hidden, [], tekst)
+    assert.deepEqual(u.risky, [], tekst)
+  }
+  assert.deepEqual(assessLabel('Rund met lever en hart').allergens, ['beef'])
+  assert.equal(assessLabel('Kip met dierlijk vet').status, 'aandacht')
+})
+
 test('de algemene categorie verklaart een verzamelwoord niet', () => {
   assert.equal(assessLabel('Kalkoenmeel (totaal 14% gevogelte), maïs').status, 'aandacht')
 })
@@ -438,6 +472,15 @@ test('een "vrij"-woord is geen bron', () => {
 test('een plant die met een dier- of boonwoord begint is geen dier of boon', () => {
   assert.deepEqual(assessLabel('Paardenbloem, bonenkruid').allergens, ['dandelion', 'savory'])
   assert.deepEqual(assessLabel('Paardenvlees, bonen').allergens, ['horse', 'bean'])
+})
+
+test('planten met een dier- of zuivelprefix zijn geen dier of zuivel', () => {
+  for (const tekst of ['Eendenkroos', 'Ganzenvoet', 'Kippenkruid', 'Melkdistel', 'Boterbloem', 'Kaasjeskruid', 'Hertshooi', 'Varkensgras']) {
+    assert.deepEqual(assessLabel(tekst).allergens, [], tekst)
+  }
+  const vet = assessLabel('Dierlijk vet (eendenkroos)')
+  assert.equal(vet.status, 'aandacht')
+  assert.deepEqual(vet.allergens, [])
 })
 
 test('gewone etiketwoorden zijn bekend', () => {
