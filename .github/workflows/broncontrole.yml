@@ -25,6 +25,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Afhankelijkheden installeren (playwright-core voor de browsercontrole)
+        run: npm ci
       - name: Bronpagina's vergelijken met de importbestanden
         id: vergelijken
         continue-on-error: true
