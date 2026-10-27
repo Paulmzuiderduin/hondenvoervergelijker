@@ -121,7 +121,7 @@ ${inhoud}
           <a href="/privacybeleid.html">Privacybeleid</a>
         </nav>
         <p>© ${new Date().getFullYear()} Hondenvoervergelijker · Paul Zuiderduin · <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a></p>
-        <p>Deze site vergelijkt uitsluitend overgenomen etiketinformatie. De resultaten vormen geen medisch advies en bieden geen garantie. Controleer altijd zelf de verpakking en overleg bij medische klachten met een dierenarts.</p>
+        <p>Deze site vergelijkt uitsluitend overgenomen etiketinformatie. De resultaten vormen geen medisch advies en bieden geen 100% garantie. Controleer altijd zelf de verpakking en overleg bij medische klachten met een dierenarts.</p>
       </footer>
     </main>
   </body>
