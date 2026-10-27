@@ -91,7 +91,11 @@ function shell({ titel, beschrijving, pad, inhoud, jsonLd = [], extraKop = '' })
     <meta property="og:image:alt" content="Hondenvoervergelijker: hondenvoer vergelijken op allergenen" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="${SITE}/og-image.png" />
-    <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
     <link rel="stylesheet" href="/pagina.css" />
     <title>${escapeHtml(titel)}</title>
     ${jsonLd.map((blok) => `<script type="application/ld+json">${JSON.stringify(blok)}</script>`).join('\n    ')}
@@ -101,7 +105,7 @@ function shell({ titel, beschrijving, pad, inhoud, jsonLd = [], extraKop = '' })
     <header class="site">
       <div class="header-inner">
         <a class="brand" href="/">
-          <img src="/favicon.svg" alt="" width="32" height="32" />
+          <img src="/favicon-192.png" alt="" width="32" height="32" />
           <span>
             <strong>Hondenvoervergelijker</strong>
             <span>Onafhankelijk hondenvoer vergelijken</span>
