@@ -145,23 +145,23 @@ const allergiePagina = () => {
   const faq = [
     {
       vraag: 'Wat is het verschil tussen een voedselallergie en een voedselintolerantie bij honden?',
-      antwoord: 'Bij een allergie reageert het afweersysteem op een eiwit, meestal met jeuk, huidklachten of maag-darmklachten. Bij een intolerantie is er geen afweerreactie maar een verteringsprobleem, bijvoorbeeld door te veel vet of een specifiek ingrediënt. Alleen een dierenarts kan het onderscheid maken, vaak met een eliminatiedieet.'
+      antwoord: 'Bij een allergie reageert het immuunsysteem overgevoelig op een specifiek eiwit, wat vaak resulteert in jeuk, huidklachten of maag-darmproblemen. Bij een intolerantie is er geen sprake van een immuunreactie, maar van een verteringsprobleem (bijvoorbeeld door een te hoog vetgehalte of een specifieke voedingsstof). Vaak kan alleen een dierenarts, met behulp van een strikt eliminatiedieet, het juiste onderscheid maken.'
     },
     {
-      vraag: 'Hoe lees ik een ingrediëntenlijst op hondenvoer?',
-      antwoord: 'Ingrediënten staan in aflopende volgorde van gewicht. Let op verzameltermen zoals “vlees en dierlijke bijproducten”, “granen”, “dierlijk vet” en “bouillon”: die noemen geen diersoort of plant. Voor een eliminatiedieet wil je een lijst waarin elke bron bij name staat, met percentages.'
+      vraag: 'Hoe lees ik de ingrediëntenlijst op hondenvoer?',
+      antwoord: 'Ingrediënten worden altijd vermeld in aflopende volgorde van gewicht. Wees waakzaam voor vage verzameltermen zoals “vlees en dierlijke bijproducten”, “granen”, “dierlijk vet” en “bouillon”, omdat deze geen specifieke dier- of plantensoort noemen. Voor een succesvol eliminatiedieet zoek je naar een product waarbij elk ingrediënt exact met naam (en idealiter met percentage) wordt vermeld.'
     },
     {
       vraag: 'Wat betekent “gehydrolyseerd eiwit” op een etiket?',
-      antwoord: 'Het eiwit is in kleine stukjes geknipt, waardoor het afweersysteem het vaak minder snel herkent. Dat betekent niet automatisch dat het veilig is: de bron blijft hetzelfde. Een dierenarts beoordeelt of een hydrolysaat in jouw situatie past.'
+      antwoord: 'Dit betekent dat het eiwit in zulke kleine fragmenten is opgeknipt dat het immuunsysteem van de hond het in veel gevallen niet meer als allergeen herkent. Dit garandeert echter niet dat het voor elke hond 100% veilig is, aangezien de oorspronkelijke bron onveranderd blijft. Een dierenarts kan het beste inschatten of een gehydrolyseerd dieet geschikt is voor jouw hond.'
     },
     {
-      vraag: 'Is “grain free” automatisch geschikt bij een allergie?',
-      antwoord: 'Nee. Een allergie gaat meestal om een eiwitbron, niet om graan als geheel. Een graanvrij product kan nog steeds kip, rund of zuivel bevatten. Andersom kan een graanhoudend product met één gecontroleerde eiwitbron juist wel passen.'
+      vraag: 'Is “grain free” (graanvrij) automatisch een veilige keuze bij een allergie?',
+      antwoord: 'Nee, zeker niet. Een voedselallergie wordt meestal veroorzaakt door een dierlijke eiwitbron (zoals kip, rund of zuivel), niet door granen. Een graanvrij product kan dus nog steeds de eiwitten bevatten waar je hond allergisch voor is. Omgekeerd kan een voeding mét granen, maar met slechts één gecontroleerde (hypoallergene) eiwitbron, wél uitstekend geschikt zijn.'
     },
     {
-      vraag: 'Kan ik deze website gebruiken in plaats van een eliminatiedieet?',
-      antwoord: 'Nee. De website helpt om snel te zien welke bronnen een etiket noemt en waar onduidelijkheden zitten. Een eliminatiedieet en provocatietest horen bij de dierenarts, met een voeding die daar specifiek voor bedoeld is.'
+      vraag: 'Kan ik deze website gebruiken als vervanging voor een eliminatiedieet?',
+      antwoord: 'Nee. Onze website is uitsluitend een hulpmiddel om snel inzicht te krijgen in de samenstelling van etiketten en het opsporen van onduidelijke bronnen. Het uitvoeren van een eliminatiedieet en de daaropvolgende provocatietest dienen altijd onder begeleiding van een dierenarts te gebeuren, met voeding die daar specifiek voor is samengesteld.'
     }
   ]
 
@@ -178,32 +178,32 @@ const allergiePagina = () => {
   const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › Hondenvoer en allergieën</p>
       <p class="eyebrow">Uitleg</p>
       <h1>Hondenvoer en allergieën: zo lees je een etiket</h1>
-      <p class="lead">Bij een vermoede voedselallergie draait bijna alles om één vraag: welke bronnen noemt het etiket wél, en welke verbergt het achter een verzamelterm? Deze pagina legt uit waar je op let en hoe je de vergelijker daarbij gebruikt.</p>
+      <p class="lead">Bij een vermoeden van een voedselallergie draait vrijwel alles om één cruciale vraag: welke ingrediënten worden expliciet op het etiket vermeld, en welke gaan schuil achter onduidelijke verzameltermen? Op deze pagina leggen we uit waar je op moet letten en hoe onze vergelijker je hierbij helpt.</p>
       <p class="updated">Bijgewerkt op ${datumNl(VANDAAG)} · leestijd ongeveer 7 minuten</p>
 
       <div class="callout warn">
-        <p><strong>Geen medisch advies.</strong> Jeuk, haaruitval, oorontsteking, braken of diarree kunnen veel oorzaken hebben. Laat een vermoede allergie altijd onderzoeken door een dierenarts voordat je zelf een dieet start.</p>
+        <p><strong>Geen medisch advies:</strong> klachten zoals jeuk, haaruitval, oorontstekingen, braken of diarree kunnen talloze oorzaken hebben. Laat een vermoede allergie daarom altijd eerst door een dierenarts onderzoeken voordat je zelfstandig met een speciaal dieet begint.</p>
       </div>
 
       <h2>Allergie of intolerantie?</h2>
-      <p>Bij een <strong>voedselallergie</strong> reageert het afweersysteem op een eiwit, vaak een dierlijk eiwit zoals kip, rund, lam of zuivel. Klachten zijn meestal jeuk en huidproblemen, soms ook maag-darmklachten. Bij een <strong>voedselintolerantie</strong> speelt het afweersysteem geen rol; het gaat om een verteringsprobleem. Een eliminatiedieet met daarop een provocatie is de gebruikelijke manier om het verschil vast te stellen.</p>
+      <p>Bij een <strong>voedselallergie</strong> reageert het immuunsysteem van de hond op een specifiek eiwit. Vaak is dit een dierlijk eiwit, zoals afkomstig van kip, rund, lam of zuivel. De klachten uiten zich meestal in jeuk en huidproblemen, en soms in maag-darmklachten. Bij een <strong>voedselintolerantie</strong> is het immuunsysteem niet betrokken; hierbij gaat het om een probleem met de spijsvertering (bijvoorbeeld moeite met het afbreken van bepaalde stoffen). Een eliminatiedieet, gevolgd door een provocatietest, is de meest betrouwbare manier om vast te stellen of het om een allergie of intolerantie gaat.</p>
 
       <h2>Waarom de ingrediëntenlijst zo belangrijk is</h2>
-      <p>De wettelijk verplichte ingrediëntenlijst is de enige plek waar staat wat er echt in het voer zit. Toch is die lijst vaak minder precies dan hij lijkt:</p>
+      <p>De wettelijk verplichte ingrediëntenlijst is de enige plek waar exact staat vermeld wat de voeding daadwerkelijk bevat. In de praktijk blijkt deze lijst echter vaak minder transparant dan hij lijkt:</p>
       <ul>
-        <li><strong>Verzameltermen.</strong> “Vlees en dierlijke bijproducten”, “granen” en “dierlijk vet” noemen geen diersoort of plant. Voor iemand die één specifieke bron vermijdt, is dat een open vraag.</li>
-        <li><strong>Percentages.</strong> “Kip 4%” zegt iets anders dan “kip 40%”. Zonder percentage weet je niet hoeveel van het ingrediënt erin zit.</li>
-        <li><strong>Bijproducten en delen.</strong> Lever, long, hart of karkas zijn nog steeds van een dier afkomstig en tellen voor een allergie dus mee.</li>
-        <li><strong>Bouillon en vetten.</strong> Een “bouillon” of “dierlijk vet” kan van verschillende dieren komen. Staat de bron er niet bij, dan blijft het onzeker.</li>
-        <li><strong>Gehydrolyseerd eiwit.</strong> De eiwitten zijn opgeknipt, maar de bron blijft dezelfde. Een dierenarts beoordeelt of dat in jouw geval uitmaakt.</li>
+        <li><strong>Verzameltermen:</strong> termen als “vlees en dierlijke bijproducten”, “granen” en “dierlijk vet” specificeren geen exacte dier- of plantensoort. Voor baasjes die een specifieke eiwit- of koolhydraatbron willen vermijden, levert dit onzekerheid op.</li>
+        <li><strong>Percentages:</strong> de vermelding “kip 4%” betekent iets heel anders dan “kip 40%”. Zonder duidelijke percentages is de werkelijke samenstelling van het voer moeilijk in te schatten.</li>
+        <li><strong>Bijproducten en organen:</strong> ingrediënten zoals lever, long, hart of karkas zijn nog steeds afkomstig van een specifiek dier. Voor een allergische hond tellen deze orgaanvleessoorten dus net zo zwaar mee als spiervlees.</li>
+        <li><strong>Bouillon en vetten:</strong> een “bouillon” of “dierlijk vet” kan van meerdere diersoorten afkomstig zijn. Zolang de exacte bron ontbreekt, vormt dit een verborgen risico.</li>
+        <li><strong>Gehydrolyseerd eiwit:</strong> bij dit proces zijn de eiwitten dusdanig klein “opgeknipt” dat het immuunsysteem ze minder snel herkent, maar de oorspronkelijke bron blijft gelijk. Overleg altijd met een dierenarts of dit in jullie specifieke situatie een veilige keuze is.</li>
       </ul>
 
       <h2>Zo gebruik je de vergelijker</h2>
       <ol>
-        <li>Kies de allergenen die je wilt vermijden, bijvoorbeeld kip, rund, tarwe of zalm.</li>
-        <li>Bekijk per product of de bron bij name genoemd staat. Producten met een onduidelijke term komen bij “Controleer etiket/fabrikant” te staan.</li>
-        <li>Open de volledige ingrediëntenlijst op de kaart. Rood gemarkeerde woorden noemen geen bron.</li>
-        <li>Twijfel je? Vraag de fabrikant om schriftelijke bevestiging van de bron en bewaar dat antwoord.</li>
+        <li>Selecteer de allergenen die je wilt vermijden (bijvoorbeeld kip, rund, tarwe of zalm).</li>
+        <li>Controleer per product of de bron specifiek met naam wordt genoemd. Producten die vage of onduidelijke termen bevatten, krijgen de status “Controleer etiket/fabrikant”.</li>
+        <li>Open de volledige ingrediëntenlijst op de productkaart. Rood gemarkeerde termen zijn ongespecificeerd en bevatten geen duidelijke bron.</li>
+        <li>Twijfel je nog steeds? Vraag dan de fabrikant om een schriftelijke bevestiging van de gebruikte bronnen en bewaar dit antwoord goed.</li>
       </ol>
       <p><a class="cta" href="/">Open de vergelijker</a> <a class="cta secondary" href="/merken/">Bekijk alle merken</a></p>
 
@@ -211,9 +211,9 @@ const allergiePagina = () => {
       <table>
         <thead><tr><th>Uitslag</th><th>Betekenis</th></tr></thead>
         <tbody>
-          <tr><td><strong>Geschikt</strong></td><td>Het etiket noemt de gekozen bron nergens en er staat geen onduidelijke term in die die bron kan verbergen.</td></tr>
-          <tr><td><strong>Uitgesloten</strong></td><td>De gekozen bron staat met naam in de ingrediëntenlijst.</td></tr>
-          <tr><td><strong>Controleer etiket/fabrikant</strong></td><td>Het etiket noemt een ingrediënt zonder bron, of bevat een woord dat de keuring niet kent. Alleen het etiket of de fabrikant kan dat oplossen.</td></tr>
+          <tr><td><strong>Geschikt</strong></td><td>Het etiket vermeldt de geselecteerde bron nergens. Daarnaast bevat de lijst geen onduidelijke verzameltermen waarachter dit allergeen verborgen kan zitten.</td></tr>
+          <tr><td><strong>Uitgesloten</strong></td><td>De geselecteerde bron staat expliciet met naam genoemd in de ingrediëntenlijst.</td></tr>
+          <tr><td><strong>Controleer etiket/fabrikant</strong></td><td>Het etiket bevat een ingrediënt zonder gespecificeerde bron, of noemt een term die ons systeem niet herkent. Alleen de fabrikant of de originele verpakking kan hier uitsluitsel over geven.</td></tr>
         </tbody>
       </table>
 
@@ -223,7 +223,7 @@ const allergiePagina = () => {
       </div>
 
       <div class="callout">
-        <p><strong>Verder lezen:</strong> <a href="/hoe-wij-vergelijken.html">hoe wij etiketten overnemen en controleren</a>, of bekijk <a href="/merken/">alle merken</a> met hun recepten.</p>
+        <p><strong>Verder lezen:</strong> ontdek <a href="/hoe-wij-vergelijken.html">hoe wij etiketten overnemen en controleren</a>, of bekijk direct <a href="/merken/">alle merken</a> en hun recepten.</p>
       </div>`
 
   return shell({
