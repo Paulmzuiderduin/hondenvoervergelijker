@@ -37,5 +37,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - uses: actions/checkout@v4
       - id: deployment
         uses: actions/deploy-pages@v4
+      # Gratis aanvulling op de sitemap: meldt de URL's bij IndexNow, dat Bing
+      # en andere deelnemers gebruiken. Google leest de sitemap in Search Console.
+      # De site moet live staan voordat dit draait, anders faalt de sleutelcheck.
+      - name: Meld URL's bij IndexNow (Bing)
+        continue-on-error: true
+        run: node scripts/indexnow.mjs
