@@ -1,0 +1,12 @@
+[
+  {
+    "winkel": "Zooplus",
+    "bestand": "zooplus.csv",
+    "netwerk": "Awin"
+  },
+  {
+    "winkel": "Medpets",
+    "bestand": "medpets.csv",
+    "netwerk": "Awin"
+  }
+]

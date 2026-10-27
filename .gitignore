@@ -9,3 +9,11 @@ supabase/.temp/
 
 # Gegenereerd door de wekelijkse browsercontrole; het rapport gaat als artifact mee.
 data/import/broncontrole-browser.md
+
+# Lokale controlelijsten voor handmatige broncontrole.
+data/import/controlelijst-*.html
+
+# Lokale affiliate-feeds en configuratie (public/winkels.json wordt wel gecommit).
+data/winkels/*.csv
+data/winkels/feeds.json
+data/winkels/rapport.md

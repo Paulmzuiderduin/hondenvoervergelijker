@@ -12,6 +12,9 @@
     "check:bronnen": "node scripts/controleer-bronnen.mjs --parallel=6 --pauze=1500",
     "check:bronnen:browser": "node scripts/controleer-bronnen-browser.mjs --parallel=3 --pauze=2000",
     "check:bronnen:lokaal": "node scripts/controleer-bronnen.mjs --ook-browser-sites --parallel=4 --pauze=2000",
+    "bron:lijst": "node scripts/maak-controlelijst.mjs",
+    "bron:gecontroleerd": "node scripts/mark-bron-gecontroleerd.mjs",
+    "winkels:koppel": "node scripts/koppel-winkels.mjs",
     "seo:indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {

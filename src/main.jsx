@@ -119,7 +119,7 @@ const Ingredients = memo(function Ingredients({ text }) {
   return <p>{markUncertainIngredients(text).map((segment, index) => segment.uncertain ? <mark className="uncertain-ingredient" key={index}>{segment.text}</mark> : segment.text)}</p>
 })
 
-function ProductCard({ product, match }) {
+function ProductCard({ product, match, aanbiedingen = [] }) {
   const excluded = match.kind === 'excluded'
   const verdict = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controleer etiket/fabrikant' : match.states.length ? 'Geschikt' : 'Etiket noemt elke bron'
   const version = product.recipe_versions?.[0]
@@ -183,6 +183,22 @@ function ProductCard({ product, match }) {
     {!match.states.length && (verborgenWoorden.length > 0 || nietHerkendeWoorden.length > 0) && <p className="reason"><small>Let op: {verborgenWoorden.length
       ? `dit etiket noemt geen bron voor ${verborgenWoorden.join(', ')}. ${nietHerkendeWoorden.length ? 'Omdat er ook woorden in staan die de keuring niet kent, kan elk allergeen erin zitten.' : dektElkAllergeen ? 'Daardoor kan elk allergeen erin zitten.' : `${labelList(verborgenKeys)} kunnen daar in zitten.`}`
       : 'dit etiket bevat woorden die de keuring niet kent. Daardoor kan elk allergeen erin zitten.'}</small></p>}
+    {aanbiedingen.length > 0 && <div className="shop-links">
+      {aanbiedingen.map((aanbieding) => {
+        const prijs = Number.isFinite(Number(aanbieding.prijs))
+          ? new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(Number(aanbieding.prijs))
+          : ''
+        return <a
+          key={`${aanbieding.winkel}-${aanbieding.url}`}
+          className="shop-link"
+          href={aanbieding.url}
+          target="_blank"
+          rel="sponsored nofollow noopener noreferrer"
+          title={`Affiliate-link naar ${aanbieding.winkel}. Wij ontvangen een kleine commissie, zonder extra kosten voor jou.`}
+        >{aanbieding.winkel}{prijs ? ` · ${prijs}` : ''}{aanbieding.maat ? ` (${aanbieding.maat})` : ''}</a>
+      })}
+      <span className="shop-note">Affiliate-links · prijs bij de winkel</span>
+    </div>}
     {product.source_url?.startsWith('http') && <div className="product-card-footer"><a className="product-link" href={product.source_url} target="_blank" rel="noreferrer">Officiële productpagina bekijken{sourceDomain(product.source_url) ? ` (${sourceDomain(product.source_url)})` : ''} ↗</a></div>}
   </article>
 }
@@ -502,9 +518,22 @@ function App() {
   const [urlKlaar, setUrlKlaar] = useState(false)
   const [admin, setAdmin] = useState(false); const [session, setSession] = useState(null); const [isAdmin, setIsAdmin] = useState(false); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [authMessage, setAuthMessage] = useState(''); const [recovery, setRecovery] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery'); const [newPassword, setNewPassword] = useState(''); const [repeatPassword, setRepeatPassword] = useState('')
   const [matches, setMatches] = useState([])
+  const [aanbod, setAanbod] = useState({})
   const [matchesKlaar, setMatchesKlaar] = useState(false)
   const [page, setPage] = useState(1)
   const diepeLinkToegepast = useRef(false)
+  // Winkelaanbiedingen zijn een losse laag. Ontbreekt het bestand of is het
+  // leeg, dan verandert er niets aan de kaarten.
+  useEffect(() => {
+    let actief = true
+    fetch('/winkels.json', { cache: 'no-cache' })
+      .then((antwoord) => (antwoord.ok ? antwoord.json() : null))
+      .then((data) => {
+        if (actief) setAanbod(data && typeof data.aanbieders === 'object' ? data.aanbieders : {})
+      })
+      .catch(() => {})
+    return () => { actief = false }
+  }, [])
   // Een merkpagina of een gedeelde link kan verwijzen naar /?merk=Royal%20Canin.
   // Pas die selectie één keer toe zodra de producten geladen zijn.
   useEffect(() => {
@@ -789,7 +818,7 @@ function App() {
                   </div>
                 </div>}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
-                {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} />) : <p>Geen producten gevonden voor deze keuze.</p>}
+                {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} aanbiedingen={aanbod[product.id] ?? []} />) : <p>Geen producten gevonden voor deze keuze.</p>}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
               </section>
             )}
