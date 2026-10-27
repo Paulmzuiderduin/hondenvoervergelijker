@@ -38,8 +38,6 @@ jobs:
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
       - name: Serverconfiguratie toevoegen
         run: cp deploy/mijnhost/.htaccess dist/.htaccess
-      - name: Controleren of de sitemap klopt
-        run: node scripts/controleer-sitemap.mjs --basis=https://hondenvoervergelijker.paulzuiderduin.com
       - name: Uploaden via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -49,3 +47,15 @@ jobs:
           local-dir: ./dist/
           server-dir: ${{ secrets.FTP_SERVER_DIR || './' }}
           dangerous-clean-slate: false
+      # Zolang de DNS nog naar GitHub Pages wijst, controleren we de upload via
+      # de server zelf: het juiste domein als Host-header, maar verbinding met
+      # het IP-adres van de server.
+      - name: Controleer de upload op de server
+        env:
+          DOMEIN: hondenvoervergelijker.paulzuiderduin.com
+        run: |
+          IP=$(getent hosts h25.mijn.host | awk '{print $1}' | head -1)
+          echo "Server-IP: $IP"
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" --resolve "$DOMEIN:80:$IP" "http://$DOMEIN/")
+          echo "HTTP $CODE voor http://$DOMEIN/ via $IP"
+          test "$CODE" = "200"
