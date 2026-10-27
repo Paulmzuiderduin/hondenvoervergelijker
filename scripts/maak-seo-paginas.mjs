@@ -438,7 +438,7 @@ function merkenIndex(brands) {
   const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › Merken</p>
       <p class="eyebrow">Overzicht</p>
       <h1>Alle hondenvoermerken in de vergelijker</h1>
-      <p class="lead">${brands.length} merken met samen ${brands.reduce((n, b) => n + b.aantal, 0)} recepten. Kies een merk voor alle ingrediëntenlijsten en de allergeneninformatie per recept.</p>
+      <p class="lead">Ontdek ${brands.length} merken met in totaal ${brands.reduce((n, b) => n + b.aantal, 0)} recepten. Selecteer een merk om direct alle ingrediëntenlijsten en de bijbehorende allergeneninformatie per product te bekijken.</p>
       <div class="card">
         <ul class="product-list">
 ${regels}
