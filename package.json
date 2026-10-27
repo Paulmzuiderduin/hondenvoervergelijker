@@ -9,6 +9,7 @@
     "postbuild": "node scripts/maak-seo-paginas.mjs",
     "preview": "vite preview",
     "test:unit": "node --test tests/unit/**/*.test.js",
+    "controleer:site": "node scripts/controleer-site.mjs",
     "check:bronnen": "node scripts/controleer-bronnen.mjs --parallel=6 --pauze=1500",
     "check:bronnen:browser": "node scripts/controleer-bronnen-browser.mjs --parallel=3 --pauze=2000",
     "check:bronnen:lokaal": "node scripts/controleer-bronnen.mjs --ook-browser-sites --parallel=4 --pauze=2000",

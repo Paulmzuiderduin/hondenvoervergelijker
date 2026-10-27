@@ -65,6 +65,8 @@ jobs:
           test "$CODE" = "200"
       - name: Controleer alle sitemap-URL's
         run: node scripts/controleer-sitemap.mjs --basis=https://hondenvoervergelijker.paulzuiderduin.com
+      - name: Rooktest van de live site
+        run: node scripts/controleer-site.mjs --basis=https://hondenvoervergelijker.paulzuiderduin.com
       - name: Meld URL's bij IndexNow (Bing)
         continue-on-error: true
         run: node scripts/indexnow.mjs
