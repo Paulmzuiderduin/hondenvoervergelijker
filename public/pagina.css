@@ -1,0 +1,84 @@
+/* Gedeelde opmaak voor de statische inhoudspagina's (geen React nodig). */
+:root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #18261c;
+  background: #f6f7f5;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #175b30; }
+a:hover { color: #0f3d20; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 1.25rem 3rem; }
+
+header.site { background: #fff; border-bottom: 1px solid #d3dcd4; }
+.header-inner {
+  max-width: 900px; margin: 0 auto; padding: 0.7rem 1.25rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+}
+.brand { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; color: inherit; }
+.brand img { border-radius: 2px; }
+.brand strong { display: block; font-size: 1.05rem; color: #14371f; line-height: 1.2; }
+.brand span { display: block; font-size: 0.78rem; color: #516255; }
+.back { font-size: 0.87rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.back:hover { text-decoration: underline; }
+
+main { padding-top: 1.9rem; }
+.eyebrow { margin: 0 0 0.35rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #4a6252; }
+h1 { margin: 0 0 0.5rem; font-size: 1.85rem; line-height: 1.25; color: #14371f; letter-spacing: -0.01em; }
+h2 { margin: 1.9rem 0 0.55rem; font-size: 1.22rem; line-height: 1.35; color: #14371f; }
+h3 { margin: 1.4rem 0 0.4rem; font-size: 1.02rem; color: #22402c; }
+p { margin: 0 0 0.8rem; }
+ul, ol { margin: 0 0 0.9rem; padding-left: 1.25rem; }
+li { margin: 0.25rem 0; }
+.lead { font-size: 1.04rem; color: #33463a; }
+.updated { margin: 0 0 1.2rem; font-size: 0.82rem; color: #5b6d5f; }
+
+.callout { margin: 1.2rem 0; padding: 0.9rem 1rem; background: #f1f6f2; border-left: 2px solid #175b30; }
+.callout p:last-child { margin-bottom: 0; }
+.callout.warn { background: #fdf8ea; border-left-color: #b8860b; }
+
+.card { background: #fff; border: 1px solid #d3dcd4; border-radius: 2px; padding: 1.15rem 1.3rem; margin: 0 0 1rem; }
+.card h2:first-child, .card h3:first-child { margin-top: 0; }
+
+.cta {
+  display: inline-block; margin: 0.35rem 0.5rem 0.35rem 0; padding: 0.55rem 0.95rem;
+  background: #175b30; color: #fff; font-weight: 700; font-size: 0.9rem;
+  text-decoration: none; border-radius: 2px;
+}
+.cta:hover { background: #114624; color: #fff; }
+.cta.secondary { background: #fff; color: #175b30; border: 1px solid #175b30; }
+.cta.secondary:hover { background: #eaf1ec; color: #114624; }
+
+table { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1rem; font-size: 0.92rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.55rem; border-bottom: 1px solid #e6ece7; }
+th { background: #f6f8f6; font-weight: 700; color: #22402c; }
+
+.faq details { border-bottom: 1px solid #e6ece7; padding: 0.65rem 0; }
+.faq details:last-child { border-bottom: 0; }
+.faq summary { cursor: pointer; font-weight: 700; color: #1d3c26; }
+.faq details p { margin: 0.5rem 0 0; font-size: 0.95rem; }
+
+.product-list { list-style: none; margin: 0; padding: 0; }
+.product-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid #edf1ed; flex-wrap: wrap; }
+.product-list li:last-child { border-bottom: 0; }
+.product-list .name { font-weight: 600; }
+.product-list .meta { color: #556158; font-size: 0.85rem; }
+.tag { display: inline-block; padding: 0.08rem 0.4rem; border: 1px solid #dbe3dc; border-radius: 2px; background: #f7f9f7; font-size: 0.76rem; color: #44564a; }
+.tag.ok { background: #e6f1e9; border-color: #c3dbc9; color: #14532b; font-weight: 600; }
+.tag.check { background: #fdf3d6; border-color: #e7d29a; color: #66490a; font-weight: 600; }
+
+.breadcrumb { margin: 0 0 0.9rem; font-size: 0.83rem; color: #5b6d5f; }
+.breadcrumb a { text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+footer { margin-top: 2.4rem; padding-top: 1.1rem; border-top: 1px solid #d3dcd4; font-size: 0.84rem; color: #5b6d5f; }
+footer nav { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-bottom: 0.6rem; }
+footer nav a { font-weight: 600; text-decoration: none; }
+footer nav a:hover { text-decoration: underline; }
+
+@media (max-width: 520px) {
+  h1 { font-size: 1.5rem; }
+  .header-inner { padding: 0.6rem 1rem; }
+}

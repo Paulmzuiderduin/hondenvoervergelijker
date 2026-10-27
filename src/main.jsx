@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useMemo, useState } from 'react'
+import React, { memo, useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, allergenSearchTerms, assessLabel, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients, missingAllergenKeys, setCustomTerms, sortAllergenKeys } from './lib/allergens'
 import { isReviewOverdue, productMatch } from './lib/matcher'
@@ -421,6 +421,22 @@ function App() {
   const [admin, setAdmin] = useState(false); const [session, setSession] = useState(null); const [isAdmin, setIsAdmin] = useState(false); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [authMessage, setAuthMessage] = useState(''); const [recovery, setRecovery] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery'); const [newPassword, setNewPassword] = useState(''); const [repeatPassword, setRepeatPassword] = useState('')
   const [matches, setMatches] = useState([])
   const [page, setPage] = useState(1)
+  const diepeLinkToegepast = useRef(false)
+  // Een merkpagina of een gedeelde link kan verwijzen naar /?merk=Royal%20Canin.
+  // Pas die selectie één keer toe zodra de producten geladen zijn.
+  useEffect(() => {
+    if (diepeLinkToegepast.current || !products.length) return
+    diepeLinkToegepast.current = true
+    const params = new URLSearchParams(window.location.search)
+    const merk = params.get('merk')?.trim()
+    if (!merk) return
+    const gevonden = [...new Set(products.map(({ brand }) => brand))].find((brand) => brand.toLowerCase() === merk.toLowerCase())
+    if (!gevonden) return
+    setSelectedBrands([gevonden])
+    setBrandSearch(gevonden)
+    document.title = `${gevonden} hondenvoer vergelijken op allergenen | Hondenvoervergelijker`
+    window.setTimeout(() => document.getElementById('resultaten')?.scrollIntoView({ block: 'start' }), 100)
+  }, [products])
   const alleMerken = useMemo(() => [...new Set(products.map(({ brand }) => brand).filter(Boolean))].sort((eerste, tweede) => eerste.localeCompare(tweede, 'nl', { sensitivity: 'base' })), [products])
   const merkTellingen = useMemo(() => {
     const tellingen = new Map()
@@ -533,6 +549,7 @@ function App() {
         <div className="hero-text">
           <h2>Vind direct welk hondenvoer past bij het eliminatiedieet of de allergie van jouw hond</h2>
           <p>Veel verpakkingen gebruiken verzameltermen zoals <em>“vlees en dierlijke bijproducten”</em>, <em>“granen”</em> of <em>“dierlijk vet”</em>. Deze vergelijker leest elk woord op het officiële fabrikant-etiket en laat direct zien welk voer <strong>geschikt</strong> is, welk voer <strong>uitgesloten</strong> is en waar een ingrediënt een verborgen bron kan bevatten.</p>
+          <p className="hero-links"><a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a> · <a href="/hoe-wij-vergelijken.html">Onze methode</a></p>
         </div>
         <div className="hero-stats">
           <div className="stat-box"><strong>{products.length || '1.400+'}</strong><span>volledige recepten</span></div>
@@ -548,7 +565,7 @@ function App() {
             <div className="choices food-type-choices">{FOOD_TYPES.map(([key, label]) => <label className="inline" key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div>
           </div>
           <div className="filter-block">
-            <h3>Merken</h3>
+            <h3>Merken <a className="filter-heading-link" href="/merken/">alle merken</a></h3>
             <p className="filter-summary">{selectedBrands === null ? `Alle ${alleMerken.length} merken doen mee` : `${selectedBrands.length} van ${alleMerken.length} merken geselecteerd`}</p>
             <div className="filter-actions">
               <button type="button" className={selectedBrands === null ? 'active' : ''} aria-pressed={selectedBrands === null} onClick={() => setSelectedBrands(null)}>Alles</button>
@@ -625,6 +642,9 @@ function App() {
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Hondenvoervergelijker — Alle ingrediëntdata onder voorbehoud van wijzigingen door de fabrikant.</span>
         <span className="footer-links">
+          <a href="/merken/">Alle merken</a>
+          <a href="/hondenvoer-allergieen.html">Hondenvoer &amp; allergieën</a>
+          <a href="/hoe-wij-vergelijken.html">Onze methode</a>
           <a href="/privacybeleid.html">Privacybeleid</a>
           <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">Contact</a>
           <button type="button" className="footer-admin-link" onClick={() => { if (admin) { load(); loadTerms() } setAdmin(!admin); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>{admin ? 'Sluit beheer' : 'Beheer'}</button>

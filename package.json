@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "node scripts/maak-sitemap.mjs",
+    "postbuild": "node scripts/maak-seo-paginas.mjs",
     "preview": "vite preview",
     "test:unit": "node --test tests/unit/**/*.test.js",
     "check:bronnen": "node scripts/controleer-bronnen.mjs --parallel=6 --pauze=1500",
