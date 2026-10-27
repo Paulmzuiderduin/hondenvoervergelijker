@@ -1,4 +1,4 @@
-# SEO: sitemap, merkpagina's en zoekmachine-meldingen
+# SEO: sitemap, merk- en allergeenpagina's en zoekmachine-meldingen
 
 Deze map beschrijft hoe de vindbaarheid van de site werkt. Alles is gratis en
 draait mee in de bestaande GitHub-workflow; er is geen extra dienst of account
@@ -12,13 +12,22 @@ voor nodig.
    - `/hoe-wij-vergelijken.html` — methodiek en onafhankelijkheid;
    - `/merken/` — overzicht van alle merken;
    - `/merken/<merk>.html` — één statische pagina per merk met alle recepten;
+   - `/hondenvoer-zonder.html` — overzicht van alle allergenen;
+   - `/hondenvoer-zonder-<allergeen>.html` — per allergeen de recepten die het
+     etiket dat ingrediënt niet noemt (alleen als er minimaal 10 zijn);
    - `/sitemap.xml` — alle pagina's met prioriteit en datum.
-3. Na de deploy meldt `scripts/indexnow.mjs` alle URL's uit de sitemap bij
-   IndexNow. Dat is de gratis meldingsroute voor Bing en andere deelnemers.
+3. Na de deploy controleert de workflow de upload, alle sitemap-URL's en de
+   belangrijkste gebruikersroutes in een echte browser.
+4. Daarna meldt `scripts/indexnow.mjs` alle URL's uit de sitemap bij IndexNow.
+   Dat is de gratis meldingsroute voor Bing en andere deelnemers.
 
-De merkpagina's worden uit de live Supabase-database gevuld. Lukt dat niet
+De pagina's worden uit de live Supabase-database gevuld. Lukt dat niet
 (bijvoorbeeld bij een storing), dan blijven de uitlegpagina's en de basissitemap
 gewoon werken; de build faalt dan niet.
+
+De allergeenpagina's gebruiken dezelfde keuring als de site, inclusief de
+woordenlijst uit `ingredient_terms`. Een pagina wordt alleen gemaakt als er
+minimaal tien recepten overblijven; zo ontstaan geen dunne pagina's.
 
 ## Google Search Console
 
@@ -47,10 +56,14 @@ site beheert.
 
 ## Interne links
 
-- De homepage linkt naar de uitlegpagina's, het merkenoverzicht en het privacybeleid.
+- De homepage linkt naar de uitlegpagina's, het merkenoverzicht, het
+  allergenenoverzicht en het privacybeleid.
 - Elke productkaart linkt naar de merkpagina van dat merk.
 - Elke merkpagina linkt naar acht andere merken en terug naar het overzicht.
-- Elke merkpagina kan met `/?merk=<naam>` direct in de vergelijker worden geopend.
+- Elke allergeenpagina linkt naar het allergenenoverzicht, de uitlegpagina en de
+  vergelijker met dat allergeen al geselecteerd.
+- Elke merkpagina kan met `/?merk=<naam>` direct in de vergelijker worden geopend;
+  een allergeen met `/?allergeen=<key>`.
 
 ## Controleren
 
