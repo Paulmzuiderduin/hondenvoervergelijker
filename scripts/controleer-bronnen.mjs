@@ -37,18 +37,25 @@ const IMPORT = GEBRUIK_UITBREIDING ? join(WORTEL, 'data', 'import', 'uitbreiding
 const RAPPORT = join(IMPORT, 'broncontrole.md')
 const UA = 'HondenvoervergelijkerBot/0.1 (contact: hondenvoervergelijker@paulzuiderduin.com)'
 
-// Deze drie fabrikantensites blokkeren geautomatiseerde server-verzoeken via
-// Cloudflare/WAF (HTTP 403/429) en kunnen alleen vanuit een echte browsersessie
-// gecontroleerd worden (zie data/import/uitbreiding/broncontrole-*.md).
-// Standaard slaat de automatische run ze over zodat de wekelijkse controle geen
+// Deze sites blokkeren of vervormen geautomatiseerde verzoeken vanuit een
+// datacenter (Cloudflare/WAF, HTTP 403/429, of een pagina zonder de echte
+// inhoud). Ze worden standaard overgeslagen zodat de wekelijkse controle geen
 // vals alarm geeft; met --ook-browser-sites of --merk=... doen ze wel mee.
+// Controleer ze periodiek vanaf je eigen computer:
+//   npm run check:bronnen:lokaal
 const BROWSER_ONLY_HOSTS = new Set([
   'www.prinspetfoods.nl',
   'prinspetfoods.nl',
   'www.smolke.nl',
   'smolke.nl',
   'www.yarrah.com',
-  'yarrah.com'
+  'yarrah.com',
+  'www.edgardcooper.com',
+  'edgardcooper.com',
+  'wooof.com',
+  'www.wooof.com',
+  'wooof.nl',
+  'www.wooof.nl'
 ])
 
 const argumenten = new Map(
@@ -292,7 +299,7 @@ for (const product of producten) {
   perHost.get(host).push(product)
 }
 
-const hostWachtrijen = [...perHost.entries()]
+const hostWachtrijen = [...perHost.entries()].sort((a, b) => b[1].length - a[1].length)
 let hostIndex = 0
 async function verwerkHostWachtrij() {
   while (hostIndex < hostWachtrijen.length) {
@@ -304,6 +311,29 @@ async function verwerkHostWachtrij() {
 }
 
 await Promise.all(Array.from({ length: Math.min(parallel, hostWachtrijen.length) }, () => verwerkHostWachtrij()))
+
+// Vangnet tegen vals alarm: als vrijwel alle producten van één site "gewijzigd"
+// lijken, is dat geen etiketwijziging maar vrijwel zeker een botbeveiliging die
+// een andere pagina teruggeeft. Zulke uitkomsten worden "onbereikbaar" (alleen
+// een aantekening, geen statuswijziging op de site). Bij een echte wijziging
+// gaat het normaal om één of enkele producten van een merk.
+const perHostUitkomsten = new Map()
+for (const rij of uitkomsten) {
+  let host = ''
+  try { host = new URL(rij.product.bronUrl).host.toLowerCase() } catch { /* al gemeld */ }
+  if (!host) continue
+  if (!perHostUitkomsten.has(host)) perHostUitkomsten.set(host, [])
+  perHostUitkomsten.get(host).push(rij)
+}
+for (const [host, rijen] of perHostUitkomsten) {
+  const gewijzigdOpHost = rijen.filter((rij) => rij.status === 'gewijzigd')
+  if (rijen.length < 5 || gewijzigdOpHost.length / rijen.length <= 0.7) continue
+  for (const rij of gewijzigdOpHost) {
+    rij.status = 'onbereikbaar'
+    rij.detail = 'de site gaf bij vrijwel alle producten een afwijkende pagina; waarschijnlijk botbeveiliging in plaats van een etiketwijziging'
+  }
+  console.log(`\nLet op: ${host} gaf ${gewijzigdOpHost.length} van ${rijen.length} keer een afwijkende pagina. Behandeld als onbereikbaar, niet als gewijzigd.`)
+}
 
 // Synchroniseer de uitkomsten met Supabase als de omgevingsvariabelen aanwezig zijn.
 async function schrijfNaarDatabase(resultaten) {

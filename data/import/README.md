@@ -112,9 +112,14 @@ Supabase:
 
 - De koppeling gebruikt de RPC `record_source_checks` met het geheim
   `BRONCONTROLE_TOKEN` (staat in `public.sync_config` en in de GitHub-secrets).
-- Merken waarvan de site automatische verzoeken blokkeert (Prins, Smølke,
-  Yarrah) worden standaard overgeslagen. Controleer die incidenteel handmatig
-  met `node scripts/controleer-bronnen.mjs --ook-browser-sites --merk=Prins`.
+- Sites die automatische verzoeken blokkeren of vervormen (Prins, Smølke,
+  Yarrah, Edgard & Cooper, WOOOF) worden in de wekelijkse run overgeslagen.
+  Controleer die periodiek vanaf je eigen computer met
+  `npm run check:bronnen:lokaal`. Dat werkt vanaf een gewoon thuisnetwerk wel en
+  zet dezelfde controledatums in Supabase.
+- Als vrijwel alle producten van één site tegelijk "gewijzigd" lijken, gaat het
+  vrijwel zeker om botbeveiliging en niet om etiketten. Het script behandelt zo'n
+  uitkomst als "onbereikbaar" en verandert de status op de site dan niet.
 - Het script controleert verschillende sites parallel (standaard 6) maar houdt
   per site minimaal 1,5 seconde pauze aan. Zo blijven 1.400+ producten binnen
   enkele minuten gecontroleerd en blijft het verzoekgedrag beleefd.
