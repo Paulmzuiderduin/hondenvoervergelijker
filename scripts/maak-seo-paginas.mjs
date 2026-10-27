@@ -248,7 +248,7 @@ const methodePagina = () => {
 
       <h2>1. Bronnen: de fabrikant, niet de winkel</h2>
       <p>Wij halen onze ingrediëntenlijsten rechtstreeks van de officiële productpagina's van de fabrikant, bij voorkeur de Nederlandse versie. Is deze niet beschikbaar? Dan gebruiken we de anderstalige officiële pagina. Daarbij vertalen we de samenstelling met exact dezelfde percentages en in dezelfde volgorde. In dat geval vind je daarvan altijd een transparante notitie op de desbetreffende productkaart.</p>
-      <p>Webshops en affiliate-feeds gebruiken we niet als bron voor de samenstelling. Deze lopen namelijk vaak achter na receptuurwijzigingen en bundelen soms per ongeluk meerdere productvarianten op één webpagina. Een klein aantal oudere producten verwijst nog naar een winkelpagina; die uitzondering staat in de bronlink op de productkaart.</p>
+      <p>Webshops en affiliate-feeds gebruiken we niet als bron voor de samenstelling. Deze lopen namelijk vaak achter na receptuurwijzigingen en bundelen soms per ongeluk meerdere productvarianten op één webpagina. Voor een klein aantal oudere producten is de officiële fabrikantpagina niet meer beschikbaar; die verwijzen naar een gespecificeerde winkelpagina. Dat geldt op dit moment vooral voor Terra Canis. Zodra de fabrikant weer een eigen productpagina heeft, vervangen we die bron.</p>
 
       <h2>2. Letterlijk overnemen</h2>
       <p>De tekst op het etiket wordt door ons letterlijk overgenomen: inclusief dezelfde volgorde, percentages, hoeveelheden en zelfs leestekens. Ontbreekt de lijst of is de informatie online onbereikbaar? Dan voegen we het product simpelweg niet toe. We doen niet aan giswerk; we hebben liever een ontbrekend product op de site dan een onjuiste ingrediëntenlijst.</p>
