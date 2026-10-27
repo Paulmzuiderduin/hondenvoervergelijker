@@ -17,3 +17,6 @@ data/import/controlelijst-*.html
 data/winkels/*.csv
 data/winkels/feeds.json
 data/winkels/rapport.md
+
+# Lokale database-back-ups (gaan als artifact mee in de workflow).
+data/backup/
