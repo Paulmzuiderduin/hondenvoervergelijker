@@ -61,7 +61,8 @@ export const ALLERGEN_GROUPS = [
       ['passionflower', 'Passiebloem'], ['milkthistle', 'Mariadistel'], ['borage', 'Bernagie'], ['eveningprimrose', 'Teunisbloem'],
       ['tagetes', 'Tagetes'], ['echinacea', 'Echinacea'], ['ginseng', 'Ginseng'], ['gentian', 'Gentiaan'], ['burdock', 'Klis'],
       ['mistletoe', 'Maretak'], ['sarsaparilla', 'Sarsaparilla'], ['devilsclaw', 'Duivelsklauw'], ['yarrow', 'Duizendblad'],
-      ['centaury', 'Duizendguldenkruid'], ['althaea', 'Heemst'], ['calendula', 'Goudsbloem'], ['nettle', 'Brandnetel'], ['comfrey', 'Smeerwortel']
+      ['centaury', 'Duizendguldenkruid'], ['althaea', 'Heemst'], ['calendula', 'Goudsbloem'], ['nettle', 'Brandnetel'], ['comfrey', 'Smeerwortel'],
+      ['cinnamon', 'Kaneel'], ['nutmeg', 'Nootmuskaat']
     ]
   },
   {
@@ -69,7 +70,7 @@ export const ALLERGEN_GROUPS = [
     label: 'Overig',
     allergenPairs: [
       ['algae', 'Algen'], ['seaweed', 'Zeewier'], ['egg', 'Ei'], ['milk', 'Melk/zuivel'], ['nuts', 'Noten'], ['pecan', 'Pecannoot'], ['chestnut', 'Kastanje'], ['peanut', 'Pinda'], ['sesame', 'Sesam'],
-      ['yeast', 'Gist'], ['honey', 'Honing'], ['pollen', 'Pollen'], ['psyllium', 'Psyllium'],
+      ['yeast', 'Gist'], ['honey', 'Honing'], ['pollen', 'Pollen'], ['psyllium', 'Psyllium'], ['guar', 'Guar(gom)'],
       ['xylitol', 'Xylitol'], ['sorbitol', 'Sorbitol'], ['glycerol', 'Glycerol/glycerine'], ['propyleenglycol', 'Propyleenglycol'],
       ['sunflower', 'Zonnebloem'], ['rapeseed', 'Koolzaad'], ['flax', 'Lijnzaad'], ['chia', 'Chia'], ['hemp', 'Hennep'], ['palm', 'Palm'],
       ['safflower', 'Saffloer'], ['timothy', 'Timoteegras']
@@ -107,7 +108,7 @@ export const ALLERGEN_IMPLIES = {
     'basil', 'dill', 'chive', 'sage', 'chervil', 'oregano', 'marjoram', 'coriander', 'lovage', 'ginger', 'anise', 'caraway', 'cardamom', 'turmeric',
     'chamomile', 'melissa', 'juniper', 'licorice', 'lavender', 'fenugreek', 'violet', 'dandelion', 'savory', 'clove',
     'aloe', 'yucca', 'hawthorn', 'birch', 'horsetail', 'passionflower', 'milkthistle', 'borage', 'eveningprimrose', 'tagetes', 'echinacea',
-    'ginseng', 'gentian', 'burdock', 'mistletoe', 'sarsaparilla', 'devilsclaw', 'yarrow', 'centaury', 'althaea', 'calendula', 'nettle', 'comfrey']
+    'ginseng', 'gentian', 'burdock', 'mistletoe', 'sarsaparilla', 'devilsclaw', 'yarrow', 'centaury', 'althaea', 'calendula', 'nettle', 'comfrey', 'cinnamon', 'nutmeg']
 }
 
 export const ALLERGEN_ORDER = new Map(ALLERGENS.map(({ key }, index) => [key, index]))
@@ -123,7 +124,7 @@ export function sortAllergenKeys(keys) {
 const ALL_KEYS = ALLERGENS.map(({ key }) => key)
 const MEAT_KEYS = ['chicken', 'turkey', 'beef', 'lamb', 'schaap', 'kalf', 'bizon', 'duck', 'goose', 'pork', 'wildzwijn', 'rabbit', 'haas', 'venison', 'rendier', 'horse', 'kangaroo', 'ostrich', 'goat', 'buffalo', 'poultry']
 const GRAIN_KEYS = ['wheat', 'barley', 'oats', 'corn', 'rice', 'grains', 'millet', 'rye', 'spelt', 'buckwheat', 'quinoa', 'amaranth', 'teff', 'sorghum']
-const PLANT_KEYS = ['pea', 'potato', 'soy', 'chickpea', 'bean', 'lentil', 'lupin', 'sweetpotato', 'tapioca', 'carob', 'alfalfa']
+const PLANT_KEYS = ['pea', 'potato', 'soy', 'chickpea', 'bean', 'lentil', 'lupin', 'sweetpotato', 'tapioca', 'carob', 'alfalfa', 'guar']
 const VEG_KEYS = ['asparagus', 'aubergine', 'beetroot', 'cauliflower', 'kale', 'broccoli', 'courgette', 'vegetables', 'garlic', 'cucumber', 'parsnip', 'paprika', 'pumpkin', 'leek', 'celery', 'spinach', 'tomato', 'onion', 'carrot',
   'escarole', 'fennel', 'rutabaga', 'sunchoke', 'watercress', 'chicory', 'artichoke', 'turnipgreens', 'chard', 'cress', 'alfalfa', 'cabbage']
 const FRUIT_KEYS = ['strawberry', 'apple', 'banana', 'blueberry', 'blackberry', 'cranberry', 'date', 'raspberry', 'fruit', 'mango', 'papaya', 'pear', 'peach',
@@ -132,7 +133,7 @@ const HERB_KEYS = ['herbs', 'rosemary', 'thyme', 'parsley', 'mint',
   'basil', 'dill', 'chive', 'sage', 'chervil', 'oregano', 'marjoram', 'coriander', 'lovage', 'ginger', 'anise', 'caraway', 'cardamom', 'turmeric',
   'chamomile', 'melissa', 'juniper', 'licorice', 'lavender', 'fenugreek', 'violet', 'dandelion', 'savory', 'clove',
   'aloe', 'yucca', 'hawthorn', 'birch', 'horsetail', 'passionflower', 'milkthistle', 'borage', 'eveningprimrose', 'tagetes', 'echinacea',
-  'ginseng', 'gentian', 'burdock', 'mistletoe', 'sarsaparilla', 'devilsclaw', 'yarrow', 'centaury', 'althaea', 'calendula', 'nettle', 'comfrey']
+  'ginseng', 'gentian', 'burdock', 'mistletoe', 'sarsaparilla', 'devilsclaw', 'yarrow', 'centaury', 'althaea', 'calendula', 'nettle', 'comfrey', 'cinnamon', 'nutmeg']
 // Noten, pinda en sesam: zaden waar ook olie van gemaakt wordt, en die in de
 // volksmond door elkaar lopen ("noten" zeggen en pinda bedoelen).
 const SEED_KEYS = ['nuts', 'pecan', 'chestnut', 'peanut', 'sesame', 'sunflower', 'rapeseed', 'flax', 'chia', 'hemp', 'safflower', 'psyllium']
@@ -281,10 +282,11 @@ export const ALLERGEN_SYNONYMS = {
   yarrow: ['duizendblad*', 'duizendbladkruid*', 'yarrow*'], centaury: ['duizendguldenkruid*', 'centaury*'],
   althaea: ['althaea*', 'althaeawortel*', 'heemst*', 'heemstwortel*'], calendula: ['goudsbloem*', 'calendula*'],
   nettle: ['brandnetel*', 'nettle*'], comfrey: ['smeerwortel*', 'comfrey*'],
+  cinnamon: ['kaneel*', 'cinnamon*'], nutmeg: ['nootmuskaat*', 'nutmeg*', 'myristica*'],
   yeast: ['gist', 'gisten', 'gistcelwanden*', 'gistproducten*', 'gistfermentatie*', 'gisthydrolysaat*',
     'gistextract*', 'gistpoeder*', 'gistvlokken*', 'bakkersgist*', 'biergist*', 'saccharomyces*', 'cerevisiae*'],
   honey: ['honing*', 'honey*'], pollen: ['pollen*', 'bloesempollen*', 'stuifmeel*'],
-  psyllium: ['psyllium*', 'vlozaad*'],
+  psyllium: ['psyllium*', 'vlozaad*'], guar: ['guar*', 'guargom*'],
   sunflower: ['zonnebloem*', 'zonnebloempit*', 'sunflower*'],
   rapeseed: ['koolzaad*', 'raapzaad*', 'raapolie*', 'rapeseed*', 'canola*'],
   flax: ['lijnzaad*', 'lijnzaden*', 'lijnolie*', 'flax*', 'linseed*'],
