@@ -46,6 +46,7 @@ export function htmlNaarTekst(html) {
     String(html)
       .replace(/<(script|style|noscript|svg|template)[\s\S]*?<\/\1>/gi, ' ')
       .replace(/<!--[\s\S]*?-->/g, ' ')
+      .replace(/<(span|strong|em|b|i|a|sup|sub|small)\b[^>]*>/gi, '')
       .replace(/<br\s*\/?>/gi, ' ')
       .replace(/<\/(span|strong|em|b|i|a|sup|sub|small)>/gi, '')
       .replace(/<\/(p|div|li|td|th|dd|dt|h[1-6]|tr|section|article)>/gi, ' ')

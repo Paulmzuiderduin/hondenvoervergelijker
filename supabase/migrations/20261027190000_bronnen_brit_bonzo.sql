@@ -1,0 +1,57 @@
+-- Bronlinks van de laatste Brit- en Bonzo-producten naar de fabrikant.
+-- Gegenereerd op 2026-10-27; veilig om opnieuw uit te voeren.
+
+with updates(naam, url, hash, nl) as (values
+  ('Care Dog Hypoallergenic Adult Medium Breed Lam & Rijst', 'https://brit.pet/en/products/brit-care-dog-hypoallergenic-adult-medium-breed', 'sha256:f4f9828e81d73ba13161819b8355686aa6252bc019ae56aff247d105fec1af25', 'Gedroogd lam (40%), rijst (35%), gedroogde appelpulp, kippenvet, natuurlijk aroma, biergist, zalmolie (2%), erwtenmeel, glucosamine (260 mg/kg), fructo-oligosachariden (200 mg/kg), chondroïtinesulfaat (200 mg/kg), mannan-oligosachariden (150 mg/kg), Mojave yucca (150 mg/kg), mariadistelzaad (90 mg/kg), β-glucanen (50 mg/kg), gedroogd moederkruid (50 mg/kg), gedroogde duindoorn (50 mg/kg), geïnactiveerde Lactobacillus helveticus HA – 122 (15x109 cellen/kg).'),
+  ('Care Hond Graanvrij Sensitive Wild & Aardappel', 'https://brit.pet/en/products/brit-care-dog-grain-free-sensitive', 'sha256:1edb3592a62d92a010eaf321d21aef59f10b4248ef7009f5a3e78de56755c787', 'Gedroogd hertenvlees (36%), aardappelen (30%), kokosolie, gedroogde appelpulp, zalmolie (5%), lijnzaad (4%), biergist, erwtenmeel, glucosamine (300 mg/kg), fructo-oligosachariden (230 mg/kg), chondroïtinesulfaat (230 mg/kg), mannan-oligosachariden (180 mg/kg), Mojave yucca (180 mg/kg), mariadistelzaad (110 mg/kg), β-glucanen (60 mg/kg), gedroogd moederkruid (60 mg/kg), gedroogde duindoorn (60 mg/kg), geïnactiveerde Lactobacillus helveticus HA – 122 (15x109 cellen/kg).'),
+  ('Care Dog Sustainable Sensitive Vis & Insecten', 'https://brit.pet/en/products/brit-care-dog-sustainable-sensitive', 'sha256:f31699d11f52589fbe7f8c9ca9398058aaee318173b4ff48b47fe20c9b8ad696', 'Gedroogde insecten (14%), gedroogde witvis (14%), gele erwten (14%), groene erwten (14%), gedroogde appelpulp, erwteneiwit, kokosolie (8%), gehydrolyseerd witviseiwit (4%), biergist, zalmolie (2%), lijnzaad (2%), eierschalen, erwtenmeel, glucosamine (300 mg/kg), fructo-oligosachariden (230 mg/kg), chondroïtinesulfaat (230 mg/kg), mannan-oligosachariden (180 mg/kg), Mojave yucca (180 mg/kg), mariadistelzaad (110 mg/kg), β-glucanen (60 mg/kg), gedroogd moederkruid (60 mg/kg), gedroogde duindoorn (60 mg/kg), geïnactiveerde Lactobacillus helveticus HA – 122 (15x109 cellen/kg).'),
+  ('Premium by Nature Sensitive Lam', 'https://brit.pet/en/products/brit-premium-by-nature-sensitive-lamb', 'sha256:674b9535799a8d37f5a39df08f6c0ca5a48080c1b03ae50c9325f9728b24acdb', 'Lam (35%, waarvan 20% gedroogd en 15% uitgebeend), rijst, kippenvet (geconserveerd met gemengde tecoferolen), rijstzemelen, gedroogde appels, zalmolie (2%), gehydrolyseerde kippenlever, biergist, collageen, schaaldierenschelpen (bron van glucosamine, 210 mg/kg), kraakbeen (bron van chondroïtine, 150 mg/kg), kruiden & fruit (kruidnagel, citrus, rozemarijn, kurkuma, 120 mg/kg), mannan-oligosachariden (120 mg/kg), fructo-oligosachariden (90 mg/kg), Mojave yucca (90 mg/kg), gedroogde kamille (80 mg/kg), groenlipmossel (bron van glycosaminoglycanen, 50 mg/kg), gedroogde bosbessen (50 mg/kg).'),
+  ('Premium Adult L', 'https://brit.pet/en/products/brit-premium-by-nature-adult-l', 'sha256:88d9efe14f78196dd369ff48b5a73b49e4137c150c3836c6d2ae71ab966f21be', 'Kip (45%, waarvan 25% gedroogd en 20% uitgebeend), haver, tarwe, kippenvet (geconserveerd met gemengde tecoferolen), maïs, gedroogde appels, zalmolie (2%), gehydrolyseerde kippenlever, biergist, collageen, schaaldierenschelpen (bron van glucosamine, 210 mg/kg), kraakbeen (bron van chondroïtine, 150 mg/kg), kruiden & fruit (kruidnagel, citrus, rozemarijn, kurkuma, 120 mg/kg), mannan-oligosachariden (120 mg/kg), fructo-oligosachariden (90 mg/kg), Mojave yucca (90 mg/kg), gedroogde kamille (80 mg/kg), groenlipmossel (bron van glycosaminoglycanen, 50 mg/kg), gedroogde bosbessen (50 mg/kg).'),
+  ('Premium Adult S', 'https://brit.pet/en/products/brit-premium-by-nature-adult-s', 'sha256:f44cf5b854fb7071d85c89d806489b4b8cff535e780e21d2bf34d2c5197999e1', 'Kip (50%, waarvan 30% gedroogd en 20% uitgebeend), haver, tarwe, kippenvet (geconserveerd met gemengde tecoferolen), maïs, gedroogde appels, zalmolie (2%), gehydrolyseerde kippenlever, biergist, collageen, schaaldierenschelpen (bron van glucosamine, 210 mg/kg), kraakbeen (bron van chondroïtine, 150 mg/kg), kruiden & fruit (kruidnagel, citrus, rozemarijn, kurkuma, 120 mg/kg), mannan-oligosachariden (120 mg/kg), fructo-oligosachariden (90 mg/kg), Mojave yucca (90 mg/kg), gedroogde kamille (80 mg/kg), groenlipmossel (bron van glycosaminoglycanen, 50 mg/kg), gedroogde bosbessen (50 mg/kg).'),
+  ('Mono Protein Kalkoen', 'https://brit.pet/en/products/brit-mono-protein-turkey', 'sha256:210e7686baf465643d5781de01449c25cdc847c40b4ed5d50fd19440f9a6d298', 'Kalkoen (74%), water, erwtenmeel, lignocellulose (1%), calciumcarbonaat (0,3%).'),
+  ('Paté & Vlees Puppy', 'https://brit.pet/en/products/brit-pate-meat-puppy', 'sha256:099e73d6d84308089c804a26cd80c71a10d11704d8eaf5c7bb9bfc409b6c8b10', 'Kip (44%, waarvan 26% kippenmaag en 18% kippenhart), water, kalkoen (26%, waarvan 17% kalkoenvlees en 9% kalkoenhart), erwtenmeel, lignocellulose (1%), zalmolie (0,5%), calciumcarbonaat (0,3%).')
+)
+update public.products p
+   set source_url = u.url, source_status = 'ok', source_note = null, last_checked_at = current_date
+  from updates u
+ where p.brand = 'Brit' and p.name = u.naam;
+
+with updates(naam, hash, nl) as (values
+  ('Care Dog Hypoallergenic Adult Medium Breed Lam & Rijst', 'sha256:f4f9828e81d73ba13161819b8355686aa6252bc019ae56aff247d105fec1af25', 'Gedroogd lam (40%), rijst (35%), gedroogde appelpulp, kippenvet, natuurlijk aroma, biergist, zalmolie (2%), erwtenmeel, glucosamine (260 mg/kg), fructo-oligosachariden (200 mg/kg), chondroïtinesulfaat (200 mg/kg), mannan-oligosachariden (150 mg/kg), Mojave yucca (150 mg/kg), mariadistelzaad (90 mg/kg), β-glucanen (50 mg/kg), gedroogd moederkruid (50 mg/kg), gedroogde duindoorn (50 mg/kg), geïnactiveerde Lactobacillus helveticus HA – 122 (15x109 cellen/kg).'),
+  ('Care Hond Graanvrij Sensitive Wild & Aardappel', 'sha256:1edb3592a62d92a010eaf321d21aef59f10b4248ef7009f5a3e78de56755c787', 'Gedroogd hertenvlees (36%), aardappelen (30%), kokosolie, gedroogde appelpulp, zalmolie (5%), lijnzaad (4%), biergist, erwtenmeel, glucosamine (300 mg/kg), fructo-oligosachariden (230 mg/kg), chondroïtinesulfaat (230 mg/kg), mannan-oligosachariden (180 mg/kg), Mojave yucca (180 mg/kg), mariadistelzaad (110 mg/kg), β-glucanen (60 mg/kg), gedroogd moederkruid (60 mg/kg), gedroogde duindoorn (60 mg/kg), geïnactiveerde Lactobacillus helveticus HA – 122 (15x109 cellen/kg).'),
+  ('Care Dog Sustainable Sensitive Vis & Insecten', 'sha256:f31699d11f52589fbe7f8c9ca9398058aaee318173b4ff48b47fe20c9b8ad696', 'Gedroogde insecten (14%), gedroogde witvis (14%), gele erwten (14%), groene erwten (14%), gedroogde appelpulp, erwteneiwit, kokosolie (8%), gehydrolyseerd witviseiwit (4%), biergist, zalmolie (2%), lijnzaad (2%), eierschalen, erwtenmeel, glucosamine (300 mg/kg), fructo-oligosachariden (230 mg/kg), chondroïtinesulfaat (230 mg/kg), mannan-oligosachariden (180 mg/kg), Mojave yucca (180 mg/kg), mariadistelzaad (110 mg/kg), β-glucanen (60 mg/kg), gedroogd moederkruid (60 mg/kg), gedroogde duindoorn (60 mg/kg), geïnactiveerde Lactobacillus helveticus HA – 122 (15x109 cellen/kg).'),
+  ('Premium by Nature Sensitive Lam', 'sha256:674b9535799a8d37f5a39df08f6c0ca5a48080c1b03ae50c9325f9728b24acdb', 'Lam (35%, waarvan 20% gedroogd en 15% uitgebeend), rijst, kippenvet (geconserveerd met gemengde tecoferolen), rijstzemelen, gedroogde appels, zalmolie (2%), gehydrolyseerde kippenlever, biergist, collageen, schaaldierenschelpen (bron van glucosamine, 210 mg/kg), kraakbeen (bron van chondroïtine, 150 mg/kg), kruiden & fruit (kruidnagel, citrus, rozemarijn, kurkuma, 120 mg/kg), mannan-oligosachariden (120 mg/kg), fructo-oligosachariden (90 mg/kg), Mojave yucca (90 mg/kg), gedroogde kamille (80 mg/kg), groenlipmossel (bron van glycosaminoglycanen, 50 mg/kg), gedroogde bosbessen (50 mg/kg).'),
+  ('Premium Adult L', 'sha256:88d9efe14f78196dd369ff48b5a73b49e4137c150c3836c6d2ae71ab966f21be', 'Kip (45%, waarvan 25% gedroogd en 20% uitgebeend), haver, tarwe, kippenvet (geconserveerd met gemengde tecoferolen), maïs, gedroogde appels, zalmolie (2%), gehydrolyseerde kippenlever, biergist, collageen, schaaldierenschelpen (bron van glucosamine, 210 mg/kg), kraakbeen (bron van chondroïtine, 150 mg/kg), kruiden & fruit (kruidnagel, citrus, rozemarijn, kurkuma, 120 mg/kg), mannan-oligosachariden (120 mg/kg), fructo-oligosachariden (90 mg/kg), Mojave yucca (90 mg/kg), gedroogde kamille (80 mg/kg), groenlipmossel (bron van glycosaminoglycanen, 50 mg/kg), gedroogde bosbessen (50 mg/kg).'),
+  ('Premium Adult S', 'sha256:f44cf5b854fb7071d85c89d806489b4b8cff535e780e21d2bf34d2c5197999e1', 'Kip (50%, waarvan 30% gedroogd en 20% uitgebeend), haver, tarwe, kippenvet (geconserveerd met gemengde tecoferolen), maïs, gedroogde appels, zalmolie (2%), gehydrolyseerde kippenlever, biergist, collageen, schaaldierenschelpen (bron van glucosamine, 210 mg/kg), kraakbeen (bron van chondroïtine, 150 mg/kg), kruiden & fruit (kruidnagel, citrus, rozemarijn, kurkuma, 120 mg/kg), mannan-oligosachariden (120 mg/kg), fructo-oligosachariden (90 mg/kg), Mojave yucca (90 mg/kg), gedroogde kamille (80 mg/kg), groenlipmossel (bron van glycosaminoglycanen, 50 mg/kg), gedroogde bosbessen (50 mg/kg).'),
+  ('Mono Protein Kalkoen', 'sha256:210e7686baf465643d5781de01449c25cdc847c40b4ed5d50fd19440f9a6d298', 'Kalkoen (74%), water, erwtenmeel, lignocellulose (1%), calciumcarbonaat (0,3%).'),
+  ('Paté & Vlees Puppy', 'sha256:099e73d6d84308089c804a26cd80c71a10d11704d8eaf5c7bb9bfc409b6c8b10', 'Kip (44%, waarvan 26% kippenmaag en 18% kippenhart), water, kalkoen (26%, waarvan 17% kalkoenvlees en 9% kalkoenhart), erwtenmeel, lignocellulose (1%), zalmolie (0,5%), calciumcarbonaat (0,3%).')
+)
+update public.recipe_versions rv
+   set import_note = 'Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.',
+       import_hash = u.hash,
+       ingredients_text = coalesce(u.nl, rv.ingredients_text)
+  from updates u, public.products p
+ where p.brand = 'Brit' and p.name = u.naam and rv.product_id = p.id and rv.is_current;
+
+update public.products
+   set source_url = 'https://www.purina.nl/hond/hondenvoer/product-bonzo-honden-brokken-menu-brokken-rund-kip', package_size = '3 / 15 kg', source_status = 'ok', source_note = null, last_checked_at = current_date
+ where brand = 'Bonzo' and name = 'Menubrokken Adult Kip & Groenten';
+
+update public.recipe_versions rv
+   set ingredients_text = 'Samenstelling
+Granen* (volkoren 64%)
+Vlees en dierlijke bijproducten (waarvan 2% Kip en 2% Rund)
+Oliën en vetten
+Plantaardige bijproducten*
+Plantaardige eiwitextracten
+Mineralen
+Groenten* (0,6%gedehydreerde groenten gelijk aan 4% groenten)
+*natuurlijke ingrediënten.', import_note = null, import_hash = 'sha256:82983a2c15b457d6734620a6f223162eb7e0d4e05912d9f41264d8c7cfb3b0f2'
+  from public.products p
+ where p.brand = 'Bonzo' and p.name = 'Menubrokken Adult Kip & Groenten' and rv.product_id = p.id and rv.is_current;
+
+select p.brand, p.name, p.source_url, p.package_size, p.source_status
+  from public.products p
+ where (p.brand = 'Brit' and p.source_url like 'https://brit.pet/%')
+    or (p.brand = 'Bonzo' and p.name = 'Menubrokken Adult Kip & Groenten')
+ order by p.brand, p.name;
