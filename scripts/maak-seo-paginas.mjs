@@ -239,36 +239,36 @@ const methodePagina = () => {
   const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › Hoe wij vergelijken</p>
       <p class="eyebrow">Methodiek</p>
       <h1>Hoe wij hondenvoer vergelijken</h1>
-      <p class="lead">De vergelijker is opgebouwd rond één regel: wat op de site staat, moet herleidbaar zijn tot de officiële ingrediëntenlijst van de fabrikant. Deze pagina legt uit waar de data vandaan komt, hoe de keuring werkt en waar de grenzen liggen.</p>
+      <p class="lead">Onze vergelijker hanteert één strikte basisregel: alle getoonde informatie moet direct herleidbaar zijn tot de officiële ingrediëntenlijst van de fabrikant. Op deze pagina lichten we toe hoe we data verzamelen, hoe het automatische beoordelingssysteem werkt en wat de beperkingen zijn.</p>
       <p class="updated">Bijgewerkt op ${datumNl(VANDAAG)}</p>
 
       <h2>1. Bronnen: de fabrikant, niet de winkel</h2>
-      <p>Ingrediëntenlijsten komen van de officiële productpagina's van de fabrikant, bij voorkeur de Nederlandse pagina. Is die er niet, dan gebruiken we de officiële anderstalige pagina en vertalen we de samenstelling met dezelfde percentages en dezelfde volgorde. Op de productkaart staat in dat geval een aantekening.</p>
-      <p>Webshops en affiliate-feeds gebruiken we <strong>niet</strong> als bron voor de samenstelling. Die lopen vaak achter op receptwijzigingen en bundelen soms meerdere producten op één pagina.</p>
+      <p>Wij halen onze ingrediëntenlijsten rechtstreeks van de officiële productpagina's van de fabrikant, bij voorkeur de Nederlandse versie. Is deze niet beschikbaar? Dan gebruiken we de anderstalige officiële pagina. Daarbij vertalen we de samenstelling met exact dezelfde percentages en in dezelfde volgorde. In dat geval vind je daarvan altijd een transparante notitie op de desbetreffende productkaart.</p>
+      <p>Webshops en affiliate-feeds gebruiken we niet als bron voor de samenstelling. Deze lopen namelijk vaak achter na receptuurwijzigingen en bundelen soms per ongeluk meerdere productvarianten op één webpagina. Een klein aantal oudere producten verwijst nog naar een winkelpagina; die uitzondering staat in de bronlink op de productkaart.</p>
 
       <h2>2. Letterlijk overnemen</h2>
-      <p>De tekst wordt letterlijk overgenomen: dezelfde volgorde, percentages, getallen en leestekens. Ontbreekt de lijst of is de pagina afgeschermd, dan komt het product niet met een gok op de site. Liever een gat dan een verkeerde lijst.</p>
+      <p>De tekst op het etiket wordt door ons letterlijk overgenomen: inclusief dezelfde volgorde, percentages, hoeveelheden en zelfs leestekens. Ontbreekt de lijst of is de informatie online onbereikbaar? Dan voegen we het product simpelweg niet toe. We doen niet aan giswerk; we hebben liever een ontbrekend product op de site dan een onjuiste ingrediëntenlijst.</p>
 
       <h2>3. De keuring: woord voor woord</h2>
-      <p>Elke ingrediëntenlijst wordt automatisch gelezen. De keuring herkent dierlijke en plantaardige bronnen, bereidingswoorden, mineralen en hulpstoffen. Woorden die geen bron noemen maar er wel een kunnen verbergen — “dierlijk vet”, “granen”, “bouillon”, “plantaardige olie” — blokkeren alleen de allergenen die er echt achter kunnen zitten. “Dierlijk vet” kan rund of varken zijn, maar nooit tarwe of zalm.</p>
-      <p>Woorden die de keuring niet kent, worden één keer door de beheerder ingedeeld. Die ene indeling geldt daarna voor alle producten met dat woord. Zo groeit de woordenschat zonder dat elk etiket opnieuw handwerk wordt.</p>
+      <p>Elke ingrediëntenlijst wordt geautomatiseerd geanalyseerd. Ons systeem herkent dierlijke en plantaardige eiwitbronnen, bereidingswijzen, mineralen en hulpstoffen. Verzameltermen die de werkelijke bron verbergen — zoals “dierlijk vet”, “granen”, “bouillon” of “plantaardige olie” — blokkeren vervolgens alleen die allergenen die er logischerwijs achter schuil kunnen gaan. Zo kan “dierlijk vet” bijvoorbeeld afkomstig zijn van een rund of varken, maar nooit van tarwe of zalm.</p>
+      <p>Onbekende woorden worden door de beheerder eenmalig handmatig gecategoriseerd. Deze indeling wordt opgeslagen en direct toegepast op alle toekomstige en bestaande producten die ditzelfde woord bevatten. Zo leert de vergelijker continu nieuwe termen herkennen, zonder dat elk etiket volledig handwerk blijft.</p>
 
       <h2>4. Eerlijk over onzekerheid</h2>
-      <p>Als een etiket de bron niet noemt, zegt de site niet “geschikt” maar “Controleer etiket/fabrikant”. Dat is geen fout in de data, maar een eigenschap van het etiket. Alleen de fabrikant of een dierenarts kan die vraag beantwoorden.</p>
+      <p>Wanneer een etiket de specifieke bron niet noemt, markeert onze site het product niet blindelings als “Geschikt”, maar geven we de status “Controleer etiket/fabrikant”. Dit is geen programmeerfout, maar een weerspiegeling van de onvolledigheid van het etiket zelf. In dergelijke gevallen kan uitsluitend de verpakking of de fabrikant helderheid verschaffen.</p>
 
       <h2>5. Actualiteit en bronbewaking</h2>
-      <p>De bronpagina's worden wekelijks automatisch opnieuw bekeken. Is de tekst ongewijzigd, dan wordt de controledatum bijgewerkt. Is de tekst veranderd, dan blijft de oude tekst op de site staan tot een mens de nieuwe tekst heeft beoordeeld; het product verschijnt dan bovenaan in het beheer. Zo verandert de site nooit stilzwijgend van inhoud.</p>
-      <p>Producten die lange tijd niet gecontroleerd konden worden, krijgen op de site de melding “Controleer etiket/fabrikant”. Dat is bewust streng.</p>
+      <p>De bronpagina's worden wekelijks geautomatiseerd gecontroleerd. Is de tekst op de website van de fabrikant ongewijzigd? Dan updaten we enkel de controledatum. Signaleert het systeem een wijziging, dan blijft de oude samenstelling op onze site zichtbaar totdat een beheerder de nieuwe tekst handmatig heeft goedgekeurd en verwerkt. Hierdoor passen ingrediëntenlijsten op ons platform zich nooit ongemerkt aan.</p>
+      <p>Sites die geautomatiseerde bezoeken blokkeren, controleren we periodiek handmatig. Producten die lange tijd niet gecontroleerd konden worden, krijgen uit voorzorg automatisch de status “Controleer etiket/fabrikant”. Dit is een bewust strenge veiligheidsmaatregel.</p>
 
       <h2>6. Onafhankelijkheid en affiliate-links</h2>
-      <p>De volgorde en de beoordeling van producten hangen alleen af van de etiketten en van de allergenen die je kiest. Sommige uitgaande links naar webwinkels kunnen affiliate-links zijn. Ze hebben geen invloed op welke producten je ziet, in welke volgorde, of met welk oordeel. Zie ook het <a href="/privacybeleid.html">privacybeleid</a>.</p>
+      <p>De weergavevolgorde en de uiteindelijke beoordeling van producten zijn uitsluitend gebaseerd op de feitelijke etiketinformatie en de door jou geselecteerde allergenen. Verwijzingen naar webwinkels kunnen soms affiliate-links bevatten, maar deze hebben geen enkele invloed op wélke producten we tonen, op de rangschikking, of op de keuringsuitslag. Meer hierover lees je in ons <a href="/privacybeleid.html">privacybeleid</a>.</p>
 
-      <h2>7. Grenzen</h2>
+      <h2>7. Beperkingen</h2>
       <ul>
-        <li>De site beoordeelt alleen wat op het etiket staat. Receptwijzigingen zonder etiketwijziging zijn niet zichtbaar.</li>
-        <li>Een ontbrekende bron op het etiket betekent niet automatisch dat het product onveilig is; het betekent dat het etiket de vraag niet beantwoordt.</li>
-        <li>De site is geen medisch hulpmiddel en vervangt geen eliminatiedieet of dierenartsonderzoek.</li>
-        <li>Fouten in de overname zijn mogelijk. Meld ze via <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a>; we corrigeren ze en vermelden de bron.</li>
+        <li>De vergelijker baseert zich uitsluitend op de verstrekte etiketinformatie. Receptuurwijzigingen die de fabrikant (nog) niet op het etiket heeft doorgevoerd, zijn voor ons onzichtbaar.</li>
+        <li>Als een specifieke bron op het etiket ontbreekt, betekent dit niet automatisch dat het product onveilig is voor jouw hond. Het houdt simpelweg in dat het etiket hierover onvoldoende uitsluitsel geeft.</li>
+        <li>Deze website is geen medisch hulpmiddel en dient nooit ter vervanging van een veterinair eliminatiedieet of een onderzoek door een dierenarts.</li>
+        <li>Hoewel we zeer zorgvuldig te werk gaan, blijven menselijke fouten bij het overnemen mogelijk. Ontdek je een fout? Meld dit dan via <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a>; we corrigeren het direct en vermelden de bron.</li>
       </ul>
 
       <div class="callout">
