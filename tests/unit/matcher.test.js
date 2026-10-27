@@ -295,6 +295,66 @@ test('delen tussen haakjes erven de diersoort ervoor', () => {
   assert.equal(assessLabel('Gevogelte (lever, hart)').status, 'aandacht')
 })
 
+test('de bron vóór de haakjes mag over vulwoorden heen worden gevonden', () => {
+  // Purina: "Kip van hoge kwaliteit (20%) (inclusief rug en borst)".
+  const kip = assessLabel('Kip van hoge kwaliteit (20%) (inclusief rug en borst)')
+  assert.deepEqual(kip.allergens, ['chicken'])
+  assert.deepEqual(kip.hidden, [])
+  assert.deepEqual(kip.risky, [])
+  const zalm = assessLabel('Zalm van hoge kwaliteit* (17%) (inclusief kop, beenderen, vlees)')
+  assert.deepEqual(zalm.hidden, [])
+  assert.deepEqual(zalm.risky, [])
+  // Zonder concrete diersoort blijft het deel onduidelijk.
+  assert.equal(assessLabel('Vis (kop, beenderen)').status, 'aandacht')
+})
+
+test('een dierlijk deel erft de diersoort met "en" ertussen', () => {
+  setCustomTerms([{ term: 'orgaanvlees', kind: 'onduidelijk', allergen_keys: ['turkey'] }])
+  const darf = assessLabel('55% kippenvlees en orgaanvlees* (vlees, hals, lever, hart en maag)')
+  assert.deepEqual(darf.allergens, ['chicken'])
+  assert.deepEqual(darf.hidden, [])
+  assert.deepEqual(darf.risky, [])
+  assert.deepEqual(assessLabel('Kip en lever').hidden, [])
+  // "vlees en orgaanvlees van kalkoen": de bron staat achter de reeks.
+  const kalkoen = assessLabel('55% vlees en orgaanvlees van kalkoen* (vlees, hals, hart, lever en maag)')
+  assert.deepEqual(kalkoen.allergens, ['turkey'])
+  assert.deepEqual(kalkoen.hidden, [])
+  setCustomTerms([])
+})
+
+test('een kop met dubbele punt wordt uitgelegd door de soorten erna', () => {
+  assert.deepEqual(assessLabel('100% vers vlees: 50% kip 30% rund 10% lam').hidden, [])
+  // Zonder diersoort in de lijst blijft de kop onduidelijk.
+  assert.deepEqual(assessLabel('vlees: tarwe, kip').hidden.map(({ word }) => word), ['vlees'])
+})
+
+test('een streepje dat aan het deel vastzit erft de diersoort ervoor', () => {
+  for (const tekst of ['vers lamsvlees, -lever, -long (30%)', 'Varkensnier -lever -long en -plasma', 'Varkenshart en -lever']) {
+    const u = assessLabel(tekst)
+    assert.deepEqual(u.hidden, [], tekst)
+    assert.deepEqual(u.risky, [], tekst)
+  }
+  assert.deepEqual(assessLabel('vers lamsvlees, -lever, -long (30%)').allergens, ['lamb'])
+  assert.deepEqual(assessLabel('Varkensnier -lever -long en -plasma').allergens, ['pork'])
+})
+
+test('"bestaande uit" en een kommareeks blijven bij de diersoort', () => {
+  for (const tekst of [
+    '70% kalf bestaande uit hart, long en pens, 28,5% bouillon',
+    '70% paard bestaande uit vlees, hart, lever en long',
+    'kip; kip 46% en lever 4%'
+  ]) {
+    const u = assessLabel(tekst)
+    assert.deepEqual(u.hidden, [], tekst)
+    assert.deepEqual(u.risky, [], tekst)
+  }
+  assert.deepEqual(assessLabel('70% kalf bestaande uit hart, long en pens').allergens, ['kalf'])
+  // "bot" en "tong" zijn ook vissoorten; alleen de hele/rauwe vorm telt.
+  assert.deepEqual(assessLabel('rauwe bot (6%), rauwe hele tong (6%)').allergens, ['fish'])
+  assert.deepEqual(assessLabel('rauwe bot (6%), rauwe hele tong (6%)').hidden, [])
+  assert.deepEqual(assessLabel('Kip en tong').hidden, [])
+})
+
 test('een bron na "van" mag lidwoorden en bereidingswoorden hebben', () => {
   assert.deepEqual(assessLabel('Hart van de kip').allergens, ['chicken'])
   assert.deepEqual(assessLabel('Hart van de kip').hidden, [])

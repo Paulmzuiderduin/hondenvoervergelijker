@@ -149,6 +149,16 @@ const FAT_KEYS = [...MEAT_KEYS, 'soy', 'milk', 'fish', 'corn', ...SEED_KEYS, 'co
 // of insecten komen. "Dierlijke bijproducten" zijn op Europese etiketten
 // landdieren: vis, ei en zuivel staan er als aparte categorie op.
 const ANIMAL_PART_KEYS = [...MEAT_KEYS, 'fish', 'shellfish', 'insect']
+// Voor een deel tussen haakjes ("kip (lever, hart)") telt alleen een concrete
+// diersoort als bron. "Vis" en "gevogelte" noemen geen soort; dan blijft het
+// deel onduidelijk. Vissen met een eigen naam (zalm, tonijn) tellen wel.
+const PART_SOURCE_KEYS = new Set([
+  ...MEAT_KEYS.filter((key) => key !== 'poultry'),
+  'fish', 'whitefish', 'salmon', 'tuna', 'trout', 'herring', 'mackerel', 'anchovy', 'sardine',
+  'shellfish', 'insect'
+])
+const GENERIC_ANIMAL_SOURCES = new Set(['vis', 'fish', 'gevogelte', 'pluimvee', 'poultry'])
+const PLANT_ALL_KEY_SET = new Set(PLANT_ALL_KEYS)
 // Categorieën die geen bron bij name noemen: voor de keuring zijn ze geen
 // aangetoonde bron, ook al bevatten ze zelf geen allergeenwoord.
 const UMBRELLA_KEYS = new Set(['grains', 'poultry', 'vegetables', 'fruit', 'herbs'])
@@ -187,7 +197,11 @@ export const ALLERGEN_SYNONYMS = {
   // "ganzen*" is nodig omdat "gans*" de z-vorm niet matcht.
   goose: ['gans*', 'ganzen*', 'goose'],
   poultry: ['gevogelte*', 'pluimvee*', 'poultry', 'fazant*', 'pheasant', 'kwartel*', 'quail'],
-  fish: ['vis*', 'fish*', 'zalm*', 'salmon', 'kabeljauw*', 'tonijn*', 'tuna', 'haring*', 'herring', 'forel*', 'trout', 'makreel*', 'mackerel', 'sardine*', 'sardines', 'ansjovis*', 'anchovies', 'heek', 'wijting*', 'schelvis*', 'koolvis*', 'zeeduivel*'],
+  fish: ['vis*', 'fish*', 'zalm*', 'salmon', 'kabeljauw*', 'tonijn*', 'tuna', 'haring*', 'herring', 'forel*', 'trout', 'makreel*', 'mackerel', 'sardine*', 'sardines', 'ansjovis*', 'anchovies', 'heek', 'wijting*', 'schelvis*', 'koolvis*', 'zeeduivel*',
+    // "Bot" en "tong" zijn ook vissoorten (bot = flounder, tong = sole). Alleen
+    // de hele/rauwe vorm telt, anders zou "bot" (been) of "tong" (orgaan)
+    // steeds als vis gelden.
+    'hele bot', 'rauwe bot', 'hele tong', 'rauwe tong'],
   whitefish: ['witvis*', 'kabeljauw*', 'schelvis*', 'koolvis*', 'heek', 'wijting*', 'zeeduivel*', 'pangasius*'],
   salmon: ['zalm*', 'salmon'], tuna: ['tonijn*', 'tuna'], trout: ['forel*', 'trout'], herring: ['haring*', 'herring'],
   mackerel: ['makreel*', 'mackerel'], anchovy: ['ansjovis*', 'anchovies'], sardine: ['sardine*', 'sardines'],
@@ -468,7 +482,7 @@ const MARKER = { [OPEN]: '(', [CLOSE]: ')', [BREAK]: ',', [COLON]: ':', [STOP]: 
 // Woorden die tussen een bron en een haakjesgroep of "van" mogen staan zonder
 // zelf de bron te zijn: lidwoorden, bereidingswoorden en hoeveelheidswoorden.
 const SOURCE_FILLERS = new Set([
-  'de', 'het', 'een', 's', 't',
+  'de', 'het', 'een', 's', 't', 'en',
   'vrije', 'uitloop', 'biologische', 'biologisch', 'rauwe', 'rauw', 'verse', 'vers', 'hele', 'heel',
   'gedroogde', 'gedroogd', 'gekookte', 'gekookt',
   'min', 'max', 'ca', 'circa', 'ongeveer', 'tenminste', 'minstens', 'ten', 'minste', 'hoogste', 'laagste'
@@ -476,12 +490,27 @@ const SOURCE_FILLERS = new Set([
 
 function markedTokens(value = '') {
   return String(value)
+    // "11,5%" en "0.5%" zijn één hoeveelheid; de komma of punt erin is geen
+    // scheidingsteken tussen ingrediënten.
+    .replace(/(\d)[.,](\d)/g, '$1$2')
+    // Afkortingen als "min." en "ca." zijn geen zinseinde.
+    .replace(/\b(min|max|ca|incl|excl|bijv|resp)\./gi, ' $1 ')
+    // Een punt midden in een opsomming ("vlees. hart, pens") is een
+    // scheidingsteken, geen zinseinde: het volgende woord begint met een
+    // kleine letter. Zo blijft de diersoort van de reeks behouden.
+    .replace(/\.(\s+)(?=[a-zà-öø-ÿ])/g, ', ')
     .toLocaleLowerCase('nl-NL')
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     // "min." en "ca." zijn afkortingen, geen zinseinde.
     .replace(/\b(min|max|ca|incl|excl|bijv|resp)\./g, ' $1 ')
     .replace(/\s+[-–—]\s+/g, ` ${COLON} `)
+    // "70% kalf bestaande uit hart, long en pens": de opsomming hoort bij het
+    // dier ervoor, net als na een dubbele punt.
+    .replace(/\b(?:bestaande|samengesteld)\s+uit\b/g, ` ${COLON} `)
+    // Een streepje dat direct aan het woord vastzit ("vers lamsvlees, -lever" of
+    // "Varkenshart en -lever") is een vervolg op de vorige bron, geen nieuw woord.
+    .replace(/(^|[\s,;:(])\s*[-–—]\s*/g, `$1 ${COLON} `)
     .replace(/\(/g, ` ${OPEN} `)
     .replace(/\)/g, ` ${CLOSE} `)
     .replace(/,/g, ` ${BREAK} `)
@@ -528,6 +557,7 @@ let COMPILED_KNOWN_TERMS = []
 let COMPILED_INERT_TERMS = []
 let COMPILED_INERT_CUSTOM_TERMS = []
 let CONCRETE_SOURCE_TERMS = []
+let COMPILED_PART_SOURCE_TERMS = []
 let COMPILED_HYDROLYSED_TERMS = []
 
 // Alles wat de keuring van een ingrediëntwoord kan plaatsen: een allergeenbron,
@@ -571,6 +601,12 @@ function buildVocabulary() {
       .concat(bron.filter((term) => !(term.allergen_keys ?? []).some((key) => UMBRELLA_KEYS.has(key))).map((term) => term.term)),
     ...OTHER_SOURCE_TERMS
   ].map(compileTerm)
+  COMPILED_PART_SOURCE_TERMS = [
+    ...Object.entries(ALLERGEN_SYNONYMS)
+      .filter(([key]) => PART_SOURCE_KEYS.has(key))
+      .flatMap(([, terms]) => terms),
+    ...bron.filter((term) => (term.allergen_keys ?? []).some((key) => PART_SOURCE_KEYS.has(key))).map((term) => term.term)
+  ].filter((term) => !GENERIC_ANIMAL_SOURCES.has(normaliseText(term.replace(/\*$/, '')))).map(compileTerm)
   COMPILED_HYDROLYSED_TERMS = HYDROLYSED_TERMS.map(compileTerm)
   COMPILED_INERT_TERMS = INERT_INGREDIENT_TERMS.map(compileTerm)
 }
@@ -648,6 +684,31 @@ function isConcreteSource(token) {
   return !isInertToken(token) && CONCRETE_SOURCE_TERMS.some((term) => termMatches([token], term))
 }
 
+// Is dit een woord dat zelf een deel of risico noemt ("pens", "lever")? Zulke
+// woorden zijn geen bron, maar ze onderbreken de zoektocht naar de diersoort niet.
+function isRiskToken(token) {
+  return COMPILED_RISK_TERMS.some((term) => term.parts.length === 1 && termMatches([token], term))
+}
+
+// Noemt dit woord een concrete diersoort waar een orgaan bij kan horen?
+// "Kip", "lamsvlees" en "zalm" wel; "vis" en "gevogelte" niet.
+function isAnimalPartSource(token) {
+  return !isInertToken(token) && COMPILED_PART_SOURCE_TERMS.some((term) => termMatches([token], term))
+}
+
+// Hoort dit woord bij een meerwoordige bron die de keuring kent
+// ("rauwe bot", "zwarte bes")? Dan is het zelf de bron en geen risicowoord.
+function insideConcreteSourcePhrase(tokens, index) {
+  for (const term of CONCRETE_SOURCE_TERMS) {
+    if (term.parts.length < 2) continue
+    const eerste = Math.max(0, index - term.parts.length + 1)
+    for (let start = eerste; start <= index && start + term.parts.length <= tokens.length; start += 1) {
+      if (term.parts.every((part, offset) => tokens[start + offset] === part)) return true
+    }
+  }
+  return false
+}
+
 buildVocabulary()
 
 // Een verzamel- of risicowoord is toegelicht als er in dezelfde opsomming tussen
@@ -668,7 +729,13 @@ function explainedByParenthetical(tokens, depthBefore, breakBefore, index) {
 
 // Delen tussen haakjes horen bij de bron die er vlak vóór staat:
 // "Kip (lever, hart)" en "kippeningewanden (lever, hart)".
-function parentheticalSource(tokens, depthBefore, breakBefore, index) {
+// Bij dierlijke delen moet die bron een concrete diersoort zijn. Tussen de bron
+// en het haakje mogen hoeveelheden en vulwoorden staan ("Kip van hoge kwaliteit
+// (20%) (inclusief rug en borst)"), maar een andere concrete bron stopt het
+// zoeken: "Kip, tarwebloem (lever)" hoort niet bij kip.
+const PARENTHETICAL_SCAN_LIMIT = 8
+const isAnimalOnlyScope = (keys) => Array.isArray(keys) && keys.length > 0 && keys.every((key) => !PLANT_ALL_KEY_SET.has(key))
+function parentheticalSource(tokens, depthBefore, breakBefore, index, keys) {
   if (depthBefore[index] === 0) return false
   // Zoek het eerste woord van deze haakjesgroep. Een komma vóór de groep
   // ("Kip, (lever, hart)") betekent: een nieuw ingrediënt, dus geen bron.
@@ -682,13 +749,75 @@ function parentheticalSource(tokens, depthBefore, breakBefore, index) {
   while (before >= 0 && depthBefore[before] !== 0) before -= 1
   if (before < 0) return false
 
-  // Loop terug over hoeveelheden en vulwoorden. Een bron die zelf na een komma
-  // begint ("..., rund (lever, hart)") is wél de bron van deze haakjesgroep.
-  for (let cursor = before; cursor >= 0; cursor -= 1) {
+  // Alleen een puur dierlijke scope vraagt om een concrete diersoort. Een
+  // vet- of zetmeelwoord ("olie (zonnebloem)") mag elke concrete bron nemen.
+  const animalOnly = isAnimalOnlyScope(keys)
+
+  for (let cursor = before, stappen = 0; cursor >= 0 && stappen < PARENTHETICAL_SCAN_LIMIT; cursor -= 1, stappen += 1) {
     if (depthBefore[cursor] !== 0) continue
-    if (isConcreteSource(tokens[cursor])) return true
+    const token = tokens[cursor]
+    if (animalOnly ? isAnimalPartSource(token) : isConcreteSource(token)) return true
     if (breakBefore[cursor]) return false
-    if (/^\d+$/.test(tokens[cursor]) || SOURCE_FILLERS.has(tokens[cursor])) continue
+    // Een andere concrete bron ("tarwebloem", "vis") is niet de bron van dit deel.
+    if (isConcreteSource(token)) return false
+    if (/^\d+$/.test(token) || SOURCE_FILLERS.has(token) || isInertToken(token)) continue
+    // Een onbekend tussenwoord ("kwaliteit", "inclusief") zegt niets over de
+    // bron; blijf binnen de limiet verder zoeken.
+  }
+  return false
+}
+
+// "kippenvlees en orgaanvlees", "Kip en lever": een dierlijk deel in dezelfde
+// reeks erft de diersoort die ervoor staat, ook als daar "en" tussen staat.
+function animalSourceBefore(tokens, depthBefore, breakBefore, index) {
+  // Een komma vóór dit woord betekent: nieuw ingrediënt, dus geen bron.
+  if (breakBefore[index]) return false
+  for (let cursor = index - 1, stappen = 0; cursor >= 0 && stappen < PARENTHETICAL_SCAN_LIMIT; cursor -= 1, stappen += 1) {
+    // Blijf binnen dezelfde haakjesgroep: "Kip, (lever)" hoort niet bij kip,
+    // maar "waarvan rund 2% en lever 4%" hoort wel bij rund.
+    if (depthBefore[cursor] < depthBefore[index]) return false
+    // De bron zelf mag na een komma of puntkomma beginnen ("...; kip en lever");
+    // een komma tussen de bron en het deel stopt het zoeken wel.
+    if (isAnimalPartSource(tokens[cursor])) return true
+    // Nog een deel ("kip, pens en lever") wijst niet op een andere bron; de
+    // diersoort staat verder terug, ook als er een komma voor het deel staat.
+    if (isRiskToken(tokens[cursor])) continue
+    if (breakBefore[cursor]) return false
+    if (isConcreteSource(tokens[cursor])) return false
+    if (/^\d+$/.test(tokens[cursor]) || SOURCE_FILLERS.has(tokens[cursor]) || isInertToken(tokens[cursor])) continue
+    return false
+  }
+  return false
+}
+
+// "vlees en orgaanvlees van kalkoen": de bron staat achter de hele reeks.
+function animalSourceAfter(tokens, depthBefore, breakBefore, index) {
+  for (let cursor = index + 1, stappen = 0; cursor < tokens.length && stappen < PARENTHETICAL_SCAN_LIMIT; cursor += 1, stappen += 1) {
+    if (depthBefore[cursor] !== 0) return false
+    const token = tokens[cursor]
+    if (['van', 'from', 'of'].includes(token)) {
+      for (let next = cursor + 1, stappen2 = 0; next < tokens.length && stappen2 < PARENTHETICAL_SCAN_LIMIT; next += 1, stappen2 += 1) {
+        if (breakBefore[next] || depthBefore[next] !== 0) return false
+        if (isAnimalPartSource(tokens[next])) return true
+        if (!SOURCE_FILLERS.has(tokens[next]) && !isInertToken(tokens[next])) return false
+      }
+      return false
+    }
+    if (isRiskToken(token) || SOURCE_FILLERS.has(token) || /^\d+$/.test(token) || isInertToken(token)) continue
+    return false
+  }
+  return false
+}
+
+// "100% vers vlees: 50% kip, 30% rund": de kop wordt meteen uitgelegd.
+function sourcesAfterColon(tokens, depthBefore, colonAfter, index) {
+  if (!colonAfter[index]) return false
+  for (let cursor = index + 1, stappen = 0; cursor < tokens.length && stappen < PARENTHETICAL_SCAN_LIMIT; cursor += 1, stappen += 1) {
+    if (depthBefore[cursor] !== 0) continue
+    const token = tokens[cursor]
+    if (isAnimalPartSource(token)) return true
+    if (isConcreteSource(token)) return false
+    if (isRiskToken(token) || SOURCE_FILLERS.has(token) || /^\d+$/.test(token) || isInertToken(token)) continue
     return false
   }
   return false
@@ -721,6 +850,8 @@ export function assessLabel(ingredientsText = '') {
   const tokens = []
   const depthBefore = []
   const breakBefore = []
+  // Staat er direct na dit woord een dubbele punt ("100% vers vlees: 50% kip")?
+  const colonAfter = []
   // De bron die boven de lopende reeks delen staat ("63% Konijn:"), of null.
   const anchorBefore = []
   let anchor = null
@@ -735,6 +866,7 @@ export function assessLabel(ingredientsText = '') {
       // het dier dat er vóór staat. Sla hoeveelheden en vulwoorden over, zodat
       // "Kip 25%: lever, hart" ook bij kip hoort.
       if (depth === 0) {
+        if (tokens.length) colonAfter[tokens.length - 1] = true
         let cursor = tokens.length - 1
         while (cursor >= 0 && (/^\d+$/.test(tokens[cursor]) || SOURCE_FILLERS.has(tokens[cursor]))) cursor -= 1
         const heading = tokens[cursor]
@@ -758,6 +890,7 @@ export function assessLabel(ingredientsText = '') {
     tokens.push(token)
     depthBefore.push(depth)
     breakBefore.push(pendingBreak)
+    colonAfter.push(false)
     anchorBefore.push(anchor)
     pendingBreak = false
   }
@@ -827,13 +960,20 @@ export function assessLabel(ingredientsText = '') {
     // Delen onder een kop met een genoemde bron ("13% vlees" onder "63% Konijn:")
     // horen bij die bron.
     if (anchorBefore[match.start]) return []
+    // "rauwe bot" en "hele tong" zijn vissoorten, geen bot of orgaan.
+    if (insideConcreteSourcePhrase(tokens, match.start)) return []
     // Delen tussen haakjes horen bij de bron ervoor: "kip (lever, hart)" en
     // "kippeningewanden (lever, hart, maag)".
-    if (parentheticalSource(tokens, depthBefore, breakBefore, match.start)) return []
+    if (parentheticalSource(tokens, depthBefore, breakBefore, match.start, match.term.keys)) return []
     const previous = tokens[match.start - 1]
     // "beef stock" en "zonnebloemolie" zijn herleidbaar; "tarwe, vet" niet,
     // want daar staat een komma tussen.
     if (previous && !breakBefore[match.start] && isConcreteSource(previous)) return []
+    // "kippenvlees en orgaanvlees": het deel erft de diersoort die eerder in
+    // dezelfde reeks staat, ook met "en" ertussen.
+    if (isAnimalOnlyScope(match.term.keys) && animalSourceBefore(tokens, depthBefore, breakBefore, match.start)) return []
+    if (isAnimalOnlyScope(match.term.keys) && animalSourceAfter(tokens, depthBefore, breakBefore, match.start)) return []
+    if (isAnimalOnlyScope(match.term.keys) && sourcesAfterColon(tokens, depthBefore, colonAfter, match.start)) return []
     if (sourceAfter(match.start, match.end)) return []
     if (!keep(match.start)) return []
     const scope = breakBefore[match.start] ? null : precedingScope(match.start - 1)
