@@ -68,10 +68,11 @@ export const ALLERGEN_GROUPS = [
     key: 'other',
     label: 'Overig',
     allergenPairs: [
-      ['algae', 'Algen/zeewier'], ['egg', 'Ei'], ['milk', 'Melk/zuivel'], ['nuts', 'Noten'], ['pecan', 'Pecannoot'], ['chestnut', 'Kastanje'], ['peanut', 'Pinda'], ['sesame', 'Sesam'],
+      ['algae', 'Algen'], ['seaweed', 'Zeewier'], ['egg', 'Ei'], ['milk', 'Melk/zuivel'], ['nuts', 'Noten'], ['pecan', 'Pecannoot'], ['chestnut', 'Kastanje'], ['peanut', 'Pinda'], ['sesame', 'Sesam'],
       ['yeast', 'Gist'], ['honey', 'Honing'], ['pollen', 'Pollen'], ['psyllium', 'Psyllium'],
       ['xylitol', 'Xylitol'], ['sorbitol', 'Sorbitol'], ['glycerol', 'Glycerol/glycerine'], ['propyleenglycol', 'Propyleenglycol'],
-      ['sunflower', 'Zonnebloem'], ['rapeseed', 'Koolzaad'], ['flax', 'Lijnzaad'], ['chia', 'Chia'], ['hemp', 'Hennep'], ['palm', 'Palm']
+      ['sunflower', 'Zonnebloem'], ['rapeseed', 'Koolzaad'], ['flax', 'Lijnzaad'], ['chia', 'Chia'], ['hemp', 'Hennep'], ['palm', 'Palm'],
+      ['safflower', 'Saffloer'], ['timothy', 'Timoteegras']
     ]
   }
 ].map(({ key, label, allergenPairs }) => ({
@@ -134,10 +135,10 @@ const HERB_KEYS = ['herbs', 'rosemary', 'thyme', 'parsley', 'mint',
   'ginseng', 'gentian', 'burdock', 'mistletoe', 'sarsaparilla', 'devilsclaw', 'yarrow', 'centaury', 'althaea', 'calendula', 'nettle', 'comfrey']
 // Noten, pinda en sesam: zaden waar ook olie van gemaakt wordt, en die in de
 // volksmond door elkaar lopen ("noten" zeggen en pinda bedoelen).
-const SEED_KEYS = ['nuts', 'pecan', 'chestnut', 'peanut', 'sesame', 'sunflower', 'rapeseed', 'flax', 'chia', 'hemp', 'psyllium']
+const SEED_KEYS = ['nuts', 'pecan', 'chestnut', 'peanut', 'sesame', 'sunflower', 'rapeseed', 'flax', 'chia', 'hemp', 'safflower', 'psyllium']
 // Alles wat plantaardig kan zijn. Een etiket dat "plantaardige bijproducten" of
 // "plantaardige olie" zegt, kan elke plant verbergen.
-const PLANT_ALL_KEYS = [...PLANT_KEYS, ...GRAIN_KEYS, ...VEG_KEYS, ...FRUIT_KEYS, ...SEED_KEYS, ...HERB_KEYS, 'algae', 'palm', 'pollen']
+const PLANT_ALL_KEYS = [...PLANT_KEYS, ...GRAIN_KEYS, ...VEG_KEYS, ...FRUIT_KEYS, ...SEED_KEYS, ...HERB_KEYS, 'algae', 'seaweed', 'timothy', 'palm', 'pollen']
 // Zetmeel kan van granen of van aardappel zijn. Vet en olie kunnen dierlijk of
 // plantaardig zijn: sojaolie, maiskiemolie, notenolie, botervet en visolie
 // kunnen allemaal achter "olie" of "vet" schuilgaan.
@@ -223,7 +224,8 @@ export const ALLERGEN_SYNONYMS = {
   fruit: ['fruit*', 'vruchten*', 'bosvruchten*'], mango: ['mango*'], papaya: ['papaja*', 'papaya*'],
   pear: ['peer', 'peren*', 'pear*', 'pears'], peach: ['perzik*', 'peach*'],
   // Overig
-  algae: ['algen*', 'alge*', 'zeealg*', 'zeegras*', 'algae*', 'kelp', 'zeewier*', 'wier*', 'seaweed*', 'spirulina*', 'chlorella*'],
+  algae: ['algen*', 'alge*', 'zeealg*', 'algae*', 'microalg*', 'spirulina*', 'chlorella*', 'schizochytrium*'],
+  seaweed: ['zeewier*', 'wier*', 'kelp*', 'zeegras*', 'seaweed*', 'fucus*', 'ascophyllum*', 'carrageen*', 'alginaat*'],
   egg: ['ei', 'eier*', 'eigeel', 'eidooier', 'eipoeder', 'egg', 'eggs'],
   milk: ['melk*', 'wei', 'weipoeder', 'whey*', 'lactose*', 'yoghurt*', 'kwark*', 'kaas*', 'caseine*', 'caseinaat*', 'room*', 'boter*', 'milk'],
   herbs: ['kruiden*', 'kruid*', 'specerij*', 'specerijen*', 'herbs', 'herb'],
@@ -288,6 +290,8 @@ export const ALLERGEN_SYNONYMS = {
   flax: ['lijnzaad*', 'lijnzaden*', 'lijnolie*', 'flax*', 'linseed*'],
   chia: ['chia*', 'chiazaad*'], hemp: ['hennep*', 'hennepzaad*', 'hemp*'],
   palm: ['palm', 'palmolie*', 'palmvet*', 'palmkern*', 'palmkernel*', 'palmpit*'],
+  safflower: ['saffloer*', 'safflower*', 'carthamus*'],
+  timothy: ['timoteegras*', 'timothy*', 'phleum*'],
   xylitol: ['xylitol*', 'xylit', 'e967'],
   sorbitol: ['sorbitol*', 'e420'],
   glycerol: ['glycerol*', 'glycerine*', 'glycerin*', 'e422'],

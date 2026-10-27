@@ -479,17 +479,20 @@ function App() {
       const eerste = tekst.split(/[^a-z0-9]+/).filter(Boolean)[0] ?? ''
       return eerste.startsWith(zoekDelen[0] ?? '') ? 1 : 2
     }
-    const groepen = ALLERGEN_GROUPS.map((group) => {
+    const groepen = ALLERGEN_GROUPS.map((group, index) => {
       const groepMatch = [group.label.toLowerCase(), ...(GROEP_ZOEKTERMEN[group.key] ?? [])].includes(zoek)
       const labelMatches = group.allergens.filter(({ label }) => pastZoek(label)).sort((a, b) => score(a.label) - score(b.label))
       const synonymMatches = group.allergens.filter(({ key, label }) => allergenSearchTerms(key, label).slice(1).some(pastZoek))
-      return { group, groepMatch, labelMatches, synonymMatches }
+      const groepScore = groepMatch ? 0 : (labelMatches.length ? Math.min(...labelMatches.map(({ label }) => score(label))) : 3)
+      return { group, index, groepMatch, labelMatches, synonymMatches, groepScore }
     })
     const heeftLabelMatch = groepen.some(({ groepMatch, labelMatches }) => groepMatch || labelMatches.length)
-    return groepen.map(({ group, groepMatch, labelMatches, synonymMatches }) => {
+    return groepen.map(({ group, groepMatch, labelMatches, synonymMatches, groepScore, index }) => {
       const allergens = groepMatch ? group.allergens : (heeftLabelMatch ? labelMatches : synonymMatches)
-      return { ...group, allergens }
+      return { ...group, allergens, groepScore, index }
     }).filter(({ allergens }) => allergens.length)
+      .sort((a, b) => a.groepScore - b.groepScore || a.index - b.index)
+      .map(({ groepScore, index, ...group }) => group)
   }, [allergenSearch])
   const load = async () => { if (!supabase) { setLoadError('Supabase is nog niet geconfigureerd, dus er kunnen geen producten worden geladen.'); setLoading(false); return }; setLoading(true); const { data, error } = await haalAlleRijen(() => supabase.from('products').select('id,brand,name,food_type,package_size,source_url,source_status,last_checked_at,recipe_versions(ingredients_text,imported_at,reviewed_at,import_note,recipe_ingredients(allergen_key,certainty))').eq('published', true).eq('recipe_versions.is_current', true)); if (error) { setLoadError(error.message); setProducts([]) } else { setLoadError(''); setProducts(data || []) }; setLoading(false) }
   // De woordenschat komt als ruwe rij binnen. Zo blijft de site werken zolang de
