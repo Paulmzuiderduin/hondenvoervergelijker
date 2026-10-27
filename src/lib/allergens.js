@@ -640,6 +640,16 @@ function explainedByParenthetical(tokens, depthBefore, breakBefore, index) {
   return false
 }
 
+// Delen tussen haakjes horen bij de bron die er vlak vóór staat:
+// "Kip (lever, hart)" en "kippeningewanden (lever, hart)".
+function parentheticalSource(tokens, depthBefore, breakBefore, index) {
+  if (depthBefore[index] === 0 || breakBefore[index]) return false
+  for (let cursor = index - 1; cursor >= 0; cursor -= 1) {
+    if (depthBefore[cursor] === 0) return isConcreteSource(tokens[cursor])
+  }
+  return false
+}
+
 // Het keuren van een etiket is rekenwerk: tientallen woorden langs honderden
 // termen. De uitslag hangt alleen van de tekst en de woordenlijst af, dus we
 // bewaren hem: bij het wisselen van een allergeen hoeft geen enkel etiket
@@ -757,6 +767,9 @@ export function assessLabel(ingredientsText = '') {
     // Delen onder een kop met een genoemde bron ("13% vlees" onder "63% Konijn:")
     // horen bij die bron.
     if (anchorBefore[match.start]) return []
+    // Delen tussen haakjes horen bij de bron ervoor: "kip (lever, hart)" en
+    // "kippeningewanden (lever, hart, maag)".
+    if (parentheticalSource(tokens, depthBefore, breakBefore, match.start)) return []
     const previous = tokens[match.start - 1]
     // "beef stock" en "zonnebloemolie" zijn herleidbaar; "tarwe, vet" niet,
     // want daar staat een komma tussen.

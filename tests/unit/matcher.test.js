@@ -246,6 +246,16 @@ test('een bron tussen haakjes heft het verzamelwoord op', () => {
   assert.equal(assessLabel('Vlees en dierlijke bijproducten (8%), rundvlees').status, 'aandacht')
 })
 
+test('delen tussen haakjes erven de diersoort ervoor', () => {
+  const kip = assessLabel('Kippeningewanden (lever, hart)')
+  assert.deepEqual(kip.allergens, ['chicken'])
+  assert.deepEqual(kip.hidden, [])
+  assert.deepEqual(kip.risky, [])
+  const twee = assessLabel('Kip (lever, hart), rund (lever)')
+  assert.deepEqual(twee.allergens, ['chicken', 'beef'])
+  assert.deepEqual(twee.hidden, [])
+})
+
 test('de algemene categorie verklaart een verzamelwoord niet', () => {
   assert.equal(assessLabel('Kalkoenmeel (totaal 14% gevogelte), maïs').status, 'aandacht')
 })
