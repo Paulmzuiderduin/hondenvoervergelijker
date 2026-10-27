@@ -61,6 +61,12 @@ try {
   const samenvatting = await page.locator('.result-summary').innerText()
   meld(/Geschikt:/.test(samenvatting), 'resultaten zijn per allergenen beoordeeld', samenvatting.replace(/\n/g, ' '))
 
+  const status = await page.locator('.result-status').innerText()
+  meld(/geschikt/.test(status), 'dynamische resultaatmelding noemt de geschikte producten', status.replace(/\n/g, ' ').slice(0, 120))
+  const actieveChips = await page.locator('.active-filters .filter-chip').allInnerTexts()
+  meld(actieveChips.some((tekst) => tekst.includes('Kip')), 'actief allergeen staat bij de resultaten', actieveChips.join(' / '))
+  meld(await page.locator('.filters-reset-inline').count() === 1, 'actieve filters hebben een wis-knop')
+
   // 3. Merk-deeplink
   await open('/?merk=Acana', '.product-card')
   const filter = await page.locator('.filter-summary').innerText()
@@ -89,11 +95,24 @@ try {
   // 6. Mobiele weergave
   await page.setViewportSize({ width: 390, height: 844 })
   await open('/', '.product-card')
-  const mobiel = await page.evaluate(() => ({
-    breed: document.documentElement.scrollWidth,
-    scherm: window.innerWidth
-  }))
+  const mobiel = await page.evaluate(() => {
+    const boven = (sel) => document.querySelector(sel).getBoundingClientRect().top
+    return {
+      breed: document.documentElement.scrollWidth,
+      scherm: window.innerWidth,
+      headerPositie: getComputedStyle(document.querySelector('.site-header')).position,
+      filterBody: getComputedStyle(document.querySelector('.filters-body')).display,
+      volgorde: boven('#vergelijken') < boven('.filters') && boven('.filters') < boven('#resultaten'),
+      herhaling: [...document.querySelectorAll('.product-card .reason')].filter((el) => /Kies je allergenen/.test(el.textContent)).length,
+      springlink: document.querySelector('.jump-to-results')?.innerText ?? ''
+    }
+  })
   meld(mobiel.breed <= mobiel.scherm + 1, 'geen horizontale overflow op mobiel', `${mobiel.breed}px op ${mobiel.scherm}px`)
+  meld(mobiel.headerPositie === 'static', 'mobiele header is niet sticky')
+  meld(mobiel.filterBody === 'none', 'filters staan op mobiel ingeklapt')
+  meld(mobiel.volgorde, 'allergenen staan op mobiel vóór filters en resultaten')
+  meld(mobiel.herhaling === 0, 'geen herhaalde allergeenuitleg op productkaarten')
+  meld(/resultaten/i.test(mobiel.springlink), 'resultaten zijn direct bereikbaar met een springlink', mobiel.springlink)
 
   // 7. Geen JavaScript-fouten
   meld(consoleFouten.length === 0, 'geen console- of JavaScript-fouten', consoleFouten.slice(0, 3).join(' | '))
