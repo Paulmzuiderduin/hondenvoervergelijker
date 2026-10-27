@@ -73,6 +73,66 @@
       "etiketNl": "Verse kip (70%), zoete aardappel (gedroogd, 10%), aardappelmeel, aardappeleiwit, aardappelzetmeel, eiwithydrolysaat (vegetarisch), gedroogde bietenpulp (ontsuikerd), venkel (gedroogd), kruiden (gedroogd), cichorei (gedroogd, 0,3%), erwten (gedroogd), cellulose, gist (gedroogd, incl. 0,04% bèta-glucanen), algen (gedroogd), yucca (gedroogd), vlozaad (psyllium), glucosamine, chondroïtinesulfaat.",
       "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
       "twijfel": null
+    },
+    {
+      "merk": "bosch",
+      "naam": "Freshe Schnauze Kalkoen met quinoa & spinazie",
+      "voertype": "wet",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://www.bosch-tiernahrung.de/bosch_de_en/freshe-schnauze-nassfutter-pute.html",
+      "etiketOrigineel": "Fresh turkey (34 %), fresh chicken (20 %), cooked broth, fresh carrot (6 %), quinoa (5 %), fresh spinach (3 %), poultry protein (hydrolysed), vinegar, rose hip (dried, 0.2 %), calcium carbonate, sunflower oil (0.1 %), beetroot (dried), sodium chloride.",
+      "etiketNl": "Verse kalkoen (34%), verse kip (20%), gekookte bouillon, verse wortel (6%), quinoa (5%), verse spinazie (3%), gevogelte-eiwit (gehydrolyseerd), azijn, rozenbottel (gedroogd, 0,2%), calciumcarbonaat, zonnebloemolie (0,1%), rode biet (gedroogd), natriumchloride.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "bosch",
+      "naam": "Freshe Schnauze Kip met pompoen & broccoli",
+      "voertype": "wet",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://www.bosch-tiernahrung.de/bosch_de_en/freshe-schnauze-nassfutter-huhn-mit-kuerbis.html",
+      "etiketOrigineel": "Fresh chicken (55 %), cooked broth, fresh carrots (8 %), fresh pumpkin (6 %), fresh broccoli (3 %), sunflower protein (texturate), tapioca, chicken protein (hydrolysed), vinegar, sunflower oil (1 %), calcium carbonate, rosehip (dried, 0.2 %), sodium chloride.",
+      "etiketNl": "Verse kip (55%), gekookte bouillon, verse wortel (8%), verse pompoen (6%), verse broccoli (3%), zonnebloemeiwit (getextureerd), tapioca, kipeiwit (gehydrolyseerd), azijn, zonnebloemolie (1%), calciumcarbonaat, rozenbottel (gedroogd, 0,2%), natriumchloride.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "bosch",
+      "naam": "Freshe Schnauze Kip met rijst & wortel",
+      "voertype": "wet",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://www.bosch-tiernahrung.de/bosch_de_en/freshe-schnauze-nassfutter-huhn.html",
+      "etiketOrigineel": "Fresh chicken (50 %), cooked broth, fresh carrots (9 %), rice (8 %), fresh broccoli (3 %), tapioca, chicken protein (hydrolysed), vinegar, sunflower oil (1 %), rosehip (dried, 0.2 %), calcium carbonate, turmeric (dried, 0.1 %), sodium chloride.",
+      "etiketNl": "Verse kip (50%), gekookte bouillon, verse wortel (9%), rijst (8%), verse broccoli (3%), tapioca, kipeiwit (gehydrolyseerd), azijn, zonnebloemolie (1%), rozenbottel (gedroogd, 0,2%), calciumcarbonaat, kurkuma (gedroogd, 0,1%), natriumchloride.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "bosch",
+      "naam": "Freshe Schnauze Rund met gierst & rode biet",
+      "voertype": "wet",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://www.bosch-tiernahrung.de/bosch_de_en/freshe-schnauze-nassfutter-rind.html",
+      "etiketOrigineel": "Fresh beef (50 % of which beef heart 6 %, beef liver 1.5 %), cooked broth, millet (8 %), fresh carrot (6 %), fresh beetroot (4 %), beef protein (hydrolysed), fresh pumpkin (0.5 %), vinegar, calcium carbonate, rose hip (dried, 0.2 %), beetroot (dried), sunflower oil (0.1 %), rosemary (dried, 0.1 %), sodium chloride.",
+      "etiketNl": "Verse rund (50%, waarvan rundhart 6%, runderlever 1,5%), gekookte bouillon, gierst (8%), verse wortel (6%), verse rode biet (4%), rundeiwit (gehydrolyseerd), verse pompoen (0,5%), azijn, calciumcarbonaat, rozenbottel (gedroogd, 0,2%), rode biet (gedroogd), zonnebloemolie (0,1%), rozemarijn (gedroogd, 0,1%), natriumchloride.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
+    },
+    {
+      "merk": "bosch",
+      "naam": "Heimat Adult met 68% regionaal rund",
+      "voertype": "wet",
+      "verpakking": null,
+      "gtin": null,
+      "bronUrl": "https://www.bosch-tiernahrung.de/bosch_de_en/heimat-adult-regionales-landrind.html",
+      "etiketOrigineel": "Fresh beef (68 %), beef stock (27 %), peas (frozen, 2.5 %), carrots (frozen, 1 %), parsnip (frozen, 1 %), sunflower oil (0.5 %). Cooked in its own juice.",
+      "etiketNl": "Verse rund (68%), runderbouillon (27%), erwten (bevroren, 2,5%), wortel (bevroren, 1%), pastinaak (bevroren, 1%), zonnebloemolie (0,5%). Gekookt in eigen vocht.",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null
     }
   ]
 }
