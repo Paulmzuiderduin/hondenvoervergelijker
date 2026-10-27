@@ -77,6 +77,7 @@ SQL-bestand gezet.
 | `etiketNl` | ja | dezelfde lijst in het Nederlands |
 | `aantekening` | nee | alleen bij een vertaling |
 | `twijfel` | nee | reden waarom een mens moet kijken; dan geen etiketvelden |
+| `controle` | nee | `handmatig` betekent: niet automatisch controleren. Gebruik dit alleen als de bron aantoonbaar geen betrouwbare productpagina meer heeft; het product blijft zichtbaar en krijgt na verloop van tijd "Controleer etiket/fabrikant". |
 
 ## Wat er daarna gebeurt
 

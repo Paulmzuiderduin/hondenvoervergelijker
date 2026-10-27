@@ -288,7 +288,8 @@
       "etiketOrigineel": "Kangoeroevlees (46%), bouillon (45%), pastinaak (5%)*, koolzaadolie (2%), mineralen (1%)*, spirulina*",
       "etiketNl": "Kangoeroevlees (46%), bouillon (45%), pastinaak (5%)*, koolzaadolie (2%), mineralen (1%)*, spirulina*",
       "aantekening": null,
-      "twijfel": null
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -297,8 +298,8 @@
       "verpakking": "6 x 800 g",
       "gtin": null,
       "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/hypoallergeen/926713",
-      "etiketOrigineel": "Paardenvlees (46%), aardpeer (31%), bouillon (19%), koolzaadolie (2%), mineralen (1%)*, spirulina*",
-      "etiketNl": "Paardenvlees (46%), aardpeer (31%), bouillon (19%), koolzaadolie (2%), mineralen (1%)*, spirulina*",
+      "etiketOrigineel": "Spiervlees van paard (46%), aardpeer (31%), bouillon (19%), raapzaadolie (2%), mineralen (1%)*, spirulina*.",
+      "etiketNl": "Spiervlees van paard (46%), aardpeer (31%), bouillon (19%), raapzaadolie (2%), mineralen (1%)*, spirulina*.",
       "aantekening": null,
       "twijfel": null
     },
@@ -309,8 +310,8 @@
       "verpakking": "6 x 800 g",
       "gtin": null,
       "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/hypoallergeen/926713",
-      "etiketOrigineel": "Struisvogelvlees (46%), bouillon (45%), pastinaak (5%)*, koolzaadolie (2%), mineralen (1%)*, spirulina*.\n* = gedroogd",
-      "etiketNl": "Struisvogelvlees (46%), bouillon (45%), pastinaak (5%)*, koolzaadolie (2%), mineralen (1%)*, spirulina*.\n* = gedroogd",
+      "etiketOrigineel": "Spiervlees van struisvogel (46%), bouillon (45%), pastinaak (5%)*, raapzaadolie (2%), mineralen (1%)*, spirulina*.",
+      "etiketNl": "Spiervlees van struisvogel (46%), bouillon (45%), pastinaak (5%)*, raapzaadolie (2%), mineralen (1%)*, spirulina*.",
       "aantekening": null,
       "twijfel": null
     },

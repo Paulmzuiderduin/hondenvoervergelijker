@@ -93,7 +93,8 @@ async function robotsToegestaan(url) {
 
 function leesProducten() {
   const rijen = []
-  if (!existsSync(IMPORT)) return rijen
+  const handmatig = []
+  if (!existsSync(IMPORT)) return { rijen, handmatig }
   for (const bestand of readdirSync(IMPORT).filter((naam) => naam.endsWith('.json') && (!alleenBestanden.length || alleenBestanden.includes(naam))).sort()) {
     let inhoud
     try {
@@ -105,6 +106,10 @@ function leesProducten() {
     for (const product of inhoud.producten ?? []) {
       if (!product.bronUrl || !product.etiketOrigineel) continue
       if (String(product.twijfel ?? '').trim()) continue
+      if (String(product.controle ?? '').toLowerCase() === 'handmatig') {
+        handmatig.push({ bestand, ...product })
+        continue
+      }
       if (filterMerk && !String(product.merk ?? '').toLowerCase().includes(filterMerk)) continue
       let host = ''
       try { host = new URL(product.bronUrl).host.toLowerCase() } catch { continue }
@@ -112,16 +117,17 @@ function leesProducten() {
       rijen.push({ bestand, ...product })
     }
   }
-  return limiet ? rijen.slice(0, limiet) : rijen
+  return { rijen: limiet ? rijen.slice(0, limiet) : rijen, handmatig }
 }
 
-const producten = leesProducten()
+const { rijen: producten, handmatig } = leesProducten()
 if (!producten.length) {
   console.log('Geen producten van geblokkeerde sites gevonden; niets te controleren.')
   process.exit(0)
 }
 
 console.log(`${producten.length} product(en) van geblokkeerde sites om in een browser te controleren.`)
+if (handmatig.length) console.log(`${handmatig.length} product(en) staan op handmatige controle en zijn overgeslagen.`)
 
 let browser
 try {

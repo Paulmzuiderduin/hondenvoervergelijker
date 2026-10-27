@@ -63,9 +63,10 @@ const pauze = Number(argumenten.get('pauze') ?? 0) || 1100
 const parallel = Math.max(1, Math.min(12, Number(argumenten.get('parallel') ?? 6) || 6))
 
 function leesProducten() {
-  if (!existsSync(IMPORT)) return { actief: [], overgeslagenBrowser: [] }
+  if (!existsSync(IMPORT)) return { actief: [], overgeslagenBrowser: [], handmatig: [] }
   const rijen = []
   const overgeslagenBrowser = []
+  const handmatig = []
   const explicietGevraagd = Boolean(filterMerk || alleenBestanden.length || INCLUSIEF_BROWSER_SITES)
   for (const bestand of readdirSync(IMPORT).filter((naam) => naam.endsWith('.json') && (!alleenBestanden.length || alleenBestanden.includes(naam))).sort()) {
     let inhoud
@@ -78,6 +79,10 @@ function leesProducten() {
     for (const product of inhoud.producten ?? []) {
       if (!product.bronUrl || !product.etiketOrigineel) continue
       if (String(product.twijfel ?? '').trim()) continue
+      if (String(product.controle ?? '').toLowerCase() === 'handmatig') {
+        handmatig.push({ bestand, ...product })
+        continue
+      }
       if (filterMerk && !String(product.merk ?? '').toLowerCase().includes(filterMerk)) continue
       let host = ''
       try { host = new URL(product.bronUrl).host.toLowerCase() } catch { /* wordt later gemeld */ }
@@ -90,7 +95,8 @@ function leesProducten() {
   }
   return {
     actief: limiet ? rijen.slice(0, limiet) : rijen,
-    overgeslagenBrowser
+    overgeslagenBrowser,
+    handmatig
   }
 }
 
@@ -101,7 +107,7 @@ async function haalOp(url) {
   return { status: antwoord.status, tekst: await antwoord.text() }
 }
 
-const { actief: producten, overgeslagenBrowser } = leesProducten()
+const { actief: producten, overgeslagenBrowser, handmatig } = leesProducten()
 if (!producten.length) {
   console.log('Geen producten met een bronpagina gevonden in data/import; niets te controleren.')
   process.exit(0)
@@ -109,10 +115,12 @@ if (!producten.length) {
 
 console.log(`${producten.length} product(en) om te controleren (${parallel} sites parallel, per site minstens ${pauze} ms pauze).`)
 if (overgeslagenBrowser.length) {
-  console.log(`${overgeslagenBrowser.length} product(en) van geblokkeerde sites overgeslagen; die controleert de browsercontrole.\n`)
-} else {
-  console.log('')
+  console.log(`${overgeslagenBrowser.length} product(en) van geblokkeerde sites overgeslagen; die controleert de browsercontrole.`)
 }
+if (handmatig.length) {
+  console.log(`${handmatig.length} product(en) staan op handmatige controle en zijn overgeslagen.`)
+}
+console.log('')
 
 const uitkomsten = []
 const laatsteVerzoekPerSite = new Map()
