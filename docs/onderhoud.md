@@ -38,6 +38,13 @@ GitHub en het hostingpaneel allebei worden bijgewerkt.
 - **Onbekende woorden**: die verschijnen in Beheer onder "Woorden die de keuring
   niet kent". Eén indeling geldt meteen voor alle producten.
 
+## Beheer openen
+
+De beheerlink staat bewust niet meer in de publieke footer. Open Beheer via
+`https://hondenvoervergelijker.paulzuiderduin.com/?beheer=1`. De Supabase-inlog
+blijft verplicht; de URL is alleen bedoeld om de beheeromgeving buiten het
+publieke menu te houden.
+
 ## Affiliate aanzetten (zodra Awin goedkeurt)
 
 1. Download de CSV-feeds van Zooplus en Medpets in Awin.

@@ -516,7 +516,7 @@ function App() {
   const [selectedBrands, setSelectedBrands] = useState(null); const [brandMode, setBrandMode] = useState('include'); const [brandSearch, setBrandSearch] = useState('')
   const [allergenSearch, setAllergenSearch] = useState('')
   const [urlKlaar, setUrlKlaar] = useState(false)
-  const [admin, setAdmin] = useState(false); const [session, setSession] = useState(null); const [isAdmin, setIsAdmin] = useState(false); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [authMessage, setAuthMessage] = useState(''); const [recovery, setRecovery] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery'); const [newPassword, setNewPassword] = useState(''); const [repeatPassword, setRepeatPassword] = useState('')
+  const [admin, setAdmin] = useState(() => new URLSearchParams(window.location.search).get('beheer') === '1'); const [session, setSession] = useState(null); const [isAdmin, setIsAdmin] = useState(false); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [authMessage, setAuthMessage] = useState(''); const [recovery, setRecovery] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery'); const [newPassword, setNewPassword] = useState(''); const [repeatPassword, setRepeatPassword] = useState('')
   const [matches, setMatches] = useState([])
   const [aanbod, setAanbod] = useState({})
   const [matchesKlaar, setMatchesKlaar] = useState(false)
@@ -751,6 +751,14 @@ function App() {
     window.history.replaceState({}, '', window.location.pathname)
     setRecovery(false); setNewPassword(''); setRepeatPassword(''); setAuthMessage('Wachtwoord gewijzigd. Je bent nu ingelogd.')
   }
+  const sluitBeheer = () => {
+    load()
+    loadTerms()
+    setAdmin(false)
+    const url = new URL(window.location.href)
+    url.searchParams.delete('beheer')
+    window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`)
+  }
   const disclaimer = <>Deze tool vergelijkt uitsluitend overgenomen etiketinformatie van {alleMerken.length || 50} merken ({products.length || '1.400+'} recepten). De resultaten vormen geen medisch advies en bieden geen 100% garantie. Controleer voor aankoop altijd zelf de verpakking en overleg bij medische klachten met een dierenarts.</>
   return <main><header className="site-header">
     <div className="site-header-row">
@@ -765,7 +773,7 @@ function App() {
           <a href="#resultaten" aria-label={`Producten (${products.length || '…'})`}><span className="nav-lang">Producten ({products.length || '…'})</span><span className="nav-kort" aria-hidden="true">Producten</span></a>
           <a href="#over-deze-site" aria-label="Hoe het werkt"><span className="nav-lang">Hoe het werkt</span><span className="nav-kort" aria-hidden="true">Uitleg</span></a>
         </>}
-        {admin && <button type="button" className="link" onClick={() => { load(); loadTerms(); setAdmin(false) }}>Terug naar vergelijken</button>}
+        {admin && <button type="button" className="link" onClick={sluitBeheer}>Terug naar vergelijken</button>}
       </nav>
     </div>
     {!recovery && !admin && <>
@@ -801,16 +809,6 @@ function App() {
               {allergens.length > 0 && <button type="button" className="clear-allergens" onClick={() => setAllergens([])}>Wis selectie ({allergens.length})</button>}
             </div>
           </div>
-          <nav className="popular-allergens" aria-label="Populaire allergenen">
-            <span>Populair:</span>
-            <a href="/hondenvoer-zonder-kip.html">Kip</a>
-            <a href="/hondenvoer-zonder-rund.html">Rund</a>
-            <a href="/hondenvoer-zonder-granen.html">Granen</a>
-            <a href="/hondenvoer-zonder-melk.html">Melk</a>
-            <a href="/hondenvoer-zonder-vis.html">Vis</a>
-            <a href="/hondenvoer-zonder-tarwe.html">Tarwe</a>
-            <a className="popular-all" href="/hondenvoer-zonder.html">Alle allergenen →</a>
-          </nav>
           {allergens.length > 0 && <div className="selected-allergens" aria-label="Gekozen allergenen">
             <span className="selected-label">Je vermijdt nu:</span>
             {allergens.map((key) => <button type="button" key={key} className="allergen-chip" onClick={() => setAllergens(allergens.filter((item) => item !== key))} title={`Verwijder ${ALLERGEN_LABELS[key]}`}>{ALLERGEN_LABELS[key]} <span aria-hidden="true">×</span></button>)}
@@ -920,7 +918,7 @@ function App() {
         <div className="footer-col">
           <h3>Transparantie, Privacy &amp; Contact</h3>
           <p>Deze website plaatst geen tracking-cookies en verkoopt geen bezoekersgegevens. Sommige uitgaande links naar webwinkels kunnen affiliate-links zijn; de selectie, sortering en beoordeling van voeding worden hier nooit door beïnvloed. Lees het volledige <a href="/privacybeleid.html">privacybeleid en de cookieverklaring</a>.</p>
-          <p className="footer-meta">Beheer &amp; redactie: Paul Zuiderduin · Contact: <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a></p>
+          <p className="footer-meta">Redactie: Paul Zuiderduin · Contact: <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a></p>
         </div>
       </div>
       <div className="footer-bottom">
@@ -930,9 +928,11 @@ function App() {
           <a href="/hondenvoer-allergieen.html">Hondenvoer &amp; allergieën</a>
           <a href="/hondenvoer-zonder.html">Zonder allergeen</a>
           <a href="/hoe-wij-vergelijken.html">Onze methode</a>
+          <a href="/over-ons.html">Over ons</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/voorwaarden.html">Voorwaarden</a>
+          <a href="/disclaimer.html">Disclaimer</a>
           <a href="/privacybeleid.html">Privacybeleid</a>
-          <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">Contact</a>
-          <button type="button" className="footer-admin-link" onClick={() => { if (admin) { load(); loadTerms() } setAdmin(!admin); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>{admin ? 'Sluit beheer' : 'Beheer'}</button>
         </span>
       </div>
     </footer>

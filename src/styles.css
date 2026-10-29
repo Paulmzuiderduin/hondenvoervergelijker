@@ -560,37 +560,6 @@ button:disabled {
   border-color: #9fb8a6;
 }
 
-.popular-allergens {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.3rem 0.65rem;
-  margin: 0.7rem 0 0.2rem;
-  font-size: 0.82rem;
-}
-
-.popular-allergens > span {
-  font-weight: 600;
-  color: #274a31;
-}
-
-.popular-allergens a {
-  color: #175b30;
-  font-weight: 600;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.popular-allergens a:hover {
-  text-decoration: underline;
-}
-
-.popular-allergens .popular-all {
-  margin-left: auto;
-  color: #4a6252;
-  font-weight: 500;
-}
-
 .allergen-panel h2 {
   margin: 0 0 0.2rem;
   font-size: 1.12rem;
@@ -1320,16 +1289,6 @@ small {
   color: #5b6d5f;
 }
 
-.footer-admin-link {
-  background: none;
-  border: 0;
-  color: #556158;
-  font-size: 0.78rem;
-  font-weight: 500;
-  padding: 0.15rem 0.3rem;
-  text-decoration: underline;
-}
-
 .footer-links {
   display: inline-flex;
   align-items: center;
@@ -1347,11 +1306,6 @@ small {
 .footer-links a:hover {
   color: #175b30;
   text-decoration: underline;
-}
-
-.footer-admin-link:hover:not(:disabled) {
-  background: #eaf0eb;
-  color: #175b30;
 }
 
 /* Responsiveness */

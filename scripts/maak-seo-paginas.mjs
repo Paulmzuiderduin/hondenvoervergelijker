@@ -124,8 +124,13 @@ ${inhoud}
           <a href="/hondenvoer-allergieen.html">Hondenvoer en allergieën</a>
           <a href="/hondenvoer-zonder.html">Zonder allergeen</a>
           <a href="/hoe-wij-vergelijken.html">Hoe wij vergelijken</a>
+          <a href="/over-ons.html">Over ons</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/voorwaarden.html">Voorwaarden</a>
+          <a href="/disclaimer.html">Disclaimer</a>
           <a href="/privacybeleid.html">Privacybeleid</a>
         </nav>
+        <p>Sommige links naar webwinkels zijn affiliate-links. Wij ontvangen dan een kleine commissie, zonder extra kosten voor jou. De selectie en beoordeling blijven onafhankelijk.</p>
         <p>© ${new Date().getFullYear()} Hondenvoervergelijker · Paul Zuiderduin · <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a></p>
         <p>Deze site vergelijkt uitsluitend overgenomen etiketinformatie. De resultaten vormen geen medisch advies en bieden geen 100% garantie. Controleer altijd zelf de verpakking en overleg bij medische klachten met een dierenarts.</p>
       </footer>
@@ -285,6 +290,167 @@ const methodePagina = () => {
     titel: 'Hoe wij hondenvoer vergelijken: bronnen, keuring en grenzen | Hondenvoervergelijker',
     beschrijving: 'Transparante methodiek: officiële fabrikantetiketten, letterlijke overname, woord-voor-woord keuring, wekelijkse bronbewaking en onafhankelijkheid van affiliate-links.',
     pad: '/hoe-wij-vergelijken.html',
+    inhoud,
+    jsonLd: [{ '@context': 'https://schema.org', ...organisatie }]
+  })
+}
+
+/* ------------------------------------------------------------------ */
+/* Vertrouwens- en juridische pagina's                                 */
+/* ------------------------------------------------------------------ */
+
+const overOnsPagina = () => {
+  const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › Over ons</p>
+      <p class="eyebrow">Over de site</p>
+      <h1>Over Hondenvoervergelijker</h1>
+      <p class="lead">Hondenvoervergelijker is een onafhankelijke Nederlandse website die hondeneigenaren helpt om voeding te vinden die past bij een voedselallergie of intolerantie. Geen eigen winkel, geen sponsoring en geen medische claims: wel zo duidelijk mogelijk laten zien wat er werkelijk op het etiket staat.</p>
+      <p class="updated">Bijgewerkt op ${datumNl(VANDAAG)}</p>
+
+      <h2>Waarom deze site bestaat</h2>
+      <p>Een hond met een voedselallergie heeft baat bij duidelijkheid. Toch staan op veel verpakkingen verzameltermen zoals “vlees en dierlijke bijproducten”, “granen” of “dierlijk vet”. Daaruit kun je niet afleiden welke dier- of plantsoort er werkelijk in zit. Wie een specifiek ingrediënt wil vermijden, heeft aan zo'n etiket weinig.</p>
+      <p>Hondenvoervergelijker neemt de ingrediëntenlijsten van fabrikanten letterlijk over en beoordeelt per allergeen of de bron bij name genoemd is. Zo zie je in één oogopslag welke producten geschikt lijken, welke je moet controleren en welke je beter kunt overslaan.</p>
+
+      <h2>Wat je op de site vindt</h2>
+      <ul>
+        <li>Een vergelijker met meer dan 1.400 recepten van 50 merken.</li>
+        <li>Per allergeen een overzicht van producten die het ingrediënt niet noemen, zoals <a href="/hondenvoer-zonder-kip.html">hondenvoer zonder kip</a>.</li>
+        <li>Per merk een pagina met alle recepten, ingrediënten en aandachtspunten.</li>
+        <li>Uitleg over <a href="/hondenvoer-allergieen.html">hondenvoer en allergieën</a> en over <a href="/hoe-wij-vergelijken.html">hoe wij vergelijken</a>.</li>
+      </ul>
+
+      <h2>Hoe wij werken</h2>
+      <p>De basis is altijd de officiële ingrediëntenlijst van de fabrikant. We nemen de tekst letterlijk over, inclusief percentages en volgorde. Ontbreekt een betrouwbare lijst, dan voegen we het product niet toe. Onbekende woorden worden handmatig ingedeeld. De bronpagina's worden wekelijks gecontroleerd; wijzigingen worden pas doorgevoerd nadat ze zijn nagelopen.</p>
+      <p>Meer over onze werkwijze staat op de pagina <a href="/hoe-wij-vergelijken.html">Hoe wij hondenvoer vergelijken</a>.</p>
+
+      <h2>Onafhankelijk en transparant</h2>
+      <p>De site is gratis en bevat geen advertentienetwerken. Bij normaal gebruik plaatsen wij geen trackingcookies. Sommige verwijzingen naar webwinkels kunnen affiliate-links zijn; na een klik kan de winkel of het affiliate-netwerk een cookie plaatsen. Als je via zo'n link iets koopt, ontvangen wij een kleine commissie. Dat kost jou niets extra en heeft geen invloed op de producten die we tonen, de volgorde of de beoordeling.</p>
+      <p>We zijn geen dierenarts en geven geen medisch advies. Bij jeuk, maag-darmklachten of een vermoeden van een allergie is een dierenarts de juiste persoon. Lees ook onze <a href="/disclaimer.html">disclaimer</a>.</p>
+
+      <h2>Wie maakt de site</h2>
+      <p>Hondenvoervergelijker wordt beheerd en geredigeerd door Paul Zuiderduin, Nederland. Vragen, correcties of suggesties zijn welkom via de <a href="/contact.html">contactpagina</a> of per e-mail op <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a>.</p>
+
+      <div class="callout">
+        <p><a class="cta" href="/">Naar de vergelijker</a> <a class="cta secondary" href="/contact.html">Contact opnemen</a></p>
+      </div>`
+
+  return shell({
+    titel: 'Over Hondenvoervergelijker | Onafhankelijk hondenvoer vergelijken',
+    beschrijving: 'Hondenvoervergelijker is een onafhankelijke Nederlandse website die hondeneigenaren helpt bij het vinden van voeding zonder specifieke allergenen. Lees over de werkwijze, onafhankelijkheid en redactie.',
+    pad: '/over-ons.html',
+    inhoud,
+    jsonLd: [{ '@context': 'https://schema.org', ...organisatie }]
+  })
+}
+
+const contactPagina = () => {
+  const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › Contact</p>
+      <p class="eyebrow">Contact</p>
+      <h1>Contact</h1>
+      <p class="lead">Vragen over de vergelijker, een fout in een ingrediëntenlijst of een suggestie voor een product? Stuur een e-mail. We lezen alles en reageren zo snel als mogelijk.</p>
+      <p class="updated">Bijgewerkt op ${datumNl(VANDAAG)}</p>
+
+      <p><a class="cta" href="mailto:hondenvoervergelijker@paulzuiderduin.com">Mail naar hondenvoervergelijker@paulzuiderduin.com</a></p>
+
+      <h2>Waarvoor kun je contact opnemen?</h2>
+      <ul>
+        <li>Een fout of verouderde informatie in een ingrediëntenlijst.</li>
+        <li>Een product of merk dat nog ontbreekt in de vergelijker.</li>
+        <li>Een vraag over de werkwijze of de bron van een product.</li>
+        <li>Privacyvragen of een verzoek om gegevens te verwijderen.</li>
+        <li>Pers, samenwerking of een andere zakelijke vraag.</li>
+      </ul>
+
+      <h2>Een fout melden</h2>
+      <p>Vermeld het merk, de productnaam, de bronpagina en wat er volgens jou niet klopt. Een link of screenshot van de officiële fabrikantpagina helpt om het snel te controleren. We passen de tekst aan zodra de bron is gecontroleerd.</p>
+
+      <h2>Reactietijd</h2>
+      <p>We proberen binnen enkele werkdagen te reageren. Voor privacyverzoeken geldt een wettelijke termijn van maximaal 30 dagen.</p>
+
+      <h2>Medische vragen</h2>
+      <p>Hondenvoervergelijker is geen dierenarts. Voor medische vragen, een eliminatiedieet of een vermoeden van een allergie verwijzen we je naar je eigen dierenarts. Lees ook onze <a href="/disclaimer.html">disclaimer</a> en de <a href="/voorwaarden.html">gebruiksvoorwaarden</a>.</p>`
+
+  return shell({
+    titel: 'Contact | Hondenvoervergelijker',
+    beschrijving: 'Neem contact op met Hondenvoervergelijker voor vragen, correcties, product suggesties, privacyverzoeken of samenwerkingen.',
+    pad: '/contact.html',
+    inhoud,
+    jsonLd: [{ '@context': 'https://schema.org', ...organisatie }]
+  })
+}
+
+const voorwaardenPagina = () => {
+  const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › Gebruiksvoorwaarden</p>
+      <p class="eyebrow">Juridisch</p>
+      <h1>Gebruiksvoorwaarden</h1>
+      <p class="lead">Deze voorwaarden gelden voor het gebruik van Hondenvoervergelijker. Door de site te gebruiken, ga je hiermee akkoord.</p>
+      <p class="updated">Laatst bijgewerkt op ${datumNl(VANDAAG)}</p>
+
+      <h2>1. Over deze site</h2>
+      <p>Hondenvoervergelijker is een informatieve website over hondenvoeding en allergenen. De site wordt beheerd door Paul Zuiderduin, Nederland. Contact verloopt via <a href="/contact.html">de contactpagina</a> of per e-mail op <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a>.</p>
+
+      <h2>2. Gebruik van de site</h2>
+      <p>Je mag de site gebruiken voor persoonlijke, niet-commerciële doeleinden. Het is niet toegestaan de site of de onderliggende data geautomatiseerd te kopiëren, te scrapen, commercieel te hergebruiken of te bewerken zonder voorafgaande schriftelijke toestemming.</p>
+
+      <h2>3. Informatie en geen medisch advies</h2>
+      <p>De site geeft informatieve vergelijkingen op basis van openbare ingrediëntenlijsten. De informatie is geen medisch advies, diagnose of behandelplan. Raadpleeg bij twijfel altijd een dierenarts. Zie ook onze <a href="/disclaimer.html">disclaimer</a>.</p>
+
+      <h2>4. Affiliate-links</h2>
+      <p>Sommige links naar webwinkels zijn affiliate-links. Als je via zo'n link een aankoop doet, ontvangen wij een kleine commissie. Dit kost jou niets extra. De selectie, sortering en beoordeling van producten zijn niet afhankelijk van deze commissie. Prijzen en beschikbaarheid worden bepaald door de betreffende winkel en kunnen wijzigen.</p>
+
+      <h2>5. Intellectueel eigendom</h2>
+      <p>De teksten, data, vormgeving en andere inhoud van deze site zijn eigendom van Hondenvoervergelijker, tenzij anders vermeld. Overname voor commerciële doeleinden is niet toegestaan zonder toestemming. Korte citaten met een duidelijke bronvermelding zijn toegestaan.</p>
+
+      <h2>6. Aansprakelijkheid</h2>
+      <p>We streven naar zorgvuldige en actuele informatie, maar kunnen niet garanderen dat alle gegevens compleet, juist of actueel zijn. Fabrikanten kunnen recepten wijzigen. Controleer daarom altijd de verpakking en de officiële informatie van de fabrikant. Voor zover wettelijk toegestaan, aanvaarden wij geen aansprakelijkheid voor schade die voortvloeit uit het gebruik van de site of uit beslissingen die op basis van de informatie worden genomen.</p>
+
+      <h2>7. Wijzigingen</h2>
+      <p>We kunnen deze voorwaarden aanpassen wanneer de site of de wetgeving verandert. De datum bovenaan deze pagina geeft de laatste wijziging aan. Blijf je de site gebruiken na een wijziging, dan geldt de nieuwe versie.</p>
+
+      <h2>8. Toepasselijk recht</h2>
+      <p>Op deze voorwaarden is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter in Nederland, tenzij de wet anders voorschrijft.</p>`
+
+  return shell({
+    titel: 'Gebruiksvoorwaarden | Hondenvoervergelijker',
+    beschrijving: 'De gebruiksvoorwaarden van Hondenvoervergelijker: gebruik van de site, informatie, affiliate-links, intellectueel eigendom en aansprakelijkheid.',
+    pad: '/voorwaarden.html',
+    inhoud,
+    jsonLd: [{ '@context': 'https://schema.org', ...organisatie }]
+  })
+}
+
+const disclaimerPagina = () => {
+  const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › Disclaimer</p>
+      <p class="eyebrow">Juridisch</p>
+      <h1>Disclaimer</h1>
+      <p class="lead">Hondenvoervergelijker is een informatieve website. Deze disclaimer legt uit wat de site wel en niet doet, en waar je op moet letten bij het gebruik van de informatie.</p>
+      <p class="updated">Laatst bijgewerkt op ${datumNl(VANDAAG)}</p>
+
+      <h2>Geen medisch advies</h2>
+      <p>Hondenvoervergelijker is geen dierenarts en geeft geen medisch advies. De site helpt je om ingrediëntenlijsten te vergelijken, maar kan een onderzoek, diagnose of behandeling door een dierenarts niet vervangen. Een voedselallergie of intolerantie stel je niet zelf vast. Overleg bij jeuk, huidklachten, maag-darmproblemen of een vermoeden van een allergie altijd met je dierenarts.</p>
+
+      <h2>Informatie kan wijzigen</h2>
+      <p>Fabrikanten kunnen recepten aanpassen zonder dat dit direct op onze site zichtbaar is. De ingrediëntenlijst op de verpakking is altijd leidend. Controleer voor aankoop de verpakking en, bij twijfel, de officiële productpagina van de fabrikant.</p>
+
+      <h2>Geen garantie op volledigheid</h2>
+      <p>We nemen etiketten zorgvuldig over en controleren bronnen periodiek, maar kunnen niet garanderen dat alle informatie compleet, juist of actueel is. Menselijke fouten blijven mogelijk. Ontdek je een fout? Meld het via de <a href="/contact.html">contactpagina</a>, dan corrigeren we het zo snel mogelijk.</p>
+
+      <h2>Affiliate-links</h2>
+      <p>Sommige links naar webwinkels zijn affiliate-links. Als je via zo'n link een aankoop doet, ontvangen wij een kleine commissie. Dit kost jou niets extra. De commissie heeft geen invloed op de producten die we tonen, de volgorde of de beoordeling.</p>
+
+      <h2>Externe links</h2>
+      <p>De site kan verwijzen naar websites van fabrikanten, winkels of andere organisaties. Wij hebben geen controle over de inhoud, het aanbod of het privacybeleid van die websites. Raadpleeg daarom altijd hun eigen voorwaarden en privacyverklaring.</p>
+
+      <h2>Aansprakelijkheid</h2>
+      <p>Het gebruik van de site en de informatie is voor eigen verantwoordelijkheid. Voor zover wettelijk toegestaan, aanvaarden wij geen aansprakelijkheid voor directe of indirecte schade die voortvloeit uit het gebruik van de site, uit onjuiste of verouderde informatie, of uit aankopen bij externe partijen.</p>
+
+      <div class="callout">
+        <p><a class="cta" href="/contact.html">Een fout melden</a> <a class="cta secondary" href="/hoe-wij-vergelijken.html">Hoe wij vergelijken</a></p>
+      </div>`
+
+  return shell({
+    titel: 'Disclaimer | Hondenvoervergelijker',
+    beschrijving: 'Disclaimer van Hondenvoervergelijker: geen medisch advies, informatie kan wijzigen, affiliate-links en aansprakelijkheid.',
+    pad: '/disclaimer.html',
     inhoud,
     jsonLd: [{ '@context': 'https://schema.org', ...organisatie }]
   })
@@ -643,7 +809,11 @@ mkdirSync(DIST, { recursive: true })
 // 1. Inhoudspagina's (werken altijd, ook zonder database).
 writeFileSync(join(DIST, 'hondenvoer-allergieen.html'), allergiePagina())
 writeFileSync(join(DIST, 'hoe-wij-vergelijken.html'), methodePagina())
-console.log('Geschreven: hondenvoer-allergieen.html, hoe-wij-vergelijken.html')
+writeFileSync(join(DIST, 'over-ons.html'), overOnsPagina())
+writeFileSync(join(DIST, 'contact.html'), contactPagina())
+writeFileSync(join(DIST, 'voorwaarden.html'), voorwaardenPagina())
+writeFileSync(join(DIST, 'disclaimer.html'), disclaimerPagina())
+console.log('Geschreven: hondenvoer-allergieen.html, hoe-wij-vergelijken.html, over-ons.html, contact.html, voorwaarden.html, disclaimer.html')
 
 // 2. Merkpagina's (fail-soft).
 const adressen = [
@@ -651,6 +821,10 @@ const adressen = [
   { loc: `${SITE}/merken/`, prioriteit: '0.9' },
   { loc: `${SITE}/hondenvoer-allergieen.html`, prioriteit: '0.8' },
   { loc: `${SITE}/hoe-wij-vergelijken.html`, prioriteit: '0.7' },
+  { loc: `${SITE}/over-ons.html`, prioriteit: '0.5' },
+  { loc: `${SITE}/contact.html`, prioriteit: '0.4' },
+  { loc: `${SITE}/voorwaarden.html`, prioriteit: '0.3' },
+  { loc: `${SITE}/disclaimer.html`, prioriteit: '0.3' },
   { loc: `${SITE}/privacybeleid.html`, prioriteit: '0.3' }
 ]
 
