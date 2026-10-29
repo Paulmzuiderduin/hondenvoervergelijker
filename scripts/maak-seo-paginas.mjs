@@ -570,6 +570,7 @@ ${lijst}
       <p>Let ook op kruisbesmetting in de fabriek en op snacks of beloningen naast de hoofdmaaltijd. Die staan niet in deze lijst.</p>
 
       <h2>Andere allergenen</h2>
+      <p class="related-allergens"><!-- ANDERE_ALLERGENEN --></p>
       <p><a href="/hondenvoer-zonder.html">Bekijk alle overzichten zonder een specifiek allergeen</a>, of lees <a href="/hondenvoer-allergieen.html">hoe je een etiket leest</a>.</p>`
 
   return {
@@ -697,9 +698,21 @@ if (producten?.length) {
   for (const [key, kort] of ALLERGEEN_KEUZE) {
     const pagina = allergeenPagina(key, kort, producten)
     if (!pagina) continue
-    writeFileSync(join(DIST, pagina.pad.replace(/^\//, '')), pagina.html)
     adressen.push({ loc: `${SITE}${pagina.pad}`, prioriteit: '0.8' })
     allergeenPaginas.push(pagina)
+  }
+  // Pas na de eerste ronde weten we welke pagina's echt bestaan. Zo linken we
+  // alleen naar pagina's met genoeg geschikte recepten en nooit naar een 404.
+  // De links schuiven per pagina door, zodat elke pagina ook links van andere
+  // pagina's ontvangt in plaats van alleen de grootste acht.
+  const gesorteerd = [...allergeenPaginas].sort((eerste, tweede) => tweede.aantal - eerste.aantal || eerste.kort.localeCompare(tweede.kort, 'nl'))
+  for (const pagina of allergeenPaginas) {
+    const start = gesorteerd.findIndex(({ key }) => key === pagina.key)
+    const andere = Array.from({ length: Math.min(8, gesorteerd.length - 1) }, (_, nummer) => gesorteerd[(start + 1 + nummer) % gesorteerd.length])
+      .map(({ pad, kort }) => `<a href="${pad}">Zonder ${escapeHtml(kort)}</a>`)
+      .join(' · ')
+    const html = pagina.html.replace('<!-- ANDERE_ALLERGENEN -->', andere)
+    writeFileSync(join(DIST, pagina.pad.replace(/^\//, '')), html)
   }
   if (allergeenPaginas.length) {
     writeFileSync(join(DIST, 'hondenvoer-zonder.html'), zonderHub(allergeenPaginas))

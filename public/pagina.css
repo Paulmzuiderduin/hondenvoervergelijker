@@ -73,6 +73,9 @@ th { background: #f6f8f6; font-weight: 700; color: #22402c; }
 .breadcrumb a { text-decoration: none; }
 .breadcrumb a:hover { text-decoration: underline; }
 
+.related-allergens { line-height: 1.9; }
+.related-allergens a { font-weight: 600; }
+
 footer { margin-top: 2.4rem; padding-top: 1.1rem; border-top: 1px solid #d3dcd4; font-size: 0.84rem; color: #5b6d5f; }
 footer nav { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-bottom: 0.6rem; }
 footer nav a { font-weight: 600; text-decoration: none; }

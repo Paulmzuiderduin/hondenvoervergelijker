@@ -301,7 +301,7 @@ button:disabled {
   display: block;
   font-size: 1.05rem;
   line-height: 1.15;
-  color: #f2c94c;
+  color: #ffd75e;
   font-variant-numeric: tabular-nums;
 }
 
@@ -558,6 +558,37 @@ button:disabled {
 .jump-to-results:hover {
   background: #e6efe9;
   border-color: #9fb8a6;
+}
+
+.popular-allergens {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.65rem;
+  margin: 0.7rem 0 0.2rem;
+  font-size: 0.82rem;
+}
+
+.popular-allergens > span {
+  font-weight: 600;
+  color: #274a31;
+}
+
+.popular-allergens a {
+  color: #175b30;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.popular-allergens a:hover {
+  text-decoration: underline;
+}
+
+.popular-allergens .popular-all {
+  margin-left: auto;
+  color: #4a6252;
+  font-weight: 500;
 }
 
 .allergen-panel h2 {

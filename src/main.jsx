@@ -801,6 +801,16 @@ function App() {
               {allergens.length > 0 && <button type="button" className="clear-allergens" onClick={() => setAllergens([])}>Wis selectie ({allergens.length})</button>}
             </div>
           </div>
+          <nav className="popular-allergens" aria-label="Populaire allergenen">
+            <span>Populair:</span>
+            <a href="/hondenvoer-zonder-kip.html">Kip</a>
+            <a href="/hondenvoer-zonder-rund.html">Rund</a>
+            <a href="/hondenvoer-zonder-granen.html">Granen</a>
+            <a href="/hondenvoer-zonder-melk.html">Melk</a>
+            <a href="/hondenvoer-zonder-vis.html">Vis</a>
+            <a href="/hondenvoer-zonder-tarwe.html">Tarwe</a>
+            <a className="popular-all" href="/hondenvoer-zonder.html">Alle allergenen →</a>
+          </nav>
           {allergens.length > 0 && <div className="selected-allergens" aria-label="Gekozen allergenen">
             <span className="selected-label">Je vermijdt nu:</span>
             {allergens.map((key) => <button type="button" key={key} className="allergen-chip" onClick={() => setAllergens(allergens.filter((item) => item !== key))} title={`Verwijder ${ALLERGEN_LABELS[key]}`}>{ALLERGEN_LABELS[key]} <span aria-hidden="true">×</span></button>)}
