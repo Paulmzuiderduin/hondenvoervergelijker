@@ -155,6 +155,12 @@ const CHALLENGE = /even geduld|beveiliging wordt geverifieerd|checking your brow
 async function haalPagina(page, url) {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 })
   await new Promise((klaar) => setTimeout(klaar, 1500))
+  // Sommige shops (zoals Terra Canis) laden de samenstelling pas later in een
+  // accordeon. Wacht daarop, anders lijkt een ongewijzigd etiket "gewijzigd".
+  await page.waitForFunction(() => {
+    const el = document.querySelector('[aria-labelledby^="composition-tab-"]')
+    return !el || (el.textContent || '').trim().length > 20
+  }, { timeout: 8000 }).catch(() => {})
   return {
     html: await page.content(),
     tekst: await page.evaluate(() => document.body?.innerText ?? '')
@@ -226,7 +232,11 @@ try {
   const wachtrijen = [...perHost.entries()].sort((a, b) => b[1].length - a[1].length)
   let index = 0
   async function werkWachtrij() {
-    const page = await browser.newPage({ locale: 'nl-NL' })
+    const page = await browser.newPage({
+      locale: 'nl-NL',
+      userAgent: `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${browser.version()} Safari/537.36`,
+      viewport: { width: 1440, height: 900 }
+    })
     try {
       while (index < wachtrijen.length) {
         const [host, lijst] = wachtrijen[index++]

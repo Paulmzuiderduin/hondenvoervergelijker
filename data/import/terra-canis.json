@@ -1,5 +1,5 @@
 {
-  "bron": "https://www.zooplus.nl",
+  "bron": "https://www.terracanis.com",
   "opgehaald": "2026-10-20",
   "producten": [
     {
@@ -8,11 +8,12 @@
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125",
-      "etiketOrigineel": "Spiervlees van rund (20%), hart van rund (15%), lever van rund (9%), long van rund (8%), wortels (12%), appel (9%), courgette, bruine rijst (6%), abrikoos, lijnolie, gist, peterselie, basilicum, venkel, wei, mineraalaarde, rosebottelpoeder, biologische eierschalen (0,4%), zeealgen(0,4%)",
+      "bronUrl": "https://www.terracanis.com/rind-mit-karotte-apfel-und-naturreis-1011.html",
+      "etiketOrigineel": "Rind 46% (Rinderherz 27%, Rinderleber 6%, Rinderlunge 9%, Muskelfleisch vom Rind 4%), Fond 15%, Karotte 11%, Zucchini 11%, Apfel 8%, Naturreis 5%, Aprikose 3%, Mineralstoffe 1%*, Rapsöl, Petersilie*, Basilikum*, Fenchelsamen*, Hagebuttenschale*, Mineralerde*, Bierhefe*, Austernschale*, Spirulina* *getrocknet",
       "etiketNl": "Spiervlees van rund (20%), hart van rund (15%), lever van rund (9%), long van rund (8%), wortels (12%), appel (9%), courgette, bruine rijst (6%), abrikoos, lijnolie, gist, peterselie, basilicum, venkel, wei, mineraalaarde, rosebottelpoeder, biologische eierschalen (0,4%), zeealgen(0,4%)",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -20,11 +21,12 @@
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125",
-      "etiketOrigineel": "Kalkoenharten (40%), wortels, aardappelen (10%), spiervlees van kalkoen (9%), kalkoenlever (9%), peer (7%), gierst, abrikozen, broccoli (3%), lijnzaadolie, gist, eierschaal poeder (0,4%), lijnzaad, basilicum, peterselie, mineraalaarde, zeealgen (0,13%), pollen",
+      "bronUrl": "https://www.terracanis.com/pute-mit-brokkoli-birne-und-kartoffel-1012.html",
+      "etiketOrigineel": "Pute 46% (Putenherz 22%, Putenmagen 12%, Putenleber 6%, Muskelfleisch von der Pute 3%, Putenhaut 3%), Fond 17%, Karotte 12%, Kartoffel 9%, Birne 5%, Hirse 5%, Aprikose 2%, Brokkoli 1%, Mineralstoffe 1%*, Rapsöl, Leinsamen, Basilikum*, Petersilie*, Austernschale*, Mineralerde*, Bierhefe*, Spirulina* *getrocknet",
       "etiketNl": "Kalkoenharten (40%), wortels, aardappelen (10%), spiervlees van kalkoen (9%), kalkoenlever (9%), peer (7%), gierst, abrikozen, broccoli (3%), lijnzaadolie, gist, eierschaal poeder (0,4%), lijnzaad, basilicum, peterselie, mineraalaarde, zeealgen (0,13%), pollen",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -32,23 +34,25 @@
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125",
-      "etiketOrigineel": "Lamshart (20%), spiervlees van lam (18%), lamslong (10%), courgette (13%), gierst (8%), wortels, appel, selderij, lijnolie, gist, eierschaal poeder (0,4%), basilicum, dille (0,2%), venkelzaden, mineraalaarde, zeealgen (0,13%), pollen",
+      "bronUrl": "https://www.terracanis.com/lamm-mit-zucchini-hirse-und-dill-1014.html",
+      "etiketOrigineel": "Lamm 38% (Lammherz 30%, Lammlunge 8% ), Fond 20%, Karotte 13%, Zucchini 11%, Hirse 7%, Apfel 5%, Staudensellerie 3%, Mineralstoffe 1%*, Rapsöl, Fenchelsamen*, Dill 0,1%*, Basilikum*, Mineralerde*, Bierhefe*, Austernschale*, Spirulina* *getrocknet",
       "etiketNl": "Lamshart (20%), spiervlees van lam (18%), lamslong (10%), courgette (13%), gierst (8%), wortels, appel, selderij, lijnolie, gist, eierschaal poeder (0,4%), basilicum, dille (0,2%), venkelzaden, mineraalaarde, zeealgen (0,13%), pollen",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
-      "naam": "Classic Konijn met Courgette, Amarant en Wilde Knoflook",
+      "naam": "Classic Konijn met Courgette, Amarant en Kervel",
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125",
-      "etiketOrigineel": "Konijnspiervlees (38%), kalkoenlever (12%), konijnenlong (8%), pompoen, tomaat, courgette (8%), selderij, amarant (4%), gierst, lijnzaadolie, gist, eischaalpoeder (0,5%), bieslook, gemalen lijnzaad, wilde knoflook (0,3%), mineraalaarde, andeszout, zeewier (0,15%), pollen",
-      "etiketNl": "Konijnspiervlees (38%), kalkoenlever (12%), konijnenlong (8%), pompoen, tomaat, courgette (8%), selderij, amarant (4%), gierst, lijnzaadolie, gist, eischaalpoeder (0,5%), bieslook, gemalen lijnzaad, wilde knoflook (0,3%), mineraalaarde, andeszout, zeewier (0,15%), pollen",
-      "aantekening": null,
-      "twijfel": null
+      "bronUrl": "https://www.terracanis.com/kaninchen-mit-zucchini-amaranth-und-kerbel-1017.html",
+      "etiketOrigineel": "Kaninchen und Pute 43% (Kaninchenfleisch 23%, Putenleber 20% ), Fond 22%, Kürbis 9%, Tomate 6%, Sellerie 3%, Zucchini 6%, Hirse 6%, Amaranth 3%, Mineralstoffe 1%*, Rapsöl, Kerbel 0,2%*, Basilikum*, Leinsamen*, Andensalz*, Mineralerde*, Bierhefe*, Austernschale*, Spirulina* *getrocknet",
+      "etiketNl": "Konijn en kalkoen 43% (konijnenvlees 23%, kalkoenlever 20%), fond 22%, pompoen 9%, tomaat 6%, selderij 3%, courgette 6%, gierst 6%, amarant 3%, mineralen 1%*, raapzaadolie, kervel 0,2%*, basilicum*, lijnzaad*, andeszout*, mineraalaarde*, biergist*, oesterschelp*, spirulina* *gedroogd",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -56,23 +60,25 @@
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125",
-      "etiketOrigineel": "Kippenhart (24%), kippenmagen (22%), amarant (5%), tomaten (17%), kippenlever (10%), peren, gierst, rode biet, bleekselderij, kokosnootolie, lijnzaadolie, gist, eierschaal poeder (0,5%), basilicum (0,4%), bieslook, zeewier (0,14%), Andeszout, rozenbottel",
+      "bronUrl": "https://www.terracanis.com/huhn-mit-tomate-amaranth-und-basilikum-1016.html",
+      "etiketOrigineel": "Huhn 46% (Hühnermagen 22%, Hühnerherz 12%, Hühnerleber 7%, Muskelfleisch vom Huhn 3%, Hühnerhaut 2%), Fond 16%, Tomate 14%, Birne 6%, Hirse 4%, Amaranth 4%, Rote Bete 3%*, Staudensellerie 2%, Mineralstoffe 1%*, Rapsöl, Basilikum 0%*, Hagebuttenschale*, Andensalz*, Mineralerde*, Bierhefe*, Austernschale*, Kokosmehl*, Spirulina* *getrocknet",
       "etiketNl": "Kippenhart (24%), kippenmagen (22%), amarant (5%), tomaten (17%), kippenlever (10%), peren, gierst, rode biet, bleekselderij, kokosnootolie, lijnzaadolie, gist, eierschaal poeder (0,5%), basilicum (0,4%), bieslook, zeewier (0,14%), Andeszout, rozenbottel",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
-      "naam": "Classic Zeezalm met courgette, boekweit en rozenbottels",
+      "naam": "Classic Zalm met Gierst, Perzik en Kruiden",
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125",
-      "etiketOrigineel": "Zalmfilet (58%), pompoen, courgette (10%), aardappelen, boekweit (10%), broccoli, tarwekiemolie, dille, basilicum, rozenbottels (0,7%), biologische eierschalen (0,3%), gemalen lijnzaad, zeealg (0,4%)",
-      "etiketNl": "Zalmfilet (58%), pompoen, courgette (10%), aardappelen, boekweit (10%), broccoli, tarwekiemolie, dille, basilicum, rozenbottels (0,7%), biologische eierschalen (0,3%), gemalen lijnzaad, zeealg (0,4%)",
-      "aantekening": null,
-      "twijfel": null
+      "bronUrl": "https://www.terracanis.com/lachs-mit-hirse-pfirsich-und-kraeutern-0301.html",
+      "etiketOrigineel": "Lachs 41%, Fond 24%, Zucchini 8%, Kürbis 7%, Kartoffel 7%, Pfirsich 7%, Hirse 5%, Rapsöl, Dill 0,1% *, Petersilie 0,1% *, Thymian 0,1% *, Fenchelsamen 0,1% *, Hagebuttenschale *, Leinsamen, Mineralerde *, Bierhefe *, Austernschale *, Spirulina * *getrocknet Verhältnis: Fisch/Fond : Gemüse/Obst/Kräuter : Hirse : übrige Rohstoffe = 65 % : 29 % : 5 % : 1 %",
+      "etiketNl": "Zalm 41%, fond 24%, courgette 8%, pompoen 7%, aardappel 7%, perzik 7%, gierst 5%, raapzaadolie, dille 0,1%*, peterselie 0,1%*, tijm 0,1%*, venkelzaad 0,1%*, rozenbottelschil*, lijnzaad, mineraalaarde*, biergist*, oesterschelp*, spirulina* *gedroogd",
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -80,11 +86,12 @@
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125",
-      "etiketOrigineel": "Paardenspiervlees (51%), wortel, selderij (9%), amarant (7,5%), venkel, appel, perzik (5%), rode biet (3%), lijnzaadolie, gist, eierschaalpoeder (0,4%), tijm, zeewier (0,15%), bieslook, andeszout, mineraalaarde",
+      "bronUrl": "https://www.terracanis.com/pferd-mit-amaranth-pfirsich-und-roter-bete-0311.html",
+      "etiketOrigineel": "Pferdefleisch 42%, Fond 18%, Karotte 7%, Sellerie 7%, Amaranth 7%, Fenchel 5%, Apfel 5%, Pfirsich 4%, Rote Bete 2%, Mineralstoffe 1%*, Rapsöl, Thymian*, Andensalz*, Mineralerde*, Bierhefe*, Austernschale*, Spirulina* *getrocknet",
       "etiketNl": "Paardenspiervlees (51%), wortel, selderij (9%), amarant (7,5%), venkel, appel, perzik (5%), rode biet (3%), lijnzaadolie, gist, eierschaalpoeder (0,4%), tijm, zeewier (0,15%), bieslook, andeszout, mineraalaarde",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -92,11 +99,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181",
-      "etiketOrigineel": "Rundvlees (47%, bestaande uit runderhart 34%, runderlong 9%, runderspiervlees 4%), bouillon (25%), pompoen (12%), courgette (7%), rode biet (3%)*, pastinaak (1%)*, mineralen (1%)*, kokosmeel, koolzaadolie, pompoenpittenmeel, bakkersgist*, psylliumvezels*, basilicum*, Andeszout, oesterschelp*, oregano (0,1%)*, peterselie*, minerale klei*, spirulina*",
+      "bronUrl": "https://www.terracanis.com/rind-mit-zucchini-kuerbis-und-oregano-1031.html",
+      "etiketOrigineel": "Rind 47% (Rinderherz 34%, Rinderlunge 9%, Muskelfleisch vom Rind 4%), Fond 25%, Kürbis 12%, Zucchini 7%, Rote Bete 3%*, Pastinake 1%*, Mineralstoffe 1%*, Kokosmehl, Rapsöl, Kürbiskernmehl, Bierhefe*, Flohsamenschalen*, Basilikum*, Andensalz, Austernschale*, Oregano 0,1%*, Petersilie*, Mineralerde*, Spirulina* *getrocknet",
       "etiketNl": "Rundvlees (47%, bestaande uit runderhart 34%, runderlong 9%, runderspiervlees 4%), bouillon (25%), pompoen (12%), courgette (7%), rode biet (3%)*, pastinaak (1%)*, mineralen (1%)*, kokosmeel, koolzaadolie, pompoenpittenmeel, bakkersgist*, psylliumvezels*, basilicum*, Andeszout, oesterschelp*, oregano (0,1%)*, peterselie*, minerale klei*, spirulina*",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -104,11 +112,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181",
-      "etiketOrigineel": "Kalkoen (51%, bestaande uit kalkoenhart 31%, kalkoenmaag 12%, kalkoenspiervlees 5%, kalkoenvel 3%), bouillon (19%), wortel (7%), selderij (7%)*, pompoen (6%)*, komkommer (3%)*, mineralen (1%)*, kokosmeel, koolzaadolie, pompoenpittenmeel, bakkersgist*, psylliumvezels*, basilicum*, kamille*, waterkers (0,1%)*, oesterschelp*, rozenbottelschelp*, minerale klei*, spirulina*",
+      "bronUrl": "https://www.terracanis.com/pute-mit-sellerie-kuerbis-und-brunnenkresse-1032.html",
+      "etiketOrigineel": "Pute 51% (Putenherz 31%, Putenmagen 12%, Muskelfleisch von der Pute 5%, Putenhaut 3%), Fond 19%, Karotte 7%, Sellerie 7%*, Kürbis 6%*, Gurke 3%*, Mineralstoffe 1%*, Kokosmehl, Rapsöl, Kürbiskernmehl, Bierhefe*, Flohsamenschalen*, Basilikum*, Kamille*, Brunnenkresse 0,1%*, Austernschale*, Hagebuttenschale*, Mineralerde*, Spirulina* *getrocknet",
       "etiketNl": "Kalkoen (51%, bestaande uit kalkoenhart 31%, kalkoenmaag 12%, kalkoenspiervlees 5%, kalkoenvel 3%), bouillon (19%), wortel (7%), selderij (7%)*, pompoen (6%)*, komkommer (3%)*, mineralen (1%)*, kokosmeel, koolzaadolie, pompoenpittenmeel, bakkersgist*, psylliumvezels*, basilicum*, kamille*, waterkers (0,1%)*, oesterschelp*, rozenbottelschelp*, minerale klei*, spirulina*",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -116,11 +125,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181",
-      "etiketOrigineel": "Kip (49%, bestaande uit kippenmaagjes 26%, kippenharten 15%, kippenspiervlees 4%, kippenvel 2%, kippenlever 2%), bouillon (23%), pompoen (12%), appel (6%), braam (2%), mineralen (1%)*, kokosmeel, pastinaak (0,8%)*, koolzaadolie, pompoenpittenmeel, bakkersgist*, psylliumvezels*, kamille*, rozenbottelschelpen*, oesterschelpen*, paardenbloem (0,1%)*, Andeszout, minerale klei*, spirulina*",
+      "bronUrl": "https://www.terracanis.com/huhn-mit-pastinake-brombeere-und-loewenzahn-1033.html",
+      "etiketOrigineel": "Huhn 49% (Hühnermagen 26%, Hühnerherz 15%, Muskelfleisch vom Huhn 4%, Hühnerhaut 2%, Hühnerleber 2%), Fond 23%, Kürbis 12%, Apfel 6%, Brombeere 2%, Mineralstoffe 1%*, Kokosmehl, Pastinake 0,8%*, Rapsöl, Kürbiskernmehl, Bierhefe*, Flohsamenschalen*, Kamille*, Hagebuttenschalen*, Austernschale*, Löwenzahn 0,1%*, Andensalz, Mineralerde*, Spirulina* *getrocknet",
       "etiketNl": "Kip (49%, bestaande uit kippenmaagjes 26%, kippenharten 15%, kippenspiervlees 4%, kippenvel 2%, kippenlever 2%), bouillon (23%), pompoen (12%), appel (6%), braam (2%), mineralen (1%)*, kokosmeel, pastinaak (0,8%)*, koolzaadolie, pompoenpittenmeel, bakkersgist*, psylliumvezels*, kamille*, rozenbottelschelpen*, oesterschelpen*, paardenbloem (0,1%)*, Andeszout, minerale klei*, spirulina*",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -128,11 +138,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181",
-      "etiketOrigineel": "Kalfsvlees (46%, bestaande uit kalfshart 35%, kalfslong 11%), bouillon (24%), pompoen (8%), peterseliewortel (8%), meloen (5%), mango (3%), kokosmeel (1%), mineralen (1%)*, pastinaak*, rode bes (0,5%), koolzaadolie, pompoenpittenmeel, bakkersgist*, salie*, basilicum*, oesterschelp*, Andeszout, kervel*, venkelzaad*, paardenbloem*, minerale klei*, spirulina*",
+      "bronUrl": "https://www.terracanis.com/kalb-mit-petersilienwurzel-mango-und-johannisbeere-1100.html",
+      "etiketOrigineel": "Kalb 46% (Kalbsherz 35%, Kalbslunge 11%), Fond 24%, Kürbis 8%, Petersilienwurzel 8%, Melone 5%, Mango 3%, Kokosmehl 1,0%, Mineralstoffe 1,0%*, Pastinake, Johannisbeere 0,5%, Rapsöl, Kürbiskernmehl, Bierhefe*, Salbei*, Basilikum*, Austernschale*, Andensalz, Kerbel*, Fenchelsamen*, Löwenzahn*, Mineralerde*, Spirulina* *getrocknet",
       "etiketNl": "Kalfsvlees (46%, bestaande uit kalfshart 35%, kalfslong 11%), bouillon (24%), pompoen (8%), peterseliewortel (8%), meloen (5%), mango (3%), kokosmeel (1%), mineralen (1%)*, pastinaak*, rode bes (0,5%), koolzaadolie, pompoenpittenmeel, bakkersgist*, salie*, basilicum*, oesterschelp*, Andeszout, kervel*, venkelzaad*, paardenbloem*, minerale klei*, spirulina*",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -140,11 +151,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181",
-      "etiketOrigineel": "Paardenspier (46%), bouillon (23%), aardappel (9%), pompoen (6%), koolraap (6%), venkel (3%), rode biet (3%)*, mineralen (1%)*, raapzaadolie, kokosmeel, pastinaak*, biergist*, salie (0,1%)*, paardenbloem*, vlierbloesem*, oesterschelp*, Andeszout, minerale klei*, spirulina*",
+      "bronUrl": "https://www.terracanis.com/pferd-mit-steckruebe-fenchel-und-salbei-0109.html",
+      "etiketOrigineel": "Pferdefleisch 46%, Fond 23%, Kartoffel 9%, Kürbis 6%, Steckrübe 6%, Fenchel 3%, Rote Bete 3%*, Mineralstoffe 1%*, Rapsöl, Kokosmehl, Pastinake*, Bierhefe*, Salbei 0,1%*, Löwenzahn*, Holunderblüten*, Austernschale*, Andensalz, Mineralerde*, Spirulina* *getrocknet",
       "etiketNl": "Paardenspier (46%), bouillon (23%), aardappel (9%), pompoen (6%), koolraap (6%), venkel (3%), rode biet (3%)*, mineralen (1%)*, raapzaadolie, kokosmeel, pastinaak*, biergist*, salie (0,1%)*, paardenbloem*, vlierbloesem*, oesterschelp*, Andeszout, minerale klei*, spirulina*",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -152,11 +164,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181",
-      "etiketOrigineel": "Lam (42%, bestaande uit lamshart 33%, lamslong 9%), bouillon (25%), wortel (9%), pompoen (9%), appel (6%), perzik (3%), pastinaak (1%)*, mineralen (1%)*, koolzaadolie, lupinegries*, kokosmeel, bakkersgist*, passiebloem (0,2%)*, basilicum*, paardenbloem*, salie*, minerale klei*, oesterschelp*, Andeszout, spirulina*",
+      "bronUrl": "https://www.terracanis.com/lamm-mit-kuerbis-pastinake-und-passionsblume-1036.html",
+      "etiketOrigineel": "Lamm 42% (Lammherz 33%, Lammlunge 9%), Fond 25%, Karotte 9%, Kürbis 9%, Apfel 6%, Pfirsich 3%, Pastinake 1%*, Mineralstoffe 1%*, Rapsöl, Lupinenschrot*, Kokosmehl, Bierhefe*, Passionsblume 0,2%*, Basilikum*, Löwenzahn*, Salbei*, Mineralerde*, Austernschale*, Andensalz, Spirulina* *getrocknet",
       "etiketNl": "Lam (42%, bestaande uit lamshart 33%, lamslong 9%), bouillon (25%), wortel (9%), pompoen (9%), appel (6%), perzik (3%), pastinaak (1%)*, mineralen (1%)*, koolzaadolie, lupinegries*, kokosmeel, bakkersgist*, passiebloem (0,2%)*, basilicum*, paardenbloem*, salie*, minerale klei*, oesterschelp*, Andeszout, spirulina*",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -164,11 +177,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181",
-      "etiketOrigineel": "Spiervlees van ree en edelhert (41%), bouillon (28%), wortel (10%), aardappel (6%), courgette (6%), appel (3%), mineralen (1%)*, pastinaak*, koolzaadolie, kokosmeel, pompoenpittenmeel, cranberry (0,3%)*, bakkersgist*, psylliumvezels*, oesterschelp*, Andeszout, minerale klei*, kardemom*, spirulina*",
+      "bronUrl": "https://www.terracanis.com/wild-mit-kartoffel-apfel-und-preiselbeere-1037.html",
+      "etiketOrigineel": "Wildfleisch 41%, Fond 28%, Karotte 10%, Kartoffel 6%, Zucchini 6%, Apfel 3%, Mineralstoffe 1%*, Pastinake*, Rapsöl, Kokosmehl, Kürbiskernmehl, Preiselbeere 0,3%*, Bierhefe*, Flohsamenschalen*, Austernschale*, Andensalz, Mineralerde*, Kardamom*, Spirulina* *getrocknet",
       "etiketNl": "Spiervlees van ree en edelhert (41%), bouillon (28%), wortel (10%), aardappel (6%), courgette (6%), appel (3%), mineralen (1%)*, pastinaak*, koolzaadolie, kokosmeel, pompoenpittenmeel, cranberry (0,3%)*, bakkersgist*, psylliumvezels*, oesterschelp*, Andeszout, minerale klei*, kardemom*, spirulina*",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -176,11 +190,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181",
-      "etiketOrigineel": "Konijn en kalkoen (45%, bestaande uit 34% konijnenvlees en 11% kalkoenlever), bouillon (23%), wortel (10%), pompoen (9%), courgette (6%), abrikoos (3%), mineralen (1%)*, kokosmeel, koolzaadolie, pompoenpittenmeel, bakkersgist*, basilicum*, rozenbottel*, bonenkruid (0,1%)*, venkelzaad*, oesterschelp*, lijnzaad*, Andeszout, minerale klei*, spirulina*",
+      "bronUrl": "https://www.terracanis.com/kaninchen-mit-zucchini-aprikose-und-bohnenkraut-1039.html",
+      "etiketOrigineel": "Kaninchen und Pute 45% (Kaninchenfleisch 34%, Putenleber 11%), Fond 23%, Karotte 10%, Kürbis 9%, Zucchini 6%, Aprikose 3%, Mineralstoffe 1%*, Kokosmehl, Rapsöl, Kürbiskernmehl, Bierhefe*, Basilikum*, Hagebuttenschale*, Bohnenkraut 0,1%*, Fenchelsamen*, Austernschale*, Leinsamen*, Andensalz, Mineralerde*, Spirulina* *getrocknet",
       "etiketNl": "Konijn en kalkoen (45%, bestaande uit 34% konijnenvlees en 11% kalkoenlever), bouillon (23%), wortel (10%), pompoen (9%), courgette (6%), abrikoos (3%), mineralen (1%)*, kokosmeel, koolzaadolie, pompoenpittenmeel, bakkersgist*, basilicum*, rozenbottel*, bonenkruid (0,1%)*, venkelzaad*, oesterschelp*, lijnzaad*, Andeszout, minerale klei*, spirulina*",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -188,11 +203,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181",
-      "etiketOrigineel": "Eend (46%, bestaande uit eendenhart 41%, eendenlever 5%), bouillon (18%), pompoen (10%), wortel (8%), courgette (4%), selderij (4%), appel (3%), meloen (3%), kastanje, aardbei (1%), mineralen (1%)*, koolzaadolie, bakkersgist*, vlierbloesem (0,2%)*, psylliumvezels*, oesterschelp*, kervel*, paardenbloem*, basilicum*, minerale klei*, peterselie*, Andeszout, spirulina*.\n* = gedroogd.",
+      "bronUrl": "https://www.terracanis.com/ente-mit-kuerbis-erdbeere-und-holunder-0002.html",
+      "etiketOrigineel": "Ente 46% (Entenherz 43%, Entenleber 3%), Fond 18%, Kürbis 10%, Karotte 8%, Zucchini 4%, Sellerie 4%, Apfel 3%, Melone 3%, Marone, Erdbeere 1%, Mineralstoffe 1%*, Rapsöl, Bierhefe*, Holunderblüte 0,2%*, Flohsamenschalen*, Austernschale*, Kerbel*, Löwenzahn*, Basilikum*, Mineralerde*, Petersilie*, Andensalz, Spirulina* *getrocknet",
       "etiketNl": "Eend (46%, bestaande uit eendenhart 41%, eendenlever 5%), bouillon (18%), pompoen (10%), wortel (8%), courgette (4%), selderij (4%), appel (3%), meloen (3%), kastanje, aardbei (1%), mineralen (1%)*, koolzaadolie, bakkersgist*, vlierbloesem (0,2%)*, psylliumvezels*, oesterschelp*, kervel*, paardenbloem*, basilicum*, minerale klei*, peterselie*, Andeszout, spirulina*.\n* = gedroogd.",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -200,11 +216,12 @@
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_puppy_hondenvoer/145939",
-      "etiketOrigineel": "Runderhart (29%), longen van runderen (13%), lever van rund (11%), spiervlees van rund (5%), courgette, wortels (11%), appels (6%), gierst, meel poempoenzaden (1% ), lijnzaadolie, organische eierschaal poeder (0,7%), veenbessen, basilicum, peterselie, biergist, rozenbottel poeder (0,2%), minerale klei, zeewier (0,1%), Andeszout, stuifmeel",
+      "bronUrl": "https://www.terracanis.com/rind-mit-apfel-karotte-und-hagebutte-1051.html",
+      "etiketOrigineel": "Rind 47% (Rinderherz 25%, Rinderlunge 12%, Rinderleber 6%, Muskelfleisch vom Rind 4%), Fond 16%, Zucchini 12%, Karotte 9%, Hirse 6,0%, Apfel 4,0%, Rapsöl 2%, Mineralstoffe 1% *, Kürbiskernmehl *, Austernschale *, Preiselbeere, Bierhefe *, Basilikum *, Petersilie *, Hagebuttenschale *, Kieselerde *, Andensalz *, Mineralerde *, Spirulina *getrocknet",
       "etiketNl": "Runderhart (29%), longen van runderen (13%), lever van rund (11%), spiervlees van rund (5%), courgette, wortels (11%), appels (6%), gierst, meel poempoenzaden (1% ), lijnzaadolie, organische eierschaal poeder (0,7%), veenbessen, basilicum, peterselie, biergist, rozenbottel poeder (0,2%), minerale klei, zeewier (0,1%), Andeszout, stuifmeel",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -212,11 +229,12 @@
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_puppy_hondenvoer/145939",
-      "etiketOrigineel": "Kippenhart (40%), kippenmaagjes (20%), pompoen (14%), tomaten, appel, gierst, meel pompoenzaad (1%), lijnolie, raapolie, organische eierschaal poeder (0,6%), bieslook, gist, kamille ( 0,2%), rozenbottel poeder, minerale klei, zeewier (0,1%), pollen (0,04%)",
+      "bronUrl": "https://www.terracanis.com/huhn-mit-kuerbis-kamille-und-tomate-1052.html",
+      "etiketOrigineel": "Huhn 47% (Hühnermagen 23%, Hühnerherz 14%, Muskelfleisch vom Huhn 5%, Hühnerhaut 3%, Hühnerleber 2%), Fond 17%, Kürbis 12%, Hirse 7,0%, Apfel 6,0%, Tomate 6%, Rapsöl 2%, Mineralstoffe 1%, Kürbiskernmehl *, Austernschale *, Bierhefe *, Kamille *, Hagebuttenschale *, Kieselerde *, Mineralerde *, Spirulina * *getrocknet",
       "etiketNl": "Kippenhart (40%), kippenmaagjes (20%), pompoen (14%), tomaten, appel, gierst, meel pompoenzaad (1%), lijnolie, raapolie, organische eierschaal poeder (0,6%), bieslook, gist, kamille ( 0,2%), rozenbottel poeder, minerale klei, zeewier (0,1%), pollen (0,04%)",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -224,23 +242,12 @@
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_puppy_hondenvoer/145939",
-      "etiketOrigineel": "Lam hart (23%), spiervlees lammeren (15%), long van lam (14%), courgette (18%), wortel, bruine rijst, magere yoghurt (4%), venkel (2%), bloem pompoenzaad (1%), lijnolie, raapolie, organische eierschaal poeder (0,6%), basilicum, gist, rozenbottelpoeder minerale klei, zeewier (0,1%), pollen",
+      "bronUrl": "https://www.terracanis.com/lamm-mit-zucchini-fenchel-und-magerjoghurt-1053.html",
+      "etiketOrigineel": "Lamm 41% (Lammherz 29%, Lammlunge 12%), Fond 17%, Karotte 15%, Zucchini 15%, Naturreis 4%, Joghurt 3%, Rapsöl 2,0%, Fenchel 1,0%, Mineralstoffe 1%, Kürbiskernmehl *, Bierhefe *, Austernschale *, Basilikum *, Hagebuttenschale *, Kieselerde *, Mineralerde *, Spirulina * *getrocknet",
       "etiketNl": "Lam hart (23%), spiervlees lammeren (15%), long van lam (14%), courgette (18%), wortel, bruine rijst, magere yoghurt (4%), venkel (2%), bloem pompoenzaad (1%), lijnolie, raapolie, organische eierschaal poeder (0,6%), basilicum, gist, rozenbottelpoeder minerale klei, zeewier (0,1%), pollen",
-      "aantekening": null,
-      "twijfel": null
-    },
-    {
-      "merk": "Terra Canis",
-      "naam": "Puppy Pangasius met wortelen, venkel & bessen",
-      "voertype": "wet",
-      "verpakking": "6 x 400 g",
-      "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_puppy_hondenvoer/145939",
-      "etiketOrigineel": "Pangasius filet, wortelen, aardappelen, selderij, bleekselderij, koolzaadolie, vlierbessen, dille, venkel, waterkers, kamille, rozenbottel, bloesempollen, eierschalen, zeewier, drinkwater, verhouding vis: aardappelen: overige grondstoffen (zonder drinkwater) = 56%: 10%: 34%",
-      "etiketNl": "Pangasius filet, wortelen, aardappelen, selderij, bleekselderij, koolzaadolie, vlierbessen, dille, venkel, waterkers, kamille, rozenbottel, bloesempollen, eierschalen, zeewier, drinkwater, verhouding vis: aardappelen: overige grondstoffen (zonder drinkwater) = 56%: 10%: 34%",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -248,11 +255,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1579270",
-      "etiketOrigineel": "Rundvlees (48%, bestaande uit runderhart 36%, runderlong 12%), bouillon (18%), aardappel (7%), wortel (6%), courgette (6%), selderij (6%), abrikoos (3%), naturel yoghurt (1%), mineralen (1%)*, kokosmeel*, koolzaadolie, biergist*, heermoes (0,2%)*, rozenbottelschil (0,2%)*, basilicum (0,2%)*, meidoornbes (0,2%)*, glucosamine (0,2%)*, brandnetel (0,1%)*, kamille (0,1%)*, minerale klei (0,1%)*, oesterschelp*, spirulina*",
+      "bronUrl": "https://www.terracanis.com/rind-mit-sellerie-aprikose-und-gesundheitskraeutern-1068.html",
+      "etiketOrigineel": "Rind 48% (Rinderherz 36%, Rinderlunge 12%), Fond 18%, Kartoffel 7%, Karotte 6%, Zucchini 6%, Sellerie 6%, Aprikose 3%, Naturjoghurt 1%, Mineralstoffe 1%*, Kokosmehl*, Rapsöl, Bierhefe*, Schachtelhalm 0,2%*, Hagebuttenschale 0,2%*, Basilikum 0,2%*, Weißdornbeere 0,2%*, Glucosamin 0,2%*, Brennnessel 0,1%*, Kamille 0,1%*, Mineralerde 0,1%*, Austernschale*, Spirulina* *getrocknet",
       "etiketNl": "Rundvlees (48%, bestaande uit runderhart 36%, runderlong 12%), bouillon (18%), aardappel (7%), wortel (6%), courgette (6%), selderij (6%), abrikoos (3%), naturel yoghurt (1%), mineralen (1%)*, kokosmeel*, koolzaadolie, biergist*, heermoes (0,2%)*, rozenbottelschil (0,2%)*, basilicum (0,2%)*, meidoornbes (0,2%)*, glucosamine (0,2%)*, brandnetel (0,1%)*, kamille (0,1%)*, minerale klei (0,1%)*, oesterschelp*, spirulina*",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -260,11 +268,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1579270",
-      "etiketOrigineel": "Kip (48%, bestaande uit kippenhart 24%, kippenmaag 18%, kippenlever 3%, kippenspiervlees 3%), bouillon (16%), aardappel (8%), courgette (6%), pompoen (6%), tomaat (6%), komkommer (3%), naturel yoghurt (2%), mineralen (1%), kokosmeel, koolzaadolie, biergist, heermoes (0,2%)*, meidoornbes (0,2%)*, glucosamine (0,2%)*, brandnetel (0,1%), rozenbottelschil (0,1%), venkelzaad (0,1%), kamille (0,1%), basilicum, minerale klei, oesterschelp, spirulina",
+      "bronUrl": "https://www.terracanis.com/huhn-mit-gurke-kuerbis-und-gesundheitskraeutern-1065.html",
+      "etiketOrigineel": "Huhn 48% (Hühnerherz 24%, Hühnermagen 18%, Hühnerleber 3%, Muskelfleisch vom Huhn 3%), Fond 16%, Kartoffel 8%, Zucchini 6%, Kürbis 6%, Tomate 6%, Gurke 3%, Naturjoghurt 2%, Mineralstoffe 1%, Kokosmehl, Rapsöl, Bierhefe, Schachtelhalm 0,2%*, Weißdornbeere 0,2%*, Glucosamin 0,2%*, Brennnessel 0,1%, Hagebuttenschale 0,1%, Fenchelsamen 0,1%, Kamille 0,1%, Basilikum, Mineralerde, Austernschale, Spirulina *getrocknet",
       "etiketNl": "Kip (48%, bestaande uit kippenhart 24%, kippenmaag 18%, kippenlever 3%, kippenspiervlees 3%), bouillon (16%), aardappel (8%), courgette (6%), pompoen (6%), tomaat (6%), komkommer (3%), naturel yoghurt (2%), mineralen (1%), kokosmeel, koolzaadolie, biergist, heermoes (0,2%)*, meidoornbes (0,2%)*, glucosamine (0,2%)*, brandnetel (0,1%), rozenbottelschil (0,1%), venkelzaad (0,1%), kamille (0,1%), basilicum, minerale klei, oesterschelp, spirulina",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -272,11 +281,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1579270",
-      "etiketOrigineel": "Hertenvleesspier (44%), bouillon (21%), aardappel (6%), wortel (6%), tomaat (6%), selderij (6%), appel (3%), naturel yoghurt (2%), mineralen (1%)*, kokosmeel*, koolzaadolie, biergist*, heermoes (0,2%)*, paardenbloem (0,2%)*, meidoornbes (0,2%)*, glucosamine (0,2%)*, brandnetel (0,1%)*, rozenbottelschil (0,1%)*, venkelzaad (0,1%)*, minerale klei*, oesterschelp*.\n* = gedroogd",
+      "bronUrl": "https://www.terracanis.com/wild-mit-tomate-apfel-und-gesundheitskraeutern-1067.html",
+      "etiketOrigineel": "Muskelfleisch vom Wild 44%, Fond 21%, Kartoffel 6%, Karotte 6%, Tomate 6%, Sellerie 6%, Apfel 3%, Naturjoghurt 2%, Mineralstoffe 1%*, Kokosmehl*, Rapsöl, Bierhefe*, Schachtelhalm 0,2%*, Löwenzahn 0,2%*, Weißdornbeere 0,2%*, Glucosamin 0,2%*, Brennnessel 0,1%*, Hagebuttenschale 0,1%*, Fenchelsamen 0,1%*, Mineralerde*, Austernschale* *getrocknet",
       "etiketNl": "Hertenvleesspier (44%), bouillon (21%), aardappel (6%), wortel (6%), tomaat (6%), selderij (6%), appel (3%), naturel yoghurt (2%), mineralen (1%)*, kokosmeel*, koolzaadolie, biergist*, heermoes (0,2%)*, paardenbloem (0,2%)*, meidoornbes (0,2%)*, glucosamine (0,2%)*, brandnetel (0,1%)*, rozenbottelschil (0,1%)*, venkelzaad (0,1%)*, minerale klei*, oesterschelp*.\n* = gedroogd",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -284,10 +294,10 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/hypoallergeen/926713",
-      "etiketOrigineel": "Kangoeroevlees (46%), bouillon (45%), pastinaak (5%)*, koolzaadolie (2%), mineralen (1%)*, spirulina*",
+      "bronUrl": "https://www.terracanis.com/kaenguru-mit-pastinake-1042.html",
+      "etiketOrigineel": "Känguru 46%, Fond 45%, Pastinake 5% *, Rapsöl 2%, Mineralstoffe 1% *, Spirulina * *getrocknet",
       "etiketNl": "Kangoeroevlees (46%), bouillon (45%), pastinaak (5%)*, koolzaadolie (2%), mineralen (1%)*, spirulina*",
-      "aantekening": null,
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
       "twijfel": null,
       "controle": "handmatig"
     },
@@ -297,11 +307,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/hypoallergeen/926713",
-      "etiketOrigineel": "Spiervlees van paard (46%), aardpeer (31%), bouillon (19%), raapzaadolie (2%), mineralen (1%)*, spirulina*.",
+      "bronUrl": "https://www.terracanis.com/pferd-mit-topinambur-1043.html",
+      "etiketOrigineel": "Muskelfleisch vom Pferd 46%, Topinambur 31%, Fond 19%, Rapsöl 2%, Mineralstoffe 1% *, Spirulina * *getrocknet",
       "etiketNl": "Spiervlees van paard (46%), aardpeer (31%), bouillon (19%), raapzaadolie (2%), mineralen (1%)*, spirulina*.",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -309,11 +320,12 @@
       "voertype": "wet",
       "verpakking": "6 x 800 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/hypoallergeen/926713",
-      "etiketOrigineel": "Spiervlees van struisvogel (46%), bouillon (45%), pastinaak (5%)*, raapzaadolie (2%), mineralen (1%)*, spirulina*.",
+      "bronUrl": "https://www.terracanis.com/strauss-mit-pastinake-1045.html",
+      "etiketOrigineel": "Muskelfleisch vom Strauß 49%, Fond 41%, Pastinake 5% *, Rapsöl 2%, Mineralstoffe 1% *, Spirulina * *getrocknet",
       "etiketNl": "Spiervlees van struisvogel (46%), bouillon (45%), pastinaak (5%)*, raapzaadolie (2%), mineralen (1%)*, spirulina*.",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -321,11 +333,12 @@
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/2564625",
-      "etiketOrigineel": "Kip en zalm (52%, kippenmaag 27%, kippenhart 17%, zalmfilet 8%), bouillon (20%), pompoen (5%), komkommer (4%), aardappel (8%), courgette (3%), zoete aardappel (3%), mineralen (1%), framboos, koolzaadolie, visolie (0,7%), goudsbloem, kamille, basilicum, tijm, brandnetel, kokosmeel, kokosvlok, spirulina*.\n*gedroogd",
+      "bronUrl": "https://www.terracanis.com/huhn-und-lachs-sw10212.html",
+      "etiketOrigineel": "Lachs und Huhn 53% (Lachsfilet 8%, Hühnerherz 17%, Hühnermagen 27% ), Fond 21%, Kartoffel 8%, Kürbis 5%, Gurke 4%, Zucchini 3%, Süßkartoffel 3%, Kokosmehl 1% *, Rapsöl 1%, Himbeere 1%, Kokosraspel 1% *, Fischöl 1%, Mineralstoffe 1% *, Kamille *, Ringelblume *, Thymian *, Brennnessel *, Basilikum *, Spirulina *getrocknet",
       "etiketNl": "Kip en zalm (52%, kippenmaag 27%, kippenhart 17%, zalmfilet 8%), bouillon (20%), pompoen (5%), komkommer (4%), aardappel (8%), courgette (3%), zoete aardappel (3%), mineralen (1%), framboos, koolzaadolie, visolie (0,7%), goudsbloem, kamille, basilicum, tijm, brandnetel, kokosmeel, kokosvlok, spirulina*.\n*gedroogd",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -333,11 +346,12 @@
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/2564625",
-      "etiketOrigineel": "Lamhart (50%), bouillon (20%), aardappel (8%), pompoen (5%), komkommer (4%), courgette (3%), zoete aardappel (3%), visolie (1%), kokosmeel (1%), mineralen (1%), framboos, koolzaadolie, kokosrasp, kamille, goudsbloem, tijm, brandnetel, basilicum, spirulina.\n*gedroogd",
+      "bronUrl": "https://www.terracanis.com/lamm-sw10217.html",
+      "etiketOrigineel": "Lammherz 50%, Fond 20%, Kartoffel 8%, Kürbis 5%, Gurke 4%, Zucchini 3%, Süßkartoffel 3%, Kokosmehl 1%, Rapsöl 1%, Himbeere 1%, Kokosraspel 1%, Fischöl 1%, Mineralstoffe 1% *, Kamille *, Ringelblume *, Thymian *, Brennnessel *, Basilikum *, Spirulina *getrocknet",
       "etiketNl": "Lamhart (50%), bouillon (20%), aardappel (8%), pompoen (5%), komkommer (4%), courgette (3%), zoete aardappel (3%), visolie (1%), kokosmeel (1%), mineralen (1%), framboos, koolzaadolie, kokosrasp, kamille, goudsbloem, tijm, brandnetel, basilicum, spirulina.\n*gedroogd",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -345,11 +359,12 @@
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1926075",
-      "etiketOrigineel": "Spiervlees van kip (24%), kippenmaag (15%), aardappel, wortel (8%), courgette, pompoen (8%), kippenhuid (5%), meloen, appel, lijnzaadolie, kokosmeel, paardenbloem*, berkenbladeren*, peterselie*, chiazaden, goudsbloem*, brandnetel*, oesterschelp*, zeewier*, mineralen",
+      "bronUrl": "https://www.terracanis.com/huhn-5000.html",
+      "etiketOrigineel": "Huhn 26% (Hühnerhaut 11%, Hühnermagen 10%, Muskelfleisch vom Huhn 5% ), Fond 23%, Karotte 14%, Kartoffel 11%, Kürbis 8%, Zucchini 6%, Melone 3%, Apfel 3%, Rapsöl 2%, Mineralstoffe 1% *, Kokosmehl *, Löwenzahn *, Kreuzkümmel *, Petersilie *, Basilikum *, Chiasamen *, Ringelblume *, Brennnessel *, Austernschale *, Spirulina * *getrocknet",
       "etiketNl": "Spiervlees van kip (24%), kippenmaag (15%), aardappel, wortel (8%), courgette, pompoen (8%), kippenhuid (5%), meloen, appel, lijnzaadolie, kokosmeel, paardenbloem*, berkenbladeren*, peterselie*, chiazaden, goudsbloem*, brandnetel*, oesterschelp*, zeewier*, mineralen",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -357,11 +372,12 @@
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1926075",
-      "etiketOrigineel": "Kalfshart (25%), kalfslong (12%), kalfsvet (7%), aardappel, wortel (8%), courgette, pompoen (8%), meloen, appel, lijnzaadolie, kokosmeel, paardenbloem*, berkenbladeren*, peterselie*, chiazaden, goudsbloem*, brandnetel*, oesterschaal*, zeewier*, mineralen",
+      "bronUrl": "https://www.terracanis.com/kalb-0510.html",
+      "etiketOrigineel": "Kalb 27% (Kalbsherz 10%, Kalbslunge 5%, Kalbsfett 11% ), Fond 23%, Karotte 14%, Kartoffel 11%, Kürbis 8%, Zucchini 6%, Melone 3%, Apfel 3%, Rapsöl 2%, Mineralstoffe 1%*, Kokosmehl*, Löwenzahn*, Kreuzkümmel*, Petersilie*, Basilikum*, Chiasamen*, Ringelblume*, Brennnessel*, Austernschale*, Spirulina* *getrocknet",
       "etiketNl": "Kalfshart (25%), kalfslong (12%), kalfsvet (7%), aardappel, wortel (8%), courgette, pompoen (8%), meloen, appel, lijnzaadolie, kokosmeel, paardenbloem*, berkenbladeren*, peterselie*, chiazaden, goudsbloem*, brandnetel*, oesterschaal*, zeewier*, mineralen",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -369,11 +385,12 @@
       "voertype": "wet",
       "verpakking": "6 x 400 g",
       "gtin": null,
-      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1926075",
-      "etiketOrigineel": "Spiervlees van wild (39%), aardappel, wortel (8%), courgette, pompoen (8%), wildvet (5%), meloen, appel, lijnzaadolie, kokosmeel, paardenbloem*, berkenbladeren*, peterselie*, chiazaden, goudsbloem*, brandnetel*, oesterschaal*, zeewier*, mineralen.\n*gedroogd",
+      "bronUrl": "https://www.terracanis.com/wild-0520.html",
+      "etiketOrigineel": "Wild 26% (Muskelfleisch vom Wild 15%, Wildfett 11%), Fond 23%, Karotte 14%, Kartoffel 11%, Kürbis 8%, Zucchini 6%, Apfel 3%, Melone 3%, Rapsöl 2%, Mineralstoffe 1%*, Kokosmehl*, Basilikum*, Kerbel*, Brennnessel*, Chiasamen*, Löwenzahn*, Petersilie*, Ringelblume*, Austernschale*, Spirulina* *getrocknet",
       "etiketNl": "Spiervlees van wild (39%), aardappel, wortel (8%), courgette, pompoen (8%), wildvet (5%), meloen, appel, lijnzaadolie, kokosmeel, paardenbloem*, berkenbladeren*, peterselie*, chiazaden, goudsbloem*, brandnetel*, oesterschaal*, zeewier*, mineralen.\n*gedroogd",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -381,11 +398,12 @@
       "voertype": "kibble",
       "verpakking": "2,5 kg",
       "gtin": null,
-      "bronUrl": "https://www.maxizoo.be/nl/p/terra-canis-canireo-adult-kip-25-kg-1216485/",
-      "etiketOrigineel": "Vers kippenspiervlees (64%), aardappelvlokken* (15%), kokosmeel (5%), abrikozen* (2%), wortelen* (1,5%), courgette* (1,4%), selderij* (1,2%), verse lever van gevogelte (1%), biergist (1%), lijnzaad (1%), appel* (0,9%), pompoen* (0,8%), pastinaak* (0,8%), eierschaalpoeder (0,7%), rode biet* (0,5%), minerale aarde (0,5%), peterseliewortel* (0,4%), fenegriek (0,4%), koolzaadmeel (0,4%), paardenbloem* (0,3%), rozenbottel* (0,3%), kamille* (0,2%), aroniabessen* (0,2%), spinazie (0,2%), zeewier* (0,1%), rozemarijn* (0,1%), tijm* (0,1%) *gedroogd",
+      "bronUrl": "https://www.terracanis.com/trockenfutter-huhn-1554.html",
+      "etiketOrigineel": "Frisches Muskelfleisch vom Huhn (64 %), Kartoffelflocken (12 %), Kokosmehl (4 %), Süßlupine, Aprikose* (1,5 %), Karotte* (1,4 %), Zucchini* (1,4 %), Sellerie* (1,1 %), frische Geflügelleber (1 %), Bierhefe* (1 %), Leinsaat (1 %), Apfel* (0,8 %), Kürbis* (0,7 %), Pastinake* (0,7 %), Eierschalenpulver (0,7 %), Rote Bete* (0,5 %), Mineralerde (0,5 %), Petersilienwurzel* (0,4 %), Bockshornklee (0,4 %), Rapskernmehl (0,4 %), Löwenzahn* (0,3 %), Hagebutte* (0,3 %), Kamille* (0,2 %), Aroniabeere* (0,2 %), Spinat* (0,2 %), Seealge (0,1 %), Rosmarin (0,1 %), Thymian (0,1 %), Mineralstoffe *getrocknet",
       "etiketNl": "Vers kippenspiervlees (64%), aardappelvlokken* (15%), kokosmeel (5%), abrikozen* (2%), wortelen* (1,5%), courgette* (1,4%), selderij* (1,2%), verse lever van gevogelte (1%), biergist (1%), lijnzaad (1%), appel* (0,9%), pompoen* (0,8%), pastinaak* (0,8%), eierschaalpoeder (0,7%), rode biet* (0,5%), minerale aarde (0,5%), peterseliewortel* (0,4%), fenegriek (0,4%), koolzaadmeel (0,4%), paardenbloem* (0,3%), rozenbottel* (0,3%), kamille* (0,2%), aroniabessen* (0,2%), spinazie (0,2%), zeewier* (0,1%), rozemarijn* (0,1%), tijm* (0,1%) *gedroogd",
-      "aantekening": null,
-      "twijfel": null
+      "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
+      "twijfel": null,
+      "controle": "handmatig"
     },
     {
       "merk": "Terra Canis",
@@ -393,11 +411,12 @@
       "voertype": "kibble",
       "verpakking": "1 / 2,5 / 5 kg",
       "gtin": null,
-      "bronUrl": "https://www.futterfreund.de/terra-canis-trockenfutter-canireo-wild",
-      "etiketOrigineel": "Frisches Muskelfleisch von Reh und Hirsch 64%, Kartoffelflocken 12%, Kokosmehl 4,8%, Süßlupine, Bierhefe*, Apfel* 1,5%, Karotte* 1,4%, Zucchini* 1,4%, Sellerie* 1,1%, frische Leber von Reh und Hirsch 1%, Eierschalenpulver 1%, Kürbis* 0,8%, Pastinake* 0,8%, Leinsaat, Aprikose* 0,5%, Bockshornklee 0,4%, Petersilienwurzel* 0,4%, Rapskernmehl, Mineralerde, Spinat* 0,2%, Seealge, Löwenzahn* 0,1%, Hagebutte* 0,1%, Kamille* 0,1%, Rosmarin, Thymian, Mineralstoffe *getrocknet",
+      "bronUrl": "https://www.terracanis.com/trockenfutter-wild-1553.html",
+      "etiketOrigineel": "Frisches Muskelfleisch von Reh und Hirsch 64,0%, Kartoffelflocken 12,0%, Kokosmehl 4,8%, Süßlupine, Bierhefe *, Mineralstoffe 2,0% *, Apfel 1,5% *, Karotte 1,4% *, Zucchini 1,4% *, Sellerie 1,1% *, frische Leber von Reh und Hirsch 1,0%, Eierschalenpulver 1,0% *, Kürbis 0,8% *, Pastinake 0,8% *, Leinsaat, Aprikose 0,5% *, Bockshornklee 0,4%, Petersilienwurzel 0,4% *, Rapskernmehl, Mineralerde, Spinat 0,2% *, Löwenzahn 0,1% *, Hagebutte 0,1% *, Kamille 0,1% *, Seealge, Rosmarin, Thymian *getrocknet",
       "etiketNl": "Vers spiervlees van ree en hert 64%, aardappelvlokken 12%, kokosmeel 4,8%, zoete lupine, biergist*, appel* 1,5%, wortel* 1,4%, courgette* 1,4%, selderij* 1,1%, verse lever van ree en hert 1%, eierschaalpoeder 1%, pompoen* 0,8%, pastinaak* 0,8%, lijnzaad, abrikoos* 0,5%, fenegriek 0,4%, peterseliewortel* 0,4%, koolzaadmeel, minerale aarde, spinazie* 0,2%, zeewier, paardenbloem* 0,1%, rozenbottel* 0,1%, kamille* 0,1%, rozemarijn, tijm, mineralen *gedroogd",
       "aantekening": "Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.",
-      "twijfel": null
+      "twijfel": null,
+      "controle": "handmatig"
     }
   ]
 }

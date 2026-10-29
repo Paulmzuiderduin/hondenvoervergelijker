@@ -18,7 +18,9 @@ export const BROWSER_ONLY_HOSTS = new Set([
   'wooof.com',
   'www.wooof.com',
   'wooof.nl',
-  'www.wooof.nl'
+  'www.wooof.nl',
+  'www.terracanis.com',
+  'terracanis.com'
 ])
 
 const ENTITEITEN = {

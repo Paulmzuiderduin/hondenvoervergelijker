@@ -32,6 +32,10 @@ GitHub en het hostingpaneel allebei worden bijgewerkt.
 - **Prins Petfoods** (72 producten): de site blokkeert geautomatiseerde browsers.
   Maak een controlelijst met `npm run bron:lijst -- --merk=Prins`, loop hem door
   en werk de datum bij met `npm run bron:gecontroleerd -- --merk=Prins --ja`.
+- **Terra Canis** (32 producten): de fabrikant blokkeert herhaalde
+  geautomatiseerde bezoeken. De bronlinks staan in
+  `data/import/terra-canis.json`; controleer ze periodiek handmatig via de
+  officiële productpagina's. De producten staan daarom op handmatige controle.
 - **Edgard & Cooper** (38 producten): de wekelijkse browsercontrole krijgt vanaf
   GitHub een andere pagina dan thuis. Draai af en toe lokaal
   `npm run check:bronnen:browser`.
