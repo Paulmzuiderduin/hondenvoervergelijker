@@ -2,6 +2,7 @@ import React, { memo, useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, allergenSearchTerms, assessLabel, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients, missingAllergenKeys, setCustomTerms, sortAllergenKeys } from './lib/allergens'
 import { isReviewOverdue, productMatch } from './lib/matcher'
+import { ADDITIONAL_NUTRIENTS, CORE_NUTRIENTS, NUTRIENTS, formatteerVoedingswaarde, valideerVoedingswaarden, voedingswaardeMap, voedingswaardeSamenvatting, voedingswaardeStatus } from './lib/nutrition'
 import { track } from './lib/analytics'
 import { leesCatalogusCache, schrijfProductenCache, schrijfTermenCache } from './lib/catalogCache'
 import { leesAllergenen, leesMerken, schrijfFilters } from './lib/urlFilters'
@@ -35,7 +36,7 @@ async function haalAlleRijen(makeQuery) {
   return { data: rijen, error: null }
 }
 
-const PRODUCT_SELECT = 'id,brand,name,food_type,package_size,source_url,source_status,last_checked_at,recipe_versions(ingredients_text,imported_at,reviewed_at,import_note,recipe_ingredients(allergen_key,certainty))'
+const PRODUCT_SELECT = 'id,brand,name,food_type,package_size,source_url,source_status,last_checked_at,recipe_versions(ingredients_text,imported_at,reviewed_at,import_note,nutrition_note,recipe_ingredients(allergen_key,certainty),recipe_nutrition(nutrient_key,value,basis,qualifier,note))'
 
 // De catalogus is groter dan één pagina. Vraag de eerste twee pagina's meteen
 // samen op, zodat de tweede niet op de eerste hoeft te wachten. Daarna gaan
@@ -64,7 +65,8 @@ async function haalProducten() {
   return { data: rijen, error: null }
 }
 
-const blankForm = { brand: '', name: '', food_type: 'kibble', package_size: '', gtin: '', ingredients_text: '', source_url: '', last_checked_at: new Date().toISOString().slice(0, 10), published: false, reviewed: false, review_note: '', allergens: [] }
+const legeVoedingswaarden = Object.fromEntries(NUTRIENTS.map(({ key }) => [key, '']))
+const blankForm = { brand: '', name: '', food_type: 'kibble', package_size: '', gtin: '', ingredients_text: '', source_url: '', last_checked_at: new Date().toISOString().slice(0, 10), published: false, reviewed: false, review_note: '', allergens: [], nutrition: legeVoedingswaarden, nutrition_source_url: '', nutrition_checked_at: '', nutrition_note: '' }
 
 function sourceDomain(url = '') {
   try { return new URL(url).hostname.replace(/^www\./, '') } catch { return '' }
@@ -154,6 +156,8 @@ function ProductCard({ product, match, aanbiedingen = [] }) {
         : match.stale ? 'Deze ingrediëntenlijst is langer dan zes maanden niet gecontroleerd.' : ''
   const foodTypeLabel = FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]
   const packageSize = product.package_size && String(product.package_size).trim().toLowerCase() !== 'null' ? product.package_size : ''
+  const voeding = voedingswaardeMap(version?.recipe_nutrition)
+  const voedingSamenvatting = voedingswaardeSamenvatting(version?.recipe_nutrition)
   return <article className={excluded ? 'product-card excluded' : `product-card ${match.kind}`}>
     <div className="product-card-top">
       <div className="product-title-group">
@@ -171,6 +175,7 @@ function ProductCard({ product, match, aanbiedingen = [] }) {
       {hydrolysed.present && <span className="meta-pill hydrolysed-pill">Gehydrolyseerd eiwit</span>}
       {product.source_url?.startsWith('http') && <a className="meta-source" href={product.source_url} target="_blank" rel="noreferrer" title="Officiële productpagina bij de fabrikant" onClick={() => track('bron-klik', { merk: product.brand, product: product.name, domein: sourceDomain(product.source_url) })}>Bron: {sourceDomain(product.source_url) || 'fabrikant'} ↗</a>}
     </div>
+    {voedingSamenvatting && <p className="nutrition-summary">{voedingSamenvatting}</p>}
     {presentStates.length > 0 && !excluded && <p className="verdict present"><strong>Staat in de lijst:</strong> {presentStates.map((state) => `${ALLERGEN_LABELS[state.key]}${state.members.some((member) => member !== state.key) ? ` via ${labelList(state.members.filter((member) => member !== state.key))}` : ''}`).join(', ')}</p>}
     {unknownStates.length > 0 && <p className="verdict unknown"><strong>Kan erin zitten:</strong> {labelList(unknownStates.map((state) => state.key), 100)} — het etiket noemt geen bron voor {onbekendeWoorden.length > 5 ? `${onbekendeWoorden.slice(0, 5).join(', ')} en ${onbekendeWoorden.length - 5} meer` : onbekendeWoorden.length ? onbekendeWoorden.join(', ') : 'een ingrediënt'}</p>}
     {absentStates.length > 0 && <p className="verdict absent"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 100)}</p>}
@@ -179,6 +184,16 @@ function ProductCard({ product, match, aanbiedingen = [] }) {
       <Ingredients text={version?.ingredients_text} />
       {match.importNote && <p className="import-note"><small>{match.importNote}</small></p>}
     </details>
+    {Object.keys(voeding).length > 0 && <details className="nutrition">
+      <summary>Alle voedingswaarden</summary>
+      <dl className="nutrition-grid">
+        {NUTRIENTS.filter(({ key }) => voeding[key] != null).map((nutrient) => <div key={nutrient.key}>
+          <dt>{nutrient.label}</dt>
+          <dd>{formatteerVoedingswaarde(nutrient, voeding[nutrient.key])}</dd>
+        </div>)}
+      </dl>
+      <p className="nutrition-note"><small>Percentages zoals op het etiket (as-fed).{version?.nutrition_note ? ` ${version.nutrition_note}` : ''}</small></p>
+    </details>}
     {hydrolysed.present && <p className="note-hydrolysed"><strong>Gehydrolyseerd eiwit:</strong> {hydrolysed.words.length ? `dit etiket noemt ${hydrolysed.words.join(', ')} in gehydrolyseerde vorm` : 'dit etiket noemt gehydrolyseerde eiwitten'}: de eiwitketens zijn opgeknipt, waardoor het lichaam ze vaak niet meer als allergeen herkent. Dierenartsen kiezen zo'n voer juist bij een allergie; deze site telt de bron toch mee, want alleen je dierenarts kan beoordelen of het in jouw geval werkt.</p>}
     {excluded && <p className="reason excluded">Uitgesloten vanwege: {match.presentStates.map((state) => ALLERGEN_LABELS[state.key]).join(' · ')}</p>}
     {!excluded && checkReason && <p className="reason">Controleer: {checkReason}</p>}
@@ -234,7 +249,7 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
 
   const loadCatalogue = async () => {
     if (!supabase) return setCatalogueError('Supabase is nog niet geconfigureerd.')
-    const { data, error } = await haalAlleRijen(() => supabase.from('products').select('id,brand,name,food_type,package_size,gtin,source_url,source_status,source_note,last_checked_at,published,recipe_versions(id,ingredients_text,imported_at,reviewed_at,review_note,import_note,source_changed_at,recipe_ingredients(allergen_key,certainty))').eq('recipe_versions.is_current', true).order('brand').order('name'))
+    const { data, error } = await haalAlleRijen(() => supabase.from('products').select('id,brand,name,food_type,package_size,gtin,source_url,source_status,source_note,last_checked_at,published,recipe_versions(id,ingredients_text,imported_at,reviewed_at,review_note,import_note,source_changed_at,nutrition_source_url,nutrition_checked_at,nutrition_note,recipe_ingredients(allergen_key,certainty),recipe_nutrition(nutrient_key,value,basis,qualifier,note))').eq('recipe_versions.is_current', true).order('brand').order('name'))
     if (error) { setCatalogueError(error.message); setCatalogue([]); return }
     setCatalogueError(''); setCatalogue(data || [])
   }
@@ -363,12 +378,31 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
   const edit = (product) => {
     const version = product.recipe_versions?.[0]
     setEditingId(product.id)
-    setForm({ brand: product.brand, name: product.name, food_type: product.food_type, package_size: product.package_size || '', gtin: product.gtin || '', ingredients_text: version?.ingredients_text || '', source_url: product.source_url || '', last_checked_at: product.last_checked_at, published: product.published, reviewed: Boolean(version?.reviewed_at), review_note: version?.review_note || '', allergens: version?.recipe_ingredients?.map(({ allergen_key }) => allergen_key) || [] })
+    setForm({
+      brand: product.brand,
+      name: product.name,
+      food_type: product.food_type,
+      package_size: product.package_size || '',
+      gtin: product.gtin || '',
+      ingredients_text: version?.ingredients_text || '',
+      source_url: product.source_url || '',
+      last_checked_at: product.last_checked_at,
+      published: product.published,
+      reviewed: Boolean(version?.reviewed_at),
+      review_note: version?.review_note || '',
+      allergens: version?.recipe_ingredients?.map(({ allergen_key }) => allergen_key) || [],
+      nutrition: { ...legeVoedingswaarden, ...Object.fromEntries((version?.recipe_nutrition ?? []).map(({ nutrient_key, value }) => [nutrient_key, value ?? ''])) },
+      nutrition_source_url: version?.nutrition_source_url || '',
+      nutrition_checked_at: version?.nutrition_checked_at || '',
+      nutrition_note: version?.nutrition_note || ''
+    })
   }
   const save = async (event) => {
     event.preventDefault()
     if (!supabase) return setMessage('Voeg eerst de Supabase-omgevingsvariabelen toe.')
     if (saving) return
+    const voeding = valideerVoedingswaarden(form.nutrition)
+    if (voeding.fouten.length) return setMessage(voeding.fouten.join(' '))
     setSaving(true)
     setMessage('Opslaan…')
     const { error } = await supabase.rpc('save_product_with_recipe', {
@@ -384,15 +418,35 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
       p_ingredients_text: form.ingredients_text,
       p_reviewed: form.reviewed,
       p_review_note: form.review_note || null,
-      p_allergens: form.allergens
+      p_allergens: form.allergens,
+      p_nutrition: {
+        source_url: form.nutrition_source_url || form.source_url || null,
+        checked_at: form.nutrition_checked_at || form.last_checked_at || null,
+        note: form.nutrition_note || null,
+        values: voeding.waarden
+      }
     })
     setSaving(false)
-    if (error) return setMessage(MISSING_RPC.test(error.message) ? 'De databasefunctie save_product_with_recipe ontbreekt nog. Voer eerst supabase/migrations/20261019160000_recipe_review.sql uit in de Supabase SQL Editor.' : error.message)
+    if (error) return setMessage(MISSING_RPC.test(error.message) ? 'De databasefunctie save_product_with_recipe ontbreekt nog of heeft nog de oude vorm. Voer eerst supabase/migrations/20261030180000_voedingswaarden.sql uit in de Supabase SQL Editor.' : error.message)
     const wasEditing = Boolean(editingId)
     setForm(blankForm); setEditingId(null); setMessage(wasEditing ? 'Product en nieuwe receptversie opgeslagen.' : 'Product opgeslagen.'); onSaved(); loadCatalogue()
   }
 
   const uncertainWords = useMemo(() => form.ingredients_text ? [...new Set(markUncertainIngredients(form.ingredients_text).filter((segment) => segment.uncertain).map((segment) => segment.text))] : [], [form.ingredients_text])
+  const ingevuldeKernwaarden = CORE_NUTRIENTS.filter(({ key }) => String(form.nutrition?.[key] ?? '').trim() !== '').length
+  const ingevuldeAanvullende = ADDITIONAL_NUTRIENTS.filter(({ key }) => String(form.nutrition?.[key] ?? '').trim() !== '').length
+  const voedingTelling = useMemo(() => {
+    let volledig = 0
+    let gedeeltelijk = 0
+    let ontbreekt = 0
+    for (const product of catalogue) {
+      const status = voedingswaardeStatus(product.recipe_versions?.[0]?.recipe_nutrition ?? [])
+      if (status.volledig) volledig += 1
+      else if (status.gedeeltelijk) gedeeltelijk += 1
+      else ontbreekt += 1
+    }
+    return { volledig, gedeeltelijk, ontbreekt }
+  }, [catalogue])
   return <form className="admin-form" onSubmit={save}>
     <h2>{editingId ? 'Product en nieuwe receptversie' : 'Product invoeren'}</h2><p>Voer de ingrediënten letterlijk vanaf het etiket in. Bij opslaan van een wijziging blijft de vorige receptversie bewaard.</p>
     <label>Merk<input required value={form.brand} onChange={(e) => change('brand', e.target.value)} /></label>
@@ -408,6 +462,17 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
     <p><small>Woorden: {labelAdvies.unknown.length ? `de keuring herkent deze woorden niet: ${labelAdvies.unknown.slice(0, 8).join(', ')}${labelAdvies.unknown.length > 8 ? ` en ${labelAdvies.unknown.length - 8} meer` : ''}. Je kunt ze één keer indelen in de takenlijst onderaan.` : 'elk ingrediëntwoord in deze lijst is herkend.'}</small></p>
     {labelAdvies.hydrolysed?.present && <p><small>Dit etiket noemt gehydrolyseerd eiwit{labelAdvies.hydrolysed.words.length ? ` (${labelAdvies.hydrolysed.words.join(', ')})` : ''}. De site vermeldt dat op de kaart; het oordeel per allergeen verandert er niet door.</small></p>}
     <fieldset><legend>Bevestigd aanwezige allergiebronnen</legend>{ALLERGEN_GROUPS.map((group) => <fieldset className="allergen-group" key={group.key}><legend>{group.label}</legend>{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={form.allergens.includes(key)} onChange={(e) => change('allergens', e.target.checked ? [...form.allergens, key] : form.allergens.filter((item) => item !== key))} />{label}</label>)}</fieldset>)}</fieldset>
+    <fieldset className="nutrition-form">
+      <legend>Voedingswaarden</legend>
+      <p><small>Neem de analytische bestanddelen over zoals op het etiket. Laat leeg wat de fabrikant niet vermeldt; vul niets aan.</small></p>
+      <div className="nutrition-form-grid">
+        {NUTRIENTS.map((nutrient) => <label key={nutrient.key}>{nutrient.label} ({nutrient.unit === 'kcal/100g' ? 'kcal/100 g' : nutrient.unit})<input inputMode="decimal" value={form.nutrition?.[nutrient.key] ?? ''} placeholder={nutrient.unit === '%' ? 'bijv. 26' : 'bijv. 370'} onChange={(event) => change('nutrition', { ...form.nutrition, [nutrient.key]: event.target.value })} /></label>)}
+      </div>
+      <label>Bron voedingswaarden<input value={form.nutrition_source_url} placeholder="Leeg = de productbron" onChange={(event) => change('nutrition_source_url', event.target.value)} /></label>
+      <label>Gecontroleerd op<input type="date" value={form.nutrition_checked_at} onChange={(event) => change('nutrition_checked_at', event.target.value)} /></label>
+      <label>Notitie<input value={form.nutrition_note} placeholder="bijv. kcal niet vermeld op de bron" onChange={(event) => change('nutrition_note', event.target.value)} /></label>
+      <p><small>{ingevuldeKernwaarden} van {CORE_NUTRIENTS.length} kernwaarden en {ingevuldeAanvullende} van {ADDITIONAL_NUTRIENTS.length} aanvullende waarden ingevuld. Ontbrekende waarden worden niet geschat.</small></p>
+    </fieldset>
     <label className="inline"><input type="checkbox" checked={form.reviewed} onChange={(e) => change('reviewed', e.target.checked)} />Ik heb deze ingrediëntenlijst tegen de bron gecontroleerd</label>
     <label>Aantekening (optioneel)<input value={form.review_note} placeholder="bijv. nagevraagd bij de fabrikant op 12-10" onChange={(e) => change('review_note', e.target.value)} /></label>
     <p><small>Nagekeken betekent: deze tekst is de tekst van de fabrikant. Het zegt niet dat er geen allergeen in zit — dat antwoord geeft de vergelijking per allergeen uit de tekst zelf. Verandert de tekst, dan vervalt de bevestiging automatisch en komt het product terug in de takenlijst.</small></p>
@@ -415,7 +480,7 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
     <button disabled={saving}>{saving ? 'Opslaan…' : 'Opslaan'}</button>{editingId && <button type="button" onClick={reset}>Annuleren</button>}{message && <p aria-live="polite">{message}</p>}
 
     <h2>Wat vraagt aandacht ({keuring.teDoen.length})</h2>
-    <p><small>{catalogue.length} producten · {keuring.klaar.length} klaar (waarvan {keuring.teControleren.length} automatisch overgenomen en nog niet nagelopen) · {keuring.teDoen.length} met een openstaand punt. Een product is klaar als de tekst van de bron komt (nagekeken of automatisch overgenomen) en de keuring geen woorden meer over heeft.</small></p>
+    <p><small>{catalogue.length} producten · {keuring.klaar.length} klaar (waarvan {keuring.teControleren.length} automatisch overgenomen en nog niet nagelopen) · {keuring.teDoen.length} met een openstaand punt. Een product is klaar als de tekst van de bron komt (nagekeken of automatisch overgenomen) en de keuring geen woorden meer over heeft. Voedingswaarden: {voedingTelling.volledig} volledig, {voedingTelling.gedeeltelijk} gedeeltelijk, {voedingTelling.ontbreekt} ontbrekend.</small></p>
     {catalogueError ? <p role="alert">Kon de catalogus niet laden: {catalogueError}</p> : keuring.teDoen.length ? keuring.teDoen.map(({ product, version, openWoorden, onbekend, taken, nagelopen, automatisch, herkomst, verouderd, bronGewijzigd, schoon }) => {
       // Het etiket zelf moet nog langs de bron, of alleen een woord wacht nog op
       // een indeling. Dat verschil bepaalt welke knop hier iets oplost.

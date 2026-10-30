@@ -99,6 +99,17 @@ SQL-bestand gezet.
   `data/import/broncontrole.md`; de tekst op de site verandert niet vanzelf en
   er wordt niets stilzwijgend overschreven.
 
+## Voedingswaarden (vanaf fase 1)
+
+De voedingswaarden staan niet in de gewone importbestanden. Ze krijgen een
+eigen map `data/import/voedingswaarden/<merk>.json`, zodat de bestaande
+etiketimport ongewijzigd blijft. De waarden worden per receptversie opgeslagen
+in `public.recipe_nutrition`; zie `docs/voedingswaarden.md` voor het formaat en
+de fasering.
+
+De site toont alleen waarden die de fabrikant echt vermeldt. Ontbrekende
+waarden worden niet geschat en verschijnen niet als lege tabel.
+
 ## Automatische bronbewaking (sinds 2026-10-26)
 
 De bronbewaking draait elke maandag automatisch via
