@@ -1,0 +1,42 @@
+-- Woordenlijst voor de nieuwe merken (30 oktober 2026).
+
+insert into public.ingredient_terms (term, kind, allergen_keys, note)
+values
+  ('geinactiveerde', 'onschuldig', null, 'Vervoeging van geïnactiveerd; geen allergene bron.'),
+  ('moederkruid', 'bron', array['herbs'], 'Kruid; valt onder de groep kruiden.'),
+  ('planten', 'onschuldig', null, 'Verzamelkop in een etiket; de concrete planten staan erachter.'),
+  ('guldenroede', 'bron', array['herbs'], 'Kruid (goldenrod).'),
+  ('kleefkruid', 'bron', array['herbs'], 'Kruid (cleavers).'),
+  ('vogelmuur', 'bron', array['herbs'], 'Kruid (chickweed).'),
+  ('origanum', 'bron', array['herbs'], 'Oregano.'),
+  ('vulgare', 'bron', array['herbs'], 'Soortaanduiding van oregano (Origanum vulgare).'),
+  ('purpurea', 'bron', array['herbs'], 'Soortaanduiding van Echinacea (Echinacea purpurea).'),
+  ('arthrospira', 'bron', array['algae'], 'Spirulina (Arthrospira platensis).'),
+  ('platensis', 'bron', array['algae'], 'Soortaanduiding van spirulina (Arthrospira platensis).'),
+  ('voedingsgist', 'bron', array['yeast'], 'Gist.'),
+  ('zeevismeel', 'bron', array['fish'], 'Vismeel; de vissoort wordt niet genoemd.'),
+  ('talk', 'onduidelijk', array['beef', 'lamb', 'pork'], 'Dierlijk vet; het etiket noemt niet van welke diersoort.'),
+  ('bijprodukten', 'onduidelijk', null, 'Oude spelling van bijproducten; kan een dierlijke of plantaardige bron verbergen.'),
+  ('ingredient', 'onschuldig', null, 'Algemeen woord, geen ingrediënt.'),
+  ('naakte', 'onschuldig', null, 'Bijvoeglijk naamwoord (bijvoorbeeld naakte haver); haver zelf wordt apart herkend.'),
+  ('xos', 'onschuldig', null, 'Xylo-oligosachariden; prebiotische vezel.'),
+  ('gewrichtsondersteuning', 'onschuldig', null, 'Aanduiding van een werkingsclaim, geen ingrediënt.'),
+  ('gezuiverd', 'onschuldig', null, 'Bereidingswoord.'),
+  ('ggo', 'onschuldig', null, 'Ggo-status; geen ingrediënt.'),
+  ('agrarische', 'onschuldig', null, 'Herkomstaanduiding.'),
+  ('gebraden', 'onschuldig', null, 'Bereidingswoord.'),
+  ('gerookte', 'onschuldig', null, 'Bereidingswoord.'),
+  ('geselecteerde', 'onschuldig', null, 'Aanduiding, geen ingrediënt.'),
+  ('verwerking', 'onschuldig', null, 'Aanduiding van een verwerkingsstap.'),
+  ('nevenproducten', 'onduidelijk', null, 'Verzamelterm voor dierlijke of plantaardige reststromen; de bron wordt niet genoemd.'),
+  ('chicoreewortel', 'bron', array['chicory'], 'Cichoreiwortel.'),
+  ('geroosterd', 'onschuldig', null, 'Bereidingswoord.'),
+  ('moutmeel', 'onduidelijk', array['grains', 'wheat', 'barley', 'oats', 'rye'], 'Moutmeel; de graansoort wordt niet altijd genoemd.'),
+  ('huid', 'onschuldig', null, 'Dierlijk deel dat bij de genoemde vleessoort hoort; geen zelfstandige bron.'),
+  ('3organisch', 'onschuldig', null, 'Voetnoot bij biologische ingrediënten; geen ingrediënt.'),
+  ('gerehydreerd', 'onschuldig', null, 'Bereidingswoord.'),
+  ('overeenkomstig', 'onschuldig', null, 'Vergelijkingswoord in een toelichting; geen ingrediënt.')
+on conflict (term) do update
+  set kind = excluded.kind,
+      allergen_keys = excluded.allergen_keys,
+      note = excluded.note;

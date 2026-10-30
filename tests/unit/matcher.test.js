@@ -260,6 +260,12 @@ test('een bron tussen haakjes heft het verzamelwoord op', () => {
   assert.equal(assessLabel('Vlees en dierlijke bijproducten (8%), rundvlees').status, 'aandacht')
 })
 
+test('de oude spelling bijprodukten wordt als verzamelterm herkend', () => {
+  const resultaat = assessLabel('Vlees en dierlijke bijprodukten (8%), rundvlees')
+  assert.deepEqual(resultaat.unknown, [])
+  assert.equal(resultaat.status, 'aandacht')
+})
+
 test('delen tussen haakjes erven de diersoort ervoor', () => {
   const kip = assessLabel('Kippeningewanden (lever, hart)')
   assert.deepEqual(kip.allergens, ['chicken'])

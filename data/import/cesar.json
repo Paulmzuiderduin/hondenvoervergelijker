@@ -1,0 +1,90 @@
+{
+  "bron": "https://www.cesar.nl/assortiment/alle-producten",
+  "opgehaald": "2026-10-30",
+  "producten": [
+    {
+      "merk": "Cesar",
+      "naam": "Classic Rund",
+      "voertype": "wet",
+      "verpakking": "150 gr",
+      "gtin": "4008429092749",
+      "bronUrl": "https://www.cesar.nl/assortiment/classic/classic-rund",
+      "etiketOrigineel": "Vlees en dierlijke bijproducten (55%, waarvan 95% natuurlijk*, waarvan 4% rund, 4% lever), granen, mineralen, plantaardige bijproducten, plantaardige eiwitextracten, *natuurlijke ingrediënten.",
+      "etiketNl": "Vlees en dierlijke bijproducten (55%, waarvan 95% natuurlijk*, waarvan 4% rund, 4% lever), granen, mineralen, plantaardige bijproducten, plantaardige eiwitextracten, *natuurlijke ingrediënten.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Cesar",
+      "naam": "Classic Kip",
+      "voertype": "wet",
+      "verpakking": "150 gr; 300 gr",
+      "gtin": "3065890136007",
+      "bronUrl": "https://www.cesar.nl/assortiment/classic/classic-kip-300",
+      "etiketOrigineel": "Vlees en dierlijke bijproducten (55%, waarvan natuurlijk* 95%, waarvan kippenlever 4%), granen, mineralen, plantaardige bijproducten, plantaardige eiwitextracten, *natuurlijke ingrediënten.",
+      "etiketNl": "Vlees en dierlijke bijproducten (55%, waarvan natuurlijk* 95%, waarvan kippenlever 4%), granen, mineralen, plantaardige bijproducten, plantaardige eiwitextracten, *natuurlijke ingrediënten.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Cesar",
+      "naam": "Classic Kalf & Gevogelte",
+      "voertype": "wet",
+      "verpakking": "150 gr",
+      "gtin": "4008429092756",
+      "bronUrl": "https://www.cesar.nl/assortiment/classic/classic-kalf-gevogelte",
+      "etiketOrigineel": "Vlees en dierlijke bijproducten (55%, waarvan 95% natuurlijk*, waarvan 4% kalf, 4% kippenlever), granen, mineralen, plantaardige bijproducten, plantaardige eiwitextracten, *natuurlijke ingrediënten.",
+      "etiketNl": "Vlees en dierlijke bijproducten (55%, waarvan 95% natuurlijk*, waarvan 4% kalf, 4% kippenlever), granen, mineralen, plantaardige bijproducten, plantaardige eiwitextracten, *natuurlijke ingrediënten.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Cesar",
+      "naam": "Cuisine Kalf & Kalkoen",
+      "voertype": "wet",
+      "verpakking": "150 gr",
+      "gtin": "4008429092930",
+      "bronUrl": "https://www.cesar.nl/assortiment/cuisine/cuisine-kalf-kalkoen",
+      "etiketOrigineel": "Vlees en dierlijke bijproducten (43%, waarvan 92% natuurlijk*, waarvan 4% kalf, 4% kalkoen, 4% lever), plantaardige bijproducten, mineralen, plantaardige eiwitextracten, groenten, *natuurlijke ingrediënten.",
+      "etiketNl": "Vlees en dierlijke bijproducten (43%, waarvan 92% natuurlijk*, waarvan 4% kalf, 4% kalkoen, 4% lever), plantaardige bijproducten, mineralen, plantaardige eiwitextracten, groenten, *natuurlijke ingrediënten.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Cesar",
+      "naam": "Senior Kip & Rijst 10+",
+      "voertype": "wet",
+      "verpakking": "150 gr",
+      "gtin": "4008429092954",
+      "bronUrl": "https://www.cesar.nl/assortiment/senior-10/senior-kip-rijst-10",
+      "etiketOrigineel": "Vlees en dierlijke bijproducten (44%, waarvan 92% natuurlijk*, waarvan 4% kippenlever), granen (waarvan 1.1% rijst, wat gelijk staat aan 4% gekookte rijst), mineralen, plantaardige eiwitextracten, plantaardige bijproducten, *natuurlijke ingrediënten.",
+      "etiketNl": "Vlees en dierlijke bijproducten (44%, waarvan 92% natuurlijk*, waarvan 4% kippenlever), granen (waarvan 1.1% rijst, wat gelijk staat aan 4% gekookte rijst), mineralen, plantaardige eiwitextracten, plantaardige bijproducten, *natuurlijke ingrediënten.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Cesar",
+      "naam": "Primeur Lam & Kalkoen",
+      "voertype": "wet",
+      "verpakking": "150 gr",
+      "gtin": "4008429092794",
+      "bronUrl": "https://www.cesar.nl/assortiment/primeur/primeur-lam-kalkoen",
+      "etiketOrigineel": "Vlees en dierlijke bijproducten (55%, waarvan 95% natuurlijk*, waarvan 4% lam, 4% kalkoen, 4% lever), groenten (waarvan 4% sperziebonen), granen, mineralen, plantaardige bijproducten, plantaardige eiwitextracten, *natuurlijke ingrediënten.",
+      "etiketNl": "Vlees en dierlijke bijproducten (55%, waarvan 95% natuurlijk*, waarvan 4% lam, 4% kalkoen, 4% lever), groenten (waarvan 4% sperziebonen), granen, mineralen, plantaardige bijproducten, plantaardige eiwitextracten, *natuurlijke ingrediënten.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Cesar",
+      "naam": "Natural Goodness Organic Chicken",
+      "voertype": "wet",
+      "verpakking": "100 g",
+      "gtin": "4008429164743",
+      "bronUrl": "https://www.cesar.nl/products/natural-goodness/cesar-natural-goodness-organic-chicken-loaf-tray-100gr",
+      "etiketOrigineel": "Vlees en dierlijke bijproducten*^3 (waarvan kip 4%, lever 4%)\ngroenten*^3 (waarvan worteltjes 2%, erwtjes 2%)\nvis- en bijproducten*^3\nmineralen\nkamille*^3\nrozenbottels*^3\n*Natuurlijke ingrediënten.\n^3Organisch of bio.",
+      "etiketNl": "Vlees en dierlijke bijproducten*^3 (waarvan kip 4%, lever 4%)\ngroenten*^3 (waarvan worteltjes 2%, erwtjes 2%)\nvis- en bijproducten*^3\nmineralen\nkamille*^3\nrozenbottels*^3\n*Natuurlijke ingrediënten.\n^3Organisch of bio.",
+      "aantekening": null,
+      "twijfel": null
+    }
+  ]
+}

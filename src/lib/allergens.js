@@ -328,7 +328,7 @@ export function allergenSearchTerms(key, label) {
 const VAGUE_TERM_GROUPS = [
   { keys: MEAT_KEYS, words: ['dierlijke bijproducten', 'vlees en dierlijke bijproducten', 'dierlijke derivaten'] },
   { keys: PLANT_ALL_KEYS, words: ['plantaardige bijproducten', 'derivaten van plantaardige oorsprong'] },
-  { keys: ALL_KEYS, words: ['plantaardige eiwitextracten', 'bijproduct*', 'derivaat*'] },
+  { keys: ALL_KEYS, words: ['plantaardige eiwitextracten', 'bijproduct*', 'bijprodukt*', 'derivaat*'] },
   { keys: FAT_KEYS, words: ['olien en vetten'] },
   { keys: GRAIN_KEYS, words: ['granen*', 'cereals*'] },
   { keys: ['poultry'], words: ['gevogelte*', 'pluimvee*', 'poultry'] },

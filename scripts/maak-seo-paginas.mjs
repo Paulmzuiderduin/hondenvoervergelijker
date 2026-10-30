@@ -264,7 +264,7 @@ const methodePagina = () => {
 
       <h2>1. Bronnen: de fabrikant, niet de winkel</h2>
       <p>Wij halen onze ingrediëntenlijsten rechtstreeks van de officiële productpagina's van de fabrikant, bij voorkeur de Nederlandse versie. Is deze niet beschikbaar? Dan gebruiken we de anderstalige officiële pagina. Daarbij vertalen we de samenstelling met exact dezelfde percentages en in dezelfde volgorde. In dat geval vind je daarvan altijd een transparante notitie op de desbetreffende productkaart.</p>
-      <p>Webshops en affiliate-feeds gebruiken we niet als bron voor de samenstelling. Deze lopen namelijk vaak achter na receptuurwijzigingen en bundelen soms per ongeluk meerdere productvarianten op één webpagina. Voor een klein aantal oudere producten is de officiële fabrikantpagina niet meer beschikbaar; die verwijzen naar een gespecificeerde winkelpagina. Dat geldt op dit moment vooral voor Terra Canis. Zodra de fabrikant weer een eigen productpagina heeft, vervangen we die bron.</p>
+      <p>Webshops en affiliate-feeds gebruiken we niet als bron voor de samenstelling. Deze lopen namelijk vaak achter na receptuurwijzigingen en bundelen soms per ongeluk meerdere productvarianten op één webpagina. Voor een klein aantal producten is er geen bruikbare Nederlandse fabrikantpagina, of wijkt de Nederlandse formule af van de anderstalige fabrikantpagina. Dan gebruiken we een gespecificeerde Nederlandse winkelpagina als bron en staat dat op de productkaart. Dat geldt voor Terra Canis, Taste of the Wild, Purina One, Frolic en Dog Chow. Zodra er een bruikbare fabrikantpagina is, vervangen we die bron.</p>
 
       <h2>2. Letterlijk overnemen</h2>
       <p>De tekst op het etiket wordt door ons letterlijk overgenomen: inclusief dezelfde volgorde, percentages, hoeveelheden en zelfs leestekens. Ontbreekt de lijst of is de informatie online onbereikbaar? Dan voegen we het product simpelweg niet toe. We doen niet aan giswerk; we hebben liever een ontbrekend product op de site dan een onjuiste ingrediëntenlijst.</p>
@@ -322,7 +322,7 @@ const overOnsPagina = () => {
 
       <h2>Wat je op de site vindt</h2>
       <ul>
-        <li>Een vergelijker met meer dan 1.400 recepten van 50 merken.</li>
+        <li>Een vergelijker met 1.478 recepten van 60 merken.</li>
         <li>Per allergeen een overzicht van producten die het ingrediënt niet noemen, zoals <a href="/hondenvoer-zonder-kip.html">hondenvoer zonder kip</a>.</li>
         <li>Per merk een pagina met alle recepten, ingrediënten en aandachtspunten.</li>
         <li>Uitleg over <a href="/hondenvoer-allergieen.html">hondenvoer en allergieën</a> en over <a href="/hoe-wij-vergelijken.html">hoe wij vergelijken</a>.</li>

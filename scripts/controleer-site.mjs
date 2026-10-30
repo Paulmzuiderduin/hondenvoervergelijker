@@ -70,7 +70,7 @@ try {
   // 3. Merk-deeplink
   await open('/?merk=Acana', '.product-card')
   const filter = await page.locator('.filter-summary').innerText()
-  meld(/1 van 50 merken/.test(filter), 'merk-deeplink selecteert één merk', filter)
+  meld(/1 van 60 merken/.test(filter), 'merk-deeplink selecteert één merk', filter)
 
   // 4. Melding wanneer niets geschikt is
   await open('/?merk=Royal%20Canin&allergeen=beef', '.no-suitable')
@@ -80,7 +80,7 @@ try {
   // 5. Statische pagina's
   await open('/merken/', '.product-list')
   const merken = await page.locator('.product-list a').count()
-  meld(merken >= 50, 'merkenoverzicht is compleet', `${merken} merken`)
+  meld(merken >= 60, 'merkenoverzicht is compleet', `${merken} merken`)
 
   await open('/privacybeleid.html', 'h1')
   const privacy = await page.locator('body').innerText()
@@ -108,7 +108,7 @@ try {
   const sitemap = await context.request.get(`${BASIS}/sitemap.xml`)
   const xml = await sitemap.text()
   const aantalUrls = (xml.match(/<loc>/g) ?? []).length
-  meld(sitemap.ok() && aantalUrls >= 50, 'sitemap is bereikbaar en gevuld', `${aantalUrls} URL's`)
+  meld(sitemap.ok() && aantalUrls >= 89, 'sitemap is bereikbaar en gevuld', `${aantalUrls} URL's`)
 
   // 6. Mobiele weergave
   await page.setViewportSize({ width: 390, height: 844 })

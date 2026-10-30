@@ -1,447 +1,752 @@
--- Automatisch overgenomen etiketten, batch 1 van 2026-10-20 (43 producten).
+-- Plak dit hele bestand in de Supabase SQL Editor en klik op Run.
+--
+-- Wat erin zit:
+--   1. de importbatch: 66 producten van Almo Nature, Cesar, Dog Chow, Frolic, Iams, James Wellbeloved, Lily's Kitchen, Monge, Purina One, Taste of the Wild
+--   2. de woordenlijst: 34 woorden (woorden-20261030-01.sql)
+--
+-- Wat er daarna op de site staat:
+--   - de nieuwe producten doen meteen mee in de vergelijking;
+--   - de automatische herkomst staat in de disclaimer, niet op elke kaart;
+--   - alleen een handmatig nagekeken product krijgt de badge "Door een mens
+--     gecontroleerd";
+--   - waar het etiket een vertaling is, staat dat erbij;
+--   - geen enkel product krijgt de status "nagekeken": dat gebeurt alleen als
+--     een mens in Beheer op die knop klikt.
+--
+-- Alles zit in één transactie. Gaat er iets mis, dan is er niets veranderd.
+-- Heb je dit bestand al eerder geplakt, dan stopt hij met een melding over een
+-- bestaande sleutel: dat betekent dat de producten er al staan.
+
+begin;
+
+
+-- Automatisch overgenomen etiketten, batch 1 van 2026-10-30 (50 producten).
 -- Plak dit bestand in de Supabase SQL Editor, nadat de migraties tot en met
 -- 20261019190000_import_herkomst.sql zijn uitgevoerd.
 --
--- Elk product komt van de bronpagina die eronder staat. De site zegt daarna:
--- "automatisch overgenomen van <domein> op <datum> . nog niet door een mens
--- nagelopen". Er wordt hier geen enkele controle door een mens geclaimd.
-begin;
+-- Elk product komt van de bronpagina die eronder staat. De site noemt de
+-- automatische herkomst in de disclaimer; er wordt hier geen enkele controle
+-- door een mens geclaimd. Alleen een handmatige review krijgt een badge.
 
--- Brit - Care Dog Hypoallergenic Adult Medium Breed Lam & Rijst (3 kg / 12 kg)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/brit_care/1578955
+-- Almo Nature — Almo Nature Bio Organic met Kip en Groenten (100 g / 300 g)
+-- bron: https://www.almonature.com/nl/hondenproducten/300
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Brit', 'Care Dog Hypoallergenic Adult Medium Breed Lam & Rijst', 'kibble', '3 kg / 12 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/brit_care/1578955', date '2026-10-20', true)
+  values ('Almo Nature', 'Almo Nature Bio Organic met Kip en Groenten', 'wet', '100 g / 300 g', null, 'https://www.almonature.com/nl/hondenproducten/300', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Gedroogd lam (40%), rijst (35%), gedroogde appelpulp, kippenvet, natuurlijk aroma, biergist, zalmolie (2%), erwtenmeel, glucosamine (260 mg/kg), fructo-oligosacchariden ( 200 mg/kg), chondro' || chr(239) || 'tinesulfaat (200 mg/kg), mannan-oligosacchariden (150 mg/kg), Mojave yucca (150 mg/kg), mariadistelzaad (90 mg/kg), ' || chr(946) || '-glucanen (50 mg /kg), gedroogd zeegras (50 mg/kg), gedroogde duindoorn (50 mg/kg), probioticum Lactobacillus helveticus HA - 122 ge' || chr(239) || 'nactiveerd (15x109 cellen/kg)', true, now(), 'sha256:7c7c6e43e752e1356215b1dd890c1b1fe40ba7b63167b9f1e56bf99a151393fc', null from p;
+select id, 'Vlees* en dierlijke bijprodukten* 44,5% (kip* 9,9%), groenten* 4,1% (wortelen* en erwten*), plantaardige bijprodukten*, mineralen. *BIO. 100% van de ingrediënten van agrarische oorsprong afkomstig uit de biologische landbouw.', true, now(), 'sha256:f7436b0f2120ef2bc11890d93e0934d83b0cfdf77a778fa5665d1a1e5b7a2ed6', null from p;
 
--- Brit - Care Hond Hypoallergenic Gewichtsverlies Konijn (3 kg / 12 kg)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/brit_care/1579266
+-- Almo Nature — Almo Nature Bio Organic met Rund en Groenten (100 g / 300 g)
+-- bron: https://www.almonature.com/nl/hondenproducten/303
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Brit', 'Care Hond Hypoallergenic Gewichtsverlies Konijn', 'kibble', '3 kg / 12 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/brit_care/1579266', date '2026-10-20', true)
+  values ('Almo Nature', 'Almo Nature Bio Organic met Rund en Groenten', 'wet', '100 g / 300 g', null, 'https://www.almonature.com/nl/hondenproducten/303', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Gedroogd konijn (36%), rijst (35%), gedroogde appelpulp (12%), lignocellulose (10%), kippenvet, natuurlijk aroma, biergist, zalmolie (1%), psyllium husks & seeds (0,5%), erwtenmeel, glucosamine (300 mg/kg), fructooligosacchariden (230 mg/kg), chondro' || chr(239) || 'tinesulfaat (230 mg/kg), mannan-oligosacchariden (180 mg/kg), Mojave yucca (180 mg/kg), mariadistelzaad (110 mg/kg), ' || chr(946) || '-glucanen (60 mg/kg), gedroogd zeegras (60 mg/kg), gedroogde duindoorn (60 mg/kg), probioticum Lactobacillus helveticus HA - 122 ge' || chr(239) || 'nactiveerd (15x109 cellen/kg)', true, now(), 'sha256:5c3d6fe70105db3a6540832a9fdda9818b62ab46875e14ee36aaef98a5a4a494', null from p;
+select id, 'Vlees* en dierlijke bijprodukten* 44,5% (rund* 12,9%), groenten* 4,1% (wortelen* en erwten*), plantaardige bijprodukten*, mineralen. *BIO. 100% van de ingrediënten van agrarische oorsprong afkomstig uit de biologische landbouw.', true, now(), 'sha256:ccc34350bfa0c14768c06382f9f34b10fe82b12bcb767c33bd0b54e9a9419e28', null from p;
 
--- Brit - Care Hond Graanvrij Sensitive Wild & Aardappel (3 kg / 12 kg)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/brit_care/1579614
+-- Almo Nature — Almo Nature Daily met Rundvlees (380 g / 400 g)
+-- bron: https://www.almonature.com/nl/hondenproducten/381
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Brit', 'Care Hond Graanvrij Sensitive Wild & Aardappel', 'kibble', '3 kg / 12 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/brit_care/1579614', date '2026-10-20', true)
+  values ('Almo Nature', 'Almo Nature Daily met Rundvlees', 'wet', '380 g / 400 g', null, 'https://www.almonature.com/nl/hondenproducten/381', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Gedroogd hertenvlees (36%), aardappelen (30%), kokosolie, gedroogde appelpulp, zalmolie (5%), lijnzaad (4%), biergist, erwtenmeel, glucosamine (300 mg/kg), fructo-oligosachariden (230 mg/kg), chondro' || chr(239) || 'tinesulfaat (230 mg/kg), mannan-oligosachariden (180 mg/kg), Mojave yucca (180 mg/kg), mariadistelzaad (110 mg/kg), ' || chr(946) || '-glucanen (60 mg/kg), gedroogd zeegras (60 mg/kg), gedroogde duindoorn (60 mg/kg), probioticum Lactobacillus helveticus HA - 122 ge' || chr(239) || 'nactiveerd (15x109 cellen/kg)', true, now(), 'sha256:135c6eb6bbc2c15bc8e84ccf4e3bc795554c3d8d1a22ebe8604395ba3a0ff819', null from p;
+select id, 'Vlees en dierlijke bijprodukten* 53% (rund* 7%), mineralen. *Natuurlijke ingrediënten.', true, now(), 'sha256:52bb3ea8370bfe6005da035c5ff2ea88627dd79c42c78d3ea5e7e646ef76bc4b', null from p;
 
--- Brit - Care Dog Sustainable Sensitive Vis & Insecten (3 kg / 12 kg)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/brit_care/1579510
+-- Almo Nature — Almo Nature Life Maintenance met Verse Lam M (12 kg)
+-- bron: https://www.almonature.com/nl/hondenproducten/741
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Brit', 'Care Dog Sustainable Sensitive Vis & Insecten', 'kibble', '3 kg / 12 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/brit_care/1579510', date '2026-10-20', true)
+  values ('Almo Nature', 'Almo Nature Life Maintenance met Verse Lam M', 'kibble', '12 kg', null, 'https://www.almonature.com/nl/hondenproducten/741', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Gedroogde insecten (14%), gedroogde witvis (14%), gele erwten (14%), groene erwten (14%), gedroogde appelpulp, erwteneiwit, kokosolie (8%), gehydrolyseerd witviseiwit (4%), biergist, zalmolie (2%), lijnzaad (2%), eierschalen, erwtenmeel, glucosamine (300 mg/kg), fructo-oligosachariden (230 mg/kg), Chondro' || chr(239) || 'tinesulfaat (230 mg/kg), Mannan oligosacchariden (180 mg/kg), Mojave yucca (180 mg/kg), Mariadistelzaad (110 mg/kg), ' || chr(946) || '-glucanen (60 mg/kg), gedroogde cordial (60 mg/kg), gedroogde duindoorn (60 mg/kg), probioticum Lactobacillus helveticus HA - 122 ge' || chr(239) || 'nactiveerd (15x109 cellen/kg)', true, now(), 'sha256:6fa94b4165c9f92dc570e2d4a1347bc01875f7e4ba19fb4fd711920e8c8af52c', null from p;
+select id, 'Verse lam 26%, maïs*, rijst, bruine rijstmeel, gedroogd rund 9%, gedroogde kip 6,3%, maïseiwitten*, gehydrolyseerde dierlijke eiwitten, kippenvet, bietenpulp, gist, mineralen, mannan-oligosacharides 0,1%, inuline van cichorei - bron van FOS - 0,1%. *Zonder-GGO.', true, now(), 'sha256:8c001279c4a1eef6f68c630cbf14f193f929161d44024e687012471f055ce07e', null from p;
 
--- Brit - Premium by Nature Sensitive Lam (3 kg / 15 kg)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/britpremium/1579521
+-- Almo Nature — Almo Nature Life Maintenance met Verse Kip M (12 kg)
+-- bron: https://www.almonature.com/nl/hondenproducten/744
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Brit', 'Premium by Nature Sensitive Lam', 'kibble', '3 kg / 15 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/britpremium/1579521', date '2026-10-20', true)
+  values ('Almo Nature', 'Almo Nature Life Maintenance met Verse Kip M', 'kibble', '12 kg', null, 'https://www.almonature.com/nl/hondenproducten/744', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Gedroogd lamsvlees (35%), rijst, kippenvet, rijstzemelen, gedroogde appelpulp, zalmolie (2%), gehydrolyseerde kippenlever, biergist, collageen, glucosamine (210 mg/kg), chondro' || chr(239) || 'tinesulfaat (150 mg/kg), mannanoligosachariden (120 mg/kg), fructooligosachariden (90 mg/kg), Yucca schidigera (90 mg/kg), gedroogde echte kamille (80 mg/kg), glycosaminoglycanen (50 mg/kg), gedroogde bosbessen (50 mg/kg), gedroogde kruidnagel (40 mg/kg), gedroogde citrusvruchten (40 mg/kg), gedroogde rozemarijn (40 mg/kg), gedroogde kurkuma (40 mg/kg)', true, now(), 'sha256:67c1afd27917de518dba19496f3cdb1aa2707af10b66a5b3ba50c502b965fbd0', null from p;
+select id, 'Kip 32,7% (verse kip 26%, gedroogde kip 6,7%), maïs*, rijst, gedroogd rund 12,1%, bruine rijstmeel, gehydrolyseerde dierlijke eiwitten, kippenvet, bietenpulp, gist, mineralen, mannan-oligosacharides 0,1%, inuline van cichorei - bron van FOS - 0,1%. *Zonder-GGO.', true, now(), 'sha256:a7794395067888bb1fe018cd96496566d8eb367746c07a61facf962c5493ed8e', null from p;
 
--- Brit - Premium Adult L (3 kg / 15 kg)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/britpremium/1579514
+-- Almo Nature — Almo Nature Life Maintenance met Verse Zalm M (12 kg)
+-- bron: https://www.almonature.com/nl/hondenproducten/745
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Brit', 'Premium Adult L', 'kibble', '3 kg / 15 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/britpremium/1579514', date '2026-10-20', true)
+  values ('Almo Nature', 'Almo Nature Life Maintenance met Verse Zalm M', 'kibble', '12 kg', null, 'https://www.almonature.com/nl/hondenproducten/745', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kip (45%, waarvan 25% gedroogd, 20% uitgebeend), haver, tarwe, kippenvet (geconserveerd met gemengde tecoferolen), ma' || chr(239) || 's, gedroogde appels, zalmolie (2%), gehydrolyseerde kippenlever, biergist, collageen, schaaldieren [bron van glucosamine] (210 mg/kg), kraakbeen [bron van chondro' || chr(239) || 'tine] (150 ml/kg), Vruchten en kruiden (kruidnagel, citrusvruchten, rozemarijn, kurkuma - 120 mg/kg), mannan-oligosacchariden (120 mg/kg), fructoooligosacchariden (90 mg/kg), mohave palmilie (90 mg/kg), gedroogde kamille (80 mg/kg), groenlipmosselen [glycosaminoglycanen] (50 mg/kg), gedroogde bosbessen (50 mg/kg)', true, now(), 'sha256:caf3cbac5e67a2aa5cb997be57240221b14a604aca3abe392614dec0f1491080', null from p;
+select id, 'Verse zalm* 26%, maïs**, rijst, bruine rijstmeel, gedroogde tonijn 10%, gedroogde kip 9,5%, kippenvet, gehydrolyseerde dierlijke eiwitten, bietenpulp, gist, mineralen, mannan-oligosacharides 0,1%, inuline van cichorei - bron van FOS - 0,1%. *Natuurlijke bron van omega 3. **Zonder-GGO.', true, now(), 'sha256:96e72c7239313a9b6aa75b0c84386f1e5055a2c43f3f637a6734aee0e24bee75', null from p;
 
--- Brit - Premium Adult S (8 kg)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/britpremium/1580019
+-- Cesar — Classic Rund (150 gr)
+-- bron: https://www.cesar.nl/assortiment/classic/classic-rund
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Brit', 'Premium Adult S', 'kibble', '8 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/brit/britpremium/1580019', date '2026-10-20', true)
+  values ('Cesar', 'Classic Rund', 'wet', '150 gr', '4008429092749', 'https://www.cesar.nl/assortiment/classic/classic-rund', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kip (50%, waarvan 30% gedroogd, 20% uitgebeend), haver, tarwe, kippenvet (geconserveerd met gemengde tecoferolen), ma' || chr(239) || 's, gedroogde appels, zalmolie (2%), gehydrolyseerde kippenlever, biergist, collageen, schaaldieren [bron van glucosamine] (210 mg/kg), kraakbeen [bron van chondro' || chr(239) || 'tine] (150 ml/kg), Vruchten en kruiden (kruidnagel, citrusvruchten, rozemarijn, kurkuma - 120 mg/kg), mannan-oligosacchariden (120 mg/kg), fructoooligosacchariden (90 mg/kg), mohave palmilie (90 mg/kg), gedroogde kamille (80 mg/kg), groenlipmosselen [glycosaminoglycanen] (50 mg/kg), gedroogde bosbessen (50 mg/kg)', true, now(), 'sha256:be64a63d4aaf55fae2a6f2f5249d4d7f50947ca0c642e0d617c1db691901abcc', null from p;
+select id, 'Vlees en dierlijke bijproducten (55%, waarvan 95% natuurlijk*, waarvan 4% rund, 4% lever), granen, mineralen, plantaardige bijproducten, plantaardige eiwitextracten, *natuurlijke ingrediënten.', true, now(), 'sha256:a28ba192005d2bac446db44dd91f9309da8fce5f026f5f6cf1390ee4601fe311', null from p;
 
--- Brit - Mono Protein Kalkoen (400 g / 6 x 400 g / 12 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/brit/2111488
+-- Cesar — Classic Kip (150 gr; 300 gr)
+-- bron: https://www.cesar.nl/assortiment/classic/classic-kip-300
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Brit', 'Mono Protein Kalkoen', 'wet', '400 g / 6 x 400 g / 12 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/brit/2111488', date '2026-10-20', true)
+  values ('Cesar', 'Classic Kip', 'wet', '150 gr; 300 gr', '3065890136007', 'https://www.cesar.nl/assortiment/classic/classic-kip-300', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kalkoen (74%, vlees en slachtafval), erwtenzetmeel (3%), lignocellulose (1%)', true, now(), 'sha256:7e1d9abc193a128629daa2346d8f31162fbf56baa62089cfe890272890ecdc29', null from p;
+select id, 'Vlees en dierlijke bijproducten (55%, waarvan natuurlijk* 95%, waarvan kippenlever 4%), granen, mineralen, plantaardige bijproducten, plantaardige eiwitextracten, *natuurlijke ingrediënten.', true, now(), 'sha256:232a3409c53e78d5aa2269a2b31cd83a23a2381e439bdfdea59756683a01e2cc', null from p;
 
--- Brit - Pate & Vlees Puppy (800 g / 12 x 800 g / 24 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/brit/1579818
+-- Cesar — Classic Kalf & Gevogelte (150 gr)
+-- bron: https://www.cesar.nl/assortiment/classic/classic-kalf-gevogelte
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Brit', 'Pat' || chr(233) || ' & Vlees Puppy', 'wet', '800 g / 12 x 800 g / 24 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/brit/1579818', date '2026-10-20', true)
+  values ('Cesar', 'Classic Kalf & Gevogelte', 'wet', '150 gr', '4008429092756', 'https://www.cesar.nl/assortiment/classic/classic-kalf-gevogelte', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kip (vlees en slachtafval, 44%), kalkoen (vlees en slachtafval, 26%), erwtenzetmeel (3%), erwtenvezels (1%), zalmolie (0,5%)', true, now(), 'sha256:86f42bf3bc9558cfe4ac7266d96a4b122d2fdc30e73e5b207b9b43a8e03da875', null from p;
+select id, 'Vlees en dierlijke bijproducten (55%, waarvan 95% natuurlijk*, waarvan 4% kalf, 4% kippenlever), granen, mineralen, plantaardige bijproducten, plantaardige eiwitextracten, *natuurlijke ingrediënten.', true, now(), 'sha256:6cf72c0ef7b15603424d0dc6678f1acb43eb34b2fc9a1668efbb0a6a4fbcba1c', null from p;
 
--- Brit - Care Mini Sterilised in saus (48 x 85 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/brit/2679422
+-- Cesar — Cuisine Kalf & Kalkoen (150 gr)
+-- bron: https://www.cesar.nl/assortiment/cuisine/cuisine-kalf-kalkoen
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Brit', 'Care Mini Sterilised in saus', 'wet', '48 x 85 g', '8595602554850', 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/brit/2679422', date '2026-10-20', true)
+  values ('Cesar', 'Cuisine Kalf & Kalkoen', 'wet', '150 gr', '4008429092930', 'https://www.cesar.nl/assortiment/cuisine/cuisine-kalf-kalkoen', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Vlees en organen in filetvorm (77%, 4% zalm, 4% haring), erwtenmeel (2,7%), gedroogde bosbessen (1,5%), lignocellulose (0,9%), gedroogde kruidnagel (0,4%), gedroogde citrusvruchten (0,4%), gedroogde rozemarijn (0,4%), gedroogde kurkuma (0,4%), calciumcarbonaat (0,2%)', true, now(), 'sha256:cf89e50a5094545dc8042f871c406eb6d583fce5efebfcf8bc68d3dcaed7bcce', null from p;
+select id, 'Vlees en dierlijke bijproducten (43%, waarvan 92% natuurlijk*, waarvan 4% kalf, 4% kalkoen, 4% lever), plantaardige bijproducten, mineralen, plantaardige eiwitextracten, groenten, *natuurlijke ingrediënten.', true, now(), 'sha256:c8cdf585bc82db73088154d2bd3068ba396f2ce12ba07e4c1d3a6b2d00a7ca13', null from p;
 
--- Terra Canis - Classic Rund met wortel, appel & rijst (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125
+-- Cesar — Senior Kip & Rijst 10+ (150 gr)
+-- bron: https://www.cesar.nl/assortiment/senior-10/senior-kip-rijst-10
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Classic Rund met wortel, appel & rijst', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125', date '2026-10-20', true)
+  values ('Cesar', 'Senior Kip & Rijst 10+', 'wet', '150 gr', '4008429092954', 'https://www.cesar.nl/assortiment/senior-10/senior-kip-rijst-10', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Spiervlees van rund (20%), hart van rund (15%), lever van rund (9%), long van rund (8%), wortels (12%), appel (9%), courgette, bruine rijst (6%), abrikoos, lijnolie, gist, peterselie, basilicum, venkel, wei, mineraalaarde, rosebottelpoeder, biologische eierschalen (0,4%), zeealgen(0,4%)', true, now(), 'sha256:538cfca18ca6bef1279d9859f70b83623e3d361b712039f91cb38751cc2faf0c', null from p;
+select id, 'Vlees en dierlijke bijproducten (44%, waarvan 92% natuurlijk*, waarvan 4% kippenlever), granen (waarvan 1.1% rijst, wat gelijk staat aan 4% gekookte rijst), mineralen, plantaardige eiwitextracten, plantaardige bijproducten, *natuurlijke ingrediënten.', true, now(), 'sha256:399bc36ecee0158c02cedca6fd761c8e87ca6d1dae373ddb00f51ecfe0b65358', null from p;
 
--- Terra Canis - Classic Kalkoen met Broccoli, peer & aardappelen (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125
+-- Cesar — Primeur Lam & Kalkoen (150 gr)
+-- bron: https://www.cesar.nl/assortiment/primeur/primeur-lam-kalkoen
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Classic Kalkoen met Broccoli, peer & aardappelen', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125', date '2026-10-20', true)
+  values ('Cesar', 'Primeur Lam & Kalkoen', 'wet', '150 gr', '4008429092794', 'https://www.cesar.nl/assortiment/primeur/primeur-lam-kalkoen', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kalkoenharten (40%), wortels, aardappelen (10%), spiervlees van kalkoen (9%), kalkoenlever (9%), peer (7%), gierst, abrikozen, broccoli (3%), lijnzaadolie, gist, eierschaal poeder (0,4%), lijnzaad, basilicum, peterselie, mineraalaarde, zeealgen (0,13%), pollen', true, now(), 'sha256:adf99a1afe5063cd8be18d353c4fe7a395955b9a9c58ffa1a79ff61c6977fca7', null from p;
+select id, 'Vlees en dierlijke bijproducten (55%, waarvan 95% natuurlijk*, waarvan 4% lam, 4% kalkoen, 4% lever), groenten (waarvan 4% sperziebonen), granen, mineralen, plantaardige bijproducten, plantaardige eiwitextracten, *natuurlijke ingrediënten.', true, now(), 'sha256:d304a88b379495e3812a251655b2aaff3daccd95c894a4416902f0abf93497ff', null from p;
 
--- Terra Canis - Classic Lam met courgette, gierst & dille (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125
+-- Cesar — Natural Goodness Organic Chicken (100 g)
+-- bron: https://www.cesar.nl/products/natural-goodness/cesar-natural-goodness-organic-chicken-loaf-tray-100gr
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Classic Lam met courgette, gierst & dille', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125', date '2026-10-20', true)
+  values ('Cesar', 'Natural Goodness Organic Chicken', 'wet', '100 g', '4008429164743', 'https://www.cesar.nl/products/natural-goodness/cesar-natural-goodness-organic-chicken-loaf-tray-100gr', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Lamshart (20%), spiervlees van lam (18%), lamslong (10%), courgette (13%), gierst (8%), wortels, appel, selderij, lijnolie, gist, eierschaal poeder (0,4%), basilicum, dille (0,2%), venkelzaden, mineraalaarde, zeealgen (0,13%), pollen', true, now(), 'sha256:1fc23ebb616245126bc32208915d94921ce1160134864254d26c169c88f10032', null from p;
+select id, 'Vlees en dierlijke bijproducten*^3 (waarvan kip 4%, lever 4%) groenten*^3 (waarvan worteltjes 2%, erwtjes 2%) vis- en bijproducten*^3 mineralen kamille*^3 rozenbottels*^3 *Natuurlijke ingrediënten. ^3Organisch of bio.', true, now(), 'sha256:cd9f20cda2756c8eacaa87ee349cab73a523bd4b765aad27d18ef18b0ddb1881', null from p;
 
--- Terra Canis - Classic Konijn met Courgette, Amarant en Wilde Knoflook (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125
+-- Dog Chow — Dog Chow Adult Kip (14 kg; dubbelpak 2 x 14 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/456957
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Classic Konijn met Courgette, Amarant en Wilde Knoflook', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125', date '2026-10-20', true)
+  values ('Dog Chow', 'Dog Chow Adult Kip', 'kibble', '14 kg; dubbelpak 2 x 14 kg', '7613034487629', 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/456957', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Konijnspiervlees (38%), kalkoenlever (12%), konijnenlong (8%), pompoen, tomaat, courgette (8%), selderij, amarant (4%), gierst, lijnzaadolie, gist, eischaalpoeder (0,5%), bieslook, gemalen lijnzaad, wilde knoflook (0,3%), mineraalaarde, andeszout, zeewier (0,15%), pollen', true, now(), 'sha256:c4964c8e268240d457f8464cc22ff3f10aebfa0cd21dd760ecfc206f7048b9d7', null from p;
+select id, 'graan, vlees en dierlijke nevenproducten (8%*), plantaardige eiwitextracten, olie en vet, plantaardige nevenproducten, groente (1,1% gedroogde chicoréewortel), mineralen. * Komt overeen met 16% gedehydreerd vlees en dierlijke nevenproducten: minstens 4% kip.', true, now(), 'sha256:1c4f415a49a3e3b980cd4c8ca1b8951a2e0ee51fcc2790ab770536d4ad6ee515', 'Nederlands etiket overgenomen van zooplus.nl; Dog Chow heeft geen Nederlandse fabrikantpagina meer; buitenlandse Purina-pagina''s wijken qua receptuur af.' from p;
 
--- Terra Canis - Classic Kip met amarant, tomaten & basilicum (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125
+-- Dog Chow — Dog Chow Adult Lam (14 kg; dubbelpak 2 x 14 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/457040
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Classic Kip met amarant, tomaten & basilicum', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125', date '2026-10-20', true)
+  values ('Dog Chow', 'Dog Chow Adult Lam', 'kibble', '14 kg; dubbelpak 2 x 14 kg', '7613034487636', 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/457040', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kippenhart (24%), kippenmagen (22%), amarant (5%), tomaten (17%), kippenlever (10%), peren, gierst, rode biet, bleekselderij, kokosnootolie, lijnzaadolie, gist, eierschaal poeder (0,5%), basilicum (0,4%), bieslook, zeewier (0,14%), Andeszout, rozenbottel', true, now(), 'sha256:c7322d6abfb13946aa9915638b66b6be8e53afc1261ac44115c552b3ac3a7302', null from p;
+select id, 'graan, vlees en dierlijke nevenproducten (8%*), plantaardige eiwitextracten, olie en vet, plantaardige nevenproducten, groente (1,1% gedroogde chicoréewortel), mineralen. * Komt overeen met 16% gedehydreerd vlees en dierlijke nevenproducten: minstens 4% lam.', true, now(), 'sha256:f904eba72807a1574c18a76567cef62c01d5d6cc27d5731beb9ebb2318a8a4fc', 'Nederlands etiket overgenomen van zooplus.nl; Dog Chow heeft geen Nederlandse fabrikantpagina meer; buitenlandse Purina-pagina''s wijken qua receptuur af.' from p;
 
--- Terra Canis - Classic Zeezalm met courgette, boekweit en rozenbottels (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125
+-- Dog Chow — Dog Chow Adult Sensitive Zalm (14 kg; dubbelpak 2 x 14 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/457043
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Classic Zeezalm met courgette, boekweit en rozenbottels', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125', date '2026-10-20', true)
+  values ('Dog Chow', 'Dog Chow Adult Sensitive Zalm', 'kibble', '14 kg; dubbelpak 2 x 14 kg', '7613034488244', 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/457043', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Zalmfilet (58%), pompoen, courgette (10%), aardappelen, boekweit (10%), broccoli, tarwekiemolie, dille, basilicum, rozenbottels (0,7%), biologische eierschalen (0,3%), gemalen lijnzaad, zeealg (0,4%)', true, now(), 'sha256:ed65f9fa920c8b927a8167f5b3a08e2d0dfc4a8f449029fd2697947996633698', null from p;
+select id, 'graan, vlees en dierlijke nevenproducten, plantaardige eiwitextracten, olie en vet, vis en visnevenproducten (1,8%*), plantaardige nevenproducten (1,5% gedroogde bietensnijdsel), groente (1,1% gedroogde chicoréewortel), mineralen. * Komt overeen met 4% gedehydreerde vis en visnevenproducten: minstens 4% zalm.', true, now(), 'sha256:bd1c9c0335b8e33cf47321d296e5ee15d4f3d75ec5ea74e4382115e097fba711', 'Nederlands etiket overgenomen van zooplus.nl; Dog Chow heeft geen Nederlandse fabrikantpagina meer; buitenlandse Purina-pagina''s wijken qua receptuur af.' from p;
 
--- Terra Canis - Classic Paard met Amarant, Perzik & Rode Biet (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125
+-- Dog Chow — Dog Chow Large Breed Kalkoen (14 kg; dubbelpak 2 x 14 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/457041
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Classic Paard met Amarant, Perzik & Rode Biet', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/29125', date '2026-10-20', true)
+  values ('Dog Chow', 'Dog Chow Large Breed Kalkoen', 'kibble', '14 kg; dubbelpak 2 x 14 kg', '7613034487926', 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/457041', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Paardenspiervlees (51%), wortel, selderij (9%), amarant (7,5%), venkel, appel, perzik (5%), rode biet (3%), lijnzaadolie, gist, eierschaalpoeder (0,4%), tijm, zeewier (0,15%), bieslook, andeszout, mineraalaarde', true, now(), 'sha256:7ec103f6279efa3dd0712a507b521d2c7d702ab468e8f7224901c4cb0cd3e39c', null from p;
+select id, 'graan, vlees en dierlijke nevenproducten (8%*), plantaardige eiwitextracten, olie en vet (visolie 0,7%), plantaardige nevenproducten, groente (1,1% gedroogde chicoréewortel), mineralen. * Komt overeen met 16% gedehydreerd vlees en dierlijke nevenproducten: minstens 4% kalkoen.', true, now(), 'sha256:22218701172fd9368e342d03cd8e396eeed940ffcdc8be6c1473a96cef432096', 'Nederlands etiket overgenomen van zooplus.nl; Dog Chow heeft geen Nederlandse fabrikantpagina meer; buitenlandse Purina-pagina''s wijken qua receptuur af.' from p;
 
--- Terra Canis - Graanvrij Rundvlees met courgette, pompoen en oregano (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181
+-- Dog Chow — Dog Chow Senior Lam (14 kg; dubbelpak 2 x 14 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/mature/661102
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Graanvrij Rundvlees met courgette, pompoen en oregano', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181', date '2026-10-20', true)
+  values ('Dog Chow', 'Dog Chow Senior Lam', 'kibble', '14 kg; dubbelpak 2 x 14 kg', '7613287575456', 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/mature/661102', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Rundvlees (47%, bestaande uit runderhart 34%, runderlong 9%, runderspiervlees 4%), bouillon (25%), pompoen (12%), courgette (7%), rode biet (3%)*, pastinaak (1%)*, mineralen (1%)*, kokosmeel, koolzaadolie, pompoenpittenmeel, bakkersgist*, psylliumvezels*, basilicum*, Andeszout, oesterschelp*, oregano (0,1%)*, peterselie*, minerale klei*, spirulina*', true, now(), 'sha256:8622f75e497c8b6fde69b63601e13a84125e7d13a8f77b1495cbbd6b7c100394', null from p;
+select id, 'Granen* (53% volkoren), vlees en dierlijke bijproducten (20%, waarvan 4% lam), plantaardige eiwitextracten, plantaardige bijproducten, oliën en vetten, groenten* (1,1% gedroogde cichoreiwortel, 0,08% gedroogde erwten, 0,08% gedroogde wortelen), mineralen. * = natuurlijke ingrediënten.', true, now(), 'sha256:35e8b1db1fd00e4028901adb18de10b25b5af40781a3bbb06283809f8a3357b4', 'Nederlands etiket overgenomen van zooplus.nl; Dog Chow heeft geen Nederlandse fabrikantpagina meer; buitenlandse Purina-pagina''s wijken qua receptuur af.' from p;
 
--- Terra Canis - Graanvrij Kalkoen met selderij, pompoen en waterkers (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181
+-- Dog Chow — Dog Chow Puppy Lam (14 kg; dubbelpak 2 x 14 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/puppy/457038
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Graanvrij Kalkoen met selderij, pompoen en waterkers', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181', date '2026-10-20', true)
+  values ('Dog Chow', 'Dog Chow Puppy Lam', 'kibble', '14 kg; dubbelpak 2 x 14 kg', '7613034487872', 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/puppy/457038', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kalkoen (51%, bestaande uit kalkoenhart 31%, kalkoenmaag 12%, kalkoenspiervlees 5%, kalkoenvel 3%), bouillon (19%), wortel (7%), selderij (7%)*, pompoen (6%)*, komkommer (3%)*, mineralen (1%)*, kokosmeel, koolzaadolie, pompoenpittenmeel, bakkersgist*, psylliumvezels*, basilicum*, kamille*, waterkers (0,1%)*, oesterschelp*, rozenbottelschelp*, minerale klei*, spirulina*', true, now(), 'sha256:077fd240df6f620db38d4ac278dbee535d05b17c59c3e3c0c4b4f34ae1c75e9c', null from p;
+select id, 'graan, vlees en dierlijke nevenproducten (8%*), plantaardige eiwitextracten, olie en vet, plantaardige nevenproducten, groente (1,1% gedroogde chicoréewortel), mineralen. * Komt overeen met 16% gerehydreerd vlees en dierlijke nevenproducten: minstens 4% lam.', true, now(), 'sha256:110cf709026233cdeda9bf59f2cd9989be648ffd022842bee0552b98bbbe8723', 'Nederlands etiket overgenomen van zooplus.nl; Dog Chow heeft geen Nederlandse fabrikantpagina meer; buitenlandse Purina-pagina''s wijken qua receptuur af.' from p;
 
--- Terra Canis - Graanvrij Kip met pastinaak, paardenbloem en bramen (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181
+-- Dog Chow — Dog Chow Adult Light Kalkoen (14 kg; dubbelpak 2 x 14 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/456958
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Graanvrij Kip met pastinaak, paardenbloem en bramen', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181', date '2026-10-20', true)
+  values ('Dog Chow', 'Dog Chow Adult Light Kalkoen', 'kibble', '14 kg; dubbelpak 2 x 14 kg', '7613034487773', 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/456958', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kip (49%, bestaande uit kippenmaagjes 26%, kippenharten 15%, kippenspiervlees 4%, kippenvel 2%, kippenlever 2%), bouillon (23%), pompoen (12%), appel (6%), braam (2%), mineralen (1%)*, kokosmeel, pastinaak (0,8%)*, koolzaadolie, pompoenpittenmeel, bakkersgist*, psylliumvezels*, kamille*, rozenbottelschelpen*, oesterschelpen*, paardenbloem (0,1%)*, Andeszout, minerale klei*, spirulina*', true, now(), 'sha256:9cebc555bc94cf345553ce0af43d83cb8af9fe7e287dfe7ce4d9998ef31c7fa1', null from p;
+select id, 'graan, vlees en dierlijke nevenproducten (8%*), plantaardige eiwitextracten, olie en vet, plantaardige nevenproducten, groente (1,1% gedroogde bietensnijdsel), mineralen. * Komt overeen met 16% gedehydreerd vlees en dierlijke nevenproducten: minstens 4% kalkoen.', true, now(), 'sha256:5d3cdf5cf72f0d88c616624b98e76075d7a79dcf5040a8e166bfd914ff7dbf51', 'Nederlands etiket overgenomen van zooplus.nl; Dog Chow heeft geen Nederlandse fabrikantpagina meer; buitenlandse Purina-pagina''s wijken qua receptuur af.' from p;
 
--- Terra Canis - Graanvrij Kalfsvlees met peterseliewortel, mango en rode bes (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181
+-- Frolic — Frolic Droog Rund 1,5 kg (1,5 kg)
+-- bron: https://www.petsplace.nl/frolic-droog-hondenvoer-5900951315305-pps
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Graanvrij Kalfsvlees met peterseliewortel, mango en rode bes', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181', date '2026-10-20', true)
+  values ('Frolic', 'Frolic Droog Rund 1,5 kg', 'kibble', '1,5 kg', '5900951315305', 'https://www.petsplace.nl/frolic-droog-hondenvoer-5900951315305-pps', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kalfsvlees (46%, bestaande uit kalfshart 35%, kalfslong 11%), bouillon (24%), pompoen (8%), peterseliewortel (8%), meloen (5%), mango (3%), kokosmeel (1%), mineralen (1%)*, pastinaak*, rode bes (0,5%), koolzaadolie, pompoenpittenmeel, bakkersgist*, salie*, basilicum*, oesterschelp*, Andeszout, kervel*, venkelzaad*, paardenbloem*, minerale klei*, spirulina*', true, now(), 'sha256:c1c39119fc3a1c031414b7093c3ea6370a22a23a356f4fb03c34a3956c0ddef9', null from p;
+select id, 'granen* (waarvan volkorentarwe 12%), vlees en dierlijke bijproducten (waarvan vers rund 4%*), oliën en vetten, plantaardige bijproducten (waarvan gedroogde bietenpulp 3%*), mineralen, groenten* (waarvan gedroogde worteltjes 0.5%, wat gelijk staat aan worteltjes 4%). *Natuurlijke ingrediënten.', true, now(), 'sha256:70de2d683ff49fdbd7275ec83a9f1d36176d0fc169e0b29ebc4018fceab77950', 'Nederlands etiket overgenomen van Pets Place; frolic.nl blokkeert geautomatiseerde toegang; de Nederlandse etiketten komen van Pets Place.' from p;
 
--- Terra Canis - Graanvrij Paardenvlees met koolraap, venkel en salie (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181
+-- Frolic — Frolic Droog Rund 2,6 kg (2,6 kg)
+-- bron: https://www.petsplace.nl/frolic-droog-rund-hondenvoer-5900951315237-pps
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Graanvrij Paardenvlees met koolraap, venkel en salie', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181', date '2026-10-20', true)
+  values ('Frolic', 'Frolic Droog Rund 2,6 kg', 'kibble', '2,6 kg', '5900951315237', 'https://www.petsplace.nl/frolic-droog-rund-hondenvoer-5900951315237-pps', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Paardenspier (46%), bouillon (23%), aardappel (9%), pompoen (6%), koolraap (6%), venkel (3%), rode biet (3%)*, mineralen (1%)*, raapzaadolie, kokosmeel, pastinaak*, biergist*, salie (0,1%)*, paardenbloem*, vlierbloesem*, oesterschelp*, Andeszout, minerale klei*, spirulina*', true, now(), 'sha256:db7da845a743fa35d25a6d32149188fd1ef473c6afcbf014d7c1e43af274fd4d', null from p;
+select id, 'granen* (waarvan volkorentarwe 12%), vlees en dierlijke bijproducten (waarvan vers rund 4%*), oliën en vetten, plantaardige bijproducten (waarvan gedroogde bietenpulp 3%*), mineralen, groenten* (waarvan gedroogde worteltjes 0.5%, wat gelijk staat aan worteltjes 4%). *Natuurlijke ingrediënten.', true, now(), 'sha256:70de2d683ff49fdbd7275ec83a9f1d36176d0fc169e0b29ebc4018fceab77950', 'Nederlands etiket overgenomen van Pets Place; frolic.nl blokkeert geautomatiseerde toegang; de Nederlandse etiketten komen van Pets Place.' from p;
 
--- Terra Canis - Graanvrij Lam met pompoen, pastinaak en passiebloem (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181
+-- Frolic — Frolic Droog Gevogelte (1,5 kg)
+-- bron: https://www.petsplace.nl/frolic-droog-gevogelte-hondenvoer-5900951315282-pps
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Graanvrij Lam met pompoen, pastinaak en passiebloem', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181', date '2026-10-20', true)
+  values ('Frolic', 'Frolic Droog Gevogelte', 'kibble', '1,5 kg', '5900951315282', 'https://www.petsplace.nl/frolic-droog-gevogelte-hondenvoer-5900951315282-pps', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Lam (42%, bestaande uit lamshart 33%, lamslong 9%), bouillon (25%), wortel (9%), pompoen (9%), appel (6%), perzik (3%), pastinaak (1%)*, mineralen (1%)*, koolzaadolie, lupinegries*, kokosmeel, bakkersgist*, passiebloem (0,2%)*, basilicum*, paardenbloem*, salie*, minerale klei*, oesterschelp*, Andeszout, spirulina*', true, now(), 'sha256:f8fd8c225b78b2f4b950ae6c50d4250937ab1521e85ebe70858ba6b960f65827', null from p;
+select id, 'granen* (waarvan volkorentarwe 12%), vlees en dierlijke bijproducten (waarvan vers gevogelte 4% *), oliën en vetten, plantaardige bijproducten (waarvan gedroogde bietenpulp 3% *), mineralen, groenten* (waarvan gedroogde worteltjes 0.5%, wat gelijk staat aan worteltjes 4%). *Natuurlijke ingrediënten.', true, now(), 'sha256:917fa75ecf8dc61487ba3a909ee55394e583392429d5df0ad8c5a371aa522e0d', 'Nederlands etiket overgenomen van Pets Place; frolic.nl blokkeert geautomatiseerde toegang; de Nederlandse etiketten komen van Pets Place.' from p;
 
--- Terra Canis - Graanvrij Wild met appel en cranberries (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181
+-- Frolic — Frolic Droog Mini Rund (800 g)
+-- bron: https://www.petsplace.nl/frolic-droog-mini-hondenvoer-5900951315350-pps
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Graanvrij Wild met appel en cranberries', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181', date '2026-10-20', true)
+  values ('Frolic', 'Frolic Droog Mini Rund', 'kibble', '800 g', '5900951315350', 'https://www.petsplace.nl/frolic-droog-mini-hondenvoer-5900951315350-pps', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Spiervlees van ree en edelhert (41%), bouillon (28%), wortel (10%), aardappel (6%), courgette (6%), appel (3%), mineralen (1%)*, pastinaak*, koolzaadolie, kokosmeel, pompoenpittenmeel, cranberry (0,3%)*, bakkersgist*, psylliumvezels*, oesterschelp*, Andeszout, minerale klei*, kardemom*, spirulina*', true, now(), 'sha256:e67139b3e1a8af8c4c8c2c9ae8f883fdaf6bc33e0af2f2e36f94defd9f68ada6', null from p;
+select id, 'granen* (waarvan volkorentarwe 12%), vlees en dierlijke bijproducten (waarvan vers rund 4%*), oliën en vetten, plantaardige bijproducten (waarvan gedroogde bietenpulp 3%*), mineralen, groenten* (waarvan gedroogde worteltjes 0.5%, wat gelijk staat aan worteltjes 4%). *Natuurlijke ingrediënten.', true, now(), 'sha256:70de2d683ff49fdbd7275ec83a9f1d36176d0fc169e0b29ebc4018fceab77950', 'Nederlands etiket overgenomen van Pets Place; frolic.nl blokkeert geautomatiseerde toegang; de Nederlandse etiketten komen van Pets Place.' from p;
 
--- Terra Canis - Graanvrij Konijn met courgette, abrikoos en bonenkruid (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181
+-- Frolic — Frolic Droog Mini Gevogelte (800 g)
+-- bron: https://www.petsplace.nl/frolic-droog-mini-gevogelte-hondenvoer-5900951315374-pps
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Graanvrij Konijn met courgette, abrikoos en bonenkruid', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181', date '2026-10-20', true)
+  values ('Frolic', 'Frolic Droog Mini Gevogelte', 'kibble', '800 g', '5900951315374', 'https://www.petsplace.nl/frolic-droog-mini-gevogelte-hondenvoer-5900951315374-pps', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Konijn en kalkoen (45%, bestaande uit 34% konijnenvlees en 11% kalkoenlever), bouillon (23%), wortel (10%), pompoen (9%), courgette (6%), abrikoos (3%), mineralen (1%)*, kokosmeel, koolzaadolie, pompoenpittenmeel, bakkersgist*, basilicum*, rozenbottel*, bonenkruid (0,1%)*, venkelzaad*, oesterschelp*, lijnzaad*, Andeszout, minerale klei*, spirulina*', true, now(), 'sha256:a3190d02e1701b9e9da8c970d65c52119e45a20b0d80c01c0ec7c4047c0c56bc', null from p;
+select id, 'granen* (waarvan volkorentarwe 12%), vlees en dierlijke bijproducten (waarvan vers gevogelte 4% *), oliën en vetten, plantaardige bijproducten (waarvan gedroogde bietenpulp 3% *), mineralen, groenten* (waarvan gedroogde worteltjes 0.5%, wat gelijk staat aan worteltjes 4%). *Natuurlijke ingrediënten.', true, now(), 'sha256:917fa75ecf8dc61487ba3a909ee55394e583392429d5df0ad8c5a371aa522e0d', 'Nederlands etiket overgenomen van Pets Place; frolic.nl blokkeert geautomatiseerde toegang; de Nederlandse etiketten komen van Pets Place.' from p;
 
--- Terra Canis - Graanvrij Eend met pompoen, aardbeien en vlierbloesem (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181
+-- Frolic — Frolic Compleet Malse Maaltijd Rund (1,5 kg; 3 kg)
+-- bron: https://www.petsplace.nl/frolic-compleet-malse-maaltijd-hondenvoer-m-4008429029110-pps
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Graanvrij Eend met pompoen, aardbeien en vlierbloesem', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/110181', date '2026-10-20', true)
+  values ('Frolic', 'Frolic Compleet Malse Maaltijd Rund', 'kibble', '1,5 kg; 3 kg', '4008429029110', 'https://www.petsplace.nl/frolic-compleet-malse-maaltijd-hondenvoer-m-4008429029110-pps', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Eend (46%, bestaande uit eendenhart 41%, eendenlever 5%), bouillon (18%), pompoen (10%), wortel (8%), courgette (4%), selderij (4%), appel (3%), meloen (3%), kastanje, aardbei (1%), mineralen (1%)*, koolzaadolie, bakkersgist*, vlierbloesem (0,2%)*, psylliumvezels*, oesterschelp*, kervel*, paardenbloem*, basilicum*, minerale klei*, peterselie*, Andeszout, spirulina*. * = gedroogd.', true, now(), 'sha256:6f687c9e7823ffb3fb914d63fffa2dad508c388d919a8bb3a731fc36ca6b6715', null from p;
+select id, 'granen (waarvan tarwe 4%), plantaardige bijproducten, oliën en vetten (waarvan zonnebloemolie 1.4%), vlees en dierlijke bijproducten (14%, waarvan vers rund 4%), groenten (waarvan worteltjes 4%), mineralen, plantaardige eiwitextracten, suikers, melk- en bijproducten, vis- en bijproducten, kruiden.', true, now(), 'sha256:0b180c6ed75b46c6f1253ba96cb1473cd7caae8bae8fa56b7ccc2c1481908cae', 'Nederlands etiket overgenomen van Pets Place; frolic.nl blokkeert geautomatiseerde toegang; de Nederlandse etiketten komen van Pets Place.' from p;
 
--- Terra Canis - Puppy Rund met appel, wortelen & rozenbottel (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_puppy_hondenvoer/145939
+-- Iams — Droogvoer met verse kip voor puppy's van kleine en middelgrote rassen (3 kg; 12 kg)
+-- bron: https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-puppys-van-kleine-en-middelgrote-rassen
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Puppy Rund met appel, wortelen & rozenbottel', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_puppy_hondenvoer/145939', date '2026-10-20', true)
+  values ('Iams', 'Droogvoer met verse kip voor puppy''s van kleine en middelgrote rassen', 'kibble', '3 kg; 12 kg', null, 'https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-puppys-van-kleine-en-middelgrote-rassen', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Runderhart (29%), longen van runderen (13%), lever van rund (11%), spiervlees van rund (5%), courgette, wortels (11%), appels (6%), gierst, meel poempoenzaden (1% ), lijnzaadolie, organische eierschaal poeder (0,7%), veenbessen, basilicum, peterselie, biergist, rozenbottel poeder (0,2%), minerale klei, zeewier (0,1%), Andeszout, stuifmeel', true, now(), 'sha256:93edadbe68764c304b5095168b6c252d765e6d7a8106155226ba1e03cf93ed10', null from p;
+select id, 'gedroogde kip en kalkoen 30% (waaronder kip 18%), gerst, maïs, verse kip (10%), varkensvet, rijst, gedroogde bietenpulp (2.5%), kippenjus, visolie, zonnebloemolie, fructo-oligosachariden (0.2%), gedroogde biergist, mineralen.', true, now(), 'sha256:0fbfef371094e347199cfd3452f291a417d3ce5e1f98deae54ccba429fd65b26', null from p;
 
--- Terra Canis - Puppy Gevogelte met pompoen, boekweit & bloempollen (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_puppy_hondenvoer/145939
+-- Iams — Droogvoer met verse kip voor puppy's van grote rassen (2 kg; 3 kg; 12 kg)
+-- bron: https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-puppys-van-grote-rassen
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Puppy Gevogelte met pompoen, boekweit & bloempollen', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_puppy_hondenvoer/145939', date '2026-10-20', true)
+  values ('Iams', 'Droogvoer met verse kip voor puppy''s van grote rassen', 'kibble', '2 kg; 3 kg; 12 kg', null, 'https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-puppys-van-grote-rassen', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kippenhart (40%), kippenmaagjes (20%), pompoen (14%), tomaten, appel, gierst, meel pompoenzaad (1%), lijnolie, raapolie, organische eierschaal poeder (0,6%), bieslook, gist, kamille ( 0,2%), rozenbottel poeder, minerale klei, zeewier (0,1%), pollen (0,04%)', true, now(), 'sha256:d99fe4e64a17ee7b7c1632dfa5c2b70c5e608ef825b9f6bceac9866397ae10e8', null from p;
+select id, 'gedroogde kip en kalkoen 26% (waaronder kip 16%), gerst, maïs, verse kip (10%), gedroogde bietenpulp (2.5%), zonnebloemolie, varkensvet, kippenjus, visolie, fructo-oligosachariden (0.2%), gedroogde biergist, mineralen.', true, now(), 'sha256:0f13f9d58b9d05298c1f91bf3f5048be1f7a490608911507ba29fdc1621f101a', null from p;
 
--- Terra Canis - Puppy Lam met courgette, venkel & magere yoghurt (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_puppy_hondenvoer/145939
+-- Iams — Droogvoer met verse kip voor volwassen honden van kleine en middelgrote rassen (3 kg; 5 kg; 12 kg)
+-- bron: https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-volwassen-honden-van-kleine-en-middelgrote-rassen
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Puppy Lam met courgette, venkel & magere yoghurt', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_puppy_hondenvoer/145939', date '2026-10-20', true)
+  values ('Iams', 'Droogvoer met verse kip voor volwassen honden van kleine en middelgrote rassen', 'kibble', '3 kg; 5 kg; 12 kg', null, 'https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-volwassen-honden-van-kleine-en-middelgrote-rassen', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Lam hart (23%), spiervlees lammeren (15%), long van lam (14%), courgette (18%), wortel, bruine rijst, magere yoghurt (4%), venkel (2%), bloem pompoenzaad (1%), lijnolie, raapolie, organische eierschaal poeder (0,6%), basilicum, gist, rozenbottelpoeder minerale klei, zeewier (0,1%), pollen', true, now(), 'sha256:08ea97954f0d3057e46eeaa7c86b7a1a736a1ce84194346e1bc6160538cca4da', null from p;
+select id, 'gedroogde kip en kalkoen 27% (waaronder kip 16%), gerst, maïs, verse kip (10%), varkensvet, gedroogde bietenpulp (2.5%), kippenjus, mineralen (waaronder natriumhexametafosfaat 0.35%), visolie, lijnzaad, fructo-oligosachariden (0.2%), gedroogde biergist.', true, now(), 'sha256:219dbe9ea85192c3e07705ec04b3de6026901ac25979470d73c8e7a8845bf236', null from p;
 
--- Terra Canis - Puppy Pangasius met wortelen, venkel & bessen (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_puppy_hondenvoer/145939
+-- Iams — Droogvoer met lam voor volwassen honden van kleine en middelgrote rassen (3 kg; 12 kg)
+-- bron: https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-lam-voor-volwassen-honden-van-kleine-en-middelgrote-rassen
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Puppy Pangasius met wortelen, venkel & bessen', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_puppy_hondenvoer/145939', date '2026-10-20', true)
+  values ('Iams', 'Droogvoer met lam voor volwassen honden van kleine en middelgrote rassen', 'kibble', '3 kg; 12 kg', null, 'https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-lam-voor-volwassen-honden-van-kleine-en-middelgrote-rassen', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Pangasius filet, wortelen, aardappelen, selderij, bleekselderij, koolzaadolie, vlierbessen, dille, venkel, waterkers, kamille, rozenbottel, bloesempollen, eierschalen, zeewier, drinkwater, verhouding vis: aardappelen: overige grondstoffen (zonder drinkwater) = 56%: 10%: 34%', true, now(), 'sha256:5cfa599c0c2bb090f28b1b647764250530ac169df469a22a8fdf0a0f540cec03', null from p;
+select id, 'gedroogde kip en kalkoen 29% (waaronder kip 18%), gerst, maïs, varkensvet, lam (4%), gedroogde bietenpulp (2.5%), kippenjus, mineralen (waaronder natriumhexametafosfaat 0.35%), lijnzaad, fructo-oligosachariden (0.2%), gedroogde biergist.', true, now(), 'sha256:251bd6a641e95b75152706d69843d639279c435dd32d4be7aa1a31da6e477c65', null from p;
 
--- Terra Canis - Senior Graanvrij Rundvlees met selderij, abrikoos en kruiden (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1579270
+-- Iams — Droogvoer met verse kip voor volwassen honden van grote rassen (3 kg; 5 kg; 12 kg)
+-- bron: https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-volwassen-honden-van-grote-rassen
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Senior Graanvrij Rundvlees met selderij, abrikoos en kruiden', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1579270', date '2026-10-20', true)
+  values ('Iams', 'Droogvoer met verse kip voor volwassen honden van grote rassen', 'kibble', '3 kg; 5 kg; 12 kg', null, 'https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-volwassen-honden-van-grote-rassen', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Rundvlees (48%, bestaande uit runderhart 36%, runderlong 12%), bouillon (18%), aardappel (7%), wortel (6%), courgette (6%), selderij (6%), abrikoos (3%), naturel yoghurt (1%), mineralen (1%)*, kokosmeel*, koolzaadolie, biergist*, heermoes (0,2%)*, rozenbottelschil (0,2%)*, basilicum (0,2%)*, meidoornbes (0,2%)*, glucosamine (0,2%)*, brandnetel (0,1%)*, kamille (0,1%)*, minerale klei (0,1%)*, oesterschelp*, spirulina*', true, now(), 'sha256:e2da1712dfbc1ed4a8c23b945b7d23ea34e40728eba078a38eacbdbfe0904104', null from p;
+select id, 'gedroogde kip en kalkoen 22% (waaronder kip 13%), gerst, maïs, verse kip (10%), maïsmeel, varkensvet, gedroogde bietenpulp (2.5%), kippenjus, mineralen (waaronder natriumhexametafosfaat 0.35%), lijnzaad, fructo-oligosachariden (0.2%), gedroogde biergist.', true, now(), 'sha256:1d7b7dbb8fe28035d744095d28362b77a59d8822cbec82243231e756c2058742', null from p;
 
--- Terra Canis - Senior Graanvrij Kip met komkommer, pompoen en kruiden (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1579270
+-- Iams — Droogvoer met lam voor volwassen honden van grote rassen (3 kg; 12 kg)
+-- bron: https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-lam-voor-volwassen-honden-van-grote-rassen
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Senior Graanvrij Kip met komkommer, pompoen en kruiden', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1579270', date '2026-10-20', true)
+  values ('Iams', 'Droogvoer met lam voor volwassen honden van grote rassen', 'kibble', '3 kg; 12 kg', null, 'https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-lam-voor-volwassen-honden-van-grote-rassen', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kip (48%, bestaande uit kippenhart 24%, kippenmaag 18%, kippenlever 3%, kippenspiervlees 3%), bouillon (16%), aardappel (8%), courgette (6%), pompoen (6%), tomaat (6%), komkommer (3%), naturel yoghurt (2%), mineralen (1%), kokosmeel, koolzaadolie, biergist, heermoes (0,2%)*, meidoornbes (0,2%)*, glucosamine (0,2%)*, brandnetel (0,1%), rozenbottelschil (0,1%), venkelzaad (0,1%), kamille (0,1%), basilicum, minerale klei, oesterschelp, spirulina', true, now(), 'sha256:26b6cd7458e794ce63edda79ef8c86411506a3a35053d4acbdb0856b61f486b6', null from p;
+select id, 'gedroogde kip en kalkoen 24% (waaronder kip 15%), gerst, maïs, maïsmeel, varkensvet, lam (4%), gedroogde bietenpulp (2.5%), kippenjus, mineralen (waaronder natriumhexametafosfaat 0.35%), gedroogde biergist, lijnzaad, fructo-oligosachariden (0.2%).', true, now(), 'sha256:dd9d1dfdc785a147265cf2996d9a5f6ea02cdafcc932b0e7b2a234b9581e2488', null from p;
 
--- Terra Canis - Senior Graanvrij Hertenvlees met tomaat, appel en kruiden (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1579270
+-- Iams — Droogvoer met verse kip en laag vetgehalte voor volwassen honden van alle rassen (3 kg; 12 kg)
+-- bron: https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-en-laag-vetgehalte-voor-volwassen-honden-van-alle-rassen
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Senior Graanvrij Hertenvlees met tomaat, appel en kruiden', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1579270', date '2026-10-20', true)
+  values ('Iams', 'Droogvoer met verse kip en laag vetgehalte voor volwassen honden van alle rassen', 'kibble', '3 kg; 12 kg', null, 'https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-en-laag-vetgehalte-voor-volwassen-honden-van-alle-rassen', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Hertenvleesspier (44%), bouillon (21%), aardappel (6%), wortel (6%), tomaat (6%), selderij (6%), appel (3%), naturel yoghurt (2%), mineralen (1%)*, kokosmeel*, koolzaadolie, biergist*, heermoes (0,2%)*, paardenbloem (0,2%)*, meidoornbes (0,2%)*, glucosamine (0,2%)*, brandnetel (0,1%)*, rozenbottelschil (0,1%)*, venkelzaad (0,1%)*, minerale klei*, oesterschelp*. * = gedroogd', true, now(), 'sha256:561a3990bd6bd09558ea245c5a57cd7204fb652cdd4d94698c5d49e4c3da2cab', null from p;
+select id, 'gerst, maïs, gedroogde kip en kalkoen 17% (waaronder kip 10%), verse kip (10%), maïsmeel, varkensvet, gedroogde bietenpulp (2.5%), kippenjus, mineralen (waaronder natriumhexametafosfaat 0.38%), lijnzaad, zonnebloemolie, fructo-oligosachariden (0.2%), visolie, gedroogde biergist.', true, now(), 'sha256:2b298ad9e183cea220d763ba0ca8a6ac80409a2b6a948d290d89ecbb849582fe', null from p;
 
--- Terra Canis - Hypoallergeen Kangoeroe met pastinaak (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/hypoallergeen/926713
+-- Iams — Droogvoer met verse kip voor senior honden van kleine en middelgrote rassen (3 kg; 5 kg; 12 kg)
+-- bron: https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-senior-katten-1
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Hypoallergeen Kangoeroe met pastinaak', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/hypoallergeen/926713', date '2026-10-20', true)
+  values ('Iams', 'Droogvoer met verse kip voor senior honden van kleine en middelgrote rassen', 'kibble', '3 kg; 5 kg; 12 kg', null, 'https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-senior-katten-1', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kangoeroevlees (46%), bouillon (45%), pastinaak (5%)*, koolzaadolie (2%), mineralen (1%)*, spirulina*', true, now(), 'sha256:2eb1d2f735e754f0634ff34f25fe8744b13e2eb24c65a306b3c8a9238175655d', null from p;
+select id, 'gedroogde kip en kalkoen 28% (waaronder kip 17%), gerst, maïs, verse kip (10%), varkensvet, gedroogde bietenpulp (2.5%), kippenjus, mineralen (waaronder natriumhexametafosfaat 0.35%), lijnzaad, fructo-oligosachariden (0.2%), gedroogde biergist, glucosamine van dierlijke weefsels (0.04%).', true, now(), 'sha256:0fc05740775db8759b6777e8e1984dcba270e4f6193e17a9d7251218a7fbda26', null from p;
 
--- Terra Canis - Hypoallergeen Paardenvlees met aardpeer (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/hypoallergeen/926713
+-- James Wellbeloved — James Wellbeloved Adult Lam & Rijst (2 kg / 10 kg)
+-- bron: https://www.wellbeloved.com/p/adult-lamb-and-rice-dry-dog-food/15843891/
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Hypoallergeen Paardenvlees met aardpeer', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/hypoallergeen/926713', date '2026-10-20', true)
+  values ('James Wellbeloved', 'James Wellbeloved Adult Lam & Rijst', 'kibble', '2 kg / 10 kg', null, 'https://www.wellbeloved.com/p/adult-lamb-and-rice-dry-dog-food/15843891/', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Paardenvlees (46%), aardpeer (31%), bouillon (19%), koolzaadolie (2%), mineralen (1%)*, spirulina*', true, now(), 'sha256:d2d55a1b4b9e5df2a6ad727b77f329058deca9db9292c25c2fc39b61feb04fb6', null from p;
+select id, 'Samenstelling: gedroogd lamsvleesproteïne* (19%), gerst*, naakte haver*, zilvervliesrijst* (13%), witte rijst* (13%), gevogeltevet*, heel lijnzaad* (3,9%), erwteneiwit, lamssaus, suikerbietenpulp*, alfalfameel*, mineralen, zeewier* (0,5%), visolie, cichorei-extract* (0,1%), yucca-extract* (0,02%). *Natuurlijk ingrediënt.', true, now(), 'sha256:07d8350eef0deaac827472b81a0d5df31c41a8bcb0166b058641382c254e7b81', 'Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.' from p;
 
--- Terra Canis - Hypoallergeen Struisvogel met pastinaak (6 x 800 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/hypoallergeen/926713
+-- James Wellbeloved — James Wellbeloved Junior Kalkoen & Rijst (2 kg / 10 kg)
+-- bron: https://www.wellbeloved.com/p/puppy-turkey-and-rice-dry-dog-food/15843908/
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Hypoallergeen Struisvogel met pastinaak', 'wet', '6 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/hypoallergeen/926713', date '2026-10-20', true)
+  values ('James Wellbeloved', 'James Wellbeloved Junior Kalkoen & Rijst', 'kibble', '2 kg / 10 kg', null, 'https://www.wellbeloved.com/p/puppy-turkey-and-rice-dry-dog-food/15843908/', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Struisvogelvlees (46%), bouillon (45%), pastinaak (5%)*, koolzaadolie (2%), mineralen (1%)*, spirulina*. * = gedroogd', true, now(), 'sha256:1d76ecf6e84f3e6ff5120a724677db3d654f4b176e6291a92f1269ff52a8b61e', null from p;
+select id, 'Samenstelling: gedroogd kalkoenproteïne* (24%), witte rijst* (16%), naakte haver*, zilvervliesrijst* (15%), erwteneiwit, gevogeltevet*, heel lijnzaad* (3,5%), kalkoensaus, suikerbietenpulp*, alfalfameel*, erwtenvezel*, mineralen, zeewier* (0,5%), visolie, cichorei-extract* (0,25%), yucca-extract* (0,02%). *Natuurlijk ingrediënt.', true, now(), 'sha256:eb4bbc249260d2f46256f0e686b7f7da232f8c298419004e8a7443ffc6e16c74', 'Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.' from p;
 
--- Terra Canis - Derma Dieet Kip & Zalm (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/2564625
+-- James Wellbeloved — James Wellbeloved Junior Lam & Rijst (2 kg / 10 kg)
+-- bron: https://www.wellbeloved.com/p/puppy-lamb-and-rice-dry-dog-food/15843893/
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Derma Dieet Kip & Zalm', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/2564625', date '2026-10-20', true)
+  values ('James Wellbeloved', 'James Wellbeloved Junior Lam & Rijst', 'kibble', '2 kg / 10 kg', null, 'https://www.wellbeloved.com/p/puppy-lamb-and-rice-dry-dog-food/15843893/', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kip en zalm (52%, kippenmaag 27%, kippenhart 17%, zalmfilet 8%), bouillon (20%), pompoen (5%), komkommer (4%), aardappel (8%), courgette (3%), zoete aardappel (3%), mineralen (1%), framboos, koolzaadolie, visolie (0,7%), goudsbloem, kamille, basilicum, tijm, brandnetel, kokosmeel, kokosvlok, spirulina*. *gedroogd', true, now(), 'sha256:6eac179ba80b667c417aa7aef84e995418436ecdb3e0a31f6db4e6eff865176b', null from p;
+select id, 'Samenstelling: gedroogd lamsvleesproteïne* (19,5%), witte rijst* (16%), naakte haver*, erwteneiwit, zilvervliesrijst* (13%), gevogeltevet*, heel lijnzaad* (3,9%), lamssaus, visolie, suikerbietenpulp*, alfalfameel*, mineralen, zeewier* (0,5%), cichorei-extract* (0,25%), yucca-extract* (0,02%). *Natuurlijk ingrediënt.', true, now(), 'sha256:07067e33a507c44cee106a0cfc03a1e073f31560b06f796e923356d7d383356f', 'Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.' from p;
 
--- Terra Canis - Derma Dieet Lam (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/2564625
+-- James Wellbeloved — James Wellbeloved Senior/Light Kalkoen & Rijst (2 kg / 10 kg)
+-- bron: https://www.wellbeloved.com/p/senior-turkey-and-rice-dry-dog-food/15843902/
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Derma Dieet Lam', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/2564625', date '2026-10-20', true)
+  values ('James Wellbeloved', 'James Wellbeloved Senior/Light Kalkoen & Rijst', 'kibble', '2 kg / 10 kg', null, 'https://www.wellbeloved.com/p/senior-turkey-and-rice-dry-dog-food/15843902/', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Lamhart (50%), bouillon (20%), aardappel (8%), pompoen (5%), komkommer (4%), courgette (3%), zoete aardappel (3%), visolie (1%), kokosmeel (1%), mineralen (1%), framboos, koolzaadolie, kokosrasp, kamille, goudsbloem, tijm, brandnetel, basilicum, spirulina. *gedroogd', true, now(), 'sha256:036a7fcce263e61ed3ecd298930d141a42e77561e700636900074b6e290895c8', null from p;
+select id, 'Samenstelling: zilvervliesrijst* (26%), gedroogd kalkoenproteïne* (17,5%), naakte haver*, gerst*, witte rijst* (10%), heel lijnzaad* (4%), gevogeltevet*, suikerbietenpulp*, kalkoensaus, alfalfameel*, erwtenvezel*, zeewier* (0,5%), mineralen, visolie, brandnetel*, peterselie*, cichorei-extract* (0,1%), glucosamine (0,045%), yucca-extract* (0,02%), chondroïtine (0,005%). *Natuurlijk ingrediënt.', true, now(), 'sha256:8181092ed317319f0dd9dcc725810d40fae0a3f997f0561fa8b4ff947be8f6b0', 'Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.' from p;
 
--- Terra Canis - Alimentum Veterinarium Low Protein Kip (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1926075
+-- James Wellbeloved — James Wellbeloved Senior/Light Lam & Rijst (2 kg / 10 kg)
+-- bron: https://www.wellbeloved.com/p/senior-lamb-and-rice-dry-dog-food/15843886/
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Alimentum Veterinarium Low Protein Kip', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1926075', date '2026-10-20', true)
+  values ('James Wellbeloved', 'James Wellbeloved Senior/Light Lam & Rijst', 'kibble', '2 kg / 10 kg', null, 'https://www.wellbeloved.com/p/senior-lamb-and-rice-dry-dog-food/15843886/', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Spiervlees van kip (24%), kippenmaag (15%), aardappel, wortel (8%), courgette, pompoen (8%), kippenhuid (5%), meloen, appel, lijnzaadolie, kokosmeel, paardenbloem*, berkenbladeren*, peterselie*, chiazaden, goudsbloem*, brandnetel*, oesterschelp*, zeewier*, mineralen', true, now(), 'sha256:ac8aa155e869506361e382fb86bb5229c74ec60ec316d21bad21cc69ac36f082', null from p;
+select id, 'Samenstelling: zilvervliesrijst* (26%), gedroogd lamsvleesproteïne* (19,5%), naakte haver*, gerst*, witte rijst* (10%), heel lijnzaad* (4%), gevogeltevet*, lamssaus, suikerbietenpulp*, alfalfameel*, zeewier* (0,5%), mineralen, visolie, brandnetel*, peterselie*, cichorei-extract* (0,1%), glucosamine (0,045%), yucca-extract* (0,02%), chondroïtine (0,005%). *Natuurlijk ingrediënt.', true, now(), 'sha256:c7282c38d8efffa1d4d6e044d1dd1990e45b00f7492c8aafbccb64635b28463d', 'Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.' from p;
 
--- Terra Canis - Alimentum Veterinarium Low Protein Kalf (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1926075
+-- Lily's Kitchen — Lily's Kitchen Chicken & Duck Countryside Casserole (1 kg / 7 kg)
+-- bron: https://eu.lilyskitchen.com/nl/honden/droogvoer/chicken-and-duck-countryside-casserole
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Alimentum Veterinarium Low Protein Kalf', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1926075', date '2026-10-20', true)
+  values ('Lily''s Kitchen', 'Lily''s Kitchen Chicken & Duck Countryside Casserole', 'kibble', '1 kg / 7 kg', null, 'https://eu.lilyskitchen.com/nl/honden/droogvoer/chicken-and-duck-countryside-casserole', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Kalfshart (25%), kalfslong (12%), kalfsvet (7%), aardappel, wortel (8%), courgette, pompoen (8%), meloen, appel, lijnzaadolie, kokosmeel, paardenbloem*, berkenbladeren*, peterselie*, chiazaden, goudsbloem*, brandnetel*, oesterschaal*, zeewier*, mineralen', true, now(), 'sha256:488e3cc3a6ed97c188830c02cc2ddf3572289c31242b9a05335654b527759203', null from p;
+select id, '42% kip en eend: verse kip (31%), vers bereide eend (8%), kippenlever (3%). Zoete aardappel (29%), hele erwten (6,5%), hele linzen, erwteneiwit, lijnzaad, eieren, aardappeleiwit, kippensaus, mineralen, planten en kruiden* (1%), zalmolie, prebiotica (mannan-oligosachariden 1,3 g/kg, fructo-oligosachariden 0,8 g/kg), wortels, appels, mengsel voor gewrichtsondersteuning (glucosamine 175 mg/kg, methylsulfonylmethaan 175 mg/kg, chondroïtinesulfaat 125 mg/kg), cranberry''s, spinazie. *Planten en kruiden: alfalfa, vogelmuur, kleefkruid, guldenroede, brandnetel, zeewier, paardenbloemwortel, selderiezaad, mariadistel, kliswortel, goudsbloembloesem, rozenbottels.', true, now(), 'sha256:e443211919446fae2d4b747f6a455901fac85344dd2065a4585a8d2df61f2fab', null from p;
 
--- Terra Canis - Alimentum Veterinarium Low Protein Wild (6 x 400 g)
--- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1926075
+-- Lily's Kitchen — Lily's Kitchen Wild Woodlands with Duck, Salmon and Venison (1 kg / 7 kg)
+-- bron: https://eu.lilyskitchen.com/nl/honden/droogvoer/duck-salmon-venison
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Alimentum Veterinarium Low Protein Wild', 'wet', '6 x 400 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1926075', date '2026-10-20', true)
+  values ('Lily''s Kitchen', 'Lily''s Kitchen Wild Woodlands with Duck, Salmon and Venison', 'kibble', '1 kg / 7 kg', null, 'https://eu.lilyskitchen.com/nl/honden/droogvoer/duck-salmon-venison', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Spiervlees van wild (39%), aardappel, wortel (8%), courgette, pompoen (8%), wildvet (5%), meloen, appel, lijnzaadolie, kokosmeel, paardenbloem*, berkenbladeren*, peterselie*, chiazaden, goudsbloem*, brandnetel*, oesterschaal*, zeewier*, mineralen. *gedroogd', true, now(), 'sha256:b9cf866ef7e2fe446f031cffa226d949de869d84b80bfa5b68f0912f825cea1f', null from p;
+select id, '35% vers bereide ingrediënten: eend (20%), zalm (10%), hert (5%). Aardappelen, erwteneiwit, hele linzen, hele erwten, eieren, lijnzaad, mineralen, lamssaus, voedingsgist, planten en kruiden* (1%), prebiotica (mannan-oligosachariden 1,8 g/kg, fructo-oligosachariden 1,1 g/kg), wortels, appels, mengsel voor gewrichtsondersteuning (methylsulfonylmethaan 200 mg/kg, glucosamine 170 mg/kg, chondroïtinesulfaat 125 mg/kg), cranberry''s, bramen, spinazie. *Planten en kruiden: alfalfa, vogelmuur, kleefkruid, guldenroede, brandnetel, zeewier, paardenbloemwortel, selderiezaad, mariadistel, kliswortel, goudsbloembloesem, rozenbottels.', true, now(), 'sha256:b9b63451478a213898fe65926ca725e46c081cc541fdadcb6ac55b1d96bde4c6', null from p;
 
--- Terra Canis - Canireo Adult kip (2,5 kg)
--- bron: https://www.maxizoo.be/nl/p/terra-canis-canireo-adult-kip-25-kg-1216485/
+-- Lily's Kitchen — Lily's Kitchen Salmon Supper (1 kg)
+-- bron: https://eu.lilyskitchen.com/nl/honden/droogvoer/salmon-supper
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Canireo Adult kip', 'kibble', '2,5 kg', null, 'https://www.maxizoo.be/nl/p/terra-canis-canireo-adult-kip-25-kg-1216485/', date '2026-10-20', true)
+  values ('Lily''s Kitchen', 'Lily''s Kitchen Salmon Supper', 'kibble', '1 kg', null, 'https://eu.lilyskitchen.com/nl/honden/droogvoer/salmon-supper', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Vers kippenspiervlees (64%), aardappelvlokken* (15%), kokosmeel (5%), abrikozen* (2%), wortelen* (1,5%), courgette* (1,4%), selderij* (1,2%), verse lever van gevogelte (1%), biergist (1%), lijnzaad (1%), appel* (0,9%), pompoen* (0,8%), pastinaak* (0,8%), eierschaalpoeder (0,7%), rode biet* (0,5%), minerale aarde (0,5%), peterseliewortel* (0,4%), fenegriek (0,4%), koolzaadmeel (0,4%), paardenbloem* (0,3%), rozenbottel* (0,3%), kamille* (0,2%), aroniabessen* (0,2%), spinazie (0,2%), zeewier* (0,1%), rozemarijn* (0,1%), tijm* (0,1%) *gedroogd', true, now(), 'sha256:8980a46c85a3b13d0bceb5e5c0b41fb4e15e29b46eb7e5e5b9001bd137e11c83', null from p;
+select id, 'Verse zalm (40%), zoete aardappel (13,5%), aardappelen, hele erwten (8%), erwteneiwit, aardappeleiwit, visbouillon, erwtenvezel, voedingsgist, mineralen, planten en kruiden* (1%), zalmolie, lijnzaad, prebiotica (mannan-oligosachariden 2,6 g/kg, fructo-oligosachariden 1,5 g/kg), zonnebloemolie, eieren, hele linzen, kamille, cranberry''s, appels, spinazie, dille (0,05%), mengsel voor gewrichtsondersteuning (glucosamine 180 mg/kg, methylsulfonylmethaan 180 mg/kg, chondroïtinesulfaat 125 mg/kg). *Planten en kruiden: alfalfa, vogelmuur, kleefkruid, guldenroede, brandnetel, zeewier, paardenbloemwortel, selderiezaad, mariadistel, kliswortel, goudsbloembloesem, rozenbottels.', true, now(), 'sha256:cb122c771d336eaf7e1b09cfc5fc0b0b54fae787d2f30bb7aea5a1ec7fd3777a', null from p;
 
--- Terra Canis - Canireo Wild (1 / 2,5 / 5 kg)
--- bron: https://www.futterfreund.de/terra-canis-trockenfutter-canireo-wild
+-- Lily's Kitchen — Lily's Kitchen Lamb Shepherd’s Pie (1 kg)
+-- bron: https://eu.lilyskitchen.com/nl/honden/droogvoer/lamb-shepherds-pie
 with p as (
   insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
-  values ('Terra Canis', 'Canireo Wild', 'kibble', '1 / 2,5 / 5 kg', null, 'https://www.futterfreund.de/terra-canis-trockenfutter-canireo-wild', date '2026-10-20', true)
+  values ('Lily''s Kitchen', 'Lily''s Kitchen Lamb Shepherd’s Pie', 'kibble', '1 kg', null, 'https://eu.lilyskitchen.com/nl/honden/droogvoer/lamb-shepherds-pie', date '2026-10-30', true)
   returning id
 )
 insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
-select id, 'Vers spiervlees van ree en hert 64%, aardappelvlokken 12%, kokosmeel 4,8%, zoete lupine, biergist*, appel* 1,5%, wortel* 1,4%, courgette* 1,4%, selderij* 1,1%, verse lever van ree en hert 1%, eierschaalpoeder 1%, pompoen* 0,8%, pastinaak* 0,8%, lijnzaad, abrikoos* 0,5%, fenegriek 0,4%, peterseliewortel* 0,4%, koolzaadmeel, minerale aarde, spinazie* 0,2%, zeewier, paardenbloem* 0,1%, rozenbottel* 0,1%, kamille* 0,1%, rozemarijn, tijm, mineralen *gedroogd', true, now(), 'sha256:7dfaeac6a824e3514122aa17935ffb8efc0f2d573862a9a2dff676e6bb9df1e6', 'Nederlandse vertaling van de etiket tekst; origineel staat op de bronpagina van het product.' from p;
+select id, '32% vers bereide ingrediënten: lam (27%), lamslever (5%). Zoete aardappel, aardappelen (16%), erwteneiwit, aardappeleiwit, hele erwten (4%), hele linzen, lijnzaad, lamssaus, mineralen, planten en kruiden* (1%), zonnebloemolie, erwtenvezel, prebiotica (mannan-oligosachariden 2 g/kg, fructo-oligosachariden 1,2 g/kg), mengsel voor gewrichtsondersteuning (methylsulfonylmethaan 200 mg/kg, chondroïtinesulfaat 200 mg/kg, glucosamine 200 mg/kg), wortels, peterselie (0,01%), cranberry''s, appels, spinazie. *Planten en kruiden: alfalfa, vogelmuur, kleefkruid, guldenroede, brandnetel, zeewier, paardenbloemwortel, selderiezaad, mariadistel, kliswortel, goudsbloembloesem, rozenbottels.', true, now(), 'sha256:58b4deda7cc1b40afdb27e1dd4ffe940a5c47f53ee86c53eef50c6890f3a99c7', null from p;
 
-commit;
+-- Lily's Kitchen — Lily's Kitchen Wild Campfire Stew (400 g)
+-- bron: https://eu.lilyskitchen.com/nl/honden/natvoer/wild-campfire-stew
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Lily''s Kitchen', 'Lily''s Kitchen Wild Campfire Stew', 'wet', '400 g', null, 'https://eu.lilyskitchen.com/nl/honden/natvoer/wild-campfire-stew', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, '65% Vers bereide Ingrediënten: Hert (40%), Fazant (15%), Zalm (10%), Aardappelen (3%), Muskaatpompoen (2%), Sperziebonen (1%), Appels, Mineralen, Hennepolie (0,1%). Planten en kruiden: Guldenroede, Brandnetel, Anijszaad, Rozenbottels, Goudsbloemblaadjes, Kleefkruid, Kelp, Alfalfa, Mariadistel, Paardenbloemwortel, Kliswortel, Selderiezaad.', true, now(), 'sha256:cd31cb297850759ff4b5eccfb284747b16cfe4d856dfde27350240db088f43d4', null from p;
 
--- Controle na het plakken:
-select p.brand, p.name, rv.imported_at is not null as heeft_herkomst, rv.import_note
+-- Lily's Kitchen — Lily's Kitchen Lamb Hotpot (400 g)
+-- bron: https://eu.lilyskitchen.com/nl/honden/natvoer/lamb-hotpot
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Lily''s Kitchen', 'Lily''s Kitchen Lamb Hotpot', 'wet', '400 g', null, 'https://eu.lilyskitchen.com/nl/honden/natvoer/lamb-hotpot', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, '60% Vers bereid Lam, Aardappelen (3%), Pompoen (2%), Appels (2%), Wortels (1%), Erwten (1%), Broccoli (1%), Bosbessen (1%), Lijnzaad, Mineralen. Planten en kruiden: Guldenroede, Brandnetel, Anijszaad, Rozenbottels, Goudsbloemblaadjes, Kleefkruid, Kelp, Alfalfa, Mariadistel, Paardenbloemwortel, Kliswortel, Selderiezaad.', true, now(), 'sha256:ebc2568358b034105c46935d6afd746d5dd67db432d19055e8dd520245016405', null from p;
+
+-- Lily's Kitchen — Lily's Kitchen Cottage Pie (400 g)
+-- bron: https://eu.lilyskitchen.com/nl/honden/natvoer/cottage-pie
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Lily''s Kitchen', 'Lily''s Kitchen Cottage Pie', 'wet', '400 g', null, 'https://eu.lilyskitchen.com/nl/honden/natvoer/cottage-pie', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, '60% Vers bereid Rundvlees, Aardappelen (3%), Wortels (3%), Appels, Broccoli, Sperziebonen, Vitaminen en Gecheleerde Mineralen, Lijnzaad. Planten en kruiden: Guldenroede, Brandnetel, Anijszaad, Selderiezaad, Rozenbottels, Goudsbloemblaadjes, Kleefkruid, Zeewier, Alfalfa, Mariadistel, Paardenbloemwortel, Kliswortel.', true, now(), 'sha256:f71a9bba8195af848c5b05e66457ae12315b720eac83040b61156b43d3842714', null from p;
+
+-- Lily's Kitchen — Lily's Kitchen Chicken & Turkey Casserole (400 g)
+-- bron: https://eu.lilyskitchen.com/nl/honden/natvoer/chicken-turkey-casserole
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Lily''s Kitchen', 'Lily''s Kitchen Chicken & Turkey Casserole', 'wet', '400 g', null, 'https://eu.lilyskitchen.com/nl/honden/natvoer/chicken-turkey-casserole', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Verse kip (45%), Vers bereide Kalkoen (15%), Wortels (2%), Pompoen (2%), Parelgort (1%), Bruine rijst, Appels, Broccoli, Erwten, Bosbessen (1 %), Vitaminen en Mineralen, Lijnzaad. Planten en kruiden: Guldenroede, Brandnetel, Anijszaad, Selderiezaad, Rozenbottels, Goudsbloemblaadjes, Kleefkruid, Zeewier, Alfalfa, Mariadistel, Paardenbloemwortel, Kliswortel.', true, now(), 'sha256:00d37a276a3d6c6a2a5eb5035e12fb4814607a24d21e910f02db851c1399bb62', null from p;
+
+-- Monge — Monge Natural Superpremium Monoproteïne Adult Eend met Rijst en Aardappelen (15 kg)
+-- bron: https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-adult-eend-me-145549550.html
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Monge', 'Monge Natural Superpremium Monoproteïne Adult Eend met Rijst en Aardappelen', 'kibble', '15 kg', null, 'https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-adult-eend-me-145549550.html', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Eend (gedroogd 30%, vers vlees 10%), rijst (15%), aardappeleiwit (5%), maïs, gedroogde bietenpulp, biergist, gehydrolyseerde dierlijke eiwitten (lever), dierlijk vet (eendenolie gezuiverd op 99,5%), mineralen, gistproducten (mannano-oligosachariden MOS 1%), xylo-oligosachariden (XOS 0,3%), yucca schidigera (0,3%), algenmeel (spirulina- Arthrospira platensis 0,3%), producten van de verwerking van planten (wortel van Echinacea purpurea 0,2%, Origanum Vulgare 0,1%), gedroogde knoflook (0,2%), glucosamine, chondroïtinesulfaat.', true, now(), 'sha256:c80d8e2ff4ed7c0d2a07a6768e6f687a44d564b84ed7afbd8aaf39ddd4736094', null from p;
+
+-- Monge — Monge Natural Superpremium Monoproteïne Adult Rundvlees met Rijst (15 kg)
+-- bron: https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-adult-rundvle-145561903.html
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Monge', 'Monge Natural Superpremium Monoproteïne Adult Rundvlees met Rijst', 'kibble', '15 kg', null, 'https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-adult-rundvle-145561903.html', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Rundvlees (gedroogd 30%, vers vlees 10%), rijst (7%), dierlijk vet (talk gezuiverd op 99,5%), aardappeleiwit, maïs, gedroogde bietenpulp, gehydrolyseerde dierlijke eiwitten (lever), biergist, haver, mineralen, gistproducten (mannano-oligosacchariden MOS 1%), xylo-oligosacchariden (XOS 0,3%), yucca schidigera (0,3%), algenmeel (spirulina - Arthrospira platensis 0,3%), producten van de verwerking van planten (wortel van Echinacea purpurea 0,2%, Origanum Vulgare 0,1%), gedroogde knoflook (0,2%), glucosamine, chondroïtinesulfaat.', true, now(), 'sha256:111dc32b56f16de9a36cf429da986d9efa1f9d1f3790e507cbc836b8eede95fa', null from p;
+
+-- Monge — Monge Natural Superpremium Monoproteïne Adult Varken met Rijst en Aardappelen (15 kg)
+-- bron: https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-adult-varken-145561914.html
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Monge', 'Monge Natural Superpremium Monoproteïne Adult Varken met Rijst en Aardappelen', 'kibble', '15 kg', null, 'https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-adult-varken-145561914.html', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Varkensvlees (gedroogd 30%, vers vlees 10%), rijst (15%), aardappeleiwit (5%), maïs, gedroogde bietenpulp, biergist, gehydrolyseerde dierlijke eiwitten (lever), dierlijk vet (varkensvet gezuiverd op 99,5%), mineralen, haver, gistproducten (mannano-oligosachariden MOS 1%), xylo-oligosachariden (XOS 0,3%), yucca schidigera (0,3%), algenmeel (spirulina- Arthrospira platensis 0,3%), producten van de verwerking van planten (wortel van Echinacea purpurea 0,2%, Origanum Vulgare 0,1%), gedroogde knoflook (0,2%), glucosamine, chondroïtinesulfaat.', true, now(), 'sha256:43d432d4c65a99caa2975eb6c77fdbb0c50d2c6ca706650eadb3bcf9ee89ba83', null from p;
+
+-- Automatisch overgenomen etiketten, batch 2 van 2026-10-30 (16 producten).
+-- Plak dit bestand in de Supabase SQL Editor, nadat de migraties tot en met
+-- 20261019190000_import_herkomst.sql zijn uitgevoerd.
+--
+-- Elk product komt van de bronpagina die eronder staat. De site noemt de
+-- automatische herkomst in de disclaimer; er wordt hier geen enkele controle
+-- door een mens geclaimd. Alleen een handmatige review krijgt een badge.
+
+-- Monge — Monge Natural Superpremium Hypoallergeen Adult Zalm en Tonijn (15 kg)
+-- bron: https://www.mongebenelux.com/nl/hondenbrokken-hypoallergeen-adult-zalm-en-tonijn-1.html
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Monge', 'Monge Natural Superpremium Hypoallergeen Adult Zalm en Tonijn', 'kibble', '15 kg', null, 'https://www.mongebenelux.com/nl/hondenbrokken-hypoallergeen-adult-zalm-en-tonijn-1.html', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Rijst (58%), zalm (gedroogd 10% en vers 8%), tonijn (gedroogd 10%), biergist, plantaardige olie (maïsolie geraffineerd), visolie (zalmolie gezuiverd op 99,5%), gedroogde bietenpulp, mineralen, Xylo-oligosaccharide (XOS 0,3%), Yucca schidigera, gistproducten (bron van mannano-oligo-sacchariden-MOS), Chondroïtinesulfaat, Glucosamine. Geselecteerde koolhydraatbron: rijst.', true, now(), 'sha256:49e786aa437d48db5a0c393f972a8b1384ba9068e0abbffdeeb4abc79951ec6b', null from p;
+
+-- Monge — Monge Natural Superpremium Monoproteïne Light Zalm (15 kg)
+-- bron: https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-adult-zalm-me-145561944.html
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Monge', 'Monge Natural Superpremium Monoproteïne Light Zalm', 'kibble', '15 kg', null, 'https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-adult-zalm-me-145561944.html', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Vis (gedroogde zalm 26%, verse zalm 10%), rijst (15%), maïs, gedroogde bietenpulp, biergist, gehydrolyseerde viseiwitten, visolie (zalmolie), maïsgluten, mineralen, gistproducten (mannano-oligosachariden MOS 1%), xylo-oligosachariden (XOS 0,3%), yucca schidigera (0,3%), algenmeel (spirulina - Arthrospira platensis 0,3%), producten van de verwerking van planten (wortel van Echinacea purpurea 0,2%, Origanum Vulgare 0,1%), gedroogde knoflook (0,2%), glucosamine, chondroïtinesulfaat.', true, now(), 'sha256:66cd471d96e2f351b15b739324fda6a62b58c701eca5d329f72864a76cc3b356', null from p;
+
+-- Monge — Monge Natural Superpremium Monoproteïne Puppy & Junior Lamsvlees met Rijst (15 kg)
+-- bron: https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-puppy-junior-145562133.html
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Monge', 'Monge Natural Superpremium Monoproteïne Puppy & Junior Lamsvlees met Rijst', 'kibble', '15 kg', null, 'https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-puppy-junior-145562133.html', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Lam (gedroogd 30%, vers vlees 10%), rijst (15%), maïs, dierlijk vet (99,5% gezuiverde kippenolie), aardappeleiwit, gedroogde bietenpulp, biergist, gehydrolyseerde dierlijke eiwitten (lever), haver, gedroogde eieren, mineralen, gistproducten (mannano-oligosacchariden MOS 1%), xylo-oligosacchariden (XOS 0,3%), yucca schidigera (0,3%), algenmeel (spirulina - Arthrospira platensis 0,3%), producten van de verwerking van planten (wortel van Echinacea purpurea 0,2%, Origanum Vulgare 0,1%), gedroogde knoflook (0,2%), glucosamine (0,057%), chondroïtinesulfaat (0,04%).', true, now(), 'sha256:d3559ba483d356e303c6b72a628044fc7703044aa5bef12370cf67dae6eec01f', null from p;
+
+-- Purina One — Purina ONE Medium/Maxi Adult Rund & Rijst (7 kg; 12 kg; dubbelpak 2 x 7 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1337160
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Purina One', 'Purina ONE Medium/Maxi Adult Rund & Rijst', 'kibble', '7 kg; 12 kg; dubbelpak 2 x 7 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1337160', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Rundvleesbijproducten (17%), maïs (16,5%), gedroogd gevogelte-eiwit, tarwe (16,0%), dierlijke vetten, maïsgrutten, rijst (4,6%), gedroogde suikerbietenpulp (4,5%), tarwegluten, eiwithydrolysaat, mineralen, glycerol, maïseiwitmeel, geroosterd moutmeel, visolie.', true, now(), 'sha256:2b0e468c230c737ae8946c9232021576242ff39fdcdeaa13ffc086495a2e3da3', 'Nederlands etiket overgenomen van zooplus.nl; Purina heeft geen Nederlandse Purina ONE-hondenproductpagina; de Belgische pagina wijkt qua receptuur af.' from p;
+
+-- Purina One — Purina ONE Medium/Maxi Adult Kip (12 kg; dubbelpak 2 x 12 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1875000
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Purina One', 'Purina ONE Medium/Maxi Adult Kip', 'kibble', '12 kg; dubbelpak 2 x 12 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1875000', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Kip (17%, inclusief botten, vlees, huid), maïs (16%), gedroogd gevogelte-eiwit, tarwe (15%), dierlijke vetten, tarwegluten, rijst (4,6%), gedroogde bietenpulp (4,5%), maïseiwitmeel, eiwithydrolysaat, glycerine, maïsgries, mineralen, geroosterd moutmeel, visolie.', true, now(), 'sha256:6ba28b289ba2bd473efe36f7e771f05c0e23aba409bf65477e212c194d4a9c14', 'Nederlands etiket overgenomen van zooplus.nl; Purina heeft geen Nederlandse Purina ONE-hondenproductpagina; de Belgische pagina wijkt qua receptuur af.' from p;
+
+-- Purina One — Purina ONE Medium/Maxi Weight Control Sterilised Kalkoen (2,5 kg; dubbelpak 2 x 2,5 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1868165
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Purina One', 'Purina ONE Medium/Maxi Weight Control Sterilised Kalkoen', 'kibble', '2,5 kg; dubbelpak 2 x 2,5 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1868165', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Kalkoen (18%, inclusief botten, vlees, huid), tarwe (17,5%), gedroogd gevogelte-eiwit, maïs (15%), rijst (12%), gedroogde suikerbietenpulp (6%), tarwegluten, eiwithydrolysaat, maïseiwitmeel, dierlijke vetten, mineralen, geroosterd moutmeel.', true, now(), 'sha256:fd23883208a6341437f0e3bd4fe32f47bdf507e684841159f599e7fe447730e7', 'Nederlands etiket overgenomen van zooplus.nl; Purina heeft geen Nederlandse Purina ONE-hondenproductpagina; de Belgische pagina wijkt qua receptuur af.' from p;
+
+-- Purina One — Purina ONE Medium/Maxi Sensitive Zalm (2,5 kg; dubbelpak 2 x 2,5 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1874999
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Purina One', 'Purina ONE Medium/Maxi Sensitive Zalm', 'kibble', '2,5 kg; dubbelpak 2 x 2,5 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1874999', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Zalm (17%, inclusief kop, botten, vlees), gedroogd gevogelte-eiwit, maïs (16%), rijst (14%), maïsgrutten, dierlijke vetten, gedroogde suikerbietenpulp (5,5%), maïseiwitmeel, sojameel, eiwithydrolysaat, mineralen, gedroogde cichoreiwortel (0,5%, bron van natuurlijk prebioticum), sojaolie.', true, now(), 'sha256:33e9681bc694ecde4bdc4404406ce01c7ff5c9446360c8e443d50f7d36635789', 'Nederlands etiket overgenomen van zooplus.nl; Purina heeft geen Nederlandse Purina ONE-hondenproductpagina; de Belgische pagina wijkt qua receptuur af.' from p;
+
+-- Purina One — Purina ONE Mini Adult Rund & Rijst (800 g; voordeelpakket 3 x 800 g)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mini/1337161
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Purina One', 'Purina ONE Mini Adult Rund & Rijst', 'kibble', '800 g; voordeelpakket 3 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mini/1337161', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Gedroogd gevogelte-eiwit, tarwe (22%), runderafval (14%), maïs, rundervet, rijst (4%), sojameel, eiwithydrolysaat, glycerine, mineralen, vet van gevogelte, maïseiwitmeel, maïsgrutten, visolie.', true, now(), 'sha256:281bb44fb8a5db6b6a0eda288d71192d9b6c3082b13220629d3ddad922cbf031', 'Nederlands etiket overgenomen van zooplus.nl; Purina heeft geen Nederlandse Purina ONE-hondenproductpagina; de Belgische pagina wijkt qua receptuur af.' from p;
+
+-- Purina One — Purina ONE Mini Delicate Zalm & Rijst (800 g; voordeelpakket 3 x 800 g; 5 x 800 g)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mini/1874995
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Purina One', 'Purina ONE Mini Delicate Zalm & Rijst', 'kibble', '800 g; voordeelpakket 3 x 800 g; 5 x 800 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mini/1874995', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Gedroogd gevogelte-eiwit, tarwe (23,0%), maïs (13,0%), dierlijke vetten, zalm (8%, inclusief kop, botten, vlees), rijst (4,0%), gedroogde bietenpulp (3,0%), digest, sojameel, glycerine, mineralen, gedroogde cichoreiwortel (0,5% natuurlijk prebioticum), visolie.', true, now(), 'sha256:9ac0d3aa8a933d97b2a805c87584c21b38d76113b3c97a095e8f401cf83ef64c', 'Nederlands etiket overgenomen van zooplus.nl; Purina heeft geen Nederlandse Purina ONE-hondenproductpagina; de Belgische pagina wijkt qua receptuur af.' from p;
+
+-- Purina One — Purina ONE Mini Weight Control / Sterilised Kalkoen & Rijst (9 kg (6 x 1,5 kg); 18 kg (12 x 1,5 kg))
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mini/1337170
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Purina One', 'Purina ONE Mini Weight Control / Sterilised Kalkoen & Rijst', 'kibble', '9 kg (6 x 1,5 kg); 18 kg (12 x 1,5 kg)', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mini/1337170', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Gedroogd gevogelte-eiwit, tarwe (18%), kalkoen (14%), maïs (13,0%), gedroogde bietenpulp (6,5%), rijst (5,3%), tarwebloem, eiwithydrolysaat van dierlijke oorsprong, sojabloem, dierlijk vet, glycerol, mineralen, maïsgrutten, conserveermiddelen, vitaminen, aminozuren, antioxidanten.', true, now(), 'sha256:c3a6a4bb35a58ac7a645fe0ee93923740ce9fbc509a47c04dd9455d8631f73c4', 'Nederlands etiket overgenomen van zooplus.nl; Purina heeft geen Nederlandse Purina ONE-hondenproductpagina; de Belgische pagina wijkt qua receptuur af.' from p;
+
+-- Purina One — Purina ONE Mini Sensitive-Delicate Zalm (natvoer) (10 x 85 g; 20 x 85 g)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_nat/purina_one/2007011
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Purina One', 'Purina ONE Mini Sensitive-Delicate Zalm (natvoer)', 'wet', '10 x 85 g; 20 x 85 g', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_nat/purina_one/2007011', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Vlees en dierlijke bijproducten, plantaardige eiwitextracten, vis en bijproducten uit vis (waarvan 4% zalm), plantaardige bijproducten (waarvan 0,3% cichorei-inuline), granen (0,8% rijst, overeenkomstig met 4,8% gekookte rijst), groenten (0,8% gedehydrateerde wortelen, overeenkomstig met 7,2% wortelen), mineralen, verschillende suikers.', true, now(), 'sha256:1ef2765acfa9f83400ecbd153fe2c8ca4746f3b7fc202ebd75fd77e2d92266b1', 'Nederlands etiket overgenomen van zooplus.nl; Purina heeft geen Nederlandse Purina ONE-hondenproductpagina; de Belgische pagina wijkt qua receptuur af.' from p;
+
+-- Taste of the Wild — Taste of the Wild High Prairie Canine (2 kg / 5,6 kg / 12,2 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/175524
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Taste of the Wild', 'Taste of the Wild High Prairie Canine', 'kibble', '2 kg / 5,6 kg / 12,2 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/175524', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Bizon (12%), lamsmeel, kippenmeel, zoete aardappelen, erwten, aardappelen, kippenvet (geconserveerd met gemengde tocoferolen), eiproducten, rundvlees, gebraden hert (4%), tomatenpulp, aardappeleiwit, erwteneiwit, zeevismeel, mineralen, gedroogde cichoreiwortel, tomaten, bosbessen, frambozen, extract van Yucca schidigera.', true, now(), 'sha256:5b7e188f174f7bcc61e742d9ff3794f4e50220fb21ca1bf54319bf27d4992274', 'Nederlands etiket overgenomen van zooplus.nl; de Amerikaanse fabrikantpagina toont een afwijkende formule.' from p;
+
+-- Taste of the Wild — Taste of the Wild Pacific Stream Canine (2 kg / 5,6 kg / 12,2 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/175525
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Taste of the Wild', 'Taste of the Wild Pacific Stream Canine', 'kibble', '2 kg / 5,6 kg / 12,2 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/175525', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Zalm (21%), zeevismeel, zoete aardappelen, aardappelen, erwten, raapzaadolie, linzen, zalmmeel, gerookte zalm (4%), aardappelvezel, mineralen, gedroogde cichoreiwortel, tomaten, bosbessen, frambozen, extract van Yucca schidigera.', true, now(), 'sha256:903fd590289c48ee96d51c4e2da30ae767fa47ae3fb66416cc4ccddb7893b0c8', 'Nederlands etiket overgenomen van zooplus.nl; de Amerikaanse fabrikantpagina toont een afwijkende formule.' from p;
+
+-- Taste of the Wild — Taste of the Wild Southwest Canyon Canine (2 kg / 12,2 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/409374
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Taste of the Wild', 'Taste of the Wild Southwest Canyon Canine', 'kibble', '2 kg / 12,2 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/409374', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Rundvlees (18%), erwten, kikkererwten, lamsmeel, raapzaadolie, eiproducten, wild zwijn (4%), zeevismeel, erwtenmeel, biergist, tomatenpulp, lijnzaad, zalmolie (een bron van DHA), mineralen, gedroogde cichoreiwortel, tomaten, bosbessen, frambozen, extract van Yucca schidigera.', true, now(), 'sha256:94bf3c83a7cb3898c4317af306ab45972906ad91ade7ce73975ebba675524e66', 'Nederlands etiket overgenomen van zooplus.nl; de Amerikaanse fabrikantpagina toont een afwijkende formule.' from p;
+
+-- Taste of the Wild — Taste of the Wild Pine Forest Canine (2 kg / 12,2 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/550354
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Taste of the Wild', 'Taste of the Wild Pine Forest Canine', 'kibble', '2 kg / 12,2 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/550354', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Hert (10%), lamsmeel, kikkererwten (10%), erwten (10%), linzen (10%), erwtenmeel, gedroogde gist, eiproducten, raapzaadolie, tomatenpulp, zeevismeel, zalmolie (een bron van DHA), mineralen, gedroogde cichoreiwortel, extract van Yucca schidigera, tomaten, bosbessen, frambozen', true, now(), 'sha256:ebb40cbcf449cebd9582b2f84b8d21f2e23902c5c06f231434dc6c02d4a27759', 'Nederlands etiket overgenomen van zooplus.nl; de Amerikaanse fabrikantpagina toont een afwijkende formule.' from p;
+
+-- Taste of the Wild — Taste of the Wild High Prairie Puppy (2 kg / 5,6 kg / 12,2 kg)
+-- bron: https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/409376
+with p as (
+  insert into public.products (brand, name, food_type, package_size, gtin, source_url, last_checked_at, published)
+  values ('Taste of the Wild', 'Taste of the Wild High Prairie Puppy', 'kibble', '2 kg / 5,6 kg / 12,2 kg', null, 'https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/409376', date '2026-10-30', true)
+  returning id
+)
+insert into public.recipe_versions (product_id, ingredients_text, is_current, imported_at, import_hash, import_note)
+select id, 'Bizon (10,5%), lamsmeel, zoete aardappelen, eiproducten, erwteneiwit, erwten, aardappelen, kippenvet (geconserveerd met gemengde tocoferolen), tomatenpulp, gebraden hert (4%), rundvlees, lijnzaad, aardappelvezel, zeevismeel, zalmolie (een bron van DHA), mineralen, gedroogde cichoreiwortel, extract van Yucca schidigera, tomaten, bosbessen, frambozen.', true, now(), 'sha256:824a7bfea503c7fa7900877d21e896e74ba730f650bf27be9850439365a3e446', 'Nederlands etiket overgenomen van zooplus.nl; de Amerikaanse fabrikantpagina toont een afwijkende formule.' from p;
+
+-- Woordenlijst voor de nieuwe merken (30 oktober 2026).
+
+insert into public.ingredient_terms (term, kind, allergen_keys, note)
+values
+  ('geinactiveerde', 'onschuldig', null, 'Vervoeging van geïnactiveerd; geen allergene bron.'),
+  ('moederkruid', 'bron', array['herbs'], 'Kruid; valt onder de groep kruiden.'),
+  ('planten', 'onschuldig', null, 'Verzamelkop in een etiket; de concrete planten staan erachter.'),
+  ('guldenroede', 'bron', array['herbs'], 'Kruid (goldenrod).'),
+  ('kleefkruid', 'bron', array['herbs'], 'Kruid (cleavers).'),
+  ('vogelmuur', 'bron', array['herbs'], 'Kruid (chickweed).'),
+  ('origanum', 'bron', array['herbs'], 'Oregano.'),
+  ('vulgare', 'bron', array['herbs'], 'Soortaanduiding van oregano (Origanum vulgare).'),
+  ('purpurea', 'bron', array['herbs'], 'Soortaanduiding van Echinacea (Echinacea purpurea).'),
+  ('arthrospira', 'bron', array['algae'], 'Spirulina (Arthrospira platensis).'),
+  ('platensis', 'bron', array['algae'], 'Soortaanduiding van spirulina (Arthrospira platensis).'),
+  ('voedingsgist', 'bron', array['yeast'], 'Gist.'),
+  ('zeevismeel', 'bron', array['fish'], 'Vismeel; de vissoort wordt niet genoemd.'),
+  ('talk', 'onduidelijk', array['beef', 'lamb', 'pork'], 'Dierlijk vet; het etiket noemt niet van welke diersoort.'),
+  ('bijprodukten', 'onduidelijk', null, 'Oude spelling van bijproducten; kan een dierlijke of plantaardige bron verbergen.'),
+  ('ingredient', 'onschuldig', null, 'Algemeen woord, geen ingrediënt.'),
+  ('naakte', 'onschuldig', null, 'Bijvoeglijk naamwoord (bijvoorbeeld naakte haver); haver zelf wordt apart herkend.'),
+  ('xos', 'onschuldig', null, 'Xylo-oligosachariden; prebiotische vezel.'),
+  ('gewrichtsondersteuning', 'onschuldig', null, 'Aanduiding van een werkingsclaim, geen ingrediënt.'),
+  ('gezuiverd', 'onschuldig', null, 'Bereidingswoord.'),
+  ('ggo', 'onschuldig', null, 'Ggo-status; geen ingrediënt.'),
+  ('agrarische', 'onschuldig', null, 'Herkomstaanduiding.'),
+  ('gebraden', 'onschuldig', null, 'Bereidingswoord.'),
+  ('gerookte', 'onschuldig', null, 'Bereidingswoord.'),
+  ('geselecteerde', 'onschuldig', null, 'Aanduiding, geen ingrediënt.'),
+  ('verwerking', 'onschuldig', null, 'Aanduiding van een verwerkingsstap.'),
+  ('nevenproducten', 'onduidelijk', null, 'Verzamelterm voor dierlijke of plantaardige reststromen; de bron wordt niet genoemd.'),
+  ('chicoreewortel', 'bron', array['chicory'], 'Cichoreiwortel.'),
+  ('geroosterd', 'onschuldig', null, 'Bereidingswoord.'),
+  ('moutmeel', 'onduidelijk', array['grains', 'wheat', 'barley', 'oats', 'rye'], 'Moutmeel; de graansoort wordt niet altijd genoemd.'),
+  ('huid', 'onschuldig', null, 'Dierlijk deel dat bij de genoemde vleessoort hoort; geen zelfstandige bron.'),
+  ('3organisch', 'onschuldig', null, 'Voetnoot bij biologische ingrediënten; geen ingrediënt.'),
+  ('gerehydreerd', 'onschuldig', null, 'Bereidingswoord.'),
+  ('overeenkomstig', 'onschuldig', null, 'Vergelijkingswoord in een toelichting; geen ingrediënt.')
+on conflict (term) do update
+  set kind = excluded.kind,
+      allergen_keys = excluded.allergen_keys,
+      note = excluded.note;
+
+
+-- Controle na het plakken: hoeveel producten per merk, en hoeveel daarvan
+-- automatisch zijn overgenomen?
+select p.brand, count(*) as producten,
+       count(*) filter (where rv.imported_at is not null) as automatisch_overgenomen
   from public.products p
   join public.recipe_versions rv on rv.product_id = p.id and rv.is_current
- where rv.imported_at > now() - interval '1 hour'
- order by p.brand, p.name;
+ group by p.brand
+ order by p.brand;
+
+commit;

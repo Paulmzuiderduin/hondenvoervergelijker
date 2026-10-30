@@ -36,6 +36,11 @@ GitHub en het hostingpaneel allebei worden bijgewerkt.
   geautomatiseerde bezoeken. De bronlinks staan in
   `data/import/terra-canis.json`; controleer ze periodiek handmatig via de
   officiële productpagina's. De producten staan daarom op handmatige controle.
+- **Taste of the Wild, Purina One, Frolic en Dog Chow**: er is geen bruikbare
+  Nederlandse fabrikantpagina, of de Nederlandse formule wijkt af van de
+  anderstalige pagina. De Nederlandse etiketten komen daarom van een
+  gespecificeerde winkelpagina (Zooplus of Pets Place). Deze producten staan op
+  handmatige controle; de bronnote staat op de productkaart.
 - **Edgard & Cooper** (38 producten): de wekelijkse browsercontrole krijgt vanaf
   GitHub een andere pagina dan thuis. Draai af en toe lokaal
   `npm run check:bronnen:browser`.

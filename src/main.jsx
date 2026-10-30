@@ -583,7 +583,7 @@ function App() {
   useEffect(() => {
     document.title = Array.isArray(selectedBrands) && selectedBrands.length === 1
       ? `${selectedBrands[0]} hondenvoer vergelijken op allergenen | Hondenvoervergelijker`
-      : 'Hondenvoer vergelijken op allergenen — 1.400+ recepten van 50 merken'
+      : 'Hondenvoer vergelijken op allergenen — 1.478 recepten van 60 merken'
   }, [selectedBrands])
   const merkTellingen = useMemo(() => {
     const tellingen = new Map()
@@ -780,7 +780,7 @@ function App() {
     url.searchParams.delete('beheer')
     window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`)
   }
-  const disclaimer = <>Deze tool vergelijkt uitsluitend overgenomen etiketinformatie van {alleMerken.length || 50} merken ({products.length || '1.400+'} recepten). De resultaten vormen geen medisch advies en bieden geen 100% garantie. Controleer voor aankoop altijd zelf de verpakking en overleg bij medische klachten met een dierenarts.</>
+  const disclaimer = <>Deze tool vergelijkt uitsluitend overgenomen etiketinformatie van {alleMerken.length || 60} merken ({products.length || '1.478'} recepten). De resultaten vormen geen medisch advies en bieden geen 100% garantie. Controleer voor aankoop altijd zelf de verpakking en overleg bij medische klachten met een dierenarts.</>
   return <main><header className="site-header">
     <div className="site-header-row">
       <div className="site-brand">
@@ -813,8 +813,8 @@ function App() {
           <p className="hero-links"><a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a> · <a href="/hoe-wij-vergelijken.html">Onze methode</a></p>
         </div>
         <div className="hero-stats">
-          <div className="stat-box"><strong>{products.length || '1.400+'}</strong><span>volledige recepten</span></div>
-          <div className="stat-box"><strong>{alleMerken.length || '50'}</strong><span>voedingsmerken</span></div>
+          <div className="stat-box"><strong>{products.length || '1.478'}</strong><span>volledige recepten</span></div>
+          <div className="stat-box"><strong>{alleMerken.length || '60'}</strong><span>voedingsmerken</span></div>
           <div className="stat-box"><strong>{ALLERGENS.length}</strong><span>allergenen &amp; bronnen</span></div>
         </div>
       </section>

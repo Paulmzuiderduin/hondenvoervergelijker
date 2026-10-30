@@ -133,7 +133,7 @@ Supabase:
   zo'n uitkomst als "onbereikbaar" en veranderen de status op de site dan niet.
 - De fetch-controle draait verschillende sites parallel (standaard 6) met per
   site minimaal 1,5 seconde pauze; de browsercontrole gebruikt 3 tabbladen en
-  2 seconden per verzoek. Zo blijven 1.400+ producten binnen enkele minuten
+  2 seconden per verzoek. Zo blijven 1.478 producten binnen enkele minuten
   gecontroleerd en blijft het verzoekgedrag beleefd.
 - Zodra een beheerder een product opslaat of "Nagelopen" klikt, zet
   `save_product_with_recipe`/`set_recipe_reviewed` de status weer op `ok`.
