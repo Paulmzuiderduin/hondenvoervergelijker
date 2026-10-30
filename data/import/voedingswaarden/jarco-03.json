@@ -1,0 +1,167 @@
+{
+  "merk": "Jarco",
+  "opgehaald": "2026-10-30",
+  "producten": [
+    {
+      "merk": "Jarco",
+      "naam": "Verse Hondenworst Kip",
+      "voertype": "wet",
+      "verpakking": "250 / 450 / 750 gr",
+      "bronUrl": "https://jarco.nl/products/verse-hondenworst-kip-giant",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9.9,
+        "fat": 10.4,
+        "fiber": 2.1,
+        "ash": 6.1,
+        "moisture": 58.3,
+        "kcal": null,
+        "calcium": 1.9,
+        "phosphorus": 0.9,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Ruw eiwit 9,9%, ruw vet 10,4%, ruwe celstof 2,1%, ruwe as 6,1%, calcium 1,9%, fosfor 0,9%, natrium 0,2%. Vochtgehalte max. 58,3%.",
+      "notitie": "De fabrikant vermeldt geen energiewaarde. Niet vermeld: kcal, omega-3, omega-6."
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Verse Hondenworst Kip-Eend",
+      "voertype": "wet",
+      "verpakking": "250 gr",
+      "bronUrl": "https://jarco.nl/products/verse-hondenworst-kip-eend",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9.3,
+        "fat": 10.8,
+        "fiber": 1.7,
+        "ash": 5.0,
+        "moisture": 60.2,
+        "kcal": null,
+        "calcium": 2.0,
+        "phosphorus": 0.9,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Ruw eiwit 9,3%, ruw vet 10,8%, ruwe celstof 1,7%, ruwe as 5,0%, calcium 2,0%, fosfor 0,9%, natrium 0,2%. Vochtgehalte max. 60,2%.",
+      "notitie": "De fabrikant vermeldt geen energiewaarde. Niet vermeld: kcal, omega-3, omega-6."
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Verse Hondenworst Kip-Kalkoen",
+      "voertype": "wet",
+      "verpakking": "450 / 750 gr",
+      "bronUrl": "https://jarco.nl/products/verse-hondenworst-kip-kalkoen-giant",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.1,
+        "fat": 9.2,
+        "fiber": 1.8,
+        "ash": 5.0,
+        "moisture": 60.9,
+        "kcal": null,
+        "calcium": 1.5,
+        "phosphorus": 0.9,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Ruw eiwit 10,1%, ruw vet 9,2%, ruwe celstof 1,8%, ruwe as 5,0%, calcium 1,5%, fosfor 0,9%, natrium 0,2%. Vochtgehalte max. 60,9%.",
+      "notitie": "De fabrikant vermeldt geen energiewaarde. Niet vermeld: kcal, omega-3, omega-6."
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Verse Hondenworst Kip-Konijn",
+      "voertype": "wet",
+      "verpakking": "250 / 750 gr",
+      "bronUrl": "https://jarco.nl/products/verse-hondenworst-kip-konijn-giant",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.2,
+        "fat": 9.0,
+        "fiber": 2.0,
+        "ash": 6.1,
+        "moisture": 60.7,
+        "kcal": null,
+        "calcium": 2.1,
+        "phosphorus": 1.0,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Ruw eiwit 10,2%, ruw vet 9,0%, ruwe celstof 2,0%, ruwe as 6,1%, calcium 2,1%, fosfor 1,0%, natrium 0,2%. Vochtgehalte max. 60,7%.",
+      "notitie": "De fabrikant vermeldt geen energiewaarde. Niet vermeld: kcal, omega-3, omega-6."
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Verse Hondenworst Kip-Rund",
+      "voertype": "wet",
+      "verpakking": "250 / 450 / 750 gr",
+      "bronUrl": "https://jarco.nl/products/verse-hondenworst-kip-rund-giant",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.1,
+        "fat": 9.2,
+        "fiber": 1.8,
+        "ash": 5.0,
+        "moisture": 60.9,
+        "kcal": null,
+        "calcium": 1.5,
+        "phosphorus": 0.9,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Ruw eiwit 10,1%, ruw vet 9,2%, ruwe celstof 1,8%, ruwe as 5,0%, calcium 1,5%, fosfor 0,9%, natrium 0,2%. Vochtgehalte max. 60,9%.",
+      "notitie": "De fabrikant vermeldt geen energiewaarde. Niet vermeld: kcal, omega-3, omega-6."
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Verse Hondenworst Sensitive Lam",
+      "voertype": "wet",
+      "verpakking": "250 / 600 gr",
+      "bronUrl": "https://jarco.nl/products/verse-hondenworst-sensitive-lam",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 11.7,
+        "fat": 8.0,
+        "fiber": 1.4,
+        "ash": 0.7,
+        "moisture": 67.2,
+        "kcal": null,
+        "calcium": 0.7,
+        "phosphorus": 0.1,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Ruw eiwit 11,7%, ruw vet 8,0%, ruwe celstof 1,4%, ruwe as 0,7%, calcium 0,7%, fosfor 0,1%, natrium 0,2%. Vochtgehalte max. 67,2%.",
+      "notitie": "De fabrikant vermeldt geen energiewaarde. Niet vermeld: kcal, omega-3, omega-6."
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Vleeskuipjes Kip",
+      "voertype": "wet",
+      "verpakking": "2 x 150 gr (doos: 6 stuks)",
+      "bronUrl": "https://jarco.nl/products/vleeskuipjes-kip-2x-150-gr-verpakt-a-6x-2-st",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9.5,
+        "fat": 8.5,
+        "fiber": 0.8,
+        "ash": 1.6,
+        "moisture": 72.0,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Ruw eiwit min. 9,5% - Ruw vet min. 8,5% - Ruwe celstof min. 0,8% - Ruwe as max. 1,6% - Vochtgehalte max. 72,0%.",
+      "notitie": "De fabrikant vermeldt geen energiewaarde. Eiwit, vet en vezel zijn minimumwaarden en as en vocht maximumwaarden, zoals op de bron vermeld. Niet vermeld: kcal, calcium, fosfor, omega-3, omega-6."
+    }
+  ]
+}
