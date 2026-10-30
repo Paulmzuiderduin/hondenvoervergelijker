@@ -72,6 +72,14 @@ try {
   const filter = await page.locator('.filter-summary').innerText()
   meld(/1 van 60 merken/.test(filter), 'merk-deeplink selecteert één merk', filter)
 
+  // 3b. Voedingswaarden op de kaart en in het detail
+  await open('/?merk=Prins%20Petfoods', '.product-card')
+  const voedingSamenvatting = await page.locator('.nutrition-summary').first().innerText()
+  meld(/Eiwit/.test(voedingSamenvatting) && !/NaN/.test(voedingSamenvatting), 'voedingswaarden staan op de productkaart', voedingSamenvatting)
+  await page.locator('.nutrition summary').first().click()
+  const voedingDetail = await page.locator('.nutrition-grid').first().innerText()
+  meld(/Ruw eiwit/.test(voedingDetail) && !/NaN/.test(voedingDetail), 'voedingswaarden-detail is compleet', voedingDetail.replace(/\n/g, ' ').slice(0, 100))
+
   // 4. Melding wanneer niets geschikt is
   await open('/?merk=Royal%20Canin&allergeen=beef', '.no-suitable')
   const melding = await page.locator('.no-suitable strong').innerText()
