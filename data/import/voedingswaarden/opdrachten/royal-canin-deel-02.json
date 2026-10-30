@@ -1,0 +1,189 @@
+{
+  "groep": "royal-canin",
+  "label": "Royal Canin",
+  "merken": [
+    "Royal Canin"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 25,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Royal Canin",
+      "naam": "Dalmatian Adult",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/dalmatian-adult-2598"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Dalmatian Puppy",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/dalmatian-puppy-2597"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Dental Care Maxi",
+      "voertype": "kibble",
+      "verpakking": "9 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/maxi-dental-care-1223"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Dental Care Medium",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/medium-dental-care-1222"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Dental Care Mini",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/mini-dental-care-1221"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Dental Medium & Large Dogs",
+      "voertype": "kibble",
+      "verpakking": "6 / 13 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/dental-dog-dry-3722"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Dental Small Dogs",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/dental-small-dog-3723"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Dermacomfort Maxi",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/maxi-dermacomfort-2444"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Diabetic",
+      "voertype": "wet",
+      "verpakking": "195 / 410 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/diabetic-special-low-carbohydrate-4015"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Digestive Care Maxi",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/maxi-digestive-care-3055"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Digestive Care Medium",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/medium-digestive-care-3016"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Digestive Care Mini",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/mini-digestive-care-2447"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Early Renal",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/early-renal-1252"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Early Renal",
+      "voertype": "kibble",
+      "verpakking": "2 / 7 / 14 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/early-renal-1248"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Exigent in Loaf (paté)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/exigent-1185"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Exigent Mini",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/mini-exigent-1006"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "French Bulldog Adult",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 / 9 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/french-bulldog-adult-3991"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "French Bulldog Adult in Loaf (paté)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/french-bulldog-8103"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "French Bulldog Puppy",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/french-bulldog-puppy-3990"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Gastrointestinal",
+      "voertype": "kibble",
+      "verpakking": "2 / 7,5 / 15 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/gastrointestinal-3911"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Gastrointestinal",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/gastrointestinal-4038"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Gastrointestinal High Fibre",
+      "voertype": "kibble",
+      "verpakking": "2 / 7,5 / 14 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/gastrointestinal-high-fibre-3959"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Gastrointestinal High Fibre",
+      "voertype": "wet",
+      "verpakking": "200 / 410 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/gastrointestinal-high-fibre-1480"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Gastrointestinal Hydrolysed Protein",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3,5 / 9 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/royal-canin--veterinary-health-nutrition-gastrointestinal-hydrolysed-protein-dry-pet-food-for-dog-8112"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Gastrointestinal Hydrolysed Protein",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/gastrointestinal-hydrolysed-protein-loaf-8113"
+    }
+  ],
+  "deel": 2,
+  "aantalDelen": 8
+}

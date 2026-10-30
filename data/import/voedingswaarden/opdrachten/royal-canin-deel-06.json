@@ -1,0 +1,189 @@
+{
+  "groep": "royal-canin",
+  "label": "Royal Canin",
+  "merken": [
+    "Royal Canin"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 25,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Royal Canin",
+      "naam": "Neutered Adult Large Dogs",
+      "voertype": "kibble",
+      "verpakking": "3,5 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/neutered-adult-large-dog-3716"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Neutered Adult Medium Dogs",
+      "voertype": "kibble",
+      "verpakking": "3,5 / 9 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/neutered-adult-3714"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Neutered Adult Small Dogs",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3,5 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/neutered-adult-small-dog-3712"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Neutered Junior",
+      "voertype": "kibble",
+      "verpakking": "3,5 / 10 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/neutered-junior-3713"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Neutered Junior Large Dogs",
+      "voertype": "kibble",
+      "verpakking": "4 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/neutered-junior-large-dog-3715"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Pomeranian Adult",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/pomeranian-adult-1255"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Pomeranian Adult in Loaf (paté)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/pomeranian-1256"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Poodle Adult",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 7,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/poodle-adult-3057"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Poodle Adult in Loaf (paté)",
+      "voertype": "wet",
+      "verpakking": "12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/poodle-2043"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Poodle Puppy",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/poodle-puppy-3080"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Pug Adult",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 / 7,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/pug-adult-3985"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Pug Puppy",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/pug-puppy-4130"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Recovery",
+      "voertype": "wet",
+      "verpakking": "195 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/recovery-4055"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Recovery Liquid",
+      "voertype": "wet",
+      "verpakking": "3 x 200 ml",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/recovery-liquid-dog-%26-cat-4910"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Relax Care in Loaf (paté)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/relax-care-1182"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Relax Care Maxi",
+      "voertype": "kibble",
+      "verpakking": "9 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/maxi-relax-care-1226"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Relax Care Medium",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/medium-relax-care-1225"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Relax Care Mini",
+      "voertype": "kibble",
+      "verpakking": "3 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/mini-relax-care-1224"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Renal",
+      "voertype": "kibble",
+      "verpakking": "2 / 7 / 14 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/renal-3916"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Renal",
+      "voertype": "wet",
+      "verpakking": "200 / 410 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/renal-4020"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Renal (natvoer - Portie)",
+      "voertype": "wet",
+      "verpakking": "100 g / 12 x 100 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/renal-1356"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Renal + Hypoallergenic",
+      "voertype": "kibble",
+      "verpakking": "4 / 10 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/renal-%2b-hypoallergenic-6501"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Renal + Mobility",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3,5 / 9 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/renal-%2b-mobility-1247"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Renal + Mobility",
+      "voertype": "wet",
+      "verpakking": "420 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/renal-%2b-mobility-8090"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Renal Liquid Dog",
+      "voertype": "wet",
+      "verpakking": "3 x 200 ml",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/renal-liquid-dog-4911"
+    }
+  ],
+  "deel": 6,
+  "aantalDelen": 8
+}

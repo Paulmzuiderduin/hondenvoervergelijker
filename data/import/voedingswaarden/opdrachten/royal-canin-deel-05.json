@@ -1,0 +1,189 @@
+{
+  "groep": "royal-canin",
+  "label": "Royal Canin",
+  "merken": [
+    "Royal Canin"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 25,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Royal Canin",
+      "naam": "Maxi Ageing 8+",
+      "voertype": "kibble",
+      "verpakking": "3 / 15 kg",
+      "bronUrl": "https://www.royalcanin.com/be/nl-be/dogs/products/retail-products/maxi-ageing-8%2b-2454"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Maxi Ageing 8+ Natvoer",
+      "voertype": "wet",
+      "verpakking": "10 x 140 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/maxi-ageing-1091"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Maxi Puppy",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 4 / 10 / 12 / 15 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/puppy---maxi-3006"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Maxi Puppy in Gravy (brokjes in saus)",
+      "voertype": "wet",
+      "verpakking": "140 g / 10 x 140 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/puppy---maxi---chunks-in-gravy-1097"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Maxi Starter Mother & Babydog",
+      "voertype": "kibble",
+      "verpakking": "4 / 15 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/starter-mother-%26-babydog---maxi-2994"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Medium Adult",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 4 / 10 / 12 / 15 / 19 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/medium-adult-3004"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Medium Adult 7+",
+      "voertype": "kibble",
+      "verpakking": "4 / 10 / 15 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/medium-adult-7%2b-3005"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Medium Adult Wet",
+      "voertype": "wet",
+      "verpakking": "10 x 140 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/medium-adult-1095"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Medium Ageing 10+",
+      "voertype": "kibble",
+      "verpakking": "3 / 15 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/medium-ageing-10%2b-2448"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Medium Ageing in Gravy (brokjes in saus)",
+      "voertype": "wet",
+      "verpakking": "10 x 140 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/medium-ageing---chunks-in-gravy-1092"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Medium Puppy",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 4 / 10 / 12 / 15 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/puppy---medium-3003"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Medium Puppy in Gravy (brokjes in saus)",
+      "voertype": "wet",
+      "verpakking": "140 g / 10 x 140 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/puppy---medium---chunks-in-gravy-1098"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Medium Starter Mother & Babydog",
+      "voertype": "kibble",
+      "verpakking": "1 / 4 / 15 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/starter-mother-%26-babydog---medium-2993"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mini Adult 8+",
+      "voertype": "kibble",
+      "verpakking": "800 g / 2 / 4 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/mini-adult-8%2b-3002"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mini Adult in Gravy (brokjes in saus)",
+      "voertype": "wet",
+      "verpakking": "12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/mini-adult---morsels-in-gravy-1096"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mini Ageing 12+",
+      "voertype": "kibble",
+      "verpakking": "800 g / 1,5 / 3,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/mini-ageing-12%2b-1007"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mini Ageing in Gravy (brokjes in saus)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/mini-ageing---chunks-in-gravy-1093"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mini Dermacomfort",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/mini-dermacomfort-2441"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mini Puppy",
+      "voertype": "kibble",
+      "verpakking": "800 g / 2 / 4 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/be/nl-be/dogs/products/retail-products/puppy---mini-3000"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mini Puppy in Gravy (brokjes in saus)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/puppy---mini---chunks-in-gravy-1099"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mini Starter Mother & Babydog",
+      "voertype": "kibble",
+      "verpakking": "1 / 4 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/starter-mother-%26-babydog---mini-2990"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Miniature Schnauzer Adult",
+      "voertype": "kibble",
+      "verpakking": "3 / 7,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/miniature-schnauzer-adult-2220"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Miniature Schnauzer Puppy",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/schnauzer-puppy-4131"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mobility Support",
+      "voertype": "kibble",
+      "verpakking": "2 / 7 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/mobility-support-1829"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Neutered Adult",
+      "voertype": "wet",
+      "verpakking": "100 g / 12 x 100 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/neutered-adult-1505"
+    }
+  ],
+  "deel": 5,
+  "aantalDelen": 8
+}

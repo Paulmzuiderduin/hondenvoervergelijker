@@ -1,0 +1,189 @@
+{
+  "groep": "royal-canin",
+  "label": "Royal Canin",
+  "merken": [
+    "Royal Canin"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 25,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Royal Canin",
+      "naam": "Adult (natvoer)",
+      "voertype": "wet",
+      "verpakking": "100 g / 12 x 100 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/adult-1504"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Adult Large Dogs",
+      "voertype": "kibble",
+      "verpakking": "4 / 13 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/adult-large-dog-3708"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Adult Small Dogs",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/adult-small-dog-3702"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Anallergenic",
+      "voertype": "kibble",
+      "verpakking": "3 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/anallergenic-4014"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Anallergenic Small Dogs",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/anallergenic-small-dog-3317"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Beagle Adult",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/beagle-adult-2106"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Bichon Frise Adult",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/bichon-frise-adult-4134"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Boxer Adult",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/boxer-adult-2588"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Boxer Puppy",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/boxer-apuppy-3966"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Bulldog Adult",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/bulldog-adult-2590"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Bulldog Puppy",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/bulldog-puppy-3967"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Calm",
+      "voertype": "kibble",
+      "verpakking": "4 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/calm-3956"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Cardiac",
+      "voertype": "kibble",
+      "verpakking": "2 / 14 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/cardiac-3930"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Cardiac",
+      "voertype": "wet",
+      "verpakking": "410 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/cardiac-loaf-4023"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Cavalier King Charles Adult",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 / 7,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/cavalier-king-charles-adult-3968"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Cavalier King Charles Puppy",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/cavalier-king-charles-puppy-4132"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Chihuahua Adult",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 / 3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/chihuahua-adult-2210"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Chihuahua Adult in Loaf (paté)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/chihuahua-2041"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Chihuahua Puppy",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/chihuahua-puppy-2438"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Coat Care in Loaf (paté)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/coat-care-1184"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Coat Care Mini",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/mini-coat-care-1220"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Cocker Adult",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/cocker-adult-3969"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Cocker Puppy",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/cocker-puppy-4133"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Dachshund Adult",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 7,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/dachshund-adult-3059"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Dachshund Puppy",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/dachshund-puppy-2437"
+    }
+  ],
+  "deel": 1,
+  "aantalDelen": 8
+}

@@ -1,0 +1,189 @@
+{
+  "groep": "royal-canin",
+  "label": "Royal Canin",
+  "merken": [
+    "Royal Canin"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 25,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Royal Canin",
+      "naam": "Sterilised X-Small",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/x-small-sterilised-1019"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Urinary Care in Loaf (paté)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/urinary-care-1183"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Urinary Care Mini",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/mini-urinary-care-1261"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Urinary S/O",
+      "voertype": "wet",
+      "verpakking": "100 / 200 / 410 g / 12 x 100 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/urinary-so-4021"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Urinary S/O",
+      "voertype": "kibble",
+      "verpakking": "2 / 7,5 / 13 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/urinary-so-3913"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Urinary S/O + Hypoallergenic",
+      "voertype": "kibble",
+      "verpakking": "3,5 / 10 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/urinary-so-%2b-hypoallergenic-6500"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Urinary S/O + Hypoallergenic Small Dogs",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/urinary-so--%2b-hypoallergenic-small-dogs-8063"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Urinary S/O + Satiety",
+      "voertype": "kibble",
+      "verpakking": "3,5 / 9 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/urinary-so-%2b-satiety-6502"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Urinary S/O + Satiety Small Dogs",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/urinary-so-%2b-satiety-small-dogs-8064"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Urinary S/O Ageing 7+",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/urinary-so-ageing-7%2b-1275"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Urinary S/O Moderate Calorie",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 6,5 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/urinary-so-moderate-calorie-3800"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Urinary S/O Moderate Calorie",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/urinary-so-moderate-calorie-1277"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Urinary S/O Small Dog",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 4 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/urinary-so-small-dog-3801"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Urinary U/C",
+      "voertype": "kibble",
+      "verpakking": "2 / 7,5 / 14 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/urinary-uc-3942"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "West Highland White Terrier Adult",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/west-highland-white-terrier-adult-3981"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "X-Small Adult",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 / 3 / 11 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/x-small-adult-1003"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "X-Small Adult 8+",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 / 3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/x-small-adult-8%2b-1004"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "X-Small Adult in Gravy (brokjes in saus)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/x-small-adult---morsels-in-gravy-8033"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "X-Small Ageing 12+",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/x-small-ageing-12%2b-1005"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "X-Small Puppy",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 / 3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/puppy---x-small-1002"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "X-Small Puppy in Gravy (brokjes in saus)",
+      "voertype": "wet",
+      "verpakking": "12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/puppy---x-small---chunks-in-gravy-1593"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Yorkshire Adult in Loaf (paté)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/yorkshire-terrier-2040"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Yorkshire Terrier 8+",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/yorkshire-terrier-8%2b-1260"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Yorkshire Terrier Adult",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 / 7,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/yorkshire-terrier-adult-3051"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Yorkshire Terrier Puppy",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 / 7,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/yorkshire-terrier-puppy-3972"
+    }
+  ],
+  "deel": 8,
+  "aantalDelen": 8
+}

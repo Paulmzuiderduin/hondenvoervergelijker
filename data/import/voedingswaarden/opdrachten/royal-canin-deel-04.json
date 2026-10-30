@@ -1,0 +1,189 @@
+{
+  "groep": "royal-canin",
+  "label": "Royal Canin",
+  "merken": [
+    "Royal Canin"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 25,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Royal Canin",
+      "naam": "Hypoallergenic + Satiety",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3,5 / 9 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/hypoallergenic-%2b-satiety-1083"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Hypoallergenic + Satiety Small Dogs",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/hypoallergenic-%2b-satiety-small-dogs-8069"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Hypoallergenic Moderate Calorie",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 7 / 14 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/hypoallergenic-moderate-calorie-3964"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Hypoallergenic Puppy",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3,5 / 14 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/hypoallergenic-puppy-3318"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Hypoallergenic Small Dog",
+      "voertype": "kibble",
+      "verpakking": "3,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/hypoallergenic-small-dog-3952"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Jack Russell Terrier Adult",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 / 7,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/jack-russell-adult-2100"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Jack Russell Terrier Puppy",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 / 3 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/jack-russell-terrier-puppy-2101"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Joint Care Maxi",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/maxi-joint-care-2390"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Labrador Retriever 5+",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/labrador-retriever-5%2b-1339"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Labrador Retriever Adult",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/labrador-retriever-adult-2487"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Labrador Retriever Puppy",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/labrador-retriever-puppy-2491"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Labrador Retriever Sterilised Adult",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/labrador-retriever-sterilised-3996"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Labrador Retriever Wet",
+      "voertype": "wet",
+      "verpakking": "10 x 140 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/labrador-retriever-1259"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Light Weight Care in Loaf (paté)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/light-weight-care-1178"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Light Weight Care Maxi",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/maxi-light-weight-care-2446"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Light Weight Care Medium",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/medium-light-weight-care-3021"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Light Weight Care Mini",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/mini-light-weight-care-3018"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Light Weight Care X-Small",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/x-small-light-weight-care-1230"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Maltese Adult",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/maltese-adult-3995"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mature Consult",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/mature-consult-1506"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mature Consult Large Dogs",
+      "voertype": "kibble",
+      "verpakking": "14 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/mature-consult-large-dog-3709"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mature Consult Medium Dogs",
+      "voertype": "kibble",
+      "verpakking": "3,5 / 10 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/mature-consult-3706"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mature Consult Small Dogs",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3,5 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/mature-consult-small-dog-3703"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Maxi Adult 5+",
+      "voertype": "kibble",
+      "verpakking": "4 / 15 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/maxi-adult-5%2b-3008"
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Maxi Adult in Gravy (brokjes in saus)",
+      "voertype": "wet",
+      "verpakking": "140 g / 10 x 140 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/maxi-adult---chunks-in-gravy-1094"
+    }
+  ],
+  "deel": 4,
+  "aantalDelen": 8
+}
