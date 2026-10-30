@@ -1,0 +1,411 @@
+{
+  "groep": "jarco",
+  "label": "Jarco",
+  "merken": [
+    "Jarco"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 57,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Jarco",
+      "naam": "Dinner-Mix Compleet",
+      "voertype": "kibble",
+      "verpakking": "1 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/dinner-mix-compleet"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Honden Vleeskuipjes Kip-Eend",
+      "voertype": "wet",
+      "verpakking": "2 x 150 gr (doos: 6 stuks)",
+      "bronUrl": "https://jarco.nl/products/honden-vleeskuipjes-kip-eend-2x-150-gr-verpakt-a-6-x-2-st"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Honden Vleeskuipjes Kip-Kalkoen",
+      "voertype": "wet",
+      "verpakking": "2 x 150 gr (doos: 6 stuks)",
+      "bronUrl": "https://jarco.nl/products/honden-vleeskuipjes-kip-kalkoen-2x-150-gr-verpakt-a-6-x-2-st"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Honden Vleeskuipjes Kip-Konijn",
+      "voertype": "wet",
+      "verpakking": "2 x 150 gr (doos: 6 stuks)",
+      "bronUrl": "https://jarco.nl/products/honden-vleeskuipjes-kip-konijn-2x-150-gr-verpakt-a-6-x-2-st"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Honden Vleeskuipjes Kip-Rund",
+      "voertype": "wet",
+      "verpakking": "2 x 150 gr (doos: 6 stuks)",
+      "bronUrl": "https://jarco.nl/products/honden-vleeskuipjes-kip-rund-2x-150-gr-verpakt-a-6-x-2-st"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Honden Vleeskuipjes Kip-Zalm",
+      "voertype": "wet",
+      "verpakking": "2 x 150 gr (doos: 6 stuks)",
+      "bronUrl": "https://jarco.nl/products/honden-vleeskuipjes-kip-zalm-2x-150-gr-verpakt-a-6-x-2-st"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenblikvoeding - Kalkoen menu",
+      "voertype": "wet",
+      "verpakking": "400 gr (blik) / tray (6 stuks)",
+      "bronUrl": "https://jarco.nl/products/jarco-hondenblikvoeding-kalkoen-menu-400-gr-verpakt-a-6-st"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenblikvoeding - Kip menu",
+      "voertype": "wet",
+      "verpakking": "400 gr (blik) / tray (6 stuks)",
+      "bronUrl": "https://jarco.nl/products/jarco-honden-blikvoeding-kip-menu-400-gr-verpakt-a-6-st"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenblikvoeding - Lam menu",
+      "voertype": "wet",
+      "verpakking": "400 gr (blik) / tray (6 stuks)",
+      "bronUrl": "https://jarco.nl/products/jarco-hondenblikvoeding-lam-menu-400-gr-verpakt-a-6-st"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenblikvoeding - Rund menu",
+      "voertype": "wet",
+      "verpakking": "400 gr (blik) / tray (6 stuks)",
+      "bronUrl": "https://jarco.nl/products/jarco-hondenblikvoeding-rund-menu-400-gr-verpakt-a-6-st"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenblikvoeding - Vis menu",
+      "voertype": "wet",
+      "verpakking": "400 gr (blik) / tray (6 stuks)",
+      "bronUrl": "https://jarco.nl/products/jarco-hondenblikvoeding-vis-menu-400-gr-verpakt-a-6-st"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenblikvoeding - Wild menu",
+      "voertype": "wet",
+      "verpakking": "400 gr (blik) / tray (6 stuks)",
+      "bronUrl": "https://jarco.nl/products/jarco-hondenblikvoeding-wild-menu-400-gr-verpakt-a-6-st"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Giant Senior Lam",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-giant-senior-lam"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken High Energy Kip",
+      "voertype": "kibble",
+      "verpakking": "12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-high-energy-kip"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Mini Puppy Eend",
+      "voertype": "kibble",
+      "verpakking": "1,75 kg",
+      "bronUrl": "https://jarco.nl/products/mini-puppy-eend-1-75-kg"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Mini Senior Lam",
+      "voertype": "kibble",
+      "verpakking": "1,75 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-mini-senior-lam-1-75-kg"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Active Kalkoen",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-active-kalkoen"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Classic Persbrok Adult Eend",
+      "voertype": "kibble",
+      "verpakking": "4 / 15 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-classic-persbrok-adult-eend"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Classic Persbrok Adult Kip",
+      "voertype": "kibble",
+      "verpakking": "4 / 15 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-classic-persbrok-adult-kip"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Classic Persbrok Konijn",
+      "voertype": "kibble",
+      "verpakking": "4 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-classic-persbrok-konijn"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Classic Persbrok Lam/Rijst",
+      "voertype": "kibble",
+      "verpakking": "4 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-classic-persbrok-lam-rijst"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Classic Persbrok Puppy",
+      "voertype": "kibble",
+      "verpakking": "4 / 15 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-classic-persbrok-puppy"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Classic Persbrok Rendier",
+      "voertype": "kibble",
+      "verpakking": "4 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-classic-persbrok-rendier"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Classic Persbrok Zalm",
+      "voertype": "kibble",
+      "verpakking": "4 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-classic-persbrok-zalm"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Giant Adult Lam",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-giant-adult-lam"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Giant Junior Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-giant-junior-kip"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Giant Puppy Kalkoen",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-giant-puppy-kalkoen"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Large Adult Eend",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 15 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-large-adult-eend"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Large Adult Kip",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 15 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-large-adult-kip"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Large Puppy Kip",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-large-puppy-kip"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Large Senior Kip",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 15 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-large-senior-kip"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Light Rund",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-light-rund"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Medium Adult Eend",
+      "voertype": "kibble",
+      "verpakking": "2 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-medium-adult-eend"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Medium Adult Kip",
+      "voertype": "kibble",
+      "verpakking": "2 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-medium-adult-kip"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Medium Puppy Kip",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-medium-puppy-kip"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Medium Senior Kip",
+      "voertype": "kibble",
+      "verpakking": "2 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-medium-senior-kip"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Mini Adult Eend",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://jarco.nl/products/natural-mini-adult-eend"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Mini Adult Zalm",
+      "voertype": "kibble",
+      "verpakking": "1,75 / 10 kg",
+      "bronUrl": "https://jarco.nl/products/natural-hondenbrokken-mini-adult-zalm"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Sensitive Hert",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-sensitive-hert"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Sensitive Insect",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-sensitive-insect"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Sensitive Lam",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-sensitive-lam"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Natural Sensitive Zalm",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-natural-sensitive-zalm"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Veterinair Hypoallergeen H.R.D.",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-veterinair-hypoallergeen-h-r-d"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Veterinair Hypoallergeen L.R.D.",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-veterinair-hypoallergeen-l-r-d"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Veterinair Hypoallergeen P.E.D.",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-veterinair-hypoallergeen-p-e-d"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Hondenbrokken Veterinair Weight reduction V.C.D.",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/hondenbrokken-veterinair-weight-reduction-v-c-d"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Natural Classic Persbrok Vers Vlees Kip",
+      "voertype": "kibble",
+      "verpakking": "4 / 12,5 kg",
+      "bronUrl": "https://jarco.nl/products/natural-classic-persbrok-vers-vlees-kip"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Vers gestoomde maaltijd Eend",
+      "voertype": "wet",
+      "verpakking": "395 gr (tray) / doos (7 stuks)",
+      "bronUrl": "https://jarco.nl/products/gestoomde-maaltijd-eend"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Vers gestoomde maaltijd Lam",
+      "voertype": "wet",
+      "verpakking": "395 gr (tray) / doos (7 stuks)",
+      "bronUrl": "https://jarco.nl/products/vers-gestoomde-maaltijd-lam"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Vers gestoomde maaltijd Zalm",
+      "voertype": "wet",
+      "verpakking": "395 gr (tray) / doos (7 stuks)",
+      "bronUrl": "https://jarco.nl/products/vers-gestoomde-maaltijd-zalm"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Verse Hondenworst Kip",
+      "voertype": "wet",
+      "verpakking": "250 / 450 / 750 gr",
+      "bronUrl": "https://jarco.nl/products/verse-hondenworst-kip-giant"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Verse Hondenworst Kip-Eend",
+      "voertype": "wet",
+      "verpakking": "250 gr",
+      "bronUrl": "https://jarco.nl/products/verse-hondenworst-kip-eend"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Verse Hondenworst Kip-Kalkoen",
+      "voertype": "wet",
+      "verpakking": "450 / 750 gr",
+      "bronUrl": "https://jarco.nl/products/verse-hondenworst-kip-kalkoen-giant"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Verse Hondenworst Kip-Konijn",
+      "voertype": "wet",
+      "verpakking": "250 / 750 gr",
+      "bronUrl": "https://jarco.nl/products/verse-hondenworst-kip-konijn-giant"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Verse Hondenworst Kip-Rund",
+      "voertype": "wet",
+      "verpakking": "250 / 450 / 750 gr",
+      "bronUrl": "https://jarco.nl/products/verse-hondenworst-kip-rund-giant"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Verse Hondenworst Sensitive Lam",
+      "voertype": "wet",
+      "verpakking": "250 / 600 gr",
+      "bronUrl": "https://jarco.nl/products/verse-hondenworst-sensitive-lam"
+    },
+    {
+      "merk": "Jarco",
+      "naam": "Vleeskuipjes Kip",
+      "voertype": "wet",
+      "verpakking": "2 x 150 gr (doos: 6 stuks)",
+      "bronUrl": "https://jarco.nl/products/vleeskuipjes-kip-2x-150-gr-verpakt-a-6x-2-st"
+    }
+  ]
+}

@@ -1,0 +1,958 @@
+{
+  "groep": "hills",
+  "label": "Hill's",
+  "merken": [
+    "Hill's Science Plan",
+    "Hill's Prescription Diet"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 135,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "a/d Urgent Care Hondenvoer met Kip",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-ad-urgent-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "b/d Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-bd-aging-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "c/d Multicare + Metabolic Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-cd-multicare-metabolicy-urinary-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "c/d Multicare Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-cd-multicare-urinary-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "c/d Multicare Natvoer voor Honden met Kip",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-cd-multicare-urinary-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "c/d Multicare Stoofpotje voor Honden met Kip & toegevoegde Groenten",
+      "voertype": "wet",
+      "verpakking": "156 / 354 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-cd-multicare-chicken-vegetable-stew-urinary-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "d/d Hondenvoer met Eend & Rijst",
+      "voertype": "kibble",
+      "verpakking": "4 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-dd-duck-rice-skin-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "d/d Natvoer voor Honden Eend",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-dd-duck-skin-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Derm Complete Puppyvoer",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-derm-complete-puppy-original-skin-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Derm Defense Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "4 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-derm-defense-skin-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Gastrointestinal Biome Digestive Care Natvoer voor Honden met Kip",
+      "voertype": "wet",
+      "verpakking": "200 / 370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-gastrointestinal-biome-digestive-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Gastrointestinal Biome Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 4 / 10 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-gastrointestinal-biome-digestive-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Gastrointestinal Biome Mini Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-gastrointestinal-biome-small-bites-digestive-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Gastrointestinal Biome Stoofpotje voor Honden met Kip & toegevoegde Wortelen",
+      "voertype": "wet",
+      "verpakking": "354 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-gastrointestinal-biome-chicken-vegetable-stew-digestive-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "i/d Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-id-digestive-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "i/d Low Fat Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 4 / 10 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-id-low-fat-digestive-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "i/d Low Fat Natvoer voor Honden",
+      "voertype": "wet",
+      "verpakking": "200 / 360 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-id-low-fat-digestive-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "i/d Low Fat Stoofpotje voor Honden met Kipsmaak & Groenten",
+      "voertype": "wet",
+      "verpakking": "156 / 354 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-id-low-fat-rice-vegetable-chicken-stew-digestive-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "i/d Natvoer voor Honden met Kalkoen",
+      "voertype": "wet",
+      "verpakking": "200 / 360 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-id-digestive-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "i/d Puppyvoer",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-id-puppy-chicken-digestive-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "i/d Puppyvoer Natvoer",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-id-puppy-chicken-digestive-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "i/d Sensitive Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 4 / 10 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-id-sensitive-digestive-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "i/d Stoofpotje voor Honden",
+      "voertype": "wet",
+      "verpakking": "156 / 354 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-id-chicken-vegetable-stew-digestive-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "i/d Stress Mini Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-id-stress-mini-chicken-digestive-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "i/d Stress Mini Stoofpotje voor Honden met Kipsmaak & Groenten",
+      "voertype": "wet",
+      "verpakking": "156 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-id-stress-rice-vegetable-chicken-stew-digestive-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "i/d Stress Natvoer voor Honden Met Kipsmaak",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-id-stress-mini-chicken-digestive-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "j/d Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "4 / 10 / 12 / 16 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-jd-joint-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "j/d Natvoer voor Honden met Kip",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-jd-joint-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "j/d Reduced Calorie Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-jd-reduced-calorie-chicken-joint-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "k/d + Mobility Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "4 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-kd-mobility-chicken-kidney-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "k/d + Mobilty Natvoer met Kipsmaak",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-kd-mobility-kidney-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "k/d Kidney Care Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 4 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-kd-kidney-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "k/d Kidney Care Natvoer voor Honden",
+      "voertype": "wet",
+      "verpakking": "180 / 350 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-kd-kidney-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "k/d Kidney Care Stoofpotje voor Honden met Kip & toegevoegde Groenten",
+      "voertype": "wet",
+      "verpakking": "156 / 354 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-kd-chicken-vegetable-stew-kidney-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "l/d Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 4 / 10 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-ld-liver-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "l/d Natvoer voor Honden",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-ld-liver-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Metabolic + Mobility Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 4 / 10 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-metabolic-mobility-weight-management-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Metabolic + Mobility Mini Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-metabolic-mobility-mini-weight-management-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Metabolic + Mobility Natvoer voor Honden",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-metabolic-mobility-weight-management-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Metabolic Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 4 / 10 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-metabolic-weight-management-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Metabolic Hondenvoer met Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-metabolic-lamb-rice-weight-management-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Metabolic Mini Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 6 / 9 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-metabolic-mini-chicken-weight-management-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Metabolic Natvoer voor Honden met Kipsmaak",
+      "voertype": "wet",
+      "verpakking": "200 / 370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-metabolic-weight-management-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Metabolic Natvoer voor Honden met Rund",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-metabolic-beef-weight-management-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Metabolic Stoofpotje voor Honden",
+      "voertype": "wet",
+      "verpakking": "354 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-metabolic-vegetable-beef-stew-weight-management-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "Metabolic Stoofpotje voor Honden met Kipsmaak & Groenten",
+      "voertype": "wet",
+      "verpakking": "156 / 354 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-metabolic-vegetable-chicken-stew-weight-management-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "On-Care Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 4 / 10 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-onc-on-care-chicken-restorative-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "On-Care Stoofpotje voor Honden met Kip & toegevoegde Groenten",
+      "voertype": "wet",
+      "verpakking": "354 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-onc-on-care-chicken-stew-restorative-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "r/d Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "4 / 10 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-rd-weight-management-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "r/d Natvoer voor Honden",
+      "voertype": "wet",
+      "verpakking": "350 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-rd-weight-management-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "t/d Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "4 / 10 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-td-dental-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "t/d Mini Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-td-small-bites-dental-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "u/d Hondenvoer Origineel",
+      "voertype": "kibble",
+      "verpakking": "4 / 10 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-ud-urinary-care-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "u/d Natvoer voor Honden",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-ud-urinary-care-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "w/d Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "4 / 10 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-wd-chicken-glucose-management-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "w/d Natvoer voor Honden met Kip",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-wd-glucose-management-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "z/d Hondenvoer",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-zd-food-sensitivities-canned"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "z/d Hondenvoer Origineel",
+      "voertype": "kibble",
+      "verpakking": "3 / 8 / 10 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-zd-food-sensitivities-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "z/d Low Fat Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 / 10 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-zd-low-fat-hydrolysed-soy-food-sensitivities-dry"
+    },
+    {
+      "merk": "Hill's Prescription Diet",
+      "naam": "z/d Mini Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "1 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/prescription-diet-zd-small-bites-food-sensitivities-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Adult Natvoer Hond met Kalkoen",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-turkey-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Adult Stoofpotje Hond met Kip & toegevoegde Groenten",
+      "voertype": "wet",
+      "verpakking": "363 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-chunks-gravy-chicken-vegetable-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Healthy Mobility Large Breed Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "12 / 14 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-healthy-mobility-large-breed-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Healthy Mobility Medium Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "12 / 14 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-healthy-mobility-medium-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Healthy Mobility Small & Mini Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-healthy-mobility-mini-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Hypoallergenic Adult Natvoer Hond met Zalm",
+      "voertype": "wet",
+      "verpakking": "363 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-hypoallergenic-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Hypoallergenic Large Breed Adult Hondenvoer met Zalm",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-large-breed-hypoallergenic-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Hypoallergenic Small & Mini Adult Hondenvoer met Zalm",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-small-mini-hypoallergenic-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Large Breed Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 6 / 12 / 14 / 18 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-large-breed-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Large Breed Mature Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "12 / 14 / 18 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-6-large-breed-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Large Breed Puppyvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "700 g / 2,5 / 6 / 12 / 16 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-puppy-large-breed-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Light Adult Natvoer Hond met Kip",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-light-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Light Large Breed Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "12 / 14 / 18 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-light-large-breed-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Light Medium Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12 / 14 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-light-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Light Medium Mature Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12 / 14 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-7-light-medium-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Light Small & Mini Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-light-small-miniature-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Light Small & Mini Mature Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "2,5 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-7-light-mini-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Mature Adult Natvoer Hond met Kip",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-chicken-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Mature Adult Natvoer Hond met Rund",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-beef-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Mature Adult Stoofpotje Hond met Kip & toegevoegde Groenten",
+      "voertype": "wet",
+      "verpakking": "363 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-chunks-gravy-chicken-vegetables-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Medium Adult Hondenvoer met Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12 / 14 / 18 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-lamb-rice-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Medium Mature Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 6 / 12 / 14 / 18 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-7-medium-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Medium Mature Adult Hondenvoer met Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12 / 14 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-7-medium-lamb-and-rice-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Medium Puppyvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "800 g / 2,5 / 6 / 12 / 14 / 18 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-puppy-medium-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Medium Puppyvoer met Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12 / 14 / 18 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-puppy-lamb-rice-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit + Dental Adult 1+ Medium & Large Breed Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "700 g / 2 / 10 / 13 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-1-dental-medium-and-large-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit + Dental Adult 1+ Small & Mini Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "650 g / 2 / 7 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-1-dental-mini-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit + Digestion Adult 1+ Large Breed Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "14 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-1-digestion-lb-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit + Digestion Adult 1+ Medium Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-1-digestion-medium-adult-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit + Digestion Adult 1+ Small & Mini Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 / 7 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-1-digestion-small-and-mini-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit + Senior Health Mature Adult 7+ Medium & Large Breed Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-medium-large-breed-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit + Senior Health Mature Adult 7+ Small & Mini Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 / 7 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-small-mini-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit + Weight Adult 1+ Large Breed Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "700 g / 14 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-1-weight-large-breed-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit + Weight Adult 1+ Medium Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "700 g / 10 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-1-weight-medium-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit + Weight Adult 1+ Natvoer voor Honden",
+      "voertype": "wet",
+      "verpakking": "363 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-1-weight-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit + Weight Adult 1+ Small & Mini Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "700 g / 2 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-1-weight-mini-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit Adult hondenvoer met Kip en Groenten",
+      "voertype": "wet",
+      "verpakking": "363 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-chicken-vegetables-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit Adult Large Breed Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "14 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-large-breed-lamb-rice-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit Adult Medium Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-medium-lamb-rice-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit Adult Small & Mini Hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-small-mini-lamb-rice-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit Mature Adult Natvoer voor Honden",
+      "voertype": "wet",
+      "verpakking": "363 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Multi-Benefit Puppy Natvoer",
+      "voertype": "wet",
+      "verpakking": "363 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-puppy-growth-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Oral Care Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-oral-care-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Perfect Digestion Adult Natvoer Hond met Kip & Groenten",
+      "voertype": "wet",
+      "verpakking": "363 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-perfect-digestion-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Perfect Digestion Large Breed Adult Hondenvoer met Kip & bruine Rijst",
+      "voertype": "kibble",
+      "verpakking": "12 / 14 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-perfect-digestion-large-breed-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Perfect Digestion Medium Adult Hondenvoer met Kip & bruine Rijst",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12 / 14 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-perfect-digestion-medium-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Perfect Digestion Small & Mini Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-perfect-digestion-small-mini-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Perfect Digestion Small & Mini Adult Natvoer Hond met Kalkoen",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-perfect-digestion-small-mini-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Perfect Weight & Active Mobility Large Breed Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-perfect-weight-actimobility-lb-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Perfect Weight & Active Mobility Medium Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-perfect-weight-actimobility-medium-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Perfect Weight & Active Mobility Small & Mini Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-perfect-weight-actimobility-s-m-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Perfect Weight Adult Natvoer Hond met Kip & Groenten",
+      "voertype": "wet",
+      "verpakking": "363 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-perfect-weight-chicken-vegetable-entree-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Perfect Weight Large Breed Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-perfect-weight-large-breed-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Perfect Weight Medium Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-perfect-weight-medium-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Perfect Weight Small & Mini Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-perfect-weight-mini-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Perfect Weight Small & Mini Adult Natvoer Hond met Kalkoen",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-perfect-weight-mini-turkey-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Performance Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "14 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-performance-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Puppy & Mother Tender Mousse met Kip",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-puppy-mother-mousse-chicken-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Puppy Natvoer met Kip",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-puppy-chicken-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Puppy Natvoer met Rund",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-puppy-beef-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Puppy Stoofpotje met Kip & toegevoegde Groenten",
+      "voertype": "wet",
+      "verpakking": "363 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-puppy-chunks-gravy-chicken-vegetables-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Senior Vitality Large Breed Mature Adult 6+ Hondenvoer met Kip & Rijst",
+      "voertype": "kibble",
+      "verpakking": "14 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-5-senior-vitality-large-breed-chicken-and-rice-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Sensitive Stomach & Skin Adult Hond Natvoer met Kip",
+      "voertype": "wet",
+      "verpakking": "370 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-sensitive-stomach-skin-chicken-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Sensitive Stomach & Skin Medium & Large Breed Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-sensitive-stomach-skin-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Sensitive Stomach & Skin Small & Mini Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-sensitive-stomach-skin-small-miniature-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Sensitive Stomach & Skin Small & Mini Adult Mousse Hond met Kalkoen",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-sensitive-stomach-skin-small-mini-mousse-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Small & Mini Adult Hondenvoer met Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-small-miniature-lamb-rice-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Small & Mini Adult Natvoer Hond met Kip",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-small-mini-chicken-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Small & Mini Mature Adult Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-7-small-mini-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Small & Mini Mature Adult Natvoer Hond met Kip",
+      "voertype": "kibble",
+      "verpakking": "200 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-7-small-mini-chicken-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Small & Mini Mature Adult Natvoer Hond met Rund",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-mature-adult-7-small-mini-beef-canned"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Small & Mini Puppyvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "700 g / 1,5 / 3 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-puppy-small-mini-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Small & Mini Puppyvoer met Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 6 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-puppy-small-mini-lamb-rice-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Small & Mini Senior Hondenvoer met Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-senior-11-small-miniature-chicken-dry"
+    },
+    {
+      "merk": "Hill's Science Plan",
+      "naam": "Youthful Vitality Medium Mature Adult 7+ Hondenvoer met Kip & Rijst",
+      "voertype": "kibble",
+      "verpakking": "14 kg",
+      "bronUrl": "https://www.hillspet.nl/dog-food/science-plan-adult-7-senior-vitality-medium-breed-chicken-and-rice-dry"
+    }
+  ]
+}

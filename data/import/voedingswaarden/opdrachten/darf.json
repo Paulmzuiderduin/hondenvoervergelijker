@@ -1,0 +1,334 @@
+{
+  "groep": "darf",
+  "label": "DARF",
+  "merken": [
+    "DARF"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 46,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "DARF",
+      "naam": "Actief",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-actief-10-x-1-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Actief Classic",
+      "voertype": "raw",
+      "verpakking": "4,65 kg",
+      "bronUrl": "https://darf.nl/product/darf-actief-classic"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Caspar Classic",
+      "voertype": "raw",
+      "verpakking": "4,65 kg",
+      "bronUrl": "https://darf.nl/product/darf-caspar-classic"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Caspar KVV",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-caspar-kvv-10-x-1-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Eend Classic",
+      "voertype": "raw",
+      "verpakking": "4,65 kg",
+      "bronUrl": "https://darf.nl/product/darf-eend-classic"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Emi KVV",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-emi-kvv-10-x-1-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Geit Kip",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-geit-kip-10-x-1-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Hert",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-hert-10-x-1-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Eend",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://darf.nl/product/darf-houdbare-worst-eend-200g"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Eend",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://darf.nl/product/product-darf-houdbare-worst-eend-800-gram"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Kalkoen",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://darf.nl/product/darf-houdbare-worst-kalkoen-200g"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Kalkoen",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://darf.nl/product/product-darf-houdbare-worst-kalkoen-800-gram"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Kip",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://darf.nl/product/houdbare-worst-kip-200g"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Kip",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://darf.nl/product/product-darf-houdbare-worst-kip-800-gram"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Konijn",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://darf.nl/product/darf-houdbare-worst-konijn-200g"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Konijn",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://darf.nl/product/product-darf-houdbare-worst-konijn-800-gram"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Lam",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://darf.nl/product/darf-houdbare-worst-lam-200g"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Lam",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://darf.nl/product/product-darf-houdbare-worst-lam-800-gram"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Paard",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://darf.nl/product/product-darf-houdbare-worst-paard-800-gram"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Rund",
+      "voertype": "wet",
+      "verpakking": "200 g",
+      "bronUrl": "https://darf.nl/product/darf-houdbare-worst-rund-200g"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Rund",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://darf.nl/product/darf-houdbare-worst-rund-800g"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Wild",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://darf.nl/product/product-darf-houdbare-worst-wild-800-gram"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Houdbaar worst Zalm",
+      "voertype": "wet",
+      "verpakking": "200 / 800 g",
+      "bronUrl": "https://darf.nl/product/darf-houdbare-worst-zalm-200g"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Kalkoen KVV",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-kalkoen-kvv-10-x-1-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Konijn",
+      "voertype": "raw",
+      "verpakking": "4,65 kg / 10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-konijn-kvv-10-x-1-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "KVV",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-kvv-10-x-1-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Lam Kip",
+      "voertype": "raw",
+      "verpakking": "4,65 kg / 10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-lam-kip-10-x-1-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Menu Fit Hartige Zijderups",
+      "voertype": "wet",
+      "verpakking": "410 g",
+      "bronUrl": "https://darf.nl/product/darf-fit-bijzonder-lekkere-zijderups-410g"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Menu Lekker Kalkoen",
+      "voertype": "wet",
+      "verpakking": "200 / 400 g",
+      "bronUrl": "https://darf.nl/product/darf-menu-lekker-kalkoen-400g-in-blik"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Noordzee",
+      "voertype": "raw",
+      "verpakking": "4,65 kg / 10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-noordzee-kvv-10-x-1-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Pens Haring Eend",
+      "voertype": "raw",
+      "verpakking": "4,65 kg / 10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-pens-haring-eend-classic"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Pens Zalm Kalkoen",
+      "voertype": "raw",
+      "verpakking": "4,65 kg / 10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-pens-zalm-kalkoen-classic"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Puppy",
+      "voertype": "raw",
+      "verpakking": "4,65 kg / 10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-voor-de-pup-kvv-classic"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Puppy Small",
+      "voertype": "raw",
+      "verpakking": "kleine porties",
+      "bronUrl": "https://darf.nl/product/darf-puppy-small-classic"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Small",
+      "voertype": "raw",
+      "verpakking": "kleine porties",
+      "bronUrl": "https://darf.nl/product/darf-small-classic"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Active",
+      "voertype": "kibble",
+      "verpakking": "4 kg",
+      "bronUrl": "https://darf.nl/product/darf-vol-active-4-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Insect",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://darf.nl/product/darf-vol-insect-4-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Kalkoen",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://darf.nl/product/darf-vol-kalkoen-4-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Lam",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://darf.nl/product/darf-vol-lam-4-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Light",
+      "voertype": "kibble",
+      "verpakking": "4 kg",
+      "bronUrl": "https://darf.nl/product/darf-vol-light-4-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Noordzeevis",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://darf.nl/product/darf-vol-noordzeevis-4-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Pup",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://darf.nl/product/darf-vol-pup-4-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Regular",
+      "voertype": "kibble",
+      "verpakking": "4 kg",
+      "bronUrl": "https://darf.nl/product/darf-vol-regular-4-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Regular Mini",
+      "voertype": "kibble",
+      "verpakking": "4 kg",
+      "bronUrl": "https://darf.nl/product/darf-vol-regular-mini-4-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Wild",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://darf.nl/product/darf-vol-wild-4-kg"
+    },
+    {
+      "merk": "DARF",
+      "naam": "Wild KVV",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-wild-kvv-10-x-1-kg"
+    }
+  ]
+}

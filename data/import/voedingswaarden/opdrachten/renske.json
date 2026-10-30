@@ -1,0 +1,320 @@
+{
+  "groep": "renske",
+  "label": "Renske",
+  "merken": [
+    "Renske"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 44,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Renske",
+      "naam": "Biologisch Vers Gestoomde Kip",
+      "voertype": "wet",
+      "verpakking": "500 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/renske-biologische-hondenvoeding/vers-gestoomde-kip-500g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Biologisch Vers Gestoomde Kip 300g",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/renske-biologische-hondenvoeding/vers-gestoomde-kip-300g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Biologisch Vers Gestoomde Rund",
+      "voertype": "wet",
+      "verpakking": "500 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/renske-biologische-hondenvoeding/vers-gestoomde-rund-500g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Biologisch Vers Gestoomde Rund 300g",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/renske-biologische-hondenvoeding/vers-gestoomde-rund-300g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Kerstdiner Kalkoen met cranberry",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/special-edition-kerstdiner-395g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Kerstdiner Wildstoofpotje met abrikoos",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/special-edition-kerstdiner-wildstoofpotje-395g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "M.O.P. Vers bereide Kalkoen met eend",
+      "voertype": "kibble",
+      "verpakking": "600 g / 3 / 6,5 / 12 kg",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/mop-droogvoer/verse-kalkoen-met-eend"
+    },
+    {
+      "merk": "Renske",
+      "naam": "M.O.P. Vers bereide Kip & Rijst",
+      "voertype": "kibble",
+      "verpakking": "600 g / 3 / 6,5 / 12 kg",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/mop-droogvoer/vers-bereide-kip-met-rijst"
+    },
+    {
+      "merk": "Renske",
+      "naam": "M.O.P. Vers bereide Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "600 g / 3 / 6,5 / 12 kg",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/mop-droogvoer/vers-bereide-lam-met-rijst"
+    },
+    {
+      "merk": "Renske",
+      "naam": "M.O.P. Vers bereide Zalm",
+      "voertype": "kibble",
+      "verpakking": "600 g / 3 / 6,5 / 12 kg",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/mop-droogvoer/verse-zalm"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Super Premium Mini Vers bereide Kip met lam",
+      "voertype": "kibble",
+      "verpakking": "600 g / 2 / 6,5 kg",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/super-premium/mini-vers-bereide-kip-lam"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Super Premium Puppy Vers bereide Kip met lam",
+      "voertype": "kibble",
+      "verpakking": "600 g / 2 / 6,5 / 12 kg",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/super-premium/vers-bereide-kip-en-lam-puppy"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Super Premium Vers bereide Eend met konijn",
+      "voertype": "kibble",
+      "verpakking": "600 g / 2 / 6,5 / 12 kg",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/super-premium/vers-bereide-eend-met-konijn"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Super Premium Vers bereide Kalkoen met eend",
+      "voertype": "kibble",
+      "verpakking": "600 g / 2 / 6,5 / 12 kg",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/super-premium/vers-bereide-kalkoen-met-eend"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Super Premium Vers bereide Kalkoen senior",
+      "voertype": "kibble",
+      "verpakking": "600 g / 2 / 6,5 / 12 kg",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/super-premium/vers-bereide-kalkoen-senior"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Super Premium Vers bereide Kip",
+      "voertype": "kibble",
+      "verpakking": "600 g / 2 / 6,5 / 12 kg",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/super-premium/vers-bereide-kip"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Super Premium Vers bereide Lam",
+      "voertype": "kibble",
+      "verpakking": "600 g / 2 / 6,5 / 12 kg",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/super-premium/vers-bereide-lam"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Super Premium Vers bereide Oceaanvis",
+      "voertype": "kibble",
+      "verpakking": "600 g / 2 / 6,5 / 12 kg",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/super-premium/vers-bereide-oceaanvis"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Super Premium Vers bereide Zalm",
+      "voertype": "kibble",
+      "verpakking": "600 g / 2 / 6,5 / 12 kg",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/super-premium/vers-bereide-zalm"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Kalkoen graanvrij",
+      "voertype": "wet",
+      "verpakking": "95 / 185 / 375 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/kalkoen-graanvrij-375g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Kalkoen met eend",
+      "voertype": "wet",
+      "verpakking": "95 / 185 / 375 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/kalkoen-met-eend-375g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Kip graanvrij",
+      "voertype": "wet",
+      "verpakking": "95 / 185 / 375 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/kip-graanvrij-375g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Kip met rund",
+      "voertype": "wet",
+      "verpakking": "95 / 185 / 375 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/kip-met-rund-375g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Konijn met eend",
+      "voertype": "wet",
+      "verpakking": "95 / 185 / 375 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/konijn-met-eend-375g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Lam graanvrij",
+      "voertype": "wet",
+      "verpakking": "185 / 375 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/lam-graanvrij-375g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Lam graanvrij 95g",
+      "voertype": "wet",
+      "verpakking": "95 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/lam-graanvrij-95g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Oceaanvis",
+      "voertype": "wet",
+      "verpakking": "95 / 185 / 375 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/oceaanvis-375g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Puppy Kip met lam",
+      "voertype": "wet",
+      "verpakking": "185 / 375 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/puppy-kip-lam-375g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Puppy Kip met lam 95g",
+      "voertype": "wet",
+      "verpakking": "95 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/puppy-kip-lam-95g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Rund met eend",
+      "voertype": "wet",
+      "verpakking": "95 / 185 / 375 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/rund-met-eend-375g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers bereide Zalm graanvrij",
+      "voertype": "wet",
+      "verpakking": "95 / 185 / 375 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-bereide-maaltijden/zalm-graanvrij-375g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers gestoomde Eend met hert graanvrij",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/eend-met-hert-graanvrij-395g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers gestoomde Eend met konijn",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/eend-met-konijn-395g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers gestoomde Kalkoen graanvrij",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/kalkoen-graanvrij-395g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers gestoomde Kalkoen met eend",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/kalkoen-met-eend-395g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers gestoomde Kalkoen met gans graanvrij",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/kalkoen-met-gans-graanvrij-395g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers gestoomde Kip",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/kip-395g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers gestoomde Kip graanvrij",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/kip-graanvrij-395g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers gestoomde Lam graanvrij",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/lam-graanvrij-395g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers gestoomde Oceaanvis",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/oceaanvis-395"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers gestoomde Puppy Kip met lam",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/puppy-kip-lam-395g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers gestoomde Zalm graanvrij",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/vers-gestoomde-maaltijden/zalm-graanvrij-395g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers Ingevroren Kalkoen",
+      "voertype": "raw",
+      "verpakking": "600 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/renske-vers-ingevroren/kalkoen-600g"
+    },
+    {
+      "merk": "Renske",
+      "naam": "Vers Ingevroren Kip & Rund",
+      "voertype": "raw",
+      "verpakking": "600 g",
+      "bronUrl": "https://www.renske.com/nl/producten/hondenvoer/renske-vers-ingevroren/kip-rund-600g"
+    }
+  ]
+}

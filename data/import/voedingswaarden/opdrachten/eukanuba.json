@@ -1,0 +1,502 @@
+{
+  "groep": "eukanuba",
+  "label": "Eukanuba",
+  "merken": [
+    "Eukanuba"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 70,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Eukanuba",
+      "naam": "Active Adult Medium Breed kip",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/dog/dry-food/life-care/adult-medium-breed-rich-in-fresh-chicken"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Adult kleine/middelgrote rassen, zalm en gerst",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/life-care/adult-kleinemiddelgrote-rassen-zalm-en-gerst"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Adult rijk aan forel met zoete aardappelen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/adult-rijk-aan-forel-met-zoete-aardappelen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Adult rijk aan lam met aardappelen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/adult-rijk-aan-lam-met-aardappelen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Breed Care Australische herder Volwassen",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/breed-care-australische-herder-volwassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Breed Care Boxer Volwassen",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/breed-care-boxer-volwassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Breed Care Cocker Spaniël Volwassen",
+      "voertype": "kibble",
+      "verpakking": "7,5 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/breed-care-cocker-spaniel-volwassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Breed Care Duitse herder Volwassen",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/breed-care-duitse-herder-volwassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Breed Care Golden Retriever Volwassen",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/breed-care-golden-retriever-volwassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Breed Care Jackrusselterriër Volwassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/breed-care-jackrusselterrier-volwassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Breed Care Labrador Retriever Volwassen",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/breed-care-labrador-retriever-volwassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Breed Care Poedel Volwassen",
+      "voertype": "kibble",
+      "verpakking": "7,5 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/breed-care-poedel-volwassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Breed Care Rottweiler Volwassen",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/breed-care-rottweiler-volwassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Breed Care Teckel Volwassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/breed-care-teckel-volwassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Breed Care West Highland White Terrier Volwassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/breed-care-west-highland-white-terrier-volwassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Breed Care Yorkshire Terriër Volwassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/breed-care-yorkshire-terrier-volwassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Grain Free Puppy grote rassen, zeevis",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/grain-free-puppy-grote-rassen-zeevis"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Grain Free Puppy kleine/middelgrote rassen, zeevis",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/grain-free-puppy-kleinemiddelgrote-rassen-zeevis"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Grain Free Senior grote rassen, zeevis",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/grain-free-senior-grote-rassen-zeevis"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Grain Free Senior kleine/middelgrote rassen, zeevis",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/grain-free-senior-kleinemiddelgrote-rassen-zeevis"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Grain Free Volwassen alle rassen, hert",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/grain-free-volwassen-alle-rassen-hert"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Grain Free Volwassen grote rassen, kip",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/grain-free-volwassen-grote-rassen-kip"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Grain Free Volwassen grote rassen, lam",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/grain-free-volwassen-grote-rassen-lam"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Grain Free Volwassen grote rassen, zeevis",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/grain-free-volwassen-grote-rassen-zeevis"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Grain Free Volwassen kleine/middelgrote rassen, kip",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/grain-free-volwassen-kleinemiddelgrote-rassen-kip"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Grain Free Volwassen kleine/middelgrote rassen, lam",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/grain-free-volwassen-kleinemiddelgrote-rassen-lam"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Grain Free Volwassen kleine/middelgrote rassen, zeevis",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/grain-free-volwassen-kleinemiddelgrote-rassen-zeevis"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Junior Grote rassen Verse kip",
+      "voertype": "kibble",
+      "verpakking": "12 / 15 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/junior-grote-rassen-verse-kip"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Mono-Protein Eend Volwassen Alle rassen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/mono-protein-eend-volwassen-alle-rassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Mono-Protein Kip Volwassen Alle rassen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/mono-protein-kip-volwassen-alle-rassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Mono-Protein Lam Volwassen Alle Rassen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/mono-protein-lam-volwassen-alle-rassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Puppy Grote rassen Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/puppy-grote-rassen-lam-rijst"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Puppy Grote rassen Verse kip",
+      "voertype": "kibble",
+      "verpakking": "800 g / 3 / 12 / 15 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/puppy-grote-rassen-verse-kip"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Puppy Kleine rassen Verse kip",
+      "voertype": "kibble",
+      "verpakking": "800 g / 3 / 7,5 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/puppy-kleine-rassen-verse-kip"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Puppy Kleine/Middelgrote rassen Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/puppy-kleinemiddelgrote-rassen-lam-rijst"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Puppy Middelgrote rassen Verse kip",
+      "voertype": "kibble",
+      "verpakking": "800 g / 3 / 12 / 15 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/life-care/puppy-middelgrote-rassen-verse-kip"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Puppy rijk aan forel met zoete aardappelen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/puppy-rijk-aan-forel-met-zoete-aardappelen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Puppy rijk aan kalkoen met wortelen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/puppy-rijk-aan-kalkoen-met-wortelen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Puppy rijk aan lam met aardappelen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/puppy-rijk-aan-lam-met-aardappelen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Puppy rijk aan rund met pompoen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/puppy-rijk-aan-rund-met-pompoen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Senior Grote rassen Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/senior-grote-rassen-lam-rijst"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Senior Grote rassen Verse kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 / 15 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/senior-grote-rassen-verse-kip"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Senior Kleine rassen Verse kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 7,5 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/senior-kleine-rassen-verse-kip"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Senior Kleine/Middelgrote rassen Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/senior-kleinemiddelgrote-rassen-lam-rijst"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Senior Middelgrote rassen Verse kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 / 15 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/life-care/senior-middelgrote-rassen-verse-kip"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Senior rijk aan forel met zoete aardappelen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/senior-rijk-aan-forel-met-zoete-aardappelen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Senior rijk aan kalkoen met wortelen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/senior-rijk-aan-kalkoen-met-wortelen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Senior rijk aan lam met aardappelen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/senior-rijk-aan-lam-met-aardappelen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Senior rijk aan rund met pompoen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/senior-rijk-aan-rund-met-pompoen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Sensitive Digestion Puppy Alle rassen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/sensitive-digestion-puppy-alle-rassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Sensitive Digestion Volwassen Alle rassen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/sensitive-digestion-volwassen-alle-rassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Special Care Mono-Protein Volwassen Alle rassen Eend",
+      "voertype": "kibble",
+      "verpakking": "2,3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/special-care-mono-protein-volwassen-alle-rassen-eend"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Special Care Mono-Protein Volwassen Alle rassen Lam",
+      "voertype": "kibble",
+      "verpakking": "2,3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/special-care-mono-protein-volwassen-alle-rassen-lam"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Special Care Mono-Protein Volwassen Alle rassen Zalm",
+      "voertype": "kibble",
+      "verpakking": "2,3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/special-care-mono-protein-volwassen-alle-rassen-zalm"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Special Care Overweight Volwassen Alle rassen",
+      "voertype": "kibble",
+      "verpakking": "2,3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/special-care-overweight-volwassen-alle-rassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Special Care Sensitive Digestion Puppy Alle rassen",
+      "voertype": "kibble",
+      "verpakking": "2,3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/special-care-sensitive-digestion-puppy-alle-rassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Special Care Sensitive Digestion Volwassen Alle rassen",
+      "voertype": "kibble",
+      "verpakking": "2,3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/special-care-sensitive-digestion-volwassen-alle-rassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Special Care Sensitive Joints Volwassen Alle rassen",
+      "voertype": "kibble",
+      "verpakking": "2,3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/special-care-sensitive-joints-volwassen-alle-rassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Special Care Weight Control Volwassen Grote rassen",
+      "voertype": "kibble",
+      "verpakking": "12 / 15 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/special-care-weight-control-volwassen-grote-rassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Special Care Weight Control Volwassen Kleine/Middelgrote rassen",
+      "voertype": "kibble",
+      "verpakking": "2,3 / 12 / 15 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/special-care-weight-control-volwassen-kleinemiddelgrote-rassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Special Care Working & Endurance Volwassen Alle rassen",
+      "voertype": "kibble",
+      "verpakking": "15 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/special-care-working-endurance-volwassen-alle-rassen"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Veterinary Diets Dermatosis FP",
+      "voertype": "kibble",
+      "verpakking": "5 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/speciaalvoer/diergeneeskundige-voeding/veterinary-diets-dermatosis-fp"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Veterinary Diets Intestinal",
+      "voertype": "kibble",
+      "verpakking": "5 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/speciaalvoer/diergeneeskundige-voeding/veterinary-diets-intestinal"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Veterinary Diets Joint Mobility",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/speciaalvoer/diergeneeskundige-voeding/veterinary-diets-joint-mobility"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Veterinary Diets Restricted Calorie",
+      "voertype": "kibble",
+      "verpakking": "5 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/speciaalvoer/diergeneeskundige-voeding/veterinary-diets-restricted-calorie"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Volwassen Grote rassen Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/volwassen-grote-rassen-lam-rijst"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Volwassen Grote rassen Verse kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 / 15 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/life-care/volwassen-grote-rassen-verse-kip"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Volwassen Grote rassen Zalm & Gerst",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/volwassen-grote-rassen-zalm-gerst"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Volwassen Kleine/Middelgrote rassen Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/volwassen-kleinemiddelgrote-rassen-lam-rijst"
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Working & Endurance voor volwassen honden van alle rassen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/working-endurance-voor-volwassen-honden-van-alle-rassen"
+    }
+  ]
+}

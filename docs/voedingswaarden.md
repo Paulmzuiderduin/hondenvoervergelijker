@@ -1,6 +1,6 @@
 # Voedingswaarden
 
-Status: **fase 0 afgerond en live; fase 1 pilot toegepast** (25 producten van 5 top-10-merken). De volgende stap is de rest van de top 10.
+Status: **fase 0 afgerond en live; fase 1 pilot toegepast** (25 producten van 5 top-10-merken). **Fase 2 loopt:** 10 agents werken per merk aan de resterende 761 producten van de top 10.
 
 ## Uitgangspunten
 
@@ -65,9 +65,9 @@ De vorm van `p_nutrition`:
 - Resultaat: 25 gematchte producten, 186 waarden, 12 volledig (6 kernwaarden), 13 gedeeltelijk, 14 met kcal.
 - Importformaat en validatie zijn hierna niet meer gewijzigd.
 
-### Fase 2 — rest van de top 10 (volgende stap)
+### Fase 2 — rest van de top 10 (loopt)
 
-Royal Canin (205), Hill's (140), Eukanuba (75), Prins (72), Purina (58), Jarco (57), Darf (51), Butcher's (48), Renske (44), Edgard & Cooper (38). Samen ongeveer 788 producten. De 25 pilotproducten zijn al gedaan; de rest volgt in batches.
+Royal Canin (205), Hill's (140), Eukanuba (75), Prins (72), Purina (56), Jarco (57), Darf (51), Butcher's (48), Renske (44) en Edgard & Cooper (38). Samen 786 producten; 25 daarvan zijn in de pilot gedaan, dus **761 producten** staan nu in de opdrachten. Per merk draait één agent, met batches van maximaal 25 producten.
 
 ### Fase 3 — overige producten
 

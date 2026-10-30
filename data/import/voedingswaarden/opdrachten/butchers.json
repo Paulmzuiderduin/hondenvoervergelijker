@@ -1,0 +1,313 @@
+{
+  "groep": "butchers",
+  "label": "Butcher's",
+  "merken": [
+    "Butcher's"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 43,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Butcher's",
+      "naam": "Healthy Heart met forel & groenten",
+      "voertype": "wet",
+      "verpakking": "6 x 390 g / 12 x 390 g / 18 x 390 g (blik) / 12 x 150 g / 24 x 150 g (trays; variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/healthy-heart-6-pack-can-390g-new/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Healthy Heart met kalkoen & groenten",
+      "voertype": "wet",
+      "verpakking": "6 x 390 g / 12 x 390 g / 18 x 390 g (blik) / 12 x 150 g / 24 x 150 g (trays; variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/healthy-heart-6-pack-can-390g-new/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Healthy Heart met zalm & groenten",
+      "voertype": "wet",
+      "verpakking": "6 x 390 g / 12 x 390 g / 18 x 390 g (blik) / 12 x 150 g / 24 x 150 g (trays; variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/healthy-heart-6-pack-can-390g-new/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Joints & Coat met kalkoen",
+      "voertype": "wet",
+      "verpakking": "6 x 390 g / 12 x 390 g / 18 x 390 g (blik) / 12 x 150 g / 24 x 150 g (trays; variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/joints-coat-6-pack-390g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Joints & Coat met kip",
+      "voertype": "wet",
+      "verpakking": "6 x 390 g / 12 x 390 g / 18 x 390 g (blik) / 12 x 150 g / 24 x 150 g (trays; variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/joints-coat-6-pack-390g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Joints & Coat met zalm",
+      "voertype": "wet",
+      "verpakking": "6 x 390 g / 12 x 390 g / 18 x 390 g (blik) / 12 x 150 g / 24 x 150 g (trays; variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/joints-coat-6-pack-390g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Lean & Tasty met kalkoen, rijst & groenten (blik)",
+      "voertype": "wet",
+      "verpakking": "6 x 390 g / 12 x 390 g / 18 x 390 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/lean-tasty-6-pack-390g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Lean & Tasty met kalkoen, rijst & groenten (tray)",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/lean-tasty-12-pack-150g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Lean & Tasty met kip, rijst & groenten (blik)",
+      "voertype": "wet",
+      "verpakking": "6 x 390 g / 12 x 390 g / 18 x 390 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/lean-tasty-6-pack-390g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Lean & Tasty met kip, rijst & groenten (tray)",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/lean-tasty-12-pack-150g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Lean & Tasty met rund, rijst & groenten (blik)",
+      "voertype": "wet",
+      "verpakking": "6 x 390 g / 12 x 390 g / 18 x 390 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/lean-tasty-6-pack-390g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Lean & Tasty met rund, rijst & groenten (tray)",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/lean-tasty-12-pack-150g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Loaf Recipes met kip, rijst & wortelen",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g (variatiepak, 2 x per smaak)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/loaf-recipes-6-pack-400g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Loaf Recipes met lam, rijst & erwten",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g (variatiepak, 2 x per smaak)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/loaf-recipes-6-pack-400g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Loaf Recipes met rund, rijst & groenten",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g (variatiepak, 2 x per smaak)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/loaf-recipes-6-pack-400g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Puppy Perfect met kalkoen (tray)",
+      "voertype": "wet",
+      "verpakking": "4 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/puppy-perfect-4-pack-150g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Puppy Perfect met kip (tray)",
+      "voertype": "wet",
+      "verpakking": "4 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/puppy-perfect-4-pack-150g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Puppy Perfect met lam (blik)",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g / 18 x 400 g / 24 x 400 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/puppy-perfect-6-pack-400g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Puppy Perfect met rund (blik)",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g / 18 x 400 g / 24 x 400 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/puppy-perfect-6-pack-400g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Puppy Perfect met rund (tray)",
+      "voertype": "wet",
+      "verpakking": "4 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/puppy-perfect-4-pack-150g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Recipes in Gravy met kalkoen & tuinbouwgroenten",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g / 12 x 400 g / 18 x 400 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/recipes-in-gravy-6-pack-400g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Recipes in Gravy met kip & tuinbouwgroenten",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g / 12 x 400 g / 18 x 400 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/recipes-in-gravy-6-pack-400g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Recipes in Gravy met rund & tuinbouwgroenten",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g / 12 x 400 g / 18 x 400 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/recipes-in-gravy-6-pack-400g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Recipes in Jelly met kip & lever",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g / 12 x 400 g / 18 x 400 g / 24 x 400 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/recipes-in-jelly-6-pack-400g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Recipes in Jelly met lam & nier",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g / 12 x 400 g / 18 x 400 g / 24 x 400 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/recipes-in-jelly-6-pack-400g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Recipes in Jelly met pens (variatiepak)",
+      "voertype": "wet",
+      "verpakking": "24 x 400 g (variatiepak)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/variety-recipes-in-jelly-24-pack-400g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Recipes in Jelly met rund & lever",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g / 12 x 400 g / 18 x 400 g / 24 x 400 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/recipes-in-jelly-6-pack-400g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Recovery & Revive met kip (tray)",
+      "voertype": "wet",
+      "verpakking": "4 x 150 g",
+      "bronUrl": "https://butchersdogfood.co.uk/product/recovery-revive-4-pack-150g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Rund & pens (Beef & Tripe Loaf)",
+      "voertype": "wet",
+      "verpakking": "alleen in variatiepakken van 6, 12, 18 en 24 x 400 g",
+      "bronUrl": "https://butchersdogfood.co.uk/product/tripe-loaf-recipes-6-pack-400g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Simply Gentle met kalkoen (blik)",
+      "voertype": "wet",
+      "verpakking": "6 x 390 g / 12 x 390 g / 18 x 390 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/simply-gentle-6-pack-390g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Simply Gentle met kalkoen (tray)",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/simply-gentle-12-pack-150g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Simply Gentle met kip (tray)",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/simply-gentle-12-pack-150g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Simply Gentle met zalm (blik)",
+      "voertype": "wet",
+      "verpakking": "6 x 390 g / 12 x 390 g / 18 x 390 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/simply-gentle-6-pack-390g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Simply Gentle met zalm (tray)",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/simply-gentle-12-pack-150g-2/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Succulent Recipes met kip & lever",
+      "voertype": "wet",
+      "verpakking": "4 x 150 g / 12 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/succulent-recipes-4-pack-150g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Succulent Recipes met lam & nier",
+      "voertype": "wet",
+      "verpakking": "4 x 150 g / 12 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/succulent-recipes-4-pack-150g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Succulent Recipes met rund & lever",
+      "voertype": "wet",
+      "verpakking": "4 x 150 g / 12 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/succulent-recipes-4-pack-150g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Traditional Recipes met kalkoen & groenten (4-pack)",
+      "voertype": "wet",
+      "verpakking": "4 x 150 g (variatiepak)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/traditional-recipes-4-pack-150g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Traditional Recipes met kalkoen & wortelen (12/24-pack)",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/traditional-recipes-12-pack-150g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Traditional Recipes met lam & erwten (12/24-pack)",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/traditional-recipes-12-pack-150g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Traditional Recipes met lam & groenten (4-pack)",
+      "voertype": "wet",
+      "verpakking": "4 x 150 g (variatiepak)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/traditional-recipes-4-pack-150g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Traditional Recipes met rund & groenten (12/24-pack)",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g / 24 x 150 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/traditional-recipes-12-pack-150g/"
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Traditional Recipes met rund & groenten (4-pack)",
+      "voertype": "wet",
+      "verpakking": "4 x 150 g (variatiepak)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/traditional-recipes-4-pack-150g/"
+    }
+  ]
+}

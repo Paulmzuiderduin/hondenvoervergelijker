@@ -1,0 +1,406 @@
+{
+  "groep": "purina",
+  "label": "Purina",
+  "merken": [
+    "Purina Pro Plan",
+    "Purina Pro Plan Veterinary Diets",
+    "Purina One"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 56,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Medium/Maxi Adult Kip",
+      "voertype": "kibble",
+      "verpakking": "12 kg; dubbelpak 2 x 12 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1875000"
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Medium/Maxi Adult Rund & Rijst",
+      "voertype": "kibble",
+      "verpakking": "7 kg; 12 kg; dubbelpak 2 x 7 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1337160"
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Medium/Maxi Sensitive Zalm",
+      "voertype": "kibble",
+      "verpakking": "2,5 kg; dubbelpak 2 x 2,5 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1874999"
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Medium/Maxi Weight Control Sterilised Kalkoen",
+      "voertype": "kibble",
+      "verpakking": "2,5 kg; dubbelpak 2 x 2,5 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1868165"
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Mini Adult Rund & Rijst",
+      "voertype": "kibble",
+      "verpakking": "800 g; voordeelpakket 3 x 800 g",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mini/1337161"
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Mini Delicate Zalm & Rijst",
+      "voertype": "kibble",
+      "verpakking": "800 g; voordeelpakket 3 x 800 g; 5 x 800 g",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mini/1874995"
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Mini Sensitive-Delicate Zalm (natvoer)",
+      "voertype": "wet",
+      "verpakking": "10 x 85 g; 20 x 85 g",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/purina_one/2007011"
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Mini Weight Control / Sterilised Kalkoen & Rijst",
+      "voertype": "kibble",
+      "verpakking": "9 kg (6 x 1,5 kg); 18 kg (12 x 1,5 kg)",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mini/1337170"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "All Sizes Adult Light/Sterilised Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 14 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-light-sterilised-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "All Sizes Adult Protein & Energy Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "14 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-proteinenergy-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Expert Care Adult 7+ Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-expert-care-senior-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Expert Care Adult Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-expert-care-adult-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Expert Care Derma Care Rijk aan Zalm",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-expert-care-derma-care-zalm"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Expert Care Digestion Care Rijk aan Lam",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-expert-care-digestion-care-lam"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Expert Care Light/Sterilised Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-expert-care-light-sterilised-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Expert Care Puppy Rijk aan Lam",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-expert-care-puppy-lam"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Expert Care Small & Mini Adult Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 / 7 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-expert-care-small-mini-adult-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Expert Care Small & Mini Derma Care Rijk aan Zalm",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 / 7 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-expert-care-small-mini-derma-care-zalm"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Expert Care Small & Mini Puppy Rijk aan Lam",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-expert-care-small-mini-puppy-lam"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Large Athletic Adult Everyday Nutrition Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "14 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-large-athletic-everyday-nutrition-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Large Athletic Adult Sensitive Skin Rijk aan Zalm",
+      "voertype": "kibble",
+      "verpakking": "14 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-large-athletic-sensitive-skin-zalm"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Large Athletic Puppy Healthy Start Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-puppy-large-athletic-healthy-start-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Large Puppy Starter Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "18 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-large-puppy-starter-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Large Robust Adult Everyday Nutrition Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "14 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-large-robust-everyday-nutrition-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Large Robust Adult Sensitive Skin Rijk aan Zalm",
+      "voertype": "kibble",
+      "verpakking": "14 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-large-robust-sensitive-skin-zalm"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Large Robust Puppy Healthy Start Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-puppy-large-robust-healthy-start-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium & Large Adult 7+ Age Defence Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 14 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-senior-medium-large-age-defence-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium & Large Adult 7+ Sensitive Skin Rijk aan Zalm",
+      "voertype": "kibble",
+      "verpakking": "3 / 14 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-senior-medium-sensitive-skin-zalm"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium & Large Adult Sensitive Digestion Graanvrij Rijk aan Kalkoen",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-graan-vrij-medium-sensitive-digestion-kalkoen"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium Adult Everyday Nutrition Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 14 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-medium-everyday-nutrition-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium Adult Sensitive Digestion Rijk aan Lam",
+      "voertype": "kibble",
+      "verpakking": "3 / 14 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-medium-sensitive-digestion-lam"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium Adult Sensitive Skin Zalm",
+      "voertype": "kibble",
+      "verpakking": "14 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/pro-plan"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium Puppy Healthy Start Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-puppy-medium-healthy-start-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium Puppy Sensitive Digestion Rijk aan Lam",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-puppy-medium-sensitive-digestion-lam"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium Puppy Sensitive Skin Rijk aan Zalm",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-puppy-medium-sensitive-skin-zalm"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Small & Medium Puppy Starter Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-small-medium-puppy-starter-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Small & Mini Adult 9+ Age Defence Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-senior-small-age-defence-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Small & Mini Adult Everyday Nutrition Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 7 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-small-everyday-nutrition-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Small & Mini Adult Sensitive Skin Rijk aan Zalm",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-small-sensitive-skin-zalm"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Small & Mini Puppy Healthy Start Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-puppy-small-healthy-start-kip"
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Small & Mini Puppy Sensitive Skin Rijk aan Zalm",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-puppy-small-sensitive-skin-zalm"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "CN Convalescence",
+      "voertype": "wet",
+      "verpakking": "195 g",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-convalescence-natvoer"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "DM Diabetes Management",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-diabetes-kip"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "DRM Dermatosis",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondennvoer/product-proplan-veterinary-diets-dermatose-vis"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "EN Gastrointestinal",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 5 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-gastrointestinaal"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "EN Gastrointestinal Natvoer",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-gastrointestinaal-natvoer"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "HA Hypoallergenic",
+      "voertype": "kibble",
+      "verpakking": "3 / 11 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-hypoallergeen"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "HA Hypoallergenic Natvoer",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-hypoallergeen-natvoer"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "HP Hepatic",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-hepatic-lever"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "JM Joint Mobility",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-Joint-mobility-gewricht"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "NC Neurocare",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-neurocare-hersenfunctie"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "NF Renal Function",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-nierfunctie"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "NF Renal Function Natvoer",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-nierfunctie-natvoer"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "OM Obesity Management",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-overgewicht"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "OM Obesity Management Natvoer",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-overgewicht-natvoer"
+    },
+    {
+      "merk": "Purina Pro Plan Veterinary Diets",
+      "naam": "UR Urinary",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-veterinary-diets-urinary"
+    }
+  ]
+}

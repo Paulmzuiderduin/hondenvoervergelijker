@@ -1,0 +1,278 @@
+{
+  "groep": "edgard-en-cooper",
+  "label": "Edgard & Cooper",
+  "merken": [
+    "Edgard & Cooper"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 38,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Adult Kip graanvrij",
+      "voertype": "kibble",
+      "verpakking": "7 kg",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-dry-food-chicken/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "ASC-Zalm & Kalkoen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-tin-salmon-turkey/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Biologisch rund",
+      "voertype": "wet",
+      "verpakking": "100 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-cup-beef/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Biologische kalkoen",
+      "voertype": "wet",
+      "verpakking": "100 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-cup-turkey/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Biologische kip & vis (puppy)",
+      "voertype": "wet",
+      "verpakking": "100 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-cup-chicken-fish/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Biologische vis",
+      "voertype": "wet",
+      "verpakking": "100 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-cup-fish/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Eend & kip (puppy, kuipje)",
+      "voertype": "wet",
+      "verpakking": "150 / 300 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-cup-duck-chicken/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Eend & kip (puppy)",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-tin-duck-chicken/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Kip & ASC-Zalm (senior)",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-tin-chicken-salmon/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Kip & kalkoen",
+      "voertype": "wet",
+      "verpakking": "400 / 800 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-tin-chicken-turkey/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Kip & kalkoen (kuipje)",
+      "voertype": "wet",
+      "verpakking": "150 / 300 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-cup-chicken-turkey/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Kip & zalm (senior)",
+      "voertype": "wet",
+      "verpakking": "150 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-cup-chicken-salmon/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Kwijl-in-Stijl Eend",
+      "voertype": "wet",
+      "verpakking": "150 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-pouch-drool-worthy-duck/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Kwijl-in-Stijl Kalkoen (puppy)",
+      "voertype": "wet",
+      "verpakking": "150 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-pouch-drool-worthy-turkey/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Kwijl-in-Stijl Kip",
+      "voertype": "wet",
+      "verpakking": "150 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-pouch-drool-worthy-chicken/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Kwijl-in-Stijl Kip (senior)",
+      "voertype": "wet",
+      "verpakking": "150 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-pouch-senior-drool-worthy-chicken/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Kwijl-in-Stijl Lam & Kip",
+      "voertype": "wet",
+      "verpakking": "150 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-pouch-drool-worthy-lamb-chicken/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Kwijl-in-Stijl Wild Zwijn & Eend",
+      "voertype": "wet",
+      "verpakking": "150 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-pouch-drool-worthy-wild-boar-duck/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Kwijl-in-Stijl Zalm & Kip",
+      "voertype": "wet",
+      "verpakking": "150 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-pouch-drool-worthy-salmon-chicken/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Lam & rund",
+      "voertype": "wet",
+      "verpakking": "400 / 800 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-tin-lamb-beef/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Lam & rund (kuipje)",
+      "voertype": "wet",
+      "verpakking": "150 / 300 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-cup-lamb-beef/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Rode Biet & Pompoen (plantaardig)",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 7 kg",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-dry-food-beetroot-pumpkin/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Rund",
+      "voertype": "wet",
+      "verpakking": "400 / 800 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-tin-beef/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Rund & eend",
+      "voertype": "wet",
+      "verpakking": "150 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-cup-beef-duck/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Vers Hert & Eend",
+      "voertype": "kibble",
+      "verpakking": "1 / 2,5 / 3 / 7 / 12 kg",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-dry-food-venison-duck/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Vers Lam",
+      "voertype": "kibble",
+      "verpakking": "0,7 / 1 / 2,5 / 3 / 7 / 12 kg",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-dry-food-lamb/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Verse Eend",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 7 / 12 kg",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-dry-food-duck/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Verse Eend & Kip (puppy)",
+      "voertype": "kibble",
+      "verpakking": "1 / 2,5 / 3 / 7 / 12 kg",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-dry-food-duck-chicken/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Verse Kalkoen & Kip (bio)",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 7 kg",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-dry-food-turkey-chicken/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Verse Kip",
+      "voertype": "kibble",
+      "verpakking": "0,7 / 1 / 2,5 / 3 / 7 / 12 kg",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-dry-food-chicken/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Verse Kip & Zalm (senior)",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 7 / 12 kg",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-dry-food-chicken-salmon/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Verse Rund & Kip (bio)",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 7 kg",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-dry-food-beef-chicken/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Verse Zalm",
+      "voertype": "kibble",
+      "verpakking": "0,7 / 1 / 2,5 / 3 / 7 / 12 kg",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-dry-food-salmon/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Verse Zalm & Kalkoen (puppy)",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 7 / 12 kg",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-dry-food-salmon-turkey/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Wild & eend",
+      "voertype": "wet",
+      "verpakking": "400 / 800 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-tin-game-duck/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Wild & eend (kuipje)",
+      "voertype": "wet",
+      "verpakking": "150 / 300 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-cup-game-duck/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Wortel & Courgette (plantaardig)",
+      "voertype": "kibble",
+      "verpakking": "1 / 2,5 / 7 kg",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-dry-food-carrot-courgette/"
+    },
+    {
+      "merk": "Edgard & Cooper",
+      "naam": "Zalm & Kalkoen (kuipje)",
+      "voertype": "wet",
+      "verpakking": "150 / 300 g",
+      "bronUrl": "https://www.edgardcooper.com/nl/products/dog-cup-salmon-turkey/"
+    }
+  ]
+}

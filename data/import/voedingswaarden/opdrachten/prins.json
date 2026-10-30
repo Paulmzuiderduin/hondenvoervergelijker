@@ -1,0 +1,516 @@
+{
+  "groep": "prins",
+  "label": "Prins Petfoods",
+  "merken": [
+    "Prins Petfoods"
+  ],
+  "opgehaald": "2026-10-30",
+  "aantal": 72,
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Fit Selection Chicken & Rice",
+      "voertype": "kibble",
+      "verpakking": "2 / 14 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/fit-selection/chicken-rice-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Fit Selection Lamb & Rice",
+      "voertype": "kibble",
+      "verpakking": "2 / 14 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/fit-selection/lamb-rice-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Fit Selection Puppy & Junior",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/fit-selection/puppy-junior-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Fit Selection Salmon & Rice",
+      "voertype": "kibble",
+      "verpakking": "2 / 14 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/fit-selection/salmon-rice-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Fit Selection Senior",
+      "voertype": "kibble",
+      "verpakking": "2 / 15 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/fit-selection/senior-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "FreshCare Chicken",
+      "voertype": "raw",
+      "verpakking": "750 g / 8 x 750 g",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/freshcare/chicken-750g"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "FreshCare Duck",
+      "voertype": "raw",
+      "verpakking": "750 g / 8 x 750 g",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/freshcare/duck-schijven-750g"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "FreshCare Horse",
+      "voertype": "raw",
+      "verpakking": "750 g / 8 x 750 g",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/freshcare/horse-schijven-750g"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "FreshCare Lamb",
+      "voertype": "raw",
+      "verpakking": "750 g / 8 x 750 g",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/freshcare/lamb-schijven-750g"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "NatureCare Diet Dog Weight Reduction & Diabetic",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/naturecare-diet-dog/weight-reduction-diabetic-400g"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "NatureCare Diet Struvite & Calcium Oxalate",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/naturecare-diet-dog/struvite-calciumoxalate-400g"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "NatureCare Dog Chicken",
+      "voertype": "wet",
+      "verpakking": "250 g / 12 x 250 g",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/naturecare-dog/chicken-250g"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "NatureCare Dog Lamb",
+      "voertype": "wet",
+      "verpakking": "250 g / 12 x 250 g",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/naturecare-dog/lamb-250g"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "NatureCare Dog Turkey",
+      "voertype": "wet",
+      "verpakking": "250 g / 12 x 250 g",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/naturecare-dog/turkey-250g"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "NatureCare Veterinary Diet Hypoallergic Lamb",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/naturecare-diet-dog/hypoallergenic-lamb-400g"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "NatureCare Veterinary Diet Mobility",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/naturecare-diet-dog/mobility-400g"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Croque Basic Excellent",
+      "voertype": "kibble",
+      "verpakking": "10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-croque/basic-excellent-10kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Croque Diet Gastro-Intestinal",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/diet-croque/gastro-intestinal-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Croque Diet Mobility",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/diet-croque/mobility-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Croque Diet Renal & Liver Support",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/diet-croque/renal-liver-support-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Croque Diet Skin Support",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/diet-croque/skin-intestinal-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Croque Diet Urinary",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/diet-croque/urinary-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Croque Diet Weight Reduction & Diabetic",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/diet-croque/weight-reduction-diabetic-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Croque Lamb & Rice",
+      "voertype": "kibble",
+      "verpakking": "10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-croque/lamb-rice-10kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Croque Senior Superior",
+      "voertype": "kibble",
+      "verpakking": "10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-croque/senior-superior-10kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Croque Super Performance",
+      "voertype": "kibble",
+      "verpakking": "10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-croque/super-performance-10kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Grainfree Junior & Adult",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-grainfree/adult-pro-energy-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Grainfree Senior Fit",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-grainfree/senior-fit-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Grainfree Sensible",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-grainfree/sensible-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Grainfree Skin & Coat",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-grainfree/skin-coat-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Herring & Rice",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare/herring-rice-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Insect & Rice",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare/insect-rice-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Lamb & Rice",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 / 20 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare/lamb-rice-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Lamb & Rice Senior",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare/lamb-rice-senior-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Light Low calorie",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare/light-low-calorie-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Mini Herring & Rice",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-mini/herring-rice-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Mini Lamb & Rice",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-mini/lamb-rice-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Mini Puppy & Junior",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-mini/puppy-junior-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Mini Resist Calm",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-mini/resist-calm-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Mini Senior Support",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-mini/senior-support-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Mini Standard Fit",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-mini/standard-fit-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Mini Super Active",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-mini/super-active-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Pressed Diet Gastro-Intestinal",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-pressed-diet/gastro-intestinal-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Pressed Diet Mobility",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/diet-pressed/mobility-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Pressed Diet Skin Support",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/diet-pressed/skin-support-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Pressed Diet Weight Reduction & Diabetic",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/diet-pressed/weight-reduction-diabetic-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Protection Lamb",
+      "voertype": "kibble",
+      "verpakking": "3 / 15 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-protection/lamb-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Protection Puppy",
+      "voertype": "kibble",
+      "verpakking": "3 / 7,5 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-protection/puppy-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Protection Senior",
+      "voertype": "kibble",
+      "verpakking": "3 / 15 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-protection/senior-fit-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Protection Sterilised",
+      "voertype": "kibble",
+      "verpakking": "3 / 15 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-protection/sterilised-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Protection Super Active",
+      "voertype": "kibble",
+      "verpakking": "3 / 15 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare-protection/super-active-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Puppy & Junior",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare/puppy-junior-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Resist Calm",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare/resist-calm-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Senior Support",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare/senior-support-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Sport-Life Excellent",
+      "voertype": "kibble",
+      "verpakking": "15 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare/sport-life-excellent-15kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Standard Fit",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 / 20 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare/standard-fit-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Super Active",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 / 20 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare/super-active-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "ProCare Veggie",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/procare/veggie-3kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Protection Croque Basic Excellent",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/protection-croque/basic-excellent-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Protection Croque Junior Vitality",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/protection-croque/junior-vitality-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Protection Croque Lamb",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/protection-croque/lamb-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Protection Croque Mini Basic Excellent",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/protection-croque-mini/basic-excellent-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Protection Croque Mini Junior Vitality",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/protection-croque-mini/junior-vitality-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Protection Croque Mini Lamb",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/protection-croque-mini/lamb-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Protection Croque Mini Senior Fit",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/protection-croque-mini/senior-fit-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Protection Croque Mini Super Vitality",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/protection-croque-mini/super-vitality-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Protection Croque Senior Fit",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/protection-croque/senior-fit-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "Protection Croque Super Vitality",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/protection-croque/super-vitality-2kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "TotalCare Lamb & Rice",
+      "voertype": "raw",
+      "verpakking": "6 x 2,5 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/totalcare/lamb-rice-2-5kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "TotalCare Puppy",
+      "voertype": "raw",
+      "verpakking": "6 x 2,5 kg / 600 g",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/totalcare/puppy-2-5kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "TotalCare Resist Calm",
+      "voertype": "raw",
+      "verpakking": "6 x 2,5 kg",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/totalcare/resist-calm-2-5kg"
+    },
+    {
+      "merk": "Prins Petfoods",
+      "naam": "TotalCare Super Active",
+      "voertype": "raw",
+      "verpakking": "6 x 2,5 kg / 600 g",
+      "bronUrl": "https://www.prinspetfoods.nl/nl_NL/hondenvoer/totalcare/super-active-2-5kg"
+    }
+  ]
+}
