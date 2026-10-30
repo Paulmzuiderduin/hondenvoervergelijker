@@ -20,7 +20,8 @@
     "seo:indexnow": "node scripts/indexnow.mjs",
     "voeding:sql": "node scripts/maak-voedingswaarde-sql.mjs",
     "voeding:rapport": "node scripts/rapporteer-voedingswaarden.mjs",
-    "voeding:opdrachten": "node scripts/maak-voedingswaarde-opdrachten.mjs"
+    "voeding:opdrachten": "node scripts/maak-voedingswaarde-opdrachten.mjs",
+    "voeding:controle": "node scripts/controleer-voedingswaarden-json.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4",
