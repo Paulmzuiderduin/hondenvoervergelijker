@@ -3,18 +3,18 @@
 Momentopname: 2026-10-30.
 
 - 1478 gepubliceerde producten
-- 260 volledig (6 kernwaarden)
-- 191 gedeeltelijk
-- 1027 zonder voedingswaarden
-- 299 met energie (kcal/100 g)
+- 380 volledig (6 kernwaarden)
+- 206 gedeeltelijk
+- 892 zonder voedingswaarden
+- 434 met energie (kcal/100 g)
 
 | Merk | Totaal | Volledig | Gedeeltelijk | Ontbreekt | Met kcal |
 |---|---:|---:|---:|---:|---:|
 | Royal Canin | 205 | 0 | 5 | 200 | 2 |
-| Hill's Science Plan | 80 | 5 | 0 | 75 | 5 |
+| Hill's Science Plan | 80 | 67 | 13 | 0 | 80 |
 | Eukanuba | 75 | 0 | 75 | 0 | 3 |
 | Prins Petfoods | 72 | 72 | 0 | 0 | 72 |
-| Hill's Prescription Diet | 60 | 0 | 0 | 60 | 0 |
+| Hill's Prescription Diet | 60 | 58 | 2 | 0 | 60 |
 | Jarco | 57 | 32 | 25 | 0 | 35 |
 | DARF | 51 | 40 | 11 | 0 | 43 |
 | Butcher's | 48 | 33 | 15 | 0 | 33 |
