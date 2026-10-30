@@ -107,6 +107,14 @@
         td::before { content: attr(data-label) ': '; font-weight: 700; color: #22402c; }
       }
     </style>
+    <script>
+      try {
+        const params = new URLSearchParams(window.location.search)
+        if (params.get('umami-optout') === '1') localStorage.setItem('umami.disabled', '1')
+        if (params.get('umami-optin') === '1') localStorage.removeItem('umami.disabled')
+      } catch {}
+    </script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="85273e9f-2c35-4a6e-83ff-7b61de38dec0" data-domains="hondenvoervergelijker.paulzuiderduin.com"></script>
   </head>
   <body>
     <header class="site">
@@ -125,11 +133,11 @@
     <main class="wrap">
       <div class="intro">
         <h1>Privacybeleid en cookieverklaring</h1>
-        <p class="updated">Versie 1.0 · laatst bijgewerkt op 27 oktober 2026</p>
+        <p class="updated">Versie 1.1 · laatst bijgewerkt op 30 oktober 2026</p>
       </div>
 
       <div class="callout">
-        <p><strong>In het kort:</strong> je kunt deze website volledig anoniem en zonder account gebruiken. Wij plaatsen geen tracking- of advertentiecookies, gebruiken geen analytics en bewaren geen gegevens over je hond of je specifieke zoekopdrachten. Sommige verwijzingen naar webwinkels zijn affiliate-links. Pas wanneer je op zo'n link klikt, kan de betreffende webwinkel of het affiliate-netwerk een cookie plaatsen.</p>
+        <p><strong>In het kort:</strong> je kunt deze website anoniem en zonder account gebruiken. Wij plaatsen geen tracking- of advertentiecookies. Voor het verbeteren van de site gebruiken wij cookieloze, geaggregeerde bezoekersstatistieken via Umami Cloud. Wij slaan geen individuele profielen op en gebruiken de statistieken alleen geaggregeerd. Sommige verwijzingen naar webwinkels zijn affiliate-links. Pas wanneer je op zo'n link klikt, kan de betreffende webwinkel of het affiliate-netwerk een cookie plaatsen.</p>
       </div>
 
       <section class="card">
@@ -152,9 +160,10 @@
 
         <h3>a. Bezoekers van de website</h3>
         <ul>
-          <li><strong>Geen persoonsgegevens in de applicatie:</strong> de allergenen die je selecteert en de filters die je instelt, blijven lokaal in je browser. Deze worden niet naar onze servers verstuurd of opgeslagen.</li>
+          <li><strong>Geen persoonsgegevens in de applicatie:</strong> de allergenen die je selecteert en de filters die je instelt, blijven lokaal in je browser. Alleen het feit dat je een allergeen kiest of resultaten bekijkt, wordt als anoniem event geteld; de specifieke keuze wordt niet naar Umami gestuurd.</li>
           <li><strong>Technische logbestanden:</strong> onze hostingprovider registreert bij elk bezoek technische basisgegevens, waaronder je IP-adres, het tijdstip van je bezoek, de opgevraagde pagina's en browserinformatie. Dit is noodzakelijk om de website veilig en beschikbaar te houden en misbruik te voorkomen. Wij hebben zelf geen directe toegang tot deze logbestanden en gebruiken ze niet voor marketing of statistische doeleinden.</li>
           <li><strong>E-mail:</strong> wanneer je ons een bericht stuurt, verwerken wij je e-mailadres en de inhoud van je bericht uitsluitend om je vraag te kunnen beantwoorden.</li>
+          <li><strong>Bezoekersstatistieken:</strong> wij gebruiken Umami Cloud om geaggregeerd te zien welke pagina's en functies worden gebruikt. Umami plaatst geen cookies en maakt geen individueel profiel van je bezoek. Zie hieronder bij d.</li>
         </ul>
 
         <h3>b. Beheerder van de website</h3>
@@ -162,11 +171,23 @@
 
         <h3>c. Gegevens over hondenvoeding</h3>
         <p>De website toont ingrediëntenlijsten en productspecificaties die publiekelijk beschikbaar zijn via de fabrikanten. Deze dataset bevat geen persoonsgegevens. Wij delen of verkopen deze data bovendien nooit aan derden voor marketingdoeleinden.</p>
+
+        <h3>d. Bezoekersstatistieken met Umami</h3>
+        <p>Om de website en de inhoud te verbeteren, gebruiken wij Umami Cloud. Umami is een cookieloze analysetool. Wij meten onder meer:</p>
+        <ul>
+          <li>welke pagina's worden bekeken en hoe vaak;</li>
+          <li>via welke bron of verwijzer je binnenkomt;</li>
+          <li>globale apparaat-, browser- en landgegevens;</li>
+          <li>welke functies worden gebruikt, zoals een allergeen kiezen, resultaten bekijken of doorklikken naar een bron of winkel.</li>
+        </ul>
+        <p>Wij gebruiken deze gegevens alleen geaggregeerd. Wij koppelen ze niet aan je naam, e-mailadres of andere identificerende gegevens en gebruiken ze niet voor advertenties of profilering. De verwerking is gebaseerd op ons gerechtvaardigd belang om de website veilig, bruikbaar en inhoudelijk beter te maken.</p>
+        <p>Bezoek je een pagina over een specifiek allergeen, dan kan de URL dat allergeen bevatten. Wij gebruiken die informatie alleen geaggregeerd om te zien welke onderwerpen relevant zijn; wij koppelen dit niet aan jou als persoon.</p>
+        <p>Umami plaatst geen cookies. Voor het groeperen van paginaweergaven kan een tijdelijke, technische sessie-id in je browseropslag worden gebruikt. Je kunt de statistieken uitschakelen via <code>/?umami-optout=1</code>; met <code>/?umami-optin=1</code> doe je weer mee. Deze keuze wordt lokaal in je browser opgeslagen. Meer informatie staat in het <a href="https://umami.is/privacy" rel="noopener noreferrer" target="_blank">privacybeleid van Umami</a>.</p>
       </section>
 
       <section class="card" id="cookies">
         <h2>3. Cookies en lokale opslag</h2>
-        <p>Wij maken geen gebruik van analytische cookies, advertentiecookies of social-media-pixels. De website maakt uitsluitend gebruik van noodzakelijke, functionele opslag:</p>
+        <p>Wij plaatsen geen analytische cookies, advertentiecookies of social-media-pixels. Voor bezoekersstatistieken gebruiken wij Umami Cloud, dat cookieloos werkt. De website maakt daarnaast gebruik van noodzakelijke, functionele opslag:</p>
         <table>
           <thead>
             <tr>
@@ -188,6 +209,12 @@
               <td data-label="Type">localStorage (alleen beheerder)</td>
               <td data-label="Doel">Bewaart de inlogsessie van de beheerder. Dit is niet van toepassing op reguliere bezoekers.</td>
               <td data-label="Bewaartermijn">Totdat er wordt uitgelogd of de sessie verloopt</td>
+            </tr>
+            <tr>
+              <td data-label="Naam"><code>umami.disabled</code></td>
+              <td data-label="Type">localStorage (functioneel)</td>
+              <td data-label="Doel">Onthoudt of je bezoekersstatistieken hebt uitgeschakeld via <code>/?umami-optout=1</code>. Bevat geen persoonsgegevens.</td>
+              <td data-label="Bewaartermijn">Totdat je de opt-out ongedaan maakt of je browseropslag wist</td>
             </tr>
             <tr>
               <td data-label="Naam">Affiliate-cookies</td>
@@ -241,6 +268,11 @@
               <td data-label="Gegevens">Uitsluitend het e-mailadres en de actieve sessie van de beheerder (geen bezoekersgegevens)</td>
             </tr>
             <tr>
+              <td data-label="Partij">Umami Cloud (Umami Software, Inc.)</td>
+              <td data-label="Rol">Cookieloze bezoekersstatistieken</td>
+              <td data-label="Gegevens">Geaggregeerde paginaweergaven, events, referrer, browser/OS, apparaat en land; geen individuele profielen</td>
+            </tr>
+            <tr>
               <td data-label="Partij">Awin / adverteerders (o.a. Zooplus, Medpets)</td>
               <td data-label="Rol">Affiliate-netwerk en webwinkels</td>
               <td data-label="Gegevens">Wordt pas geactiveerd na een klik op een webwinkel-link (zie hoofdstuk 4)</td>
@@ -253,13 +285,13 @@
 
       <section class="card">
         <h2>6. Doorgifte buiten de Europese Economische Ruimte (EER)</h2>
-        <p>Supabase is een internationaal opererende dienstverlener. Het is daardoor mogelijk dat technische gegevens buiten de EER worden verwerkt. In dat geval gebeurt dit altijd op basis van een adequaatheidsbesluit of de standaardcontractbepalingen van de Europese Commissie, zoals vastgelegd in de leveringsvoorwaarden van deze partij.</p>
+        <p>Supabase en Umami Cloud zijn internationaal opererende dienstverleners. Het is daardoor mogelijk dat technische gegevens buiten de EER worden verwerkt. In dat geval gebeurt dit altijd op basis van een adequaatheidsbesluit of de standaardcontractbepalingen van de Europese Commissie, zoals vastgelegd in de leveringsvoorwaarden van deze partij.</p>
       </section>
 
       <section class="card">
         <h2>7. Hoe lang bewaren wij gegevens?</h2>
         <ul>
-          <li><strong>Bezoekers:</strong> wij slaan zelf geen gegevens op. De hostingprovider bewaart technische logbestanden slechts voor een korte periode, conform hun eigen bewaartermijnen.</li>
+          <li><strong>Bezoekers:</strong> wij slaan zelf geen individuele bezoekersprofielen op. De hostingprovider bewaart technische logbestanden slechts voor een korte periode, conform hun eigen bewaartermijnen. Geaggregeerde statistieken in Umami Cloud bewaren wij niet langer dan nodig voor de analyse van de website.</li>
           <li><strong>E-mailberichten:</strong> deze bewaren wij maximaal twee jaar, zodat we de context behouden bij eventuele vervolgvragen of klachten.</li>
           <li><strong>Beheerdersaccount:</strong> gegevens worden bewaard zolang de website actief wordt onderhouden en uiterlijk totdat het account wordt opgeheven.</li>
           <li><strong>Productgegevens:</strong> aangezien deze geen persoonsgegevens bevatten, blijven deze bewaard zolang de vergelijker operationeel is.</li>

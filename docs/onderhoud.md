@@ -49,6 +49,14 @@ De beheerlink staat bewust niet meer in de publieke footer. Open Beheer via
 blijft verplicht; de URL is alleen bedoeld om de beheeromgeving buiten het
 publieke menu te houden.
 
+## Bezoekersstatistieken
+
+De site gebruikt **Umami Cloud** voor cookieloze, geaggregeerde statistieken.
+Het script staat in `index.html`, de statische paginashell en de losse
+privacy-/404-pagina. Bezoekers kunnen zich afmelden via
+`/?umami-optout=1` en weer aanmelden via `/?umami-optin=1`. Het dashboard staat
+op `https://cloud.umami.is`.
+
 ## Affiliate aanzetten (zodra Awin goedkeurt)
 
 1. Download de CSV-feeds van Zooplus en Medpets in Awin.

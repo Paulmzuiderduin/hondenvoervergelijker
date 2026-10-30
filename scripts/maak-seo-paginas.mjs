@@ -98,6 +98,14 @@ function shell({ titel, beschrijving, pad, inhoud, jsonLd = [], extraKop = '' })
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
     <link rel="stylesheet" href="/pagina.css" />
+    <script>
+      try {
+        const params = new URLSearchParams(window.location.search)
+        if (params.get('umami-optout') === '1') localStorage.setItem('umami.disabled', '1')
+        if (params.get('umami-optin') === '1') localStorage.removeItem('umami.disabled')
+      } catch {}
+    </script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="85273e9f-2c35-4a6e-83ff-7b61de38dec0" data-domains="hondenvoervergelijker.paulzuiderduin.com"></script>
     <title>${escapeHtml(titel)}</title>
     ${jsonLd.map((blok) => `<script type="application/ld+json">${JSON.stringify(blok)}</script>`).join('\n    ')}
     ${extraKop}

@@ -2,6 +2,7 @@ import React, { memo, useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, allergenSearchTerms, assessLabel, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients, missingAllergenKeys, setCustomTerms, sortAllergenKeys } from './lib/allergens'
 import { isReviewOverdue, productMatch } from './lib/matcher'
+import { track } from './lib/analytics'
 import { leesCatalogusCache, schrijfProductenCache, schrijfTermenCache } from './lib/catalogCache'
 import { leesAllergenen, leesMerken, schrijfFilters } from './lib/urlFilters'
 import { supabase } from './lib/supabase'
@@ -168,7 +169,7 @@ function ProductCard({ product, match, aanbiedingen = [] }) {
       {foodTypeLabel && <span className="meta-pill">{foodTypeLabel}</span>}
       {packageSize && <span className="meta-pill">{packageSize}</span>}
       {hydrolysed.present && <span className="meta-pill hydrolysed-pill">Gehydrolyseerd eiwit</span>}
-      {product.source_url?.startsWith('http') && <a className="meta-source" href={product.source_url} target="_blank" rel="noreferrer" title="Officiële productpagina bij de fabrikant">Bron: {sourceDomain(product.source_url) || 'fabrikant'} ↗</a>}
+      {product.source_url?.startsWith('http') && <a className="meta-source" href={product.source_url} target="_blank" rel="noreferrer" title="Officiële productpagina bij de fabrikant" onClick={() => track('bron-klik', { merk: product.brand, product: product.name, domein: sourceDomain(product.source_url) })}>Bron: {sourceDomain(product.source_url) || 'fabrikant'} ↗</a>}
     </div>
     {presentStates.length > 0 && !excluded && <p className="verdict present"><strong>Staat in de lijst:</strong> {presentStates.map((state) => `${ALLERGEN_LABELS[state.key]}${state.members.some((member) => member !== state.key) ? ` via ${labelList(state.members.filter((member) => member !== state.key))}` : ''}`).join(', ')}</p>}
     {unknownStates.length > 0 && <p className="verdict unknown"><strong>Kan erin zitten:</strong> {labelList(unknownStates.map((state) => state.key), 100)} — het etiket noemt geen bron voor {onbekendeWoorden.length > 5 ? `${onbekendeWoorden.slice(0, 5).join(', ')} en ${onbekendeWoorden.length - 5} meer` : onbekendeWoorden.length ? onbekendeWoorden.join(', ') : 'een ingrediënt'}</p>}
@@ -196,6 +197,7 @@ function ProductCard({ product, match, aanbiedingen = [] }) {
           target="_blank"
           rel="sponsored nofollow noopener noreferrer"
           title={`Affiliate-link naar ${aanbieding.winkel}. Wij ontvangen een kleine commissie, zonder extra kosten voor jou.`}
+          onClick={() => track('winkel-klik', { winkel: aanbieding.winkel, merk: product.brand, product: product.name })}
         >{aanbieding.winkel}{prijs ? ` · ${prijs}` : ''}{aanbieding.maat ? ` (${aanbieding.maat})` : ''}</a>
       })}
       <span className="shop-note">Affiliate-links · prijs bij de winkel</span>
@@ -693,7 +695,25 @@ function App() {
   const aantalPaginas = Math.max(1, Math.ceil(alleResultaten.length / PAGE_SIZE))
   const huidigePagina = Math.min(page, aantalPaginas)
   const zichtbareProducten = alleResultaten.slice((huidigePagina - 1) * PAGE_SIZE, huidigePagina * PAGE_SIZE)
-  const gaNaarPagina = (nieuw) => { setPage(Math.min(Math.max(1, nieuw), aantalPaginas)); document.getElementById('resultaten')?.scrollIntoView({ block: 'start' }) }
+  const gaNaarPagina = (nieuw) => {
+    const volgende = Math.min(Math.max(1, nieuw), aantalPaginas)
+    setPage(volgende)
+    track('pagina-gewisseld', { pagina: volgende, resultaten: alleResultaten.length })
+    document.getElementById('resultaten')?.scrollIntoView({ block: 'start' })
+  }
+  const wisselAllergeen = (key, aangevinkt) => {
+    setAllergens(aangevinkt ? [...allergens, key] : allergens.filter((item) => item !== key))
+    track(aangevinkt ? 'allergeen-gekozen' : 'allergeen-verwijderd', { aantal: aangevinkt ? allergens.length + 1 : Math.max(0, allergens.length - 1) })
+    if (aangevinkt && allergens.length === 0) track('vergelijking-gestart')
+  }
+  const verwijderAllergeen = (key) => {
+    setAllergens(allergens.filter((item) => item !== key))
+    track('allergeen-verwijderd', { aantal: Math.max(0, allergens.length - 1) })
+  }
+  const wisAllergenen = () => {
+    if (allergens.length) track('allergenen-gewist', { aantal: allergens.length })
+    setAllergens([])
+  }
   const heeftActieveFilters = allergens.length > 0 || selectedBrands !== null || types.length !== FOOD_TYPES.length
   // De uitklapknop op mobiel hoort bij de zijbalk (type en merk), niet bij de
   // allergenen daarboven. Tel daarom alleen die twee.
@@ -704,6 +724,7 @@ function App() {
       : selectedBrands.length === 1 ? `Merk: ${selectedBrands[0]}`
         : brandMode === 'exclude' ? `${selectedBrands.length} merken uitgesloten` : `${selectedBrands.length} merken gekozen`
   const wisAlleFilters = () => {
+    track('filters-gewist', { allergenen: allergens.length, merken: selectedBrands === null ? 0 : selectedBrands.length, voertypes: FOOD_TYPES.length - types.length })
     setAllergens([])
     setSelectedBrands(null)
     setBrandMode('include')
@@ -805,20 +826,20 @@ function App() {
               <p><small>Selecteer de ingrediënten die je wilt uitsluiten. De lijst is zeer gedetailleerd: je kunt filteren op specifieke groenten, eiwitbronnen of kruiden. Klap simpelweg de gewenste categorie open om je filters in te stellen, of gebruik het zoekveld om direct op naam te zoeken.</small></p>
             </div>
             <div className="allergen-panel-actions">
-              <a className="jump-to-results" href="#resultaten">{matchesKlaar ? `Bekijk ${alleResultaten.length} resultaten ↓` : 'Naar resultaten ↓'}</a>
-              {allergens.length > 0 && <button type="button" className="clear-allergens" onClick={() => setAllergens([])}>Wis selectie ({allergens.length})</button>}
+              <a className="jump-to-results" href="#resultaten" onClick={() => track('resultaten-bekeken', { resultaten: alleResultaten.length, allergenen: allergens.length, geschikt: suitable.length })}>{matchesKlaar ? `Bekijk ${alleResultaten.length} resultaten ↓` : 'Naar resultaten ↓'}</a>
+              {allergens.length > 0 && <button type="button" className="clear-allergens" onClick={wisAllergenen}>Wis selectie ({allergens.length})</button>}
             </div>
           </div>
           {allergens.length > 0 && <div className="selected-allergens" aria-label="Gekozen allergenen">
             <span className="selected-label">Je vermijdt nu:</span>
-            {allergens.map((key) => <button type="button" key={key} className="allergen-chip" onClick={() => setAllergens(allergens.filter((item) => item !== key))} title={`Verwijder ${ALLERGEN_LABELS[key]}`}>{ALLERGEN_LABELS[key]} <span aria-hidden="true">×</span></button>)}
+            {allergens.map((key) => <button type="button" key={key} className="allergen-chip" onClick={() => verwijderAllergeen(key)} title={`Verwijder ${ALLERGEN_LABELS[key]}`}>{ALLERGEN_LABELS[key]} <span aria-hidden="true">×</span></button>)}
           </div>}
           <label className="brand-search-label allergen-search-label">Zoek allergeen<input type="search" value={allergenSearch} onChange={(e) => setAllergenSearch(e.target.value)} placeholder="Bijv. kip, rund, rijst, zalm of erwten" /></label>
           {gezochteAllergenen.length ? gezochteAllergenen.map((group) => {
             const gekozen = group.allergens.filter(({ key }) => allergens.includes(key)).length
             return <details className="allergen-group" key={group.key} open={allergenSearch.trim() ? true : undefined}>
               <summary><span>{group.label}</span> <span className={gekozen ? 'group-count active' : 'group-count'}>{gekozen ? `${gekozen} gekozen` : `${group.allergens.length} ${group.allergens.length === 1 ? 'optie' : 'opties'}`}</span></summary>
-              <div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => setAllergens(e.target.checked ? [...allergens, key] : allergens.filter((item) => item !== key))} />{label}</label>)}</div>
+              <div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => wisselAllergeen(key, e.target.checked)} />{label}</label>)}</div>
             </details>
           }) : <p><small>Geen allergeen gevonden voor “{allergenSearch}”.</small></p>}
         </section>
@@ -864,7 +885,7 @@ function App() {
                 </div>
                 {heeftActieveFilters && <div className="active-filters" aria-label="Actieve filters">
                   <span className="active-filters-label">Actief:</span>
-                  {allergens.map((key) => <button type="button" key={key} className="filter-chip" onClick={() => setAllergens(allergens.filter((item) => item !== key))} title={`Verwijder ${ALLERGEN_LABELS[key]}`}>{ALLERGEN_LABELS[key]} <span aria-hidden="true">×</span></button>)}
+                  {allergens.map((key) => <button type="button" key={key} className="filter-chip" onClick={() => verwijderAllergeen(key)} title={`Verwijder ${ALLERGEN_LABELS[key]}`}>{ALLERGEN_LABELS[key]} <span aria-hidden="true">×</span></button>)}
                   {selectedBrands !== null && <button type="button" className="filter-chip" onClick={() => { setSelectedBrands(null); setBrandMode('include'); setBrandSearch('') }} title="Merkfilter verwijderen">{merkFilterLabel} <span aria-hidden="true">×</span></button>}
                   {types.length !== FOOD_TYPES.length && <button type="button" className="filter-chip" onClick={() => setTypes(FOOD_TYPES.map(([key]) => key))} title="Voertypefilter verwijderen">Type: {gekozenTypeLabels} <span aria-hidden="true">×</span></button>}
                   <button type="button" className="filters-reset-inline" onClick={wisAlleFilters}>Filters wissen</button>
@@ -885,7 +906,7 @@ function App() {
                           : <>Alle {excluded.length} producten in deze selectie bevatten minstens één van de gekozen allergenen. Pas je selectie of merkfilter aan, of overleg met je dierenarts over een passend eliminatiedieet.</>)
                       : <>Bij {check.length === 1 ? 'het overgebleven product' : `de ${check.length} overgebleven producten`} noemt het etiket niet elke bron, of staat er een woord in dat de keuring niet kent.{excluded.length ? ` Daarnaast ${excluded.length === 1 ? 'is 1 product' : `zijn ${excluded.length} producten`} uitgesloten omdat er een gekozen allergeen in zit.` : ''} Vraag de fabrikant om uitsluitsel of overleg met je dierenarts voordat je een product kiest.</>}</p>
                     <div className="no-suitable-actions">
-                      <button type="button" onClick={() => setAllergens([])}>Allergenen wissen</button>
+                      <button type="button" onClick={wisAllergenen}>Allergenen wissen</button>
                       <button type="button" onClick={() => { setSelectedBrands(null); setBrandMode('include'); setBrandSearch(''); setTypes(FOOD_TYPES.map(([key]) => key)) }}>Alle merken en voertypes</button>
                       <a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a>
                     </div>

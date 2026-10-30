@@ -14,6 +14,14 @@
       a { color: #175b30; font-weight: 600; }
       code { background: #eef3f8; padding: 0 .25rem; border-radius: 3px; }
     </style>
+    <script>
+      try {
+        const params = new URLSearchParams(window.location.search)
+        if (params.get('umami-optout') === '1') localStorage.setItem('umami.disabled', '1')
+        if (params.get('umami-optin') === '1') localStorage.removeItem('umami.disabled')
+      } catch {}
+    </script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="85273e9f-2c35-4a6e-83ff-7b61de38dec0" data-domains="hondenvoervergelijker.paulzuiderduin.com"></script>
   </head>
   <body>
     <main>
