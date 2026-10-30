@@ -3,27 +3,27 @@
 Momentopname: 2026-10-30.
 
 - 1478 gepubliceerde producten
-- 12 volledig (6 kernwaarden)
-- 13 gedeeltelijk
-- 1453 zonder voedingswaarden
-- 14 met energie (kcal/100 g)
+- 260 volledig (6 kernwaarden)
+- 191 gedeeltelijk
+- 1027 zonder voedingswaarden
+- 299 met energie (kcal/100 g)
 
 | Merk | Totaal | Volledig | Gedeeltelijk | Ontbreekt | Met kcal |
 |---|---:|---:|---:|---:|---:|
 | Royal Canin | 205 | 0 | 5 | 200 | 2 |
 | Hill's Science Plan | 80 | 5 | 0 | 75 | 5 |
-| Eukanuba | 75 | 0 | 5 | 70 | 0 |
-| Prins Petfoods | 72 | 0 | 0 | 72 | 0 |
+| Eukanuba | 75 | 0 | 75 | 0 | 3 |
+| Prins Petfoods | 72 | 72 | 0 | 0 | 72 |
 | Hill's Prescription Diet | 60 | 0 | 0 | 60 | 0 |
-| Jarco | 57 | 0 | 0 | 57 | 0 |
-| DARF | 51 | 5 | 0 | 46 | 5 |
-| Butcher's | 48 | 2 | 3 | 43 | 2 |
-| Renske | 44 | 0 | 0 | 44 | 0 |
-| Edgard & Cooper | 38 | 0 | 0 | 38 | 0 |
+| Jarco | 57 | 32 | 25 | 0 | 35 |
+| DARF | 51 | 40 | 11 | 0 | 43 |
+| Butcher's | 48 | 33 | 15 | 0 | 33 |
+| Renske | 44 | 44 | 0 | 0 | 44 |
+| Edgard & Cooper | 38 | 25 | 13 | 0 | 38 |
 | Specific | 37 | 0 | 0 | 37 | 0 |
 | Canagan | 36 | 0 | 0 | 36 | 0 |
 | Pedigree | 35 | 0 | 0 | 35 | 0 |
-| Purina Pro Plan | 33 | 0 | 0 | 33 | 0 |
+| Purina Pro Plan | 33 | 9 | 24 | 0 | 9 |
 | Terra Canis | 32 | 0 | 0 | 32 | 0 |
 | Kivo | 31 | 0 | 0 | 31 | 0 |
 | Carnilove | 29 | 0 | 0 | 29 | 0 |
@@ -38,7 +38,7 @@ Momentopname: 2026-10-30.
 | Smuldier | 19 | 0 | 0 | 19 | 0 |
 | Yarrah | 18 | 0 | 0 | 18 | 0 |
 | CaroCroc | 16 | 0 | 0 | 16 | 0 |
-| Purina Pro Plan Veterinary Diets | 15 | 0 | 0 | 15 | 0 |
+| Purina Pro Plan Veterinary Diets | 15 | 0 | 15 | 0 | 15 |
 | Carnis | 14 | 0 | 0 | 14 | 0 |
 | Orijen | 12 | 0 | 0 | 12 | 0 |
 | Rodi | 12 | 0 | 0 | 12 | 0 |
@@ -55,7 +55,7 @@ Momentopname: 2026-10-30.
 | Yora | 9 | 0 | 0 | 9 | 0 |
 | Iams | 8 | 0 | 0 | 8 | 0 |
 | Lily's Kitchen | 8 | 0 | 0 | 8 | 0 |
-| Purina One | 8 | 0 | 0 | 8 | 0 |
+| Purina One | 8 | 0 | 8 | 0 | 0 |
 | Cesar | 7 | 0 | 0 | 7 | 0 |
 | Dog Chow | 7 | 0 | 0 | 7 | 0 |
 | RAW4DOGS | 7 | 0 | 0 | 7 | 0 |
