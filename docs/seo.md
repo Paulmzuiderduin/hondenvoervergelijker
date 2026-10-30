@@ -10,11 +10,14 @@ voor nodig.
 2. `npm run postbuild` (script `scripts/maak-seo-paginas.mjs`) schrijft:
    - `/hondenvoer-allergieen.html` — uitleg over allergie en etiketten (met FAQ-schema);
    - `/hoe-wij-vergelijken.html` — methodiek en onafhankelijkheid;
+   - `/over-ons.html`, `/contact.html`, `/voorwaarden.html` en `/disclaimer.html` — vertrouwens- en juridische pagina's;
    - `/merken/` — overzicht van alle merken;
    - `/merken/<merk>.html` — één statische pagina per merk met alle recepten;
    - `/hondenvoer-zonder.html` — overzicht van alle allergenen;
    - `/hondenvoer-zonder-<allergeen>.html` — per allergeen de recepten die het
-     etiket dat ingrediënt niet noemt (alleen als er minimaal 10 zijn);
+     etiket dat ingrediënt niet noemt (alleen als er minimaal 10 zijn), met
+     kort antwoord, FAQ en citeerblok;
+   - `/etikettenonderzoek.html` — dataonderzoek naar verzameltermen en allergenen;
    - `/sitemap.xml` — alle pagina's met prioriteit en datum.
 3. Na de deploy controleert de workflow de upload, alle sitemap-URL's en de
    belangrijkste gebruikersroutes in een echte browser.
@@ -57,18 +60,40 @@ site beheert.
 ## Interne links
 
 - De homepage linkt naar de uitlegpagina's, het merkenoverzicht, het
-  allergenenoverzicht en het privacybeleid.
+  allergenenoverzicht, het etikettenonderzoek en het privacybeleid.
 - Elke productkaart linkt naar de merkpagina van dat merk.
 - Elke merkpagina linkt naar acht andere merken en terug naar het overzicht.
-- Elke allergeenpagina linkt naar het allergenenoverzicht, de uitlegpagina en de
-  vergelijker met dat allergeen al geselecteerd.
+- Elke allergeenpagina linkt naar acht andere allergeenpagina's, het
+  allergenenoverzicht, de uitlegpagina en de vergelijker met dat allergeen al
+  geselecteerd.
 - Elke merkpagina kan met `/?merk=<naam>` direct in de vergelijker worden geopend;
   een allergeen met `/?allergeen=<key>`.
+
+## LLM's en AI-zoekresultaten
+
+- `/robots.txt` staat expliciet open voor onder meer GPTBot, OAI-SearchBot,
+  ChatGPT-User, ClaudeBot, PerplexityBot, Google-Extended, Bingbot, Applebot en
+  CCBot.
+- `/llms.txt` geeft een compact overzicht van de site, de belangrijkste pagina's,
+  de methodiek, de citeerwijze en het contactadres. Dit is een aanvulling op de
+  sitemap, geen vervanging.
+- De allergeenpagina's hebben een kort antwoord bovenaan, een FAQ-blok met
+  `FAQPage`-schema en een citeerblok met datum en URL. Zo kunnen zoekmachines en
+  LLM's de kern van de pagina makkelijker overnemen.
+- `/etikettenonderzoek.html` bevat unieke, geaggregeerde cijfers over
+  verzameltermen. Dat is bedoeld als citeerbare bron voor media, dierenartsen en
+  AI-systemen.
+- De homepage heeft een statische fallback in `index.html` voor crawlers die geen
+  JavaScript uitvoeren. De belangrijkste inhoud staat daarnaast altijd op de
+  statische merk- en allergeenpagina's.
+- LLM-verkeer is te herkennen in Umami aan verwijzers als `chatgpt.com`,
+  `perplexity.ai`, `gemini.google.com`, `copilot.microsoft.com` en `claude.ai`.
 
 ## Controleren
 
 - Sitemap: `curl -s https://hondenvoervergelijker.paulzuiderduin.com/sitemap.xml | grep -c "<loc>"`
 - Alle URL's moeten HTTP 200 geven.
+- Controleer ook `/llms.txt` en `/robots.txt`.
 - Elke pagina heeft een eigen canonical, `index, follow` en Open Graph-tags.
 - Search Console → Pagina-indexering loopt 1 tot 2 dagen achter; daar zie je het
   werkelijke aantal geïndexeerde pagina's.

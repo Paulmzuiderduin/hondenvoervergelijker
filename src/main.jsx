@@ -949,6 +949,7 @@ function App() {
           <a href="/hondenvoer-allergieen.html">Hondenvoer &amp; allergieën</a>
           <a href="/hondenvoer-zonder.html">Zonder allergeen</a>
           <a href="/hoe-wij-vergelijken.html">Onze methode</a>
+          <a href="/etikettenonderzoek.html">Etikettenonderzoek</a>
           <a href="/over-ons.html">Over ons</a>
           <a href="/contact.html">Contact</a>
           <a href="/voorwaarden.html">Voorwaarden</a>

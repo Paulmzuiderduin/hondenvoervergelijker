@@ -86,6 +86,24 @@ try {
   const privacy = await page.locator('body').innerText()
   meld(privacy.includes('mijn.host'), 'privacybeleid noemt de hostingpartij')
   meld(privacy.includes('hondenvoervergelijker@paulzuiderduin.com'), 'privacybeleid heeft het juiste contactadres')
+  meld(privacy.includes('Umami'), 'privacybeleid noemt de bezoekersstatistieken')
+
+  await open('/hondenvoer-zonder-kip.html', '.answer-box')
+  const faqAantal = await page.locator('.faq details').count()
+  meld(faqAantal >= 4, 'allergeenpagina heeft een FAQ', `${faqAantal} vragen`)
+  const citeerblok = await page.locator('.cite').innerText()
+  meld(/Citeer deze pagina/.test(citeerblok), 'allergeenpagina heeft een citeerblok')
+
+  await open('/etikettenonderzoek.html', '.stat-grid')
+  const onderzoek = await page.locator('.stat-grid').innerText()
+  meld(/recepten/.test(onderzoek), 'etikettenonderzoek toont cijfers', onderzoek.replace(/\n/g, ' ').slice(0, 100))
+
+  const llms = await context.request.get(`${BASIS}/llms.txt`)
+  const llmsTekst = await llms.text()
+  meld(llms.ok() && llmsTekst.includes('# Hondenvoervergelijker'), 'llms.txt is bereikbaar en gevuld')
+  const robots = await context.request.get(`${BASIS}/robots.txt`)
+  const robotsTekst = await robots.text()
+  meld(robots.ok() && robotsTekst.includes('GPTBot') && robotsTekst.includes('Sitemap:'), 'robots.txt staat open voor AI-crawlers')
 
   const sitemap = await context.request.get(`${BASIS}/sitemap.xml`)
   const xml = await sitemap.text()

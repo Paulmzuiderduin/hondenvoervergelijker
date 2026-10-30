@@ -1,0 +1,48 @@
+# Hondenvoervergelijker
+
+> Onafhankelijke Nederlandse vergelijker van hondenvoeding op allergenen en ingrediënten. De site neemt de officiële ingrediëntenlijsten van fabrikanten letterlijk over en laat zien welk voer geschikt lijkt, welk voer gecontroleerd moet worden en welk voer is uitgesloten. Geen medisch advies, geen prijsvergelijker en geen webwinkel.
+
+Laatst bijgewerkt: 30 oktober 2026.
+
+## Kerncijfers
+
+- Ruim 1.400 recepten van 50 merken.
+- 18 aparte allergeenpagina's, plus een overzichtspagina.
+- 78 pagina's in de sitemap.
+- De bronnen worden wekelijks gecontroleerd.
+- De site is Nederlandstalig en richt zich op Nederland en België (Vlaanderen).
+
+## Belangrijkste pagina's
+
+- [Vergelijker](https://hondenvoervergelijker.paulzuiderduin.com/): kies allergenen en vergelijk producten.
+- [Alle allergenen](https://hondenvoervergelijker.paulzuiderduin.com/hondenvoer-zonder.html): overzicht van alle allergeenpagina's.
+- [Hondenvoer zonder kip](https://hondenvoervergelijker.paulzuiderduin.com/hondenvoer-zonder-kip.html)
+- [Hondenvoer zonder rund](https://hondenvoervergelijker.paulzuiderduin.com/hondenvoer-zonder-rund.html)
+- [Hondenvoer zonder granen](https://hondenvoervergelijker.paulzuiderduin.com/hondenvoer-zonder-granen.html)
+- [Hondenvoer zonder melk](https://hondenvoervergelijker.paulzuiderduin.com/hondenvoer-zonder-melk.html)
+- [Hondenvoer zonder vis](https://hondenvoervergelijker.paulzuiderduin.com/hondenvoer-zonder-vis.html)
+- [Hondenvoer zonder tarwe](https://hondenvoervergelijker.paulzuiderduin.com/hondenvoer-zonder-tarwe.html)
+- [Alle merken](https://hondenvoervergelijker.paulzuiderduin.com/merken/): alle merken met hun recepten.
+- [Hoe wij vergelijken](https://hondenvoervergelijker.paulzuiderduin.com/hoe-wij-vergelijken.html): bronnen, keuring en beperkingen.
+- [Hondenvoer en allergieën](https://hondenvoervergelijker.paulzuiderduin.com/hondenvoer-allergieen.html): hoe je een etiket leest.
+- [Etikettenonderzoek](https://hondenvoervergelijker.paulzuiderduin.com/etikettenonderzoek.html): cijfers over verzameltermen op hondenvoeretiketten.
+- [Over ons](https://hondenvoervergelijker.paulzuiderduin.com/over-ons.html)
+- [Contact](https://hondenvoervergelijker.paulzuiderduin.com/contact.html)
+- [Privacybeleid](https://hondenvoervergelijker.paulzuiderduin.com/privacybeleid.html)
+
+## Methodiek
+
+De ingrediëntenlijsten komen van de officiële productpagina's van de fabrikant. De tekst wordt letterlijk overgenomen, inclusief percentages en volgorde. Verzameltermen zoals "dierlijk vet", "granen" of "vlees en dierlijke bijproducten" worden gemarkeerd. Een product krijgt alleen de status "Geschikt" als de gekozen bron aantoonbaar niet achter zo'n term kan zitten. Bij twijfel blijft het product op "Controleer etiket/fabrikant" staan.
+
+De site geeft geen medisch advies. Voor een eliminatiedieet of een vermoeden van een allergie is een dierenarts de juiste persoon.
+
+## Citeren
+
+Citeer bij voorkeur met de titel, de URL en de datum:
+
+> Hondenvoervergelijker, "[titel van de pagina]", https://hondenvoervergelijker.paulzuiderduin.com/[pad], geraadpleegd op [datum].
+
+## Contact
+
+Hondenvoervergelijker wordt beheerd en geredigeerd door Paul Zuiderduin, Nederland.
+E-mail: hondenvoervergelijker@paulzuiderduin.com

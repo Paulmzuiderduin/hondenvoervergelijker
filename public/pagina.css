@@ -39,6 +39,51 @@ li { margin: 0.25rem 0; }
 .callout p:last-child { margin-bottom: 0; }
 .callout.warn { background: #fdf8ea; border-left-color: #b8860b; }
 
+.answer-box {
+  margin: 1.1rem 0 1.3rem;
+  padding: 1rem 1.1rem;
+  background: #fff;
+  border: 1px solid #c3dbc9;
+  border-left: 3px solid #175b30;
+}
+.answer-box h2 { margin: 0 0 0.45rem; font-size: 1.08rem; }
+.answer-box p { margin: 0 0 0.5rem; }
+.answer-box p:last-child { margin-bottom: 0; }
+
+.cite {
+  margin-top: 1.6rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #e6ece7;
+  font-size: 0.8rem;
+  color: #5b6d5f;
+  overflow-wrap: anywhere;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.7rem;
+  margin: 1.2rem 0 1.4rem;
+}
+.stat-card {
+  background: #fff;
+  border: 1px solid #d3dcd4;
+  padding: 0.85rem 0.9rem;
+}
+.stat-card strong {
+  display: block;
+  font-size: 1.55rem;
+  line-height: 1.15;
+  color: #14371f;
+  font-variant-numeric: tabular-nums;
+}
+.stat-card span {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  color: #53645a;
+}
+
 .card { background: #fff; border: 1px solid #d3dcd4; border-radius: 2px; padding: 1.15rem 1.3rem; margin: 0 0 1rem; }
 .card h2:first-child, .card h3:first-child { margin-top: 0; }
 
