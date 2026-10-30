@@ -122,7 +122,7 @@ const Ingredients = memo(function Ingredients({ text }) {
 
 function ProductCard({ product, match, aanbiedingen = [] }) {
   const excluded = match.kind === 'excluded'
-  const verdict = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controleer etiket/fabrikant' : match.states.length ? 'Geschikt' : 'Etiket noemt elke bron'
+  const verdict = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controleer etiket/fabrikant' : match.states.length ? 'Geschikt' : 'Elke bron genoemd'
   const version = product.recipe_versions?.[0]
   const verborgenWoorden = bronlozeWoorden(version?.ingredients_text ?? '', match.hidden)
   const verborgenKeys = [...new Set(match.hidden.flatMap(({ keys }) => keys))]
@@ -798,7 +798,6 @@ function App() {
       </nav>
     </div>
     {!recovery && !admin && <>
-      <p className="site-note site-note-wide"><strong>Belangrijk:</strong> {disclaimer}</p>
       <details className="site-note site-note-compact">
         <summary>Belangrijk: geen medisch advies</summary>
         <p>{disclaimer}</p>
@@ -809,13 +808,9 @@ function App() {
       <section className="hero-banner" aria-label="Overzicht">
         <div className="hero-text">
           <h2>Vind hondenvoer dat past bij de allergie van jouw hond</h2>
-          <p>Veel etiketten gebruiken vage termen zoals <em>“vlees en dierlijke bijproducten”</em> of <em>“granen”</em>. Deze vergelijker leest elk woord en laat zien welk voer <strong>geschikt</strong>, <strong>uitgesloten</strong> of <strong>onzeker</strong> is.</p>
+          <p>Vage termen zoals <em>“dierlijke bijproducten”</em> of <em>“granen”</em> verbergen de bron. Deze vergelijker laat zien welk voer <strong>geschikt</strong>, <strong>uitgesloten</strong> of <strong>onzeker</strong> is.</p>
+          <p className="hero-meta"><strong>{products.length || '1.478'}</strong> recepten · <strong>{alleMerken.length || '60'}</strong> merken · <strong>{ALLERGENS.length}</strong> allergenen &amp; bronnen</p>
           <p className="hero-links"><a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a> · <a href="/hoe-wij-vergelijken.html">Onze methode</a></p>
-        </div>
-        <div className="hero-stats">
-          <div className="stat-box"><strong>{products.length || '1.478'}</strong><span>volledige recepten</span></div>
-          <div className="stat-box"><strong>{alleMerken.length || '60'}</strong><span>voedingsmerken</span></div>
-          <div className="stat-box"><strong>{ALLERGENS.length}</strong><span>allergenen &amp; bronnen</span></div>
         </div>
       </section>
       <div className="layout">
@@ -823,10 +818,10 @@ function App() {
           <div className="allergen-panel-header">
             <div>
               <h2>Allergieën en intoleranties</h2>
-              <p><small>Selecteer de ingrediënten die je wilt uitsluiten. De lijst is zeer gedetailleerd: je kunt filteren op specifieke groenten, eiwitbronnen of kruiden. Klap simpelweg de gewenste categorie open om je filters in te stellen, of gebruik het zoekveld om direct op naam te zoeken.</small></p>
+              <p><small>Vink aan wat je wilt uitsluiten. Klap een categorie open of zoek direct op naam.</small></p>
             </div>
             <div className="allergen-panel-actions">
-              <a className="jump-to-results" href="#resultaten" onClick={() => track('resultaten-bekeken', { resultaten: alleResultaten.length, allergenen: allergens.length, geschikt: suitable.length })}>{matchesKlaar ? `Bekijk ${alleResultaten.length} resultaten ↓` : 'Naar resultaten ↓'}</a>
+              <a className="jump-to-results" href="#resultaten" onClick={() => track('resultaten-bekeken', { resultaten: alleResultaten.length, allergenen: allergens.length, geschikt: suitable.length })}>Bekijk resultaten ↓</a>
               {allergens.length > 0 && <button type="button" className="clear-allergens" onClick={wisAllergenen}>Wis selectie ({allergens.length})</button>}
             </div>
           </div>
@@ -849,14 +844,16 @@ function App() {
             <span>Filters{actieveFilterCount ? ` (${actieveFilterCount} actief)` : ''}</span>
           </button>
           <div id="filters-body" className="filters-body">
-            <button type="button" className="filters-reset" onClick={wisAlleFilters} disabled={!heeftActieveFilters}>Alle filters wissen</button>
+            {actieveFilterCount > 0 && <button type="button" className="filters-reset" onClick={wisAlleFilters}>Alle filters wissen</button>}
             <div className="filter-block">
               <h3>Type voer</h3>
               <div className="choices food-type-choices">{FOOD_TYPES.map(([key, label]) => <label className="inline" key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div>
             </div>
-            <div className="filter-block">
-              <h3>Merken <a className="filter-heading-link" href="/merken/">alle merken</a></h3>
-              <p className="filter-summary">{selectedBrands === null ? `Alle ${alleMerken.length} merken doen mee` : `${selectedBrands.length} van ${alleMerken.length} merken geselecteerd`}</p>
+            <details className="filter-block brand-filter" open={selectedBrands !== null || undefined}>
+              <summary className="filter-heading">
+                <span>Merken</span>
+                <span className="filter-summary">{selectedBrands === null ? `Alle ${alleMerken.length} merken doen mee` : `${selectedBrands.length} van ${alleMerken.length} merken geselecteerd`}</span>
+              </summary>
               <div className="filter-actions">
                 <button type="button" className={selectedBrands === null ? 'active' : ''} aria-pressed={selectedBrands === null} onClick={() => { setSelectedBrands(null); setBrandMode('include'); setBrandSearch('') }}>Alles</button>
                 <button type="button" className={geenMerken ? 'active' : ''} aria-pressed={geenMerken} onClick={() => { setSelectedBrands([]); setBrandMode('include') }}>Niets</button>
@@ -868,11 +865,15 @@ function App() {
                   <span className="brand-count">{merkTellingen.get(merk) ?? 0}</span>
                 </label>) : <p><small>Geen merk gevonden.</small></p>}
               </div>
-            </div>
+              <a className="filter-heading-link" href="/merken/">Alle merken bekijken</a>
+            </details>
           </div>
         </aside>
         <div className="content">
-          {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : (loading || !matchesKlaar) ? <p>Laden…</p> : <>{verversFout && <p role="alert" className="cache-note">{verversFout}</p>}{verversen && <p className="cache-note"><small>Nieuwste gegevens worden opgehaald…</small></p>}{termsError && <p role="alert">{termsError}</p>}<p className="legend"><mark className="uncertain-ingredient">Rood gemarkeerd</mark> = het etiket noemt de specifieke dier- of plantbron van dit ingrediënt niet (bijv. “dierlijk vet” of “granen”). {allergens.length ? 'Het oordeel geldt per gekozen allergeen: een product staat alleen op “Controleer” als zo\'n niet-gespecificeerd ingrediënt jouw gekozen allergeen kan bevatten.' : 'Kies hierboven één of meer allergenen om direct te filteren op geschikte hondenvoeding.'}</p>
+          {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : (loading || !matchesKlaar) ? <p>Laden…</p> : <>{verversFout && <p role="alert" className="cache-note">{verversFout}</p>}{verversen && <p className="cache-note"><small>Nieuwste gegevens worden opgehaald…</small></p>}{termsError && <p role="alert">{termsError}</p>}<details className="legend">
+              <summary><mark className="uncertain-ingredient">Rood gemarkeerd</mark> = de bron wordt niet genoemd</summary>
+              <p>Het etiket noemt de specifieke dier- of plantbron niet (bijv. “dierlijk vet” of “granen”). {allergens.length ? 'Het oordeel geldt per gekozen allergeen: een product staat alleen op “Controleer” als zo\'n niet-gespecificeerd ingrediënt jouw gekozen allergeen kan bevatten.' : 'Kies hierboven één of meer allergenen om direct te filteren op geschikte hondenvoeding.'}</p>
+            </details>
             {geenMerken || geenTypes ? <section id="resultaten"><h2>Geen producten</h2><p>{filterMelding}</p></section> : (
               <section id="resultaten">
                 <div className="results-header">
@@ -911,12 +912,7 @@ function App() {
                       <a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a>
                     </div>
                   </div>
-                ) : (
-                  <div className="result-status neutral" role="status">
-                    <strong>{suitable.length > 0 ? `${suitable.length} ${suitable.length === 1 ? 'etiket noemt' : 'etiketten noemen'} elke bron bij name.` : 'Geen enkel etiket noemt alle bronnen bij name.'}</strong>
-                    <p>Kies hierboven de allergenen die je wilt vermijden. Dan zie je direct welke producten daarvoor geschikt zijn en welke je nog moet controleren. Zonder keuze sorteren we alleen op de volledigheid van het etiket.</p>
-                  </div>
-                )}
+                ) : null}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
                 {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} aanbiedingen={aanbod[product.id] ?? []} />) : <p>Geen producten gevonden voor deze keuze.</p>}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
