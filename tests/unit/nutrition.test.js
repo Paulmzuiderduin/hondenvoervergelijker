@@ -29,6 +29,8 @@ test('formatteert percentages en energie in Nederlandse notatie', () => {
   assert.equal(formatteerVoedingswaarde('kcal', 370), '370 kcal/100 g')
   assert.equal(formatteerVoedingswaarde('kcal', 370.5), '370,5 kcal/100 g')
   assert.equal(formatteerVoedingswaarde('fat', 15.25), '15,25%')
+  assert.equal(formatteerVoedingswaarde({ key: 'protein', unit: '%', value: 99 }, 26), '26%')
+  assert.equal(formatteerVoedingswaarde({ key: 'protein', unit: '%', value: 26 }), '26%')
 })
 
 test('normaliseert, sorteert en negeert onbekende of ongeldige waarden', () => {

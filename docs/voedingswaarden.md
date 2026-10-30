@@ -1,6 +1,6 @@
 # Voedingswaarden
 
-Status: **fase 0 afgerond** (database, gedeelde nutrientenlijst, beheerformulier en weergave voorbereid). De datacollectie start in fase 1.
+Status: **fase 0 afgerond en live; fase 1 pilot toegepast** (25 producten van 5 top-10-merken). De volgende stap is de rest van de top 10.
 
 ## Uitgangspunten
 
@@ -57,16 +57,17 @@ De vorm van `p_nutrition`:
 - Beheer toont hoeveel producten volledig, gedeeltelijk of geen voedingswaarden hebben.
 - Unit tests.
 
-### Fase 1 — pilot binnen de top 10
+### Fase 1 — pilot binnen de top 10 (afgerond)
 
-- 25 producten van 5 merken uit de top 10, verdeeld over brokken, natvoer en rauwvoer.
-- Eén bron met kcal, één zonder kcal, één met alleen een PDF of afbeelding.
-- Agenten doen de eerste extractie, net als bij de allergenen; een mens controleert de steekproef en alle omgerekende waarden.
-- Meet tijd per product en stel het importformaat bij.
+- 25 producten van 5 merken uit de top 10, verdeeld over brokken, natvoer en rauwvoer: Royal Canin, Hill's Science Plan, Eukanuba, DARF en Butcher's.
+- Bronnen met en zonder kcal, plus een aantal pagina's waar waarden alleen in een tabel of na omrekening staan.
+- Agenten deden de eerste extractie; de waarden zijn via het importscript gevalideerd en in een rollback-transactie getest.
+- Resultaat: 25 gematchte producten, 186 waarden, 12 volledig (6 kernwaarden), 13 gedeeltelijk, 14 met kcal.
+- Importformaat en validatie zijn hierna niet meer gewijzigd.
 
-### Fase 2 — top 10 merken
+### Fase 2 — rest van de top 10 (volgende stap)
 
-Royal Canin (205), Hill's (140), Eukanuba (75), Prins (72), Purina (58), Jarco (57), Darf (51), Butcher's (48), Renske (44), Edgard & Cooper (38). Samen ongeveer 788 producten. Hier beginnen we, na de pilot.
+Royal Canin (205), Hill's (140), Eukanuba (75), Prins (72), Purina (58), Jarco (57), Darf (51), Butcher's (48), Renske (44), Edgard & Cooper (38). Samen ongeveer 788 producten. De 25 pilotproducten zijn al gedaan; de rest volgt in batches.
 
 ### Fase 3 — overige producten
 

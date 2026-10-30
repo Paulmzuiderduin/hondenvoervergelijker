@@ -1,0 +1,121 @@
+{
+  "merk": "Royal Canin",
+  "opgehaald": "2026-10-30",
+  "producten": [
+    {
+      "merk": "Royal Canin",
+      "naam": "Adult Medium Dogs",
+      "voertype": "kibble",
+      "verpakking": "4 / 10 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/vet-products/adult-3705",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 23,
+        "fat": 16,
+        "fiber": 1.4,
+        "ash": 6.1,
+        "moisture": null,
+        "kcal": 392.2,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": 0.64,
+        "omega6": 3.4
+      },
+      "bronTekst": "ANALYTISCHE BESTANDDELEN: Ruw eiwit: 23,0% - Ruw vet: 16,0% - Ruwe as: 6,1% - Ruwe celstof: 1,4% - Omega-6 vetzuren: 3,4% - Omega-3 vetzuren: 0,64% - EPA/DHA: 0,29% - Taurine: 0,19% - Per kg: Vitamine C: 280mg, Vitamine E: 480mg. Metaboliseerbare energie: 3.922kcal/kg.",
+      "notitie": "Metaboliseerbare energie 3.922 kcal/kg omgerekend naar 392,2 kcal/100 g (gedeeld door 10). Vocht, calcium en fosfor worden op de pagina niet vermeld. EPA/DHA en taurine horen niet bij de 10 nutrient-sleutels en zijn daarom niet opgenomen."
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Mini Adult",
+      "voertype": "kibble",
+      "verpakking": "800 g / 2 / 4 / 8 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/mini-adult-3001",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 27,
+        "fat": 16,
+        "fiber": 1.4,
+        "ash": 6.7,
+        "moisture": null,
+        "kcal": 391.6,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "ANALYTISCHE BESTANDDELEN: Ruw eiwit: 27,0% - Ruwe celstof: 1,4% - Ruw vet: 16,0% - Ruwe as: 6,7% - Metaboliseerbare energie: 3.916kcal/kg.",
+      "notitie": "Metaboliseerbare energie 3.916 kcal/kg omgerekend naar 391,6 kcal/100 g (gedeeld door 10). Vocht, calcium, fosfor en omega-3/6 worden op de pagina niet vermeld. De aparte RSA-tabel met waarden in g/kg is niet gebruikt."
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Dermacomfort Medium",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/medium-dermacomfort-2442",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 24,
+        "fat": 17,
+        "fiber": 1.4,
+        "ash": 5.9,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": 1.13,
+        "omega6": 3.42
+      },
+      "bronTekst": "ANALYTISCHE BESTANDDELEN: Ruw eiwit: 24,0% - Ruwe celstof: 1,4% - Ruw vet: 17,0% - Ruwe as: 5,9% - Omega-6-vetzuren: 3,42% - Gamma-linoleenzuur: 0,03% - Omega-3-vetzuren: 1,13% - EPA/DHA: 0,41%.",
+      "notitie": "Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Vocht, calcium en fosfor worden niet vermeld. Gamma-linoleenzuur en EPA/DHA horen niet bij de 10 nutrient-sleutels en zijn daarom niet opgenomen."
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Dermacomfort in Loaf (paté)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/dermacomfort-1181",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 8.6,
+        "fat": 6.6,
+        "fiber": 1.3,
+        "ash": 1.9,
+        "moisture": 78.1,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "ANALYTISCHE BESTANDDELEN: Ruw eiwit: 8,6% - Ruwe celstof: 1,3% - Ruw vet: 6,6% - Ruwe as: 1,9% - Vochtgehalte: 78,1%.",
+      "notitie": "Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Calcium, fosfor en omega-3/6 worden niet vermeld."
+    },
+    {
+      "merk": "Royal Canin",
+      "naam": "Digestive Care in Loaf (paté)",
+      "voertype": "wet",
+      "verpakking": "85 g / 12 x 85 g",
+      "bronUrl": "https://www.royalcanin.com/nl/dogs/products/retail-products/digestive-care-1180",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 8.6,
+        "fat": 5.8,
+        "fiber": 1.3,
+        "ash": 1.8,
+        "moisture": 78.9,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "ANALYTISCHE BESTANDDELEN: Ruw eiwit: 8,6% - Ruwe celstof: 1,3% - Ruw vet: 5,8% - Ruwe as: 1,8% - Vochtgehalte: 78,9%.",
+      "notitie": "Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Calcium, fosfor en omega-3/6 worden niet vermeld."
+    }
+  ]
+}

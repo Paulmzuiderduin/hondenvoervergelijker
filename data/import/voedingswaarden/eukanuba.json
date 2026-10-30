@@ -1,0 +1,121 @@
+{
+  "merk": "Eukanuba",
+  "opgehaald": "2026-10-30",
+  "producten": [
+    {
+      "merk": "Eukanuba",
+      "naam": "Volwassen Middelgrote rassen Verse kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 / 15 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/volwassen-middelgrote-rassen-verse-kip",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 27,
+        "fat": 15,
+        "fiber": 2.4,
+        "ash": 6.5,
+        "moisture": null,
+        "kcal": null,
+        "calcium": 1.3,
+        "phosphorus": 1.1,
+        "omega3": 0.26,
+        "omega6": 2.53
+      },
+      "bronTekst": "eiwit: 27%, vetgehalte: 15%, omega-6-vetzuren: 2.53%, omega-3-vetzuren: 0.26%, ruwe as: 6.5%, ruwe celstof: 2.4%, calcium: 1.3%, fosfor: 1.1%.",
+      "notitie": "Fabrikant vermeldt geen energie en geen vocht op de productpagina; deze waarden blijven null. Geen omrekening nodig."
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Volwassen Kleine rassen Verse kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 7,5 / 12 / 15 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/volwassen-kleine-rassen-verse-kip",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 30,
+        "fat": 18,
+        "fiber": 2.2,
+        "ash": 6.7,
+        "moisture": null,
+        "kcal": null,
+        "calcium": 1.5,
+        "phosphorus": 1.2,
+        "omega3": 0.32,
+        "omega6": 3.07
+      },
+      "bronTekst": "eiwit: 30%, vetgehalte: 18%, omega-6-vetzuren: 3.07%, omega-3-vetzuren: 0.32%, ruwe as: 6.7%, ruwe celstof: 2.2%, calcium: 1.5%, fosfor: 1.2%.",
+      "notitie": "Fabrikant vermeldt geen energie en geen vocht op de productpagina; deze waarden blijven null. Geen omrekening nodig."
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Special Care Sensitive Skin Volwassen Alle rassen",
+      "voertype": "kibble",
+      "verpakking": "2,3 / 12 kg",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/droogvoer/special-care-sensitive-skin-volwassen-alle-rassen",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 22,
+        "fat": 14,
+        "fiber": 2,
+        "ash": 6.4,
+        "moisture": null,
+        "kcal": null,
+        "calcium": 0.9,
+        "phosphorus": 0.8,
+        "omega3": 0.6,
+        "omega6": 2.2
+      },
+      "bronTekst": "eiwit: 22%, vetgehalte: 14%, omega-6-vetzuren: 2.2%, omega-3-vetzuren: 0.6%, ruwe as: 6.4%, ruwe celstof: 2%, calcium: 0.9%, fosfor: 0.8%.",
+      "notitie": "Fabrikant vermeldt geen energie en geen vocht op de productpagina; deze waarden blijven null. Geen omrekening nodig."
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Adult rijk aan kalkoen met wortelen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/adult-rijk-aan-kalkoen-met-wortelen",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10,
+        "fat": 6.5,
+        "fiber": 1,
+        "ash": 2.5,
+        "moisture": 79,
+        "kcal": null,
+        "calcium": 0.36,
+        "phosphorus": 0.29,
+        "omega3": 0.1,
+        "omega6": 0.6
+      },
+      "bronTekst": "eiwit: 10%, vetgehalte: 6.5%, omega-6-vetzuren: 0.6%, omega-3-vetzuren: 0.1%, ruwe as: 2.5%, ruwe celstof: 1%, calcium: 0.36%, fosfor: 0.29%, vocht: 79%.",
+      "notitie": "Fabrikant vermeldt geen energie op de productpagina; kcal blijft null. Geen omrekening nodig."
+    },
+    {
+      "merk": "Eukanuba",
+      "naam": "Adult rijk aan rund met pompoen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.eukanuba.eu/nl-nl/hond/nat-hondenvoer/adult-rijk-aan-rund-met-pompoen",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10,
+        "fat": 6.5,
+        "fiber": 1,
+        "ash": 2.5,
+        "moisture": 79,
+        "kcal": null,
+        "calcium": 0.36,
+        "phosphorus": 0.27,
+        "omega3": 0.1,
+        "omega6": 0.6
+      },
+      "bronTekst": "eiwit: 10%, vetgehalte: 6.5%, omega-6-vetzuren: 0.6%, omega-3-vetzuren: 0.1%, ruwe as: 2.5%, ruwe celstof: 1%, calcium: 0.36%, fosfor: 0.27%, vocht: 79%.",
+      "notitie": "Fabrikant vermeldt geen energie op de productpagina; kcal blijft null. Geen omrekening nodig."
+    }
+  ]
+}

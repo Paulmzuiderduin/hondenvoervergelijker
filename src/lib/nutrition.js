@@ -21,7 +21,7 @@ export const ADDITIONAL_NUTRIENTS = NUTRIENTS.filter((nutrient) => nutrient.isSt
 const getalFormaat = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 2 })
 
 export function formatteerVoedingswaarde(nutrient, waarde) {
-  const waardeGetal = typeof nutrient === 'object' ? nutrient.value : waarde
+  const waardeGetal = waarde ?? (typeof nutrient === 'object' ? nutrient.value : undefined)
   const eenheid = typeof nutrient === 'object' ? nutrient.unit : NUTRIENT_BY_KEY[nutrient]?.unit ?? ''
   const getal = getalFormaat.format(Number(waardeGetal))
   if (eenheid === '%') return `${getal}%`

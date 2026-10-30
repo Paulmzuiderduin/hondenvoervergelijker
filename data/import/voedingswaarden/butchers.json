@@ -1,0 +1,121 @@
+{
+  "merk": "Butcher's",
+  "opgehaald": "2026-10-30",
+  "producten": [
+    {
+      "merk": "Butcher's",
+      "naam": "Kip & pens (Chicken & Tripe Loaf)",
+      "voertype": "wet",
+      "verpakking": "400 g; ook in variatiepakken van 6, 12, 18 en 24 x 400 g",
+      "bronUrl": "https://butchersdogfood.co.uk/product/chicken-tripe-loaf-400g/",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 8.5,
+        "fat": 6,
+        "fiber": 0.2,
+        "ash": 2,
+        "moisture": 80,
+        "kcal": 98,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Protein 8.5, Crude Fibre 0.2, Fat Content 6, Crude Ash*2, Moisture 80.\n\nCalories (Kcal): 98Kcal/100g",
+      "notitie": "Analytische bestanddelen zijn as-fed. De 98 kcal/100 g stond direct op de pagina; geen omrekening nodig. Calcium, fosfor, omega-3 en omega-6 worden niet vermeld."
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Originele pens (Tripe Mix)",
+      "voertype": "wet",
+      "verpakking": "400 g / 6 x 400 g (Tripe Mix) / 18 x 400 g (Tripe Mix); ook in variatiepakken van 6, 12, 18 en 24 x 400 g",
+      "bronUrl": "https://butchersdogfood.co.uk/product/tripe-400g/",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 8.5,
+        "fat": 6,
+        "fiber": 0.2,
+        "ash": 2,
+        "moisture": 80,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Protein 8.5, Fat Content 6, Crude Fibre 0.2, Crude Ash 2, Moisture 80.",
+      "notitie": "Analytische bestanddelen zijn as-fed. Op de pagina staat geen energieopgave (kcal of kJ), dus kcal is null. Calcium, fosfor, omega-3 en omega-6 worden niet vermeld."
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Puppy Perfect met kip (blik)",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g / 18 x 400 g / 24 x 400 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/puppy-perfect-6-pack-400g/",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 8,
+        "fat": 6,
+        "fiber": 0.2,
+        "ash": 2,
+        "moisture": 82,
+        "kcal": null,
+        "calcium": 0.35,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Protein 8, Crude Fibre 0.2, Fat Content 6, Crude Ash* 2, Moisture 82, Calcium 0.35",
+      "notitie": "Analytische bestanddelen zijn as-fed. Op de pagina staat geen energieopgave (kcal of kJ), dus kcal is null. Fosfor, omega-3 en omega-6 worden niet vermeld. Calcium 0,35% is overgenomen."
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Recovery & Revive met kip (blik)",
+      "voertype": "wet",
+      "verpakking": "400 g / 18 x 390 g",
+      "bronUrl": "https://butchersdogfood.co.uk/product/recovery-revive-single-can-400g/",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 8,
+        "fat": 7,
+        "fiber": 0.2,
+        "ash": 2.5,
+        "moisture": 82,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Protein 8, Fat Content 7, Crude Fibre 0.2, Crude Ash 2.5, Moisture Content 82",
+      "notitie": "Analytische bestanddelen zijn as-fed. Op de pagina staat geen energieopgave (kcal of kJ), dus kcal is null. Calcium, fosfor, omega-3 en omega-6 worden niet vermeld."
+    },
+    {
+      "merk": "Butcher's",
+      "naam": "Simply Gentle met kip (blik)",
+      "voertype": "wet",
+      "verpakking": "6 x 390 g / 12 x 390 g / 18 x 390 g (variatiepakken)",
+      "bronUrl": "https://butchersdogfood.co.uk/product/simply-gentle-6-pack-390g-2/",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 8.5,
+        "fat": 4.5,
+        "fiber": 0.2,
+        "ash": 2.5,
+        "moisture": 82,
+        "kcal": 82,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Protein 8.5, Fat Content 4.5, Crude Fibre 0.2, Crude Ash 2.5, Moisture Content 82. 82kcal/100g",
+      "notitie": "Analytische bestanddelen zijn as-fed. De 82 kcal/100 g stond direct op de pagina; geen omrekening nodig. Calcium, fosfor, omega-3 en omega-6 worden niet vermeld."
+    }
+  ]
+}

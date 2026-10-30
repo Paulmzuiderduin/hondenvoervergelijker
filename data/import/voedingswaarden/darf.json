@@ -1,0 +1,121 @@
+{
+  "merk": "DARF",
+  "opgehaald": "2026-10-30",
+  "producten": [
+    {
+      "merk": "DARF",
+      "naam": "Vol Rund",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://darf.nl/product/darf-vol-rund-4-kg",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 23,
+        "fat": 12,
+        "fiber": 4,
+        "ash": 6,
+        "moisture": 6,
+        "kcal": 418,
+        "calcium": 1.2,
+        "phosphorus": 0.9,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Ruw eiwit 23%, Ruw vet 12%, Ruwe celstof 4%, Ruwe as 6%, Vocht 6%, Calcium 1,2%, Fosfor 0,90%, Energie 418 Kcal per 100g",
+      "notitie": "Energie staat op de bron al als 418 kcal per 100 g; geen omrekening nodig. Omega-3 en omega-6 worden niet vermeld."
+    },
+    {
+      "merk": "DARF",
+      "naam": "Vol Zalm",
+      "voertype": "kibble",
+      "verpakking": "4 kg",
+      "bronUrl": "https://darf.nl/product/darf-vol-zalm-4-kg",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 25,
+        "fat": 10,
+        "fiber": 2,
+        "ash": 6,
+        "moisture": 5,
+        "kcal": 394,
+        "calcium": 1.3,
+        "phosphorus": 0.75,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Ruw eiwit 25%, Ruw vet 10%, Ruwe celstof 2,0%, Ruwe as 6,0%, Vocht 5%, Calcium 1,30, Fosfor 0,75%, Energie 394 Kcal per 100 gram",
+      "notitie": "Energie staat op de bron al als 394 kcal per 100 g; geen omrekening nodig. Calcium staat op de bron zonder %-teken (1,30); als percentage overgenomen. Omega-3 en omega-6 worden niet vermeld."
+    },
+    {
+      "merk": "DARF",
+      "naam": "Menu Malse Kip",
+      "voertype": "wet",
+      "verpakking": "200 / 400 / 800 g",
+      "bronUrl": "https://darf.nl/product/darf-menu-malse-kip-200g",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.4,
+        "fat": 4.9,
+        "fiber": 0.4,
+        "ash": 1.9,
+        "moisture": 79.7,
+        "kcal": 88,
+        "calcium": 0.17,
+        "phosphorus": 0.12,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Vocht 79,7%, Ruw eiwit 10,4%, Ruw vet 4,9%, Ruwe as 1,9%, Ruwe celstof 0,4%, Calcium 0,17%, Fosfor 0,12%, Energie 88 Kcal per 100g",
+      "notitie": "Energie staat op de bron al als 88 kcal per 100 g; geen omrekening nodig. Omega-3 en omega-6 worden niet vermeld."
+    },
+    {
+      "merk": "DARF",
+      "naam": "Eend KVV",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-eend-kvv-10-x-1-kg",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 17.79,
+        "fat": 8.03,
+        "fiber": 1.28,
+        "ash": 2.72,
+        "moisture": 70.18,
+        "kcal": 131,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Vocht 70,18%, Ruw Eiwit 17,79%, Ruw Vet 8,03%, Ruw As 2,72%, Ruwe celstof 1,28%, Energie 131 Kcal per 100g, Ca/P 1,03",
+      "notitie": "Energie staat op de bron al als 131 kcal per 100 g; geen omrekening nodig. Calcium en fosfor worden niet afzonderlijk vermeld, alleen de Ca/P-ratio 1,03; daarom blijven beide null. Omega-3 en omega-6 worden niet vermeld."
+    },
+    {
+      "merk": "DARF",
+      "naam": "Zalm KVV",
+      "voertype": "raw",
+      "verpakking": "10 x 1 kg",
+      "bronUrl": "https://darf.nl/product/darf-zalm-kvv-10-x-1-kg",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 15,
+        "fat": 12,
+        "fiber": 3.5,
+        "ash": 2.8,
+        "moisture": 65,
+        "kcal": 196,
+        "calcium": 0.87,
+        "phosphorus": 0.44,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Vocht 65%, Ruw eiwit 15%, Ruw vet 12%, Ruwe celstof 3,5%, Ruwe as 2,8%, Calcium 0,87%, Fosfor 0,44%, Energie 196 Kcal per 100 g",
+      "notitie": "Energie staat op de bron al als 196 kcal per 100 g; geen omrekening nodig. Omega-3 en omega-6 worden niet vermeld."
+    }
+  ]
+}
