@@ -1,0 +1,190 @@
+{
+  "merk": "Purina One",
+  "opgehaald": "2026-10-30",
+  "producten": [
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Medium/Maxi Adult Kip",
+      "voertype": "kibble",
+      "verpakking": "12 kg; dubbelpak 2 x 12 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1875000",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 28,
+        "fat": 16,
+        "fiber": 2,
+        "ash": 6.5,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": 0.28,
+        "omega6": 2.9
+      },
+      "bronTekst": "ruw eiwit 28.0%, ruw vet 16.0%, ruwe vezel 2.0%, ruwe as 6.5%, omega-3-vetzuren 0.28%, omega-6-vetzuren 2.9%",
+      "notitie": "Bron is de zooplus-productpagina uit het opdrachtbestand. Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium en fosfor."
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Medium/Maxi Adult Rund & Rijst",
+      "voertype": "kibble",
+      "verpakking": "7 kg; 12 kg; dubbelpak 2 x 7 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1337160",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 25,
+        "fat": 15,
+        "fiber": 2.5,
+        "ash": 7,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": 0.2,
+        "omega6": 2.5
+      },
+      "bronTekst": "ruw eiwit 25.0%, ruw vet 15.0%, ruwe vezel 2.5%, ruwe as 7.0%, omega-3-vetzuren 0.2%, omega-6-vetzuren 2.5%",
+      "notitie": "Bron is de zooplus-productpagina uit het opdrachtbestand. Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium en fosfor."
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Medium/Maxi Sensitive Zalm",
+      "voertype": "kibble",
+      "verpakking": "2,5 kg; dubbelpak 2 x 2,5 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1874999",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 25,
+        "fat": 15,
+        "fiber": 2.5,
+        "ash": 7.5,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": 0.58,
+        "omega6": 1.8
+      },
+      "bronTekst": "ruw eiwit 25.0%, ruw vet 15.0%, ruwe vezel 2.5%, ruwe as 7.5%, omega-3-vetzuren 0.58%, omega-6-vetzuren 1.8%",
+      "notitie": "Bron is de zooplus-productpagina uit het opdrachtbestand. Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium en fosfor."
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Medium/Maxi Weight Control Sterilised Kalkoen",
+      "voertype": "kibble",
+      "verpakking": "2,5 kg; dubbelpak 2 x 2,5 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mediummaxi/1868165",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 27,
+        "fat": 9,
+        "fiber": 2.5,
+        "ash": 7.5,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": 0.14,
+        "omega6": 2.2
+      },
+      "bronTekst": "ruw eiwit 27.0%, ruw vet 9.0%, ruwe vezel 2.5%, ruwe as 7.5%, omega-3-vetzuren 0.14%, omega-6-vetzuren 2.2%",
+      "notitie": "Bron is de zooplus-productpagina uit het opdrachtbestand. Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium en fosfor."
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Mini Adult Rund & Rijst",
+      "voertype": "kibble",
+      "verpakking": "800 g; voordeelpakket 3 x 800 g",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mini/1337161",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 27,
+        "fat": 17,
+        "fiber": 2,
+        "ash": 8,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": 0.2,
+        "omega6": 2.7
+      },
+      "bronTekst": "ruw eiwit 27.0%, ruw vet 17.0%, ruwe vezel 2.0%, ruwe as 8.0%, omega-3-vetzuren 0.2%, omega-6-vetzuren 2.7%",
+      "notitie": "Bron is de zooplus-productpagina uit het opdrachtbestand. Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium en fosfor."
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Mini Delicate Zalm & Rijst",
+      "voertype": "kibble",
+      "verpakking": "800 g; voordeelpakket 3 x 800 g; 5 x 800 g",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mini/1874995",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 27,
+        "fat": 17,
+        "fiber": 2,
+        "ash": 7.5,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": 0.4,
+        "omega6": 2.7
+      },
+      "bronTekst": "ruw eiwit 27.0%, ruw vet 17.0%, ruwe vezel 2.0%, ruwe as 7.5%, omega-3-vetzuren 0.4%, omega-6-vetzuren 2.7%",
+      "notitie": "Bron is de zooplus-productpagina uit het opdrachtbestand. Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium en fosfor."
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Mini Sensitive-Delicate Zalm (natvoer)",
+      "voertype": "wet",
+      "verpakking": "10 x 85 g; 20 x 85 g",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_nat/purina_one/2007011",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 11.2,
+        "fat": 3.2,
+        "fiber": 1,
+        "ash": 1.9,
+        "moisture": 79,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": 0.14,
+        "omega6": null
+      },
+      "bronTekst": "ruw eiwit 11.2%, ruw vet 3.2%, ruwe vezel 1.0%, ruwe as 1.9%, vocht 79.0%, omega-3-vetzuren 0.14%",
+      "notitie": "Bron is de zooplus-productpagina uit het opdrachtbestand. Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: calcium, fosfor en omega-6."
+    },
+    {
+      "merk": "Purina One",
+      "naam": "Purina ONE Mini Weight Control / Sterilised Kalkoen & Rijst",
+      "voertype": "kibble",
+      "verpakking": "9 kg (6 x 1,5 kg); 18 kg (12 x 1,5 kg)",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/purina_one_dog/mini/1337170",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 28.5,
+        "fat": 10.5,
+        "fiber": 2.9,
+        "ash": 8.5,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": 0.1,
+        "omega6": 2.3
+      },
+      "bronTekst": "ruw eiwit 28.5%, ruw vet 10.5%, ruwe vezel 2.9%, ruwe as 8.5%, omega-3-vetzuren 0.1%, omega-6-vetzuren 2.3%",
+      "notitie": "Bron is de zooplus-productpagina uit het opdrachtbestand. Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium en fosfor."
+    }
+  ]
+}

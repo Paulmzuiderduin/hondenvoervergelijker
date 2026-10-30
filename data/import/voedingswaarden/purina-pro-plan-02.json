@@ -1,0 +1,167 @@
+{
+  "merk": "Purina Pro Plan",
+  "opgehaald": "2026-10-30",
+  "producten": [
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium Puppy Sensitive Skin Rijk aan Zalm",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-puppy-medium-sensitive-skin-zalm",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 32,
+        "fat": 20,
+        "fiber": 2.5,
+        "ash": 7.5,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Eiwit: 32,0%\nVetgehalte: 20,0%\nRuwe as: 7,5%\nRuwe celstof: 2,5%",
+      "notitie": "Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium, fosfor, omega-3 en omega-6."
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Small & Medium Puppy Starter Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-small-medium-puppy-starter-kip",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 31,
+        "fat": 19,
+        "fiber": 3.5,
+        "ash": 8,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Eiwit 31%\nVetgehalte: 19%\nRuwe as: 8%\nRuwe vezels: 3,5%\nZetmeel: 19,5%",
+      "notitie": "Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium, fosfor, omega-3 en omega-6."
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Small & Mini Adult 9+ Age Defence Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-senior-small-age-defence-kip",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 29,
+        "fat": 15,
+        "fiber": 2,
+        "ash": 7.5,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Eiwit: 29,0%\nVetgehalte: 15,0%\nRuwe as: 7,5%\nRuwe celstof: 2,0%\nKoolhydraten: 38,5%\nEPA: 0,1%\nGlucosamine: 400 ppm",
+      "notitie": "Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium, fosfor, omega-3 en omega-6."
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Small & Mini Adult Everyday Nutrition Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 7 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-small-everyday-nutrition-kip",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 28,
+        "fat": 17,
+        "fiber": 2,
+        "ash": 7.5,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Eiwit: 28,0%\nVetgehalte: 17,0%\nRuwe as: 7,5%\nRuwe celstof: 2,0%",
+      "notitie": "Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium, fosfor, omega-3 en omega-6."
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Small & Mini Adult Sensitive Skin Rijk aan Zalm",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-small-sensitive-skin-zalm",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 30,
+        "fat": 18,
+        "fiber": 2.5,
+        "ash": 7,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Eiwit: 30,0%\nVetgehalte: 18,0%\nRuwe as: 7,0%\nRuwe celstof: 2,5%",
+      "notitie": "Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium, fosfor, omega-3 en omega-6."
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Small & Mini Puppy Healthy Start Rijk aan Kip",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-puppy-small-healthy-start-kip",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 32,
+        "fat": 21,
+        "fiber": 2,
+        "ash": 7.5,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Eiwit: 32,0%\nVetgehalte: 21,0%\nRuwe as: 7,5%\nRuwe celstof: 2,0%",
+      "notitie": "Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium, fosfor, omega-3 en omega-6."
+    },
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Small & Mini Puppy Sensitive Skin Rijk aan Zalm",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-puppy-small-sensitive-skin-zalm",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 32,
+        "fat": 21,
+        "fiber": 2,
+        "ash": 7,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Eiwit: 32,0%\nVetgehalte: 21,0%\nRuwe as: 7,0%\nRuwe celstof: 2,0%",
+      "notitie": "Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium, fosfor, omega-3 en omega-6."
+    }
+  ]
+}

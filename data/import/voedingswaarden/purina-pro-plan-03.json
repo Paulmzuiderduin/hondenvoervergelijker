@@ -1,0 +1,29 @@
+{
+  "merk": "Purina Pro Plan",
+  "opgehaald": "2026-10-30",
+  "producten": [
+    {
+      "merk": "Purina Pro Plan",
+      "naam": "Medium Adult Sensitive Skin Zalm",
+      "voertype": "kibble",
+      "verpakking": "14 kg",
+      "bronUrl": "https://www.purina.nl/hond/hondenvoer/product-proplan-adult-medium-skin-zalm",
+      "gecontroleerd": "2026-10-30",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 29,
+        "fat": 18,
+        "fiber": 3,
+        "ash": 7,
+        "moisture": null,
+        "kcal": null,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Eiwit: 29,0%\nVetgehalte: 18,0%\nRuwe as: 7,0%\nRuwe celstof: 3,0%",
+      "notitie": "Geen metaboliseerbare energie op de pagina vermeld, daarom kcal null. Niet vermeld op de pagina: vocht, calcium, fosfor, omega-3 en omega-6."
+    }
+  ]
+}
