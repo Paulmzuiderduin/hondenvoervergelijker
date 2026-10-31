@@ -90,7 +90,7 @@ Na elke cluster een JSON-controle en SQL-batch. De agents schrijven batches van 
 
 ### Broncontrole en plausibiliteit
 
-- `scripts/controleer-voedingswaarden-bronnen.mjs` vergelijkt de vastgelegde analysetekst met de bronpagina en schrijft `data/import/voedingswaarden/broncontrole.md`. Het script wijzigt niets in de database. Een analyse die volgens de notitie van een buitenlandse of retailerpagina komt, wordt als **andere bron** gemeld en niet als wijziging.
+- `scripts/controleer-voedingswaarden-bronnen.mjs` vergelijkt de vastgelegde analysetekst met de bronpagina en schrijft `data/import/voedingswaarden/broncontrole.md`. Het script wijzigt niets in de database. Een analyse die volgens de notitie van een buitenlandse of retailerpagina komt, wordt als **andere bron** gemeld en niet als wijziging. Verzoeken worden per host gespreid en bij een tijdelijke 429, 5xx of time-out opnieuw geprobeerd; daardoor veroorzaakt gelijktijdig controleren van veel producten van dezelfde winkel geen valse meldingen meer.
 - `scripts/controleer-voedingswaarden-plausibiliteit.mjs` controleert op macro-sommen boven 100%, onmogelijke vezel- of kcal-waarden en vocht dat niet bij het voertype past. Het rapport staat in `data/import/voedingswaarden/plausibiliteit.md`.
 - De wekelijkse GitHub-workflow `Broncontrole` draait beide scripts naast de bestaande ingrediëntencontrole en neemt de rapporten mee in het issue en het artifact.
 - Een onmogelijke waarde krijgt een waarschuwing op de kaart. De waarde wordt niet getoond en niet gebruikt voor filters of sortering; de rest van de analyse blijft wel zichtbaar. De teller bij een filter telt daarom alleen bruikbare waarden.

@@ -30,8 +30,10 @@ const argumenten = new Map(
 const filterMerk = (argumenten.get('merk') ?? '').toLowerCase()
 const limiet = Number(argumenten.get('limiet') ?? 0) || 0
 const pauze = Number(argumenten.get('pauze') ?? 800) || 0
+const hostPauze = Number(argumenten.get('host-pauze') ?? 1200) || 0
 const parallel = Math.max(1, Math.min(12, Number(argumenten.get('parallel') ?? 6) || 6))
 const geenFout = process.argv.includes('--geen-fout')
+const slaap = (ms) => new Promise((klaar) => setTimeout(klaar, ms))
 
 function leesProducten() {
   if (!existsSync(IMPORT)) return []
@@ -84,17 +86,49 @@ function vergelijkAnalyse(pagina, bronTekst) {
   return { gelijk: gevonden.length / doel.length >= 0.8, gevonden: gevonden.length, totaal: doel.length }
 }
 
+// Sites die veel producten hebben, krijgen anders six verzoeken tegelijk. Dat
+// levert 429's en time-outs op die niets over de pagina zeggen. Reserveer per
+// host een startmoment en probeer het bij een tijdelijke fout opnieuw.
+const laatsteStartPerHost = new Map()
+async function wachtVoorHost(hostnaam) {
+  if (!hostPauze) return
+  const nu = Date.now()
+  const volgende = Math.max(nu, (laatsteStartPerHost.get(hostnaam) ?? 0) + hostPauze)
+  laatsteStartPerHost.set(hostnaam, volgende)
+  if (volgende > nu) await slaap(volgende - nu)
+}
+
+async function haalBron(url) {
+  let laatsteFout = null
+  for (let poging = 1; poging <= 3; poging += 1) {
+    try {
+      const antwoord = await fetch(url, {
+        headers: { 'user-agent': UA, accept: 'text/html,application/xhtml+xml' },
+        redirect: 'follow',
+        signal: AbortSignal.timeout(20000)
+      })
+      if (antwoord.ok) return antwoord
+      laatsteFout = new Error(`HTTP ${antwoord.status}`)
+      if (![429, 500, 502, 503, 504].includes(antwoord.status) || poging === 3) return antwoord
+      const retryAfter = Number(antwoord.headers.get('retry-after'))
+      await slaap(Number.isFinite(retryAfter) && retryAfter > 0 ? Math.min(retryAfter * 1000, 15000) : 1500 * poging)
+    } catch (fout) {
+      laatsteFout = fout
+      if (poging === 3) throw fout
+      await slaap(1500 * poging)
+    }
+  }
+  throw laatsteFout
+}
+
 async function controleer(product) {
   const hostnaam = host(product.bronUrl)
   if (BROWSER_ONLY_HOSTS.has(hostnaam) || BROWSER_ONLY_HOSTS.has(`www.${hostnaam}`)) {
     return { ...product, status: 'browser', detail: 'Alleen via een echte browser te controleren.' }
   }
   try {
-    const antwoord = await fetch(product.bronUrl, {
-      headers: { 'user-agent': UA, accept: 'text/html,application/xhtml+xml' },
-      redirect: 'follow',
-      signal: AbortSignal.timeout(15000)
-    })
+    await wachtVoorHost(hostnaam)
+    const antwoord = await haalBron(product.bronUrl)
     if (!antwoord.ok) return { ...product, status: 'onbereikbaar', detail: `HTTP ${antwoord.status}` }
     const html = await antwoord.text()
     if (!String(product.bronTekst).trim()) return { ...product, status: 'geen-tekst', detail: 'Geen bruikbare brontekst in het importbestand.' }
