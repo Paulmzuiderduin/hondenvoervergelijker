@@ -1,6 +1,6 @@
 # Voedingswaarden
 
-Status: **fase 0 afgerond en live; fase 1 pilot toegepast** (25 producten van 5 top-10-merken). **Fase 2 loopt:** 586 van de 786 top-10-producten hebben nu voedingswaarden. Nog te doen: Royal Canin (200), opgesplitst in 8 batches van 25 omdat de eerste agent op de volledige lijst een timeout kreeg.
+Status: **fase 0 afgerond en live; fase 1 pilot toegepast** (25 producten van 5 top-10-merken). **Fase 2:** de data-collectie is compleet — alle **786 top-10-producten** zijn gevalideerd. Daarvan staan **586 live**; de **200 Royal Canin-producten** staan klaar in één gecombineerde batch en wachten op de Supabase-import.
 
 ## Uitgangspunten
 
