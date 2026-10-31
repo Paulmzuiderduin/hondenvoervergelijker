@@ -13,7 +13,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { BROWSER_ONLY_HOSTS, UA, vergelijkbaar } from './lib/bronvergelijking.mjs'
+import { BROWSER_ONLY_HOSTS, UA, vergelijkbaar, vergelijkbaarMetPaginadata } from './lib/bronvergelijking.mjs'
 
 const WORTEL = dirname(dirname(fileURLToPath(import.meta.url)))
 const IMPORT = join(WORTEL, 'data', 'import', 'voedingswaarden')
@@ -97,9 +97,14 @@ async function controleer(product) {
     })
     if (!antwoord.ok) return { ...product, status: 'onbereikbaar', detail: `HTTP ${antwoord.status}` }
     const html = await antwoord.text()
-    const pagina = vergelijkbaar(html)
     if (!String(product.bronTekst).trim()) return { ...product, status: 'geen-tekst', detail: 'Geen bruikbare brontekst in het importbestand.' }
-    const vergelijking = vergelijkAnalyse(pagina, product.bronTekst)
+    // Eerst de gewone HTML-tekst. Sommige winkels zetten de analyse in een
+    // JSON-blob; dan vindt de pagina-data-normalisatie dezelfde getallen wel.
+    let vergelijking = vergelijkAnalyse(vergelijkbaar(html), product.bronTekst)
+    if (!vergelijking.gelijk) {
+      const viaPaginadata = vergelijkAnalyse(vergelijkbaarMetPaginadata(html), product.bronTekst)
+      if (viaPaginadata.gevonden > vergelijking.gevonden) vergelijking = viaPaginadata
+    }
     if (vergelijking.gelijk) return { ...product, status: 'gelijk', detail: '' }
     const andereBron = /Duitse|Duits|Franse|Frans|Engelse|Engels|Belgische|Belgisch|Oostenrijkse|anderstalig|buitenland|gearchiveerd|archief|winkelpagina|retailer/i.test(product.notitie ?? '')
     return andereBron

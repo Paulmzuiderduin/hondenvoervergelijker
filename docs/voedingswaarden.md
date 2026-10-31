@@ -110,8 +110,9 @@ Na elke cluster een JSON-controle en SQL-batch. De agents schrijven batches van 
 - Methodiekpagina en `llms.txt` zijn bijgewerkt met uitleg over de filters, bronnen en as-fed.
 - **Droge-stofweergave per product:** in het voedingsdetail kan de bezoeker schakelen tussen as-fed en droge stof. Het vocht wordt weggerekend en de energie wordt per 100 g droge stof getoond. Zonder vochtgehalte is de knop niet beschikbaar. De filters en sortering blijven op as-fed werken.
 - **Zoeken en vergelijken:** producten zijn op naam te zoeken. Maximaal drie producten kunnen naast elkaar worden gezet; de vergelijking toont alle standaardwaarden en kan ook op droge stof worden bekeken.
+- **Leeftijd en formaat:** twee compacte chiprijen filteren op Puppy/Adult/Senior/Alle en Mini/Medium/Large. De classificatie komt uit de productnaam; de UI noemt dat expliciet. De keuze staat in de URL (`?leeftijd=puppy&maat=large`).
 - **Vier statische voedingspagina's** (eiwitrijk, weinig vet, veel vezel, laag-calorisch) vangen gerichte zoekopdrachten op en linken door naar de bijbehorende filtercombinatie. De sitemap groeit daardoor van 89 naar 93 adressen.
-- **Prestatie:** de catalogus wordt nog in één keer geladen (ongeveer 3,2 MB JSON, circa 0,65 MB gecomprimeerd). Server-side voorfiltering is de volgende optimalisatie; de pagina toont nu 24 producten per pagina en gebruikt de lokale cataloguscache.
+- **Prestatie:** de catalogus is opgesplitst. De producten worden zonder volledige ingrediëntenlijst geladen (ongeveer 1,9 MB JSON), met daarnaast een compacte allergenenbeoordeling (ongeveer 0,7 MB). De volledige ingrediëntenlijst wordt pas opgehaald als een bezoeker die op een kaart openklapt. In de lokale meting verschenen de eerste kaarten in ongeveer 1,2 s in plaats van 1,7 s; de pagina toont 24 producten per pagina en gebruikt de cataloguscache. Server-side voorfiltering blijft een volgende optimalisatie.
 
 ## Besluiten
 
@@ -120,7 +121,7 @@ Na elke cluster een JSON-controle en SQL-batch. De agents schrijven batches van 
 - **As-fed is de standaardweergave.** Dat is de waarde zoals de fabrikant hem op het etiket zet en waar de meeste eigenaren mee werken. Droge stof is als extra, duidelijk gelabelde weergave per product toegevoegd om natvoer en brokken eerlijk te vergelijken.
 - **Filters op de volledige standaardset** zijn geïmplementeerd met een minimum- en maximumschuif. Sorteren op eiwit, vet en energie is toegevoegd.
 - **Een productentry is een product of verpakking, geen unieke receptuur.** De site noemt de telling daarom “producten”; meerdere verpakkingen of smaken kunnen dezelfde analyse delen.
-- **Life-stage en formaat zijn nog geen gestructureerde velden.** Snelzoekchips voor Puppy, Senior, Mini en Large vullen het productzoekveld; ze zoeken op productnaam en zijn geen gecontroleerde leeftijds- of formaatclassificatie. Een echte filter vraagt om extractie en controle van die velden.
+- **Leeftijd en formaat zijn als filter toegevoegd op basis van de productnaam**: Puppy/Adult/Senior/Alle en Mini/Medium/Large. Het zijn geen gecontroleerde databasevelden; de filterkolom zegt dat en het etiket blijft leidend. Producten zonder aanduiding in de naam vallen af zodra een keuze actief is.
 - **Side-by-side vergelijken is geïmplementeerd** voor maximaal drie producten, met alle standaardwaarden en dezelfde as-fed/droge-stofkeuze.
 - **Agenten doen de eerste extractie**, met menselijke controle op de steekproef en op alle omgerekende waarden.
 - **We beginnen bij de top 10 merken**, na een kleine pilot daarbinnen.

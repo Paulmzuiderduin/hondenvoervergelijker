@@ -81,6 +81,13 @@ try {
   meld(/Ruw eiwit/.test(voedingDetail) && !/NaN/.test(voedingDetail), 'voedingswaarden-detail is compleet', voedingDetail.replace(/\n/g, ' ').slice(0, 100))
   const voedingContext = await page.locator('.nutrition-context').first().innerText()
   meld(/vocht/i.test(voedingContext) && /niet direct|vergelijk/i.test(voedingContext), 'voedingswaarden geven context over vocht', voedingContext.replace(/\n/g, ' ').slice(0, 120))
+  await page.locator('.ingredients summary').first().click()
+  await page.waitForFunction(() => {
+    const tekst = document.querySelector('.ingredients')?.innerText ?? ''
+    return tekst.length > 40 && !/laden/i.test(tekst)
+  }, null, { timeout: 20000 }).catch(() => {})
+  const ingredienten = await page.locator('.ingredients').first().innerText()
+  meld(ingredienten.length > 60 && !/laden/i.test(ingredienten), 'ingrediëntenlijst wordt pas bij openen geladen', ingredienten.replace(/\n/g, ' ').slice(0, 100))
   const wetKaart = page.locator('.product-card').filter({ has: page.locator('.nutrition-kind.wet') }).first()
   await wetKaart.locator('.nutrition summary').click()
   const natDetail = await wetKaart.locator('.nutrition-grid').innerText()
@@ -136,10 +143,11 @@ try {
   const zoekWaarde = await page.locator('.product-search input').inputValue()
   const zoekChip = await page.locator('.active-filters').innerText()
   meld(zoekWaarde === 'renal' && /Zoek: renal/.test(zoekChip), 'productzoeken staat in de URL en als chip', `${zoekWaarde} · ${zoekChip.replace(/\n/g, ' ').slice(0, 80)}`)
-  await page.locator('.search-chip', { hasText: 'Puppy' }).click()
-  const puppyWaarde = await page.locator('.product-search input').inputValue()
-  const puppyNamen = (await page.locator('.product-name').allInnerTexts()).slice(0, 3)
-  meld(puppyWaarde === 'Puppy' && puppyNamen.every((naam) => /puppy|junior/i.test(naam)), 'snelzoekchip Puppy zoekt op productnaam', puppyNamen.join(' / '))
+  await page.goto(`${BASIS}/?leeftijd=puppy&maat=large`, { waitUntil: 'domcontentloaded' })
+  await page.waitForSelector('.product-card', { timeout: 45000 })
+  const traitNamen = (await page.locator('.product-name').allInnerTexts()).slice(0, 5)
+  const traitChips = await page.locator('.active-filters .filter-chip').allInnerTexts()
+  meld(traitNamen.length > 0 && traitNamen.every((naam) => /puppy|junior/i.test(naam) && /large|giant|maxi|groot|grote/i.test(naam)) && traitChips.some((tekst) => /Leeftijd: Puppy/.test(tekst)) && traitChips.some((tekst) => /Formaat: Large/.test(tekst)), 'leeftijd- en formaatfilter werken en staan in de URL', traitNamen.join(' / '))
   await open('/?allergeen=chicken&eiwit=25-35', '.product-card')
   await page.locator('.filters-reset').click()
   const allergenenNaReset = await page.locator('.selected-allergens .allergen-chip').allInnerTexts()
@@ -190,6 +198,10 @@ try {
   const onderzoek = await page.locator('.stat-grid').innerText()
   meld(/producten/.test(onderzoek), 'etikettenonderzoek toont cijfers', onderzoek.replace(/\n/g, ' ').slice(0, 100))
 
+  const beoordelingen = await context.request.get(`${BASIS}/catalog-assessment.json`)
+  const beoordelingenJson = beoordelingen.ok() ? await beoordelingen.json().catch(() => ({})) : {}
+  const beoordelingenAantal = Object.keys(beoordelingenJson.producten ?? beoordelingenJson).length
+  meld(beoordelingen.ok() && beoordelingenAantal >= 1400, 'compacte allergenenbeoordeling is beschikbaar', `${beoordelingenAantal} producten`)
   const llms = await context.request.get(`${BASIS}/llms.txt`)
   const llmsTekst = await llms.text()
   meld(llms.ok() && llmsTekst.includes('# Hondenvoervergelijker'), 'llms.txt is bereikbaar en gevuld')

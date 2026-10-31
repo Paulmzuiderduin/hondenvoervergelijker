@@ -280,7 +280,7 @@ const methodePagina = () => {
       <h2>3. Voedingswaarden: inclusief vocht</h2>
       <p>De voedingswaarden komen in de regel van hetzelfde etiket als de ingrediëntenlijst. Is de Nederlandse productpagina niet bruikbaar of wijkt de Nederlandse formule af, dan gebruiken we een gespecificeerde buitenlandse of retailerpagina. Dat staat bij het product vermeld, samen met de bron en de controledatum. De percentages zijn <strong>as-fed</strong>: inclusief het vocht in het product. Dat is de waarde die de fabrikant publiceert en die de meeste eigenaren op de verpakking zien.</p>
       <p>Het vochtgehalte verschilt sterk per voertype: brokken bevatten meestal 6–10% vocht, natvoer 75–85% en rauwvoer 60–75%. Daardoor lijken eiwit- en vetpercentages van natvoer veel lager dan die van brokken, terwijl er per 100 g droge stof soms juist meer eiwit in zit. Vergelijk daarom binnen hetzelfde voertype, of reken de waarden om naar droge stof. De site toont standaard de as-fedwaarden. In de voedingswaarden van een product kun je naar droge stof schakelen; dan wordt het vocht weggerekend. Zonder vochtgehalte is die knop niet beschikbaar. De filters en sortering werken op as-fed.</p>
-      <p>Op de vergelijkingspagina kun je alle standaardwaarden met een minimum- en maximumschuif filteren: eiwit, vet, vezel, as, vocht, energie, calcium, fosfor, omega-3 en omega-6. Eiwit, vet en energie staan direct open; de andere waarden zitten in één compacte uitklapregel. De filters werken op de as-fedwaarden. Filter je natvoer en brokken tegelijk, dan waarschuwt de site dat de percentages niet direct vergelijkbaar zijn. Producten waarvan de fabrikant een waarde niet vermeldt, vallen af zodra je dat filter gebruikt. De resultaten zijn binnen de drie oordeelgroepen te sorteren op eiwit, vet of energie; producten zonder die waarde blijven zichtbaar en zakken naar achteren. Producten zijn op naam te zoeken en maximaal drie producten kunnen naast elkaar worden gezet, met dezelfde waarden en dezelfde as-fed/droge-stofkeuze.</p>
+      <p>Op de vergelijkingspagina kun je alle standaardwaarden met een minimum- en maximumschuif filteren: eiwit, vet, vezel, as, vocht, energie, calcium, fosfor, omega-3 en omega-6. Eiwit, vet en energie staan direct open; de andere waarden zitten in één compacte uitklapregel. De filters werken op de as-fedwaarden. Filter je natvoer en brokken tegelijk, dan waarschuwt de site dat de percentages niet direct vergelijkbaar zijn. Producten waarvan de fabrikant een waarde niet vermeldt, vallen af zodra je dat filter gebruikt. De resultaten zijn binnen de drie oordeelgroepen te sorteren op eiwit, vet of energie; producten zonder die waarde blijven zichtbaar en zakken naar achteren. Producten zijn op naam te zoeken en maximaal drie producten kunnen naast elkaar worden gezet, met dezelfde waarden en dezelfde as-fed/droge-stofkeuze. Leeftijd (Puppy/Adult/Senior/Alle) en formaat (Mini/Medium/Large) zijn filterbaar op basis van de productnaam; dat is een praktische aanduiding, geen gecontroleerd databaseveld. Het etiket blijft leidend.</p>
       <p>De voedingswaarden worden bij de import gecontroleerd. Daarnaast draait er een aparte broncontrole op de vastgelegde analysetekst. Een waarde die aantoonbaar niet kan — bijvoorbeeld een bronanalyse die optelt tot meer dan 100% of een vezelwaarde die een typefout lijkt — krijgt een waarschuwing op de kaart en wordt niet als filter- of sorteerwaarde gebruikt. Zo blijft de bron zichtbaar, zonder dat een onmogelijke waarde de vergelijking stuurt.</p>
 
       <h2>4. De keuring: woord voor woord</h2>
@@ -1159,6 +1159,48 @@ if (producten?.length) {
     console.log(`Let op: woordenlijst niet opgehaald (${fout.message}); allergeenpagina's gebruiken de ingebouwde woorden.`)
   }
   setCustomTerms(termen)
+
+  // De SPA hoeft niet de volledige ingrediëntenlijst van alle producten te
+  // downloaden om allergenen te beoordelen. Deze compacte samenvatting bevat
+  // precies wat de keuring nodig heeft; de volledige tekst wordt pas geladen
+  // als een bezoeker de ingrediëntenlijst op een kaart openklapt.
+  const alleAllergeenSleutels = ALLERGENS.map(({ key }) => key)
+  const allergeenIndex = new Map(alleAllergeenSleutels.map((key, index) => [key, index]))
+  const codeer = (keys = []) => [...new Set(keys)].map((key) => allergeenIndex.get(key)).filter((index) => index != null)
+  // Verborgen woorden en hun sleutels herhalen zich sterk ("plantaardige",
+  // "dierlijke bijproducten"). Eén gedeelde woordenlijst met indices per
+  // product scheelt ruim een megabyte; de volledige ingrediëntenlijst blijft
+  // lazy.
+  const woorden = []
+  const woordIndex = new Map()
+  const codeerWoord = (word, keys) => {
+    const sleutel = `${word}\u0000${keys.join(',')}`
+    if (!woordIndex.has(sleutel)) {
+      woordIndex.set(sleutel, woorden.length)
+      woorden.push([word, codeer(keys)])
+    }
+    return woordIndex.get(sleutel)
+  }
+  const beoordelingen = {}
+  for (const product of producten) {
+    const version = product.recipe_versions?.[0]
+    const tekst = version?.ingredients_text || ''
+    const beoordeling = assessLabel(tekst)
+    const opgeslagen = version?.recipe_ingredients ?? []
+    beoordelingen[product.id] = {
+      a: codeer(beoordeling.allergens),
+      k: codeer(beoordeling.keys),
+      p: codeer(opgeslagen.filter(({ certainty }) => certainty === 'confirmed').map(({ allergen_key }) => allergen_key)),
+      u: codeer(opgeslagen.filter(({ certainty }) => certainty !== 'confirmed').map(({ allergen_key }) => allergen_key)),
+      l: Boolean(tekst),
+      t: beoordeling.hidden.length === 0 && beoordeling.unknown.length === 0,
+      d: beoordeling.hidden.map(({ word, keys }) => codeerWoord(word, keys)),
+      n: beoordeling.unknown,
+      h: beoordeling.hydrolysed
+    }
+  }
+  writeFileSync(join(DIST, 'catalog-assessment.json'), JSON.stringify({ versie: 2, woorden, producten: beoordelingen }))
+  console.log(`Geschreven: catalog-assessment.json (${Object.keys(beoordelingen).length} producten, ${woorden.length} woorden)`)
 
   const allergeenPaginas = []
   for (const [key, kort] of ALLERGEEN_KEUZE) {

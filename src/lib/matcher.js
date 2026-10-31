@@ -25,27 +25,37 @@ export function isReviewOverdue(checkedAt, now = new Date()) {
 // controle (reviewed_at) krijgt op de kaart de badge "Door een mens
 // gecontroleerd", zodat er nooit een menselijke controle geclaimd wordt die niet
 // gebeurd is.
-export function productMatch(product, selectedAllergens, now = new Date()) {
+export function productMatch(product, selectedAllergens, now = new Date(), assessmentOverride = null) {
   const version = product.recipe_versions?.[0]
   const text = version?.ingredients_text || ''
-  const assessment = assessLabel(text)
-  const stored = version?.recipe_ingredients ?? []
+  const assessment = assessmentOverride || assessLabel(text)
+  const assessmentAllergens = assessment.allergens ?? []
+  const assessmentKeys = assessment.keys ?? []
+  const assessmentHidden = assessment.hidden ?? []
+  const assessmentUnknown = assessment.unknown ?? []
+  const assessmentHydrolysed = assessment.hydrolysed ?? { present: false, words: [], keys: [] }
+  const stored = assessmentOverride
+    ? [
+        ...(assessmentOverride.storedPresent ?? []).map((allergen_key) => ({ allergen_key, certainty: 'confirmed' })),
+        ...(assessmentOverride.storedUnknown ?? []).map((allergen_key) => ({ allergen_key, certainty: 'uncertain' }))
+      ]
+    : version?.recipe_ingredients ?? []
 
   // Aanwezig is wat de beheerder heeft bevestigd plus wat de tekst zelf noemt;
   // onbekend is wat de keuring niet kan uitsluiten (plus eerdere twijfelrijen).
   const present = new Set()
   const unknown = new Set()
   for (const row of stored) (row.certainty === 'confirmed' ? present : unknown).add(row.allergen_key)
-  for (const key of assessment.allergens) present.add(key)
-  for (const key of assessment.keys) unknown.add(key)
+  for (const key of assessmentAllergens) present.add(key)
+  for (const key of assessmentKeys) unknown.add(key)
   const presentKeys = new Set(expandAllergenKeys(present))
   const unknownKeys = new Set(expandAllergenKeys(unknown))
 
   // Waarom een allergeen onbekend is: het woord dat geen bron noemt, het woord
   // dat de keuring niet kent, of een eerdere twijfel van een beheerder.
   const openWords = (members) => [
-    ...assessment.hidden.filter(({ keys }) => keys.some((key) => members.includes(key))).map(({ word }) => word),
-    ...assessment.unknown,
+    ...assessmentHidden.filter(({ keys }) => keys.some((key) => members.includes(key))).map(({ word }) => word),
+    ...assessmentUnknown,
     ...stored.filter((row) => row.certainty !== 'confirmed' && members.includes(row.allergen_key)).map((row) => ALLERGEN_LABELS[row.allergen_key] ?? row.allergen_key)
   ]
 
@@ -60,14 +70,16 @@ export function productMatch(product, selectedAllergens, now = new Date()) {
 
   const reviewed = Boolean(version?.reviewed_at)
   const imported = Boolean(version?.imported_at)
-  const hasLabel = Boolean(text)
+  const hasLabel = assessmentOverride ? Boolean(assessmentOverride.hasLabel) : Boolean(text)
   const stale = isReviewOverdue(product.last_checked_at, now)
   const sourceChanged = product.source_status === 'gewijzigd'
   const presentStates = states.filter((state) => state.state === 'present')
   const unknownStates = states.filter((state) => state.state === 'unknown')
   // Noemt dit etiket elke allergeenbron bij name? Dat is de productbrede vraag,
   // los van de keuze van de bezoeker.
-  const transparent = assessment.hidden.length === 0 && assessment.unknown.length === 0
+  const transparent = typeof assessment.transparent === 'boolean'
+    ? assessment.transparent
+    : assessmentHidden.length === 0 && assessmentUnknown.length === 0
 
   // Zonder gecontroleerde tekst is er geen bewijs: dan is er niets "geschikt".
   let kind = 'suitable'
@@ -94,10 +106,10 @@ export function productMatch(product, selectedAllergens, now = new Date()) {
     // Gehydrolyseerd eiwit: geen allergeen en geen bron, maar het hoort op de
     // kaart te staan omdat een dierenarts er juist op stuurt. Het oordeel
     // verandert er niets door.
-    hydrolysed: assessment.hydrolysed,
+    hydrolysed: assessmentHydrolysed,
     // Wat het etiket niet bij name noemt, los van de keuze van de bezoeker: dit
     // bepaalt de rode woorden en de opmerking onder aan de kaart.
-    hidden: assessment.hidden,
-    unknownWords: assessment.unknown
+    hidden: assessmentHidden,
+    unknownWords: assessmentUnknown
   }
 }

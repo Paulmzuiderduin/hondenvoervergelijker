@@ -575,3 +575,15 @@ test('een gewijzigde bronpagina vraagt om controle totdat het etiket opnieuw is 
   assert.equal(uitslag.kind, 'check')
   assert.equal(uitslag.sourceChanged, true)
 })
+
+test('een vooraf berekende beoordeling werkt hetzelfde als de tekstkeuring', () => {
+  const tekst = 'Kip 40%, tarwe, erwten'
+  const beoordeling = assessLabel(tekst)
+  const metTekst = product()
+  const zonderTekst = product({ recipe_versions: [{ ingredients_text: '', reviewed_at: '2026-10-01T00:00:00Z', recipe_ingredients: [] }] })
+  const verwacht = productMatch(metTekst, ['chicken'], new Date('2026-10-14'))
+  const resultaat = productMatch(zonderTekst, ['chicken'], new Date('2026-10-14'), { ...beoordeling, hasLabel: true })
+  assert.equal(resultaat.kind, verwacht.kind)
+  assert.deepEqual(resultaat.states, verwacht.states)
+  assert.equal(resultaat.hasLabel, true)
+})

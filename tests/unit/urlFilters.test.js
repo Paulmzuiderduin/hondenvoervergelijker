@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { leesAllergenen, leesMerken, leesSortering, leesVoedingsfilters, leesVoertypes, leesZoekterm, schrijfFilters } from '../../src/lib/urlFilters.js'
+import { leesAllergenen, leesMerken, leesSortering, leesTraitFilters, leesVoedingsfilters, leesVoertypes, leesZoekterm, schrijfFilters } from '../../src/lib/urlFilters.js'
 
 const merken = ['Acana', 'Orijen', 'Royal Canin']
 
@@ -171,4 +171,13 @@ test('een zoekterm wordt gelezen en geschreven', () => {
   const params = schrijfFilters(new URLSearchParams('?zoek=oud'), { brands: null, allergenen: [], alleMerken: merken, zoek: 'renale voeding' })
   assert.equal(params.get('zoek'), 'renale voeding')
   assert.equal(leesZoekterm(params), 'renale voeding')
+})
+
+test('leeftijd en formaat worden uit de URL gelezen en geschreven', () => {
+  const gelezen = leesTraitFilters(new URLSearchParams('?leeftijd=puppy&leeftijd=senior&maat=large,unknown&leeftijd=unknown'))
+  assert.deepEqual(gelezen, { lifeStages: ['puppy', 'senior', 'unknown'], sizes: ['large', 'unknown'] })
+  const params = schrijfFilters(new URLSearchParams(''), { brands: null, allergenen: [], alleMerken: merken, lifeStages: ['puppy'], sizes: ['mini'] })
+  assert.deepEqual(params.getAll('leeftijd'), ['puppy'])
+  assert.deepEqual(params.getAll('maat'), ['mini'])
+  assert.deepEqual(leesTraitFilters(params), { lifeStages: ['puppy'], sizes: ['mini'] })
 })

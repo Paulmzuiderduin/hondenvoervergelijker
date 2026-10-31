@@ -1,5 +1,6 @@
 import { ALLERGENS, FOOD_TYPES } from './allergens.js'
 import { SORTING_KEYS } from './sorting.js'
+import { LIFE_STAGE_KEYS, SIZE_KEYS } from './traits.js'
 
 // Eén vaste afspraak voor de URL:
 //   ?merk=Orijen&merk=Acana        → alleen deze merken
@@ -20,7 +21,7 @@ const VOEDING_PARAMS = {
   omega3: 'omega3',
   omega6: 'omega6'
 }
-const FILTER_PARAMS = ['merk', 'zonder', 'nietmerk', 'geenmerken', 'allergeen', 'allergenen', 'type', 'geentype', 'sorteer', 'zoek', ...Object.keys(VOEDING_PARAMS)]
+const FILTER_PARAMS = ['merk', 'zonder', 'nietmerk', 'geenmerken', 'allergeen', 'allergenen', 'type', 'geentype', 'sorteer', 'zoek', 'leeftijd', 'maat', ...Object.keys(VOEDING_PARAMS)]
 const GELDIGE_ALLERGENEN = new Set(ALLERGENS.map(({ key }) => key))
 const ALLE_TYPES = FOOD_TYPES.map(([key]) => key)
 
@@ -62,6 +63,19 @@ export function leesZoekterm(params) {
   return (params.get('zoek') ?? '').trim().slice(0, 80)
 }
 
+export function leesTraitFilters(params) {
+  const lees = (param, toegestaan) => [...new Set(
+    params.getAll(param)
+      .flatMap((waarde) => waarde.split(','))
+      .map((waarde) => waarde.trim().toLowerCase())
+      .filter((waarde) => toegestaan.includes(waarde))
+  )]
+  return {
+    lifeStages: lees('leeftijd', LIFE_STAGE_KEYS),
+    sizes: lees('maat', SIZE_KEYS)
+  }
+}
+
 export function leesAllergenen(params) {
   const waarden = params.getAll('allergeen')
   const oud = params.get('allergenen')
@@ -93,7 +107,7 @@ export function leesMerken(params, alleMerken) {
   return { brands: null, mode: 'include' }
 }
 
-export function schrijfFilters(params, { brands, mode = 'include', allergenen = [], alleMerken = [], voeding = {}, types, sortering = 'standaard', zoek = '' }) {
+export function schrijfFilters(params, { brands, mode = 'include', allergenen = [], alleMerken = [], voeding = {}, types, sortering = 'standaard', zoek = '', lifeStages = [], sizes = [] }) {
   const volgende = new URLSearchParams(params)
   for (const sleutel of FILTER_PARAMS) volgende.delete(sleutel)
 
@@ -106,6 +120,8 @@ export function schrijfFilters(params, { brands, mode = 'include', allergenen = 
   if (sortering !== 'standaard' && SORTING_KEYS.has(sortering)) volgende.set('sorteer', sortering)
   const zoekterm = String(zoek ?? '').trim().slice(0, 80)
   if (zoekterm) volgende.set('zoek', zoekterm)
+  for (const key of lifeStages) if (LIFE_STAGE_KEYS.includes(key)) volgende.append('leeftijd', key)
+  for (const key of sizes) if (SIZE_KEYS.includes(key)) volgende.append('maat', key)
 
   if (brands === null) {
     // Alle merken: geen merkparameter.
