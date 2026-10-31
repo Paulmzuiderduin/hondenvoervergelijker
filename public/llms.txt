@@ -34,6 +34,8 @@ Laatst bijgewerkt: 30 oktober 2026.
 
 De ingrediëntenlijsten komen van de officiële productpagina's van de fabrikant. De tekst wordt letterlijk overgenomen, inclusief percentages en volgorde. Verzameltermen zoals "dierlijk vet", "granen" of "vlees en dierlijke bijproducten" worden gemarkeerd. Een product krijgt alleen de status "Geschikt" als de gekozen bron aantoonbaar niet achter zo'n term kan zitten. Bij twijfel blijft het product op "Controleer etiket/fabrikant" staan.
 
+Voedingswaarden zijn as-fed: de percentages zijn inclusief vocht. Brokken bevatten meestal 6–10% vocht, natvoer 75–85% en rauwvoer 60–75%. Vergelijk natvoer en brokken daarom niet direct op dezelfde percentages; vergelijk binnen hetzelfde voertype of reken om naar droge stof.
+
 De site geeft geen medisch advies. Voor een eliminatiedieet of een vermoeden van een allergie is een dierenarts de juiste persoon.
 
 ## Citeren

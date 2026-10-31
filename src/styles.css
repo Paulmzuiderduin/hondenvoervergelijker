@@ -1158,10 +1158,27 @@ button:disabled {
 }
 
 .nutrition-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
   margin: 0.45rem 0 0;
   color: #44564a;
   font-size: 0.8rem;
   font-variant-numeric: tabular-nums;
+}
+
+.nutrition-kind {
+  display: inline-block;
+  padding: 0.08rem 0.35rem;
+  border: 1px solid #c8d5e6;
+  border-radius: 2px;
+  background: #eef2f8;
+  color: #234b7a;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .nutrition {
@@ -1212,6 +1229,26 @@ button:disabled {
   font-size: 0.82rem;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
+}
+
+.nutrition-context {
+  margin: 0.5rem 0 0;
+  padding: 0.45rem 0.6rem;
+  background: #f7f9f7;
+  border-left: 2px solid #7d8f83;
+  color: #33453a;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.nutrition-context.wet {
+  border-left-color: #5a82b8;
+  background: #f4f7fb;
+}
+
+.nutrition-context.raw {
+  border-left-color: #5f8c63;
+  background: #f4f8f5;
 }
 
 .nutrition-note {

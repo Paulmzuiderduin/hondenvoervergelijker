@@ -79,6 +79,8 @@ try {
   await page.locator('.nutrition summary').first().click()
   const voedingDetail = await page.locator('.nutrition-grid').first().innerText()
   meld(/Ruw eiwit/.test(voedingDetail) && !/NaN/.test(voedingDetail), 'voedingswaarden-detail is compleet', voedingDetail.replace(/\n/g, ' ').slice(0, 100))
+  const voedingContext = await page.locator('.nutrition-context').first().innerText()
+  meld(/vocht/i.test(voedingContext) && /niet direct|vergelijk/i.test(voedingContext), 'voedingswaarden geven context over vocht', voedingContext.replace(/\n/g, ' ').slice(0, 120))
 
   // 4. Melding wanneer niets geschikt is
   await open('/?merk=Royal%20Canin&allergeen=beef', '.no-suitable')

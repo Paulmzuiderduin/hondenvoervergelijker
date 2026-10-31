@@ -158,6 +158,11 @@ function ProductCard({ product, match, aanbiedingen = [] }) {
   const packageSize = product.package_size && String(product.package_size).trim().toLowerCase() !== 'null' ? product.package_size : ''
   const voeding = voedingswaardeMap(version?.recipe_nutrition)
   const voedingSamenvatting = voedingswaardeSamenvatting(version?.recipe_nutrition)
+  const voedingContext = product.food_type === 'wet'
+    ? 'Natvoer bevat veel vocht (meestal 75–85%). De percentages zijn as-fed en daardoor niet direct te vergelijken met brokken of rauwvoer. Vergelijk binnen hetzelfde voertype of reken om naar droge stof.'
+    : product.food_type === 'raw'
+      ? 'Rauwvoer bevat veel vocht (meestal 60–75%). De percentages zijn as-fed en daardoor niet direct te vergelijken met brokken. Vergelijk binnen hetzelfde voertype of reken om naar droge stof.'
+      : 'Brokken bevatten weinig vocht (meestal 6–10%). De percentages zijn as-fed. Vergelijk ze niet direct met natvoer of rauwvoer, want die bevatten veel meer vocht.'
   return <article className={excluded ? 'product-card excluded' : `product-card ${match.kind}`}>
     <div className="product-card-top">
       <div className="product-title-group">
@@ -175,7 +180,10 @@ function ProductCard({ product, match, aanbiedingen = [] }) {
       {hydrolysed.present && <span className="meta-pill hydrolysed-pill">Gehydrolyseerd eiwit</span>}
       {product.source_url?.startsWith('http') && <a className="meta-source" href={product.source_url} target="_blank" rel="noreferrer" title="Officiële productpagina bij de fabrikant" onClick={() => track('bron-klik', { merk: product.brand, product: product.name, domein: sourceDomain(product.source_url) })}>Bron: {sourceDomain(product.source_url) || 'fabrikant'} ↗</a>}
     </div>
-    {voedingSamenvatting && <p className="nutrition-summary">{voedingSamenvatting}</p>}
+    {voedingSamenvatting && <p className="nutrition-summary" title="Percentages zijn inclusief vocht (as-fed).">
+      {product.food_type !== 'kibble' && <span className={`nutrition-kind ${product.food_type}`}>{foodTypeLabel}</span>}
+      {voedingSamenvatting}
+    </p>}
     {presentStates.length > 0 && !excluded && <p className="verdict present"><strong>Staat in de lijst:</strong> {presentStates.map((state) => `${ALLERGEN_LABELS[state.key]}${state.members.some((member) => member !== state.key) ? ` via ${labelList(state.members.filter((member) => member !== state.key))}` : ''}`).join(', ')}</p>}
     {unknownStates.length > 0 && <p className="verdict unknown"><strong>Kan erin zitten:</strong> {labelList(unknownStates.map((state) => state.key), 100)} — het etiket noemt geen bron voor {onbekendeWoorden.length > 5 ? `${onbekendeWoorden.slice(0, 5).join(', ')} en ${onbekendeWoorden.length - 5} meer` : onbekendeWoorden.length ? onbekendeWoorden.join(', ') : 'een ingrediënt'}</p>}
     {absentStates.length > 0 && <p className="verdict absent"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 100)}</p>}
@@ -192,7 +200,8 @@ function ProductCard({ product, match, aanbiedingen = [] }) {
           <dd>{formatteerVoedingswaarde(nutrient, voeding[nutrient.key])}</dd>
         </div>)}
       </dl>
-      <p className="nutrition-note"><small>Percentages zoals op het etiket (as-fed).{version?.nutrition_note ? ` ${version.nutrition_note}` : ''}</small></p>
+      <p className={`nutrition-context ${product.food_type}`}><strong>Let op:</strong> {voedingContext}</p>
+      <p className="nutrition-note"><small>Percentages as-fed (inclusief vocht).{version?.nutrition_note ? ` ${version.nutrition_note}` : ''}</small></p>
     </details>}
     {hydrolysed.present && <p className="note-hydrolysed"><strong>Gehydrolyseerd eiwit:</strong> {hydrolysed.words.length ? `dit etiket noemt ${hydrolysed.words.join(', ')} in gehydrolyseerde vorm` : 'dit etiket noemt gehydrolyseerde eiwitten'}: de eiwitketens zijn opgeknipt, waardoor het lichaam ze vaak niet meer als allergeen herkent. Dierenartsen kiezen zo'n voer juist bij een allergie; deze site telt de bron toch mee, want alleen je dierenarts kan beoordelen of het in jouw geval werkt.</p>}
     {excluded && <p className="reason excluded">Uitgesloten vanwege: {match.presentStates.map((state) => ALLERGEN_LABELS[state.key]).join(' · ')}</p>}
@@ -464,7 +473,7 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
     <fieldset><legend>Bevestigd aanwezige allergiebronnen</legend>{ALLERGEN_GROUPS.map((group) => <fieldset className="allergen-group" key={group.key}><legend>{group.label}</legend>{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={form.allergens.includes(key)} onChange={(e) => change('allergens', e.target.checked ? [...form.allergens, key] : form.allergens.filter((item) => item !== key))} />{label}</label>)}</fieldset>)}</fieldset>
     <fieldset className="nutrition-form">
       <legend>Voedingswaarden</legend>
-      <p><small>Neem de analytische bestanddelen over zoals op het etiket. Laat leeg wat de fabrikant niet vermeldt; vul niets aan.</small></p>
+      <p><small>Neem de analytische bestanddelen over zoals op het etiket. Percentages zijn as-fed (inclusief vocht); vergelijk natvoer niet direct met brokken. Laat leeg wat de fabrikant niet vermeldt; vul niets aan.</small></p>
       <div className="nutrition-form-grid">
         {NUTRIENTS.map((nutrient) => <label key={nutrient.key}>{nutrient.label} ({nutrient.unit === 'kcal/100g' ? 'kcal/100 g' : nutrient.unit})<input inputMode="decimal" value={form.nutrition?.[nutrient.key] ?? ''} placeholder={nutrient.unit === '%' ? 'bijv. 26' : 'bijv. 370'} onChange={(event) => change('nutrition', { ...form.nutrition, [nutrient.key]: event.target.value })} /></label>)}
       </div>

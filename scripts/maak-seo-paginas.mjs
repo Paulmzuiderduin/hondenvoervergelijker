@@ -269,22 +269,26 @@ const methodePagina = () => {
       <h2>2. Letterlijk overnemen</h2>
       <p>De tekst op het etiket wordt door ons letterlijk overgenomen: inclusief dezelfde volgorde, percentages, hoeveelheden en zelfs leestekens. Ontbreekt de lijst of is de informatie online onbereikbaar? Dan voegen we het product simpelweg niet toe. We doen niet aan giswerk; we hebben liever een ontbrekend product op de site dan een onjuiste ingrediëntenlijst.</p>
 
-      <h2>3. De keuring: woord voor woord</h2>
+      <h2>3. Voedingswaarden: inclusief vocht</h2>
+      <p>De voedingswaarden komen van hetzelfde etiket als de ingrediëntenlijst. De percentages zijn <strong>as-fed</strong>: inclusief het vocht in het product. Dat is de waarde die de fabrikant publiceert en die de meeste eigenaren op de verpakking zien.</p>
+      <p>Het vochtgehalte verschilt sterk per voertype: brokken bevatten meestal 6–10% vocht, natvoer 75–85% en rauwvoer 60–75%. Daardoor lijken eiwit- en vetpercentages van natvoer veel lager dan die van brokken, terwijl er per 100 g droge stof soms juist meer eiwit in zit. Vergelijk daarom binnen hetzelfde voertype, of reken de waarden om naar droge stof. De site toont voorlopig de as-fedwaarden en rekent niet automatisch om.</p>
+
+      <h2>4. De keuring: woord voor woord</h2>
       <p>Elke ingrediëntenlijst wordt geautomatiseerd geanalyseerd. Ons systeem herkent dierlijke en plantaardige eiwitbronnen, bereidingswijzen, mineralen en hulpstoffen. Verzameltermen die de werkelijke bron verbergen — zoals “dierlijk vet”, “granen”, “bouillon” of “plantaardige olie” — blokkeren vervolgens alleen die allergenen die er logischerwijs achter schuil kunnen gaan. Zo kan “dierlijk vet” bijvoorbeeld afkomstig zijn van een rund of varken, maar nooit van tarwe of zalm.</p>
       <p>Onbekende woorden worden door de beheerder eenmalig handmatig gecategoriseerd. Deze indeling wordt opgeslagen en direct toegepast op alle toekomstige en bestaande producten die ditzelfde woord bevatten. Zo leert de vergelijker continu nieuwe termen herkennen, zonder dat elk etiket volledig handwerk blijft.</p>
 
-      <h2>4. Eerlijk over onzekerheid</h2>
+      <h2>5. Eerlijk over onzekerheid</h2>
       <p>Wanneer een etiket de specifieke bron niet noemt, markeert onze site het product niet blindelings als “Geschikt”, maar geven we de status “Controleer etiket/fabrikant”. Dit is geen programmeerfout, maar een weerspiegeling van de onvolledigheid van het etiket zelf. In dergelijke gevallen kan uitsluitend de verpakking of de fabrikant helderheid verschaffen.</p>
 
-      <h2>5. Actualiteit en bronbewaking</h2>
+      <h2>6. Actualiteit en bronbewaking</h2>
       <p>De bronpagina's worden wekelijks geautomatiseerd gecontroleerd. Is de tekst op de website van de fabrikant ongewijzigd? Dan updaten we enkel de controledatum. Signaleert het systeem een wijziging, dan blijft de oude samenstelling op onze site zichtbaar totdat een beheerder de nieuwe tekst handmatig heeft goedgekeurd en verwerkt. Hierdoor passen ingrediëntenlijsten op ons platform zich nooit ongemerkt aan.</p>
       <p>Sites die geautomatiseerde bezoeken blokkeren, controleren we periodiek handmatig. Producten die lange tijd niet gecontroleerd konden worden, krijgen uit voorzorg automatisch de status “Controleer etiket/fabrikant”. Dit is een bewust strenge veiligheidsmaatregel.</p>
       <p>Benieuwd hoe vaak verzameltermen in de hele database voorkomen? Lees ons <a href="/etikettenonderzoek.html">etikettenonderzoek</a>.</p>
 
-      <h2>6. Onafhankelijkheid en affiliate-links</h2>
+      <h2>7. Onafhankelijkheid en affiliate-links</h2>
       <p>De weergavevolgorde en de uiteindelijke beoordeling van producten zijn uitsluitend gebaseerd op de feitelijke etiketinformatie en de door jou geselecteerde allergenen. Verwijzingen naar webwinkels kunnen soms affiliate-links bevatten, maar deze hebben geen enkele invloed op wélke producten we tonen, op de rangschikking, of op de keuringsuitslag. Meer hierover lees je in ons <a href="/privacybeleid.html">privacybeleid</a>.</p>
 
-      <h2>7. Beperkingen</h2>
+      <h2>8. Beperkingen</h2>
       <ul>
         <li>De vergelijker baseert zich uitsluitend op de verstrekte etiketinformatie. Receptuurwijzigingen die de fabrikant (nog) niet op het etiket heeft doorgevoerd, zijn voor ons onzichtbaar.</li>
         <li>Als een specifieke bron op het etiket ontbreekt, betekent dit niet automatisch dat het product onveilig is voor jouw hond. Het houdt simpelweg in dat het etiket hierover onvoldoende uitsluitsel geeft.</li>
