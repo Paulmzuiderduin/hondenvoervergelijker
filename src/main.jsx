@@ -195,8 +195,10 @@ function bronlozeWoorden(tekst, hidden) {
 // De etikettekst zelf verandert nooit tijdens het vergelijken; alleen het oordeel
 // erboven. Zonder deze memo zou elke kaart bij elk vinkje de hele
 // ingrediëntenlijst opnieuw opbouwen — honderden stukjes tekst per kaart.
-const Ingredients = memo(function Ingredients({ text, loading = false }) {
+const Ingredients = memo(function Ingredients({ text, loading = false, hasLabel = false, error = false }) {
   if (loading) return <p>Ingrediëntenlijst laden…</p>
+  if (!text && error) return <p>De ingrediëntenlijst kon niet worden opgehaald. Probeer het opnieuw.</p>
+  if (!text && hasLabel) return <p>De ingrediëntenlijst is nog niet geladen.</p>
   if (!text) return <p>Geen ingrediëntenlijst ingevoerd.</p>
   return <p>{markUncertainIngredients(text).map((segment, index) => segment.uncertain ? <mark className="uncertain-ingredient" key={index}>{segment.text}</mark> : segment.text)}</p>
 })
@@ -208,6 +210,7 @@ function ProductCard({ product, match, aanbiedingen = [], nadruk = [], vergelijk
   const [drogeStof, setDrogeStof] = useState(false)
   const [ingredientText, setIngredientText] = useState(version?.ingredients_text || '')
   const [ingredientLoading, setIngredientLoading] = useState(false)
+  const [ingredientError, setIngredientError] = useState(false)
   const verborgenWoorden = bronlozeWoorden(version?.ingredients_text ?? '', match.hidden)
   const verborgenKeys = [...new Set(match.hidden.flatMap(({ keys }) => keys))]
   const dektElkAllergeen = verborgenKeys.length >= ALLERGENS.length
@@ -265,9 +268,13 @@ function ProductCard({ product, match, aanbiedingen = [], nadruk = [], vergelijk
   const laadIngredienten = async () => {
     if (ingredientText || ingredientLoading || !supabase || !version?.id) return
     setIngredientLoading(true)
+    setIngredientError(false)
     try {
-      const { data } = await supabase.from('recipe_versions').select('ingredients_text').eq('id', version.id).maybeSingle()
+      const { data, error } = await supabase.from('recipe_versions').select('ingredients_text').eq('id', version.id).maybeSingle()
+      if (error) throw error
       setIngredientText(data?.ingredients_text || '')
+    } catch {
+      setIngredientError(true)
     } finally {
       setIngredientLoading(false)
     }
@@ -303,7 +310,7 @@ function ProductCard({ product, match, aanbiedingen = [], nadruk = [], vergelijk
     {absentStates.length > 0 && <p className="verdict absent"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 100)}</p>}
     <details className="ingredients" onToggle={(event) => { if (event.currentTarget.open) laadIngredienten() }}>
       <summary>Volledige ingrediëntenlijst bekijken{match.importNote && /vertaling/i.test(match.importNote) ? ' (vertaald)' : ''}</summary>
-      <Ingredients text={ingredientText} loading={ingredientLoading} />
+      <Ingredients text={ingredientText} loading={ingredientLoading} hasLabel={match.hasLabel} error={ingredientError} />
       {match.importNote && <p className="import-note"><small>{match.importNote}</small></p>}
     </details>
     {Object.keys(voeding).length > 0 && <details className="nutrition">
