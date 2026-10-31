@@ -20,10 +20,10 @@
         "calcium": null,
         "phosphorus": null,
         "omega3": null,
-        "omega6": null
+        "omega6": 2.08
       },
       "bronTekst": "ANALYTISCHE BESTANDDELEN: Ruw eiwit: 30,0% - Ruwe celstof: 16,6% - Ruw vet: 9,5% - Ruwe as: 5,7% - Essentieel vetzuur (linolzuur): 2,08% - Metaboliseerbare energie: 2.586kcal/kg.",
-      "notitie": "Metaboliseerbare energie 2.586kcal/kg omgerekend naar 258,6 kcal/100 g (gedeeld door 10). Vocht, calcium, fosfor, omega-3 en omega-6 worden niet vermeld."
+      "notitie": "Metaboliseerbare energie 2.586kcal/kg omgerekend naar 258,6 kcal/100 g (gedeeld door 10). Omega-6 overgenomen uit de opgave \"Essentieel vetzuur (linolzuur)\" (linolzuur is een omega-6 vetzuur). Vocht, calcium, fosfor en omega-3 worden niet vermeld."
     },
     {
       "merk": "Royal Canin",
@@ -43,10 +43,10 @@
         "calcium": null,
         "phosphorus": null,
         "omega3": null,
-        "omega6": null
+        "omega6": 2.08
       },
       "bronTekst": "ANALYTISCHE BESTANDDELEN: Ruw eiwit: 30,0% - Ruwe celstof: 16,6% - Ruw vet: 9,5% - Ruwe as: 5,7% - Essentieel vetzuur (linolzuur): 2,08% - Metaboliseerbare energie: 2.586kcal/kg.",
-      "notitie": "Metaboliseerbare energie 2.586kcal/kg omgerekend naar 258,6 kcal/100 g (gedeeld door 10). Vocht, calcium, fosfor, omega-3 en omega-6 worden niet vermeld."
+      "notitie": "Metaboliseerbare energie 2.586kcal/kg omgerekend naar 258,6 kcal/100 g (gedeeld door 10). Omega-6 overgenomen uit de opgave \"Essentieel vetzuur (linolzuur)\" (linolzuur is een omega-6 vetzuur). Vocht, calcium, fosfor en omega-3 worden niet vermeld."
     },
     {
       "merk": "Royal Canin",

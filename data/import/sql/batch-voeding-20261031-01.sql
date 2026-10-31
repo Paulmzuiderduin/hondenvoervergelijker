@@ -241,7 +241,7 @@ insert into public.recipe_nutrition (recipe_version_id, nutrient_key, value, bas
 update public.recipe_versions
    set nutrition_source_url = 'https://www.royalcanin.com/nl/dogs/products/retail-products/french-bulldog-8103',
        nutrition_checked_at = '2026-10-30',
-       nutrition_note = 'Metaboliseerbare energie 872kcal/kg omgerekend naar 87,2 kcal/100 g (gedeeld door 10). EPA/DHA is niet als omega-3 overgenomen omdat het een deelverzameling van de omega-3-vetzuren is. Fosfor, omega-3 en omega-6 worden niet vermeld.'
+       nutrition_note = 'Metaboliseerbare energie 872kcal/kg omgerekend naar 87,2 kcal/100 g (gedeeld door 10). EPA/DHA is niet als omega-3 overgenomen omdat het een deelverzameling van de omega-3-vetzuren is. Omega-3 en omega-6 worden niet vermeld.'
  where id = '3b5cbbe7-e8f5-4b77-a0e4-678ca0b9638b';
 delete from public.recipe_nutrition where recipe_version_id = '3b5cbbe7-e8f5-4b77-a0e4-678ca0b9638b';
 insert into public.recipe_nutrition (recipe_version_id, nutrient_key, value, basis) values
@@ -251,7 +251,8 @@ insert into public.recipe_nutrition (recipe_version_id, nutrient_key, value, bas
   ('3b5cbbe7-e8f5-4b77-a0e4-678ca0b9638b', 'ash', 2.2, 'as-fed'),
   ('3b5cbbe7-e8f5-4b77-a0e4-678ca0b9638b', 'moisture', 80, 'as-fed'),
   ('3b5cbbe7-e8f5-4b77-a0e4-678ca0b9638b', 'kcal', 87.2, 'as-fed'),
-  ('3b5cbbe7-e8f5-4b77-a0e4-678ca0b9638b', 'calcium', 0.33, 'as-fed');
+  ('3b5cbbe7-e8f5-4b77-a0e4-678ca0b9638b', 'calcium', 0.33, 'as-fed'),
+  ('3b5cbbe7-e8f5-4b77-a0e4-678ca0b9638b', 'phosphorus', 0.25, 'as-fed');
 
 -- Royal Canin — French Bulldog Puppy (kibble)
 update public.recipe_versions

@@ -49,7 +49,7 @@ insert into public.recipe_nutrition (recipe_version_id, nutrient_key, value, bas
 update public.recipe_versions
    set nutrition_source_url = 'https://www.royalcanin.com/nl/dogs/products/vet-products/royal-canin--veterinary-health-nutrition-gastrointestinal-low-fat-hypoallergenic-dry-pet-food-for-dog-2734',
        nutrition_checked_at = '2026-10-30',
-       nutrition_note = 'Metaboliseerbare energie 3.508kcal/kg omgerekend naar 350,8 kcal/100 g (gedeeld door 10). Vocht, calcium, fosfor, omega-3 en omega-6 worden niet vermeld.'
+       nutrition_note = 'Metaboliseerbare energie 3.508kcal/kg omgerekend naar 350,8 kcal/100 g (gedeeld door 10). Omega-6 overgenomen uit de opgave "Essentieel vetzuur (linolzuur)" (linolzuur is een omega-6 vetzuur). Vocht, calcium, fosfor en omega-3 worden niet vermeld.'
  where id = '993c8b96-6390-456f-aff7-a8bb86e32e23';
 delete from public.recipe_nutrition where recipe_version_id = '993c8b96-6390-456f-aff7-a8bb86e32e23';
 insert into public.recipe_nutrition (recipe_version_id, nutrient_key, value, basis) values
@@ -57,7 +57,8 @@ insert into public.recipe_nutrition (recipe_version_id, nutrient_key, value, bas
   ('993c8b96-6390-456f-aff7-a8bb86e32e23', 'fat', 7, 'as-fed'),
   ('993c8b96-6390-456f-aff7-a8bb86e32e23', 'fiber', 1.3, 'as-fed'),
   ('993c8b96-6390-456f-aff7-a8bb86e32e23', 'ash', 6.2, 'as-fed'),
-  ('993c8b96-6390-456f-aff7-a8bb86e32e23', 'kcal', 350.8, 'as-fed');
+  ('993c8b96-6390-456f-aff7-a8bb86e32e23', 'kcal', 350.8, 'as-fed'),
+  ('993c8b96-6390-456f-aff7-a8bb86e32e23', 'omega6', 1.57, 'as-fed');
 
 -- Royal Canin — Gastrointestinal Low Fat Small Dog (kibble)
 update public.recipe_versions

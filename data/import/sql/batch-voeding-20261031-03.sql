@@ -4,7 +4,7 @@ begin;
 update public.recipe_versions
    set nutrition_source_url = 'https://www.royalcanin.com/nl/dogs/products/vet-products/hypoallergenic-%2b-satiety-1083',
        nutrition_checked_at = '2026-10-30',
-       nutrition_note = 'Metaboliseerbare energie 2.586kcal/kg omgerekend naar 258,6 kcal/100 g (gedeeld door 10). Vocht, calcium, fosfor, omega-3 en omega-6 worden niet vermeld.'
+       nutrition_note = 'Metaboliseerbare energie 2.586kcal/kg omgerekend naar 258,6 kcal/100 g (gedeeld door 10). Omega-6 overgenomen uit de opgave "Essentieel vetzuur (linolzuur)" (linolzuur is een omega-6 vetzuur). Vocht, calcium, fosfor en omega-3 worden niet vermeld.'
  where id = '82c51995-9918-4b48-997d-35fc5c193526';
 delete from public.recipe_nutrition where recipe_version_id = '82c51995-9918-4b48-997d-35fc5c193526';
 insert into public.recipe_nutrition (recipe_version_id, nutrient_key, value, basis) values
@@ -12,13 +12,14 @@ insert into public.recipe_nutrition (recipe_version_id, nutrient_key, value, bas
   ('82c51995-9918-4b48-997d-35fc5c193526', 'fat', 9.5, 'as-fed'),
   ('82c51995-9918-4b48-997d-35fc5c193526', 'fiber', 16.6, 'as-fed'),
   ('82c51995-9918-4b48-997d-35fc5c193526', 'ash', 5.7, 'as-fed'),
-  ('82c51995-9918-4b48-997d-35fc5c193526', 'kcal', 258.6, 'as-fed');
+  ('82c51995-9918-4b48-997d-35fc5c193526', 'kcal', 258.6, 'as-fed'),
+  ('82c51995-9918-4b48-997d-35fc5c193526', 'omega6', 2.08, 'as-fed');
 
 -- Royal Canin — Hypoallergenic + Satiety Small Dogs (kibble)
 update public.recipe_versions
    set nutrition_source_url = 'https://www.royalcanin.com/nl/dogs/products/vet-products/hypoallergenic-%2b-satiety-small-dogs-8069',
        nutrition_checked_at = '2026-10-30',
-       nutrition_note = 'Metaboliseerbare energie 2.586kcal/kg omgerekend naar 258,6 kcal/100 g (gedeeld door 10). Vocht, calcium, fosfor, omega-3 en omega-6 worden niet vermeld.'
+       nutrition_note = 'Metaboliseerbare energie 2.586kcal/kg omgerekend naar 258,6 kcal/100 g (gedeeld door 10). Omega-6 overgenomen uit de opgave "Essentieel vetzuur (linolzuur)" (linolzuur is een omega-6 vetzuur). Vocht, calcium, fosfor en omega-3 worden niet vermeld.'
  where id = 'cb6495e8-e6c1-410e-97d8-f9b56e8284d1';
 delete from public.recipe_nutrition where recipe_version_id = 'cb6495e8-e6c1-410e-97d8-f9b56e8284d1';
 insert into public.recipe_nutrition (recipe_version_id, nutrient_key, value, basis) values
@@ -26,7 +27,8 @@ insert into public.recipe_nutrition (recipe_version_id, nutrient_key, value, bas
   ('cb6495e8-e6c1-410e-97d8-f9b56e8284d1', 'fat', 9.5, 'as-fed'),
   ('cb6495e8-e6c1-410e-97d8-f9b56e8284d1', 'fiber', 16.6, 'as-fed'),
   ('cb6495e8-e6c1-410e-97d8-f9b56e8284d1', 'ash', 5.7, 'as-fed'),
-  ('cb6495e8-e6c1-410e-97d8-f9b56e8284d1', 'kcal', 258.6, 'as-fed');
+  ('cb6495e8-e6c1-410e-97d8-f9b56e8284d1', 'kcal', 258.6, 'as-fed'),
+  ('cb6495e8-e6c1-410e-97d8-f9b56e8284d1', 'omega6', 2.08, 'as-fed');
 
 -- Royal Canin — Hypoallergenic Moderate Calorie (kibble)
 update public.recipe_versions

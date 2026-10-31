@@ -409,12 +409,12 @@
         "moisture": 80,
         "kcal": 87.2,
         "calcium": 0.33,
-        "phosphorus": null,
+        "phosphorus": 0.25,
         "omega3": null,
         "omega6": null
       },
       "bronTekst": "ANALYTISCHE BESTANDDELEN: Ruw eiwit: 8,6% - Ruwe celstof: 1,1% - Ruw vet: 5,4% - Ruwe as: 2,2% - Vochtgehalte: 80,0% - EPA+DHA: 0,1% - Calcium: 0,33% - Fosfor: 0,25% - Metaboliseerbare energie: 872kcal/kg.",
-      "notitie": "Metaboliseerbare energie 872kcal/kg omgerekend naar 87,2 kcal/100 g (gedeeld door 10). EPA/DHA is niet als omega-3 overgenomen omdat het een deelverzameling van de omega-3-vetzuren is. Fosfor, omega-3 en omega-6 worden niet vermeld."
+      "notitie": "Metaboliseerbare energie 872kcal/kg omgerekend naar 87,2 kcal/100 g (gedeeld door 10). EPA/DHA is niet als omega-3 overgenomen omdat het een deelverzameling van de omega-3-vetzuren is. Omega-3 en omega-6 worden niet vermeld."
     },
     {
       "merk": "Royal Canin",
