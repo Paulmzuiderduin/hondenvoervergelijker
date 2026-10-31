@@ -59,10 +59,12 @@ de bestaande etiketbestanden blijven ongewijzigd.
 
 `node scripts/controleer-voedingswaarden-bronnen.mjs` vergelijkt de opgeslagen
 `bronTekst` met de actuele bronpagina. Het script kijkt naar de getallen in de
-analyse, zodat een andere tabelopmaak geen valse melding geeft. Het rapport
-komt in `broncontrole.md`. De wekelijkse workflow `Broncontrole` draait dit
-script na de ingrediëntencontrole. Een verschil wordt nooit automatisch
-doorgevoerd: een mens beoordeelt het en past de import of het product aan.
+analyse, zodat een andere tabelopmaak geen valse melding geeft. Een product
+waarvan de notitie zegt dat de analyse van een buitenlandse of retailerpagina
+komt, wordt als **andere bron** gemeld en niet als wijziging. Het rapport komt
+in `broncontrole.md`. De wekelijkse workflow `Broncontrole` draait dit script na
+de ingrediëntencontrole. Een verschil wordt nooit automatisch doorgevoerd: een
+mens beoordeelt het en past de import of het product aan.
 
 ## Plausibiliteit
 

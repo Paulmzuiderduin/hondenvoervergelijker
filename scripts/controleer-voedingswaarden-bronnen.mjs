@@ -100,8 +100,10 @@ async function controleer(product) {
     const pagina = vergelijkbaar(html)
     if (!String(product.bronTekst).trim()) return { ...product, status: 'geen-tekst', detail: 'Geen bruikbare brontekst in het importbestand.' }
     const vergelijking = vergelijkAnalyse(pagina, product.bronTekst)
-    return vergelijking.gelijk
-      ? { ...product, status: 'gelijk', detail: '' }
+    if (vergelijking.gelijk) return { ...product, status: 'gelijk', detail: '' }
+    const andereBron = /Duitse|Duits|Franse|Frans|Engelse|Engels|Belgische|Belgisch|Oostenrijkse|anderstalig|buitenland|gearchiveerd|archief|winkelpagina|retailer/i.test(product.notitie ?? '')
+    return andereBron
+      ? { ...product, status: 'andere-bron', detail: `De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat ${vergelijking.gevonden} van ${vergelijking.totaal} getallen.` }
       : { ...product, status: 'gewijzigd', detail: `De opgeslagen analyse is niet teruggevonden: ${vergelijking.gevonden} van ${vergelijking.totaal} getallen gevonden.` }
   } catch (fout) {
     return { ...product, status: 'onbereikbaar', detail: String(fout?.message ?? fout).slice(0, 160) }
@@ -127,6 +129,7 @@ await Promise.all(Array.from({ length: Math.min(parallel, producten.length) }, w
 const telling = (status) => resultaten.filter((rij) => rij?.status === status).length
 const groepen = {
   gewijzigd: resultaten.filter((rij) => rij?.status === 'gewijzigd'),
+  andereBron: resultaten.filter((rij) => rij?.status === 'andere-bron'),
   onbereikbaar: resultaten.filter((rij) => rij?.status === 'onbereikbaar'),
   browser: resultaten.filter((rij) => rij?.status === 'browser'),
   geenTekst: resultaten.filter((rij) => rij?.status === 'geen-tekst')
@@ -138,12 +141,13 @@ const regels = [
   `Producten gecontroleerd: ${producten.length}`,
   `Gelijk: ${telling('gelijk')}`,
   `Gewijzigd: ${groepen.gewijzigd.length}`,
+  `Andere bron: ${groepen.andereBron.length}`,
   `Onbereikbaar: ${groepen.onbereikbaar.length}`,
   `Alleen via browser: ${groepen.browser.length}`,
   `Geen bruikbare brontekst: ${groepen.geenTekst.length}`,
   ''
 ]
-for (const [titel, rijen] of [['Gewijzigd', groepen.gewijzigd], ['Onbereikbaar', groepen.onbereikbaar], ['Alleen via browser', groepen.browser], ['Geen bruikbare brontekst', groepen.geenTekst]]) {
+for (const [titel, rijen] of [['Gewijzigd', groepen.gewijzigd], ['Andere bron', groepen.andereBron], ['Onbereikbaar', groepen.onbereikbaar], ['Alleen via browser', groepen.browser], ['Geen bruikbare brontekst', groepen.geenTekst]]) {
   if (!rijen.length) continue
   regels.push(`## ${titel}`, '', '| Merk | Product | Bron | Detail |', '|---|---|---|---|')
   for (const rij of rijen) regels.push(`| ${markdownCel(rij.merk)} | ${markdownCel(rij.naam)} | ${markdownCel(host(rij.bronUrl))} | ${markdownCel(rij.detail)} |`)
@@ -152,5 +156,5 @@ for (const [titel, rijen] of [['Gewijzigd', groepen.gewijzigd], ['Onbereikbaar',
 if (!groepen.gewijzigd.length && !groepen.onbereikbaar.length) regels.push('Geen wijzigingen of onbereikbare bronnen gevonden.', '')
 writeFileSync(RAPPORT, `${regels.join('\n')}\n`)
 console.log(`\nRapport: ${RAPPORT}`)
-console.log(`Gelijk: ${telling('gelijk')} · gewijzigd: ${groepen.gewijzigd.length} · onbereikbaar: ${groepen.onbereikbaar.length} · browser: ${groepen.browser.length}`)
+console.log(`Gelijk: ${telling('gelijk')} · gewijzigd: ${groepen.gewijzigd.length} · andere bron: ${groepen.andereBron.length} · onbereikbaar: ${groepen.onbereikbaar.length} · browser: ${groepen.browser.length}`)
 if (!geenFout && (groepen.gewijzigd.length || groepen.onbereikbaar.length)) process.exit(1)

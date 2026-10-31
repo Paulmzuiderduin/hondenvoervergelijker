@@ -1284,6 +1284,12 @@ function App() {
               {actieveFilterCount > 0 && <button type="button" className="filters-reset" onClick={wisFilterkolom} title="Alleen de filters in deze kolom wissen; je allergenenkeuze blijft staan.">Wissen</button>}
             </div>
             <label className="product-search">Zoek product<input type="search" maxLength={80} value={zoekterm} onChange={(event) => setZoekterm(event.target.value)} placeholder="Bijv. renal, kip of senior" /></label>
+            <div className="search-chips" aria-label="Snel zoeken op productnaam">
+              {['Puppy', 'Senior', 'Mini', 'Large'].map((term) => {
+                const actief = normaliseerZoektekst(zoekterm) === normaliseerZoektekst(term)
+                return <button type="button" key={term} className={`search-chip${actief ? ' active' : ''}`} aria-pressed={actief} onClick={() => setZoekterm(actief ? '' : term)} title={`Zoek producten met "${term}" in de naam`}>{term}</button>
+              })}
+            </div>
             <div className="filter-block">
               <h3>Type voer</h3>
               <div className="choices food-type-choices">{FOOD_TYPES.map(([key, label]) => <label className={`inline type-chip${types.includes(key) ? ' active' : ''}`} key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div>

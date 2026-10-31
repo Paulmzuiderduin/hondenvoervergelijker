@@ -811,6 +811,33 @@ button:disabled {
   font-weight: 400;
 }
 
+.search-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: -0.25rem 0 0.55rem;
+}
+
+.search-chip {
+  padding: 0.12rem 0.38rem;
+  border: 1px solid #c8d3c9;
+  border-radius: 2px;
+  background: #f7f9f7;
+  color: #44564a;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.search-chip.active {
+  border-color: #9fb8a6;
+  background: #eaf1ec;
+  color: #175b30;
+}
+
+.search-chip:hover:not(:disabled) {
+  background: #eaf0eb;
+}
+
 .brand-search-label {
   margin: 0.45rem 0;
   font-size: 0.83rem;

@@ -90,7 +90,7 @@ Na elke cluster een JSON-controle en SQL-batch. De agents schrijven batches van 
 
 ### Broncontrole en plausibiliteit
 
-- `scripts/controleer-voedingswaarden-bronnen.mjs` vergelijkt de vastgelegde analysetekst met de bronpagina en schrijft `data/import/voedingswaarden/broncontrole.md`. Het script wijzigt niets in de database.
+- `scripts/controleer-voedingswaarden-bronnen.mjs` vergelijkt de vastgelegde analysetekst met de bronpagina en schrijft `data/import/voedingswaarden/broncontrole.md`. Het script wijzigt niets in de database. Een analyse die volgens de notitie van een buitenlandse of retailerpagina komt, wordt als **andere bron** gemeld en niet als wijziging.
 - `scripts/controleer-voedingswaarden-plausibiliteit.mjs` controleert op macro-sommen boven 100%, onmogelijke vezel- of kcal-waarden en vocht dat niet bij het voertype past. Het rapport staat in `data/import/voedingswaarden/plausibiliteit.md`.
 - De wekelijkse GitHub-workflow `Broncontrole` draait beide scripts naast de bestaande ingrediëntencontrole en neemt de rapporten mee in het issue en het artifact.
 - Een onmogelijke waarde krijgt een waarschuwing op de kaart. De waarde wordt niet getoond en niet gebruikt voor filters of sortering; de rest van de analyse blijft wel zichtbaar. De teller bij een filter telt daarom alleen bruikbare waarden.
@@ -120,7 +120,7 @@ Na elke cluster een JSON-controle en SQL-batch. De agents schrijven batches van 
 - **As-fed is de standaardweergave.** Dat is de waarde zoals de fabrikant hem op het etiket zet en waar de meeste eigenaren mee werken. Droge stof is als extra, duidelijk gelabelde weergave per product toegevoegd om natvoer en brokken eerlijk te vergelijken.
 - **Filters op de volledige standaardset** zijn geïmplementeerd met een minimum- en maximumschuif. Sorteren op eiwit, vet en energie is toegevoegd.
 - **Een productentry is een product of verpakking, geen unieke receptuur.** De site noemt de telling daarom “producten”; meerdere verpakkingen of smaken kunnen dezelfde analyse delen.
-- **Life-stage en formaat zijn nog geen gestructureerde velden.** Zoeken op productnaam (puppy, senior, mini) is de tijdelijke oplossing. Een echte filter vraagt om gecontroleerde extractie.
+- **Life-stage en formaat zijn nog geen gestructureerde velden.** Snelzoekchips voor Puppy, Senior, Mini en Large vullen het productzoekveld; ze zoeken op productnaam en zijn geen gecontroleerde leeftijds- of formaatclassificatie. Een echte filter vraagt om extractie en controle van die velden.
 - **Side-by-side vergelijken is geïmplementeerd** voor maximaal drie producten, met alle standaardwaarden en dezelfde as-fed/droge-stofkeuze.
 - **Agenten doen de eerste extractie**, met menselijke controle op de steekproef en op alle omgerekende waarden.
 - **We beginnen bij de top 10 merken**, na een kleine pilot daarbinnen.
