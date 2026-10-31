@@ -197,7 +197,7 @@
       "waarden": {
         "protein": 25.0,
         "fat": 12.0,
-        "fiber": 33.0,
+        "fiber": null,
         "ash": 6.0,
         "moisture": 9.0,
         "kcal": null,
@@ -207,7 +207,7 @@
         "omega6": 2.2
       },
       "bronTekst": "Ruw eiwit 25%, Ruw vet 12%, Ruwe celstof 33%, Ruwe as 6%, Clacium 1,1%, Fosfor 0,8%, Vocht 9%, Omega-3 vetzuren: 0,3%, Omega-6 vetzuren: 2,2%, Energiewaarde 2,652 kcal/kg.",
-      "notitie": "Bron vermeldt 'Ruwe celstof 33%' en 'Energiewaarde 2,652 kcal/kg'; deze waarden wijken sterk af van de overige waarden en lijken typefouten. De celstofwaarde is letterlijk overgenomen. De energiewaarde is door de tegenstrijdige notatie niet omgerekend en blijft null. Calcium staat op de bron als 'Clacium' (1,1%) en is als calcium overgenomen."
+      "notitie": "Bron vermeldt 'Ruwe celstof 33%' en 'Energiewaarde 2,652 kcal/kg'; deze waarden wijken sterk af van de overige waarden en lijken typefouten. De celstofwaarde is niet overgenomen omdat 33% voor deze brok onmogelijk is; de waarde blijft leeg. De energiewaarde is door de tegenstrijdige notatie niet omgerekend en blijft null. Calcium staat op de bron als 'Clacium' (1,1%) en is als calcium overgenomen."
     },
     {
       "merk": "Jarco",

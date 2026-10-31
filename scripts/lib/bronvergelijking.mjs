@@ -20,7 +20,9 @@ export const BROWSER_ONLY_HOSTS = new Set([
   'wooof.nl',
   'www.wooof.nl',
   'www.terracanis.com',
-  'terracanis.com'
+  'terracanis.com',
+  'www.kivopetfood.nl',
+  'kivopetfood.nl'
 ])
 
 const ENTITEITEN = {

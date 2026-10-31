@@ -1,10 +1,10 @@
 # Voedingswaarden
 
-Status: **fase 0, 1, 2 en 3 afgerond en live.** Alle **786 top-10-producten** en **691 van de 692 overige producten** hebben voedingswaarden. In totaal: **1.477 van de 1.478 producten**, met **778 volledig**, **699 gedeeltelijk**, **1.009 met kcal/100 g** en **10.956 opgeslagen waarden**. Eén Pedigree-product vermeldt geen analytische bestanddelen op de officiële pagina en blijft daarom zonder waarden. **Fase 4 is afgerond:** alle standaardwaarden zijn met een minimum- en maximumschuif te filteren. Eiwit, vet en energie staan direct open; de andere zeven zitten in één compacte uitklapregel. De resultaten zijn te sorteren op eiwit, vet en energie.
+Status: **fase 0, 1, 2 en 3 afgerond en live.** Alle **786 top-10-producten** en **691 van de 692 overige producten** hebben voedingswaarden. In totaal: **1.477 van de 1.478 producten**, met **778 volledig**, **699 gedeeltelijk**, **1.009 met kcal/100 g** en **10.956 opgeslagen waarden**. Eén Pedigree-product vermeldt geen analytische bestanddelen op de officiële pagina en blijft daarom zonder waarden. **Fase 4 is afgerond:** alle standaardwaarden zijn met een minimum- en maximumschuif te filteren. Eiwit, vet en energie staan direct open; de andere zeven zitten in één compacte uitklapregel. De resultaten zijn te sorteren op eiwit, vet en energie. De voedingsbron en controledatum staan op de kaart, en een aparte bron- en plausibiliteitscontrole bewaakt de waarden.
 
 ## Uitgangspunten
 
-- Waarden komen van dezelfde bronpagina als de ingrediëntenlijst, tenzij de beheerder een aparte bron invult.
+- Waarden komen van de opgegeven bronpagina. Die kan afwijken van de ingrediëntenbron, bijvoorbeeld een buitenlandse of retailerpagina. De kaart toont de bron en de controledatum; bij een afwijkende bron verschijnt een waarschuwing.
 - Percentages zijn **as-fed**, zoals op het etiket. Ze worden niet omgerekend naar droge stof.
 - Ontbrekende waarden worden niet geschat. De site toont dan geen waarde; in beheer staat dat ze ontbreken.
 - De kernset is: ruw eiwit, ruw vet, ruwe vezel, ruwe as, vocht en metaboliseerbare energie (kcal/100 g).
@@ -88,22 +88,36 @@ De resterende 692 producten van de niet-top-10-merken, inclusief bronnen die all
 
 Na elke cluster een JSON-controle en SQL-batch. De agents schrijven batches van maximaal 25 producten.
 
+### Broncontrole en plausibiliteit
+
+- `scripts/controleer-voedingswaarden-bronnen.mjs` vergelijkt de vastgelegde analysetekst met de bronpagina en schrijft `data/import/voedingswaarden/broncontrole.md`. Het script wijzigt niets in de database.
+- `scripts/controleer-voedingswaarden-plausibiliteit.mjs` controleert op macro-sommen boven 100%, onmogelijke vezel- of kcal-waarden en vocht dat niet bij het voertype past. Het rapport staat in `data/import/voedingswaarden/plausibiliteit.md`.
+- De wekelijkse GitHub-workflow `Broncontrole` draait beide scripts naast de bestaande ingrediëntencontrole en neemt de rapporten mee in het issue en het artifact.
+- Een onmogelijke waarde krijgt een waarschuwing op de kaart. De waarde wordt niet getoond en niet gebruikt voor filters of sortering; de rest van de analyse blijft wel zichtbaar. De teller bij een filter telt daarom alleen bruikbare waarden.
+
 ### Fase 4 — UI, SEO en filters (afgerond)
 
 - **Filteren op de volledige standaardset**: eiwit, vet, vezel, as, vocht, energie, calcium, fosfor, omega-3 en omega-6. Elke waarde heeft een dubbele schuif (minimum en maximum) en invoervelden voor exacte grenzen.
 - **Compacte opbouw:** eiwit, vet en energie staan altijd open; de andere zeven zitten achter één uitklapregel. Elke rij is één regel met de grenzen in de kop en de schuif eronder.
 - Een actief voedingsfilter laat alleen producten door waarvan de fabrikant die waarde vermeldt. Zonder actief filter blijven producten zonder voedingswaarden zichtbaar.
-- De gekozen bereiken staan in de URL (`?eiwit=25-40`, `?calcium=1-2`, `?omega3=0.3-1`) en als verwijderbare chips bij de resultaten.
-- **Sorteren** op eiwit, vet of energie, binnen de drie oordeelgroepen (geschikt, controleren, uitgesloten). Producten zonder de gekozen waarde zakken binnen hun groep naar achteren.
-- Waarschuwing wanneer natvoer/rauwvoer en brokken tegelijk worden gefilterd: de percentages zijn as-fed en niet direct vergelijkbaar.
-- Methodiekpagina en `llms.txt` zijn bijgewerkt met uitleg over de filters en as-fed.
-- Een automatische droge-stofweergave is niet toegevoegd. De site blijft de as-fedwaarden tonen en legt het verschil met natvoer en brokken uit.
+- De gekozen bereiken staan in de URL (`?eiwit=25-40`, `?calcium=0.07-1.25`, `?omega3=0.3-1`), samen met het voertype en de sortering. Bereiken met twee decimalen blijven exact bewaard.
+- **Sorteren** op eiwit, vet of energie, binnen de drie oordeelgroepen (geschikt, controleren, uitgesloten). Producten zonder de gekozen waarde zakken binnen hun groep naar achteren. De kaart vermeldt dat de sortering binnen de oordeelgroepen geldt.
+- Elk filter toont het aantal producten met een bruikbare waarde. Een waarde die als onmogelijk is gemarkeerd telt daar niet mee.
+- De kaart toont de actieve filterwaarde in de samenvatting (bijvoorbeeld calcium) en in het detail de voedingsbron met controledatum.
+- Waarschuwing wanneer natvoer/rauwvoer en brokken tegelijk worden gefilterd of op voeding worden gesorteerd: de percentages zijn as-fed en niet direct vergelijkbaar.
+- De knop **Wissen** in de filterkolom wist alleen de kolom; de allergenenkeuze blijft staan. **Filters wissen** bij de resultaten wist alles.
+- Op mobiel staat de resultaattelling in de filterkop en is er onderaan de filterkolom een springlink naar de resultaten.
+- Methodiekpagina en `llms.txt` zijn bijgewerkt met uitleg over de filters, bronnen en as-fed.
+- **Droge-stofweergave per product:** in het voedingsdetail kan de bezoeker schakelen tussen as-fed en droge stof. Het vocht wordt weggerekend en de energie wordt per 100 g droge stof getoond. Zonder vochtgehalte is de knop niet beschikbaar. De filters en sortering blijven op as-fed werken.
 
 ## Besluiten
 
 - **Calcium, fosfor, omega-3 en omega-6** horen bij de standaardset. Ze worden verzameld en getoond waar ze op de bron staan.
 - **Producten zonder voedingswaarden blijven zichtbaar.** De vergelijker gaat primair over allergenen; een ontbrekende voedingswaarde mag een product niet verbergen.
-- **As-fed is de standaardweergave.** Dat is de waarde zoals de fabrikant hem op het etiket zet en waar de meeste eigenaren mee werken. Veterinaire voedingsdeskundigen gebruiken droge stof vooral om natvoer en brokken eerlijk te vergelijken; dat komt later als extra, duidelijk gelabelde berekening.
+- **As-fed is de standaardweergave.** Dat is de waarde zoals de fabrikant hem op het etiket zet en waar de meeste eigenaren mee werken. Droge stof is als extra, duidelijk gelabelde weergave per product toegevoegd om natvoer en brokken eerlijk te vergelijken.
 - **Filters op de volledige standaardset** zijn geïmplementeerd met een minimum- en maximumschuif. Sorteren op eiwit, vet en energie is toegevoegd.
+- **Een productentry is een product of verpakking, geen unieke receptuur.** De site noemt de telling daarom “producten”; meerdere verpakkingen of smaken kunnen dezelfde analyse delen.
+- **Life-stage en formaat zijn nog geen gestructureerde velden.** Zoeken op productnaam (puppy, senior, mini) is de tijdelijke oplossing. Een echte filter vraagt om gecontroleerde extractie.
+- **Side-by-side vergelijken is nog niet gebouwd.** De huidige vergelijker filtert en sorteert producten; een aparte vergelijkingstabel is een volgende productstap.
 - **Agenten doen de eerste extractie**, met menselijke controle op de steekproef en op alle omgerekende waarden.
 - **We beginnen bij de top 10 merken**, na een kleine pilot daarbinnen.

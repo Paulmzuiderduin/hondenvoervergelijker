@@ -22,7 +22,9 @@
     "voeding:rapport": "node scripts/rapporteer-voedingswaarden.mjs",
     "voeding:opdrachten": "node scripts/maak-voedingswaarde-opdrachten.mjs",
     "voeding:controle": "node scripts/controleer-voedingswaarden-json.mjs",
-    "voeding:fase3": "node scripts/maak-fase3-opdrachten.mjs"
+    "voeding:fase3": "node scripts/maak-fase3-opdrachten.mjs",
+    "voeding:broncontrole": "node scripts/controleer-voedingswaarden-bronnen.mjs",
+    "voeding:plausibiliteit": "node scripts/controleer-voedingswaarden-plausibiliteit.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4",

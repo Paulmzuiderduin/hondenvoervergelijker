@@ -27,7 +27,7 @@ function schrijf(sleutel, data) {
       // Volle of geblokkeerde opslag: de site werkt gewoon zonder cache.
     }
   }
-  // Groot (ongeveer 1,3 MB): pas opslaan als de pagina niets anders te doen heeft.
+  // Groot (ongeveer 2,9 MB): pas opslaan als de pagina niets anders te doen heeft.
   if (typeof window.requestIdleCallback === 'function') window.requestIdleCallback(opslaan, { timeout: 2000 })
   else window.setTimeout(opslaan, 0)
 }

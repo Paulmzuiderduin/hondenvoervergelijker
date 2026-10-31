@@ -58,14 +58,19 @@ export function voedingswaardeMap(rijen = []) {
   return Object.fromEntries(normaliseerVoedingswaarden(rijen).map((nutrient) => [nutrient.key, nutrient.value]))
 }
 
-export function voedingswaardeSamenvatting(rijen = []) {
+export function voedingswaardeSamenvatting(rijen = [], { voorkeur = [], maximum = 3 } = {}) {
   const waarden = normaliseerVoedingswaarden(rijen)
   if (!waarden.length) return ''
   const perSleutel = new Map(waarden.map((nutrient) => [nutrient.key, nutrient]))
-  const voorkeur = ['protein', 'fat', 'kcal'].map((key) => perSleutel.get(key)).filter(Boolean)
-  const rest = waarden.filter((nutrient) => !voorkeur.includes(nutrient)).slice(0, Math.max(0, 3 - voorkeur.length))
-  return [...voorkeur, ...rest]
-    .slice(0, 3)
+  // Een actief voedingsfilter hoort ook op de kaart te staan. Anders zie je bij
+  // een calciumfilter alleen eiwit, vet en energie en moet je het detail openen
+  // om te zien waarom het product überhaupt in de lijst staat.
+  const gewenst = [...new Set([...voorkeur, 'protein', 'fat', 'kcal'])]
+    .map((key) => perSleutel.get(key))
+    .filter(Boolean)
+  const rest = waarden.filter((nutrient) => !gewenst.includes(nutrient))
+  return [...gewenst, ...rest]
+    .slice(0, maximum)
     .map((nutrient) => `${nutrient.shortLabel} ${formatteerVoedingswaarde(nutrient, nutrient.value)}`)
     .join(' · ')
 }
@@ -74,9 +79,10 @@ export function voedingswaardeSamenvatting(rijen = []) {
 // die waarde ook noemt. Ontbreekt de waarde, dan kan het product niet aan de
 // gekozen onder- of bovengrens voldoen en valt het af. Zonder actief filter
 // verandert er niets: producten zonder voedingswaarden blijven zichtbaar.
-export function voldoetAanVoedingsfilters(waarden = {}, filters = {}) {
+export function voldoetAanVoedingsfilters(waarden = {}, filters = {}, negeren = new Set()) {
   for (const [key, bereik] of Object.entries(filters)) {
     if (!bereik) continue
+    if (negeren.has(key)) return false
     const waarde = waarden[key]
     if (waarde == null || waarde === '') return false
     const getal = Number(waarde)
@@ -84,6 +90,22 @@ export function voldoetAanVoedingsfilters(waarden = {}, filters = {}) {
     if (getal < bereik.min || getal > bereik.max) return false
   }
   return true
+}
+
+// Rekent de analyse om naar droge stof. Het vocht is dan uit het product
+// weggerekend, zodat natvoer en brokken eerlijk naast elkaar kunnen worden
+// gelegd. Zonder vochtgehalte is de omrekening niet betrouwbaar; dan geeft de
+// functie null terug in plaats van een waarde te verzinnen.
+export function naarDrogeStof(rijen = []) {
+  const waarden = voedingswaardeMap(rijen)
+  const vocht = waarden.moisture
+  if (vocht == null || vocht >= 100) return null
+  const factor = 100 / (100 - vocht)
+  return Object.fromEntries(
+    Object.entries(waarden)
+      .filter(([key]) => key !== 'moisture')
+      .map(([key, waarde]) => [key, Math.round(waarde * factor * 100) / 100])
+  )
 }
 
 export function voedingswaardeStatus(rijen = []) {

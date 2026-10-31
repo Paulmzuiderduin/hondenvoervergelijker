@@ -2,16 +2,18 @@ import React, { memo, useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, allergenSearchTerms, assessLabel, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients, missingAllergenKeys, setCustomTerms, sortAllergenKeys } from './lib/allergens'
 import { isReviewOverdue, productMatch } from './lib/matcher'
-import { ADDITIONAL_NUTRIENTS, CORE_NUTRIENTS, NUTRIENTS, formatteerVoedingswaarde, valideerVoedingswaarden, voedingswaardeMap, voedingswaardeSamenvatting, voedingswaardeStatus, voldoetAanVoedingsfilters } from './lib/nutrition'
+import { ADDITIONAL_NUTRIENTS, CORE_NUTRIENTS, NUTRIENTS, formatteerVoedingswaarde, naarDrogeStof, valideerVoedingswaarden, voedingswaardeMap, voedingswaardeSamenvatting, voedingswaardeStatus, voldoetAanVoedingsfilters } from './lib/nutrition'
+import { beoordeelVoedingswaarden, onbetrouwbareNutrienten } from './lib/plausibility'
 import { track } from './lib/analytics'
 import { leesCatalogusCache, schrijfProductenCache, schrijfTermenCache } from './lib/catalogCache'
-import { leesAllergenen, leesMerken, leesVoedingsfilters, schrijfFilters } from './lib/urlFilters'
+import { leesAllergenen, leesMerken, leesSortering, leesVoedingsfilters, leesVoertypes, leesZoekterm, schrijfFilters } from './lib/urlFilters'
+import { SORTING_BY_KEY, SORTING_OPTIONS } from './lib/sorting'
 import { supabase } from './lib/supabase'
 import './styles.css'
 
 const MISSING_RPC = /PGRST202|Could not find the function|schema cache/i
 const TERMS_HINT = 'De woordenlijst kon niet worden geladen; de keuring gebruikt dan alleen de ingebouwde woorden. Dat is strenger, niet soepeler.'
-const PAGE_SIZE = 12
+const PAGE_SIZE = 24
 const HAAL_PAGINA = 1000
 // De volledige standaardset. De eerste drie staan altijd open; de rest zit
 // achter één compacte uitklapregel. De schaal loopt van nul tot een ronde
@@ -32,16 +34,6 @@ const VOEDINGS_FILTERS = [
 const VOEDINGS_FILTER_BY_KEY = Object.fromEntries(VOEDINGS_FILTERS.map((filter) => [filter.key, filter]))
 const PRIMAIRE_VOEDINGS_FILTERS = VOEDINGS_FILTERS.filter((filter) => filter.groep === 'primair')
 const EXTRA_VOEDINGS_FILTERS = VOEDINGS_FILTERS.filter((filter) => filter.groep === 'extra')
-const SORTERINGEN = [
-  { key: 'standaard', label: 'Standaard' },
-  { key: 'eiwit-hoog', label: 'Eiwit: hoog → laag', nutrient: 'protein', richting: -1 },
-  { key: 'eiwit-laag', label: 'Eiwit: laag → hoog', nutrient: 'protein', richting: 1 },
-  { key: 'vet-hoog', label: 'Vet: hoog → laag', nutrient: 'fat', richting: -1 },
-  { key: 'vet-laag', label: 'Vet: laag → hoog', nutrient: 'fat', richting: 1 },
-  { key: 'energie-laag', label: 'Energie: laag → hoog', nutrient: 'kcal', richting: 1 },
-  { key: 'energie-hoog', label: 'Energie: hoog → laag', nutrient: 'kcal', richting: -1 }
-]
-const SORTERING_BY_KEY = Object.fromEntries(SORTERINGEN.map((sortering) => [sortering.key, sortering]))
 const GETAL2 = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 2 })
 const GETAL1 = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 1 })
 const GETAL0 = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 0 })
@@ -73,7 +65,7 @@ async function haalAlleRijen(makeQuery) {
   return { data: rijen, error: null }
 }
 
-const PRODUCT_SELECT = 'id,brand,name,food_type,package_size,source_url,source_status,last_checked_at,recipe_versions(ingredients_text,imported_at,reviewed_at,import_note,nutrition_note,recipe_ingredients(allergen_key,certainty),recipe_nutrition(nutrient_key,value,basis,qualifier,note))'
+const PRODUCT_SELECT = 'id,brand,name,food_type,package_size,source_url,source_status,last_checked_at,recipe_versions(ingredients_text,imported_at,reviewed_at,import_note,nutrition_source_url,nutrition_checked_at,nutrition_note,recipe_ingredients(allergen_key,certainty),recipe_nutrition(nutrient_key,value,basis))'
 
 // De catalogus is groter dan één pagina. Vraag de eerste twee pagina's meteen
 // samen op, zodat de tweede niet op de eerste hoeft te wachten. Daarna gaan
@@ -109,6 +101,12 @@ function sourceDomain(url = '') {
   try { return new URL(url).hostname.replace(/^www\./, '') } catch { return '' }
 }
 
+function datumKort(waarde) {
+  if (!waarde) return ''
+  const datum = new Date(waarde)
+  return Number.isNaN(datum.getTime()) ? '' : datum.toLocaleDateString('nl-NL', { day: 'numeric', month: 'short', year: 'numeric' })
+}
+
 // Zelfde regels als scripts/maak-seo-paginas.mjs, zodat een merknaam naar de
 // juiste statische merkpagina linkt.
 function merkSlug(naam = '') {
@@ -127,6 +125,16 @@ function merkSlug(naam = '') {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
+}
+
+function normaliseerZoektekst(tekst = '') {
+  return String(tekst)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[øØ]/g, 'o')
+    .replace(/[æÆ]/g, 'ae')
+    .toLowerCase()
+    .trim()
 }
 
 function labelList(keys = [], max = 5) {
@@ -159,10 +167,11 @@ const Ingredients = memo(function Ingredients({ text }) {
   return <p>{markUncertainIngredients(text).map((segment, index) => segment.uncertain ? <mark className="uncertain-ingredient" key={index}>{segment.text}</mark> : segment.text)}</p>
 })
 
-function ProductCard({ product, match, aanbiedingen = [] }) {
+function ProductCard({ product, match, aanbiedingen = [], nadruk = [] }) {
   const excluded = match.kind === 'excluded'
   const verdict = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controleer etiket/fabrikant' : match.states.length ? 'Geschikt' : 'Elke bron genoemd'
   const version = product.recipe_versions?.[0]
+  const [drogeStof, setDrogeStof] = useState(false)
   const verborgenWoorden = bronlozeWoorden(version?.ingredients_text ?? '', match.hidden)
   const verborgenKeys = [...new Set(match.hidden.flatMap(({ keys }) => keys))]
   const dektElkAllergeen = verborgenKeys.length >= ALLERGENS.length
@@ -194,7 +203,24 @@ function ProductCard({ product, match, aanbiedingen = [] }) {
   const foodTypeLabel = FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]
   const packageSize = product.package_size && String(product.package_size).trim().toLowerCase() !== 'null' ? product.package_size : ''
   const voeding = voedingswaardeMap(version?.recipe_nutrition)
-  const voedingSamenvatting = voedingswaardeSamenvatting(version?.recipe_nutrition)
+  const onbetrouwbaar = onbetrouwbareNutrienten(voeding, product.food_type)
+  const veiligeRijen = (version?.recipe_nutrition || []).filter((rij) => !onbetrouwbaar.has(rij.nutrient_key))
+  const voedingDroog = naarDrogeStof(version?.recipe_nutrition)
+  const getoondeVoeding = Object.fromEntries(Object.entries(drogeStof && voedingDroog ? voedingDroog : voeding).filter(([key]) => !onbetrouwbaar.has(key)))
+  const voedingSamenvatting = voedingswaardeSamenvatting(veiligeRijen, { voorkeur: nadruk })
+  const plausibiliteit = beoordeelVoedingswaarden(voeding, product.food_type)
+  const nutritionSource = version?.nutrition_source_url || product.source_url || ''
+  const nutritionSourceDomain = sourceDomain(nutritionSource)
+  const ingredientDomain = sourceDomain(product.source_url)
+  const nutritionChecked = datumKort(version?.nutrition_checked_at)
+  const nutritionStale = Boolean(version?.nutrition_checked_at) && isReviewOverdue(version.nutrition_checked_at)
+  const nutritionNote = version?.nutrition_note || ''
+  const buitenlandseBron = /Duitse|Duits|Franse|Frans|Engelse|Engels|Belgische|Belgisch|Oostenrijkse|anderstalig|buitenland|gearchiveerd|archief/i.test(nutritionNote)
+  const bronWaarschuwing = nutritionSource && ingredientDomain && nutritionSourceDomain !== ingredientDomain
+    ? 'Deze voedingswaarden komen van een andere pagina dan de ingrediëntenlijst. Controleer de verpakking.'
+    : buitenlandseBron
+      ? 'De voedingswaarden komen uit een andere taalversie van de productpagina. Controleer de Nederlandse verpakking.'
+      : ''
   const voedingContext = product.food_type === 'wet'
     ? 'Natvoer bevat veel vocht (meestal 75–85%). De percentages zijn as-fed en daardoor niet direct te vergelijken met brokken of rauwvoer. Vergelijk binnen hetzelfde voertype of reken om naar droge stof.'
     : product.food_type === 'raw'
@@ -217,9 +243,10 @@ function ProductCard({ product, match, aanbiedingen = [] }) {
       {hydrolysed.present && <span className="meta-pill hydrolysed-pill">Gehydrolyseerd eiwit</span>}
       {product.source_url?.startsWith('http') && <a className="meta-source" href={product.source_url} target="_blank" rel="noreferrer" title="Officiële productpagina bij de fabrikant" onClick={() => track('bron-klik', { merk: product.brand, product: product.name, domein: sourceDomain(product.source_url) })}>Bron: {sourceDomain(product.source_url) || 'fabrikant'} ↗</a>}
     </div>
-    {voedingSamenvatting && <p className="nutrition-summary" title="Percentages zijn inclusief vocht (as-fed).">
+    {voedingSamenvatting && <p className="nutrition-summary" title="Waarden zijn inclusief vocht (as-fed).">
       {product.food_type !== 'kibble' && <span className={`nutrition-kind ${product.food_type}`}>{foodTypeLabel}</span>}
       {voedingSamenvatting}
+      {plausibiliteit.signalen.length > 0 && <span className="nutrition-flag" role="img" aria-label="Let op: de bronanalyse is niet consistent" title={plausibiliteit.signalen.join(' ')}>⚠</span>}
     </p>}
     {presentStates.length > 0 && !excluded && <p className="verdict present"><strong>Staat in de lijst:</strong> {presentStates.map((state) => `${ALLERGEN_LABELS[state.key]}${state.members.some((member) => member !== state.key) ? ` via ${labelList(state.members.filter((member) => member !== state.key))}` : ''}`).join(', ')}</p>}
     {unknownStates.length > 0 && <p className="verdict unknown"><strong>Kan erin zitten:</strong> {labelList(unknownStates.map((state) => state.key), 100)} — het etiket noemt geen bron voor {onbekendeWoorden.length > 5 ? `${onbekendeWoorden.slice(0, 5).join(', ')} en ${onbekendeWoorden.length - 5} meer` : onbekendeWoorden.length ? onbekendeWoorden.join(', ') : 'een ingrediënt'}</p>}
@@ -231,14 +258,27 @@ function ProductCard({ product, match, aanbiedingen = [] }) {
     </details>
     {Object.keys(voeding).length > 0 && <details className="nutrition">
       <summary>Alle voedingswaarden</summary>
+      <div className="nutrition-view">
+        <div className="nutrition-view-toggle" role="group" aria-label="Weergave voedingswaarden">
+          <button type="button" className={drogeStof ? '' : 'active'} aria-pressed={!drogeStof} onClick={() => setDrogeStof(false)}>As-fed</button>
+          <button type="button" className={drogeStof ? 'active' : ''} aria-pressed={drogeStof} onClick={() => setDrogeStof(true)} disabled={!voedingDroog} title={voedingDroog ? 'Reken het vocht weg' : 'Niet mogelijk: het vochtgehalte ontbreekt'}>Droge stof</button>
+        </div>
+      </div>
       <dl className="nutrition-grid">
-        {NUTRIENTS.filter(({ key }) => voeding[key] != null).map((nutrient) => <div key={nutrient.key}>
+        {NUTRIENTS.filter(({ key }) => getoondeVoeding[key] != null).map((nutrient) => <div key={nutrient.key}>
           <dt>{nutrient.label}</dt>
-          <dd>{formatteerVoedingswaarde(nutrient, voeding[nutrient.key])}</dd>
+          <dd>{formatteerVoedingswaarde(nutrient, getoondeVoeding[nutrient.key])}</dd>
         </div>)}
       </dl>
-      <p className={`nutrition-context ${product.food_type}`}><strong>Let op:</strong> {voedingContext}</p>
-      <p className="nutrition-note"><small>Percentages as-fed (inclusief vocht).{version?.nutrition_note ? ` ${version.nutrition_note}` : ''}</small></p>
+      <p className="nutrition-source"><small>Voedingsbron: {nutritionSource
+        ? <a href={nutritionSource} target="_blank" rel="noreferrer" onClick={() => track('voedingsbron-klik', { merk: product.brand, product: product.name, domein: nutritionSourceDomain })}>{nutritionSourceDomain || 'open bron'} ↗</a>
+        : 'niet apart vermeld'}{nutritionChecked ? ` · gecontroleerd op ${nutritionChecked}` : ' · controledatum onbekend'}{nutritionStale ? ' · controle nodig' : ''}</small></p>
+      {bronWaarschuwing && <p className="nutrition-source-warning"><small>{bronWaarschuwing}</small></p>}
+      {plausibiliteit.signalen.length > 0 && <div className="nutrition-warning"><strong>Controleer de bron:</strong> {plausibiliteit.signalen.slice(0, 2).join(' ')} Een onmogelijke waarde wordt niet getoond of als filter- of sorteerwaarde gebruikt.</div>}
+      {drogeStof
+        ? <p className="nutrition-context"><strong>Droge stof:</strong> het vocht is weggerekend, zodat je natvoer en brokken eerlijk kunt vergelijken. De energie is per 100 g droge stof.</p>
+        : <p className={`nutrition-context ${product.food_type}`}><strong>Let op:</strong> {voedingContext}</p>}
+      <p className="nutrition-note"><small>{drogeStof ? 'Weergave op droge stof (vocht weggerekend).' : 'Waarden as-fed (inclusief vocht).'}{version?.nutrition_note ? ` ${version.nutrition_note}` : ''}</small></p>
     </details>}
     {hydrolysed.present && <p className="note-hydrolysed"><strong>Gehydrolyseerd eiwit:</strong> {hydrolysed.words.length ? `dit etiket noemt ${hydrolysed.words.join(', ')} in gehydrolyseerde vorm` : 'dit etiket noemt gehydrolyseerde eiwitten'}: de eiwitketens zijn opgeknipt, waardoor het lichaam ze vaak niet meer als allergeen herkent. Dierenartsen kiezen zo'n voer juist bij een allergie; deze site telt de bron toch mee, want alleen je dierenarts kan beoordelen of het in jouw geval werkt.</p>}
     {excluded && <p className="reason excluded">Uitgesloten vanwege: {match.presentStates.map((state) => ALLERGEN_LABELS[state.key]).join(' · ')}</p>}
@@ -317,7 +357,7 @@ function NutritionRangeFilter({ filter, grenzen, waarde, aantal, onChange, onRes
   />
   return <div className={`nutrition-filter${actief ? ' active' : ''}`}>
     <div className="nutrition-filter-head">
-      <span className="nutrition-filter-name" title={`${GETAL0.format(aantal)} producten met een opgegeven ${filter.label.toLowerCase()}-waarde`}>{filter.label}</span>
+      <span className="nutrition-filter-name" title={`${GETAL0.format(aantal)} producten met een opgegeven ${filter.label.toLowerCase()}-waarde`}>{filter.label}<span className="nutrition-filter-count" aria-label={`${GETAL0.format(aantal)} producten met een opgegeven waarde`}>{GETAL0.format(aantal)}</span></span>
       <div className="range-fields">
         {invoer('min')}
         <span className="range-dash" aria-hidden="true">–</span>
@@ -662,16 +702,19 @@ function leesAllergenenUitUrl() {
   return leesAllergenen(new URLSearchParams(window.location.search))
 }
 
-function zetFiltersInUrl(brands, gekozenAllergenen, alleMerken, brandMode, voeding) {
+function zetFiltersInUrl(brands, gekozenAllergenen, alleMerken, brandMode, voeding, types, sortering, zoek) {
   const params = schrijfFilters(new URLSearchParams(window.location.search), {
     brands,
     mode: brandMode,
     allergenen: gekozenAllergenen,
     alleMerken,
-    voeding
+    voeding,
+    types,
+    sortering,
+    zoek
   })
-  const zoek = params.toString()
-  const volgende = `${window.location.pathname}${zoek ? `?${zoek}` : ''}${window.location.hash}`
+  const zoekstring = params.toString()
+  const volgende = `${window.location.pathname}${zoekstring ? `?${zoekstring}` : ''}${window.location.hash}`
   const huidig = `${window.location.pathname}${window.location.search}${window.location.hash}`
   if (volgende !== huidig) window.history.replaceState(null, '', volgende)
 }
@@ -689,8 +732,9 @@ function App() {
   const [termenKlaar, setTermenKlaar] = useState(Boolean(cacheBijStart?.terms))
   const [termsError, setTermsError] = useState(''); const [termsOud, setTermsOud] = useState(false)
   const loading = !productenKlaar || !termenKlaar
-  const [allergens, setAllergens] = useState(leesAllergenenUitUrl); const [types, setTypes] = useState(FOOD_TYPES.map(([key]) => key))
+  const [allergens, setAllergens] = useState(leesAllergenenUitUrl); const [types, setTypes] = useState(() => leesVoertypes(new URLSearchParams(window.location.search)))
   const [voedingsfilters, setVoedingsfilters] = useState(() => leesVoedingsfilters(new URLSearchParams(window.location.search)))
+  const [zoekterm, setZoekterm] = useState(() => leesZoekterm(new URLSearchParams(window.location.search)))
   const [extraOpen, setExtraOpen] = useState(() => {
     const begin = leesVoedingsfilters(new URLSearchParams(window.location.search))
     return EXTRA_VOEDINGS_FILTERS.some((filter) => begin[filter.key])
@@ -703,7 +747,7 @@ function App() {
   const [aanbod, setAanbod] = useState({})
   const [matchesKlaar, setMatchesKlaar] = useState(false)
   const [page, setPage] = useState(1)
-  const [sortering, setSortering] = useState('standaard')
+  const [sortering, setSortering] = useState(() => leesSortering(new URLSearchParams(window.location.search)))
   const [filtersOpen, setFiltersOpen] = useState(() => !window.matchMedia('(max-width: 760px)').matches)
   const diepeLinkToegepast = useRef(false)
   // Winkelaanbiedingen zijn een losse laag. Ontbreekt het bestand of is het
@@ -758,40 +802,47 @@ function App() {
   // De voedingswaarden worden één keer per product genormaliseerd. De schuiven,
   // de tellingen en het filter gebruiken daarna dezelfde waarden.
   const voedingPerProduct = useMemo(() => new Map(products.map((product) => [product.id, voedingswaardeMap(product.recipe_versions?.[0]?.recipe_nutrition)])), [products])
+  const onbetrouwbaarPerProduct = useMemo(() => new Map(products.map((product) => [product.id, onbetrouwbareNutrienten(voedingPerProduct.get(product.id) ?? {}, product.food_type)])), [products, voedingPerProduct])
   const voedingBereik = useMemo(() => {
     const bereik = {}
     for (const filter of VOEDINGS_FILTERS) {
       let hoogste = 0
-      for (const waarden of voedingPerProduct.values()) {
+      for (const [id, waarden] of voedingPerProduct) {
         const waarde = waarden[filter.key]
-        if (waarde != null) hoogste = Math.max(hoogste, waarde)
+        if (waarde != null && !onbetrouwbaarPerProduct.get(id)?.has(filter.key)) hoogste = Math.max(hoogste, waarde)
       }
       const bovengrens = Math.max(filter.bovengrens, Math.ceil(hoogste / filter.bovengrensStap) * filter.bovengrensStap)
       bereik[filter.key] = { min: 0, max: bovengrens }
     }
     return bereik
-  }, [voedingPerProduct])
+  }, [voedingPerProduct, onbetrouwbaarPerProduct])
   const voedingTellingen = useMemo(() => {
     const tellingen = Object.fromEntries(VOEDINGS_FILTERS.map(({ key }) => [key, 0]))
-    for (const waarden of voedingPerProduct.values()) {
-      for (const filter of VOEDINGS_FILTERS) if (waarden[filter.key] != null) tellingen[filter.key] += 1
+    for (const [id, waarden] of voedingPerProduct) {
+      const negeren = onbetrouwbaarPerProduct.get(id)
+      for (const filter of VOEDINGS_FILTERS) if (waarden[filter.key] != null && !negeren?.has(filter.key)) tellingen[filter.key] += 1
     }
     return tellingen
-  }, [voedingPerProduct])
+  }, [voedingPerProduct, onbetrouwbaarPerProduct])
   const actieveVoedingsfilters = Object.keys(voedingsfilters)
   const actieveExtraVoedingsfilters = EXTRA_VOEDINGS_FILTERS.filter((filter) => voedingsfilters[filter.key]).length
+  const zoektermNorm = normaliseerZoektekst(zoekterm)
+  const matchesNaZoeking = useMemo(() => {
+    if (!zoektermNorm) return matches
+    return matches.filter(({ product }) => normaliseerZoektekst(`${product.brand} ${product.name}`).includes(zoektermNorm))
+  }, [matches, zoektermNorm])
   // Het allergenenoordeel hoeft niet opnieuw te worden berekend wanneer er aan
   // een schuif wordt getrokken. Alleen de lijst met matches wordt versmald.
   const matchesNaVoeding = useMemo(() => {
-    if (!actieveVoedingsfilters.length) return matches
-    return matches.filter(({ product }) => voldoetAanVoedingsfilters(voedingPerProduct.get(product.id) ?? {}, voedingsfilters))
-  }, [matches, voedingsfilters, voedingPerProduct])
+    if (!actieveVoedingsfilters.length) return matchesNaZoeking
+    return matchesNaZoeking.filter(({ product }) => voldoetAanVoedingsfilters(voedingPerProduct.get(product.id) ?? {}, voedingsfilters, onbetrouwbaarPerProduct.get(product.id) ?? new Set()))
+  }, [matchesNaZoeking, voedingsfilters, voedingPerProduct, onbetrouwbaarPerProduct])
   // Houd de merk- en allergenenkeuze in de URL, zodat een refresh of een
   // gedeelde link dezelfde selectie laat zien.
   useEffect(() => {
     if (!urlKlaar) return
-    zetFiltersInUrl(selectedBrands, allergens, alleMerken, brandMode, voedingsfilters)
-  }, [selectedBrands, allergens, urlKlaar, alleMerken, brandMode, voedingsfilters])
+    zetFiltersInUrl(selectedBrands, allergens, alleMerken, brandMode, voedingsfilters, types, sortering, zoekterm)
+  }, [selectedBrands, allergens, urlKlaar, alleMerken, brandMode, voedingsfilters, types, sortering, zoekterm])
   // Een gedeelde link kan een bereik bevatten dat buiten de huidige catalogus
   // valt. Klem het na het laden in plaats van stilletjes nul resultaten tonen.
   useEffect(() => {
@@ -814,14 +865,16 @@ function App() {
   }, [voedingBereik, products.length])
   useEffect(() => {
     document.title = Array.isArray(selectedBrands) && selectedBrands.length === 1
-      ? `${selectedBrands[0]} hondenvoer vergelijken op allergenen | Hondenvoervergelijker`
-      : 'Hondenvoer vergelijken op allergenen — 1.478 recepten van 60 merken'
-  }, [selectedBrands])
+      ? `${selectedBrands[0]} hondenvoer vergelijken | Hondenvoervergelijker`
+      : products.length
+        ? `Hondenvoer vergelijken op allergenen en voedingswaarden — ${GETAL0.format(products.length)} producten van ${alleMerken.length} merken`
+        : 'Hondenvoer vergelijken op allergenen en voedingswaarden | Hondenvoervergelijker'
+  }, [selectedBrands, products.length, alleMerken.length])
   const merkTellingen = useMemo(() => {
     const tellingen = new Map()
-    for (const product of products.filter(({ food_type }) => types.includes(food_type))) tellingen.set(product.brand, (tellingen.get(product.brand) ?? 0) + 1)
+    for (const product of products.filter(({ food_type, brand, name }) => types.includes(food_type) && (!zoektermNorm || normaliseerZoektekst(`${brand} ${name}`).includes(zoektermNorm)))) tellingen.set(product.brand, (tellingen.get(product.brand) ?? 0) + 1)
     return tellingen
-  }, [products, types])
+  }, [products, types, zoektermNorm])
   const gezochteAllergenen = useMemo(() => {
     const zoek = allergenSearch.trim().toLowerCase()
     if (!zoek) return ALLERGEN_GROUPS
@@ -918,26 +971,34 @@ function App() {
     setMatchesKlaar(true)
   }, [products, allergens, types, terms, selectedBrands])
   // Elke nieuwe keuze begint weer bovenaan.
-  useEffect(() => { setPage(1) }, [allergens, types, selectedBrands, voedingsfilters, sortering])
+  useEffect(() => { setPage(1) }, [allergens, types, selectedBrands, voedingsfilters, sortering, zoekterm])
   const suitable = matchesNaVoeding.filter(({ match }) => match.kind === 'suitable'); const check = matchesNaVoeding.filter(({ match }) => match.kind === 'check'); const excluded = matchesNaVoeding.filter(({ match }) => match.kind === 'excluded')
   const opNaam = (eerste, tweede) => eerste.product.brand.localeCompare(tweede.product.brand, 'nl', { sensitivity: 'base' }) || eerste.product.name.localeCompare(tweede.product.name, 'nl', { sensitivity: 'base' })
   // Sorteren gebeurt binnen de drie oordeelgroepen. Een product zonder de
   // gekozen waarde zakt binnen zijn groep naar achteren; het verdwijnt nooit.
   const sorteer = (lijst) => {
-    const keuze = SORTERING_BY_KEY[sortering]
+    const keuze = SORTING_BY_KEY[sortering]
     if (!keuze?.nutrient) return [...lijst].sort(opNaam)
     return [...lijst].sort((eerste, tweede) => {
-      const a = voedingPerProduct.get(eerste.product.id)?.[keuze.nutrient]
-      const b = voedingPerProduct.get(tweede.product.id)?.[keuze.nutrient]
+      const ruwA = voedingPerProduct.get(eerste.product.id)?.[keuze.nutrient]
+      const ruwB = voedingPerProduct.get(tweede.product.id)?.[keuze.nutrient]
+      const a = ruwA != null && !onbetrouwbaarPerProduct.get(eerste.product.id)?.has(keuze.nutrient) ? ruwA : null
+      const b = ruwB != null && !onbetrouwbaarPerProduct.get(tweede.product.id)?.has(keuze.nutrient) ? ruwB : null
       if (a == null && b == null) return opNaam(eerste, tweede)
       if (a == null) return 1
       if (b == null) return -1
       return (a - b) * keuze.richting || opNaam(eerste, tweede)
     })
   }
-  // Eén lijst in vaste volgorde: eerst geschikt, dan controleren, dan
-  // uitgesloten. Zo blijft de pagina voorspelbaar zonder tabs.
-  const alleResultaten = [...sorteer(suitable), ...sorteer(check), ...sorteer(excluded)]
+  // Met een allergenenkeuze blijft de vaste volgorde geschikt → controleren →
+  // uitgesloten staan. Zonder allergenenkeuze is dat onderscheid veel minder
+  // relevant; dan sorteert de gekozen volgorde over de hele lijst. De kaarten
+  // houden hun etiketbadge, maar een voedingsfilter wordt niet opgesplitst in
+  // een grote "Controleer"-groep.
+  const gegroepeerdOpOordeel = allergens.length > 0
+  const alleResultaten = gegroepeerdOpOordeel
+    ? [...sorteer(suitable), ...sorteer(check), ...sorteer(excluded)]
+    : sorteer([...suitable, ...check, ...excluded])
   const aantalPaginas = Math.max(1, Math.ceil(alleResultaten.length / PAGE_SIZE))
   const huidigePagina = Math.min(page, aantalPaginas)
   const zichtbareProducten = alleResultaten.slice((huidigePagina - 1) * PAGE_SIZE, huidigePagina * PAGE_SIZE)
@@ -984,12 +1045,13 @@ function App() {
     track('voedingsfilter-gewist', { nutrient: key })
   }
   const voedingsfilterRij = (filter) => <NutritionRangeFilter key={filter.key} filter={filter} grenzen={voedingBereik[filter.key]} waarde={voedingsfilters[filter.key] ?? voedingBereik[filter.key]} aantal={voedingTellingen[filter.key] ?? 0} onChange={(bereik) => zetVoedingsfilter(filter.key, bereik)} onReset={() => verwijderVoedingsfilter(filter.key)} />
-  const heeftActieveFilters = allergens.length > 0 || selectedBrands !== null || types.length !== FOOD_TYPES.length || actieveVoedingsfilters.length > 0
-  // De uitklapknop op mobiel hoort bij de zijbalk (type, voeding en merk), niet
-  // bij de allergenen daarboven. Tel daarom alleen die drie.
-  const actieveFilterCount = (selectedBrands !== null ? Math.max(1, selectedBrands.length) : 0) + (types.length !== FOOD_TYPES.length ? 1 : 0) + actieveVoedingsfilters.length
+  const heeftActieveFilters = allergens.length > 0 || selectedBrands !== null || types.length !== FOOD_TYPES.length || actieveVoedingsfilters.length > 0 || Boolean(zoekterm)
+  // De uitklapknop op mobiel hoort bij de zijbalk (zoeken, type, voeding en
+  // merk), niet bij de allergenen daarboven. Tel daarom alleen die vier.
+  const actieveFilterCount = (selectedBrands !== null ? Math.max(1, selectedBrands.length) : 0) + (types.length !== FOOD_TYPES.length ? 1 : 0) + actieveVoedingsfilters.length + (zoekterm ? 1 : 0)
   const gekozenTypeLabels = FOOD_TYPES.filter(([key]) => types.includes(key)).map(([, label]) => label).join(', ')
-  const vergelijktNatvoerEnBrokken = actieveVoedingsfilters.length > 0 && types.includes('kibble') && (types.includes('wet') || types.includes('raw'))
+  const sorteertOpVoeding = Boolean(SORTING_BY_KEY[sortering]?.nutrient)
+  const vergelijktNatvoerEnBrokken = (actieveVoedingsfilters.length > 0 || sorteertOpVoeding) && types.includes('kibble') && (types.includes('wet') || types.includes('raw'))
   const merkFilterLabel = selectedBrands === null ? ''
     : selectedBrands.length === 0 ? 'Geen merken'
       : selectedBrands.length === 1 ? `Merk: ${selectedBrands[0]}`
@@ -1002,7 +1064,20 @@ function App() {
     setBrandSearch('')
     setTypes(FOOD_TYPES.map(([key]) => key))
     setVoedingsfilters({})
+    setSortering('standaard')
+    setZoekterm('')
     setAllergenSearch('')
+  }
+  // De knop in de filterkolom wist alleen de kolom zelf. De allergenenkeuze
+  // staat bewust hoger op de pagina en blijft staan; anders lijkt het alsof een
+  // voedingsfilter ook de allergieën weggooit.
+  const wisFilterkolom = () => {
+    setSelectedBrands(null)
+    setBrandMode('include')
+    setBrandSearch('')
+    setTypes(FOOD_TYPES.map(([key]) => key))
+    setVoedingsfilters({})
+    setZoekterm('')
   }
   const merkActief = (merk) => selectedBrands === null || selectedBrands.includes(merk)
   const wisselMerk = (merk, aangevinkt) => {
@@ -1052,7 +1127,7 @@ function App() {
     url.searchParams.delete('beheer')
     window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`)
   }
-  const disclaimer = <>Deze tool vergelijkt uitsluitend overgenomen etiketinformatie van {alleMerken.length || 60} merken ({products.length || '1.478'} recepten). De resultaten vormen geen medisch advies en bieden geen 100% garantie. Controleer voor aankoop altijd zelf de verpakking en overleg bij medische klachten met een dierenarts.</>
+  const disclaimer = <>Deze tool vergelijkt uitsluitend overgenomen etiketinformatie van {alleMerken.length || 60} merken ({products.length || '1.478'} producten). De resultaten vormen geen medisch advies en bieden geen 100% garantie. Controleer voor aankoop altijd zelf de verpakking en overleg bij medische klachten met een dierenarts.</>
   return <main><header className="site-header">
     <div className="site-header-row">
       <div className="site-brand">
@@ -1062,9 +1137,10 @@ function App() {
       </div>
       <nav className="site-nav" aria-label="Snelmenu">
         {!recovery && !admin && <>
-          <a href="#vergelijken" aria-label="Allergenen kiezen"><span className="nav-lang">Allergenen kiezen</span><span className="nav-kort" aria-hidden="true">Allergenen</span></a>
-          <a href="#resultaten" aria-label={`Producten (${products.length || '…'})`}><span className="nav-lang">Producten ({products.length || '…'})</span><span className="nav-kort" aria-hidden="true">Producten</span></a>
-          <a href="#over-deze-site" aria-label="Hoe het werkt"><span className="nav-lang">Hoe het werkt</span><span className="nav-kort" aria-hidden="true">Uitleg</span></a>
+          <a href="#vergelijken"><span className="nav-lang">Allergenen kiezen</span><span className="nav-kort">Allergenen</span></a>
+          <a href="#filters"><span className="nav-lang">Voedingswaarden</span><span className="nav-kort">Voeding</span></a>
+          <a href="#resultaten"><span className="nav-lang">Producten ({products.length || '…'})</span><span className="nav-kort">Producten</span></a>
+          <a href="#over-deze-site"><span className="nav-lang">Hoe het werkt</span><span className="nav-kort">Uitleg</span></a>
         </>}
         {admin && <button type="button" className="link" onClick={sluitBeheer}>Terug naar vergelijken</button>}
       </nav>
@@ -1079,10 +1155,10 @@ function App() {
     {recovery ? <form className="login" onSubmit={updatePassword}><h2>Nieuw wachtwoord instellen</h2><p>Kies hieronder een nieuw wachtwoord voor het beheerdersaccount.</p><label>Nieuw wachtwoord<input type="password" required minLength="8" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} /></label><label>Herhaal wachtwoord<input type="password" required minLength="8" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} /></label><button>Wachtwoord opslaan</button>{authMessage && <p aria-live="polite">{authMessage}</p>}</form> : admin ? (isAdmin ? <Admin terms={terms} termsOud={termsOud} reloadTerms={loadTerms} onSaved={load} /> : session ? <section><h2>Geen beheerdersrechten</h2><p>Dit account mag geen producten beheren.</p><button onClick={() => supabase.auth.signOut()}>Uitloggen</button></section> : <form className="login" onSubmit={login}><h2>Beheer inloggen</h2><label>E-mail<input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} /></label><label>Wachtwoord<input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} /></label><button>Inloggen</button>{authMessage && <p>{authMessage}</p>}</form>) : <>
       <section className="hero-banner" aria-label="Overzicht">
         <div className="hero-text">
-          <h2>Vind hondenvoer dat past bij de allergie van jouw hond</h2>
-          <p>Vage termen zoals <em>“dierlijke bijproducten”</em> of <em>“granen”</em> verbergen de bron. Deze vergelijker laat zien welk voer <strong>geschikt</strong>, <strong>uitgesloten</strong> of <strong>onzeker</strong> is.</p>
-          <p className="hero-meta"><strong>{products.length || '1.478'}</strong> recepten · <strong>{alleMerken.length || '60'}</strong> merken · <strong>{ALLERGENS.length}</strong> allergenen &amp; bronnen</p>
-          <p className="hero-links"><a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a> · <a href="/hoe-wij-vergelijken.html">Onze methode</a></p>
+          <h2>Vind hondenvoer dat past bij de allergie én voedingsbehoefte van jouw hond</h2>
+          <p>Vage termen zoals <em>“dierlijke bijproducten”</em> of <em>“granen”</em> verbergen de bron. Deze vergelijker laat zien welk voer <strong>geschikt</strong>, <strong>uitgesloten</strong> of <strong>onzeker</strong> is. Filter daarnaast op eiwit, vet, energie en meer.</p>
+          <p className="hero-meta"><strong>{products.length ? GETAL0.format(products.length) : '1.478'}</strong> producten · <strong>{alleMerken.length || '60'}</strong> merken · <strong>{ALLERGENS.length}</strong> allergenen &amp; bronnen</p>
+          <p className="hero-links"><a href="#filters">Filter op voeding</a> · <a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a> · <a href="/hoe-wij-vergelijken.html">Onze methode</a></p>
         </div>
       </section>
       <div className="layout">
@@ -1110,15 +1186,17 @@ function App() {
             </details>
           }) : <p><small>Geen allergeen gevonden voor “{allergenSearch}”.</small></p>}
         </section>
-        <aside className={`filters${filtersOpen ? ' open' : ''}`} aria-label="Filters">
+        <aside id="filters" className={`filters${filtersOpen ? ' open' : ''}`} aria-label="Filters">
           <button type="button" className="filters-toggle" aria-expanded={filtersOpen} aria-controls="filters-body" onClick={() => setFiltersOpen(!filtersOpen)}>
             <span>Filters{actieveFilterCount ? ` (${actieveFilterCount} actief)` : ''}</span>
           </button>
           <div id="filters-body" className="filters-body">
             <div className="filters-head">
               <h2>Filters</h2>
-              {actieveFilterCount > 0 && <button type="button" className="filters-reset" onClick={wisAlleFilters}>Alle filters wissen</button>}
+              <span className="filters-count" aria-live="polite" aria-atomic="true">{GETAL0.format(alleResultaten.length)} producten</span>
+              {actieveFilterCount > 0 && <button type="button" className="filters-reset" onClick={wisFilterkolom} title="Alleen de filters in deze kolom wissen; je allergenenkeuze blijft staan.">Wissen</button>}
             </div>
+            <label className="product-search">Zoek product<input type="search" maxLength={80} value={zoekterm} onChange={(event) => setZoekterm(event.target.value)} placeholder="Bijv. renal, kip of senior" /></label>
             <div className="filter-block">
               <h3>Type voer</h3>
               <div className="choices food-type-choices">{FOOD_TYPES.map(([key, label]) => <label className={`inline type-chip${types.includes(key) ? ' active' : ''}`} key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div>
@@ -1128,8 +1206,8 @@ function App() {
                 <span>Voedingswaarden</span>
                 <span className="filter-summary">{actieveVoedingsfilters.length ? `${actieveVoedingsfilters.length} actief` : 'Geen filter'}</span>
               </div>
-              <p className="nutrition-filter-hint">As-fed, inclusief vocht · energie in kcal/100 g. Zonder waarde valt een product af bij een actief filter.</p>
-              {vergelijktNatvoerEnBrokken && <p className="nutrition-compare-warning" role="status"><strong>Let op:</strong> natvoer/rauwvoer en brokken zijn niet direct vergelijkbaar. Kies één voertype.</p>}
+              <p className="nutrition-filter-hint">As-fed, inclusief vocht · energie in kcal/100 g. Het getal is het aantal bruikbare waarden; zonder waarde valt een product af bij een actief filter.</p>
+              {vergelijktNatvoerEnBrokken && <p className="nutrition-compare-warning" role="status"><strong>Let op:</strong> je filtert of sorteert op voeding over natvoer/rauwvoer én brokken. Die zijn niet direct vergelijkbaar. Kies één voertype.</p>}
               {PRIMAIRE_VOEDINGS_FILTERS.map(voedingsfilterRij)}
               <details className="nutrition-extra" open={extraOpen || undefined} onToggle={(event) => setExtraOpen(event.currentTarget.open)}>
                 <summary className="nutrition-extra-heading">
@@ -1157,6 +1235,7 @@ function App() {
               </div>
               <a className="filter-heading-link" href="/merken/">Alle merken bekijken</a>
             </details>
+            <a className="filter-jump" href="#resultaten">Bekijk {GETAL0.format(alleResultaten.length)} producten ↓</a>
           </div>
         </aside>
         <div className="content">
@@ -1167,25 +1246,27 @@ function App() {
             {geenMerken || geenTypes ? <section id="resultaten"><h2>Geen producten</h2><p>{filterMelding}</p></section> : (
               <section id="resultaten">
                 <div className="results-header">
-                  <h2>Producten ({alleResultaten.length})</h2>
+                  <h2>Producten ({GETAL0.format(alleResultaten.length)})</h2>
                   <div className="results-tools">
                     <p className="result-summary">
-                      <span className="summary-pill suitable">{allergens.length ? 'Geschikt' : 'Etiket noemt elke bron'}: {suitable.length}</span>
-                      <span className="summary-pill check">Controleer: {check.length}</span>
+                      <span className="summary-pill suitable" title={allergens.length ? 'Geschikt voor de gekozen allergenen.' : 'Het etiket noemt elke bron bij name.'}>{allergens.length ? 'Geschikt' : 'Etiket volledig'}: {suitable.length}</span>
+                      <span className="summary-pill check" title={allergens.length ? 'Controleer het etiket of de fabrikant.' : 'Het etiket noemt niet elke bron of bevat een woord dat de keuring niet kent.'}>{allergens.length ? 'Controleer' : 'Etiket controle'}: {check.length}</span>
                       {allergens.length > 0 && <span className="summary-pill excluded">Uitgesloten: {excluded.length}</span>}
                     </p>
                     <label className="sort-select"><span>Sorteren op</span>
                       <select value={sortering} aria-label="Sorteer producten" onChange={(event) => { setSortering(event.target.value); track('sortering-gewisseld', { sortering: event.target.value }) }}>
-                        {SORTERINGEN.map((optie) => <option key={optie.key} value={optie.key}>{optie.label}</option>)}
+                        {SORTING_OPTIONS.map((optie) => <option key={optie.key} value={optie.key}>{optie.label}</option>)}
                       </select>
                     </label>
                   </div>
                 </div>
+                {sortering !== 'standaard' && <p className="sort-note"><small>{gegroepeerdOpOordeel ? 'Sortering geldt binnen Geschikt, Controleer en Uitgesloten.' : 'Sortering geldt over alle producten.'}</small></p>}
                 {heeftActieveFilters && <div className="active-filters" aria-label="Actieve filters">
                   <span className="active-filters-label">Actief:</span>
                   {allergens.map((key) => <button type="button" key={key} className="filter-chip" onClick={() => verwijderAllergeen(key)} title={`Verwijder ${ALLERGEN_LABELS[key]}`}>{ALLERGEN_LABELS[key]} <span aria-hidden="true">×</span></button>)}
                   {selectedBrands !== null && <button type="button" className="filter-chip" onClick={() => { setSelectedBrands(null); setBrandMode('include'); setBrandSearch('') }} title="Merkfilter verwijderen">{merkFilterLabel} <span aria-hidden="true">×</span></button>}
                   {types.length !== FOOD_TYPES.length && <button type="button" className="filter-chip" onClick={() => setTypes(FOOD_TYPES.map(([key]) => key))} title="Voertypefilter verwijderen">Type: {gekozenTypeLabels} <span aria-hidden="true">×</span></button>}
+                  {zoekterm && <button type="button" className="filter-chip" onClick={() => setZoekterm('')} title="Zoekterm verwijderen">Zoek: {zoekterm} <span aria-hidden="true">×</span></button>}
                   {VOEDINGS_FILTERS.filter((filter) => voedingsfilters[filter.key]).map((filter) => <button type="button" key={filter.key} className="filter-chip" onClick={() => verwijderVoedingsfilter(filter.key)} title={`${filter.label}filter verwijderen`}>{beschrijfVoedingsbereik(filter, voedingsfilters[filter.key], voedingBereik[filter.key])} <span aria-hidden="true">×</span></button>)}
                   <button type="button" className="filters-reset-inline" onClick={wisAlleFilters}>Filters wissen</button>
                 </div>}
@@ -1212,7 +1293,7 @@ function App() {
                   </div>
                 ) : null}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
-                {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} aanbiedingen={aanbod[product.id] ?? []} />) : <p>Geen producten gevonden voor deze keuze.</p>}
+                {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} aanbiedingen={aanbod[product.id] ?? []} nadruk={actieveVoedingsfilters} />) : <p>Geen producten gevonden{zoekterm ? ` voor “${zoekterm}”` : ' voor deze keuze'}.</p>}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
               </section>
             )}

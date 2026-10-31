@@ -352,10 +352,18 @@ button:disabled {
   gap: 0.5rem;
 }
 
+.filters-count {
+  margin-left: auto;
+  font-size: 0.72rem;
+  color: #53645a;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
 .filters-reset {
   display: block;
   width: auto;
-  margin: 0 0 0 auto;
+  margin: 0 0 0 0.25rem;
   padding: 0.12rem 0.25rem;
   background: transparent;
   border: 0;
@@ -437,6 +445,24 @@ button:disabled {
   text-decoration: underline;
 }
 
+.filter-jump {
+  display: none;
+  margin-top: 0.7rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #b9cbbd;
+  border-radius: 2px;
+  background: #f4f8f5;
+  color: #17512b;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.filter-jump:hover {
+  background: #e6efe9;
+}
+
 .filter-block {
   margin-top: 0.75rem;
   padding-top: 0.6rem;
@@ -488,6 +514,14 @@ button:disabled {
   color: #274a31;
 }
 
+.nutrition-filter-count {
+  margin-left: 0.22rem;
+  color: #6a7a6e;
+  font-size: 0.64rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
 .range-fields {
   display: flex;
   align-items: center;
@@ -497,9 +531,10 @@ button:disabled {
 
 .range-fields input {
   width: 42px;
+  min-height: 24px;
   max-width: none;
   margin: 0;
-  padding: 0.12rem 0.18rem;
+  padding: 0.18rem;
   border: 1px solid #c8d3c9;
   border-radius: 2px;
   background: #fff;
@@ -523,15 +558,15 @@ button:disabled {
 
 .range-reset {
   flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   margin-left: 0.05rem;
   padding: 0;
   border: 0;
   border-radius: 2px;
   background: transparent;
   color: #8a2f2f;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 1;
 }
@@ -760,6 +795,20 @@ button:disabled {
   background: #175b30;
   border-color: #175b30;
   color: #fff;
+}
+
+.product-search {
+  margin: 0 0 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #394c3e;
+}
+
+.product-search input {
+  margin-top: 0.25rem;
+  padding: 0.35rem 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 400;
 }
 
 .brand-search-label {
@@ -1059,6 +1108,11 @@ button:disabled {
   background: #fff;
   color: #18261c;
   font-size: 0.76rem;
+}
+
+.sort-note {
+  margin: 0.1rem 0 0.5rem;
+  color: #5d6e61;
 }
 
 .summary-pill {
@@ -1434,6 +1488,7 @@ button:disabled {
 }
 
 .ingredients summary {
+  padding: 0.15rem 0;
   font-size: 0.82rem;
   font-weight: 500;
   color: #175b30;
@@ -1489,6 +1544,12 @@ button:disabled {
   font-variant-numeric: tabular-nums;
 }
 
+.nutrition-flag {
+  color: #a15c00;
+  font-size: 0.82rem;
+  cursor: help;
+}
+
 .nutrition-kind {
   display: inline-block;
   padding: 0.08rem 0.35rem;
@@ -1518,10 +1579,46 @@ button:disabled {
 }
 
 .nutrition summary {
+  padding: 0.15rem 0;
   font-size: 0.82rem;
   font-weight: 500;
   color: #175b30;
   cursor: pointer;
+}
+
+.nutrition-view {
+  margin: 0.45rem 0 0;
+}
+
+.nutrition-view-toggle {
+  display: inline-flex;
+  overflow: hidden;
+  border: 1px solid #c8d3c9;
+  border-radius: 2px;
+}
+
+.nutrition-view-toggle button {
+  padding: 0.2rem 0.5rem;
+  border: 0;
+  border-right: 1px solid #c8d3c9;
+  border-radius: 0;
+  background: #fff;
+  color: #394c3e;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.nutrition-view-toggle button:last-child {
+  border-right: 0;
+}
+
+.nutrition-view-toggle button.active {
+  background: #175b30;
+  color: #fff;
+}
+
+.nutrition-view-toggle button:disabled {
+  opacity: 0.45;
 }
 
 .nutrition-grid {
@@ -1550,6 +1647,35 @@ button:disabled {
   font-size: 0.82rem;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
+}
+
+.nutrition-source {
+  margin: 0.45rem 0 0;
+  color: #53645a;
+}
+
+.nutrition-source a {
+  color: #175b30;
+}
+
+.nutrition-source-warning {
+  margin: 0.35rem 0 0;
+  padding: 0.35rem 0.5rem;
+  background: #fdf3d6;
+  border-left: 2px solid #b58a2a;
+  color: #5c4715;
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.nutrition-warning {
+  margin: 0.4rem 0 0;
+  padding: 0.4rem 0.5rem;
+  background: #fbf1f1;
+  border-left: 2px solid #cfa5a5;
+  color: #7d2b2b;
+  font-size: 0.78rem;
+  line-height: 1.45;
 }
 
 .nutrition-context {
@@ -1855,6 +1981,9 @@ small {
   }
   .filters-body {
     margin-top: 0.5rem;
+  }
+  .filter-jump {
+    display: block;
   }
   .allergen-panel {
     padding: 0.8rem;

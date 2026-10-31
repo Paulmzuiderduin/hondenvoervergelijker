@@ -1,4 +1,5 @@
-import { ALLERGENS } from './allergens.js'
+import { ALLERGENS, FOOD_TYPES } from './allergens.js'
+import { SORTING_KEYS } from './sorting.js'
 
 // Eén vaste afspraak voor de URL:
 //   ?merk=Orijen&merk=Acana        → alleen deze merken
@@ -19,8 +20,9 @@ const VOEDING_PARAMS = {
   omega3: 'omega3',
   omega6: 'omega6'
 }
-const FILTER_PARAMS = ['merk', 'zonder', 'nietmerk', 'geenmerken', 'allergeen', 'allergenen', ...Object.keys(VOEDING_PARAMS)]
+const FILTER_PARAMS = ['merk', 'zonder', 'nietmerk', 'geenmerken', 'allergeen', 'allergenen', 'type', 'geentype', 'sorteer', 'zoek', ...Object.keys(VOEDING_PARAMS)]
 const GELDIGE_ALLERGENEN = new Set(ALLERGENS.map(({ key }) => key))
+const ALLE_TYPES = FOOD_TYPES.map(([key]) => key)
 
 // Een voedingsbereik in de URL is "min-max", met een punt of komma als
 // decimaalteken. Ongeldige of omgekeerde bereiken worden genegeerd; de site
@@ -38,6 +40,26 @@ export function leesVoedingsfilters(params) {
     uit[key] = { min, max }
   }
   return uit
+}
+
+// Voertype: geen parameter betekent alle types. ?geentype=1 betekent dat de
+// gebruiker bewust niets heeft aangevinkt. Onbekende waarden worden genegeerd.
+export function leesVoertypes(params) {
+  if (params.get('geentype') === '1') return []
+  const waarden = params.getAll('type')
+    .flatMap((waarde) => waarde.split(','))
+    .map((waarde) => waarde.trim().toLowerCase())
+    .filter((waarde) => ALLE_TYPES.includes(waarde))
+  return waarden.length ? [...new Set(waarden)] : [...ALLE_TYPES]
+}
+
+export function leesSortering(params) {
+  const waarde = (params.get('sorteer') ?? '').trim().toLowerCase()
+  return SORTING_KEYS.has(waarde) ? waarde : 'standaard'
+}
+
+export function leesZoekterm(params) {
+  return (params.get('zoek') ?? '').trim().slice(0, 80)
 }
 
 export function leesAllergenen(params) {
@@ -71,9 +93,19 @@ export function leesMerken(params, alleMerken) {
   return { brands: null, mode: 'include' }
 }
 
-export function schrijfFilters(params, { brands, mode = 'include', allergenen = [], alleMerken = [], voeding = {} }) {
+export function schrijfFilters(params, { brands, mode = 'include', allergenen = [], alleMerken = [], voeding = {}, types, sortering = 'standaard', zoek = '' }) {
   const volgende = new URLSearchParams(params)
   for (const sleutel of FILTER_PARAMS) volgende.delete(sleutel)
+
+  if (Array.isArray(types)) {
+    const gekozen = [...new Set(types.filter((key) => ALLE_TYPES.includes(key)))]
+    if (gekozen.length === 0) volgende.set('geentype', '1')
+    else if (gekozen.length < ALLE_TYPES.length) for (const key of gekozen) volgende.append('type', key)
+  }
+
+  if (sortering !== 'standaard' && SORTING_KEYS.has(sortering)) volgende.set('sorteer', sortering)
+  const zoekterm = String(zoek ?? '').trim().slice(0, 80)
+  if (zoekterm) volgende.set('zoek', zoekterm)
 
   if (brands === null) {
     // Alle merken: geen merkparameter.
@@ -90,8 +122,8 @@ export function schrijfFilters(params, { brands, mode = 'include', allergenen = 
   for (const [param, key] of Object.entries(VOEDING_PARAMS)) {
     const bereik = voeding[key]
     if (!bereik) continue
-    const min = Math.round(bereik.min * 10) / 10
-    const max = Math.round(bereik.max * 10) / 10
+    const min = Math.round(bereik.min * 100) / 100
+    const max = Math.round(bereik.max * 100) / 100
     volgende.set(param, `${min}-${max}`)
   }
   return volgende

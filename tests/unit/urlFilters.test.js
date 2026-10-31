@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { leesAllergenen, leesMerken, leesVoedingsfilters, schrijfFilters } from '../../src/lib/urlFilters.js'
+import { leesAllergenen, leesMerken, leesSortering, leesVoedingsfilters, leesVoertypes, leesZoekterm, schrijfFilters } from '../../src/lib/urlFilters.js'
 
 const merken = ['Acana', 'Orijen', 'Royal Canin']
 
@@ -120,4 +120,55 @@ test('alle standaardvoedingswaarden kunnen in de URL staan', () => {
     omega3: { min: 0.3, max: 1 },
     omega6: { min: 2, max: 4 }
   })
+})
+
+test('voertype en sortering worden uit de URL gelezen', () => {
+  assert.deepEqual(leesVoertypes(new URLSearchParams('?type=kibble&type=raw')), ['kibble', 'raw'])
+  assert.deepEqual(leesVoertypes(new URLSearchParams('?type=kibble,wet')), ['kibble', 'wet'])
+  assert.deepEqual(leesVoertypes(new URLSearchParams('')), ['kibble', 'raw', 'wet'])
+  assert.deepEqual(leesVoertypes(new URLSearchParams('?geentype=1')), [])
+  assert.equal(leesSortering(new URLSearchParams('?sorteer=eiwit-laag')), 'eiwit-laag')
+  assert.equal(leesSortering(new URLSearchParams('?sorteer=onbekend')), 'standaard')
+})
+
+test('voertype en sortering worden geschreven en weer gelezen', () => {
+  const params = schrijfFilters(new URLSearchParams(''), {
+    brands: null,
+    allergenen: [],
+    alleMerken: merken,
+    types: ['kibble'],
+    sortering: 'vet-hoog'
+  })
+  assert.deepEqual(params.getAll('type'), ['kibble'])
+  assert.equal(params.get('sorteer'), 'vet-hoog')
+  assert.deepEqual(leesVoertypes(params), ['kibble'])
+  assert.equal(leesSortering(params), 'vet-hoog')
+
+  const geen = schrijfFilters(new URLSearchParams('?type=kibble&sorteer=vet-hoog'), { brands: null, allergenen: [], alleMerken: merken, types: [], sortering: 'standaard' })
+  assert.equal(geen.get('geentype'), '1')
+  assert.equal(geen.get('sorteer'), null)
+  assert.equal(geen.get('type'), null)
+})
+
+test('twee decimalen blijven in de URL bewaard', () => {
+  const params = schrijfFilters(new URLSearchParams(''), {
+    brands: null,
+    allergenen: [],
+    alleMerken: merken,
+    voeding: { calcium: { min: 0.07, max: 1.25 }, omega3: { min: 0.45, max: 0.95 } }
+  })
+  assert.equal(params.get('calcium'), '0.07-1.25')
+  assert.equal(params.get('omega3'), '0.45-0.95')
+  assert.deepEqual(leesVoedingsfilters(params), {
+    calcium: { min: 0.07, max: 1.25 },
+    omega3: { min: 0.45, max: 0.95 }
+  })
+})
+
+test('een zoekterm wordt gelezen en geschreven', () => {
+  assert.equal(leesZoekterm(new URLSearchParams('?zoek=renal')), 'renal')
+  assert.equal(leesZoekterm(new URLSearchParams('?zoek=%20%20')), '')
+  const params = schrijfFilters(new URLSearchParams('?zoek=oud'), { brands: null, allergenen: [], alleMerken: merken, zoek: 'renale voeding' })
+  assert.equal(params.get('zoek'), 'renale voeding')
+  assert.equal(leesZoekterm(params), 'renale voeding')
 })

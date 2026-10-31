@@ -55,6 +55,24 @@ de bestaande etiketbestanden blijven ongewijzigd.
 4. De SQL-batch wordt in Supabase uitgevoerd.
 5. `node scripts/rapporteer-voedingswaarden.mjs` toont de dekking.
 
+## Broncontrole
+
+`node scripts/controleer-voedingswaarden-bronnen.mjs` vergelijkt de opgeslagen
+`bronTekst` met de actuele bronpagina. Het script kijkt naar de getallen in de
+analyse, zodat een andere tabelopmaak geen valse melding geeft. Het rapport
+komt in `broncontrole.md`. De wekelijkse workflow `Broncontrole` draait dit
+script na de ingrediëntencontrole. Een verschil wordt nooit automatisch
+doorgevoerd: een mens beoordeelt het en past de import of het product aan.
+
+## Plausibiliteit
+
+`node scripts/controleer-voedingswaarden-plausibiliteit.mjs` controleert op
+macro-sommen boven 100%, onmogelijke vezel- of kcal-waarden en vocht dat niet
+bij het voertype past. Het rapport komt in `plausibiliteit.md`. Op de kaart
+krijgt zo'n product een waarschuwing. Een waarde die aantoonbaar onmogelijk is,
+wordt niet als filter- of sorteerwaarde gebruikt; de rest van de analyse blijft
+zichtbaar. Dezelfde controle draait wekelijks in de workflow.
+
 ## Pilot (fase 1)
 
 Vijf merken uit de top 10, samen 25 producten:

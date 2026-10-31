@@ -81,9 +81,26 @@ try {
   meld(/Ruw eiwit/.test(voedingDetail) && !/NaN/.test(voedingDetail), 'voedingswaarden-detail is compleet', voedingDetail.replace(/\n/g, ' ').slice(0, 100))
   const voedingContext = await page.locator('.nutrition-context').first().innerText()
   meld(/vocht/i.test(voedingContext) && /niet direct|vergelijk/i.test(voedingContext), 'voedingswaarden geven context over vocht', voedingContext.replace(/\n/g, ' ').slice(0, 120))
+  const wetKaart = page.locator('.product-card').filter({ has: page.locator('.nutrition-kind.wet') }).first()
+  await wetKaart.locator('.nutrition summary').click()
+  const natDetail = await wetKaart.locator('.nutrition-grid').innerText()
+  const eiwitNat = Number(natDetail.match(/Ruw eiwit\s+([\d,]+)%/)?.[1]?.replace(',', '.'))
+  const vochtNat = Number(natDetail.match(/Vocht\s+([\d,]+)%/)?.[1]?.replace(',', '.'))
+  await wetKaart.locator('.nutrition-view-toggle button', { hasText: 'Droge stof' }).click()
+  const droogDetail = await wetKaart.locator('.nutrition-grid').innerText()
+  const droogContext = await wetKaart.locator('.nutrition-context').innerText()
+  const eiwitDroog = Number(droogDetail.match(/Ruw eiwit\s+([\d,]+)%/)?.[1]?.replace(',', '.'))
+  const verwachtDroog = Math.round((eiwitNat / (100 - vochtNat)) * 100 * 10) / 10
+  meld(/Droge stof/i.test(droogContext) && Number.isFinite(eiwitDroog) && Math.abs(eiwitDroog - verwachtDroog) < 0.1 && !/Vocht\s/.test(droogDetail), 'droge-stofweergave rekent het vocht weg', `${eiwitNat}% / ${vochtNat}% vocht → ${eiwitDroog}% (verwacht ${verwachtDroog}%)`)
 
   // 3c. Voedingswaardefilters met minimum en maximum
-  await open('/?eiwit=30-35&calcium=1-2', '.product-card')
+  await open('/?type=kibble&sorteer=eiwit-laag&eiwit=30-35&calcium=1-2', '.product-card')
+  const typeChips = await page.locator('.type-chip.active').allInnerTexts()
+  meld(typeChips.length === 1 && typeChips[0] === 'Brokken', 'voertype en sortering staan in de URL', typeChips.join(' / '))
+  const sorteerWaarde = await page.locator('.sort-select select').inputValue()
+  meld(sorteerWaarde === 'eiwit-laag', 'sorteerkeuze wordt uit de URL hersteld', sorteerWaarde)
+  const filterTelling = await page.locator('.filters-count').innerText()
+  meld(/producten/.test(filterTelling), 'filterkolom toont het aantal resultaten', filterTelling)
   const primaireFilters = await page.locator('.nutrition-filter-block > .nutrition-filter').count()
   const extraFilters = await page.locator('.nutrition-extra .nutrition-filter').count()
   meld(primaireFilters === 3 && extraFilters === 7, 'tien voedingsfilters, waarvan zeven in de uitklapregel', `${primaireFilters} + ${extraFilters}`)
@@ -99,8 +116,8 @@ try {
   const eersteDetail = await page.locator('.nutrition-grid').first().innerText()
   const calciumWaarde = eersteDetail.match(/Calcium\s+([\d,]+)%/)
   meld(Boolean(calciumWaarde) && Number(calciumWaarde[1].replace(',', '.')) >= 1 && Number(calciumWaarde[1].replace(',', '.')) <= 2, 'calciumfilter toont alleen waarden tussen 1 en 2%', calciumWaarde?.[0] ?? eersteDetail.replace(/\n/g, ' ').slice(0, 100))
-  const voedingsWaarschuwing = await page.locator('.nutrition-compare-warning').innerText()
-  meld(/niet direct vergelijkbaar|verschil in vocht/i.test(voedingsWaarschuwing), 'voedingsfilter waarschuwt voor natvoer versus brokken', voedingsWaarschuwing.replace(/\n/g, ' ').slice(0, 120))
+  const bronRegel = await page.locator('.nutrition-source').first().innerText()
+  meld(/Voedingsbron:/.test(bronRegel) && /gecontroleerd op/.test(bronRegel), 'voedingsbron en controledatum staan op de kaart', bronRegel.replace(/\n/g, ' ').slice(0, 120))
   const sorteerKeuze = page.locator('.sort-select select')
   meld(await sorteerKeuze.count() === 1, 'sorteerkeuze staat bij de resultaten')
   await sorteerKeuze.selectOption('eiwit-laag')
@@ -110,6 +127,20 @@ try {
     .map((tekst) => { const match = tekst.match(/Eiwit ([\d,]+)%/); return match ? Number(match[1].replace(',', '.')) : null })
     .filter((waarde) => waarde != null)
   meld(gesorteerdeEiwitten.length >= 2 && gesorteerdeEiwitten.every((waarde, index) => index === 0 || gesorteerdeEiwitten[index - 1] <= waarde), 'eiwit sorteren van laag naar hoog werkt', gesorteerdeEiwitten.join(', '))
+
+  // 3d. Waarschuwing bij sorteren, zoeken en de scope van de kolomreset
+  await open('/?sorteer=eiwit-hoog', '.product-card')
+  const sorteerWaarschuwing = await page.locator('.nutrition-compare-warning').innerText()
+  meld(/sorteert|filtert of sorteert/i.test(sorteerWaarschuwing), 'sorteren op voeding waarschuwt voor natvoer versus brokken', sorteerWaarschuwing.replace(/\n/g, ' ').slice(0, 120))
+  await open('/?zoek=renal', '.product-card')
+  const zoekWaarde = await page.locator('.product-search input').inputValue()
+  const zoekChip = await page.locator('.active-filters').innerText()
+  meld(zoekWaarde === 'renal' && /Zoek: renal/.test(zoekChip), 'productzoeken staat in de URL en als chip', `${zoekWaarde} · ${zoekChip.replace(/\n/g, ' ').slice(0, 80)}`)
+  await open('/?allergeen=chicken&eiwit=25-35', '.product-card')
+  await page.locator('.filters-reset').click()
+  const allergenenNaReset = await page.locator('.selected-allergens .allergen-chip').allInnerTexts()
+  const voedingsNaReset = await page.locator('.active-filters').innerText()
+  meld(allergenenNaReset.some((tekst) => /Kip/.test(tekst)) && !/Eiwit/.test(voedingsNaReset), 'kolomreset laat de allergenenkeuze staan', `${allergenenNaReset.join(' / ')} · ${voedingsNaReset.replace(/\n/g, ' ').slice(0, 80)}`)
 
   // 4. Melding wanneer niets geschikt is
   await open('/?merk=Royal%20Canin&allergeen=beef', '.no-suitable')
@@ -135,7 +166,7 @@ try {
 
   await open('/etikettenonderzoek.html', '.stat-grid')
   const onderzoek = await page.locator('.stat-grid').innerText()
-  meld(/recepten/.test(onderzoek), 'etikettenonderzoek toont cijfers', onderzoek.replace(/\n/g, ' ').slice(0, 100))
+  meld(/producten/.test(onderzoek), 'etikettenonderzoek toont cijfers', onderzoek.replace(/\n/g, ' ').slice(0, 100))
 
   const llms = await context.request.get(`${BASIS}/llms.txt`)
   const llmsTekst = await llms.text()
@@ -170,6 +201,12 @@ try {
   meld(mobiel.volgorde, 'allergenen staan op mobiel vóór filters en resultaten')
   meld(mobiel.herhaling === 0, 'geen herhaalde allergeenuitleg op productkaarten')
   meld(/resultaten/i.test(mobiel.springlink), 'resultaten zijn direct bereikbaar met een springlink', mobiel.springlink)
+  await page.locator('.filters-toggle').click()
+  const mobielOpen = await page.evaluate(() => ({
+    jump: document.querySelector('.filter-jump')?.innerText ?? '',
+    count: document.querySelector('.filters-count')?.innerText ?? ''
+  }))
+  meld(/Bekijk .* producten/.test(mobielOpen.jump) && /producten/.test(mobielOpen.count), 'filterkolom op mobiel toont resultaat en springlink', `${mobielOpen.count} · ${mobielOpen.jump}`)
 
   // 7. Geen JavaScript-fouten
   meld(consoleFouten.length === 0, 'geen console- of JavaScript-fouten', consoleFouten.slice(0, 3).join(' | '))

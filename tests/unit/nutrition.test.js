@@ -10,6 +10,7 @@ import {
   voedingswaardeMap,
   voedingswaardeSamenvatting,
   voedingswaardeStatus,
+  naarDrogeStof,
   voldoetAanVoedingsfilters
 } from '../../src/lib/nutrition.js'
 
@@ -122,4 +123,17 @@ test('voedingsfilters laten alleen waarden binnen de grenzen door', () => {
   assert.equal(voldoetAanVoedingsfilters({ protein: 26, fat: 10 }, { protein: { min: 20, max: 30 }, fat: { min: 5, max: 15 } }), true)
   assert.equal(voldoetAanVoedingsfilters({ protein: 26, fat: 16 }, { protein: { min: 20, max: 30 }, fat: { min: 5, max: 15 } }), false)
   assert.equal(voldoetAanVoedingsfilters({ protein: null }, { protein: { min: 0, max: 50 } }), false)
+})
+
+test('een actief voedingsfilter komt vooraan in de kaartsamenvatting', () => {
+  const rijen = [rij('protein', 26), rij('fat', 15), rij('kcal', 370), rij('calcium', 1.2)]
+  assert.equal(voedingswaardeSamenvatting(rijen, { voorkeur: ['calcium'] }), 'Calcium 1,2% · Eiwit 26% · Vet 15%')
+  assert.equal(voedingswaardeSamenvatting(rijen, { voorkeur: ['calcium', 'kcal'] }), 'Calcium 1,2% · Energie 370 kcal/100 g · Eiwit 26%')
+})
+
+test('rekent waarden om naar droge stof', () => {
+  const droog = naarDrogeStof([rij('protein', 10), rij('fat', 5), rij('moisture', 80), rij('kcal', 100)])
+  assert.deepEqual(droog, { protein: 50, fat: 25, kcal: 500 })
+  assert.equal(naarDrogeStof([rij('protein', 10)]), null)
+  assert.equal(naarDrogeStof([rij('protein', 10), rij('moisture', 100)]), null)
 })
