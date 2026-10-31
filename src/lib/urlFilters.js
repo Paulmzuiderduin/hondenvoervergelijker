@@ -7,7 +7,18 @@ import { ALLERGENS } from './allergens.js'
 //   ?allergeen=chicken&allergeen=beef
 //   ?eiwit=25-40&vet=10-20&kcal=300-500
 // Oude links met ?allergenen=chicken,beef en ?nietmerk=Orijen blijven werken.
-const VOEDING_PARAMS = { eiwit: 'protein', vet: 'fat', kcal: 'kcal' }
+const VOEDING_PARAMS = {
+  eiwit: 'protein',
+  vet: 'fat',
+  kcal: 'kcal',
+  vezel: 'fiber',
+  as: 'ash',
+  vocht: 'moisture',
+  calcium: 'calcium',
+  fosfor: 'phosphorus',
+  omega3: 'omega3',
+  omega6: 'omega6'
+}
 const FILTER_PARAMS = ['merk', 'zonder', 'nietmerk', 'geenmerken', 'allergeen', 'allergenen', ...Object.keys(VOEDING_PARAMS)]
 const GELDIGE_ALLERGENEN = new Set(ALLERGENS.map(({ key }) => key))
 

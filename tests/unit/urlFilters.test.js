@@ -108,3 +108,16 @@ test('voedingsbereiken worden geschreven en oude parameters verdwijnen', () => {
   assert.equal(params.get('utm_source'), 'nieuwsbrief')
   assert.deepEqual(leesVoedingsfilters(params), { protein: { min: 25, max: 40 }, kcal: { min: 300, max: 500 } })
 })
+
+test('alle standaardvoedingswaarden kunnen in de URL staan', () => {
+  const params = new URLSearchParams('?vezel=2-5&as=5-8&vocht=70-85&calcium=1-1,5&fosfor=0,8-1,2&omega3=0,3-1&omega6=2-4')
+  assert.deepEqual(leesVoedingsfilters(params), {
+    fiber: { min: 2, max: 5 },
+    ash: { min: 5, max: 8 },
+    moisture: { min: 70, max: 85 },
+    calcium: { min: 1, max: 1.5 },
+    phosphorus: { min: 0.8, max: 1.2 },
+    omega3: { min: 0.3, max: 1 },
+    omega6: { min: 2, max: 4 }
+  })
+})

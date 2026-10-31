@@ -1,6 +1,6 @@
 # Voedingswaarden
 
-Status: **fase 0, 1, 2 en 3 afgerond en live.** Alle **786 top-10-producten** en **691 van de 692 overige producten** hebben voedingswaarden. In totaal: **1.477 van de 1.478 producten**, met **778 volledig**, **699 gedeeltelijk**, **1.009 met kcal/100 g** en **10.956 opgeslagen waarden**. Eén Pedigree-product vermeldt geen analytische bestanddelen op de officiële pagina en blijft daarom zonder waarden. **Fase 4 is gestart:** eiwit, vet en energie zijn met een minimum- en maximumschuif te filteren.
+Status: **fase 0, 1, 2 en 3 afgerond en live.** Alle **786 top-10-producten** en **691 van de 692 overige producten** hebben voedingswaarden. In totaal: **1.477 van de 1.478 producten**, met **778 volledig**, **699 gedeeltelijk**, **1.009 met kcal/100 g** en **10.956 opgeslagen waarden**. Eén Pedigree-product vermeldt geen analytische bestanddelen op de officiële pagina en blijft daarom zonder waarden. **Fase 4 is afgerond:** alle standaardwaarden zijn met een minimum- en maximumschuif te filteren. Eiwit, vet en energie staan direct open; de andere zeven zitten in één compacte uitklapregel. De resultaten zijn te sorteren op eiwit, vet en energie.
 
 ## Uitgangspunten
 
@@ -88,19 +88,22 @@ De resterende 692 producten van de niet-top-10-merken, inclusief bronnen die all
 
 Na elke cluster een JSON-controle en SQL-batch. De agents schrijven batches van maximaal 25 producten.
 
-### Fase 4 — UI, SEO en filters (loopt)
+### Fase 4 — UI, SEO en filters (afgerond)
 
-- **Filteren op eiwit, vet en energie** met een dubbele schuif (minimum en maximum) en invoervelden voor exacte grenzen. De schaal loopt van 0 tot een ronde bovengrens uit de catalogus.
+- **Filteren op de volledige standaardset**: eiwit, vet, vezel, as, vocht, energie, calcium, fosfor, omega-3 en omega-6. Elke waarde heeft een dubbele schuif (minimum en maximum) en invoervelden voor exacte grenzen.
+- **Compacte opbouw:** eiwit, vet en energie staan altijd open; de andere zeven zitten achter één uitklapregel. Elke rij is één regel met de grenzen in de kop en de schuif eronder.
 - Een actief voedingsfilter laat alleen producten door waarvan de fabrikant die waarde vermeldt. Zonder actief filter blijven producten zonder voedingswaarden zichtbaar.
-- De gekozen bereiken staan in de URL (`?eiwit=25-40`, `?vet=10-20`, `?kcal=300-500`) en als verwijderbare chips bij de resultaten.
+- De gekozen bereiken staan in de URL (`?eiwit=25-40`, `?calcium=1-2`, `?omega3=0.3-1`) en als verwijderbare chips bij de resultaten.
+- **Sorteren** op eiwit, vet of energie, binnen de drie oordeelgroepen (geschikt, controleren, uitgesloten). Producten zonder de gekozen waarde zakken binnen hun groep naar achteren.
 - Waarschuwing wanneer natvoer/rauwvoer en brokken tegelijk worden gefilterd: de percentages zijn as-fed en niet direct vergelijkbaar.
-- Methodiekpagina en `llms.txt` zijn bijgewerkt met uitleg over de filters en as-fed. Nog te doen: sorteren op eiwit, vet of kcal.
+- Methodiekpagina en `llms.txt` zijn bijgewerkt met uitleg over de filters en as-fed.
+- Een automatische droge-stofweergave is niet toegevoegd. De site blijft de as-fedwaarden tonen en legt het verschil met natvoer en brokken uit.
 
 ## Besluiten
 
 - **Calcium, fosfor, omega-3 en omega-6** horen bij de standaardset. Ze worden verzameld en getoond waar ze op de bron staan.
 - **Producten zonder voedingswaarden blijven zichtbaar.** De vergelijker gaat primair over allergenen; een ontbrekende voedingswaarde mag een product niet verbergen.
 - **As-fed is de standaardweergave.** Dat is de waarde zoals de fabrikant hem op het etiket zet en waar de meeste eigenaren mee werken. Veterinaire voedingsdeskundigen gebruiken droge stof vooral om natvoer en brokken eerlijk te vergelijken; dat komt later als extra, duidelijk gelabelde berekening.
-- **Filters op eiwit, vet en energie** zijn geïmplementeerd met een minimum- en maximumschuif. Sorteren volgt later in fase 4.
+- **Filters op de volledige standaardset** zijn geïmplementeerd met een minimum- en maximumschuif. Sorteren op eiwit, vet en energie is toegevoegd.
 - **Agenten doen de eerste extractie**, met menselijke controle op de steekproef en op alle omgerekende waarden.
 - **We beginnen bij de top 10 merken**, na een kleine pilot daarbinnen.

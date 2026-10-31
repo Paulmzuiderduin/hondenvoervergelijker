@@ -332,6 +332,11 @@ button:disabled {
   font-weight: 700;
 }
 
+.filters-toggle:hover:not(:disabled) {
+  background: #eaf0eb;
+  color: #14371f;
+}
+
 .filters-toggle::after {
   content: "▾";
   font-size: 0.8rem;
@@ -341,14 +346,23 @@ button:disabled {
   content: "▴";
 }
 
+.filters-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
 .filters-reset {
-  width: 100%;
-  margin: 0.1rem 0 0.4rem;
-  padding: 0.35rem 0.55rem;
-  background: #fff;
+  display: block;
+  width: auto;
+  margin: 0 0 0 auto;
+  padding: 0.12rem 0.25rem;
+  background: transparent;
+  border: 0;
   color: #8a2f2f;
-  border: 1px solid #cfa5a5;
-  font-size: 0.8rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .filters-reset:hover:not(:disabled) {
@@ -360,7 +374,7 @@ button:disabled {
 }
 
 .filters h2 {
-  margin: 0 0 0.15rem;
+  margin: 0;
   font-size: 1.05rem;
   color: #14371f;
 }
@@ -424,16 +438,17 @@ button:disabled {
 }
 
 .filter-block {
-  margin-top: 1rem;
-  padding-top: 0.85rem;
+  margin-top: 0.75rem;
+  padding-top: 0.6rem;
   border-top: 1px solid #e6ece7;
 }
 
 .filter-block:first-of-type {
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
 }
 
-/* Voedingswaardefilters: drie compacte dubbele schuiven. */
+/* Voedingswaardefilters: één regel per waarde, met de invoervelden in de kop.
+   De drie hoofdfilters staan open; de rest zit in één uitklapregel. */
 .nutrition-filter-heading {
   cursor: default;
 }
@@ -443,51 +458,82 @@ button:disabled {
 }
 
 .nutrition-filter-hint {
-  margin: 0.3rem 0 0.1rem;
-  font-size: 0.72rem;
-  line-height: 1.4;
+  margin: 0.25rem 0 0;
+  font-size: 0.7rem;
+  line-height: 1.35;
   color: #5d6e61;
 }
 
 .nutrition-filter {
-  padding: 0.55rem 0 0.45rem;
+  padding: 0.38rem 0 0.3rem;
   border-top: 1px solid #eef2ee;
 }
 
 .nutrition-filter:first-of-type {
   border-top: 0;
-  padding-top: 0.25rem;
+  padding-top: 0.2rem;
 }
 
 .nutrition-filter-head {
   display: flex;
-  align-items: baseline;
-  gap: 0.35rem;
+  align-items: center;
+  gap: 0.2rem;
+  min-height: 22px;
 }
 
 .nutrition-filter-name {
-  font-size: 0.84rem;
+  flex: 0 0 auto;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #274a31;
 }
 
-.nutrition-filter-count {
+.range-fields {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
   margin-left: auto;
-  font-size: 0.68rem;
-  color: #6a7a6e;
+}
+
+.range-fields input {
+  width: 42px;
+  max-width: none;
+  margin: 0;
+  padding: 0.12rem 0.18rem;
+  border: 1px solid #c8d3c9;
+  border-radius: 2px;
+  background: #fff;
+  color: #18261c;
+  font: inherit;
+  font-size: 0.72rem;
   font-variant-numeric: tabular-nums;
-  white-space: nowrap;
+  text-align: right;
+}
+
+.range-dash {
+  color: #7b8a7e;
+  font-size: 0.7rem;
+}
+
+.range-unit {
+  color: #5d6e61;
+  font-size: 0.66rem;
+  font-weight: 600;
 }
 
 .range-reset {
-  margin-left: 0.1rem;
-  padding: 0.04rem 0.2rem;
-  background: transparent;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin-left: 0.05rem;
+  padding: 0;
   border: 0;
+  border-radius: 2px;
+  background: transparent;
   color: #8a2f2f;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  text-decoration: underline;
+  line-height: 1;
 }
 
 .range-reset:hover:not(:disabled) {
@@ -496,15 +542,15 @@ button:disabled {
 
 .range-slider {
   position: relative;
-  height: 24px;
-  margin: 0.35rem 0 0.1rem;
+  height: 18px;
+  margin: 0.15rem 0 0;
 }
 
 .range-track {
   position: absolute;
-  left: 8px;
-  right: 8px;
-  top: 10px;
+  left: 7px;
+  right: 7px;
+  top: 7px;
   height: 4px;
   border-radius: 999px;
   background: #d9e2da;
@@ -515,14 +561,16 @@ button:disabled {
   top: 0;
   bottom: 0;
   border-radius: 999px;
-  background: #175b30;
+  background: #c3dbc9;
 }
 
 .range-input {
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: -5px;
+  bottom: -5px;
   width: 100%;
-  height: 24px;
   margin: 0;
   padding: 0;
   border: 0;
@@ -537,16 +585,16 @@ button:disabled {
 }
 
 .range-input::-webkit-slider-runnable-track {
-  height: 24px;
+  height: 28px;
   background: transparent;
 }
 
 .range-input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 16px;
-  height: 16px;
-  margin-top: 4px;
+  width: 14px;
+  height: 14px;
+  margin-top: 7px;
   border: 2px solid #fff;
   border-radius: 50%;
   background: #175b30;
@@ -556,13 +604,13 @@ button:disabled {
 }
 
 .range-input::-moz-range-track {
-  height: 24px;
+  height: 28px;
   background: transparent;
 }
 
 .range-input::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border: 2px solid #fff;
   border-radius: 50%;
   background: #175b30;
@@ -581,49 +629,6 @@ button:disabled {
   outline-offset: 2px;
 }
 
-.range-fields {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto;
-  align-items: end;
-  gap: 0.25rem;
-  margin-top: 0.1rem;
-}
-
-.range-fields label {
-  margin: 0;
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: #5d6e61;
-}
-
-.range-fields input {
-  width: 100%;
-  max-width: none;
-  margin: 0.1rem 0 0;
-  padding: 0.2rem 0.3rem;
-  border: 1px solid #c8d3c9;
-  border-radius: 2px;
-  background: #fff;
-  color: #18261c;
-  font: inherit;
-  font-size: 0.78rem;
-  font-variant-numeric: tabular-nums;
-  text-align: right;
-}
-
-.range-dash {
-  padding-bottom: 0.22rem;
-  color: #7b8a7e;
-  font-size: 0.75rem;
-}
-
-.range-unit {
-  padding-bottom: 0.22rem;
-  color: #5d6e61;
-  font-size: 0.68rem;
-  font-weight: 600;
-}
-
 .nutrition-filter.active .nutrition-filter-name {
   color: #175b30;
 }
@@ -632,19 +637,97 @@ button:disabled {
   background: #2f7d45;
 }
 
+.nutrition-extra {
+  margin-top: 0.3rem;
+  padding-top: 0.3rem;
+  border-top: 1px solid #eef2ee;
+}
+
+.nutrition-extra-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #394c3e;
+}
+
+.nutrition-extra-heading::-webkit-details-marker {
+  display: none;
+}
+
+.nutrition-extra-heading::after {
+  content: "▾";
+  margin-left: 0.1rem;
+  color: #5d6e61;
+  font-size: 0.65rem;
+}
+
+.nutrition-extra[open] .nutrition-extra-heading::after {
+  content: "▴";
+}
+
+.nutrition-extra-summary {
+  margin-left: auto;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: #6a7a6e;
+}
+
+.nutrition-extra-body {
+  margin-top: 0.1rem;
+}
+
 .nutrition-compare-warning {
-  margin: 0.5rem 0 0;
+  margin: 0.45rem 0 0;
   padding: 0.4rem 0.5rem;
   background: #fdf3d6;
   border-left: 2px solid #b58a2a;
   color: #5c4715;
-  font-size: 0.73rem;
-  line-height: 1.45;
+  font-size: 0.72rem;
+  line-height: 1.4;
 }
 
 .food-type-choices {
-  flex-direction: column;
-  gap: 0.25rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.food-type-choices .type-chip {
+  position: relative;
+  margin: 0;
+  padding: 0.2rem 0.45rem;
+  border: 1px solid #c8d3c9;
+  border-radius: 2px;
+  background: #f7f9f7;
+  color: #394c3e;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.food-type-choices .type-chip.active {
+  background: #eaf1ec;
+  border-color: #9fb8a6;
+  color: #17512b;
+  font-weight: 700;
+}
+
+.food-type-choices .type-chip input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.food-type-choices .type-chip:has(input:focus-visible) {
+  outline: 2px solid #175b30;
+  outline-offset: 1px;
 }
 
 .filter-summary {
@@ -942,11 +1025,40 @@ button:disabled {
   color: #14371f;
 }
 
+.results-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .result-summary {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
   margin: 0;
+}
+
+.sort-select {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0;
+  font-size: 0.76rem;
+  color: #53645a;
+  white-space: nowrap;
+}
+
+.sort-select select {
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0.22rem 0.3rem;
+  border: 1px solid #c8d3c9;
+  border-radius: 2px;
+  background: #fff;
+  color: #18261c;
+  font-size: 0.76rem;
 }
 
 .summary-pill {
