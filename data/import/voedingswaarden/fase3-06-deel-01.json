@@ -273,10 +273,10 @@
         "calcium": 1.3,
         "phosphorus": 1.0,
         "omega3": null,
-        "omega6": null
+        "omega6": 3.8
       },
-      "bronTekst": "Gemiddelde analyse (per kg): Eiwit 22,0 %; Vet 16,0 %; Anorganische stof 6,5 %; Ruwe celstof 2,5 %; Vocht 8,0 %; Calcium (Ca) 1,30 %; Fosfor (P) 1,00 %. Energie: 16,2MJ/kg - 3878 kcal/kg.",
-      "notitie": "Kcal omgerekend van 3878 kcal/kg naar kcal/100 g (gedeeld door 10). Niet vermeld: omega-3, omega-6."
+      "bronTekst": "Gemiddelde analyse (per kg): Eiwit 22,0 %; Vet 16,0 %; Anorganische stof 6,5 %; Ruwe celstof 2,5 %; Vocht 8,0 %; Calcium (Ca) 1,30 %; Fosfor (P) 1,00 %; Linolzuur 3,8 %; Alfa-linoleenzuur 0,6 %. Energie: 16,2MJ/kg - 3878 kcal/kg.",
+      "notitie": "Kcal omgerekend van 3878 kcal/kg naar kcal/100 g (gedeeld door 10). Omega-6 overgenomen uit de op de pagina vermelde linolzuurwaarde; linolzuur is een omega-6-vetzuur. Omega-3 wordt alleen als deelwaarde (alfa-linoleenzuur 0,6%) vermeld en niet als totaal, daarom omega-3 null."
     },
     {
       "merk": "Trovet",
@@ -321,7 +321,7 @@
         "omega3": 3.3,
         "omega6": null
       },
-      "bronTekst": "Gemiddelde analyse (per kg): Eiwit 19,0 %; Vet 15,5 %; Anorganische stof 5,0 %; Ruwe celstof 4,0 %; Vocht 8,0 %; Calcium (Ca) 0,65 %; Fosfor (P) 0,55 %; Omega 3 vetzuren 3,3 %. Energie: 15,8MJ/kg - 3790 kcal/kg.",
+      "bronTekst": "Gemiddelde analyse (per kg): Eiwit 19,0 %; Vet 15,5 %; Anorganische stof 5,0 %; Ruwe celstof 4,0 %; Vocht 8,0 %; Calcium (Ca) 0,65 %; Fosfor (P) 0,55 %; Omega 3 vetzuren 3,3 %; EPA 4000 mg; DHA 6000 mg. Energie: 15,8MJ/kg - 3790 kcal/kg.",
       "notitie": "Kcal omgerekend van 3790 kcal/kg naar kcal/100 g (gedeeld door 10). Niet vermeld: omega-6."
     },
     {
@@ -411,10 +411,10 @@
         "calcium": 0.8,
         "phosphorus": 0.65,
         "omega3": null,
-        "omega6": null
+        "omega6": 3.0
       },
-      "bronTekst": "Gemiddelde analyse (per kg): Eiwit 22,0 %; Vet 15,0 %; Anorganische stof 5,9 %; Ruwe celstof 3,5 %; Vocht 8,0 %; Calcium (Ca) 0,80 %; Fosfor (P) 0,65 %; Omega 3 vetzuren 8820 mg. Energie: 15,8MJ/kg - 3782 kcal/kg.",
-      "notitie": "Kcal omgerekend van 3782 kcal/kg naar kcal/100 g (gedeeld door 10). Omega-3 staat op de pagina in mg/kg (8820 mg/kg) en is niet naar een percentage omgerekend, daarom null. Niet vermeld: omega-6."
+      "bronTekst": "Gemiddelde analyse (per kg): Eiwit 22,0 %; Vet 15,0 %; Anorganische stof 5,9 %; Ruwe celstof 3,5 %; Vocht 8,0 %; Calcium (Ca) 0,80 %; Fosfor (P) 0,65 %; Linolzuur 3 %; Omega 3 vetzuren 8820 mg. Energie: 15,8MJ/kg - 3782 kcal/kg.",
+      "notitie": "Kcal omgerekend van 3782 kcal/kg naar kcal/100 g (gedeeld door 10). Omega-6 overgenomen uit de op de pagina vermelde linolzuurwaarde; linolzuur is een omega-6-vetzuur. Omega-3 staat op de pagina in mg/kg (8820 mg/kg) en is niet naar een percentage omgerekend, daarom null."
     },
     {
       "merk": "Trovet",
@@ -434,10 +434,10 @@
         "calcium": 0.8,
         "phosphorus": 0.4,
         "omega3": null,
-        "omega6": null
+        "omega6": 2.5
       },
-      "bronTekst": "Gemiddelde analyse (per kg): Eiwit 15,0 %; Vet 17,7 %; Anorganische stof 4,5 %; Ruwe celstof 2,0 %; Vocht 8,0 %; Calcium (Ca) 0,80 %; Fosfor (P) 0,40 %; Omega 3 vetzuren %. Energie: 16,8MJ/kg - 4032 kcal/kg.",
-      "notitie": "Kcal omgerekend van 4032 kcal/kg naar kcal/100 g (gedeeld door 10). Bij 'Omega 3 vetzuren' ontbreekt op de pagina de waarde, daarom omega-3 null. Niet vermeld: omega-6."
+      "bronTekst": "Gemiddelde analyse (per kg): Eiwit 15,0 %; Vet 17,7 %; Anorganische stof 4,5 %; Ruwe celstof 2,0 %; Vocht 8,0 %; Calcium (Ca) 0,80 %; Fosfor (P) 0,40 %; Linolzuur 2,5 %; Alfa-linoleenzuur 0,15 %; EPA 0,19 %; Omega 3 vetzuren %. Energie: 16,8MJ/kg - 4032 kcal/kg.",
+      "notitie": "Kcal omgerekend van 4032 kcal/kg naar kcal/100 g (gedeeld door 10). Omega-6 overgenomen uit de op de pagina vermelde linolzuurwaarde; linolzuur is een omega-6-vetzuur. Bij 'Omega 3 vetzuren' ontbreekt op de pagina de waarde; ALA en EPA staan alleen als deelwaarden vermeld, daarom omega-3 null."
     },
     {
       "merk": "Trovet",
@@ -457,10 +457,10 @@
         "calcium": 0.2,
         "phosphorus": 0.12,
         "omega3": null,
-        "omega6": null
+        "omega6": 1.6
       },
-      "bronTekst": "Gemiddelde analyse (per kg): Eiwit 6,5 %; Vet 6,5 %; Anorganische stof 1,0 %; Ruwe celstof 0,9 %; Vocht 74,0 %; Calcium (Ca) 0,20 %; Fosfor (P) 0,12 %. Energie: 4,9MJ/kg - 1169 kcal/kg.",
-      "notitie": "Kcal omgerekend van 1169 kcal/kg naar kcal/100 g (gedeeld door 10). Niet vermeld: omega-3, omega-6."
+      "bronTekst": "Gemiddelde analyse (per kg): Eiwit 6,5 %; Vet 6,5 %; Anorganische stof 1,0 %; Ruwe celstof 0,9 %; Vocht 74,0 %; Calcium (Ca) 0,20 %; Fosfor (P) 0,12 %; Linolzuur 1,6 %. Energie: 4,9MJ/kg - 1169 kcal/kg.",
+      "notitie": "Kcal omgerekend van 1169 kcal/kg naar kcal/100 g (gedeeld door 10). Omega-6 overgenomen uit de op de pagina vermelde linolzuurwaarde; linolzuur is een omega-6-vetzuur. Niet vermeld: omega-3."
     },
     {
       "merk": "Trovet",
