@@ -1,0 +1,190 @@
+{
+  "merk": "diversen",
+  "opgehaald": "2026-10-31",
+  "producten": [
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met lam voor volwassen honden van grote rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-lam-voor-volwassen-honden-van-grote-rassen",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 23,
+        "fat": 13,
+        "fiber": 2.5,
+        "ash": 6.1,
+        "moisture": null,
+        "kcal": null,
+        "calcium": 1.2,
+        "phosphorus": 1,
+        "omega3": 0.2,
+        "omega6": 1.6
+      },
+      "bronTekst": "eiwit: 23%, vetgehalte: 13%, omega-6-vetzuren: 1.6%, omega-3-vetzuren: 0.2%, ruwe as: 6.1%, ruwe celstof: 2.5%, calcium: 1.2%, fosfor: 1%.",
+      "notitie": "As-fed overgenomen van de officiële productpagina. Vocht en energie (kcal) worden niet vermeld; die blijven null."
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met lam voor volwassen honden van kleine en middelgrote rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-lam-voor-volwassen-honden-van-kleine-en-middelgrote-rassen",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 26,
+        "fat": 15,
+        "fiber": 2.6,
+        "ash": 6.7,
+        "moisture": null,
+        "kcal": null,
+        "calcium": 1.5,
+        "phosphorus": 1.1,
+        "omega3": 0.2,
+        "omega6": 1.6
+      },
+      "bronTekst": "eiwit: 26%, vetgehalte: 15%, omega-6-vetzuren: 1.6%, omega-3-vetzuren: 0.2%, ruwe as: 6.7%, ruwe celstof: 2.6%, calcium: 1.5%, fosfor: 1.1%.",
+      "notitie": "As-fed overgenomen van de officiële productpagina. Vocht en energie (kcal) worden niet vermeld; die blijven null."
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met verse kip en laag vetgehalte voor volwassen honden van alle rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-en-laag-vetgehalte-voor-volwassen-honden-van-alle-rassen",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 20,
+        "fat": 10,
+        "fiber": 2.8,
+        "ash": 5.3,
+        "moisture": null,
+        "kcal": null,
+        "calcium": 1,
+        "phosphorus": 0.8,
+        "omega3": 0.25,
+        "omega6": 1.5
+      },
+      "bronTekst": "eiwit: 20%, vetgehalte: 10%, omega-6-vetzuren: 1.5%, omega-3-vetzuren: 0.25%, ruwe as: 5.3%, ruwe celstof: 2.8%, calcium: 1%, fosfor: 0.8%.",
+      "notitie": "As-fed overgenomen van de officiële productpagina. Vocht en energie (kcal) worden niet vermeld; die blijven null."
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met verse kip voor puppy's van grote rassen",
+      "voertype": "kibble",
+      "verpakking": "2 kg; 3 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-puppys-van-grote-rassen",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 26,
+        "fat": 14,
+        "fiber": 2.6,
+        "ash": 6,
+        "moisture": null,
+        "kcal": null,
+        "calcium": 1.1,
+        "phosphorus": 0.8,
+        "omega3": 0.5,
+        "omega6": 2.8
+      },
+      "bronTekst": "eiwit: 26%, vetgehalte: 14%, omega-6-vetzuren: 2.8%, omega-3-vetzuren: 0.5%, ruwe as: 6%, ruwe celstof: 2.6%, calcium: 1.1%, fosfor: 0.8%, DHA: 0.18%.",
+      "notitie": "As-fed overgenomen van de officiële productpagina. Vocht en energie (kcal) worden niet vermeld; die blijven null. DHA is niet als omega-3-totaal overgenomen."
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met verse kip voor puppy's van kleine en middelgrote rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-puppys-van-kleine-en-middelgrote-rassen",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 28,
+        "fat": 17,
+        "fiber": 2.3,
+        "ash": 6.5,
+        "moisture": null,
+        "kcal": null,
+        "calcium": 1.4,
+        "phosphorus": 1,
+        "omega3": 0.5,
+        "omega6": 2.5
+      },
+      "bronTekst": "eiwit: 28%, vetgehalte: 17%, omega-6-vetzuren: 2.5%, omega-3-vetzuren: 0.5%, ruwe as: 6.5%, ruwe celstof: 2.3%, calcium: 1.4%, fosfor: 1%, DHA: 0.18%.",
+      "notitie": "As-fed overgenomen van de officiële productpagina. Vocht en energie (kcal) worden niet vermeld; die blijven null. DHA is niet als omega-3-totaal overgenomen."
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met verse kip voor senior honden van kleine en middelgrote rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 5 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-senior-katten-1",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 27,
+        "fat": 12,
+        "fiber": 2.7,
+        "ash": 6.7,
+        "moisture": null,
+        "kcal": null,
+        "calcium": 1.5,
+        "phosphorus": 1.1,
+        "omega3": 0.2,
+        "omega6": 1.2
+      },
+      "bronTekst": "eiwit: 27%, vetgehalte: 12%, omega-6-vetzuren: 1.2%, omega-3-vetzuren: 0.2%, ruwe as: 6.7%, ruwe celstof: 2.7%, calcium: 1.5%, fosfor: 1.1%.",
+      "notitie": "As-fed overgenomen van de officiële productpagina. De URL bevat 'katten', maar de pagina en de titel betreffen het hondenproduct voor senior honden van kleine en middelgrote rassen. Vocht en energie (kcal) worden niet vermeld; die blijven null."
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met verse kip voor volwassen honden van grote rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 5 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-volwassen-honden-van-grote-rassen",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 23,
+        "fat": 13,
+        "fiber": 2.5,
+        "ash": 5.9,
+        "moisture": null,
+        "kcal": null,
+        "calcium": 1.2,
+        "phosphorus": 0.9,
+        "omega3": 0.2,
+        "omega6": 1.5
+      },
+      "bronTekst": "eiwit: 23%, vetgehalte: 13%, omega-6-vetzuren: 1.5%, omega-3-vetzuren: 0.2%, ruwe as: 5.9%, ruwe celstof: 2.5%, calcium: 1.2%, fosfor: 0.9%.",
+      "notitie": "As-fed overgenomen van de officiële productpagina. Vocht en energie (kcal) worden niet vermeld; die blijven null."
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met verse kip voor volwassen honden van kleine en middelgrote rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 5 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-volwassen-honden-van-kleine-en-middelgrote-rassen",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 26,
+        "fat": 15,
+        "fiber": 2.6,
+        "ash": 6.5,
+        "moisture": null,
+        "kcal": null,
+        "calcium": 1.4,
+        "phosphorus": 1.1,
+        "omega3": 0.3,
+        "omega6": 1.5
+      },
+      "bronTekst": "eiwit: 26%, vetgehalte: 15%, omega-6-vetzuren: 1.5%, omega-3-vetzuren: 0.3%, ruwe as: 6.5%, ruwe celstof: 2.6%, calcium: 1.4%, fosfor: 1.1%.",
+      "notitie": "As-fed overgenomen van de officiële productpagina. Vocht en energie (kcal) worden niet vermeld; die blijven null."
+    }
+  ]
+}
