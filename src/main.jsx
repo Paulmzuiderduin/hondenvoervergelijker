@@ -1086,6 +1086,10 @@ function App() {
     setVerversen(true)
     const klaar = () => { if (actief) setVerversen(false) }
     loadTerms().finally(klaar)
+    // De compacte productlijst en de beoordeling zijn onafhankelijk. Start ze
+    // samen; de resultaten wachten vanzelf tot beide binnen zijn.
+    const compacteLading = load(false)
+    compacteLading.finally(klaar)
     fetch('/catalog-assessment.json', { cache: 'no-cache' })
       .then((antwoord) => antwoord.ok ? antwoord.json() : Promise.reject(new Error(`HTTP ${antwoord.status}`)))
       .then((data) => {
@@ -1093,9 +1097,11 @@ function App() {
         setAssessments(decodeerBeoordelingen(data))
         setAssessmentsKlaar(true)
         setCatalogusMetTekst(false)
-        load(false).finally(klaar)
       })
-      .catch(() => {
+      .catch(async () => {
+        // Zonder beoordelingsbestand is de volledige catalogus met
+        // ingrediëntenlijsten de terugvaloptie.
+        await compacteLading
         if (!actief) return
         setAssessmentsKlaar(true)
         setCatalogusMetTekst(true)

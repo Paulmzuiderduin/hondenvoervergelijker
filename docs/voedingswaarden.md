@@ -16,7 +16,7 @@ Status: **fase 0, 1, 2 en 3 afgerond en live.** Alle **786 top-10-producten** en
 - **As-fed** is de waarde zoals op het etiket: het percentage van het product inclusief vocht. Fabrikanten publiceren deze waarde en de meeste eigenaren herkennen haar.
 - **Droge stof** rekent het vocht weg. Daardoor kun je natvoer en brokken eerlijk met elkaar vergelijken. Een natvoer met 10% eiwit en 80% vocht komt bijvoorbeeld op ongeveer 50% eiwit op droge stof; een brok met 26% eiwit en 10% vocht op ongeveer 29%.
 
-De site toont **as-fed** als standaard, omdat dat de bronwaarde is en er niets hoeft te worden herberekend. Een droge-stofweergave komt later als extra, duidelijk gelabelde berekening.
+De site toont **as-fed** als standaard, omdat dat de bronwaarde is en er niets hoeft te worden herberekend. In het voedingsdetail van een product kan de bezoeker naar **droge stof** schakelen; die berekening is duidelijk gelabeld en alleen beschikbaar als het vochtgehalte bekend is.
 
 ## Database
 
