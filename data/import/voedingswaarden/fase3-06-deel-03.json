@@ -1,0 +1,121 @@
+{
+  "merk": "diversen",
+  "opgehaald": "2026-10-31",
+  "producten": [
+    {
+      "merk": "Smølke",
+      "naam": "Vers Gestoomde Maaltijd Kip",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/vers-gestoomde-maaltijd-kip/",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.5,
+        "fat": 7.0,
+        "fiber": 0.5,
+        "ash": 3.0,
+        "moisture": 75.0,
+        "kcal": 133.0,
+        "calcium": null,
+        "phosphorus": null,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Analytische bestanddelen: Vocht 75%; Eiwit 10,5%; Vetgehalte 7,0%; Ruwe as 3,0%; Ruwe celstof 0,5%. Energie: 133 kcal/100 g.",
+      "notitie": "Kcal staat op de pagina al per 100 g en is ongewijzigd overgenomen. Niet vermeld: calcium, fosfor, omega-3, omega-6."
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Vers Gestoomde Maaltijd Lam",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/vers-gestoomde-maaltijd-lam/",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.0,
+        "fat": 9.5,
+        "fiber": 0.5,
+        "ash": 3.0,
+        "moisture": 72.5,
+        "kcal": 141.0,
+        "calcium": 0.4,
+        "phosphorus": 0.25,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Analytische bestanddelen: Vocht 72,5%; Eiwit 10,0%; Vetgehalte 9,5%; Ruwe as 3,0%; Ruwe celstof 0,5%; Calcium 0,4%; Fosfor 0,25%. Energie: 141 kcal/100 g.",
+      "notitie": "Kcal staat op de pagina al per 100 g en is ongewijzigd overgenomen. Niet vermeld: omega-3, omega-6."
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Vers Gestoomde Maaltijd met Kalkoen",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/vers-gestoomde-maaltijd-kalkoen/",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.0,
+        "fat": 9.0,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75.0,
+        "kcal": 141.0,
+        "calcium": 0.4,
+        "phosphorus": 0.27,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Analytische bestanddelen: Vocht 75%; Eiwit 10,0%; Vetgehalte 9,0%; Ruwe as 2,5%; Ruwe celstof 0,5%; Calcium 0,4%; Fosfor 0,27%. Energie: 141 kcal/100 g.",
+      "notitie": "Kcal staat op de pagina al per 100 g en is ongewijzigd overgenomen. Niet vermeld: omega-3, omega-6."
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Vers Gestoomde Maaltijd Smølmix",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/vers-gestoomde-maaltijd-smolmix/",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 8.5,
+        "fat": 10.0,
+        "fiber": 0.5,
+        "ash": 2.0,
+        "moisture": 75.0,
+        "kcal": 141.0,
+        "calcium": 0.35,
+        "phosphorus": 0.22,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Analytische bestanddelen: Vocht 75%; Eiwit 8,5%; Vetgehalte 10,0%; Ruwe as 2,0%; Ruwe celstof 0,5%; Calcium 0,35%; Fosfor 0,22%. Energie: 141 kcal/100 g.",
+      "notitie": "Kcal staat op de pagina al per 100 g en is ongewijzigd overgenomen. Niet vermeld: omega-3, omega-6."
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Vers Gestoomde Maaltijd Wild",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/vers-gestoomde-maaltijd-wild/",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9.0,
+        "fat": 10.0,
+        "fiber": 0.5,
+        "ash": 3.5,
+        "moisture": 75.0,
+        "kcal": 131.0,
+        "calcium": 0.5,
+        "phosphorus": 0.4,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "Analytische bestanddelen: Vocht 75%; Eiwit 9,0%; Vetgehalte 10,0%; Ruwe as 3,5%; Ruwe celstof 0,5%; Calcium 0,5%; Fosfor 0,4%. Energie: 131 kcal/100 g.",
+      "notitie": "Kcal staat op de pagina al per 100 g en is ongewijzigd overgenomen. Niet vermeld: omega-3, omega-6."
+    }
+  ]
+}
