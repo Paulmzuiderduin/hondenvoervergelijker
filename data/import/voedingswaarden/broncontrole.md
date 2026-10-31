@@ -2,9 +2,10 @@
 
 Datum: 2026-10-31
 Producten gecontroleerd: 1470
-Gelijk: 1199
-Gewijzigd: 21
-Onbereikbaar: 5
+Gelijk: 1198
+Gewijzigd: 11
+Andere bron: 10
+Onbereikbaar: 6
 Alleen via browser: 245
 Geen bruikbare brontekst: 0
 
@@ -23,25 +24,31 @@ Geen bruikbare brontekst: 0
 | Wolfsblut | Adult Wild Pacific | wolfsblut.com | De opgeslagen analyse is niet teruggevonden: 1 van 4 getallen gevonden. |
 | Wolfsblut | VetLine Gastrointestinal | wolfsblut.com | De opgeslagen analyse is niet teruggevonden: 0 van 11 getallen gevonden. |
 | Wolfsblut | VetLine Hypoallergenic | wolfsblut.com | De opgeslagen analyse is niet teruggevonden: 3 van 11 getallen gevonden. |
-| RAW4DOGS | Barf 5 Mix | raw4dogs.nl | De opgeslagen analyse is niet teruggevonden: 3 van 8 getallen gevonden. |
-| RAW4DOGS | Beef & chicken | raw4dogs.nl | De opgeslagen analyse is niet teruggevonden: 2 van 9 getallen gevonden. |
-| RAW4DOGS | Chicken | raw4dogs.nl | De opgeslagen analyse is niet teruggevonden: 3 van 9 getallen gevonden. |
-| RAW4DOGS | Duck | raw4dogs.nl | De opgeslagen analyse is niet teruggevonden: 2 van 9 getallen gevonden. |
-| RAW4DOGS | Fish Mix | raw4dogs.nl | De opgeslagen analyse is niet teruggevonden: 2 van 8 getallen gevonden. |
-| RAW4DOGS | Game Mix | raw4dogs.nl | De opgeslagen analyse is niet teruggevonden: 3 van 9 getallen gevonden. |
-| RAW4DOGS | Lamb | raw4dogs.nl | De opgeslagen analyse is niet teruggevonden: 2 van 9 getallen gevonden. |
-| James Wellbeloved | James Wellbeloved Junior Kalkoen & Rijst | wellbeloved.com | De opgeslagen analyse is niet teruggevonden: 4 van 12 getallen gevonden. |
-| James Wellbeloved | James Wellbeloved Senior/Light Kalkoen & Rijst | wellbeloved.com | De opgeslagen analyse is niet teruggevonden: 2 van 10 getallen gevonden. |
-| James Wellbeloved | James Wellbeloved Senior/Light Lam & Rijst | wellbeloved.com | De opgeslagen analyse is niet teruggevonden: 3 van 9 getallen gevonden. |
+
+## Andere bron
+
+| Merk | Product | Bron | Detail |
+|---|---|---|---|
+| RAW4DOGS | Barf 5 Mix | raw4dogs.nl | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 3 van 8 getallen. |
+| RAW4DOGS | Beef & chicken | raw4dogs.nl | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 2 van 9 getallen. |
+| RAW4DOGS | Chicken | raw4dogs.nl | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 3 van 9 getallen. |
+| RAW4DOGS | Duck | raw4dogs.nl | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 2 van 9 getallen. |
+| RAW4DOGS | Fish Mix | raw4dogs.nl | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 2 van 8 getallen. |
+| RAW4DOGS | Game Mix | raw4dogs.nl | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 3 van 9 getallen. |
+| RAW4DOGS | Lamb | raw4dogs.nl | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 2 van 9 getallen. |
+| James Wellbeloved | James Wellbeloved Junior Kalkoen & Rijst | wellbeloved.com | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 4 van 12 getallen. |
+| James Wellbeloved | James Wellbeloved Senior/Light Kalkoen & Rijst | wellbeloved.com | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 2 van 10 getallen. |
+| James Wellbeloved | James Wellbeloved Senior/Light Lam & Rijst | wellbeloved.com | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 3 van 9 getallen. |
 
 ## Onbereikbaar
 
 | Merk | Product | Bron | Detail |
 |---|---|---|---|
-| Riverwood | Adult Surf 'n Turf Kalkoen met Kwartel & Karper | riverwoodpetfood.com | HTTP 429 |
-| Riverwood | Small Breed Gans & Eend met Kwartel | riverwoodpetfood.com | HTTP 429 |
-| Jarco | Hondenblikvoeding - Rund menu | jarco.nl | HTTP 429 |
-| Jarco | Hondenbrokken Mini Senior Lam | jarco.nl | HTTP 429 |
+| Riverwood | Hert & Lam met Konijn | riverwoodpetfood.com | HTTP 429 |
+| Riverwood | Kabeljauw & Zalm Visworst | riverwoodpetfood.com | HTTP 429 |
+| Riverwood | Kerstmaaltijd Konijn & Kalkoen | riverwoodpetfood.com | HTTP 429 |
+| Riverwood | Rendier & Hert met Wild Zwijn | riverwoodpetfood.com | HTTP 429 |
+| Farm Food | Fresh Menu Pens & Hart Compleet (zacht gestoomd) | farmfood.nl | The operation was aborted due to timeout |
 | Purina Pro Plan | Medium Adult Sensitive Skin Zalm | purina.nl | HTTP 404 |
 
 ## Alleen via browser
