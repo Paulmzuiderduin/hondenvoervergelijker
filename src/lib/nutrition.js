@@ -70,6 +70,22 @@ export function voedingswaardeSamenvatting(rijen = []) {
     .join(' · ')
 }
 
+// Een actief voedingsfilter werkt alleen op producten waarvan de fabrikant
+// die waarde ook noemt. Ontbreekt de waarde, dan kan het product niet aan de
+// gekozen onder- of bovengrens voldoen en valt het af. Zonder actief filter
+// verandert er niets: producten zonder voedingswaarden blijven zichtbaar.
+export function voldoetAanVoedingsfilters(waarden = {}, filters = {}) {
+  for (const [key, bereik] of Object.entries(filters)) {
+    if (!bereik) continue
+    const waarde = waarden[key]
+    if (waarde == null || waarde === '') return false
+    const getal = Number(waarde)
+    if (!Number.isFinite(getal)) return false
+    if (getal < bereik.min || getal > bereik.max) return false
+  }
+  return true
+}
+
 export function voedingswaardeStatus(rijen = []) {
   const aanwezig = new Set(normaliseerVoedingswaarden(rijen).map((nutrient) => nutrient.key))
   const aantal = CORE_NUTRIENTS.filter((nutrient) => aanwezig.has(nutrient.key)).length

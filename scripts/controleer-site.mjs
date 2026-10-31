@@ -69,7 +69,7 @@ try {
 
   // 3. Merk-deeplink
   await open('/?merk=Acana', '.product-card')
-  const filter = await page.locator('.filter-summary').innerText()
+  const filter = await page.locator('.brand-filter .filter-summary').innerText()
   meld(/1 van 60 merken/.test(filter), 'merk-deeplink selecteert één merk', filter)
 
   // 3b. Voedingswaarden op de kaart en in het detail
@@ -81,6 +81,19 @@ try {
   meld(/Ruw eiwit/.test(voedingDetail) && !/NaN/.test(voedingDetail), 'voedingswaarden-detail is compleet', voedingDetail.replace(/\n/g, ' ').slice(0, 100))
   const voedingContext = await page.locator('.nutrition-context').first().innerText()
   meld(/vocht/i.test(voedingContext) && /niet direct|vergelijk/i.test(voedingContext), 'voedingswaarden geven context over vocht', voedingContext.replace(/\n/g, ' ').slice(0, 120))
+
+  // 3c. Voedingswaardefilter met minimum en maximum
+  await open('/?eiwit=30-35', '.product-card')
+  const aantalVoedingsfilters = await page.locator('.nutrition-filter').count()
+  meld(aantalVoedingsfilters === 3, 'drie voedingsfilters met dubbele schuif', `${aantalVoedingsfilters} filters`)
+  const voedingsChips = await page.locator('.active-filters .filter-chip').allInnerTexts()
+  meld(voedingsChips.some((tekst) => /Eiwit 30–35%/.test(tekst)), 'voedingsfilter staat als chip bij de resultaten', voedingsChips.join(' / '))
+  const eiwitWaarden = (await page.locator('.product-card .nutrition-summary').allInnerTexts())
+    .map((tekst) => { const match = tekst.match(/Eiwit ([\d,]+)%/); return match ? Number(match[1].replace(',', '.')) : null })
+    .filter((waarde) => waarde != null)
+  meld(eiwitWaarden.length > 0 && eiwitWaarden.every((waarde) => waarde >= 30 && waarde <= 35), 'eiwitfilter toont alleen waarden tussen 30 en 35%', eiwitWaarden.join(', '))
+  const voedingsWaarschuwing = await page.locator('.nutrition-compare-warning').innerText()
+  meld(/niet direct vergelijkbaar|verschil in vocht/i.test(voedingsWaarschuwing), 'voedingsfilter waarschuwt voor natvoer versus brokken', voedingsWaarschuwing.replace(/\n/g, ' ').slice(0, 120))
 
   // 4. Melding wanneer niets geschikt is
   await open('/?merk=Royal%20Canin&allergeen=beef', '.no-suitable')

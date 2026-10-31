@@ -5,9 +5,29 @@ import { ALLERGENS } from './allergens.js'
 //   ?zonder=Orijen                 → alles behalve Orijen
 //   ?geenmerken=1                  → geen enkel merk
 //   ?allergeen=chicken&allergeen=beef
+//   ?eiwit=25-40&vet=10-20&kcal=300-500
 // Oude links met ?allergenen=chicken,beef en ?nietmerk=Orijen blijven werken.
-const FILTER_PARAMS = ['merk', 'zonder', 'nietmerk', 'geenmerken', 'allergeen', 'allergenen']
+const VOEDING_PARAMS = { eiwit: 'protein', vet: 'fat', kcal: 'kcal' }
+const FILTER_PARAMS = ['merk', 'zonder', 'nietmerk', 'geenmerken', 'allergeen', 'allergenen', ...Object.keys(VOEDING_PARAMS)]
 const GELDIGE_ALLERGENEN = new Set(ALLERGENS.map(({ key }) => key))
+
+// Een voedingsbereik in de URL is "min-max", met een punt of komma als
+// decimaalteken. Ongeldige of omgekeerde bereiken worden genegeerd; de site
+// valt dan terug op de volledige schaal.
+export function leesVoedingsfilters(params) {
+  const uit = {}
+  for (const [param, key] of Object.entries(VOEDING_PARAMS)) {
+    const ruw = (params.get(param) ?? '').trim()
+    if (!ruw) continue
+    const match = /^(\d+(?:[.,]\d+)?)-(\d+(?:[.,]\d+)?)$/.exec(ruw)
+    if (!match) continue
+    const min = Number(match[1].replace(',', '.'))
+    const max = Number(match[2].replace(',', '.'))
+    if (!Number.isFinite(min) || !Number.isFinite(max) || min < 0 || max < min) continue
+    uit[key] = { min, max }
+  }
+  return uit
+}
 
 export function leesAllergenen(params) {
   const waarden = params.getAll('allergeen')
@@ -40,7 +60,7 @@ export function leesMerken(params, alleMerken) {
   return { brands: null, mode: 'include' }
 }
 
-export function schrijfFilters(params, { brands, mode = 'include', allergenen = [], alleMerken = [] }) {
+export function schrijfFilters(params, { brands, mode = 'include', allergenen = [], alleMerken = [], voeding = {} }) {
   const volgende = new URLSearchParams(params)
   for (const sleutel of FILTER_PARAMS) volgende.delete(sleutel)
 
@@ -56,5 +76,12 @@ export function schrijfFilters(params, { brands, mode = 'include', allergenen = 
   }
 
   for (const key of allergenen) volgende.append('allergeen', key)
+  for (const [param, key] of Object.entries(VOEDING_PARAMS)) {
+    const bereik = voeding[key]
+    if (!bereik) continue
+    const min = Math.round(bereik.min * 10) / 10
+    const max = Math.round(bereik.max * 10) / 10
+    volgende.set(param, `${min}-${max}`)
+  }
   return volgende
 }

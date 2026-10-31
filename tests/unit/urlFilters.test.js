@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { leesAllergenen, leesMerken, schrijfFilters } from '../../src/lib/urlFilters.js'
+import { leesAllergenen, leesMerken, leesVoedingsfilters, schrijfFilters } from '../../src/lib/urlFilters.js'
 
 const merken = ['Acana', 'Orijen', 'Royal Canin']
 
@@ -79,4 +79,32 @@ test('lezen en schrijven blijven in balans', () => {
     assert.equal(mode2, mode, zoek)
     assert.deepEqual(leesAllergenen(geschreven), leesAllergenen(eerste), zoek)
   }
+})
+
+test('voedingsbereiken worden uit de URL gelezen', () => {
+  assert.deepEqual(leesVoedingsfilters(new URLSearchParams('?eiwit=25-40&vet=10,5-20&kcal=300-500')), {
+    protein: { min: 25, max: 40 },
+    fat: { min: 10.5, max: 20 },
+    kcal: { min: 300, max: 500 }
+  })
+})
+
+test('ongeldige of omgekeerde voedingsbereiken worden genegeerd', () => {
+  for (const zoek of ['?eiwit=40-25', '?eiwit=abc', '?eiwit=25', '?eiwit=-1-20', '?vet=10-']) {
+    assert.deepEqual(leesVoedingsfilters(new URLSearchParams(zoek)), {}, zoek)
+  }
+})
+
+test('voedingsbereiken worden geschreven en oude parameters verdwijnen', () => {
+  const params = schrijfFilters(new URLSearchParams('?eiwit=1-2&utm_source=nieuwsbrief'), {
+    brands: null,
+    allergenen: [],
+    alleMerken: merken,
+    voeding: { protein: { min: 25, max: 40 }, kcal: { min: 300, max: 500 } }
+  })
+  assert.equal(params.get('eiwit'), '25-40')
+  assert.equal(params.get('kcal'), '300-500')
+  assert.equal(params.get('vet'), null)
+  assert.equal(params.get('utm_source'), 'nieuwsbrief')
+  assert.deepEqual(leesVoedingsfilters(params), { protein: { min: 25, max: 40 }, kcal: { min: 300, max: 500 } })
 })

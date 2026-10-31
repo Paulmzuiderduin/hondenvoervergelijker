@@ -9,7 +9,8 @@ import {
   valideerVoedingswaarden,
   voedingswaardeMap,
   voedingswaardeSamenvatting,
-  voedingswaardeStatus
+  voedingswaardeStatus,
+  voldoetAanVoedingsfilters
 } from '../../src/lib/nutrition.js'
 
 const rij = (nutrient_key, value, basis = 'as-fed') => ({ nutrient_key, value, basis })
@@ -109,4 +110,16 @@ test('valideert invoer met komma, lege velden en grenzen', () => {
   const ongeldig = valideerVoedingswaarden({ protein: '-1', fat: '101', kcal: '1001', calcium: 'abc' })
   assert.equal(ongeldig.fouten.length, 4)
   assert.deepEqual(ongeldig.waarden, {})
+})
+
+test('voedingsfilters laten alleen waarden binnen de grenzen door', () => {
+  assert.equal(voldoetAanVoedingsfilters({ protein: 26, fat: 15 }, {}), true)
+  assert.equal(voldoetAanVoedingsfilters({ protein: 26 }, { protein: { min: 25, max: 30 } }), true)
+  assert.equal(voldoetAanVoedingsfilters({ protein: 25 }, { protein: { min: 25, max: 25 } }), true)
+  assert.equal(voldoetAanVoedingsfilters({ protein: 24 }, { protein: { min: 25, max: 30 } }), false)
+  assert.equal(voldoetAanVoedingsfilters({ protein: 31 }, { protein: { min: 25, max: 30 } }), false)
+  assert.equal(voldoetAanVoedingsfilters({ fat: 15 }, { protein: { min: 25, max: 30 } }), false)
+  assert.equal(voldoetAanVoedingsfilters({ protein: 26, fat: 10 }, { protein: { min: 20, max: 30 }, fat: { min: 5, max: 15 } }), true)
+  assert.equal(voldoetAanVoedingsfilters({ protein: 26, fat: 16 }, { protein: { min: 20, max: 30 }, fat: { min: 5, max: 15 } }), false)
+  assert.equal(voldoetAanVoedingsfilters({ protein: null }, { protein: { min: 0, max: 50 } }), false)
 })

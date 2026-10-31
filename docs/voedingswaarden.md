@@ -1,6 +1,6 @@
 # Voedingswaarden
 
-Status: **fase 0, 1, 2 en 3 afgerond en live.** Alle **786 top-10-producten** en **691 van de 692 overige producten** hebben voedingswaarden. In totaal: **1.477 van de 1.478 producten**, met **778 volledig**, **699 gedeeltelijk**, **1.009 met kcal/100 g** en **10.956 opgeslagen waarden**. Eén Pedigree-product vermeldt geen analytische bestanddelen op de officiële pagina en blijft daarom zonder waarden.
+Status: **fase 0, 1, 2 en 3 afgerond en live.** Alle **786 top-10-producten** en **691 van de 692 overige producten** hebben voedingswaarden. In totaal: **1.477 van de 1.478 producten**, met **778 volledig**, **699 gedeeltelijk**, **1.009 met kcal/100 g** en **10.956 opgeslagen waarden**. Eén Pedigree-product vermeldt geen analytische bestanddelen op de officiële pagina en blijft daarom zonder waarden. **Fase 4 is gestart:** eiwit, vet en energie zijn met een minimum- en maximumschuif te filteren.
 
 ## Uitgangspunten
 
@@ -88,18 +88,19 @@ De resterende 692 producten van de niet-top-10-merken, inclusief bronnen die all
 
 Na elke cluster een JSON-controle en SQL-batch. De agents schrijven batches van maximaal 25 producten.
 
-### Fase 4 — UI, SEO en filters
+### Fase 4 — UI, SEO en filters (loopt)
 
-- Merkpagina's en methodiekpagina bijwerken.
-- `llms.txt` bijwerken.
-- Eventueel sorteren/filteren op eiwit, vet of kcal, met waarschuwing voor as-fed en natvoer versus brokken.
-- Build, tests, rooktest, deploy en live controle.
+- **Filteren op eiwit, vet en energie** met een dubbele schuif (minimum en maximum) en invoervelden voor exacte grenzen. De schaal loopt van 0 tot een ronde bovengrens uit de catalogus.
+- Een actief voedingsfilter laat alleen producten door waarvan de fabrikant die waarde vermeldt. Zonder actief filter blijven producten zonder voedingswaarden zichtbaar.
+- De gekozen bereiken staan in de URL (`?eiwit=25-40`, `?vet=10-20`, `?kcal=300-500`) en als verwijderbare chips bij de resultaten.
+- Waarschuwing wanneer natvoer/rauwvoer en brokken tegelijk worden gefilterd: de percentages zijn as-fed en niet direct vergelijkbaar.
+- Methodiekpagina en `llms.txt` zijn bijgewerkt met uitleg over de filters en as-fed. Nog te doen: sorteren op eiwit, vet of kcal.
 
 ## Besluiten
 
 - **Calcium, fosfor, omega-3 en omega-6** horen bij de standaardset. Ze worden verzameld en getoond waar ze op de bron staan.
 - **Producten zonder voedingswaarden blijven zichtbaar.** De vergelijker gaat primair over allergenen; een ontbrekende voedingswaarde mag een product niet verbergen.
 - **As-fed is de standaardweergave.** Dat is de waarde zoals de fabrikant hem op het etiket zet en waar de meeste eigenaren mee werken. Veterinaire voedingsdeskundigen gebruiken droge stof vooral om natvoer en brokken eerlijk te vergelijken; dat komt later als extra, duidelijk gelabelde berekening.
-- **Filters en sortering komen later**, in fase 4.
+- **Filters op eiwit, vet en energie** zijn geïmplementeerd met een minimum- en maximumschuif. Sorteren volgt later in fase 4.
 - **Agenten doen de eerste extractie**, met menselijke controle op de steekproef en op alle omgerekende waarden.
 - **We beginnen bij de top 10 merken**, na een kleine pilot daarbinnen.

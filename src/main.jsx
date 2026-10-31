@@ -2,10 +2,10 @@ import React, { memo, useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, allergenSearchTerms, assessLabel, detectIngredientSignals, FOOD_TYPES, markUncertainIngredients, missingAllergenKeys, setCustomTerms, sortAllergenKeys } from './lib/allergens'
 import { isReviewOverdue, productMatch } from './lib/matcher'
-import { ADDITIONAL_NUTRIENTS, CORE_NUTRIENTS, NUTRIENTS, formatteerVoedingswaarde, valideerVoedingswaarden, voedingswaardeMap, voedingswaardeSamenvatting, voedingswaardeStatus } from './lib/nutrition'
+import { ADDITIONAL_NUTRIENTS, CORE_NUTRIENTS, NUTRIENTS, formatteerVoedingswaarde, valideerVoedingswaarden, voedingswaardeMap, voedingswaardeSamenvatting, voedingswaardeStatus, voldoetAanVoedingsfilters } from './lib/nutrition'
 import { track } from './lib/analytics'
 import { leesCatalogusCache, schrijfProductenCache, schrijfTermenCache } from './lib/catalogCache'
-import { leesAllergenen, leesMerken, schrijfFilters } from './lib/urlFilters'
+import { leesAllergenen, leesMerken, leesVoedingsfilters, schrijfFilters } from './lib/urlFilters'
 import { supabase } from './lib/supabase'
 import './styles.css'
 
@@ -13,6 +13,16 @@ const MISSING_RPC = /PGRST202|Could not find the function|schema cache/i
 const TERMS_HINT = 'De woordenlijst kon niet worden geladen; de keuring gebruikt dan alleen de ingebouwde woorden. Dat is strenger, niet soepeler.'
 const PAGE_SIZE = 12
 const HAAL_PAGINA = 1000
+// De drie waarden waarop eigenaren het vaakst selecteren. De schaal loopt van
+// nul tot een ronde bovengrens die uit de catalogus komt. Energie staat in
+// kcal per 100 g; de andere twee in procenten as-fed.
+const VOEDINGS_FILTERS = [
+  { key: 'protein', label: 'Eiwit', eenheid: '%', stap: 0.5, decimalen: 1 },
+  { key: 'fat', label: 'Vet', eenheid: '%', stap: 0.5, decimalen: 1 },
+  { key: 'kcal', label: 'Energie', eenheid: 'kcal', stap: 5, decimalen: 0 }
+]
+const GETAL1 = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 1 })
+const GETAL0 = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 0 })
 const GROEP_ZOEKTERMEN = {
   protein: ['eiwit', 'eiwitten', 'eiwitbron'],
   carbohydrate: ['koolhydraat', 'koolhydraten'],
@@ -239,6 +249,61 @@ function Pagination({ page, total, onChange }) {
     <label>Pagina <select value={page} aria-label="Kies een pagina" onChange={(event) => onChange(Number(event.target.value))}>{Array.from({ length: total }, (_, index) => <option key={index + 1} value={index + 1}>{index + 1}</option>)}</select> van {total}</label>
     <button type="button" onClick={() => onChange(page + 1)} disabled={page >= total}>Volgende</button>
   </nav>
+}
+
+// Dubbele schuif met twee aparte duimknoppen. De twee range-inputs liggen over
+// elkaar; alleen de duimknoppen vangen aanwijzingen, zodat slepen en pijltjes
+// allebei werken. De tekstvakken eronder zijn voor wie een exacte grens wil
+// intypen. Een leeg of ongeldig tekstvak valt bij verlaten terug op de vorige
+// waarde; er wordt nooit een verkeerde grens stilzwijgend opgeslagen.
+function NutritionRangeFilter({ filter, grenzen, waarde, aantal, onChange, onReset }) {
+  const [minTekst, setMinTekst] = useState(null)
+  const [maxTekst, setMaxTekst] = useState(null)
+  const actief = waarde.min > grenzen.min || waarde.max < grenzen.max
+  const formaat = (getal) => (filter.decimalen === 0 ? GETAL0 : GETAL1).format(getal)
+  const percentage = (getal) => ((getal - grenzen.min) / (grenzen.max - grenzen.min)) * 100
+  const minZijde = percentage(waarde.min)
+  const maxZijde = percentage(waarde.max)
+  const klem = (getal, onder, boven) => Math.min(Math.max(getal, onder), boven)
+  const pasAan = (soort, ruw) => {
+    const getal = Number(String(ruw).replace(',', '.'))
+    if (!Number.isFinite(getal)) return
+    if (soort === 'min') onChange({ min: klem(getal, grenzen.min, waarde.max), max: waarde.max })
+    else onChange({ min: waarde.min, max: klem(getal, waarde.min, grenzen.max) })
+  }
+  useEffect(() => { setMinTekst(null); setMaxTekst(null) }, [waarde.min, waarde.max])
+  const bevestig = (soort) => {
+    const tekst = soort === 'min' ? minTekst : maxTekst
+    if (tekst !== null) pasAan(soort, tekst)
+    if (soort === 'min') setMinTekst(null)
+    else setMaxTekst(null)
+  }
+  return <div className={`nutrition-filter${actief ? ' active' : ''}`}>
+    <div className="nutrition-filter-head">
+      <span className="nutrition-filter-name">{filter.label}</span>
+      <span className="nutrition-filter-count" title="Producten met een opgegeven waarde">{GETAL0.format(aantal)} met waarde</span>
+      {actief && <button type="button" className="range-reset" onClick={onReset} aria-label={`${filter.label}filter wissen`}>Alles</button>}
+    </div>
+    <div className="range-slider">
+      <div className="range-track" aria-hidden="true"><div className="range-fill" style={{ left: `${minZijde}%`, width: `${Math.max(0, maxZijde - minZijde)}%` }} /></div>
+      <input className="range-input range-min" type="range" min={grenzen.min} max={grenzen.max} step={filter.stap} value={waarde.min} style={{ zIndex: minZijde > 50 ? 5 : 3 }} onChange={(event) => onChange({ min: Math.min(Number(event.target.value), waarde.max), max: waarde.max })} aria-label={`Minimum ${filter.label}`} />
+      <input className="range-input range-max" type="range" min={grenzen.min} max={grenzen.max} step={filter.stap} value={waarde.max} style={{ zIndex: 4 }} onChange={(event) => onChange({ min: waarde.min, max: Math.max(Number(event.target.value), waarde.min) })} aria-label={`Maximum ${filter.label}`} />
+    </div>
+    <div className="range-fields">
+      <label>Min<input className="range-number range-number-min" type="text" inputMode="decimal" value={minTekst ?? formaat(waarde.min)} onChange={(event) => setMinTekst(event.target.value)} onBlur={() => bevestig('min')} onKeyDown={(event) => { if (event.key === 'Enter') event.currentTarget.blur() }} aria-label={`Minimum ${filter.label} in ${filter.eenheid}`} /></label>
+      <span className="range-dash" aria-hidden="true">–</span>
+      <label>Max<input className="range-number range-number-max" type="text" inputMode="decimal" value={maxTekst ?? formaat(waarde.max)} onChange={(event) => setMaxTekst(event.target.value)} onBlur={() => bevestig('max')} onKeyDown={(event) => { if (event.key === 'Enter') event.currentTarget.blur() }} aria-label={`Maximum ${filter.label} in ${filter.eenheid}`} /></label>
+      <span className="range-unit">{filter.eenheid}</span>
+    </div>
+  </div>
+}
+
+function beschrijfVoedingsbereik(filter, bereik, grenzen) {
+  const formaat = (getal) => (filter.decimalen === 0 ? GETAL0 : GETAL1).format(getal)
+  const eenheid = filter.eenheid === '%' ? '%' : ` ${filter.eenheid}`
+  if (bereik.min <= grenzen.min) return `${filter.label} tot ${formaat(bereik.max)}${eenheid}`
+  if (bereik.max >= grenzen.max) return `${filter.label} vanaf ${formaat(bereik.min)}${eenheid}`
+  return `${filter.label} ${formaat(bereik.min)}–${formaat(bereik.max)}${eenheid}`
 }
 
 function Admin({ terms, termsOud, reloadTerms, onSaved }) {
@@ -562,12 +627,13 @@ function leesAllergenenUitUrl() {
   return leesAllergenen(new URLSearchParams(window.location.search))
 }
 
-function zetFiltersInUrl(brands, gekozenAllergenen, alleMerken, brandMode) {
+function zetFiltersInUrl(brands, gekozenAllergenen, alleMerken, brandMode, voeding) {
   const params = schrijfFilters(new URLSearchParams(window.location.search), {
     brands,
     mode: brandMode,
     allergenen: gekozenAllergenen,
-    alleMerken
+    alleMerken,
+    voeding
   })
   const zoek = params.toString()
   const volgende = `${window.location.pathname}${zoek ? `?${zoek}` : ''}${window.location.hash}`
@@ -589,6 +655,7 @@ function App() {
   const [termsError, setTermsError] = useState(''); const [termsOud, setTermsOud] = useState(false)
   const loading = !productenKlaar || !termenKlaar
   const [allergens, setAllergens] = useState(leesAllergenenUitUrl); const [types, setTypes] = useState(FOOD_TYPES.map(([key]) => key))
+  const [voedingsfilters, setVoedingsfilters] = useState(() => leesVoedingsfilters(new URLSearchParams(window.location.search)))
   const [selectedBrands, setSelectedBrands] = useState(null); const [brandMode, setBrandMode] = useState('include'); const [brandSearch, setBrandSearch] = useState('')
   const [allergenSearch, setAllergenSearch] = useState('')
   const [urlKlaar, setUrlKlaar] = useState(false)
@@ -648,12 +715,63 @@ function App() {
   }, [products])
 
   const alleMerken = useMemo(() => [...new Set(products.map(({ brand }) => brand).filter(Boolean))].sort((eerste, tweede) => eerste.localeCompare(tweede, 'nl', { sensitivity: 'base' })), [products])
+  // De voedingswaarden worden één keer per product genormaliseerd. De schuiven,
+  // de tellingen en het filter gebruiken daarna dezelfde waarden.
+  const voedingPerProduct = useMemo(() => new Map(products.map((product) => [product.id, voedingswaardeMap(product.recipe_versions?.[0]?.recipe_nutrition)])), [products])
+  const voedingBereik = useMemo(() => {
+    const bereik = {}
+    for (const filter of VOEDINGS_FILTERS) {
+      let hoogste = 0
+      for (const waarden of voedingPerProduct.values()) {
+        const waarde = waarden[filter.key]
+        if (waarde != null) hoogste = Math.max(hoogste, waarde)
+      }
+      const stap = filter.key === 'kcal' ? 50 : 5
+      const minimum = filter.key === 'kcal' ? 500 : 40
+      bereik[filter.key] = { min: 0, max: Math.max(minimum, Math.ceil(hoogste / stap) * stap) }
+    }
+    return bereik
+  }, [voedingPerProduct])
+  const voedingTellingen = useMemo(() => {
+    const tellingen = Object.fromEntries(VOEDINGS_FILTERS.map(({ key }) => [key, 0]))
+    for (const waarden of voedingPerProduct.values()) {
+      for (const filter of VOEDINGS_FILTERS) if (waarden[filter.key] != null) tellingen[filter.key] += 1
+    }
+    return tellingen
+  }, [voedingPerProduct])
+  const actieveVoedingsfilters = Object.keys(voedingsfilters)
+  // Het allergenenoordeel hoeft niet opnieuw te worden berekend wanneer er aan
+  // een schuif wordt getrokken. Alleen de lijst met matches wordt versmald.
+  const matchesNaVoeding = useMemo(() => {
+    if (!actieveVoedingsfilters.length) return matches
+    return matches.filter(({ product }) => voldoetAanVoedingsfilters(voedingPerProduct.get(product.id) ?? {}, voedingsfilters))
+  }, [matches, voedingsfilters, voedingPerProduct])
   // Houd de merk- en allergenenkeuze in de URL, zodat een refresh of een
   // gedeelde link dezelfde selectie laat zien.
   useEffect(() => {
     if (!urlKlaar) return
-    zetFiltersInUrl(selectedBrands, allergens, alleMerken, brandMode)
-  }, [selectedBrands, allergens, urlKlaar, alleMerken, brandMode])
+    zetFiltersInUrl(selectedBrands, allergens, alleMerken, brandMode, voedingsfilters)
+  }, [selectedBrands, allergens, urlKlaar, alleMerken, brandMode, voedingsfilters])
+  // Een gedeelde link kan een bereik bevatten dat buiten de huidige catalogus
+  // valt. Klem het na het laden in plaats van stilletjes nul resultaten tonen.
+  useEffect(() => {
+    if (!products.length) return
+    setVoedingsfilters((oud) => {
+      let gewijzigd = false
+      const volgende = {}
+      for (const [key, bereik] of Object.entries(oud)) {
+        const grens = voedingBereik[key]
+        if (!grens) { gewijzigd = true; continue }
+        if (bereik.min > grens.max || bereik.max < grens.min) { gewijzigd = true; continue }
+        const min = Math.max(grens.min, Math.min(bereik.min, grens.max))
+        const max = Math.min(grens.max, Math.max(bereik.max, grens.min))
+        if (min <= grens.min && max >= grens.max) { gewijzigd = true; continue }
+        if (min !== bereik.min || max !== bereik.max) gewijzigd = true
+        volgende[key] = { min, max }
+      }
+      return gewijzigd ? volgende : oud
+    })
+  }, [voedingBereik, products.length])
   useEffect(() => {
     document.title = Array.isArray(selectedBrands) && selectedBrands.length === 1
       ? `${selectedBrands[0]} hondenvoer vergelijken op allergenen | Hondenvoervergelijker`
@@ -760,8 +878,8 @@ function App() {
     setMatchesKlaar(true)
   }, [products, allergens, types, terms, selectedBrands])
   // Elke nieuwe keuze begint weer bovenaan.
-  useEffect(() => { setPage(1) }, [allergens, types, selectedBrands])
-  const suitable = matches.filter(({ match }) => match.kind === 'suitable'); const check = matches.filter(({ match }) => match.kind === 'check'); const excluded = matches.filter(({ match }) => match.kind === 'excluded')
+  useEffect(() => { setPage(1) }, [allergens, types, selectedBrands, voedingsfilters])
+  const suitable = matchesNaVoeding.filter(({ match }) => match.kind === 'suitable'); const check = matchesNaVoeding.filter(({ match }) => match.kind === 'check'); const excluded = matchesNaVoeding.filter(({ match }) => match.kind === 'excluded')
   const opNaam = (eerste, tweede) => eerste.product.brand.localeCompare(tweede.product.brand, 'nl', { sensitivity: 'base' }) || eerste.product.name.localeCompare(tweede.product.name, 'nl', { sensitivity: 'base' })
   // Eén lijst in vaste volgorde: eerst geschikt, dan controleren, dan
   // uitgesloten. Zo blijft de pagina voorspelbaar zonder tabs.
@@ -788,22 +906,46 @@ function App() {
     if (allergens.length) track('allergenen-gewist', { aantal: allergens.length })
     setAllergens([])
   }
-  const heeftActieveFilters = allergens.length > 0 || selectedBrands !== null || types.length !== FOOD_TYPES.length
-  // De uitklapknop op mobiel hoort bij de zijbalk (type en merk), niet bij de
-  // allergenen daarboven. Tel daarom alleen die twee.
-  const actieveFilterCount = (selectedBrands !== null ? Math.max(1, selectedBrands.length) : 0) + (types.length !== FOOD_TYPES.length ? 1 : 0)
+  const zetVoedingsfilter = (key, bereik) => {
+    const grens = voedingBereik[key]
+    if (!grens) return
+    const afronden = (waarde) => key === 'kcal' ? Math.round(waarde) : Math.round(waarde * 10) / 10
+    const min = afronden(Math.max(grens.min, Math.min(bereik.min, bereik.max)))
+    const max = afronden(Math.min(grens.max, Math.max(bereik.min, bereik.max)))
+    setVoedingsfilters((oud) => {
+      const volgende = { ...oud }
+      if (min <= grens.min && max >= grens.max) delete volgende[key]
+      else volgende[key] = { min, max }
+      return volgende
+    })
+  }
+  const verwijderVoedingsfilter = (key) => {
+    setVoedingsfilters((oud) => {
+      if (!(key in oud)) return oud
+      const volgende = { ...oud }
+      delete volgende[key]
+      return volgende
+    })
+    track('voedingsfilter-gewist', { nutrient: key })
+  }
+  const heeftActieveFilters = allergens.length > 0 || selectedBrands !== null || types.length !== FOOD_TYPES.length || actieveVoedingsfilters.length > 0
+  // De uitklapknop op mobiel hoort bij de zijbalk (type, voeding en merk), niet
+  // bij de allergenen daarboven. Tel daarom alleen die drie.
+  const actieveFilterCount = (selectedBrands !== null ? Math.max(1, selectedBrands.length) : 0) + (types.length !== FOOD_TYPES.length ? 1 : 0) + actieveVoedingsfilters.length
   const gekozenTypeLabels = FOOD_TYPES.filter(([key]) => types.includes(key)).map(([, label]) => label).join(', ')
+  const vergelijktNatvoerEnBrokken = actieveVoedingsfilters.length > 0 && types.includes('kibble') && (types.includes('wet') || types.includes('raw'))
   const merkFilterLabel = selectedBrands === null ? ''
     : selectedBrands.length === 0 ? 'Geen merken'
       : selectedBrands.length === 1 ? `Merk: ${selectedBrands[0]}`
         : brandMode === 'exclude' ? `${selectedBrands.length} merken uitgesloten` : `${selectedBrands.length} merken gekozen`
   const wisAlleFilters = () => {
-    track('filters-gewist', { allergenen: allergens.length, merken: selectedBrands === null ? 0 : selectedBrands.length, voertypes: FOOD_TYPES.length - types.length })
+    track('filters-gewist', { allergenen: allergens.length, merken: selectedBrands === null ? 0 : selectedBrands.length, voertypes: FOOD_TYPES.length - types.length, voeding: actieveVoedingsfilters.length })
     setAllergens([])
     setSelectedBrands(null)
     setBrandMode('include')
     setBrandSearch('')
     setTypes(FOOD_TYPES.map(([key]) => key))
+    setVoedingsfilters({})
     setAllergenSearch('')
   }
   const merkActief = (merk) => selectedBrands === null || selectedBrands.includes(merk)
@@ -923,6 +1065,15 @@ function App() {
               <h3>Type voer</h3>
               <div className="choices food-type-choices">{FOOD_TYPES.map(([key, label]) => <label className="inline" key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div>
             </div>
+            <div className="filter-block nutrition-filter-block">
+              <div className="filter-heading nutrition-filter-heading">
+                <span>Voedingswaarden</span>
+                <span className="filter-summary">{actieveVoedingsfilters.length ? `${actieveVoedingsfilters.length} actief` : 'Geen filter'}</span>
+              </div>
+              <p className="nutrition-filter-hint">Percentages zijn as-fed (inclusief vocht). Producten zonder de gekozen waarde vallen af. Energie in kcal per 100 g.</p>
+              {VOEDINGS_FILTERS.map((filter) => <NutritionRangeFilter key={filter.key} filter={filter} grenzen={voedingBereik[filter.key]} waarde={voedingsfilters[filter.key] ?? voedingBereik[filter.key]} aantal={voedingTellingen[filter.key] ?? 0} onChange={(bereik) => zetVoedingsfilter(filter.key, bereik)} onReset={() => verwijderVoedingsfilter(filter.key)} />)}
+              {vergelijktNatvoerEnBrokken && <p className="nutrition-compare-warning" role="status"><strong>Let op:</strong> je vergelijkt natvoer of rauwvoer met brokken. Door het verschil in vocht zijn de percentages niet direct vergelijkbaar; kies bij voorkeur één voertype.</p>}
+            </div>
             <details className="filter-block brand-filter" open={selectedBrands !== null || undefined}>
               <summary className="filter-heading">
                 <span>Merken</span>
@@ -963,6 +1114,7 @@ function App() {
                   {allergens.map((key) => <button type="button" key={key} className="filter-chip" onClick={() => verwijderAllergeen(key)} title={`Verwijder ${ALLERGEN_LABELS[key]}`}>{ALLERGEN_LABELS[key]} <span aria-hidden="true">×</span></button>)}
                   {selectedBrands !== null && <button type="button" className="filter-chip" onClick={() => { setSelectedBrands(null); setBrandMode('include'); setBrandSearch('') }} title="Merkfilter verwijderen">{merkFilterLabel} <span aria-hidden="true">×</span></button>}
                   {types.length !== FOOD_TYPES.length && <button type="button" className="filter-chip" onClick={() => setTypes(FOOD_TYPES.map(([key]) => key))} title="Voertypefilter verwijderen">Type: {gekozenTypeLabels} <span aria-hidden="true">×</span></button>}
+                  {VOEDINGS_FILTERS.filter((filter) => voedingsfilters[filter.key]).map((filter) => <button type="button" key={filter.key} className="filter-chip" onClick={() => verwijderVoedingsfilter(filter.key)} title={`${filter.label}filter verwijderen`}>{beschrijfVoedingsbereik(filter, voedingsfilters[filter.key], voedingBereik[filter.key])} <span aria-hidden="true">×</span></button>)}
                   <button type="button" className="filters-reset-inline" onClick={wisAlleFilters}>Filters wissen</button>
                 </div>}
                 {allergens.length > 0 && suitable.length > 0 ? (
