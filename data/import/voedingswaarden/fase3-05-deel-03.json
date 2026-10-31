@@ -1,0 +1,167 @@
+{
+  "merk": "diversen",
+  "opgehaald": "2026-10-31",
+  "producten": [
+    {
+      "merk": "Riverwood",
+      "naam": "Lam Mono Proteïne",
+      "voertype": "wet",
+      "verpakking": "400 g / 6 x 400 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/lam-mono-proteine-400-gram",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.5,
+        "fat": 7.8,
+        "fiber": 0.3,
+        "ash": 3,
+        "moisture": 79,
+        "kcal": 106.7,
+        "calcium": 0.35,
+        "phosphorus": 0.3,
+        "omega3": 0.1,
+        "omega6": 0.5
+      },
+      "bronTekst": "ruw eiwit 10,5%, ruw vet 7,8%, vochtgehalte 79,0%, ruwe as 3,0%, ruwe celstof 0,3%, calcium 0,35%, fosfor 0,3%, omega-3 0,1%, omega-6 0,5%",
+      "notitie": "Kcal omgerekend van 1.067 kcal/kg naar kcal/100 g."
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Paard Mono Proteïne",
+      "voertype": "wet",
+      "verpakking": "400 g / 6 x 400 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/paard-mono-proteine-400-gram",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 11.4,
+        "fat": 4.9,
+        "fiber": 0.4,
+        "ash": 1.9,
+        "moisture": 77,
+        "kcal": 104.1,
+        "calcium": 0.24,
+        "phosphorus": 0.2,
+        "omega3": 0.5,
+        "omega6": 1.7
+      },
+      "bronTekst": "ruw eiwit 11,4%, ruw vet 4,9%, vochtgehalte 77,0%, ruwe as 1,9%, ruwe celstof 0,4%, calcium 0,24%, fosfor 0,2%, omega-3 0,5%, omega-6 1,7%",
+      "notitie": "Kcal omgerekend van 1.041 kcal/kg naar kcal/100 g."
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Puppy Kalkoen & Eend met Fazant",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/puppy-kalkoen-eend-met-fazant",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 39,
+        "fat": 18,
+        "fiber": 2.8,
+        "ash": 7,
+        "moisture": 10,
+        "kcal": 400,
+        "calcium": 1.4,
+        "phosphorus": 1,
+        "omega3": 0.16,
+        "omega6": 2.3
+      },
+      "bronTekst": "ruw eiwit 39,0%, vetgehalte 18,0%, vochtgehalte 10,0%, ruwe as 7,0%, ruwe celstof 2,8%, calcium 1,4%, fosfor 1,0%, omega-3 0,16%, omega-6 2,3%",
+      "notitie": "Kcal omgerekend van 4.000 kcal/kg naar kcal/100 g."
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Rendier & Hert met Wild Zwijn",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/rendier-hert-met-wild-zwijn",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 37,
+        "fat": 17,
+        "fiber": 3,
+        "ash": 8,
+        "moisture": 10,
+        "kcal": null,
+        "calcium": 1.8,
+        "phosphorus": 1.4,
+        "omega3": 0.34,
+        "omega6": 2
+      },
+      "bronTekst": "ruw eiwit 37,0%, vetgehalte 17,0%, vochtgehalte 10,0%, ruwe as 8,0%, ruwe celstof 3,0%, calcium 1,8%, fosfor 1,4%, omega-3 0,34%, omega-6 2,0%",
+      "notitie": "De fabrikant vermeldt op deze pagina geen energiewaarde, daarom kcal null. Geen omrekening nodig."
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Small Breed Gans & Eend met Kwartel",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/small-breed-gans-eend-met-kwartel",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 33,
+        "fat": 14,
+        "fiber": 2.5,
+        "ash": 8,
+        "moisture": 10,
+        "kcal": 370,
+        "calcium": 1.8,
+        "phosphorus": 1.3,
+        "omega3": null,
+        "omega6": null
+      },
+      "bronTekst": "ruw eiwit 33,0%, vetgehalte 14,0%, vochtgehalte 10,0%, ruwe as 8,0%, ruwe celstof 2,5%, calcium 1,8%, fosfor 1,3%. ME: 3700 kcal/kg",
+      "notitie": "Kcal omgerekend van 3.700 kcal/kg naar kcal/100 g. Omega-3 en omega-6 worden niet vermeld."
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Wildzwijn Mono Proteïne",
+      "voertype": "wet",
+      "verpakking": "400 g / 6 x 400 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/wildzwijn-mono-proteine-400-gram",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.5,
+        "fat": 6.5,
+        "fiber": 0.4,
+        "ash": 2.8,
+        "moisture": 77,
+        "kcal": 108,
+        "calcium": 0.35,
+        "phosphorus": 0.29,
+        "omega3": 0.05,
+        "omega6": 0.8
+      },
+      "bronTekst": "ruw eiwit 10,5%, ruw vet 6,5%, vochtgehalte 77,0%, ruwe as 2,8%, ruwe celstof 0,4%, calcium 0,35%, fosfor 0,29%, omega-3 0,05%, omega-6 0,8%",
+      "notitie": "Kcal omgerekend van 1.080 kcal/kg naar kcal/100 g."
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Zalm & Witvis met Haring",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/zalm-witvis-met-haring",
+      "gecontroleerd": "2026-10-31",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 32,
+        "fat": 15,
+        "fiber": 2,
+        "ash": 8.2,
+        "moisture": 10,
+        "kcal": 378,
+        "calcium": 1.3,
+        "phosphorus": 1,
+        "omega3": 0.9,
+        "omega6": 2.2
+      },
+      "bronTekst": "Ruw eiwit 32,0%, vetgehalte 15,0%, vochtgehalte 10,0%, ruwe as 8,2%, ruwe celstof 2,0%, calcium 1,3%, fosfor 1,0%, omega-3 0,9%, omega-6 2,2%",
+      "notitie": "Kcal omgerekend van 3.780 kcal/kg naar kcal/100 g."
+    }
+  ]
+}
