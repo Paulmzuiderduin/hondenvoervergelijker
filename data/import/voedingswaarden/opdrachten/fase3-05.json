@@ -1,0 +1,411 @@
+{
+  "cluster": "fase3-05",
+  "opgehaald": "2026-10-31",
+  "aantal": 57,
+  "merken": [
+    "Profine",
+    "Riverwood"
+  ],
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Profine",
+      "naam": "Dog 65% Hert & Kip",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-65-hert-kip-400-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog 65% Kip met Lever",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-65-kip-met-lever-400-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog 65% Lam met Hartjes",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-65-lam-met-hartjes-400-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog 65% Rund met Lever",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-65-rund-met-lever-400-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog 65% Zalm & Kip",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-65-zalm-kip-400-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Dry Adult Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-dry-adult-kip-12-kg"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Dry Adult Lam",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-dry-adult-lam-12-kg"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Dry Adult Large Breed Kip",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-dry-adult-large-kip-12-kg"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Dry Adult Large Breed Zalm",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-dry-adult-large-zalm-12-kg"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Dry Adult Small Breed Kip",
+      "voertype": "kibble",
+      "verpakking": "1 / 3 / 7 kg",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-dry-adult-small-kip-3-kg"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Dry Adult Zalm",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-dry-adult-zalm-12-kg"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Dry Energy Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-dry-energy-kip-12-kg"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Dry Junior Large Breed Kip",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-dry-junior-large-kip-12-kg"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Dry Junior Large Breed Zalm",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-dry-junior-large-zalm-12-kg"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Dry Light Lam",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-dry-light-lam-12-kg"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Dry Puppy Kip",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-dry-puppy-kip-12-kg"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Dry Puppy Lam",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-dry-puppy-lam-12-kg"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Dry Senior Kalkoen",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-dry-senior-kalkoen-12-kg"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Salami Hondenworst Eend & Groenten",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-salami-eend-groenten-800-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Salami Hondenworst Kalkoen & Groenten",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-salami-kalkoen-groenten-800-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Salami Hondenworst Kip & Groenten",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-salami-kip-groenten-800-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Salami Hondenworst Lam & Groenten",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-salami-lam-groenten-800-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Salami Hondenworst Zalm & Groenten",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-salami-zalm-groenten-800-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Single Protein Eend",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-single-protein-eend-400-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Single Protein Kalkoen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-single-protein-kalkoen-400-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Single Protein Kip",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-single-protein-kip-400-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Single Protein Lam",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-single-protein-lam-400-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Single Protein Rund",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-single-protein-rund-400-g"
+    },
+    {
+      "merk": "Profine",
+      "naam": "Dog Single Protein Zalm voor puppies",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://profinepetfood.com/products/profine-dog-single-protein-zalm-for-puppies-400-g"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Adult Large Breed Eend & Kalkoen met Fazant",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/adult-large-breed-eend-kalkoen-met-fazant"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Adult Paard & Hert met Konijn",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/paard-hert-met-konijn"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Adult Surf 'n Turf Kalkoen met Buffel & Karper",
+      "voertype": "wet",
+      "verpakking": "300 g / 12 x 300 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/adult-surf-n-turf-kalkoen-met-buffel-karper"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Adult Surf 'n Turf Kalkoen met Fazant & Karper",
+      "voertype": "wet",
+      "verpakking": "300 g / 12 x 300 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/natvoer-hond-adult-surf-n-turf-kalkoen-met-fazant-karper"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Adult Surf 'n Turf Kalkoen met Kwartel & Karper",
+      "voertype": "wet",
+      "verpakking": "300 g / 12 x 300 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/natvoer-vlees-en-vis-hond-adult-surf-n-turf-kalkoen-met-kwartel-karper-300-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Adult Surf 'n Turf Kalkoen met Struisvogel & Karper",
+      "voertype": "wet",
+      "verpakking": "300 g / 12 x 300 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/natvoer-vlees-en-vis-hond-adult-surf-n-turf-kalkoen-met-struisvogel-karper-300-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Adult Surf 'n Turf Kalkoen met Wildzwijn & Karper",
+      "voertype": "wet",
+      "verpakking": "300 g / 12 x 300 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/natvoer-vlees-en-vis-hond-adult-surf-n-turf-kalkoen-met-wildzwijn-karper-300-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Adult Surf 'n Turf Kalkoen met Zalm & Karper",
+      "voertype": "wet",
+      "verpakking": "300 g / 12 x 300 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/adult-surf-n-turf-turkey-with-salmon-carp"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Eend Mono Proteïne",
+      "voertype": "wet",
+      "verpakking": "400 g / 6 x 400 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/eend-mono-proteine-400-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Forel & Makreel met Haring",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/forel-makreel-met-haring"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Geit Mono Proteïne",
+      "voertype": "wet",
+      "verpakking": "400 g / 6 x 400 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/geit-mono-proteine-400-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Hert & Lam met Konijn",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/hert-lam-met-konijn"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Hert Mono Proteïne",
+      "voertype": "wet",
+      "verpakking": "400 g / 6 x 400 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/hert-mono-proteine-400-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Junior Large Breed Eend & Kalkoen met Fazant",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/junior-xl-eend-kalkoen-met-fazant"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Kabeljauw & Forel Visworst",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/kabeljauw-forel-visworst-800-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Kabeljauw & Tonijn Visworst",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/kabeljauw-tonijn-visworst-800-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Kabeljauw & Zalm Visworst",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/kabeljauw-zalm-visworst-800-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Kabeljauw Visworst",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/kabeljauw-visworst-800-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Kalf Mono Proteïne",
+      "voertype": "wet",
+      "verpakking": "400 g / 6 x 400 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/kalf-mono-proteine-400-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Kalkoen Mono Proteïne",
+      "voertype": "wet",
+      "verpakking": "400 g / 6 x 400 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/kalkoen-mono-proteine-400-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Kerstmaaltijd Konijn & Kalkoen",
+      "voertype": "wet",
+      "verpakking": "400 g / 6 x 400 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/christmas-dinner-konijn-kalkoen-400-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Lam Mono Proteïne",
+      "voertype": "wet",
+      "verpakking": "400 g / 6 x 400 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/lam-mono-proteine-400-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Paard Mono Proteïne",
+      "voertype": "wet",
+      "verpakking": "400 g / 6 x 400 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/paard-mono-proteine-400-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Puppy Kalkoen & Eend met Fazant",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/puppy-kalkoen-eend-met-fazant"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Rendier & Hert met Wild Zwijn",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/rendier-hert-met-wild-zwijn"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Small Breed Gans & Eend met Kwartel",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/small-breed-gans-eend-met-kwartel"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Wildzwijn Mono Proteïne",
+      "voertype": "wet",
+      "verpakking": "400 g / 6 x 400 g",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/wildzwijn-mono-proteine-400-gram"
+    },
+    {
+      "merk": "Riverwood",
+      "naam": "Zalm & Witvis met Haring",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.riverwoodpetfood.com/products/zalm-witvis-met-haring"
+    }
+  ]
+}

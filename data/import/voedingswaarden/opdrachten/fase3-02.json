@@ -1,0 +1,263 @@
+{
+  "cluster": "fase3-02",
+  "opgehaald": "2026-10-31",
+  "aantal": 36,
+  "merken": [
+    "Canagan"
+  ],
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Canagan",
+      "naam": "Dental",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/dental-droog-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Dental Kleine Rassen",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/dental-kleine-rassen-droog-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Diner met Kalkoen en Eend",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/diner-met-kalkoen-en-eend-nat-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Grasgevoerd Lam",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/grasgevoerd-lam-droog-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Hoogland Feestmaal",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 12 kg",
+      "bronUrl": "https://canagan.com/uk/dog-food/highland-feast-dry-dog-food/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Insect",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 5 / 10 kg",
+      "bronUrl": "https://canagan.com/uk/dog-food/insect-dry-dog-food/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Kip Hotpot",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/kip-hotpot-nat-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Lamsschotel",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/lamsschotel-nat-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Petite Kabeljauw met Haring Paté",
+      "voertype": "wet",
+      "verpakking": "100 g",
+      "bronUrl": "https://canagan.com/uk/dog-food/petite-cod-herring-pate-dog-food/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Petite Kalkoen met Eend Paté",
+      "voertype": "wet",
+      "verpakking": "100 g",
+      "bronUrl": "https://canagan.com/uk/dog-food/petite-turkey-duck-pate-dog-food/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Petite Kip & Eend",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/canagan-petite-hondevoer-kip-eend/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Petite Kip & Zalm",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/canagan-petite-hondevoer-kip-zalm/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Petite Kip Hotpot Paté",
+      "voertype": "wet",
+      "verpakking": "100 g",
+      "bronUrl": "https://canagan.com/uk/dog-food/petite-chicken-hotpot-pate-dog-food/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Petite Kip met Wild Zwijn Paté",
+      "voertype": "wet",
+      "verpakking": "100 g",
+      "bronUrl": "https://canagan.com/uk/dog-food/petite-chicken-wild-boar-pate-dog-food/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Petite Lamsstoof Paté",
+      "voertype": "wet",
+      "verpakking": "100 g",
+      "bronUrl": "https://canagan.com/uk/dog-food/petite-lamb-casserole-pate-dog-food/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Petite Runderstoof Paté",
+      "voertype": "wet",
+      "verpakking": "100 g",
+      "bronUrl": "https://canagan.com/uk/dog-food/petite-beef-stew-pate-dog-food/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Petite Wild Paté",
+      "voertype": "wet",
+      "verpakking": "100 g",
+      "bronUrl": "https://canagan.com/uk/dog-food/petite-country-game-hotpot-pate-dog-food/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Puppy Vrije-uitloopkip",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 12 kg",
+      "bronUrl": "https://canagan.com/uk/dog-food/free-range-chicken-dry-puppy-food/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Puppy-Feestmaal",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/puppyfeestmaal-nat-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Runderstoof",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/runderstoof-nat-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Scharrelkip",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/scharrelkip-nat-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Schotel met Kip en Wild Zwijn",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/schotel-met-kip-en-wild-zwijn-nat-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Schotse Zalm",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/schotse-zalm-droog-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Schotse Zalm Kleine Rassen",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/schotse-zalm-kleine-rassen-droog-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Senior & Light Small Breed",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/canagan-hondenbrokken-senior-light-small-breed/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Senior-Feestmaal",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/senior-feestmaal-nat-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Stoof met Hert en Wild Zwijn",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/stoof-met-hert-en-wild-zwijn-nat-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Vrije-uitloopkip",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 12 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/vrije-uitloopkip-droog-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Vrije-uitloopkip Grote Rassen",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/vrije-uitloopkip-grote-rassen-droog-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Vrije-uitloopkip Kleine Rassen",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/vrije-uitloopkip-kleine-rassen-droog-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Vrije-uitloopkip Light / Senior",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/vrije-uitloopkip-light-senior-droog-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Werkhond",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://canagan.com/uk/dog-food/canagan-working-dog-dry-dog-food/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Wild",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/wild-droog-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Wild Kleine Rassen",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/wild-kleine-rassen-droog-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Wild Nat",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/wild-nat-hondenvoer/"
+    },
+    {
+      "merk": "Canagan",
+      "naam": "Zalm en Haring Lunch",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://canagan.com/nl/hondenvoer/zalm-en-haring-nat-hondenvoer/"
+    }
+  ]
+}

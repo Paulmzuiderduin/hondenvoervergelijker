@@ -1,0 +1,91 @@
+{
+  "cluster": "fase3-13",
+  "opgehaald": "2026-10-31",
+  "aantal": 11,
+  "merken": [
+    "Taste of the Wild",
+    "KB RAW",
+    "BARFmenu",
+    "Versele-Laga"
+  ],
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Taste of the Wild",
+      "naam": "Taste of the Wild High Prairie Canine",
+      "voertype": "kibble",
+      "verpakking": "2 kg / 5,6 kg / 12,2 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/175524"
+    },
+    {
+      "merk": "Taste of the Wild",
+      "naam": "Taste of the Wild High Prairie Puppy",
+      "voertype": "kibble",
+      "verpakking": "2 kg / 5,6 kg / 12,2 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/409376"
+    },
+    {
+      "merk": "Taste of the Wild",
+      "naam": "Taste of the Wild Pacific Stream Canine",
+      "voertype": "kibble",
+      "verpakking": "2 kg / 5,6 kg / 12,2 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/175525"
+    },
+    {
+      "merk": "Taste of the Wild",
+      "naam": "Taste of the Wild Pine Forest Canine",
+      "voertype": "kibble",
+      "verpakking": "2 kg / 12,2 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/550354"
+    },
+    {
+      "merk": "Taste of the Wild",
+      "naam": "Taste of the Wild Southwest Canyon Canine",
+      "voertype": "kibble",
+      "verpakking": "2 kg / 12,2 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/taste_of_the_wild/droogvoer/409374"
+    },
+    {
+      "merk": "KB RAW",
+      "naam": "KB Complete Eend/Lam",
+      "voertype": "raw",
+      "verpakking": "",
+      "bronUrl": "https://kbraw.eu/products/kb-complete/kb-complete-eend-lam/"
+    },
+    {
+      "merk": "KB RAW",
+      "naam": "KB Complete Insect/Konijn",
+      "voertype": "raw",
+      "verpakking": "",
+      "bronUrl": "https://www.kbraw.eu/products/kb-complete/kb-complete-insect-konijn/"
+    },
+    {
+      "merk": "KB RAW",
+      "naam": "KB Complete Regular",
+      "voertype": "raw",
+      "verpakking": "",
+      "bronUrl": "https://kbraw.eu/products/kb-complete/regular/"
+    },
+    {
+      "merk": "KB RAW",
+      "naam": "KB Complete Sensitive",
+      "voertype": "raw",
+      "verpakking": "",
+      "bronUrl": "https://www.kbraw.eu/products/kb-complete/sensitive/"
+    },
+    {
+      "merk": "BARFmenu",
+      "naam": "Eend",
+      "voertype": "raw",
+      "verpakking": "",
+      "bronUrl": "https://www.barfmenu.com/nl/barfmenu-eend.html"
+    },
+    {
+      "merk": "Versele-Laga",
+      "naam": "Classic Duo Krok",
+      "voertype": "kibble",
+      "verpakking": "20 kg",
+      "bronUrl": "https://www.versele.com/nl/be/classic/producten/classic-duokrok1020kg"
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "cluster": "fase3-07",
+  "opgehaald": "2026-10-31",
+  "aantal": 49,
+  "merken": [
+    "WOOOF",
+    "Acana"
+  ],
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "WOOOF",
+      "naam": "Eend Hondenbrokken - Geperst",
+      "voertype": "kibble",
+      "verpakking": "18 / 36 kg",
+      "bronUrl": "https://wooof.com/WOOOF-eend/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Eend Hondenvoer - Krokant",
+      "voertype": "kibble",
+      "verpakking": "18 / 36 kg",
+      "bronUrl": "https://wooof.com/wooof-eend-hondenvoer-krokant/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Eend Worst",
+      "voertype": "wet",
+      "verpakking": "800 g / 8 kg / 24 kg",
+      "bronUrl": "https://wooof.com/WOOOF-verse-eend-worst/10-stuks"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Hert & Kip Worst",
+      "voertype": "wet",
+      "verpakking": "900 g / 9 kg / 27 kg",
+      "bronUrl": "https://wooof.com/WOOOF-verse-kip-hert-worst/10-stuks"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "High Energy Hondenvoer - Geperst",
+      "voertype": "kibble",
+      "verpakking": "18 / 36 kg",
+      "bronUrl": "https://wooof.com/WOOOF-high-energy/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Kalkoen Worst Vers - Graanvrij",
+      "voertype": "wet",
+      "verpakking": "900 g / 9 kg / 27 kg",
+      "bronUrl": "https://wooof.com/WOOOF-Kalkoen-Worst-Vers-Graanvrij/10-stuks"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Kip Worst",
+      "voertype": "wet",
+      "verpakking": "900 g / 9 kg / 27 kg",
+      "bronUrl": "https://wooof.com/WOOOF-verse-kip-worst/9-kg"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Lam & Aardappel Hondenbrokken - Geperst",
+      "voertype": "kibble",
+      "verpakking": "18 / 36 kg",
+      "bronUrl": "https://wooof.com/WOOOF-lam-aardappel/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Lam & Aardappel Hondenvoer - Krokant",
+      "voertype": "kibble",
+      "verpakking": "18 / 36 kg",
+      "bronUrl": "https://wooof.com/wooof-lam-aardappel-hondenvoer-krokant/18kg"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Lam & Rijst Hondenvoer - Geperst",
+      "voertype": "kibble",
+      "verpakking": "18 / 36 kg",
+      "bronUrl": "https://wooof.com/WOOOF-lam-rijst/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Lam & Rijst Hondenvoer - Krokant",
+      "voertype": "kibble",
+      "verpakking": "18 / 36 kg",
+      "bronUrl": "https://wooof.com/WOOOF-Lam-Rijst-Hondenvoer-Krokant/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Lam Worst",
+      "voertype": "wet",
+      "verpakking": "800 g / 8 kg / 24 kg",
+      "bronUrl": "https://wooof.com/WOOOF-verse-lam-worst/10-stuks"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Light Hondenvoer - Geperst",
+      "voertype": "kibble",
+      "verpakking": "18 / 36 kg",
+      "bronUrl": "https://wooof.com/WOOOF-light/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Puppy Hondenvoer - Krokant",
+      "voertype": "kibble",
+      "verpakking": "6 / 18 / 36 kg",
+      "bronUrl": "https://wooof.com/wooof-puppyvoer-krokant/18kg"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Puppybrokken - Geperst",
+      "voertype": "kibble",
+      "verpakking": "6 / 18 / 36 kg",
+      "bronUrl": "https://wooof.com/WOOOF-puppyvoer/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Puppybrokken Graanvrij - Geperst",
+      "voertype": "kibble",
+      "verpakking": "10 / 18 kg",
+      "bronUrl": "https://wooof.com/WOOOF-puppyvoer-graanvrij/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Regular geperst",
+      "voertype": "kibble",
+      "verpakking": "6 / 18 / 36 kg",
+      "bronUrl": "https://wooof.com/WOOOF-regular/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Regular Hondenvoer - Krokant",
+      "voertype": "kibble",
+      "verpakking": "6 / 18 / 36 kg",
+      "bronUrl": "https://wooof.com/wooof-regular-hondenvoer-krokant/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Rund & Kip Worst",
+      "voertype": "wet",
+      "verpakking": "900 g / 9 kg / 27 kg",
+      "bronUrl": "https://wooof.com/WOOOF-verse-kip-rund-worst/9-kg"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Rund Worst - Graanvrij",
+      "voertype": "wet",
+      "verpakking": "900 g / 9 kg / 27 kg",
+      "bronUrl": "https://wooof.com/WOOOF-Rund-worst-Graanvrij/10-stuks"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Senior Hondenvoer - Geperst",
+      "voertype": "kibble",
+      "verpakking": "18 / 36 kg",
+      "bronUrl": "https://wooof.com/WOOOF-senior/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Senior Hondenvoer - Krokant",
+      "voertype": "kibble",
+      "verpakking": "18 / 36 kg",
+      "bronUrl": "https://wooof.com/wooof-senior-hondenvoer-krokant/18kg"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Vis Trio Worst",
+      "voertype": "wet",
+      "verpakking": "800 g / 8 kg / 24 kg",
+      "bronUrl": "https://wooof.com/wooof-vis-trio-worst-vers/10-pack"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Zalm & Aardappel Hondenbrokken - Geperst",
+      "voertype": "kibble",
+      "verpakking": "18 / 36 kg",
+      "bronUrl": "https://wooof.com/WOOOF-zalm-aardappel-18kg/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Zalm & Kip Worst",
+      "voertype": "wet",
+      "verpakking": "800 g / 8 kg / 24 kg",
+      "bronUrl": "https://wooof.com/WOOOF-Zalm-Kip-Worst-Vers/10-stuks"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Zalm Hondenbrokken - Geperst",
+      "voertype": "kibble",
+      "verpakking": "6 / 18 / 36 kg",
+      "bronUrl": "https://wooof.com/WOOOF-zalm/"
+    },
+    {
+      "merk": "WOOOF",
+      "naam": "Zalm Hondenvoer - Krokant",
+      "voertype": "kibble",
+      "verpakking": "6 / 18 / 36 kg",
+      "bronUrl": "https://wooof.com/wooof-zalm-hondenvoer-krokant/"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Adult Dog Recipe",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 / 17 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-adult.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Adult Large Breed Recipe",
+      "voertype": "kibble",
+      "verpakking": "11,4 / 17 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-adult-large.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Adult Small Breed Recipe",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://www.acana.com/en-CA/dogs/dog-food/adult-small-breed-recipe/ns-aca-adult-small.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Coldwater Fish Recipe",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-cold-water-fish.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Free-Run Duck",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-singles-duck-new.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Grass-fed Lamb",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 / 17 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-singles-lamb-new.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Grasslands",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 kg",
+      "bronUrl": "https://www.acana.com/en-CA/dogs/dog-food/highest-protein%2C-grasslands/ns-aca-grasslands.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Light & Fit Recipe",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 kg",
+      "bronUrl": "https://www.acana.com/en-CA/dogs/dog-food/light-and-fit-recipe/ns-aca-light-fit.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Pacifica",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-pacifica.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Prairie Poultry",
+      "voertype": "kibble",
+      "verpakking": "2 / 9,7 / 14,5 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-prairiepoultry.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Puppy Large Breed",
+      "voertype": "kibble",
+      "verpakking": "11,4 / 17 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-puppy-large.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Puppy Recipe",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 / 17 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-puppy-junior.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Puppy Small Breed Recipe",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-puppy-small.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Ranchlands",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-ranchlands.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Red Meat",
+      "voertype": "kibble",
+      "verpakking": "2 / 9,7 / 14,5 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-classicred.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Red Meat Recipe",
+      "voertype": "kibble",
+      "verpakking": "null",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-red-meat.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Senior Recipe",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-senior.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Singles Beef With Pumpkin Recipe",
+      "voertype": "kibble",
+      "verpakking": "null",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-singles-beef-new.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Sport & Agility Recipe",
+      "voertype": "kibble",
+      "verpakking": "11,4 / 17 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-sport-agility.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Wild Coast",
+      "voertype": "kibble",
+      "verpakking": "2 / 9,7 / 14,5 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-wildcoast.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Wild Prairie",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-wild-prairie.html"
+    },
+    {
+      "merk": "Acana",
+      "naam": "Yorkshire Pork",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.acana.com/nl-NL/voor-honden/eu-aca-singles-pork-new.html"
+    }
+  ]
+}

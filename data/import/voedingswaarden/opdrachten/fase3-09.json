@@ -1,0 +1,434 @@
+{
+  "cluster": "fase3-09",
+  "opgehaald": "2026-10-31",
+  "aantal": 60,
+  "merken": [
+    "Yarrah",
+    "CaroCroc",
+    "Carnis",
+    "Orijen"
+  ],
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch Adult hondenvoer met kip",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 / 15 kg",
+      "bronUrl": "https://www.yarrah.com/biologisch-adult-hondenvoer-met-kip/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch Grain-Free hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.yarrah.com/biologisch-grain-free-hondenvoer-2kg/17064/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch hondenvoer chunks met kip",
+      "voertype": "wet",
+      "verpakking": "405 / 820 g",
+      "bronUrl": "https://www.yarrah.com/biologisch-hondenvoer-chunks-met-kip/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch hondenvoer chunks met rund",
+      "voertype": "wet",
+      "verpakking": "405 / 820 g",
+      "bronUrl": "https://www.yarrah.com/biologisch-hondenvoer-chunks-met-rund/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch hondenvoer chunks vega",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g",
+      "bronUrl": "https://www.yarrah.com/biologisch-hondenvoer-vega-chunks/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch hondenvoer paté met kip (alu)",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g",
+      "bronUrl": "https://www.yarrah.com/biologisch-hondenvoer-pate-met-kip-alu/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch hondenvoer paté met kip (blik)",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.yarrah.com/biologisch-hondenvoer-pate-met-kip-blik/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch hondenvoer paté met kip en eend",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g",
+      "bronUrl": "https://www.yarrah.com/biologisch-hondenvoer-pate-met-kip-en-eend/9161/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch hondenvoer paté met kip en kalkoen",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g",
+      "bronUrl": "https://www.yarrah.com/biologisch-hondenvoer-pate-met-kip-en-kalkoen-alu/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch hondenvoer paté met kip en zalm",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g",
+      "bronUrl": "https://www.yarrah.com/biologisch-hondenvoer-pate-met-kip-en-zalm/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch hondenvoer paté met rund en kip",
+      "voertype": "wet",
+      "verpakking": "12 x 150 g",
+      "bronUrl": "https://www.yarrah.com/biologisch-hondenvoer-pate-met-rund-en-kip-alu/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch hondenvoer paté met varkensvlees",
+      "voertype": "wet",
+      "verpakking": "405 g",
+      "bronUrl": "https://www.yarrah.com/biologisch-hondenvoer-pate-met-varkensvlees-blik/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch Puppy hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 kg",
+      "bronUrl": "https://www.yarrah.com/biologische-puppy-brokken-2kg/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch Senior hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.yarrah.com/biologisch-senior-hondenvoer/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch Sensitive hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.yarrah.com/biologisch-sensitive-hondenvoer/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch Small Breed hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 / 5 kg",
+      "bronUrl": "https://www.yarrah.com/biologisch-small-breed-hondenvoer-5kg/17063/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch Vegan hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.yarrah.com/biologisch-vega-hondenvoer-2kg/17165/"
+    },
+    {
+      "merk": "Yarrah",
+      "naam": "Biologisch Vegan Tarwevrij hondenvoer",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.yarrah.com/biologisch-vega-grain-free-hondenvoer-2kg/17160/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Energy",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/premium/energy/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Grain Free",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/speciale-aandacht/grain-free/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "High Energy",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/premium/high-energy/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Large Breed",
+      "voertype": "kibble",
+      "verpakking": "12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/premium/large-breed/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Low Energy",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/premium/low-energy/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Mobility Support",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/speciale-aandacht/mobility-support/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Original 23/12",
+      "voertype": "kibble",
+      "verpakking": "12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/premium/original/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Puppy",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/premium/puppy/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Puppy Large",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/premium/puppy-large/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Senior",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/premium/senior/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Senior Sensitive",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/speciale-aandacht/carocroc-senior-sensitive/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Skin Support",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/speciale-aandacht/carocroc-skin-support/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Small Breed",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 / 12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/premium/small-breed/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Superior",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.carocroc.nl/producten/speciale-aandacht/carocroc-superior/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Worst met kip",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.carocroc.nl/producten/worsten/carocroc-worst-met-kip/"
+    },
+    {
+      "merk": "CaroCroc",
+      "naam": "Worst met lam",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.carocroc.nl/producten/worsten/carocroc-worst-met-lam/"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Kip Regular",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-kip-regular-2kg/a1864"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Kip Small",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-kip-small-2kg/a1867"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Konijn Regular",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-konijn-regular-2kg/a1876"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Konijn Small",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-konijn-small-2kg/a1880"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Rijk aan Lam Regular",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-rijk-aan-lam-regular-2kg/a1873"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Rijk aan Lam Small",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-rijk-aan-lam-small-2kg/a1882"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Zalm Regular",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-zalm-regular-2kg/a1870"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Geperst Zalm Small",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12,5 kg",
+      "bronUrl": "https://www.carnis.nl/nl/droogvoeding-geperst-zalm-small-2kg/a1885"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Gestoomde Vleesworst Eend",
+      "voertype": "wet",
+      "verpakking": "400 g / 15 x 400 g",
+      "bronUrl": "https://www.carnis.nl/nl/gestoomde-vleesworst-eend-400g/a9701"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Gestoomde Vleesworst Kabeljauw met Zalm",
+      "voertype": "wet",
+      "verpakking": "400 g / 15 x 400 g",
+      "bronUrl": "https://www.carnis.nl/nl/gestoomde-vleesworst-kabeljauw-met-zalm-400g/a9700"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Gestoomde Vleesworst Kip",
+      "voertype": "wet",
+      "verpakking": "400 g / 15 x 400 g",
+      "bronUrl": "https://www.carnis.nl/nl/gestoomde-vleesworst-kip-400g/a9702"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Gestoomde Vleesworst Kip met Zalm",
+      "voertype": "wet",
+      "verpakking": "400 g / 15 x 400 g",
+      "bronUrl": "https://www.carnis.nl/nl/gestoomde-vleesworst-kip-met-zalm-400g/a9697"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Gestoomde Vleesworst Lam",
+      "voertype": "wet",
+      "verpakking": "400 g / 15 x 400 g",
+      "bronUrl": "https://www.carnis.nl/nl/gestoomde-vleesworst-lam-400g/a9698"
+    },
+    {
+      "merk": "Carnis",
+      "naam": "Gestoomde Vleesworst Rund",
+      "voertype": "wet",
+      "verpakking": "400 g / 15 x 400 g",
+      "bronUrl": "https://www.carnis.nl/nl/gestoomde-vleesworst-rund-400g/a9699"
+    },
+    {
+      "merk": "Orijen",
+      "naam": "Fit & Trim",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.orijenpetfoods.com/nl-NL/dogs/dog-food/eu-ori-ns-ori-fittrim.html"
+    },
+    {
+      "merk": "Orijen",
+      "naam": "Large Breed Adult",
+      "voertype": "kibble",
+      "verpakking": "11,4 kg",
+      "bronUrl": "https://emea.orijenpetfoods.com/de-DE/dogs/dog-food/eu-ori-ns-ori-large-breed-adult.html"
+    },
+    {
+      "merk": "Orijen",
+      "naam": "Large Breed Puppy",
+      "voertype": "kibble",
+      "verpakking": "6 / 11,4 kg",
+      "bronUrl": "https://emea.orijenpetfoods.com/nl-NL/dogs/dog-food/eu-ori-ns-ori-puppy-large.html"
+    },
+    {
+      "merk": "Orijen",
+      "naam": "Original",
+      "voertype": "kibble",
+      "verpakking": "340 g / 2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.orijenpetfoods.com/nl-NL/dogs/dog-food/eu-ori-ns-ori-original.html"
+    },
+    {
+      "merk": "Orijen",
+      "naam": "Puppy",
+      "voertype": "kibble",
+      "verpakking": "340 g / 2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.orijenpetfoods.com/nl-NL/dogs/dog-food/eu-ori-ns-puppy.html"
+    },
+    {
+      "merk": "Orijen",
+      "naam": "Regional Red",
+      "voertype": "kibble",
+      "verpakking": "340 g / 2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.orijenpetfoods.com/nl-NL/eu-ori-ns-ori-regionalred.html"
+    },
+    {
+      "merk": "Orijen",
+      "naam": "Senior",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.orijenpetfoods.com/nl-NL/dogs/dog-food/eu-ori-ns-ori-senior.html"
+    },
+    {
+      "merk": "Orijen",
+      "naam": "Six Fish",
+      "voertype": "kibble",
+      "verpakking": "340 g / 2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.orijenpetfoods.com/nl-NL/dogs/dog-food/eu-ori-ns-ori-sixfish.html"
+    },
+    {
+      "merk": "Orijen",
+      "naam": "Small Breed",
+      "voertype": "kibble",
+      "verpakking": "1,8 / 4,5 kg",
+      "bronUrl": "https://emea.orijenpetfoods.com/nl-NL/dogs/dog-food/eu-ori-ns-ori-small-breed.html"
+    },
+    {
+      "merk": "Orijen",
+      "naam": "Small Breed Marine Fish",
+      "voertype": "kibble",
+      "verpakking": "1,8 / 4,5 kg",
+      "bronUrl": "https://emea.orijenpetfoods.com/nl-NL/dogs/dog-food/eu-ori-ns-ori-small-breed-marine-fish.html"
+    },
+    {
+      "merk": "Orijen",
+      "naam": "Small Breed Puppy",
+      "voertype": "kibble",
+      "verpakking": "1,8 / 4,5 kg",
+      "bronUrl": "https://emea.orijenpetfoods.com/nl-NL/dogs/dog-food/eu-ori-ns-ori-small-breed-puppy.html"
+    },
+    {
+      "merk": "Orijen",
+      "naam": "Tundra",
+      "voertype": "kibble",
+      "verpakking": "2 / 6 / 11,4 kg",
+      "bronUrl": "https://emea.orijenpetfoods.com/nl-NL/dogs/dog-food/eu-ori-ns-ori-tundra.html"
+    }
+  ]
+}

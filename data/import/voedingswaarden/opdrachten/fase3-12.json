@@ -1,0 +1,511 @@
+{
+  "cluster": "fase3-12",
+  "opgehaald": "2026-10-31",
+  "aantal": 70,
+  "merken": [
+    "Lily's Kitchen",
+    "Cesar",
+    "Dog Chow",
+    "RAW4DOGS",
+    "Almo Nature",
+    "Farmina",
+    "Frolic",
+    "Happy Dog",
+    "Josera",
+    "Monge",
+    "James Wellbeloved"
+  ],
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Lily's Kitchen",
+      "naam": "Lily's Kitchen Chicken & Duck Countryside Casserole",
+      "voertype": "kibble",
+      "verpakking": "1 kg / 7 kg",
+      "bronUrl": "https://eu.lilyskitchen.com/nl/honden/droogvoer/chicken-and-duck-countryside-casserole"
+    },
+    {
+      "merk": "Lily's Kitchen",
+      "naam": "Lily's Kitchen Chicken & Turkey Casserole",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://eu.lilyskitchen.com/nl/honden/natvoer/chicken-turkey-casserole"
+    },
+    {
+      "merk": "Lily's Kitchen",
+      "naam": "Lily's Kitchen Cottage Pie",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://eu.lilyskitchen.com/nl/honden/natvoer/cottage-pie"
+    },
+    {
+      "merk": "Lily's Kitchen",
+      "naam": "Lily's Kitchen Lamb Hotpot",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://eu.lilyskitchen.com/nl/honden/natvoer/lamb-hotpot"
+    },
+    {
+      "merk": "Lily's Kitchen",
+      "naam": "Lily's Kitchen Lamb Shepherd’s Pie",
+      "voertype": "kibble",
+      "verpakking": "1 kg",
+      "bronUrl": "https://eu.lilyskitchen.com/nl/honden/droogvoer/lamb-shepherds-pie"
+    },
+    {
+      "merk": "Lily's Kitchen",
+      "naam": "Lily's Kitchen Salmon Supper",
+      "voertype": "kibble",
+      "verpakking": "1 kg",
+      "bronUrl": "https://eu.lilyskitchen.com/nl/honden/droogvoer/salmon-supper"
+    },
+    {
+      "merk": "Lily's Kitchen",
+      "naam": "Lily's Kitchen Wild Campfire Stew",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://eu.lilyskitchen.com/nl/honden/natvoer/wild-campfire-stew"
+    },
+    {
+      "merk": "Lily's Kitchen",
+      "naam": "Lily's Kitchen Wild Woodlands with Duck, Salmon and Venison",
+      "voertype": "kibble",
+      "verpakking": "1 kg / 7 kg",
+      "bronUrl": "https://eu.lilyskitchen.com/nl/honden/droogvoer/duck-salmon-venison"
+    },
+    {
+      "merk": "Cesar",
+      "naam": "Classic Kalf & Gevogelte",
+      "voertype": "wet",
+      "verpakking": "150 gr",
+      "bronUrl": "https://www.cesar.nl/assortiment/classic/classic-kalf-gevogelte"
+    },
+    {
+      "merk": "Cesar",
+      "naam": "Classic Kip",
+      "voertype": "wet",
+      "verpakking": "150 gr; 300 gr",
+      "bronUrl": "https://www.cesar.nl/assortiment/classic/classic-kip-300"
+    },
+    {
+      "merk": "Cesar",
+      "naam": "Classic Rund",
+      "voertype": "wet",
+      "verpakking": "150 gr",
+      "bronUrl": "https://www.cesar.nl/assortiment/classic/classic-rund"
+    },
+    {
+      "merk": "Cesar",
+      "naam": "Cuisine Kalf & Kalkoen",
+      "voertype": "wet",
+      "verpakking": "150 gr",
+      "bronUrl": "https://www.cesar.nl/assortiment/cuisine/cuisine-kalf-kalkoen"
+    },
+    {
+      "merk": "Cesar",
+      "naam": "Natural Goodness Organic Chicken",
+      "voertype": "wet",
+      "verpakking": "100 g",
+      "bronUrl": "https://www.cesar.nl/products/natural-goodness/cesar-natural-goodness-organic-chicken-loaf-tray-100gr"
+    },
+    {
+      "merk": "Cesar",
+      "naam": "Primeur Lam & Kalkoen",
+      "voertype": "wet",
+      "verpakking": "150 gr",
+      "bronUrl": "https://www.cesar.nl/assortiment/primeur/primeur-lam-kalkoen"
+    },
+    {
+      "merk": "Cesar",
+      "naam": "Senior Kip & Rijst 10+",
+      "voertype": "wet",
+      "verpakking": "150 gr",
+      "bronUrl": "https://www.cesar.nl/assortiment/senior-10/senior-kip-rijst-10"
+    },
+    {
+      "merk": "Dog Chow",
+      "naam": "Dog Chow Adult Kip",
+      "voertype": "kibble",
+      "verpakking": "14 kg; dubbelpak 2 x 14 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/456957"
+    },
+    {
+      "merk": "Dog Chow",
+      "naam": "Dog Chow Adult Lam",
+      "voertype": "kibble",
+      "verpakking": "14 kg; dubbelpak 2 x 14 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/457040"
+    },
+    {
+      "merk": "Dog Chow",
+      "naam": "Dog Chow Adult Light Kalkoen",
+      "voertype": "kibble",
+      "verpakking": "14 kg; dubbelpak 2 x 14 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/456958"
+    },
+    {
+      "merk": "Dog Chow",
+      "naam": "Dog Chow Adult Sensitive Zalm",
+      "voertype": "kibble",
+      "verpakking": "14 kg; dubbelpak 2 x 14 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/457043"
+    },
+    {
+      "merk": "Dog Chow",
+      "naam": "Dog Chow Large Breed Kalkoen",
+      "voertype": "kibble",
+      "verpakking": "14 kg; dubbelpak 2 x 14 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/adult/457041"
+    },
+    {
+      "merk": "Dog Chow",
+      "naam": "Dog Chow Puppy Lam",
+      "voertype": "kibble",
+      "verpakking": "14 kg; dubbelpak 2 x 14 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/puppy/457038"
+    },
+    {
+      "merk": "Dog Chow",
+      "naam": "Dog Chow Senior Lam",
+      "voertype": "kibble",
+      "verpakking": "14 kg; dubbelpak 2 x 14 kg",
+      "bronUrl": "https://www.zooplus.nl/shop/honden/hondenvoer_droog/dogchow/mature/661102"
+    },
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Barf 5 Mix",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "bronUrl": "https://www.raw4dogs.nl/producten/barf-5-mix"
+    },
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Beef & chicken",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "bronUrl": "https://www.raw4dogs.nl/producten/beef-chicken"
+    },
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Chicken",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "bronUrl": "https://www.raw4dogs.nl/producten/chicken"
+    },
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Duck",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "bronUrl": "https://www.raw4dogs.nl/producten/duck"
+    },
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Fish Mix",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "bronUrl": "https://www.raw4dogs.nl/producten/fish-mix"
+    },
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Game Mix",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "bronUrl": "https://www.raw4dogs.nl/producten/game-mix"
+    },
+    {
+      "merk": "RAW4DOGS",
+      "naam": "Lamb",
+      "voertype": "raw",
+      "verpakking": "450 g / 1 kg",
+      "bronUrl": "https://www.raw4dogs.nl/producten/lamb"
+    },
+    {
+      "merk": "Almo Nature",
+      "naam": "Almo Nature Bio Organic met Kip en Groenten",
+      "voertype": "wet",
+      "verpakking": "100 g / 300 g",
+      "bronUrl": "https://www.almonature.com/nl/hondenproducten/300"
+    },
+    {
+      "merk": "Almo Nature",
+      "naam": "Almo Nature Bio Organic met Rund en Groenten",
+      "voertype": "wet",
+      "verpakking": "100 g / 300 g",
+      "bronUrl": "https://www.almonature.com/nl/hondenproducten/303"
+    },
+    {
+      "merk": "Almo Nature",
+      "naam": "Almo Nature Daily met Rundvlees",
+      "voertype": "wet",
+      "verpakking": "380 g / 400 g",
+      "bronUrl": "https://www.almonature.com/nl/hondenproducten/381"
+    },
+    {
+      "merk": "Almo Nature",
+      "naam": "Almo Nature Life Maintenance met Verse Kip M",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.almonature.com/nl/hondenproducten/744"
+    },
+    {
+      "merk": "Almo Nature",
+      "naam": "Almo Nature Life Maintenance met Verse Lam M",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.almonature.com/nl/hondenproducten/741"
+    },
+    {
+      "merk": "Almo Nature",
+      "naam": "Almo Nature Life Maintenance met Verse Zalm M",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.almonature.com/nl/hondenproducten/745"
+    },
+    {
+      "merk": "Farmina",
+      "naam": "N&D Ancestral Grain Kip & Granaatappel Adult Medium & Maxi",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12 kg",
+      "bronUrl": "https://www.farmina.com/nl/hondenvoeding/n&d-ancestral-grain/594-kip-&-granaatappel-adult-medium-&-maxi.html"
+    },
+    {
+      "merk": "Farmina",
+      "naam": "N&D Pumpkin Kip & Granaatappel Adult Medium & Maxi",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12 kg",
+      "bronUrl": "https://www.farmina.com/nl/hondenvoeding/n&d-pumpkin/391-kip-&-granaatappel-adult-medium-&-maxi.html"
+    },
+    {
+      "merk": "Farmina",
+      "naam": "Vet Life Gastrointestinal Adult",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.farmina.com/nl/hondenvoeding/farmina-vet-life/65-gastrointestinal-adult.html"
+    },
+    {
+      "merk": "Farmina",
+      "naam": "Vet Life Hypoallergenic Ei & Rijst Adult",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.farmina.com/nl/hondenvoeding/farmina-vet-life/74-hypoallergenic-ei-&-rijst-adult.html"
+    },
+    {
+      "merk": "Farmina",
+      "naam": "Vet Life Renal Adult",
+      "voertype": "kibble",
+      "verpakking": "2 kg",
+      "bronUrl": "https://www.farmina.com/nl/hondenvoeding/farmina-vet-life/69-renal-adult.html"
+    },
+    {
+      "merk": "Farmina",
+      "naam": "Vet Life UltraHypo Adult",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.farmina.com/nl/hondenvoeding/farmina-vet-life/72-ultrahypo-adult.html"
+    },
+    {
+      "merk": "Frolic",
+      "naam": "Frolic Compleet Malse Maaltijd Rund",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg; 3 kg",
+      "bronUrl": "https://www.petsplace.nl/frolic-compleet-malse-maaltijd-hondenvoer-m-4008429029110-pps"
+    },
+    {
+      "merk": "Frolic",
+      "naam": "Frolic Droog Gevogelte",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.petsplace.nl/frolic-droog-gevogelte-hondenvoer-5900951315282-pps"
+    },
+    {
+      "merk": "Frolic",
+      "naam": "Frolic Droog Mini Gevogelte",
+      "voertype": "kibble",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.petsplace.nl/frolic-droog-mini-gevogelte-hondenvoer-5900951315374-pps"
+    },
+    {
+      "merk": "Frolic",
+      "naam": "Frolic Droog Mini Rund",
+      "voertype": "kibble",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.petsplace.nl/frolic-droog-mini-hondenvoer-5900951315350-pps"
+    },
+    {
+      "merk": "Frolic",
+      "naam": "Frolic Droog Rund 1,5 kg",
+      "voertype": "kibble",
+      "verpakking": "1,5 kg",
+      "bronUrl": "https://www.petsplace.nl/frolic-droog-hondenvoer-5900951315305-pps"
+    },
+    {
+      "merk": "Frolic",
+      "naam": "Frolic Droog Rund 2,6 kg",
+      "voertype": "kibble",
+      "verpakking": "2,6 kg",
+      "bronUrl": "https://www.petsplace.nl/frolic-droog-rund-hondenvoer-5900951315237-pps"
+    },
+    {
+      "merk": "Happy Dog",
+      "naam": "fit & vital - Sport",
+      "voertype": "kibble",
+      "verpakking": "1 / 14 kg",
+      "bronUrl": "https://happydog.de/hundefutter/trockenfutter/happy-dog-fit-vital-sport-60777"
+    },
+    {
+      "merk": "Happy Dog",
+      "naam": "NaturCroq Geflügel & Reis",
+      "voertype": "kibble",
+      "verpakking": "1 / 4 / 11 kg",
+      "bronUrl": "https://happydog.de/hundefutter/trockenfutter/happy-dog-naturcroq-gefluegel-reis-60513"
+    },
+    {
+      "merk": "Happy Dog",
+      "naam": "NaturCroq Senior",
+      "voertype": "kibble",
+      "verpakking": "4 / 15 kg",
+      "bronUrl": "https://happydog.de/hundefutter/trockenfutter/happy-dog-naturcroq-senior-60533"
+    },
+    {
+      "merk": "Happy Dog",
+      "naam": "Sensible Ireland",
+      "voertype": "kibble",
+      "verpakking": "0,3 / 1 / 4 / 12,5 kg",
+      "bronUrl": "https://happydog.de/hundefutter/trockenfutter/happy-dog-sensible-ireland-60301"
+    },
+    {
+      "merk": "Happy Dog",
+      "naam": "Sensible Montana",
+      "voertype": "kibble",
+      "verpakking": "0,3 / 1 / 4 / 10 kg",
+      "bronUrl": "https://happydog.de/hundefutter/trockenfutter/happy-dog-sensible-montana-60488"
+    },
+    {
+      "merk": "Happy Dog",
+      "naam": "Sensible Toscana",
+      "voertype": "kibble",
+      "verpakking": "0,3 / 1 / 4 / 12,5 kg",
+      "bronUrl": "https://happydog.de/hundefutter/trockenfutter/happy-dog-sensible-toscana-60303"
+    },
+    {
+      "merk": "Josera",
+      "naam": "Active Nature",
+      "voertype": "kibble",
+      "verpakking": "0,9 / 3 / 12,5 kg",
+      "bronUrl": "https://www.josera.de/josera-active-nature.html"
+    },
+    {
+      "merk": "Josera",
+      "naam": "Senior Salmon & Rice",
+      "voertype": "kibble",
+      "verpakking": "0,9 / 3 / 12,5 kg",
+      "bronUrl": "https://www.josera.de/josera-seniorplus.html"
+    },
+    {
+      "merk": "Josera",
+      "naam": "SensiAdult",
+      "voertype": "kibble",
+      "verpakking": "0,9 / 3 / 12,5 kg",
+      "bronUrl": "https://www.josera.de/josera-sensiadult.html"
+    },
+    {
+      "merk": "Josera",
+      "naam": "SensiJunior",
+      "voertype": "kibble",
+      "verpakking": "0,9 / 3 / 12,5 kg",
+      "bronUrl": "https://www.josera.de/josera-sensijunior.html"
+    },
+    {
+      "merk": "Josera",
+      "naam": "SensiPlus",
+      "voertype": "kibble",
+      "verpakking": "0,9 / 3 / 12,5 kg",
+      "bronUrl": "https://www.josera.de/josera-sensiplus.html"
+    },
+    {
+      "merk": "Josera",
+      "naam": "YoungStar",
+      "voertype": "kibble",
+      "verpakking": "0,9 / 3 / 12,5 kg",
+      "bronUrl": "https://www.josera.de/josera-youngstar.html"
+    },
+    {
+      "merk": "Monge",
+      "naam": "Monge Natural Superpremium Hypoallergeen Adult Zalm en Tonijn",
+      "voertype": "kibble",
+      "verpakking": "15 kg",
+      "bronUrl": "https://www.mongebenelux.com/nl/hondenbrokken-hypoallergeen-adult-zalm-en-tonijn-1.html"
+    },
+    {
+      "merk": "Monge",
+      "naam": "Monge Natural Superpremium Monoproteïne Adult Eend met Rijst en Aardappelen",
+      "voertype": "kibble",
+      "verpakking": "15 kg",
+      "bronUrl": "https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-adult-eend-me-145549550.html"
+    },
+    {
+      "merk": "Monge",
+      "naam": "Monge Natural Superpremium Monoproteïne Adult Rundvlees met Rijst",
+      "voertype": "kibble",
+      "verpakking": "15 kg",
+      "bronUrl": "https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-adult-rundvle-145561903.html"
+    },
+    {
+      "merk": "Monge",
+      "naam": "Monge Natural Superpremium Monoproteïne Adult Varken met Rijst en Aardappelen",
+      "voertype": "kibble",
+      "verpakking": "15 kg",
+      "bronUrl": "https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-adult-varken-145561914.html"
+    },
+    {
+      "merk": "Monge",
+      "naam": "Monge Natural Superpremium Monoproteïne Light Zalm",
+      "voertype": "kibble",
+      "verpakking": "15 kg",
+      "bronUrl": "https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-adult-zalm-me-145561944.html"
+    },
+    {
+      "merk": "Monge",
+      "naam": "Monge Natural Superpremium Monoproteïne Puppy & Junior Lamsvlees met Rijst",
+      "voertype": "kibble",
+      "verpakking": "15 kg",
+      "bronUrl": "https://www.mongebenelux.com/nl/hondenbrokken-monoproteine-puppy-junior-145562133.html"
+    },
+    {
+      "merk": "James Wellbeloved",
+      "naam": "James Wellbeloved Adult Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "2 kg / 10 kg",
+      "bronUrl": "https://www.wellbeloved.com/p/adult-lamb-and-rice-dry-dog-food/15843891/"
+    },
+    {
+      "merk": "James Wellbeloved",
+      "naam": "James Wellbeloved Junior Kalkoen & Rijst",
+      "voertype": "kibble",
+      "verpakking": "2 kg / 10 kg",
+      "bronUrl": "https://www.wellbeloved.com/p/puppy-turkey-and-rice-dry-dog-food/15843908/"
+    },
+    {
+      "merk": "James Wellbeloved",
+      "naam": "James Wellbeloved Junior Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "2 kg / 10 kg",
+      "bronUrl": "https://www.wellbeloved.com/p/puppy-lamb-and-rice-dry-dog-food/15843893/"
+    },
+    {
+      "merk": "James Wellbeloved",
+      "naam": "James Wellbeloved Senior/Light Kalkoen & Rijst",
+      "voertype": "kibble",
+      "verpakking": "2 kg / 10 kg",
+      "bronUrl": "https://www.wellbeloved.com/p/senior-turkey-and-rice-dry-dog-food/15843902/"
+    },
+    {
+      "merk": "James Wellbeloved",
+      "naam": "James Wellbeloved Senior/Light Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "2 kg / 10 kg",
+      "bronUrl": "https://www.wellbeloved.com/p/senior-lamb-and-rice-dry-dog-food/15843886/"
+    }
+  ]
+}

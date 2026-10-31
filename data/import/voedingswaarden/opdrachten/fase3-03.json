@@ -1,0 +1,481 @@
+{
+  "cluster": "fase3-03",
+  "opgehaald": "2026-10-31",
+  "aantal": 67,
+  "merken": [
+    "Pedigree",
+    "Terra Canis"
+  ],
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Pedigree",
+      "naam": "Adult Maaltijdzakjes Proteïne+ Selectie in gelei – Kip en rund",
+      "voertype": "wet",
+      "verpakking": "12 x 85 g",
+      "bronUrl": "https://www.pedigree.nl/products/natvoer/pedigree-adult-maaltijdzakjes-proteine-selectie-gelei-volwassen"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Adult Maaltijdzakjes Proteïne+ Selectie in gelei – Rund- en levermix",
+      "voertype": "wet",
+      "verpakking": "12 x 85 g",
+      "bronUrl": "https://www.pedigree.nl/products/natvoer/pedigree-adult-maaltijdzakjes-proteine-selectie-gelei-volwassen"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Adult met Rund in Gelei",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.pedigree.nl/products/natvoer/pedigree-adult-met-rund-gelei-400-g-volwassen"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Droog Adult Gevogelte en Groenten",
+      "voertype": "kibble",
+      "verpakking": "2,6 / 12 kg",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/droogvoer/pedigree-adult-hondenbrokken-kip-en-groenten-hondenvoer-10-kg"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Droog Adult Mini Gevogelte en Groenten",
+      "voertype": "kibble",
+      "verpakking": "0,5 / 1,4 kg",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/droogvoer/pedigree-adult-mini-hondenbrokken-kip-en-groenten-hondenvoer-500-g"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Droog Adult Mini Rund en Groenten",
+      "voertype": "kibble",
+      "verpakking": "1,4 / 12 kg",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/droogvoer/pedigree-adult-maxi-hondenbrokken-rund-en-rijst-hondenvoer-15-kg"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Droog Adult Rund en Groenten",
+      "voertype": "kibble",
+      "verpakking": "2,6 / 12 kg",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/droogvoer/pedigree-adult-hondenbrokken-rund-en-groenten-hondenvoer-10-kg"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Droog Adult Vis en Groenten",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.pedigree.nl/products/droogvoer/pedigree-droog-adult-vis-en-groenten-12kg-volwassen"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Droog Junior Gevogelte en Groenten",
+      "voertype": "kibble",
+      "verpakking": "2,6 / 12 kg",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/droogvoer/pedigree-junior-hondenbrokken-kip-en-rijst-hondenvoer-10-kg"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Kip & Lam in Gelei – Kip",
+      "voertype": "wet",
+      "verpakking": "4 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-kip-and-lam-in-gelei"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Kip & Lam in Gelei – Lam- en levermix",
+      "voertype": "wet",
+      "verpakking": "4 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-kip-and-lam-in-gelei"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Kip & Rund in Saus – Kip",
+      "voertype": "wet",
+      "verpakking": "4 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-kip-and-rund-in-saus"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Kip & Rund in Saus – Rund- en levermix",
+      "voertype": "wet",
+      "verpakking": "4 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-kip-and-rund-in-saus"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Gevogelte in Saus – Eend",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-adult-gevogelte-in-saus"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Gevogelte in Saus – Gevogelte",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-adult-gevogelte-in-saus"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Gevogelte in Saus – Kalkoen",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-adult-gevogelte-in-saus"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Gevogelte in Saus – Kip",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-adult-gevogelte-in-saus"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Kip & Vis Selectie in Gelei – Kip",
+      "voertype": "wet",
+      "verpakking": "4 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/products/natvoer/pedigree-maaltijdzakjes-adult-kip-vis-selectie-gelei-volwassen"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Kip & Vis Selectie in Gelei – Vis",
+      "voertype": "wet",
+      "verpakking": "4 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/products/natvoer/pedigree-maaltijdzakjes-adult-kip-vis-selectie-gelei-volwassen"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Mix Selectie in Gelei – Gevogelte",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g / 40 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-adult-mix-selectie-in-gelei-12x100gr"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Mix Selectie in Gelei – Kip",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g / 40 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-adult-mix-selectie-in-gelei-12x100gr"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Mix Selectie in Gelei – Lam- en levermix",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g / 40 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-adult-mix-selectie-in-gelei-12x100gr"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Mix Selectie in Gelei – Rund- en levermix",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g / 40 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-adult-mix-selectie-in-gelei-12x100gr"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Mix Selectie in Saus – Kalkoen",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g / 80 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-adult-mix-selectie-in-saus-80x100g"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Mix Selectie in Saus – Kip",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g / 80 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-adult-mix-selectie-in-saus-80x100g"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Mix Selectie in Saus – Rund- en lammix",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g / 80 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-adult-mix-selectie-in-saus-80x100g"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Adult Mix Selectie in Saus – Rund- en levermix",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g / 80 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-adult-mix-selectie-in-saus-80x100g"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Junior Mix Selectie in Gelei – Gevogelte",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-junior-mix-selectie-in-gelei"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Junior Mix Selectie in Gelei – Kip",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-junior-mix-selectie-in-gelei"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Junior Mix Selectie in Gelei – Lam- en levermix",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-junior-mix-selectie-in-gelei"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Junior Mix Selectie in Gelei – Rund- en levermix",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-junior-mix-selectie-in-gelei"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Senior Mix Selectie in Gelei – Gevogelte",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-senior-mix-selectie-in-gelei"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Senior Mix Selectie in Gelei – Kip",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-senior-mix-selectie-in-gelei"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Senior Mix Selectie in Gelei – Lam- en levermix",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-senior-mix-selectie-in-gelei"
+    },
+    {
+      "merk": "Pedigree",
+      "naam": "Maaltijdzakjes Senior Mix Selectie in Gelei – Rund- en levermix",
+      "voertype": "wet",
+      "verpakking": "12 x 100 g",
+      "bronUrl": "https://www.pedigree.nl/onze-producten/natvoer/pedigree-maaltijdzakjes-senior-mix-selectie-in-gelei"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Alimentum Veterinarium Low Protein Kalf",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/kalb-0510.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Alimentum Veterinarium Low Protein Kip",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/huhn-5000.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Alimentum Veterinarium Low Protein Wild",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/wild-0520.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Canireo Adult kip",
+      "voertype": "kibble",
+      "verpakking": "2,5 kg",
+      "bronUrl": "https://www.terracanis.com/trockenfutter-huhn-1554.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Canireo Wild",
+      "voertype": "kibble",
+      "verpakking": "1 / 2,5 / 5 kg",
+      "bronUrl": "https://www.terracanis.com/trockenfutter-wild-1553.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Classic Kalkoen met Broccoli, peer & aardappelen",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/pute-mit-brokkoli-birne-und-kartoffel-1012.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Classic Kip met amarant, tomaten & basilicum",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/huhn-mit-tomate-amaranth-und-basilikum-1016.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Classic Konijn met Courgette, Amarant en Kervel",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/kaninchen-mit-zucchini-amaranth-und-kerbel-1017.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Classic Lam met courgette, gierst & dille",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/lamm-mit-zucchini-hirse-und-dill-1014.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Classic Paard met Amarant, Perzik & Rode Biet",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/pferd-mit-amaranth-pfirsich-und-roter-bete-0311.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Classic Rund met wortel, appel & rijst",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/rind-mit-karotte-apfel-und-naturreis-1011.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Classic Zalm met Gierst, Perzik en Kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/lachs-mit-hirse-pfirsich-und-kraeutern-0301.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Derma Dieet Kip & Zalm",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/huhn-und-lachs-sw10212.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Derma Dieet Lam",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/lamm-sw10217.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Graanvrij Eend met pompoen, aardbeien en vlierbloesem",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/ente-mit-kuerbis-erdbeere-und-holunder-0002.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Graanvrij Kalfsvlees met peterseliewortel, mango en rode bes",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/kalb-mit-petersilienwurzel-mango-und-johannisbeere-1100.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Graanvrij Kalkoen met selderij, pompoen en waterkers",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/pute-mit-sellerie-kuerbis-und-brunnenkresse-1032.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Graanvrij Kip met pastinaak, paardenbloem en bramen",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/huhn-mit-pastinake-brombeere-und-loewenzahn-1033.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Graanvrij Konijn met courgette, abrikoos en bonenkruid",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/kaninchen-mit-zucchini-aprikose-und-bohnenkraut-1039.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Graanvrij Lam met pompoen, pastinaak en passiebloem",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/lamm-mit-kuerbis-pastinake-und-passionsblume-1036.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Graanvrij Paardenvlees met koolraap, venkel en salie",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/pferd-mit-steckruebe-fenchel-und-salbei-0109.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Graanvrij Rundvlees met courgette, pompoen en oregano",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/rind-mit-zucchini-kuerbis-und-oregano-1031.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Graanvrij Wild met appel en cranberries",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/wild-mit-kartoffel-apfel-und-preiselbeere-1037.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Hypoallergeen Kangoeroe met pastinaak",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/kaenguru-mit-pastinake-1042.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Hypoallergeen Paardenvlees met aardpeer",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/pferd-mit-topinambur-1043.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Hypoallergeen Struisvogel met pastinaak",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/strauss-mit-pastinake-1045.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Puppy Gevogelte met pompoen, boekweit & bloempollen",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/huhn-mit-kuerbis-kamille-und-tomate-1052.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Puppy Lam met courgette, venkel & magere yoghurt",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/lamm-mit-zucchini-fenchel-und-magerjoghurt-1053.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Puppy Rund met appel, wortelen & rozenbottel",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.terracanis.com/rind-mit-apfel-karotte-und-hagebutte-1051.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Senior Graanvrij Hertenvlees met tomaat, appel en kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/wild-mit-tomate-apfel-und-gesundheitskraeutern-1067.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Senior Graanvrij Kip met komkommer, pompoen en kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/huhn-mit-gurke-kuerbis-und-gesundheitskraeutern-1065.html"
+    },
+    {
+      "merk": "Terra Canis",
+      "naam": "Senior Graanvrij Rundvlees met selderij, abrikoos en kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.terracanis.com/rind-mit-sellerie-aprikose-und-gesundheitskraeutern-1068.html"
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "cluster": "fase3-01",
+  "opgehaald": "2026-10-31",
+  "aantal": 37,
+  "merken": [
+    "Specific"
+  ],
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Specific",
+      "naam": "C-BIO-W with beef",
+      "voertype": "wet",
+      "verpakking": "5 x 150 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/c-bio-w-with-beef"
+    },
+    {
+      "merk": "Specific",
+      "naam": "C-BIO-W with fish",
+      "voertype": "wet",
+      "verpakking": "5 x 150 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/c-bio-w-with-fish"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CAD Active",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/cad-active"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CCD Struvite Management",
+      "voertype": "kibble",
+      "verpakking": "2 kg, 3 x 2 kg, 7 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/ccd-struvite-management"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CDD Food Allergen Management",
+      "voertype": "kibble",
+      "verpakking": "2 kg, 3x2 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/cdd-food-allergen-management"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CDD-HY Food Allergen Management",
+      "voertype": "kibble",
+      "verpakking": "2 kg, 3 x 2 kg, 7 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/cdd-hy-food-allergen-management"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CDW Food Allergen Management",
+      "voertype": "wet",
+      "verpakking": "6 x 300 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/cdw-food-allergen-management"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CED-DM Endocrine support",
+      "voertype": "kibble",
+      "verpakking": "2 kg, 3 x 2 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/ced-dm-endocrine-support"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CGD-M Senior medium breed",
+      "voertype": "kibble",
+      "verpakking": "4 kg, 7 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/cgd-m-senior-medium-breed"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CGD-S Senior small breed",
+      "voertype": "kibble",
+      "verpakking": "1 kg, 4 kg, 7 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/cgd-s-senior-small-breed"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CGD-XL Senior large and giant breed",
+      "voertype": "kibble",
+      "verpakking": "4 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/cgd-xl-senior-large-and-giant-breed"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CGW Senior all breeds",
+      "voertype": "wet",
+      "verpakking": "6 x 300 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/cgw-senior-all-breeds"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CID Digestive Support",
+      "voertype": "kibble",
+      "verpakking": "2 kg, 3 x 2 kg, 7 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/cid-digestive-support"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CID-LF Digestive Support Low Fat",
+      "voertype": "kibble",
+      "verpakking": "1,6 kg, 3 x 1,6 kg, 6 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/cid-lf-digestive-support-low-fat"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CIW Digestive Support",
+      "voertype": "wet",
+      "verpakking": "6 x 300 g, 7 x 100 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/ciw-digestive-support"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CIW-LF Digestive Support Low Fat",
+      "voertype": "wet",
+      "verpakking": "7 x 100 g, 6 x 300 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/ciw-lf-digestive-support-low-fat"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CJD Joint Support",
+      "voertype": "kibble",
+      "verpakking": "2 kg, 3 x 2 kg, 3 x 4 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/cjd-joint-support"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CKD Heart & Kidney Support",
+      "voertype": "kibble",
+      "verpakking": "2 kg, 3 x 2 kg, 7 kg, 3 x 4 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/ckd-heart-kidney-support"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CKD-HY Heart & Kidney Support hydrolysed",
+      "voertype": "kibble",
+      "verpakking": "4 kg, 3 x 4 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/ckd-hy-heart-kidney-support-hydrolysed"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CKW Heart & Kidney Support",
+      "voertype": "wet",
+      "verpakking": "6 x 300 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/ckw-heart-kidney-support"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CKW-HY Heart & Kidney Support hydrolysed",
+      "voertype": "wet",
+      "verpakking": "6 x 300 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/ckw-hy-heart-kidney-support-hydrolysed"
+    },
+    {
+      "merk": "Specific",
+      "naam": "COD Skin Function Support",
+      "voertype": "kibble",
+      "verpakking": "2 kg, 3 x 2 kg, 7 kg, 3 x 4 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/cod-skin-function-support"
+    },
+    {
+      "merk": "Specific",
+      "naam": "COD-HY Allergen Management Plus",
+      "voertype": "kibble",
+      "verpakking": "2 kg, 3 x 2 kg, 3 x 4 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/cod-hy-allergen-management-plus"
+    },
+    {
+      "merk": "Specific",
+      "naam": "COW-HY Allergen Management Plus",
+      "voertype": "wet",
+      "verpakking": "6 x 300 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/cow-hy-allergen-management-plus"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CPD-M Puppy Medium Breed",
+      "voertype": "kibble",
+      "verpakking": "4 kg, 7 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/cpd-m-puppy-medium-breed"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CPD-S Puppy Small Breed",
+      "voertype": "kibble",
+      "verpakking": "1 kg, 4 kg, 7 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/cpd-s-puppy-small-breed"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CPD-XL Puppy Large & Giant breed",
+      "voertype": "kibble",
+      "verpakking": "4 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/cpd-xl-puppy-large-giant-breed"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CPW Puppy all breeds",
+      "voertype": "wet",
+      "verpakking": "6 x 300 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/cpw-puppy-all-breeds"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CRD-1 Weight Reduction",
+      "voertype": "kibble",
+      "verpakking": "1,6 kg, 3 x 1,6 kg, 6 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/crd-1-weight-reduction"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CRD-2 Weight Control",
+      "voertype": "kibble",
+      "verpakking": "1,6 kg, 3 x 1,6 kg, 6 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/crd-2-weight-control"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CRW-1 Weight Reduction",
+      "voertype": "wet",
+      "verpakking": "6 x 300 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/crw-1-weight-reduction"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CXD-M Adult Medium breed",
+      "voertype": "kibble",
+      "verpakking": "4 kg, 7 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/cxd-m-adult-medium-breed"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CXD-S Adult Small breed",
+      "voertype": "kibble",
+      "verpakking": "1 kg, 4 kg, 7 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/cxd-s-adult-small-breed"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CXD-XL Adult large & giant breed",
+      "voertype": "kibble",
+      "verpakking": "4 kg, 12 kg",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/cxd-xl-adult-large-giant-breed"
+    },
+    {
+      "merk": "Specific",
+      "naam": "CXW Adult all breeds",
+      "voertype": "wet",
+      "verpakking": "6 x 300 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-voor-gezonde-honden/cxw-adult-all-breeds"
+    },
+    {
+      "merk": "Specific",
+      "naam": "F/C-IN-L Intensive Support",
+      "voertype": "wet",
+      "verpakking": "7 x 95 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/f-c-in-l-intensive-support"
+    },
+    {
+      "merk": "Specific",
+      "naam": "F/C-IN-W Intensive Support",
+      "voertype": "wet",
+      "verpakking": "7 x 95 g",
+      "bronUrl": "https://www.specific-diets.nl/hond/specific-voedingen-bij-gezondheidsproblemen/f-c-in-w-intensive-support"
+    }
+  ]
+}

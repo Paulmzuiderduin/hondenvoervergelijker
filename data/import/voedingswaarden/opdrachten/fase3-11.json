@@ -1,0 +1,479 @@
+{
+  "cluster": "fase3-11",
+  "opgehaald": "2026-10-31",
+  "aantal": 66,
+  "merken": [
+    "Cavom",
+    "GranataPet",
+    "Markus-Mühle",
+    "Wolfsblut",
+    "Farm Food",
+    "Yora",
+    "Iams"
+  ],
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Cavom",
+      "naam": "compleet Adult",
+      "voertype": "kibble",
+      "verpakking": "5 / 20 kg",
+      "bronUrl": "https://www.cavom.nl/product/compleet/"
+    },
+    {
+      "merk": "Cavom",
+      "naam": "Compleet Adult",
+      "voertype": "kibble",
+      "verpakking": "20 kg",
+      "bronUrl": "https://www.cavom.nl/"
+    },
+    {
+      "merk": "Cavom",
+      "naam": "compleet Diner",
+      "voertype": "kibble",
+      "verpakking": "10 kg",
+      "bronUrl": "https://www.cavom.nl/product/compleet-diner/"
+    },
+    {
+      "merk": "Cavom",
+      "naam": "compleet Lam & Rijst",
+      "voertype": "kibble",
+      "verpakking": "5 / 20 kg",
+      "bronUrl": "https://www.cavom.nl/product/compleet-lam-rijst/"
+    },
+    {
+      "merk": "Cavom",
+      "naam": "compleet Light",
+      "voertype": "kibble",
+      "verpakking": "5 / 20 kg",
+      "bronUrl": "https://www.cavom.nl/product/compleet-light/"
+    },
+    {
+      "merk": "Cavom",
+      "naam": "compleet Midi",
+      "voertype": "kibble",
+      "verpakking": "2 / 10 kg",
+      "bronUrl": "https://www.cavom.nl/product/compleet-midi/"
+    },
+    {
+      "merk": "Cavom",
+      "naam": "compleet Pup/Junior",
+      "voertype": "kibble",
+      "verpakking": "5 / 20 kg",
+      "bronUrl": "https://www.cavom.nl/product/compleet-pup-junior/"
+    },
+    {
+      "merk": "Cavom",
+      "naam": "compleet Senior",
+      "voertype": "kibble",
+      "verpakking": "5 / 20 kg",
+      "bronUrl": "https://www.cavom.nl/product/compleet-senior/"
+    },
+    {
+      "merk": "Cavom",
+      "naam": "compleet Sport",
+      "voertype": "kibble",
+      "verpakking": "5 / 20 kg",
+      "bronUrl": "https://www.cavom.nl/product/compleet-sport/"
+    },
+    {
+      "merk": "Cavom",
+      "naam": "compleet Zalm",
+      "voertype": "kibble",
+      "verpakking": "5 / 20 kg",
+      "bronUrl": "https://www.cavom.nl/product/compleet-zalm/"
+    },
+    {
+      "merk": "GranataPet",
+      "naam": "Liebling's Mahlzeit eend Sensitive",
+      "voertype": "kibble",
+      "verpakking": "1,8 kg",
+      "bronUrl": "https://www.granatapet.de/ente-sensitive-1-8-kg-204392"
+    },
+    {
+      "merk": "GranataPet",
+      "naam": "Liebling's Mahlzeit gevogelte Junior",
+      "voertype": "kibble",
+      "verpakking": "1,8 kg",
+      "bronUrl": "https://www.granatapet.de/gefluegel-junior-1-8-kg-204194"
+    },
+    {
+      "merk": "GranataPet",
+      "naam": "Liebling's Mahlzeit kalkoen Senior",
+      "voertype": "kibble",
+      "verpakking": "1,8 kg",
+      "bronUrl": "https://www.granatapet.de/pute-senior-1-8-kg-191036"
+    },
+    {
+      "merk": "GranataPet",
+      "naam": "Liebling's Mahlzeit kip & pastinaak",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.granatapet.de/huhn-pastinaken-400-g-192149"
+    },
+    {
+      "merk": "GranataPet",
+      "naam": "Liebling's Mahlzeit lam & aardappel",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.granatapet.de/lamm-kartoffel-400-g-183987"
+    },
+    {
+      "merk": "GranataPet",
+      "naam": "Liebling's Mahlzeit PUR gevogelte",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.granatapet.de/gefluegel-400-g-186070"
+    },
+    {
+      "merk": "GranataPet",
+      "naam": "Liebling's Mahlzeit PUR paard",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.granatapet.de/pferd-400-g-186131"
+    },
+    {
+      "merk": "GranataPet",
+      "naam": "Liebling's Mahlzeit vis Sensitive",
+      "voertype": "kibble",
+      "verpakking": "1,8 kg",
+      "bronUrl": "https://www.granatapet.de/fisch-sensitive-1-8-kg-204347"
+    },
+    {
+      "merk": "GranataPet",
+      "naam": "Mini Royal paard Mono",
+      "voertype": "kibble",
+      "verpakking": "1 kg",
+      "bronUrl": "https://www.granatapet.de/pferd-mono-1-kg-191333"
+    },
+    {
+      "merk": "GranataPet",
+      "naam": "Natural Taste paard Mono",
+      "voertype": "kibble",
+      "verpakking": "4 kg",
+      "bronUrl": "https://www.granatapet.de/pferd-mono-4-kg-191098"
+    },
+    {
+      "merk": "Markus-Mühle",
+      "naam": "Black Angus Adult",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 5 / 15 kg",
+      "bronUrl": "https://markus-muehle.de/hundetrockenfutter-kaltgepresst/black-angus/"
+    },
+    {
+      "merk": "Markus-Mühle",
+      "naam": "Black Angus Junior",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 5 / 15 kg",
+      "bronUrl": "https://markus-muehle.de/hundetrockenfutter-kaltgepresst/black-angus/"
+    },
+    {
+      "merk": "Markus-Mühle",
+      "naam": "Black Angus Senior",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 5 / 15 kg",
+      "bronUrl": "https://markus-muehle.de/hundetrockenfutter-kaltgepresst/black-angus/"
+    },
+    {
+      "merk": "Markus-Mühle",
+      "naam": "FREILAND Gans",
+      "voertype": "kibble",
+      "verpakking": "5 / 12 kg",
+      "bronUrl": "https://markus-muehle.de/freiland/"
+    },
+    {
+      "merk": "Markus-Mühle",
+      "naam": "LUPO Sensitiv 24/10",
+      "voertype": "kibble",
+      "verpakking": "5 / 15 kg",
+      "bronUrl": "https://markus-muehle.de/hundetrockenfutter-kaltgepresst/lupo-sensitiv/"
+    },
+    {
+      "merk": "Markus-Mühle",
+      "naam": "NaturNah",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 5 / 15 kg",
+      "bronUrl": "https://markus-muehle.de/hundetrockenfutter-kaltgepresst/naturnah/"
+    },
+    {
+      "merk": "Markus-Mühle",
+      "naam": "Rotwild Hirsch",
+      "voertype": "kibble",
+      "verpakking": "5 / 15 kg",
+      "bronUrl": "https://markus-muehle.de/hundetrockenfutter-kaltgepresst/rotwild-hirsch/"
+    },
+    {
+      "merk": "Markus-Mühle",
+      "naam": "True Nature",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 5 / 15 kg",
+      "bronUrl": "https://markus-muehle.de/hundetrockenfutter-kaltgepresst/true-nature/"
+    },
+    {
+      "merk": "Markus-Mühle",
+      "naam": "Veggie",
+      "voertype": "kibble",
+      "verpakking": "1 / 5 / 12 kg",
+      "bronUrl": "https://markus-muehle.de/hundetrockenfutter-kaltgepresst/veggie/"
+    },
+    {
+      "merk": "Markus-Mühle",
+      "naam": "Weidelamm",
+      "voertype": "kibble",
+      "verpakking": "5 / 15 kg",
+      "bronUrl": "https://markus-muehle.de/hundetrockenfutter-kaltgepresst/weidelamm/"
+    },
+    {
+      "merk": "Wolfsblut",
+      "naam": "Adult Alaska Salmon",
+      "voertype": "kibble",
+      "verpakking": "12,5 kg",
+      "bronUrl": "https://www.wolfsblut.com/wolfsblut-adult-alaska-salmon-lachs-und-kartoffeln-trockenfutter-12-5-kg.html"
+    },
+    {
+      "merk": "Wolfsblut",
+      "naam": "Adult Blue Mountain",
+      "voertype": "kibble",
+      "verpakking": "12,5 kg",
+      "bronUrl": "https://www.wolfsblut.com/wolfsblut-adult-blue-mountain-wild-und-waldfruchten-trockenfutter-12-5-kg.html"
+    },
+    {
+      "merk": "Wolfsblut",
+      "naam": "Adult Cold River",
+      "voertype": "kibble",
+      "verpakking": "12,5 kg",
+      "bronUrl": "https://www.wolfsblut.com/wolfsblut-adult-cold-river-forelle-und-susskartoffel-trockenfutter-12-5-kg.html"
+    },
+    {
+      "merk": "Wolfsblut",
+      "naam": "Adult Dark Forest",
+      "voertype": "kibble",
+      "verpakking": "12,5 kg",
+      "bronUrl": "https://www.wolfsblut.com/wolfsblut-adult-dark-forest-wild-und-susskartoffel-trockenfutter-12-5-kg.html"
+    },
+    {
+      "merk": "Wolfsblut",
+      "naam": "Adult Green Valley",
+      "voertype": "kibble",
+      "verpakking": "12,5 kg",
+      "bronUrl": "https://www.wolfsblut.com/wolfsblut-adult-green-valley-lamm-und-lachs-trockenfutter-12-5-kg.html"
+    },
+    {
+      "merk": "Wolfsblut",
+      "naam": "Adult Hunters Pride",
+      "voertype": "kibble",
+      "verpakking": "12,5 kg",
+      "bronUrl": "https://www.wolfsblut.com/wolfsblut-adult-hunters-pride-fasan-ente-und-kaninchen-trockenfutter-12-5-kg.html"
+    },
+    {
+      "merk": "Wolfsblut",
+      "naam": "Adult Wide Plain",
+      "voertype": "kibble",
+      "verpakking": "12,5 kg",
+      "bronUrl": "https://www.wolfsblut.com/wolfsblut-adult-wolfsblut-wide-plain-pferdefleisch-und-susskartoffel-trockenfutter-12-5-kg.html"
+    },
+    {
+      "merk": "Wolfsblut",
+      "naam": "Adult Wild Pacific",
+      "voertype": "kibble",
+      "verpakking": "12,5 kg",
+      "bronUrl": "https://www.wolfsblut.com/wolfsblut-adult-wild-pacific-seefisch-und-kartoffel-trockenfutter-12-5-kg.html"
+    },
+    {
+      "merk": "Wolfsblut",
+      "naam": "VetLine Gastrointestinal",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.wolfsblut.com/wolfsblut-vetline-wolfsblut-vetline-gastrointestinal-trockenfutter-12-kg.html"
+    },
+    {
+      "merk": "Wolfsblut",
+      "naam": "VetLine Hypoallergenic",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.wolfsblut.com/wolfsblut-vetline-wolfsblut-vetline-hypoallergenic-trockenfutter-12-kg.html"
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "Fresh Menu Pens & Hart Compleet (zacht gestoomd)",
+      "voertype": "wet",
+      "verpakking": "125 / 300 g",
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-pens-hart-compleet-zacht-gestoomd/"
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "Fresh Menu Rundvlees Compleet (zacht gestoomd)",
+      "voertype": "wet",
+      "verpakking": "125 / 300 g",
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-rundvlees-compleet-zacht-gestoomd/"
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "Fresh Menu Schaap (zacht gestoomd)",
+      "voertype": "wet",
+      "verpakking": "125 / 300 g",
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-fresh-menu-schaap-zacht-gestoomd/"
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "Fresh Pens & Hart Compleet (diepvries)",
+      "voertype": "raw",
+      "verpakking": "9 x 110 g / 2 x 400 g / 550 g (pouch, blokjes à ± 25 g) / 250 g / 500 g / 1 kg (worst)",
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-pens-hart-compleet-diepvries/"
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "Fresh Rundvlees Compleet (diepvries)",
+      "voertype": "raw",
+      "verpakking": "9 x 110 g / 2 x 400 g / 550 g (pouch, blokjes à ± 25 g) / 250 g / 500 g / 1 kg (worst)",
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-rundvlees-compleet-diepvries/"
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "HE Classic",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12 / 15 kg (standaard brok 8 mm); 2 / 4 / 12 kg (mini brok 6 mm)",
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-he-classic/"
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "HE Glutenvrij",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12 / 15 kg (standaard brok 8 mm); 2 / 4 kg (mini brok 6 mm)",
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-he-glutenvrij/"
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "HE met Schotse Zalmolie",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12 / 15 kg (standaard brok 8 mm); 2 / 4 / 12 kg (mini brok 6 mm)",
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-he-met-schotse-zalmolie/"
+    },
+    {
+      "merk": "Farm Food",
+      "naam": "HE Schaap",
+      "voertype": "kibble",
+      "verpakking": "2 / 4 / 12 / 15 kg (standaard brok 8 mm); 2 / 4 kg (mini brok 6 mm)",
+      "bronUrl": "https://www.farmfood.nl/product/farm-food-he-schaap/"
+    },
+    {
+      "merk": "Yora",
+      "naam": "Adult Alle Rassen",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 6 / 12 kg",
+      "bronUrl": "https://yorapets.be/hond/insecteneiwit-adult-alle-rassen-hond-droogvoer/"
+    },
+    {
+      "merk": "Yora",
+      "naam": "Adult Graanvrij",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 12 kg",
+      "bronUrl": "https://yorapets.be/hond/insecteneiwit-adult-graanvrij-hond-droogvoer/"
+    },
+    {
+      "merk": "Yora",
+      "naam": "Adult Grote Rassen",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 12 kg",
+      "bronUrl": "https://yorapets.be/hond/insecteneiwit-grote-rassen-rassen-hond-droogvoer/"
+    },
+    {
+      "merk": "Yora",
+      "naam": "Adult Kleine Rassen",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 6 kg",
+      "bronUrl": "https://yorapets.be/hond/insecteneiwit-kleine-rassen-hond-droogvoer/"
+    },
+    {
+      "merk": "Yora",
+      "naam": "Adult Light / Senior",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 12 kg",
+      "bronUrl": "https://yorapets.be/hond/insecteneiwit-light-senior-rassen-hond-droogvoer/"
+    },
+    {
+      "merk": "Yora",
+      "naam": "Pâté Appel & Pastinaak",
+      "voertype": "wet",
+      "verpakking": "390 g",
+      "bronUrl": "https://yorapets.be/hond/insecteneiwit-volwassen-hond-pate-appel-pastinaak/"
+    },
+    {
+      "merk": "Yora",
+      "naam": "Pâté Rode Biet & Koolraap",
+      "voertype": "wet",
+      "verpakking": "390 g",
+      "bronUrl": "https://yorapets.be/hond/insecteneiwit-volwassen-hond-natvoer-rode-bieten-koolraap/"
+    },
+    {
+      "merk": "Yora",
+      "naam": "Pâté Wortel & Aardappel",
+      "voertype": "wet",
+      "verpakking": "390 g",
+      "bronUrl": "https://yorapets.be/hond/insecteneiwit-volwassen-hondpate-wortel-aardappel/"
+    },
+    {
+      "merk": "Yora",
+      "naam": "Puppy Alle Rassen",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 12 kg",
+      "bronUrl": "https://yorapets.be/hond/insecteneiwit-puppy-alle-rassen-droogvoer/"
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met lam voor volwassen honden van grote rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-lam-voor-volwassen-honden-van-grote-rassen"
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met lam voor volwassen honden van kleine en middelgrote rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-lam-voor-volwassen-honden-van-kleine-en-middelgrote-rassen"
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met verse kip en laag vetgehalte voor volwassen honden van alle rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-en-laag-vetgehalte-voor-volwassen-honden-van-alle-rassen"
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met verse kip voor puppy's van grote rassen",
+      "voertype": "kibble",
+      "verpakking": "2 kg; 3 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-puppys-van-grote-rassen"
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met verse kip voor puppy's van kleine en middelgrote rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-puppys-van-kleine-en-middelgrote-rassen"
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met verse kip voor senior honden van kleine en middelgrote rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 5 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-senior-katten-1"
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met verse kip voor volwassen honden van grote rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 5 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-volwassen-honden-van-grote-rassen"
+    },
+    {
+      "merk": "Iams",
+      "naam": "Droogvoer met verse kip voor volwassen honden van kleine en middelgrote rassen",
+      "voertype": "kibble",
+      "verpakking": "3 kg; 5 kg; 12 kg",
+      "bronUrl": "https://iams.eu/nl-nl/hond/droogvoer/droogvoer-met-verse-kip-voor-volwassen-honden-van-kleine-en-middelgrote-rassen"
+    }
+  ]
+}

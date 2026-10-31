@@ -1,0 +1,397 @@
+{
+  "cluster": "fase3-06",
+  "opgehaald": "2026-10-31",
+  "aantal": 55,
+  "merken": [
+    "Trovet",
+    "Smølke"
+  ],
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Trovet",
+      "naam": "Adult",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/adult-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Adult",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.trovet.com/nl/product/adult-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Dental",
+      "voertype": "kibble",
+      "verpakking": "2,5 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/dental-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Exclusion",
+      "voertype": "kibble",
+      "verpakking": "2,5 / 12,5 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/exclusion-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Hepatic",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/hepatic-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Hepatic",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.trovet.com/nl/product/hepatic-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Hypoallergenic (Rich in Horse)",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/hypoallergenic-horse-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Hypoallergenic (Rich in Insect)",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/hypoallergenic-insect-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Hypoallergenic (Rich in Rabbit)",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/hypoallergenic-rabbit-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Hypoallergenic (Rich in Venison)",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/hypoallergenic-venison-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Hypoallergenic (Turkey)",
+      "voertype": "wet",
+      "verpakking": "200 / 400 / 800 g",
+      "bronUrl": "https://www.trovet.com/nl/product/unique-protein-turkey-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Intestinal",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/intestinal-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Intestinal",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.trovet.com/nl/product/intestinal-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Mobility & Geriatrics",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/mobility-geriatrics-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Puppy",
+      "voertype": "kibble",
+      "verpakking": "3 / 10 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/puppy-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Puppy",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.trovet.com/nl/product/puppy-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Recovery Liquid",
+      "voertype": "wet",
+      "verpakking": "190 / 400 g",
+      "bronUrl": "https://www.trovet.com/nl/product/recovery-liquid-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Regulator",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/regulator-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Renal & Oxalate",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/renal-oxalate-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Renal & Oxalate",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.trovet.com/nl/product/renal-oxalate-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Unique Protein (Horse)",
+      "voertype": "wet",
+      "verpakking": "200 / 400 / 800 g",
+      "bronUrl": "https://www.trovet.com/nl/product/unique-protein-horse-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Unique Protein (Lamb)",
+      "voertype": "wet",
+      "verpakking": "200 / 400 / 800 g",
+      "bronUrl": "https://www.trovet.com/nl/product/unique-protein-lamb-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Unique Protein (Rabbit)",
+      "voertype": "wet",
+      "verpakking": "200 / 400 / 800 g",
+      "bronUrl": "https://www.trovet.com/nl/product/unique-protein-rabbit-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Unique Protein (Venison)",
+      "voertype": "wet",
+      "verpakking": "200 / 400 / 800 g",
+      "bronUrl": "https://www.trovet.com/nl/product/unique-protein-venison-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Urinary Struvite",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/urinary-struvite-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Urinary Struvite",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.trovet.com/nl/product/urinary-struvite-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Weight & Diabetic",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.trovet.com/nl/product/weight-diabetic-hond/"
+    },
+    {
+      "merk": "Trovet",
+      "naam": "Weight & Diabetic",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.trovet.com/nl/product/weight-diabetic-hond/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Green Goodness Wild",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "bronUrl": "https://www.smolke.nl/green-goodness-wild/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Hond Adult Graanvrij",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/hondenbrokken/graanvrij/VE6627/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Hond Adult Maxi",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/hondenbrokken/adult-maxi/VE6625/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Hond Adult Medium",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/hondenbrokken/adult-medium/VE6623/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Hond Adult Mini",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/hondenbrokken/adult-mini/VE6621/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Hond Senior Maxi",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/hondenbrokken/senior-maxi/VE6645/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Hond Senior Medium",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/hondenbrokken/senior-medium/VE6643/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Hond Senior Mini",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/hondenbrokken/senior-mini/VE6641/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Hond Sensitive Eend",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/hondenbrokken/sensitive-eend/VE6664/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Hond Sensitive Lam",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/hondenbrokken/sensitive-lam/VE6662/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Hond Weight Control",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/hondenbrokken/weight-control/VE6660/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Orange Goodness Kip",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "bronUrl": "https://www.smolke.nl/orange-goodness-chicken/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Puppy Maxi",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/hondenbrokken/puppy-maxi/VE6603/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Puppy Mini & Medium",
+      "voertype": "kibble",
+      "verpakking": "3 / 12 kg",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/hondenbrokken/puppy-mini-medium/VE6601/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Purple Goodness Lam",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "bronUrl": "https://www.smolke.nl/purple-goodness-lam/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Red Goodness Rund",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "bronUrl": "https://www.smolke.nl/red-goodness-rund/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Soft Paté Hond Kalkoen",
+      "voertype": "wet",
+      "verpakking": "125 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/soft-pate-kalkoen/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Soft Paté Hond Kip",
+      "voertype": "wet",
+      "verpakking": "125 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/soft-pate-kip/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Soft Paté Hond Lam",
+      "voertype": "wet",
+      "verpakking": "125 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/soft-pate-lam/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Soft Paté Hond Party Edition",
+      "voertype": "wet",
+      "verpakking": "125 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/soft-pate-party-edition/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Soft Paté Hond Rund",
+      "voertype": "wet",
+      "verpakking": "125 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/soft-pate-beef/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Vers Gestoomde Maaltijd Eend",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/vers-gestoomde-maaltijd-eend/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Vers Gestoomde Maaltijd Kip",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/vers-gestoomde-maaltijd-kip/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Vers Gestoomde Maaltijd Lam",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/vers-gestoomde-maaltijd-lam/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Vers Gestoomde Maaltijd met Kalkoen",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/vers-gestoomde-maaltijd-kalkoen/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Vers Gestoomde Maaltijd Smølmix",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/vers-gestoomde-maaltijd-smolmix/"
+    },
+    {
+      "merk": "Smølke",
+      "naam": "Vers Gestoomde Maaltijd Wild",
+      "voertype": "wet",
+      "verpakking": "395 g",
+      "bronUrl": "https://www.smolke.nl/hondenvoer/natvoer/vers-gestoomde-maaltijd-wild/"
+    }
+  ]
+}

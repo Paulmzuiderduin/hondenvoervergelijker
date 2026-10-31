@@ -1,6 +1,6 @@
 # Voedingswaarden
 
-Status: **fase 0, 1 en 2 afgerond en live.** Alle **786 top-10-producten** hebben voedingswaarden: 396 volledig, 390 gedeeltelijk, 492 met kcal/100 g en 5.756 opgeslagen waarden. De volgende fase is de overige 692 producten van de niet-top-10-merken.
+Status: **fase 0, 1 en 2 afgerond en live.** Alle **786 top-10-producten** hebben voedingswaarden: 396 volledig, 390 gedeeltelijk, 492 met kcal/100 g en 5.756 opgeslagen waarden. **Fase 3 loopt:** de overige **692 producten** zijn verdeeld over 13 clusters en worden door 13 agents verwerkt.
 
 ## Uitgangspunten
 
@@ -69,9 +69,24 @@ De vorm van `p_nutrition`:
 
 Royal Canin (205), Hill's (140), Eukanuba (75), Prins (72), Purina (56), Jarco (57), Darf (51), Butcher's (48), Renske (44) en Edgard & Cooper (38). Samen 786 producten, allemaal voorzien. Royal Canin is in acht batches van 25 verwerkt en daarna als één gecombineerde SQL-batch geïmporteerd.
 
-### Fase 3 — overige producten
+### Fase 3 — overige producten (loopt)
 
-De resterende 692 producten van de niet-top-10-merken, inclusief bronnen die alleen via de browser bereikbaar zijn. Nog niet gestart. Na elke batch een dekkingsrapport.
+De resterende 692 producten van de niet-top-10-merken, inclusief bronnen die alleen via de browser bereikbaar zijn. Ze zijn verdeeld over 13 clusters van maximaal 70 producten:
+
+- Specific (37), Canagan (36)
+- Pedigree + Terra Canis (67)
+- Kivo + Carnilove (60)
+- Profine + Riverwood (57)
+- Trovet + Smølke (55)
+- WOOOF + Acana (49)
+- Sanimed + Greenheart-Premiums + Smuldier (61)
+- Yarrah + CaroCroc + Carnis + Orijen (60)
+- Rodi + bosch + Animonda + Belcando + Bonzo + Brit (63)
+- Cavom + GranataPet + Markus-Mühle + Wolfsblut + Farm Food + Yora + Iams (66)
+- Lily's Kitchen + Cesar + Dog Chow + RAW4DOGS + Almo Nature + Farmina + Frolic + Happy Dog + Josera + Monge + James Wellbeloved (70)
+- Taste of the Wild + KB RAW + BARFmenu + Versele-Laga (11)
+
+Na elke cluster een JSON-controle en SQL-batch. De agents schrijven batches van maximaal 25 producten.
 
 ### Fase 4 — UI, SEO en filters
 

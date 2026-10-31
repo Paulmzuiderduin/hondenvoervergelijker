@@ -1,0 +1,440 @@
+{
+  "cluster": "fase3-08",
+  "opgehaald": "2026-10-31",
+  "aantal": 61,
+  "merken": [
+    "Sanimed",
+    "Greenheart-Premiums",
+    "Smuldier"
+  ],
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Sanimed",
+      "naam": "Adult",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/preventive/adult/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Adult Small Breed",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/preventive/adult-small-breed/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Anti-Struvite",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/anti-struvite/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Clinical Choice Pure Duck worst",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/clinical-choice-pure-duck-worst/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Dental",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/dental/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Hypoallergenic DR",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/hypoallergenic-dr/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Hypoallergenic DR worst",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/hypoallergenic-dr-worst/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Hypoallergenic LR",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/hypoallergenic-lr/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Hypoallergenic LR worst",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/hypoallergenic-lr-worst/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Intestinal",
+      "voertype": "kibble",
+      "verpakking": "1,5 / 3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/intestinal/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Junior",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/preventive/junior/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Neuro Support",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/neuro-support/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Osteoarthritis",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/osteoarthritis/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Puppy",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/preventive/puppy/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Recovery worst",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/recovery-worst/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Renal",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/renal/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Senior",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/preventive/senior/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Skin/Sensitive",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/skin-sensitive/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Skin/Sensitive worst",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/skin-sensitive-worst/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Weight Control",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/weight-control/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Weight Reduction",
+      "voertype": "kibble",
+      "verpakking": "3 / 12,5 kg",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/weight-reduction/"
+    },
+    {
+      "merk": "Sanimed",
+      "naam": "Weight Reduction worst",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.sanimed.nl/producten/curative/weight-reduction-worst/"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "3D Heart, Liver & Kidney Diet",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-3d-heart-liver-kidney-diet.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Anti Allergy",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-anti-allergy.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Large Breeds",
+      "voertype": "kibble",
+      "verpakking": "500 g / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-large-breeds.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Medium Energy",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-medium-energy.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Medium Sensitive Fish",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-medium-sensitive-fish.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Medium Sensitive Lamb",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-medium-sensitive-lamb.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Multi-Effective Fish Oil Rich Diet",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-multi-effective-fish-oil-rich-diet.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Normal Use Light",
+      "voertype": "kibble",
+      "verpakking": "500 g / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-normal-use-light.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Optimal Condition Light",
+      "voertype": "kibble",
+      "verpakking": "500 g / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-optimal-condition-light.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Power Meat for a Day – Chicken & Rice",
+      "voertype": "wet",
+      "verpakking": "1 x 250 g / 1 x 500 g / 12 x 250 g / 12 x 500 g",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-meat-for-a-day-box.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Puppy All Breeds",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-puppy-all-breeds.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Puppy Medium/Large Breeds",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-puppy-medium-large-breeds.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Senior Sensitive Fish",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-senior-sensitive-fish.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Small Breeds Active",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg / 3 kg / 7,5 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-small-breeds-active.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Small Breeds Hypoallergenic Fish",
+      "voertype": "kibble",
+      "verpakking": "3 kg / 7,5 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-small-breeds-hypoallergenic-fish.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Small Breeds Low Activity",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg / 3 kg / 7,5 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-small-breeds-low-activity.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Sportline Classic",
+      "voertype": "kibble",
+      "verpakking": "500 g / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-sportline-classic-2.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Sportline Extreme",
+      "voertype": "kibble",
+      "verpakking": "500 g / 1,5 kg / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-sportline-extreme.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Sportline Grain Free",
+      "voertype": "kibble",
+      "verpakking": "500 g / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-sportline-grainfree.html"
+    },
+    {
+      "merk": "Greenheart-Premiums",
+      "naam": "Sportline Summerstyle",
+      "voertype": "kibble",
+      "verpakking": "500 g / 3 kg / 12 kg",
+      "bronUrl": "https://greenheart-premiums.com/greenheart-sportline-summerstyle-2.html"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Eend",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "bronUrl": "https://smuldier.nl/product/smuldier-complete-maaltijd-400g-eend/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Eend & Rund",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "bronUrl": "https://smuldier.nl/product/smuldier-complete-maaltijd-400g-eend-rund/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Hart",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "bronUrl": "https://smuldier.nl/product/hart-complete-maaltijd-400g/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Kip",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "bronUrl": "https://smuldier.nl/product/kip-complete-maaltijd-400g/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Kip met Groenten",
+      "voertype": "raw",
+      "verpakking": "4 x 60 g",
+      "bronUrl": "https://smuldier.nl/product/smuldier-complete-maaltijd-4x60g-kip-met-groenten/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Lam",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "bronUrl": "https://smuldier.nl/product/smuldier-complete-maaltijd-400g-lam/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Lam met Rijst",
+      "voertype": "raw",
+      "verpakking": "4 x 60 g",
+      "bronUrl": "https://smuldier.nl/product/lam-met-rijst-complete-maaltijd-4x60g-2/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Pens & Hart",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "bronUrl": "https://smuldier.nl/product/pens-hart-complete-maaltijd-400g/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Pens & Vlees",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "bronUrl": "https://smuldier.nl/product/smuldier-complete-maaltijd-400g-pens-vlees/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Rund met Groenten",
+      "voertype": "raw",
+      "verpakking": "4 x 60 g",
+      "bronUrl": "https://smuldier.nl/product/rund-met-groenten-complete-maaltijd-4x60g/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Rundvlees",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "bronUrl": "https://smuldier.nl/product/smuldier-complete-maaltijd-400g-rundvlees-2/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Complete maaltijd Vlees",
+      "voertype": "raw",
+      "verpakking": "400 g",
+      "bronUrl": "https://smuldier.nl/product/smuldier-complete-maaltijd-400g-vlees/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Vers vlees Brokjes Complete maaltijd Kip met Groenten",
+      "voertype": "raw",
+      "verpakking": "300 g",
+      "bronUrl": "https://smuldier.nl/product/vers-vlees-brokjes-kip-met-groenten-300g/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Vers vlees Brokjes Complete maaltijd Lam met Rijst",
+      "voertype": "raw",
+      "verpakking": "300 g",
+      "bronUrl": "https://smuldier.nl/product/vers-vlees-brokjes-lam-met-rijst-300g/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Vers vlees Brokjes Complete maaltijd Rund met Groenten",
+      "voertype": "raw",
+      "verpakking": "300 g",
+      "bronUrl": "https://smuldier.nl/product/vers-vlees-brokjes-rund-met-groenten-300g/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Vers vlees Maaltijd Hart",
+      "voertype": "wet",
+      "verpakking": "300 g / 6 x 300 g",
+      "bronUrl": "https://smuldier.nl/product/smuldier-vers-vlees-maaltijd-300g-hart/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Vers vlees Maaltijd Kip",
+      "voertype": "wet",
+      "verpakking": "300 g / 6 x 300 g",
+      "bronUrl": "https://smuldier.nl/product/smuldier-vers-vlees-maaltijd-300g-kip/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Vers vlees Maaltijd Rund",
+      "voertype": "wet",
+      "verpakking": "300 g / 6 x 300 g",
+      "bronUrl": "https://smuldier.nl/product/smuldier-vers-vlees-maaltijd-300g-rund/"
+    },
+    {
+      "merk": "Smuldier",
+      "naam": "Vers vlees Maaltijd Runderpens",
+      "voertype": "wet",
+      "verpakking": "300 g / 6 x 300 g",
+      "bronUrl": "https://smuldier.nl/product/smuldier-vers-vlees-maaltijd-300g-runderpens/"
+    }
+  ]
+}

@@ -1,0 +1,432 @@
+{
+  "cluster": "fase3-04",
+  "opgehaald": "2026-10-31",
+  "aantal": 60,
+  "merken": [
+    "Kivo",
+    "Carnilove"
+  ],
+  "zonderBron": [],
+  "producten": [
+    {
+      "merk": "Kivo",
+      "naam": "5 Diersoorten compleet",
+      "voertype": "raw",
+      "verpakking": "500 / 1000 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/5-diersoorten-compleet/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Eend compleet",
+      "voertype": "raw",
+      "verpakking": "500 g (worst); 500 g portieverpakking (blokjes van 25 g)",
+      "bronUrl": "https://www.kivopetfood.nl/p/eend-compleet/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Gestoomde eend",
+      "voertype": "wet",
+      "verpakking": "600 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/gestoomde-eend/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Gestoomde Kip",
+      "voertype": "wet",
+      "verpakking": "600 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/gestoomde-kip/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Gestoomde Kip & Zalm",
+      "voertype": "wet",
+      "verpakking": "600 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/gestoomde-kip-zalm/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Gestoomde lam",
+      "voertype": "wet",
+      "verpakking": "600 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/gestoomde-lam/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Gestoomde rund",
+      "voertype": "wet",
+      "verpakking": "600 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/gestoomde-rund/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Gestoomde Rund & Kip",
+      "voertype": "wet",
+      "verpakking": "600 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/gestoomde-rund-kip/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Hert & Geit Compleet",
+      "voertype": "raw",
+      "verpakking": "500 g (worst); 500 g portieverpakking (blokjes van 25 g)",
+      "bronUrl": "https://www.kivopetfood.nl/p/hert-geit-compleet/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Kalkoen & Rijst - Puppy",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://www.kivopetfood.nl/p/kalkoen-rijst-puppy-glutenvrij/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Kalkoen compleet",
+      "voertype": "raw",
+      "verpakking": "500 / 1000 g (worst); 500 g portieverpakking (blokjes van 25 g)",
+      "bronUrl": "https://www.kivopetfood.nl/p/kalkoen-compleet/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Kip & Pens - Moeilijke eter",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://www.kivopetfood.nl/p/kip-pens-glutenvrij/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Kip & Rijst - Allround Fit",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://www.kivopetfood.nl/p/kip-rijst-glutenvrij/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Kip & Rund - Junior/Energy",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://www.kivopetfood.nl/p/juniorenergy/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Kip & Vis compleet",
+      "voertype": "raw",
+      "verpakking": "500 / 1000 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/kip-vis-compleet/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Kip compleet",
+      "voertype": "raw",
+      "verpakking": "500 / 1000 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/kip-compleet/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Lam & Rijst - Senior/Light",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://www.kivopetfood.nl/p/lam-rijst-glutenvrij/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Lam compleet",
+      "voertype": "raw",
+      "verpakking": "500 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/lam-compleet/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "MINI ADULT - Kalkoen & Rijst",
+      "voertype": "kibble",
+      "verpakking": "4 kg",
+      "bronUrl": "https://www.kivopetfood.nl/p/mini-adult-kalkoen-rijst/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Paard & Konijn compleet",
+      "voertype": "raw",
+      "verpakking": "500 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/paard-konijn-compleet/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Rund & Eend compleet",
+      "voertype": "raw",
+      "verpakking": "500 / 1000 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/rund-eend-compleet/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Rund & Eend puppy",
+      "voertype": "raw",
+      "verpakking": "250 / 500 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/rund-eend-puppy/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Rund & Kip compleet",
+      "voertype": "raw",
+      "verpakking": "250 / 500 / 1000 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/rund-kip-compleet/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Rund & Kip Compleet Portie",
+      "voertype": "raw",
+      "verpakking": "500 g portieverpakking (blokjes van 25 g)",
+      "bronUrl": "https://www.kivopetfood.nl/p/rund-kip-compleet-portie/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Rund & Kip puppy",
+      "voertype": "raw",
+      "verpakking": "250 / 500 / 1000 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/rund-kip-puppy/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Rund compleet",
+      "voertype": "raw",
+      "verpakking": "500 / 1000 g",
+      "bronUrl": "https://www.kivopetfood.nl/p/rund-compleet/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Verse eend graanvrij",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://www.kivopetfood.nl/p/verse-eend/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Verse Kip glutenvrij",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://www.kivopetfood.nl/p/verse-kip-glutenvrij/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Verse kip puppy glutenvrij",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://www.kivopetfood.nl/p/verse-kip-glutenvrij-2/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Verse lam graanvrij",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://www.kivopetfood.nl/p/verse-lam-graanvrij/"
+    },
+    {
+      "merk": "Kivo",
+      "naam": "Verse Zalm graanvrij",
+      "voertype": "kibble",
+      "verpakking": "4 / 14 kg",
+      "bronUrl": "https://www.kivopetfood.nl/p/verse-zalm/"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Active Droogvoer met Eend & Fazant",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/active-dry-dog-food-made-with-duck-and-pheasant"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Active Droogvoer met Hert & Rendier",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/active-dry-dog-food-made-with-venison-and-reindeer"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Active Droogvoer met Lam & Wild Zwijn",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/active-dry-dog-food-made-with-lamb-and-wild-boar"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Active Droogvoer met Zalm & Kalkoen voor Grote Honden",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/active-dry-food-made-with-salmon-and-turkey-for-large-dogs"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Active Droogvoer met Zalm & Kalkoen voor Junior Grote Honden",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/active-dry-food-made-with-salmon-and-turkey-for-junior-dogs"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Active Droogvoer met Zalm & Kalkoen voor Kleine Honden",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/active-dry-food-made-with-salmon-and-turkey-for-small-dogs"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Active Droogvoer met Zalm & Kalkoen voor Puppy's",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/active-dry-food-made-with-salmon-and-turkey-for-puppies"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Active Droogvoer met Zalm & Kalkoen voor Volwassen Honden",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/active-dry-food-made-with-salmon-and-turkey-for-adult-dogs"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Active Droogvoer met Zalm voor Volwassen Honden",
+      "voertype": "kibble",
+      "verpakking": "null",
+      "bronUrl": "https://carnilove.com/en/products/active-dry-food-made-with-salmon-for-adult-dogs"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Kalkoen & Buffel met Rozenblaadjes Paté Pouch voor Honden",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "bronUrl": "https://carnilove.com/en/products/turkey-and-buffalo-with-rose-petals-dog-pouch-pate-300g"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Kalkoen & Eend met Timoteegras Paté Pouch voor Honden",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "bronUrl": "https://carnilove.com/en/products/turkey-and-duck-with-timothy-grass-dog-pouch-pate-300g"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Kalkoen & Fazant met Frambozenblad Paté Pouch voor Honden",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "bronUrl": "https://carnilove.com/en/products/turkey-and-pheasant-with-raspberry-leaves-dog-pouch-pate-300g"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Kalkoen & Hert met Aardbeiblad Paté Pouch voor Honden",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "bronUrl": "https://carnilove.com/en/products/turkey-and-venison-with-strawberry-leaves-dog-pouch-pate-300g"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Kalkoen & Kwartel met Wortel Paté Pouch voor Honden",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "bronUrl": "https://carnilove.com/en/products/turkey-and-quail-with-carrot-dog-pouch-pate-300g"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Kalkoen & Wild Zwijn met Rozenbottels Paté Pouch voor Honden",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "bronUrl": "https://carnilove.com/en/products/turkey-and-wildboar-with-rosehips-dog-pouch-pate-300g"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Kalkoen & Zalm met Bosbessen Paté Pouch voor Puppy's",
+      "voertype": "wet",
+      "verpakking": "300 g",
+      "bronUrl": "https://carnilove.com/en/products/turkey-and-salmon-with-blueberries-puppy-pouch-pate-300g"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Paté Blikvoer met Eend & Fazant voor Honden",
+      "voertype": "wet",
+      "verpakking": "400 g / 5 + 1 x 400 g",
+      "bronUrl": "https://carnilove.com/en/products/pate-can-food-made-with-duck-and-pheasant-for-dogs-400g"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Paté Blikvoer met Kalkoen & Rendier voor Honden",
+      "voertype": "wet",
+      "verpakking": "400 g / 5 + 1 x 400 g",
+      "bronUrl": "https://carnilove.com/en/products/pate-can-food-made-with-turkey-and-reindeer-for-dogs-400g"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Paté Blikvoer met Kalkoen & Zalm voor Honden",
+      "voertype": "wet",
+      "verpakking": "400 g / 5 + 1 x 400 g",
+      "bronUrl": "https://carnilove.com/en/products/pate-can-food-made-with-turkey-and-salmon-for-dogs-400g"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Paté Blikvoer met Kalkoen & Zalm voor Puppy's",
+      "voertype": "wet",
+      "verpakking": "400 g / 5 + 1 x 400 g",
+      "bronUrl": "https://carnilove.com/en/products/pate-can-food-made-with-turkey-and-salmon-for-puppies-400g"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "Paté Blikvoer met Lam & Wild Zwijn voor Honden",
+      "voertype": "wet",
+      "verpakking": "400 g / 5 + 1 x 400 g",
+      "bronUrl": "https://carnilove.com/en/products/pate-can-food-made-with-lamb-and-wild-boar-for-dogs-400g"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "True Fresh Eend Droogvoer voor Grote Rassen",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/true-fresh-duck-dry-food-for-large-breeds"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "True Fresh Eend Droogvoer voor Junior Grote Rassen",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/true-fresh-duck-dry-food-for-junior-large-breeds"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "True Fresh Eend Droogvoer voor Kleine Rassen",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/true-fresh-duck-dry-food-for-small-breeds"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "True Fresh Eend Droogvoer voor Puppy's",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/true-fresh-duck-dry-food-for-puppies"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "True Fresh Eend Droogvoer voor Volwassen Honden",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/true-fresh-duck-dry-food-for-adult-dogs"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "True Fresh Kalkoen Droogvoer",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/carnilove-true-fresh-dog-dry-turkey-for-adult-all-breeds"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "True Fresh Rund Droogvoer",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/carnilove-true-fresh-dog-dry-beef-for-adult-all-breeds"
+    },
+    {
+      "merk": "Carnilove",
+      "naam": "True Fresh Vis & Kalkoen Droogvoer",
+      "voertype": "kibble",
+      "verpakking": "12 kg + 4 kg",
+      "bronUrl": "https://carnilove.com/en/products/true-fresh-fish-and-turkey-dry-dog-food"
+    }
+  ]
+}

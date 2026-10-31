@@ -21,7 +21,8 @@
     "voeding:sql": "node scripts/maak-voedingswaarde-sql.mjs",
     "voeding:rapport": "node scripts/rapporteer-voedingswaarden.mjs",
     "voeding:opdrachten": "node scripts/maak-voedingswaarde-opdrachten.mjs",
-    "voeding:controle": "node scripts/controleer-voedingswaarden-json.mjs"
+    "voeding:controle": "node scripts/controleer-voedingswaarden-json.mjs",
+    "voeding:fase3": "node scripts/maak-fase3-opdrachten.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4",
