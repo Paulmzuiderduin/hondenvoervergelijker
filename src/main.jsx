@@ -167,7 +167,7 @@ const Ingredients = memo(function Ingredients({ text }) {
   return <p>{markUncertainIngredients(text).map((segment, index) => segment.uncertain ? <mark className="uncertain-ingredient" key={index}>{segment.text}</mark> : segment.text)}</p>
 })
 
-function ProductCard({ product, match, aanbiedingen = [], nadruk = [] }) {
+function ProductCard({ product, match, aanbiedingen = [], nadruk = [], vergelijk = false, vergelijkVol = false, onVergelijk }) {
   const excluded = match.kind === 'excluded'
   const verdict = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controleer etiket/fabrikant' : match.states.length ? 'Geschikt' : 'Elke bron genoemd'
   const version = product.recipe_versions?.[0]
@@ -241,6 +241,10 @@ function ProductCard({ product, match, aanbiedingen = [], nadruk = [] }) {
       {foodTypeLabel && <span className="meta-pill">{foodTypeLabel}</span>}
       {packageSize && <span className="meta-pill">{packageSize}</span>}
       {hydrolysed.present && <span className="meta-pill hydrolysed-pill">Gehydrolyseerd eiwit</span>}
+      <label className={`compare-toggle${vergelijk ? ' active' : ''}`} title={vergelijk ? 'Verwijder uit de vergelijking' : vergelijkVol ? 'Maximaal 3 producten' : 'Voeg toe aan de vergelijking'}>
+        <input type="checkbox" checked={vergelijk} disabled={vergelijkVol && !vergelijk} onChange={() => onVergelijk(product.id)} />
+        Vergelijk
+      </label>
       {product.source_url?.startsWith('http') && <a className="meta-source" href={product.source_url} target="_blank" rel="noreferrer" title="Officiële productpagina bij de fabrikant" onClick={() => track('bron-klik', { merk: product.brand, product: product.name, domein: sourceDomain(product.source_url) })}>Bron: {sourceDomain(product.source_url) || 'fabrikant'} ↗</a>}
     </div>
     {voedingSamenvatting && <p className="nutrition-summary" title="Waarden zijn inclusief vocht (as-fed).">
@@ -379,6 +383,62 @@ function beschrijfVoedingsbereik(filter, bereik, grenzen) {
   if (bereik.min <= grenzen.min) return `${filter.label} tot ${formatteerFilterwaarde(filter, bereik.max)}${eenheid}`
   if (bereik.max >= grenzen.max) return `${filter.label} vanaf ${formatteerFilterwaarde(filter, bereik.min)}${eenheid}`
   return `${filter.label} ${formatteerFilterwaarde(filter, bereik.min)}–${formatteerFilterwaarde(filter, bereik.max)}${eenheid}`
+}
+
+function CompareDialog({ producten, onClose }) {
+  const [drogeStof, setDrogeStof] = useState(false)
+  const sluitRef = useRef(null)
+  const panelRef = useRef(null)
+  useEffect(() => {
+    sluitRef.current?.focus()
+    const vorigeOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKey = (event) => {
+      if (event.key === 'Escape') return onClose()
+      if (event.key !== 'Tab' || !panelRef.current) return
+      const focusables = [...panelRef.current.querySelectorAll('button:not(:disabled), a[href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex="-1"])')]
+      if (!focusables.length) return
+      const eerste = focusables[0]
+      const laatste = focusables[focusables.length - 1]
+      if (event.shiftKey && document.activeElement === eerste) { event.preventDefault(); laatste.focus() }
+      else if (!event.shiftKey && document.activeElement === laatste) { event.preventDefault(); eerste.focus() }
+    }
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = vorigeOverflow
+    }
+  }, [onClose])
+  const kanDroog = producten.every((product) => voedingswaardeMap(product.recipe_versions?.[0]?.recipe_nutrition).moisture != null)
+  const waardenVoor = (product) => {
+    const rijen = product.recipe_versions?.[0]?.recipe_nutrition
+    return drogeStof ? (naarDrogeStof(rijen) ?? {}) : voedingswaardeMap(rijen)
+  }
+  const rijen = NUTRIENTS.filter((nutrient) => !(drogeStof && nutrient.key === 'moisture'))
+  return <div className="compare-overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose() }}>
+    <div ref={panelRef} className="compare-panel" role="dialog" aria-modal="true" aria-labelledby="compare-title">
+      <div className="compare-head">
+        <h2 id="compare-title">Producten vergelijken</h2>
+        <button ref={sluitRef} type="button" className="compare-close" onClick={onClose} aria-label="Sluit vergelijking">×</button>
+      </div>
+      <div className="nutrition-view-toggle" role="group" aria-label="Weergave vergelijking">
+        <button type="button" className={drogeStof ? '' : 'active'} aria-pressed={!drogeStof} onClick={() => setDrogeStof(false)}>As-fed</button>
+        <button type="button" className={drogeStof ? 'active' : ''} aria-pressed={drogeStof} onClick={() => setDrogeStof(true)} disabled={!kanDroog} title={kanDroog ? 'Reken het vocht weg' : 'Niet mogelijk: van minstens één product ontbreekt het vochtgehalte'}>Droge stof</button>
+      </div>
+      {!kanDroog && <p className="compare-note">Droge stof is niet beschikbaar omdat van minstens één product het vochtgehalte ontbreekt.</p>}
+      <p className="compare-swipe">Veeg horizontaal om alle producten te zien.</p>
+      <div className="compare-scroll">
+        <table className="compare-table">
+          <thead><tr><th scope="col">Product</th>{producten.map((product) => <th key={product.id} scope="col"><span className="compare-product-name">{product.brand}</span>{product.name}<small>{FOOD_TYPES.find(([key]) => key === product.food_type)?.[1] ?? product.food_type}{product.package_size ? ` · ${product.package_size}` : ''}</small></th>)}</tr></thead>
+          <tbody>{rijen.map((nutrient) => <tr key={nutrient.key}><th scope="row">{nutrient.label}</th>{producten.map((product) => {
+            const waarde = waardenVoor(product)[nutrient.key]
+            return <td key={product.id}>{waarde == null ? <span className="compare-missing">—</span> : formatteerVoedingswaarde(nutrient, waarde)}</td>
+          })}</tr>)}</tbody>
+        </table>
+      </div>
+      <p className="compare-note">{drogeStof ? 'Droge stof: het vocht is weggerekend; energie per 100 g droge stof.' : 'As-fed: inclusief vocht.'} Controleer voor aankoop altijd de verpakking.</p>
+    </div>
+  </div>
 }
 
 function Admin({ terms, termsOud, reloadTerms, onSaved }) {
@@ -748,6 +808,8 @@ function App() {
   const [matchesKlaar, setMatchesKlaar] = useState(false)
   const [page, setPage] = useState(1)
   const [sortering, setSortering] = useState(() => leesSortering(new URLSearchParams(window.location.search)))
+  const [vergelijkIds, setVergelijkIds] = useState([])
+  const [vergelijkOpen, setVergelijkOpen] = useState(false)
   const [filtersOpen, setFiltersOpen] = useState(() => !window.matchMedia('(max-width: 760px)').matches)
   const diepeLinkToegepast = useRef(false)
   // Winkelaanbiedingen zijn een losse laag. Ontbreekt het bestand of is het
@@ -799,6 +861,7 @@ function App() {
   }, [products])
 
   const alleMerken = useMemo(() => [...new Set(products.map(({ brand }) => brand).filter(Boolean))].sort((eerste, tweede) => eerste.localeCompare(tweede, 'nl', { sensitivity: 'base' })), [products])
+  const vergelijkProducten = useMemo(() => vergelijkIds.map((id) => products.find((product) => product.id === id)).filter(Boolean), [vergelijkIds, products])
   // De voedingswaarden worden één keer per product genormaliseerd. De schuiven,
   // de tellingen en het filter gebruiken daarna dezelfde waarden.
   const voedingPerProduct = useMemo(() => new Map(products.map((product) => [product.id, voedingswaardeMap(product.recipe_versions?.[0]?.recipe_nutrition)])), [products])
@@ -1081,6 +1144,28 @@ function App() {
     setVoedingsfilters({})
     setZoekterm('')
   }
+  const wisselVergelijk = (id) => {
+    if (vergelijkIds.includes(id)) {
+      const volgende = vergelijkIds.filter((item) => item !== id)
+      setVergelijkIds(volgende)
+      if (volgende.length < 2) setVergelijkOpen(false)
+      track('vergelijk-verwijderd', { aantal: volgende.length })
+    } else if (vergelijkIds.length < 3) {
+      const volgende = [...vergelijkIds, id]
+      setVergelijkIds(volgende)
+      track('vergelijk-toegevoegd', { aantal: volgende.length })
+    }
+  }
+  const openVergelijk = () => {
+    if (vergelijkProducten.length < 2) return
+    setVergelijkOpen(true)
+    track('vergelijk-geopend', { aantal: vergelijkProducten.length })
+  }
+  const wisVergelijk = () => {
+    setVergelijkIds([])
+    setVergelijkOpen(false)
+    track('vergelijk-gewist')
+  }
   const merkActief = (merk) => selectedBrands === null || selectedBrands.includes(merk)
   const wisselMerk = (merk, aangevinkt) => {
     const basis = selectedBrands ?? alleMerken
@@ -1247,6 +1332,12 @@ function App() {
             </details>
             {geenMerken || geenTypes ? <section id="resultaten"><h2>Geen producten</h2><p>{filterMelding}</p></section> : (
               <section id="resultaten">
+                {vergelijkProducten.length > 0 && <div className="compare-bar" aria-label="Producten vergelijken">
+                  <span className="compare-bar-label">{vergelijkProducten.length}/3 geselecteerd</span>
+                  <div className="compare-bar-chips">{vergelijkProducten.map((product) => <button type="button" className="compare-chip" key={product.id} onClick={() => wisselVergelijk(product.id)} title="Verwijder uit de vergelijking">{product.brand} {product.name} <span aria-hidden="true">×</span></button>)}</div>
+                  <button type="button" className="compare-open" disabled={vergelijkProducten.length < 2} onClick={openVergelijk} title={vergelijkProducten.length < 2 ? 'Kies minstens twee producten' : 'Open de vergelijking'}>Vergelijk</button>
+                  <button type="button" className="link" onClick={wisVergelijk}>Wissen</button>
+                </div>}
                 <div className="results-header">
                   <h2>Producten ({GETAL0.format(alleResultaten.length)})</h2>
                   <div className="results-tools">
@@ -1296,13 +1387,14 @@ function App() {
                   </div>
                 ) : null}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
-                {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} aanbiedingen={aanbod[product.id] ?? []} nadruk={actieveVoedingsfilters} />) : <p>Geen producten gevonden{zoekterm ? ` voor “${zoekterm}”` : ' voor deze keuze'}.</p>}
+                {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} aanbiedingen={aanbod[product.id] ?? []} nadruk={actieveVoedingsfilters} vergelijk={vergelijkIds.includes(product.id)} vergelijkVol={vergelijkIds.length >= 3} onVergelijk={wisselVergelijk} />) : <p>Geen producten gevonden{zoekterm ? ` voor “${zoekterm}”` : ' voor deze keuze'}.</p>}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
               </section>
             )}
           </>}
         </div>
       </div>
+      {vergelijkOpen && <CompareDialog producten={vergelijkProducten} onClose={() => setVergelijkOpen(false)} />}
     </>}
     <footer className="site-footer" id="over-deze-site">
       <div className="footer-grid">
@@ -1328,6 +1420,10 @@ function App() {
           <a href="/hondenvoer-zonder.html">Zonder allergeen</a>
           <a href="/hoe-wij-vergelijken.html">Onze methode</a>
           <a href="/etikettenonderzoek.html">Etikettenonderzoek</a>
+          <a href="/eiwitrijk-hondenvoer.html">Eiwitrijk</a>
+          <a href="/hondenvoer-met-weinig-vet.html">Weinig vet</a>
+          <a href="/hoog-vezel-hondenvoer.html">Veel vezel</a>
+          <a href="/laag-calorisch-hondenvoer.html">Laag-calorisch</a>
           <a href="/over-ons.html">Over ons</a>
           <a href="/contact.html">Contact</a>
           <a href="/voorwaarden.html">Voorwaarden</a>

@@ -109,6 +109,9 @@ Na elke cluster een JSON-controle en SQL-batch. De agents schrijven batches van 
 - Op mobiel staat de resultaattelling in de filterkop en is er onderaan de filterkolom een springlink naar de resultaten.
 - Methodiekpagina en `llms.txt` zijn bijgewerkt met uitleg over de filters, bronnen en as-fed.
 - **Droge-stofweergave per product:** in het voedingsdetail kan de bezoeker schakelen tussen as-fed en droge stof. Het vocht wordt weggerekend en de energie wordt per 100 g droge stof getoond. Zonder vochtgehalte is de knop niet beschikbaar. De filters en sortering blijven op as-fed werken.
+- **Zoeken en vergelijken:** producten zijn op naam te zoeken. Maximaal drie producten kunnen naast elkaar worden gezet; de vergelijking toont alle standaardwaarden en kan ook op droge stof worden bekeken.
+- **Vier statische voedingspagina's** (eiwitrijk, weinig vet, veel vezel, laag-calorisch) vangen gerichte zoekopdrachten op en linken door naar de bijbehorende filtercombinatie. De sitemap groeit daardoor van 89 naar 93 adressen.
+- **Prestatie:** de catalogus wordt nog in één keer geladen (ongeveer 3,2 MB JSON, circa 0,65 MB gecomprimeerd). Server-side voorfiltering is de volgende optimalisatie; de pagina toont nu 24 producten per pagina en gebruikt de lokale cataloguscache.
 
 ## Besluiten
 
@@ -118,6 +121,6 @@ Na elke cluster een JSON-controle en SQL-batch. De agents schrijven batches van 
 - **Filters op de volledige standaardset** zijn geïmplementeerd met een minimum- en maximumschuif. Sorteren op eiwit, vet en energie is toegevoegd.
 - **Een productentry is een product of verpakking, geen unieke receptuur.** De site noemt de telling daarom “producten”; meerdere verpakkingen of smaken kunnen dezelfde analyse delen.
 - **Life-stage en formaat zijn nog geen gestructureerde velden.** Zoeken op productnaam (puppy, senior, mini) is de tijdelijke oplossing. Een echte filter vraagt om gecontroleerde extractie.
-- **Side-by-side vergelijken is nog niet gebouwd.** De huidige vergelijker filtert en sorteert producten; een aparte vergelijkingstabel is een volgende productstap.
+- **Side-by-side vergelijken is geïmplementeerd** voor maximaal drie producten, met alle standaardwaarden en dezelfde as-fed/droge-stofkeuze.
 - **Agenten doen de eerste extractie**, met menselijke controle op de steekproef en op alle omgerekende waarden.
 - **We beginnen bij de top 10 merken**, na een kleine pilot daarbinnen.

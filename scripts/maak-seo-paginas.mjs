@@ -15,6 +15,8 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { ALLERGEN_LABELS, ALLERGENS, FOOD_TYPES, assessLabel, markUncertainIngredients, setCustomTerms } from '../src/lib/allergens.js'
 import { productMatch } from '../src/lib/matcher.js'
+import { voedingswaardeMap } from '../src/lib/nutrition.js'
+import { onbetrouwbareNutrienten } from '../src/lib/plausibility.js'
 
 const WORTEL = dirname(dirname(fileURLToPath(import.meta.url)))
 const DIST = join(WORTEL, 'dist')
@@ -135,6 +137,10 @@ ${inhoud}
           <a href="/hondenvoer-zonder.html">Zonder allergeen</a>
           <a href="/hoe-wij-vergelijken.html">Hoe wij vergelijken</a>
           <a href="/etikettenonderzoek.html">Etikettenonderzoek</a>
+          <a href="/eiwitrijk-hondenvoer.html">Eiwitrijk</a>
+          <a href="/hondenvoer-met-weinig-vet.html">Weinig vet</a>
+          <a href="/hoog-vezel-hondenvoer.html">Veel vezel</a>
+          <a href="/laag-calorisch-hondenvoer.html">Laag-calorisch</a>
           <a href="/over-ons.html">Over ons</a>
           <a href="/contact.html">Contact</a>
           <a href="/voorwaarden.html">Voorwaarden</a>
@@ -274,7 +280,7 @@ const methodePagina = () => {
       <h2>3. Voedingswaarden: inclusief vocht</h2>
       <p>De voedingswaarden komen in de regel van hetzelfde etiket als de ingrediëntenlijst. Is de Nederlandse productpagina niet bruikbaar of wijkt de Nederlandse formule af, dan gebruiken we een gespecificeerde buitenlandse of retailerpagina. Dat staat bij het product vermeld, samen met de bron en de controledatum. De percentages zijn <strong>as-fed</strong>: inclusief het vocht in het product. Dat is de waarde die de fabrikant publiceert en die de meeste eigenaren op de verpakking zien.</p>
       <p>Het vochtgehalte verschilt sterk per voertype: brokken bevatten meestal 6–10% vocht, natvoer 75–85% en rauwvoer 60–75%. Daardoor lijken eiwit- en vetpercentages van natvoer veel lager dan die van brokken, terwijl er per 100 g droge stof soms juist meer eiwit in zit. Vergelijk daarom binnen hetzelfde voertype, of reken de waarden om naar droge stof. De site toont standaard de as-fedwaarden. In de voedingswaarden van een product kun je naar droge stof schakelen; dan wordt het vocht weggerekend. Zonder vochtgehalte is die knop niet beschikbaar. De filters en sortering werken op as-fed.</p>
-      <p>Op de vergelijkingspagina kun je alle standaardwaarden met een minimum- en maximumschuif filteren: eiwit, vet, vezel, as, vocht, energie, calcium, fosfor, omega-3 en omega-6. Eiwit, vet en energie staan direct open; de andere waarden zitten in één compacte uitklapregel. De filters werken op de as-fedwaarden. Filter je natvoer en brokken tegelijk, dan waarschuwt de site dat de percentages niet direct vergelijkbaar zijn. Producten waarvan de fabrikant een waarde niet vermeldt, vallen af zodra je dat filter gebruikt. De resultaten zijn binnen de drie oordeelgroepen te sorteren op eiwit, vet of energie; producten zonder die waarde blijven zichtbaar en zakken naar achteren.</p>
+      <p>Op de vergelijkingspagina kun je alle standaardwaarden met een minimum- en maximumschuif filteren: eiwit, vet, vezel, as, vocht, energie, calcium, fosfor, omega-3 en omega-6. Eiwit, vet en energie staan direct open; de andere waarden zitten in één compacte uitklapregel. De filters werken op de as-fedwaarden. Filter je natvoer en brokken tegelijk, dan waarschuwt de site dat de percentages niet direct vergelijkbaar zijn. Producten waarvan de fabrikant een waarde niet vermeldt, vallen af zodra je dat filter gebruikt. De resultaten zijn binnen de drie oordeelgroepen te sorteren op eiwit, vet of energie; producten zonder die waarde blijven zichtbaar en zakken naar achteren. Producten zijn op naam te zoeken en maximaal drie producten kunnen naast elkaar worden gezet, met dezelfde waarden en dezelfde as-fed/droge-stofkeuze.</p>
       <p>De voedingswaarden worden bij de import gecontroleerd. Daarnaast draait er een aparte broncontrole op de vastgelegde analysetekst. Een waarde die aantoonbaar niet kan — bijvoorbeeld een bronanalyse die optelt tot meer dan 100% of een vezelwaarde die een typefout lijkt — krijgt een waarschuwing op de kaart en wordt niet als filter- of sorteerwaarde gebruikt. Zo blijft de bron zichtbaar, zonder dat een onmogelijke waarde de vergelijking stuurt.</p>
 
       <h2>4. De keuring: woord voor woord</h2>
@@ -524,7 +530,7 @@ async function haalTermen() {
 
 async function haalProducten() {
   if (!SUPABASE_URL || !SUPABASE_KEY) return null
-  const basis = `${SUPABASE_URL}/rest/v1/products?select=id,brand,name,food_type,package_size,source_url,last_checked_at,source_status,recipe_versions(ingredients_text,imported_at,reviewed_at,recipe_ingredients(allergen_key,certainty))&published=eq.true&recipe_versions.is_current=eq.true&order=brand.asc,name.asc`
+  const basis = `${SUPABASE_URL}/rest/v1/products?select=id,brand,name,food_type,package_size,source_url,last_checked_at,source_status,recipe_versions(ingredients_text,imported_at,reviewed_at,recipe_ingredients(allergen_key,certainty),recipe_nutrition(nutrient_key,value,basis))&published=eq.true&recipe_versions.is_current=eq.true&order=brand.asc,name.asc`
   const rijen = []
   for (let offset = 0; ; offset += 1000) {
     const antwoord = await fetch(`${basis}&limit=1000&offset=${offset}`, {
@@ -1029,6 +1035,56 @@ ${allergeenRijen}
   })
 }
 
+const VOEDINGS_PAGINAS = [
+  { slug: 'eiwitrijk-hondenvoer', key: 'protein', label: 'eiwit', eenheid: '%', richting: 'hoog', grens: 30, min: 30, max: 40, titel: 'Eiwitrijk hondenvoer', beschrijving: 'Hondenvoer waarvan de fabrikant ten minste 30% ruw eiwit vermeldt, met de bron en de as-fedwaarde per product.' },
+  { slug: 'hondenvoer-met-weinig-vet', key: 'fat', label: 'vet', eenheid: '%', richting: 'laag', grens: 10, min: 0, max: 10, titel: 'Hondenvoer met weinig vet', beschrijving: 'Hondenvoer met ten hoogste 10% ruw vet volgens de fabrikant, met de as-fedwaarde en het voertype per product.' },
+  { slug: 'hoog-vezel-hondenvoer', key: 'fiber', label: 'ruwe vezel', eenheid: '%', richting: 'hoog', grens: 5, min: 5, max: 40, titel: 'Hondenvoer met veel vezel', beschrijving: 'Hondenvoer met ten minste 5% ruwe vezel volgens de fabrikant, met de as-fedwaarde en het voertype per product.' },
+  { slug: 'laag-calorisch-hondenvoer', key: 'kcal', label: 'energie', eenheid: 'kcal/100 g', richting: 'laag', grens: 300, min: 0, max: 300, titel: 'Laag-calorisch hondenvoer', beschrijving: 'Hondenvoer met ten hoogste 300 kcal per 100 g volgens de fabrikant, met de as-fedwaarde en het voertype per product.' }
+]
+
+function voedingsPagina(config, producten) {
+  const rijen = producten.map((product) => {
+    const waarden = voedingswaardeMap(product.recipe_versions?.[0]?.recipe_nutrition)
+    if (onbetrouwbareNutrienten(waarden, product.food_type).has(config.key)) return null
+    const waarde = waarden[config.key]
+    if (waarde == null) return null
+    if (config.richting === 'hoog' ? waarde < config.grens : waarde > config.grens) return null
+    return { product, waarde }
+  }).filter(Boolean).sort((eerste, tweede) => {
+    const verschil = config.richting === 'hoog' ? tweede.waarde - eerste.waarde : eerste.waarde - tweede.waarde
+    return verschil || eerste.product.brand.localeCompare(tweede.product.brand, 'nl') || eerste.product.name.localeCompare(tweede.product.name, 'nl')
+  })
+  const top = rijen.slice(0, 40)
+  const toon = (waarde) => config.eenheid === '%' ? `${getal(waarde)}%` : `${getal(waarde)} ${config.eenheid}`
+  const typeLabel = (key) => FOOD_TYPES.find(([type]) => type === key)?.[1] ?? key
+  const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › Voedingswaarden › ${escapeHtml(config.titel)}</p>
+      <p class="eyebrow">Voedingswaarden</p>
+      <h1>${escapeHtml(config.titel)}</h1>
+      <p class="lead">Deze pagina verzamelt ${getal(rijen.length)} producten waarvan de fabrikant ${config.label} ${config.richting === 'hoog' ? 'ten minste' : 'ten hoogste'} ${getal(config.grens)}${config.eenheid === '%' ? '%' : ` ${config.eenheid}`} vermeldt. De waarden zijn as-fed, dus inclusief vocht.</p>
+      <div class="callout warn">
+        <p><strong>Let op:</strong> natvoer en rauwvoer bevatten veel meer vocht dan brokken. Vergelijk de percentages daarom binnen hetzelfde voertype, of gebruik in de vergelijker de droge-stofweergave. Producten zonder een opgegeven waarde staan niet in deze lijst.</p>
+      </div>
+      <h2>${top.length === rijen.length ? 'Alle producten' : config.richting === 'hoog' ? `De ${top.length} hoogste waarden` : `De ${top.length} laagste waarden`}</h2>
+      <table>
+        <thead><tr><th>Product</th><th>Type</th><th>${escapeHtml(config.label)}</th></tr></thead>
+        <tbody>
+${top.map(({ product, waarde }) => `          <tr><td><a href="/?zoek=${encodeURIComponent(product.name)}">${escapeHtml(product.brand)} — ${escapeHtml(product.name)}</a></td><td>${escapeHtml(typeLabel(product.food_type))}</td><td>${toon(waarde)}</td></tr>`).join('\n')}
+        </tbody>
+      </table>
+      <p><a class="cta" href="/?${config.key === 'protein' ? 'eiwit' : config.key === 'fat' ? 'vet' : config.key === 'fiber' ? 'vezel' : 'kcal'}=${config.min}-${config.max}">Filter alle producten in de vergelijker</a> <a class="cta secondary" href="/hoe-wij-vergelijken.html">Hoe wij meten</a></p>
+      <p><small>De waarde komt van de officiële productpagina of de bij het product vermelde bron. Controleer voor aankoop altijd de verpakking.</small></p>`
+  return {
+    pad: `/${config.slug}.html`,
+    html: shell({
+      titel: `${config.titel}: ${getal(rijen.length)} producten | Hondenvoervergelijker`,
+      beschrijving: config.beschrijving,
+      pad: `/${config.slug}.html`,
+      inhoud,
+      jsonLd: [{ '@context': 'https://schema.org', '@type': 'CollectionPage', name: config.titel, description: config.beschrijving, url: `${SITE}/${config.slug}.html`, inLanguage: 'nl-NL' }]
+    })
+  }
+}
+
 function llmsTxt(heeftOnderzoek) {
   const basis = readFileSync(join(WORTEL, 'public', 'llms.txt'), 'utf8')
     .replace(/Laatst bijgewerkt: .*?\./, `Laatst bijgewerkt: ${datumNl(VANDAAG)}.`)
@@ -1134,6 +1190,16 @@ if (producten?.length) {
     adressen.push({ loc: `${SITE}/etikettenonderzoek.html`, prioriteit: '0.6' })
     console.log("Geschreven: etikettenonderzoek.html")
   }
+
+  // Voedingspagina's zijn een aanvulling op de vergelijker: ze vangen
+  // zoekopdrachten op als "eiwitrijk hondenvoer" of "laag calorisch" en
+  // verwijzen door naar de bijbehorende filtercombinatie.
+  const voedingsPaginas = VOEDINGS_PAGINAS.map((config) => voedingsPagina(config, producten))
+  for (const pagina of voedingsPaginas) {
+    writeFileSync(join(DIST, pagina.pad.replace(/^\//, '')), pagina.html)
+    adressen.push({ loc: `${SITE}${pagina.pad}`, prioriteit: '0.7' })
+  }
+  console.log(`Geschreven: ${voedingsPaginas.length} voedingspagina's`)
 } else if (existsSync(join(WORTEL, 'public', 'sitemap.xml'))) {
   const basis = readFileSync(join(WORTEL, 'public', 'sitemap.xml'), 'utf8')
   for (const treffer of basis.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)) {

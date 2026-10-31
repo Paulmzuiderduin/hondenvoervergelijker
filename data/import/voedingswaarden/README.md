@@ -70,8 +70,13 @@ doorgevoerd: een mens beoordeelt het en past de import of het product aan.
 macro-sommen boven 100%, onmogelijke vezel- of kcal-waarden en vocht dat niet
 bij het voertype past. Het rapport komt in `plausibiliteit.md`. Op de kaart
 krijgt zo'n product een waarschuwing. Een waarde die aantoonbaar onmogelijk is,
-wordt niet als filter- of sorteerwaarde gebruikt; de rest van de analyse blijft
-zichtbaar. Dezelfde controle draait wekelijks in de workflow.
+wordt niet getoond en niet als filter- of sorteerwaarde gebruikt; de rest van de
+analyse blijft zichtbaar. Dezelfde controle draait wekelijks in de workflow.
+
+Voor Jarco Natural Medium Adult Kip staat de bronwaarde 33% ruwe celstof nog in
+de database. De gegenereerde batch
+`data/import/sql/batch-voeding-20261031-13.sql` zet die op null; tot de batch is
+toegepast, verbergt en negeert de site de waarde al.
 
 ## Pilot (fase 1)
 

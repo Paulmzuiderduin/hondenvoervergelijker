@@ -142,6 +142,24 @@ try {
   const voedingsNaReset = await page.locator('.active-filters').innerText()
   meld(allergenenNaReset.some((tekst) => /Kip/.test(tekst)) && !/Eiwit/.test(voedingsNaReset), 'kolomreset laat de allergenenkeuze staan', `${allergenenNaReset.join(' / ')} · ${voedingsNaReset.replace(/\n/g, ' ').slice(0, 80)}`)
 
+  // 3e. Producten naast elkaar vergelijken
+  await open('/?merk=Acana', '.product-card')
+  const vergelijkVinkjes = page.locator('.compare-toggle input')
+  await vergelijkVinkjes.nth(0).check()
+  await vergelijkVinkjes.nth(1).check()
+  await vergelijkVinkjes.nth(2).check()
+  const vierdeUit = await vergelijkVinkjes.nth(3).isDisabled()
+  const vergelijkBar = await page.locator('.compare-bar').innerText()
+  meld(/3\/3 geselecteerd/.test(vergelijkBar) && vierdeUit, 'maximaal drie producten vergelijken', vergelijkBar.replace(/\n/g, ' ').slice(0, 100))
+  await page.locator('.compare-open').click()
+  await page.waitForSelector('.compare-panel', { timeout: 10000 })
+  const vergelijkRijen = await page.locator('.compare-table tbody tr').count()
+  const vergelijkKolommen = await page.locator('.compare-table thead th').count()
+  meld(vergelijkRijen >= 8 && vergelijkKolommen === 4, 'vergelijkingsdialoog toont de gekozen producten', `${vergelijkRijen} rijen · ${vergelijkKolommen} kolommen`)
+  await page.keyboard.press('Escape')
+  await page.waitForTimeout(100)
+  meld(await page.locator('.compare-panel').count() === 0, 'vergelijkingsdialoog sluit met Escape')
+
   // 4. Melding wanneer niets geschikt is
   await open('/?merk=Royal%20Canin&allergeen=beef', '.no-suitable')
   const melding = await page.locator('.no-suitable strong').innerText()

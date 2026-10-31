@@ -26,6 +26,10 @@ Laatst bijgewerkt: 30 oktober 2026.
 - [Hoe wij vergelijken](https://hondenvoervergelijker.paulzuiderduin.com/hoe-wij-vergelijken.html): bronnen, keuring en beperkingen.
 - [Hondenvoer en allergieën](https://hondenvoervergelijker.paulzuiderduin.com/hondenvoer-allergieen.html): hoe je een etiket leest.
 - [Etikettenonderzoek](https://hondenvoervergelijker.paulzuiderduin.com/etikettenonderzoek.html): cijfers over verzameltermen op hondenvoeretiketten.
+- [Eiwitrijk hondenvoer](https://hondenvoervergelijker.paulzuiderduin.com/eiwitrijk-hondenvoer.html): producten met ten minste 30% ruw eiwit.
+- [Hondenvoer met weinig vet](https://hondenvoervergelijker.paulzuiderduin.com/hondenvoer-met-weinig-vet.html): producten met ten hoogste 10% ruw vet.
+- [Hondenvoer met veel vezel](https://hondenvoervergelijker.paulzuiderduin.com/hoog-vezel-hondenvoer.html): producten met ten minste 5% ruwe vezel.
+- [Laag-calorisch hondenvoer](https://hondenvoervergelijker.paulzuiderduin.com/laag-calorisch-hondenvoer.html): producten met ten hoogste 300 kcal per 100 g.
 - [Over ons](https://hondenvoervergelijker.paulzuiderduin.com/over-ons.html)
 - [Contact](https://hondenvoervergelijker.paulzuiderduin.com/contact.html)
 - [Privacybeleid](https://hondenvoervergelijker.paulzuiderduin.com/privacybeleid.html)
@@ -36,7 +40,7 @@ De ingrediëntenlijsten komen van de officiële productpagina's van de fabrikant
 
 Voedingswaarden zijn as-fed: de percentages zijn inclusief vocht. Brokken bevatten meestal 6–10% vocht, natvoer 75–85% en rauwvoer 60–75%. Vergelijk natvoer en brokken daarom niet direct op dezelfde percentages; vergelijk binnen hetzelfde voertype of reken om naar droge stof. Op de vergelijkingspagina zijn alle standaardwaarden met een minimum- en maximumschuif te filteren: eiwit, vet, vezel, as, vocht, energie, calcium, fosfor, omega-3 en omega-6. Eiwit, vet en energie staan direct open; de andere zeven zitten in één uitklapregel. Die filters gebruiken de as-fedwaarden; de site waarschuwt wanneer natvoer en brokken tegelijk worden gefilterd. De resultaten zijn binnen de drie oordeelgroepen te sorteren op eiwit, vet of energie; producten zonder die waarde blijven zichtbaar en zakken naar achteren.
 
-In de voedingswaarden van een product kan de bezoeker naar droge stof schakelen. Het vocht wordt dan weggerekend en ook de energie wordt per 100 g droge stof getoond. Zonder vochtgehalte is die weergave niet beschikbaar. De filters en sortering blijven op as-fed werken.
+In de voedingswaarden van een product kan de bezoeker naar droge stof schakelen. Het vocht wordt dan weggerekend en ook de energie wordt per 100 g droge stof getoond. Zonder vochtgehalte is die weergave niet beschikbaar. De filters en sortering blijven op as-fed werken. Producten zijn op naam te zoeken en maximaal drie producten kunnen naast elkaar worden vergeleken; die vergelijking kan ook op droge stof worden bekeken.
 
 De voedingswaarden worden bij de import gecontroleerd en daarnaast apart van de ingrediëntenbron gecontroleerd. Wijkt de bron af (buitenlandse of retailerpagina), dan staat dat bij het product. Een aantoonbaar onmogelijke waarde krijgt een waarschuwing op de kaart en wordt niet als filter- of sorteerwaarde gebruikt.
 
