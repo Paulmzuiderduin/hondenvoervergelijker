@@ -1051,7 +1051,9 @@ function App() {
   const actieveFilterCount = (selectedBrands !== null ? Math.max(1, selectedBrands.length) : 0) + (types.length !== FOOD_TYPES.length ? 1 : 0) + actieveVoedingsfilters.length + (zoekterm ? 1 : 0)
   const gekozenTypeLabels = FOOD_TYPES.filter(([key]) => types.includes(key)).map(([, label]) => label).join(', ')
   const sorteertOpVoeding = Boolean(SORTING_BY_KEY[sortering]?.nutrient)
-  const vergelijktNatvoerEnBrokken = (actieveVoedingsfilters.length > 0 || sorteertOpVoeding) && types.includes('kibble') && (types.includes('wet') || types.includes('raw'))
+  const mengtVoertypes = types.includes('kibble') && (types.includes('wet') || types.includes('raw'))
+  const vergelijktNatvoerEnBrokken = actieveVoedingsfilters.length > 0 && mengtVoertypes
+  const sorteertNatvoerEnBrokken = sorteertOpVoeding && mengtVoertypes
   const merkFilterLabel = selectedBrands === null ? ''
     : selectedBrands.length === 0 ? 'Geen merken'
       : selectedBrands.length === 1 ? `Merk: ${selectedBrands[0]}`
@@ -1207,7 +1209,7 @@ function App() {
                 <span className="filter-summary">{actieveVoedingsfilters.length ? `${actieveVoedingsfilters.length} actief` : 'Geen filter'}</span>
               </div>
               <p className="nutrition-filter-hint">As-fed, inclusief vocht · energie in kcal/100 g. Het getal is het aantal bruikbare waarden; zonder waarde valt een product af bij een actief filter.</p>
-              {vergelijktNatvoerEnBrokken && <p className="nutrition-compare-warning" role="status"><strong>Let op:</strong> je filtert of sorteert op voeding over natvoer/rauwvoer én brokken. Die zijn niet direct vergelijkbaar. Kies één voertype.</p>}
+              {vergelijktNatvoerEnBrokken && <p className="nutrition-compare-warning" role="status"><strong>Let op:</strong> je filtert op voeding over natvoer/rauwvoer én brokken. Die zijn niet direct vergelijkbaar. Kies één voertype.</p>}
               {PRIMAIRE_VOEDINGS_FILTERS.map(voedingsfilterRij)}
               <details className="nutrition-extra" open={extraOpen || undefined} onToggle={(event) => setExtraOpen(event.currentTarget.open)}>
                 <summary className="nutrition-extra-heading">
@@ -1261,6 +1263,7 @@ function App() {
                   </div>
                 </div>
                 {sortering !== 'standaard' && <p className="sort-note"><small>{gegroepeerdOpOordeel ? 'Sortering geldt binnen Geschikt, Controleer en Uitgesloten.' : 'Sortering geldt over alle producten.'}</small></p>}
+                {sorteertNatvoerEnBrokken && <p className="sort-note sort-warning" role="status"><small><strong>Let op:</strong> je sorteert op voeding over natvoer/rauwvoer én brokken. Die zijn niet direct vergelijkbaar; kies één voertype.</small></p>}
                 {heeftActieveFilters && <div className="active-filters" aria-label="Actieve filters">
                   <span className="active-filters-label">Actief:</span>
                   {allergens.map((key) => <button type="button" key={key} className="filter-chip" onClick={() => verwijderAllergeen(key)} title={`Verwijder ${ALLERGEN_LABELS[key]}`}>{ALLERGEN_LABELS[key]} <span aria-hidden="true">×</span></button>)}

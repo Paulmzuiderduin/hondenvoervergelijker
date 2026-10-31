@@ -130,8 +130,8 @@ try {
 
   // 3d. Waarschuwing bij sorteren, zoeken en de scope van de kolomreset
   await open('/?sorteer=eiwit-hoog', '.product-card')
-  const sorteerWaarschuwing = await page.locator('.nutrition-compare-warning').innerText()
-  meld(/sorteert|filtert of sorteert/i.test(sorteerWaarschuwing), 'sorteren op voeding waarschuwt voor natvoer versus brokken', sorteerWaarschuwing.replace(/\n/g, ' ').slice(0, 120))
+  const sorteerWaarschuwing = await page.locator('.sort-warning').innerText()
+  meld(/sorteert op voeding/i.test(sorteerWaarschuwing), 'sorteren op voeding waarschuwt voor natvoer versus brokken', sorteerWaarschuwing.replace(/\n/g, ' ').slice(0, 120))
   await open('/?zoek=renal', '.product-card')
   const zoekWaarde = await page.locator('.product-search input').inputValue()
   const zoekChip = await page.locator('.active-filters').innerText()

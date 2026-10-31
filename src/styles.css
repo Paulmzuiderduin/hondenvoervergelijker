@@ -1115,6 +1115,11 @@ button:disabled {
   color: #5d6e61;
 }
 
+.sort-note.sort-warning {
+  color: #7d2b2b;
+  font-size: 0.78rem;
+}
+
 .summary-pill {
   display: inline-block;
   padding: 0.18rem 0.5rem;
