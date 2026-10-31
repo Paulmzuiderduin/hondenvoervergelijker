@@ -1,16 +1,16 @@
 # Voortgang voedingswaarden
 
-Momentopname: 2026-10-30.
+Momentopname: 2026-10-31.
 
 - 1478 gepubliceerde producten
-- 380 volledig (6 kernwaarden)
-- 206 gedeeltelijk
-- 892 zonder voedingswaarden
-- 434 met energie (kcal/100 g)
+- 396 volledig (6 kernwaarden)
+- 390 gedeeltelijk
+- 692 zonder voedingswaarden
+- 492 met energie (kcal/100 g)
 
 | Merk | Totaal | Volledig | Gedeeltelijk | Ontbreekt | Met kcal |
 |---|---:|---:|---:|---:|---:|
-| Royal Canin | 205 | 0 | 5 | 200 | 2 |
+| Royal Canin | 205 | 16 | 189 | 0 | 60 |
 | Hill's Science Plan | 80 | 67 | 13 | 0 | 80 |
 | Eukanuba | 75 | 0 | 75 | 0 | 3 |
 | Prins Petfoods | 72 | 72 | 0 | 0 | 72 |

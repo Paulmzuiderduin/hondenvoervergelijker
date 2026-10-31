@@ -1,6 +1,6 @@
 # Voedingswaarden
 
-Status: **fase 0 afgerond en live; fase 1 pilot toegepast** (25 producten van 5 top-10-merken). **Fase 2:** de data-collectie is compleet — alle **786 top-10-producten** zijn gevalideerd. Daarvan staan **586 live**; de **200 Royal Canin-producten** staan klaar in één gecombineerde batch en wachten op de Supabase-import.
+Status: **fase 0, 1 en 2 afgerond en live.** Alle **786 top-10-producten** hebben voedingswaarden: 396 volledig, 390 gedeeltelijk, 492 met kcal/100 g en 5.756 opgeslagen waarden. De volgende fase is de overige 692 producten van de niet-top-10-merken.
 
 ## Uitgangspunten
 
@@ -65,13 +65,13 @@ De vorm van `p_nutrition`:
 - Resultaat: 25 gematchte producten, 186 waarden, 12 volledig (6 kernwaarden), 13 gedeeltelijk, 14 met kcal.
 - Importformaat en validatie zijn hierna niet meer gewijzigd.
 
-### Fase 2 — rest van de top 10 (loopt)
+### Fase 2 — rest van de top 10 (afgerond)
 
-Royal Canin (205), Hill's (140), Eukanuba (75), Prins (72), Purina (56), Jarco (57), Darf (51), Butcher's (48), Renske (44) en Edgard & Cooper (38). Samen 786 producten. Inmiddels zijn 586 producten voorzien; de resterende 200 zijn Royal Canin. Per merk draait één agent, met batches van maximaal 25 producten.
+Royal Canin (205), Hill's (140), Eukanuba (75), Prins (72), Purina (56), Jarco (57), Darf (51), Butcher's (48), Renske (44) en Edgard & Cooper (38). Samen 786 producten, allemaal voorzien. Royal Canin is in acht batches van 25 verwerkt en daarna als één gecombineerde SQL-batch geïmporteerd.
 
 ### Fase 3 — overige producten
 
-De resterende ongeveer 690 producten, inclusief bronnen die alleen via de browser bereikbaar zijn. Na elke batch een dekkingsrapport.
+De resterende 692 producten van de niet-top-10-merken, inclusief bronnen die alleen via de browser bereikbaar zijn. Nog niet gestart. Na elke batch een dekkingsrapport.
 
 ### Fase 4 — UI, SEO en filters
 
