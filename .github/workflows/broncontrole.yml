@@ -53,7 +53,7 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
           BRONCONTROLE_TOKEN: ${{ secrets.BRONCONTROLE_TOKEN }}
-        run: node scripts/controleer-bronnen-browser.mjs --parallel=3 --pauze=2000
+        run: xvfb-run -a node scripts/controleer-bronnen-browser.mjs --headful --parallel=2 --pauze=2000
       - name: Voedingswaarden vergelijken met de importbestanden
         id: voeding
         if: ${{ inputs.alleen_bronnen != true }}
@@ -63,7 +63,7 @@ jobs:
         id: voeding-browser
         if: ${{ inputs.alleen_bronnen != true }}
         continue-on-error: true
-        run: node scripts/controleer-voedingswaarden-browser.mjs --parallel=3 --pauze=2000
+        run: xvfb-run -a node scripts/controleer-voedingswaarden-browser.mjs --headful --parallel=2 --pauze=2000
       - name: Voedingswaarden op interne consistentie controleren
         id: plausibiliteit
         if: ${{ inputs.alleen_bronnen != true }}
