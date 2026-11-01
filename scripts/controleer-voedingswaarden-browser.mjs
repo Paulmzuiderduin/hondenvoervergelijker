@@ -186,18 +186,24 @@ try {
   const wachtrijen = [...perHost.entries()].sort((a, b) => b[1].length - a[1].length)
   let index = 0
   async function werkWachtrij() {
-    const page = await browser.newPage({
-      locale: 'nl-NL',
-      userAgent: `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${browser.version()} Safari/537.36`,
-      viewport: { width: 1440, height: 900 }
-    })
-    try {
-      while (index < wachtrijen.length) {
-        const [hostnaam, lijst] = wachtrijen[index++]
-        for (const product of lijst) await controleerProduct(page, product, hostnaam)
+    while (index < wachtrijen.length) {
+      const [hostnaam, lijst] = wachtrijen[index++]
+      for (const product of lijst) {
+        // Per product een verse context: anders zet een site als Prins na de
+        // eerste pagina een bot-cookie en krijgt de rest 403. Een nieuwe
+        // context heeft die cookie niet en gedraagt zich als een nieuwe bezoeker.
+        const context = await browser.newContext({
+          locale: 'nl-NL',
+          userAgent: `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${browser.version()} Safari/537.36`,
+          viewport: { width: 1440, height: 900 }
+        })
+        const page = await context.newPage()
+        try {
+          await controleerProduct(page, product, hostnaam)
+        } finally {
+          await context.close().catch(() => {})
+        }
       }
-    } finally {
-      await page.close().catch(() => {})
     }
   }
   await Promise.all(Array.from({ length: Math.min(parallel, wachtrijen.length) }, () => werkWachtrij()))
@@ -214,13 +220,13 @@ for (const rij of uitkomsten) {
   perHostUitkomsten.get(hostnaam).push(rij)
 }
 for (const [hostnaam, rijen] of perHostUitkomsten) {
-  const gewijzigd = rijen.filter((rij) => rij.status === 'gewijzigd')
-  if (rijen.length < 5 || gewijzigd.length / rijen.length <= 0.7) continue
-  for (const rij of gewijzigd) {
+  const verdacht = rijen.filter((rij) => rij.status === 'gewijzigd' || rij.status === 'onbereikbaar')
+  if (rijen.length < 5 || verdacht.length / rijen.length <= 0.7) continue
+  for (const rij of rijen.filter((rij) => rij.status === 'gewijzigd')) {
     rij.status = 'onbereikbaar'
-    rij.detail = 'de site gaf bij vrijwel alle producten een afwijkende pagina; waarschijnlijk botbeveiliging'
+    rij.detail = 'de site gaf bij vrijwel alle producten geen betrouwbare pagina; waarschijnlijk botbeveiliging'
   }
-  console.log(`\nLet op: ${hostnaam} gaf ${gewijzigd.length} van ${rijen.length} keer een afwijkende pagina. Behandeld als onbereikbaar.`)
+  console.log(`\nLet op: ${hostnaam} gaf ${verdacht.length} van ${rijen.length} keer geen betrouwbare pagina. Afwijkingen zijn als onbereikbaar behandeld.`)
 }
 
 const gelijk = uitkomsten.filter((rij) => rij.status === 'gelijk').length
