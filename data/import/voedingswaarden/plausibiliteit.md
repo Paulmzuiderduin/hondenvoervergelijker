@@ -9,11 +9,11 @@ Deze signalen zijn geen automatische correcties. De redactie controleert de bron
 | Merk | Product | Type | Signaal |
 |---|---|---|---|
 | Renske | Vers bereide Zalm graanvrij | wet | De bronanalyse telt op tot 102,2%; dat kan niet voor as-fed. |
+| WOOOF | Eend Worst | wet | De energie ligt lager dan de energie uit eiwit en vet; controleer de bron. |
 | Carnilove | Kalkoen & Fazant met Frambozenblad Paté Pouch voor Honden | wet | De bronanalyse telt op tot 101,95%; dat kan niet voor as-fed. |
 | Carnilove | Kalkoen & Buffel met Rozenblaadjes Paté Pouch voor Honden | wet | De bronanalyse telt op tot 101,75%; dat kan niet voor as-fed. |
 | Kivo | Hert & Geit Compleet | raw | De bronanalyse telt op tot 103%; dat kan niet voor as-fed. |
 | Riverwood | Lam Mono Proteïne | wet | De bronanalyse telt op tot 100,6%; dat kan niet voor as-fed. |
-| WOOOF | Eend Worst | wet | De energie ligt lager dan de energie uit eiwit en vet; controleer de bron. |
 | Carnilove | Kalkoen & Wild Zwijn met Rozenbottels Paté Pouch voor Honden | wet | De bronanalyse telt op tot 101,65%; dat kan niet voor as-fed. |
 | Carnilove | Kalkoen & Zalm met Bosbessen Paté Pouch voor Puppy's | wet | De bronanalyse telt op tot 102,1%; dat kan niet voor as-fed. |
 | DARF | Small | raw | De bronanalyse telt op tot 104,5%; dat kan niet voor as-fed. |
