@@ -219,7 +219,27 @@ try {
   const aantalUrls = (xml.match(/<loc>/g) ?? []).length
   meld(sitemap.ok() && aantalUrls >= 89, 'sitemap is bereikbaar en gevuld', `${aantalUrls} URL's`)
 
-  // 6. Mobiele weergave
+  // 6. Lage desktop: de filterkolom moet intern scrollen en binnen de viewport
+  // blijven, zodat Merken niet pas na de hele pagina bereikbaar is.
+  await page.setViewportSize({ width: 1280, height: 700 })
+  await open('/', '.product-card')
+  await page.mouse.wheel(0, 900)
+  await page.waitForTimeout(150)
+  const filterVoor = await page.locator('.filters').evaluate((el) => {
+    const r = el.getBoundingClientRect()
+    return { bottom: r.bottom, clientHeight: el.clientHeight, scrollHeight: el.scrollHeight, boxSizing: getComputedStyle(el).boxSizing }
+  })
+  const filterBox = await page.locator('.filters').boundingBox()
+  await page.mouse.move(filterBox.x + filterBox.width / 2, filterBox.y + 200)
+  await page.mouse.wheel(0, 900)
+  await page.waitForTimeout(150)
+  const filterNa = await page.locator('.filters').evaluate((el) => ({
+    scrollTop: el.scrollTop,
+    merkenBottom: document.querySelector('.brand-filter')?.getBoundingClientRect().bottom ?? Infinity
+  }))
+  meld(filterVoor.bottom <= 701 && filterVoor.boxSizing === 'border-box' && filterVoor.scrollHeight > filterVoor.clientHeight && filterNa.scrollTop > 0 && filterNa.merkenBottom <= 701, 'filterkolom scrolt intern en houdt merken bereikbaar', `bottom ${Math.round(filterVoor.bottom)} · scroll ${filterNa.scrollTop} · merken ${Math.round(filterNa.merkenBottom)}`)
+
+  // 7. Mobiele weergave
   await page.setViewportSize({ width: 390, height: 844 })
   await open('/', '.product-card')
   const mobiel = await page.evaluate(() => {

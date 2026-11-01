@@ -313,10 +313,31 @@ button:disabled {
   top: calc(var(--header-hoogte) + 0.75rem);
   max-height: calc(100vh - var(--header-hoogte) - 1.5rem);
   overflow: auto;
+  /* Zonder border-box valt de padding buiten de max-height en steekt de
+     onderkant van de klep onder de viewport. Dan is het laatste blok (Merken)
+     alleen bereikbaar door de hele pagina naar beneden te scrollen. */
+  box-sizing: border-box;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #a9bcae transparent;
   background: #fff;
   border: 1px solid #d3dcd4;
   border-radius: 2px;
   padding: 1.05rem;
+}
+
+.filters::-webkit-scrollbar {
+  width: 7px;
+}
+
+.filters::-webkit-scrollbar-thumb {
+  background: #b9c9bd;
+  border-radius: 4px;
+}
+
+.filters::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .filters-toggle {
@@ -2277,6 +2298,8 @@ small {
   .filters {
     position: static;
     max-height: none;
+    overflow: visible;
+    scrollbar-gutter: auto;
     padding: 0.75rem;
   }
   .filters h2 {
