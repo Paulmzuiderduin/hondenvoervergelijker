@@ -1,18 +1,18 @@
-# Terra Canis — controle via zooplus.nl en maxizoo.be
+# Terra Canis — controle via zooplus.nl, maxizoo.be en dehner.de
 
 Datum: 2026-11-01
 Producten: 32
-Gelijk: 30
-Afwijkend: 1
-Onverifieerbaar: 1
+Gelijk: 32
+Afwijkend: 0
+Onverifieerbaar: 0
 
-| Product | Zooplus-variant | Bron | Uitkomst |
+| Product | Retailervariant | Bron | Uitkomst |
 |---|---|---|---|
 | Alimentum Veterinarium Low Protein Kalf | Kalf | https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1926075 | gelijk |
 | Alimentum Veterinarium Low Protein Kip | Kip | https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1926075 | gelijk |
 | Alimentum Veterinarium Low Protein Wild | Wild | https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1926075 | gelijk |
-| Canireo Adult kip | Maxizoo Canireo Adult kip 2,5 kg | https://www.maxizoo.be/nl/p/terra-canis-canireo-adult-kip-25-kg-1216485/ | afwijkend |
-| Canireo Wild | — | — | onverifieerbaar |
+| Canireo Adult kip | Dehner Canireo Huhn | https://www.dehner.de/product/terra-canis-trockenfutter-fuer-hunde-canireo-huhn-M200004551 | gelijk |
+| Canireo Wild | Dehner Canireo Wild | https://www.dehner.de/product/terra-canis-trockenfutter-fuer-hunde-canireo-wild-M200004552 | gelijk |
 | Classic Kalkoen met Broccoli, peer & aardappelen | Kalkoen met Aardappelen, Groenten &amp; Peer | https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/58688 | gelijk |
 | Classic Kip met amarant, tomaten & basilicum | Kip met Amaranth, Tomaten &amp; Basilicum | https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/58687 | gelijk |
 | Classic Konijn met Courgette, Amarant en Kervel | Konijn met Courgette, Amaranth &amp; Bieslook | https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_hondenvoer/58687 | gelijk |
@@ -43,11 +43,12 @@ Onverifieerbaar: 1
 
 ## Toelichting
 
-- **30 producten** zijn met een officiële retailerpagina vergeleken en hebben dezelfde
+- **32 producten** zijn met een officiële retailerpagina vergeleken en hebben dezelfde
   analyse (eiwit, vet, vezel, as en, waar vermeld, vocht).
-- **Canireo Adult kip** wijkt af. Maxizoo noemt 29,2% eiwit, 12% vet, 2,4% vezel en
-  4,9% as; de geïmporteerde waarden zijn 29,2% eiwit, 13,3% vet, 2,9% vezel en
-  5,7% as. De fabrikantpagina is niet bereikbaar. De waarden zijn niet automatisch
-  gewijzigd; de verpakking is leidend en de afwijking staat als notitie bij het product.
-- **Canireo Wild** is bij de gebruikte retailers niet gevonden en blijft daarom
-  onverifieerbaar. Ook hiervoor geldt: verpakking of fabrikant is leidend.
+- **Canireo Adult kip:** Dehner bevestigt de opgeslagen waarden 29,2% eiwit, 13,3%
+  vet, 2,9% vezel, 5,7% as en 15,4 MJ/kg. Maxizoo noemt een afwijkende variant
+  (12% vet, 2,4% vezel, 4,9% as) en de Duitse fabrikantpagina noemt 28/14/4/5,5/8,5.
+  Dat zijn versie-/marktverschillen; de opgeslagen waarden zijn bevestigd en de
+  verpakking blijft leidend.
+- **Canireo Wild:** Dehner bevestigt 29,9% eiwit, 11,9% vet, 2,6% vezel, 6,1% as
+  en 15,3 MJ/kg. Vocht wordt niet vermeld.
