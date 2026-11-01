@@ -1,29 +1,14 @@
 # Voedingsbroncontrole
 
-Datum: 2026-10-31
+Datum: 2026-11-01
 Producten gecontroleerd: 1470
-Gelijk: 1198
-Gewijzigd: 11
+Gelijk: 1206
+Gewijzigd: 0
 Andere bron: 10
-Onbereikbaar: 6
+Onbereikbaar: 0
+Geblokkeerde hosts: 1
 Alleen via browser: 245
 Geen bruikbare brontekst: 0
-
-## Gewijzigd
-
-| Merk | Product | Bron | Detail |
-|---|---|---|---|
-| Greenheart-Premiums | Power Meat for a Day – Chicken & Rice | greenheart-premiums.com | De opgeslagen analyse is niet teruggevonden: 3 van 8 getallen gevonden. |
-| Wolfsblut | Adult Alaska Salmon | wolfsblut.com | De opgeslagen analyse is niet teruggevonden: 2 van 4 getallen gevonden. |
-| Wolfsblut | Adult Blue Mountain | wolfsblut.com | De opgeslagen analyse is niet teruggevonden: 0 van 4 getallen gevonden. |
-| Wolfsblut | Adult Cold River | wolfsblut.com | De opgeslagen analyse is niet teruggevonden: 1 van 4 getallen gevonden. |
-| Wolfsblut | Adult Dark Forest | wolfsblut.com | De opgeslagen analyse is niet teruggevonden: 0 van 4 getallen gevonden. |
-| Wolfsblut | Adult Green Valley | wolfsblut.com | De opgeslagen analyse is niet teruggevonden: 1 van 4 getallen gevonden. |
-| Wolfsblut | Adult Hunters Pride | wolfsblut.com | De opgeslagen analyse is niet teruggevonden: 0 van 4 getallen gevonden. |
-| Wolfsblut | Adult Wide Plain | wolfsblut.com | De opgeslagen analyse is niet teruggevonden: 0 van 4 getallen gevonden. |
-| Wolfsblut | Adult Wild Pacific | wolfsblut.com | De opgeslagen analyse is niet teruggevonden: 1 van 4 getallen gevonden. |
-| Wolfsblut | VetLine Gastrointestinal | wolfsblut.com | De opgeslagen analyse is niet teruggevonden: 0 van 11 getallen gevonden. |
-| Wolfsblut | VetLine Hypoallergenic | wolfsblut.com | De opgeslagen analyse is niet teruggevonden: 3 van 11 getallen gevonden. |
 
 ## Andere bron
 
@@ -36,20 +21,9 @@ Geen bruikbare brontekst: 0
 | RAW4DOGS | Fish Mix | raw4dogs.nl | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 2 van 8 getallen. |
 | RAW4DOGS | Game Mix | raw4dogs.nl | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 3 van 9 getallen. |
 | RAW4DOGS | Lamb | raw4dogs.nl | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 2 van 9 getallen. |
-| James Wellbeloved | James Wellbeloved Junior Kalkoen & Rijst | wellbeloved.com | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 4 van 12 getallen. |
-| James Wellbeloved | James Wellbeloved Senior/Light Kalkoen & Rijst | wellbeloved.com | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 2 van 10 getallen. |
-| James Wellbeloved | James Wellbeloved Senior/Light Lam & Rijst | wellbeloved.com | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 3 van 9 getallen. |
-
-## Onbereikbaar
-
-| Merk | Product | Bron | Detail |
-|---|---|---|---|
-| Riverwood | Hert & Lam met Konijn | riverwoodpetfood.com | HTTP 429 |
-| Riverwood | Kabeljauw & Zalm Visworst | riverwoodpetfood.com | HTTP 429 |
-| Riverwood | Kerstmaaltijd Konijn & Kalkoen | riverwoodpetfood.com | HTTP 429 |
-| Riverwood | Rendier & Hert met Wild Zwijn | riverwoodpetfood.com | HTTP 429 |
-| Farm Food | Fresh Menu Pens & Hart Compleet (zacht gestoomd) | farmfood.nl | The operation was aborted due to timeout |
-| Purina Pro Plan | Medium Adult Sensitive Skin Zalm | purina.nl | HTTP 404 |
+| James Wellbeloved | James Wellbeloved Junior Kalkoen & Rijst | wellbeloved.com | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 6 van 12 getallen. |
+| James Wellbeloved | James Wellbeloved Senior/Light Kalkoen & Rijst | wellbeloved.com | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 4 van 10 getallen. |
+| James Wellbeloved | James Wellbeloved Senior/Light Lam & Rijst | wellbeloved.com | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 4 van 9 getallen. |
 
 ## Alleen via browser
 
@@ -300,4 +274,10 @@ Geen bruikbare brontekst: 0
 | Prins Petfoods | TotalCare Puppy | prinspetfoods.nl | Alleen via een echte browser te controleren. |
 | Prins Petfoods | TotalCare Resist Calm | prinspetfoods.nl | Alleen via een echte browser te controleren. |
 | Prins Petfoods | TotalCare Super Active | prinspetfoods.nl | Alleen via een echte browser te controleren. |
+
+## Geblokkeerde hosts
+
+| Host | Producten | Detail |
+|---|---|---|
+| rodi-petfood.nl | 9 | De site gaf bij vrijwel alle producten geen betrouwbare pagina; waarschijnlijk botbeveiliging of een tijdelijke storing. |
 

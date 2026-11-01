@@ -1,6 +1,6 @@
 # Plausibiliteit voedingswaarden
 
-Datum: 2026-10-31
+Datum: 2026-11-01
 Producten gecontroleerd: 1478
 Producten met een signaal: 19
 
