@@ -7,6 +7,11 @@ on:
   schedule:
     - cron: '17 5 * * 1'
   workflow_dispatch:
+    inputs:
+      alleen_voeding:
+        description: 'Sla de ingrediënten- en browsercontrole over'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -29,6 +34,7 @@ jobs:
         run: npm ci
       - name: Bronpagina's vergelijken met de importbestanden
         id: vergelijken
+        if: ${{ inputs.alleen_voeding != true }}
         continue-on-error: true
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
@@ -37,6 +43,7 @@ jobs:
         run: node scripts/controleer-bronnen.mjs --parallel=8 --pauze=1500
       - name: Geblokkeerde sites in een echte browser controleren
         id: browser
+        if: ${{ inputs.alleen_voeding != true }}
         continue-on-error: true
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
