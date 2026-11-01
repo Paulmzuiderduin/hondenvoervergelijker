@@ -20,6 +20,10 @@ const argumenten = new Map(
 const BASIS = (argumenten.get('basis') || 'https://hondenvoervergelijker.paulzuiderduin.com').replace(/\/$/, '')
 const POGINGEN = Number(argumenten.get('pogingen') ?? 3) || 3
 const WACHTTIJD = Number(argumenten.get('wacht') ?? 2000) || 2000
+// De sitemap kan na een FTP-upload enkele tientallen seconden leeg blijven
+// terwijl de server al HTTP 200 geeft. Geef die propagatie ruim de tijd.
+const SITEMAP_POGINGEN = 6
+const SITEMAP_WACHTTIJD = 5000
 
 async function haal(url, { methode = 'GET' } = {}) {
   for (let poging = 1; poging <= POGINGEN; poging += 1) {
@@ -44,7 +48,7 @@ async function haal(url, { methode = 'GET' } = {}) {
 // paar keer opnieuw; anders faalt een verder goede deploy op een leeg bestand.
 let sitemapStatus = 0
 let urls = []
-for (let poging = 1; poging <= POGINGEN; poging += 1) {
+for (let poging = 1; poging <= SITEMAP_POGINGEN; poging += 1) {
   try {
     const antwoord = await fetch(`${BASIS}/sitemap.xml?deploy=${Date.now()}`, {
       headers: { 'user-agent': 'HondenvoervergelijkerBot/0.1 (controle na deploy)', 'cache-control': 'no-cache' },
@@ -55,11 +59,12 @@ for (let poging = 1; poging <= POGINGEN; poging += 1) {
       const xml = await antwoord.text()
       urls = [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)].map((treffer) => treffer[1])
       if (urls.length) break
+      console.log(`Sitemap is nog leeg (poging ${poging}/${SITEMAP_POGINGEN}); opnieuw proberen...`)
     }
   } catch {
     sitemapStatus = 0
   }
-  if (poging < POGINGEN) await new Promise((klaar) => setTimeout(klaar, WACHTTIJD * poging))
+  if (poging < SITEMAP_POGINGEN) await new Promise((klaar) => setTimeout(klaar, SITEMAP_WACHTTIJD * poging))
 }
 
 if (sitemapStatus !== 200) {
