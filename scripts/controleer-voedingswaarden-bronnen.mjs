@@ -188,10 +188,18 @@ for (const [hostnaam, rijen] of perHostUitkomsten) {
 }
 
 const telling = (status) => resultaten.filter((rij) => rij?.status === status).length
+const isHostBlokkade = (rij) => rij?.status === 'onbereikbaar' && /^De site gaf bij \d+ van \d+ producten/.test(rij.detail ?? '')
+const hostGeblokkeerd = resultaten.filter(isHostBlokkade)
+const hostGeblokkeerdPerHost = new Map()
+for (const rij of hostGeblokkeerd) {
+  const hostnaam = host(rij.bronUrl)
+  if (!hostGeblokkeerdPerHost.has(hostnaam)) hostGeblokkeerdPerHost.set(hostnaam, 0)
+  hostGeblokkeerdPerHost.set(hostnaam, hostGeblokkeerdPerHost.get(hostnaam) + 1)
+}
 const groepen = {
   gewijzigd: resultaten.filter((rij) => rij?.status === 'gewijzigd'),
   andereBron: resultaten.filter((rij) => rij?.status === 'andere-bron'),
-  onbereikbaar: resultaten.filter((rij) => rij?.status === 'onbereikbaar'),
+  onbereikbaar: resultaten.filter((rij) => rij?.status === 'onbereikbaar' && !isHostBlokkade(rij)),
   browser: resultaten.filter((rij) => rij?.status === 'browser'),
   geenTekst: resultaten.filter((rij) => rij?.status === 'geen-tekst')
 }
@@ -204,6 +212,7 @@ const regels = [
   `Gewijzigd: ${groepen.gewijzigd.length}`,
   `Andere bron: ${groepen.andereBron.length}`,
   `Onbereikbaar: ${groepen.onbereikbaar.length}`,
+  `Geblokkeerde hosts: ${hostGeblokkeerdPerHost.size}`,
   `Alleen via browser: ${groepen.browser.length}`,
   `Geen bruikbare brontekst: ${groepen.geenTekst.length}`,
   ''
@@ -214,8 +223,15 @@ for (const [titel, rijen] of [['Gewijzigd', groepen.gewijzigd], ['Andere bron', 
   for (const rij of rijen) regels.push(`| ${markdownCel(rij.merk)} | ${markdownCel(rij.naam)} | ${markdownCel(host(rij.bronUrl))} | ${markdownCel(rij.detail)} |`)
   regels.push('')
 }
-if (!groepen.gewijzigd.length && !groepen.onbereikbaar.length) regels.push('Geen wijzigingen of onbereikbare bronnen gevonden.', '')
+if (hostGeblokkeerdPerHost.size) {
+  regels.push('## Geblokkeerde hosts', '', '| Host | Producten | Detail |', '|---|---|---|')
+  for (const [hostnaam, aantal] of [...hostGeblokkeerdPerHost.entries()].sort((a, b) => b[1] - a[1])) {
+    regels.push(`| ${markdownCel(hostnaam)} | ${aantal} | De site gaf bij vrijwel alle producten geen betrouwbare pagina; waarschijnlijk botbeveiliging of een tijdelijke storing. |`)
+  }
+  regels.push('')
+}
+if (!groepen.gewijzigd.length && !groepen.onbereikbaar.length && !hostGeblokkeerd.length) regels.push('Geen wijzigingen of onbereikbare bronnen gevonden.', '')
 writeFileSync(RAPPORT, `${regels.join('\n')}\n`)
 console.log(`\nRapport: ${RAPPORT}`)
-console.log(`Gelijk: ${telling('gelijk')} · gewijzigd: ${groepen.gewijzigd.length} · andere bron: ${groepen.andereBron.length} · onbereikbaar: ${groepen.onbereikbaar.length} · browser: ${groepen.browser.length}`)
-if (!geenFout && (groepen.gewijzigd.length || groepen.onbereikbaar.length)) process.exit(1)
+console.log(`Gelijk: ${telling('gelijk')} · gewijzigd: ${groepen.gewijzigd.length} · andere bron: ${groepen.andereBron.length} · onbereikbaar: ${groepen.onbereikbaar.length} · geblokkeerde hosts: ${hostGeblokkeerdPerHost.size} · browser: ${groepen.browser.length}`)
+if (!geenFout && (groepen.gewijzigd.length || groepen.onbereikbaar.length || hostGeblokkeerd.length)) process.exit(1)
