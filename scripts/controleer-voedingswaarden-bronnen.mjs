@@ -165,6 +165,28 @@ async function werk() {
 }
 await Promise.all(Array.from({ length: Math.min(parallel, producten.length) }, werk))
 
+// Vangnet tegen vals alarm: als vrijwel alle producten van één site ineens
+// "gewijzigd" of onbereikbaar zijn, is dat vrijwel zeker een botpagina of een
+// tijdelijke storing vanaf deze runner, niet een etiketwijziging. Behandel die
+// uitkomsten als onbereikbaar; een mens kijkt daarna naar de site.
+const perHostUitkomsten = new Map()
+for (const rij of resultaten) {
+  if (!rij) continue
+  const hostnaam = host(rij.bronUrl)
+  if (!hostnaam) continue
+  if (!perHostUitkomsten.has(hostnaam)) perHostUitkomsten.set(hostnaam, [])
+  perHostUitkomsten.get(hostnaam).push(rij)
+}
+for (const [hostnaam, rijen] of perHostUitkomsten) {
+  const verdacht = rijen.filter((rij) => rij.status === 'gewijzigd' || rij.status === 'onbereikbaar')
+  if (rijen.length < 5 || verdacht.length / rijen.length <= 0.7) continue
+  for (const rij of verdacht) {
+    rij.status = 'onbereikbaar'
+    rij.detail = `De site gaf bij ${verdacht.length} van ${rijen.length} producten geen betrouwbare pagina; waarschijnlijk botbeveiliging of een tijdelijke storing, geen etiketwijziging.`
+  }
+  console.log(`\nLet op: ${hostnaam} gaf ${verdacht.length} van ${rijen.length} keer een afwijkende pagina. Behandeld als onbereikbaar, niet als gewijzigd.`)
+}
+
 const telling = (status) => resultaten.filter((rij) => rij?.status === status).length
 const groepen = {
   gewijzigd: resultaten.filter((rij) => rij?.status === 'gewijzigd'),
