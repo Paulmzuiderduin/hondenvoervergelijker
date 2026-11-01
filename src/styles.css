@@ -811,6 +811,15 @@ button:disabled {
   font-weight: 400;
 }
 
+.trait-filter .nutrition-filter-heading {
+  gap: 0.3rem;
+  font-size: 0.78rem;
+}
+
+.trait-filter .filter-summary {
+  font-size: 0.7rem;
+}
+
 .trait-row {
   display: flex;
   align-items: flex-start;
@@ -834,22 +843,39 @@ button:disabled {
 
 .trait-chip {
   padding: 0.1rem 0.3rem;
-  border: 1px solid #c8d3c9;
-  border-radius: 2px;
-  background: #f7f9f7;
-  color: #44564a;
+  border: 1px solid #b9c7bb;
+  border-radius: 3px;
+  background: #fff;
+  color: #33463a;
   font-size: 0.68rem;
   font-weight: 600;
-}
-
-.trait-chip.active {
-  border-color: #9fb8a6;
-  background: #eaf1ec;
-  color: #175b30;
+  cursor: pointer;
+  transition: background-color 0.12s, border-color 0.12s, color 0.12s;
 }
 
 .trait-chip:hover:not(:disabled) {
-  background: #eaf0eb;
+  border-color: #7f9d87;
+  background: #eef5ef;
+}
+
+/* Actief is een gevulde knop, niet alleen een iets groenere rand: het verschil
+   moet ook op een klein scherm en bij fel licht direct zichtbaar zijn. */
+.trait-chip.active {
+  border-color: #175b30;
+  background: #175b30;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px #175b30;
+}
+
+.trait-chip.active:hover:not(:disabled) {
+  border-color: #0f4724;
+  background: #0f4724;
+  color: #fff;
+}
+
+.trait-chip:focus-visible {
+  outline: 2px solid #1a6b39;
+  outline-offset: 2px;
 }
 
 .trait-hint {

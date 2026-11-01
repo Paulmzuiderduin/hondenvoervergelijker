@@ -1386,8 +1386,8 @@ function App() {
             </div>
             <div className="filter-block trait-filter">
               <div className="filter-heading nutrition-filter-heading">
-                <span>Leeftijd &amp; maat</span>
-                <span className="filter-summary">volgens naam</span>
+                <span>Leeftijd &amp; formaat</span>
+                <span className="filter-summary">naam</span>
               </div>
               <div className="trait-row">
                 <span className="trait-label">Leeftijd</span>
