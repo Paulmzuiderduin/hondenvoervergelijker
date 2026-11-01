@@ -148,6 +148,11 @@ try {
   const traitNamen = (await page.locator('.product-name').allInnerTexts()).slice(0, 5)
   const traitChips = await page.locator('.active-filters .filter-chip').allInnerTexts()
   meld(traitNamen.length > 0 && traitNamen.every((naam) => /puppy|junior/i.test(naam) && /large|giant|maxi|groot|grote/i.test(naam)) && traitChips.some((tekst) => /Leeftijd: Puppy/.test(tekst)) && traitChips.some((tekst) => /Formaat: Large/.test(tekst)), 'leeftijd- en formaatfilter werken en staan in de URL', traitNamen.join(' / '))
+  const traitStijl = await page.locator('.trait-chip.active').first().evaluate((el) => {
+    const stijl = getComputedStyle(el)
+    return { achtergrond: stijl.backgroundColor, tekst: stijl.color }
+  })
+  meld(traitStijl.achtergrond === 'rgb(23, 91, 48)' && traitStijl.tekst === 'rgb(255, 255, 255)', 'actieve leeftijd-/formaatkeuze is duidelijk zichtbaar', `${traitStijl.achtergrond} / ${traitStijl.tekst}`)
   await open('/?allergeen=chicken&eiwit=25-35', '.product-card')
   await page.locator('.filters-reset').click()
   const allergenenNaReset = await page.locator('.selected-allergens .allergen-chip').allInnerTexts()
