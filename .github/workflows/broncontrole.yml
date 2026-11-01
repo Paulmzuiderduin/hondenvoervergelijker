@@ -12,6 +12,10 @@ on:
         description: 'Sla de ingrediënten- en browsercontrole over'
         type: boolean
         default: false
+      alleen_bronnen:
+        description: 'Sla de voedingscontrole en plausibiliteit over'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -52,14 +56,17 @@ jobs:
         run: node scripts/controleer-bronnen-browser.mjs --parallel=3 --pauze=2000
       - name: Voedingswaarden vergelijken met de importbestanden
         id: voeding
+        if: ${{ inputs.alleen_bronnen != true }}
         continue-on-error: true
         run: node scripts/controleer-voedingswaarden-bronnen.mjs --parallel=6 --pauze=300
       - name: Voedingswaarden van geblokkeerde sites in een echte browser controleren
         id: voeding-browser
+        if: ${{ inputs.alleen_bronnen != true }}
         continue-on-error: true
         run: node scripts/controleer-voedingswaarden-browser.mjs --parallel=3 --pauze=2000
       - name: Voedingswaarden op interne consistentie controleren
         id: plausibiliteit
+        if: ${{ inputs.alleen_bronnen != true }}
         continue-on-error: true
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}

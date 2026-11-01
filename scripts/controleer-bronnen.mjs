@@ -131,13 +131,24 @@ function meld(product, status, detail) {
   console.log(`${status.padEnd(12)} ${product.merk} — ${product.naam}${detail ? ` (${detail})` : ''}`)
 }
 
+// "0,3%" en "0. 3%" zijn dezelfde waarde, maar niet dezelfde tekst. Normaliseer
+// die varianten alleen voor de vergelijking, zodat een opmaakfout geen
+// etiketwijziging lijkt.
+function cijfervariant(tekst) {
+  return String(tekst)
+    .replace(/(\d)[.,]\s+(?=\d)/g, '$1.')
+    .replace(/(\d),(\d)/g, '$1.$2')
+}
+
 async function controleerProduct(product, host) {
   if (geblokkeerd.has(host)) {
     meld(product, 'onbereikbaar', `${host} blokkeert deze bezoeker`)
     return
   }
   const gezocht = vergelijkbaar(product.etiketOrigineel)
+  const gezochtCijfers = cijfervariant(gezocht)
   const kern = vergelijkbaarKern(product.etiketOrigineel)
+  const kernCijfers = cijfervariant(kern)
   if (!gezocht) {
     meld(product, 'onbereikbaar', 'geen brontekst in het importbestand')
     return
@@ -165,15 +176,17 @@ async function controleerProduct(product, host) {
       meld(product, 'onbereikbaar', uitkomst.fout ?? `status ${uitkomst.status}`)
       break
     }
-    if (vergelijkbaar(uitkomst.tekst).includes(gezocht)) {
+    const pagina = vergelijkbaar(uitkomst.tekst)
+    const paginadata = vergelijkbaarMetPaginadata(uitkomst.tekst)
+    if (pagina.includes(gezocht) || cijfervariant(pagina).includes(gezochtCijfers)) {
       meld(product, 'gelijk', poging > 1 ? 'bij de tweede poging' : '')
       break
     }
-    if (vergelijkbaarMetPaginadata(uitkomst.tekst).includes(gezocht)) {
+    if (paginadata.includes(gezocht) || cijfervariant(paginadata).includes(gezochtCijfers)) {
       meld(product, 'gelijk', 'staat in de gegevens van de pagina, niet in de leesbare tekst')
       break
     }
-    if (kern.length >= 40 && vergelijkbaar(uitkomst.tekst).includes(kern)) {
+    if (kern.length >= 40 && (pagina.includes(kern) || cijfervariant(pagina).includes(kernCijfers))) {
       meld(product, 'gelijk', 'zelfde samenstelling; gedeelde voetnoten staan elders op de pagina')
       break
     }
