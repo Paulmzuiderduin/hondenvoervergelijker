@@ -1253,8 +1253,12 @@ if (producten?.length) {
 const heeftOnderzoek = existsSync(join(DIST, 'etikettenonderzoek.html'))
 writeFileSync(join(DIST, 'llms.txt'), llmsTxt(heeftOnderzoek))
 
+// Een buildstempel zorgt dat sitemap.xml bij elke deploy echt verandert. De
+// FTP-actie slaat bestanden met identieke inhoud over; zonder dit blijft een
+// oude (soms lege) sitemap in de servercache staan.
 const sitemap = [
   '<?xml version="1.0" encoding="UTF-8"?>',
+  `<!-- build: ${new Date().toISOString()} -->`,
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
   ...adressen.map(({ loc, prioriteit }) => `  <url><loc>${loc}</loc><lastmod>${VANDAAG}</lastmod><priority>${prioriteit}</priority></url>`),
   '</urlset>',
