@@ -2,11 +2,11 @@
 
 Datum: 2026-11-01
 Producten gecontroleerd: 1470
-Gelijk: 1206
+Gelijk: 1214
 Gewijzigd: 0
 Andere bron: 10
-Onbereikbaar: 0
-Geblokkeerde hosts: 1
+Onbereikbaar: 1
+Geblokkeerde hosts: 0
 Alleen via browser: 245
 Geen bruikbare brontekst: 0
 
@@ -24,6 +24,12 @@ Geen bruikbare brontekst: 0
 | James Wellbeloved | James Wellbeloved Junior Kalkoen & Rijst | wellbeloved.com | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 6 van 12 getallen. |
 | James Wellbeloved | James Wellbeloved Senior/Light Kalkoen & Rijst | wellbeloved.com | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 4 van 10 getallen. |
 | James Wellbeloved | James Wellbeloved Senior/Light Lam & Rijst | wellbeloved.com | De analyse komt volgens de notitie van een andere pagina; de opgegeven URL bevat 4 van 9 getallen. |
+
+## Onbereikbaar
+
+| Merk | Product | Bron | Detail |
+|---|---|---|---|
+| Carnilove | Paté Blikvoer met Eend & Fazant voor Honden | carnilove.com | The operation was aborted due to timeout |
 
 ## Alleen via browser
 
@@ -274,10 +280,4 @@ Geen bruikbare brontekst: 0
 | Prins Petfoods | TotalCare Puppy | prinspetfoods.nl | Alleen via een echte browser te controleren. |
 | Prins Petfoods | TotalCare Resist Calm | prinspetfoods.nl | Alleen via een echte browser te controleren. |
 | Prins Petfoods | TotalCare Super Active | prinspetfoods.nl | Alleen via een echte browser te controleren. |
-
-## Geblokkeerde hosts
-
-| Host | Producten | Detail |
-|---|---|---|
-| rodi-petfood.nl | 9 | De site gaf bij vrijwel alle producten geen betrouwbare pagina; waarschijnlijk botbeveiliging of een tijdelijke storing. |
 
