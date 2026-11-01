@@ -232,24 +232,27 @@ try {
   const wachtrijen = [...perHost.entries()].sort((a, b) => b[1].length - a[1].length)
   let index = 0
   async function werkWachtrij() {
-    const page = await browser.newPage({
-      locale: 'nl-NL',
-      userAgent: `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${browser.version()} Safari/537.36`,
-      viewport: { width: 1440, height: 900 }
-    })
-    try {
-      while (index < wachtrijen.length) {
-        const [host, lijst] = wachtrijen[index++]
-        for (const product of lijst) {
-          if (!(await robotsToegestaan(product.bronUrl))) {
-            meld(product, 'onbereikbaar', 'robots.txt staat geautomatiseerd bezoek niet toe')
-            continue
-          }
+    while (index < wachtrijen.length) {
+      const [host, lijst] = wachtrijen[index++]
+      for (const product of lijst) {
+        if (!(await robotsToegestaan(product.bronUrl))) {
+          meld(product, 'onbereikbaar', 'robots.txt staat geautomatiseerd bezoek niet toe')
+          continue
+        }
+        // Een verse context per product voorkomt dat een site als Prins na de
+        // eerste pagina een bot-cookie zet en de rest 403 geeft.
+        const context = await browser.newContext({
+          locale: 'nl-NL',
+          userAgent: `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${browser.version()} Safari/537.36`,
+          viewport: { width: 1440, height: 900 }
+        })
+        const page = await context.newPage()
+        try {
           await controleerProduct(page, product, host)
+        } finally {
+          await context.close().catch(() => {})
         }
       }
-    } finally {
-      await page.close().catch(() => {})
     }
   }
   await Promise.all(Array.from({ length: Math.min(parallel, wachtrijen.length) }, () => werkWachtrij()))

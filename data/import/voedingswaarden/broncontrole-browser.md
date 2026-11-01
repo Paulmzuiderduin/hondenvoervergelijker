@@ -6,6 +6,8 @@ Gelijk: 213
 Gewijzigd: 0
 Onbereikbaar: 32
 
+Aanvullend via retailers: de 32 Terra Canis-producten die hier als onbereikbaar staan, zijn voor hun **voedingswaarden** alsnog gecontroleerd via zooplus.nl, maxizoo.be en dehner.de: 32/32 gelijk. Zie `terra-zooplus-controle.md`. De ingrediëntenlijst is daarmee niet gecontroleerd; die blijft voor deze producten op de officiële bron aangewezen.
+
 Deze controle gebruikt Chrome voor sites die gewone verzoeken blokkeren.
 Een verschil is een signaal voor een mens; de site past niets automatisch aan.
 
