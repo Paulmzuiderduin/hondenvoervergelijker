@@ -39,17 +39,33 @@ async function haal(url, { methode = 'GET' } = {}) {
   return { ok: false, status: 0 }
 }
 
-const sitemapAntwoord = await haal(`${BASIS}/sitemap.xml`)
-if (!sitemapAntwoord.ok) {
-  console.error(`Sitemap niet bereikbaar (${sitemapAntwoord.status}).`)
-  process.exit(1)
+// Na een FTP-upload kan de sitemap heel even leeg of nog niet vervangen zijn,
+// terwijl de server al wel HTTP 200 geeft. Controleer daarom ook de inhoud een
+// paar keer opnieuw; anders faalt een verder goede deploy op een leeg bestand.
+let sitemapStatus = 0
+let urls = []
+for (let poging = 1; poging <= POGINGEN; poging += 1) {
+  try {
+    const antwoord = await fetch(`${BASIS}/sitemap.xml?deploy=${Date.now()}`, {
+      headers: { 'user-agent': 'HondenvoervergelijkerBot/0.1 (controle na deploy)', 'cache-control': 'no-cache' },
+      cache: 'no-store'
+    })
+    sitemapStatus = antwoord.status
+    if (antwoord.ok) {
+      const xml = await antwoord.text()
+      urls = [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)].map((treffer) => treffer[1])
+      if (urls.length) break
+    }
+  } catch {
+    sitemapStatus = 0
+  }
+  if (poging < POGINGEN) await new Promise((klaar) => setTimeout(klaar, WACHTTIJD * poging))
 }
 
-const xml = await fetch(`${BASIS}/sitemap.xml`, {
-  headers: { 'user-agent': 'HondenvoervergelijkerBot/0.1 (controle na deploy)', 'cache-control': 'no-cache' }
-}).then((antwoord) => antwoord.text())
-
-const urls = [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)].map((treffer) => treffer[1])
+if (sitemapStatus !== 200) {
+  console.error(`Sitemap niet bereikbaar (${sitemapStatus}).`)
+  process.exit(1)
+}
 if (!urls.length) {
   console.error('Geen URL\'s in de sitemap gevonden.')
   process.exit(1)
