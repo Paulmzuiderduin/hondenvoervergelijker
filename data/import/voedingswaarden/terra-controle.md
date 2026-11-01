@@ -23,6 +23,12 @@ product gaf voor alle 32 producten geen bruikbare pagina.
 | Graanvrij Rundvlees met courgette, pompoen en oregano | 9,2% eiwit · 7,5% vet · 0,8% vezel · 1,2% as · 78,6% vocht | 9,2 · 7,5 · 0,8 · 1,2 · 78,6 | gelijk |
 | Hypoallergeen Paardenvlees met aardpeer | 10,5% eiwit · 4,2% vet · 0,5% vezel · 1,2% as · 77,8% vocht | 10,5 · 4,2 · 0,5 · 1,2 · 77,8 | gelijk |
 
+Bronpagina's:
+
+- https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/1815858?activeVariant=1815858.1
+- https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/terra_canis_sensitive_hondenvoer/1778025?activeVariant=1778025.2
+- https://www.zooplus.nl/shop/honden/hondenvoer_nat/terra_canis/hypoallergeen/926713?activeVariant=926713.0
+
 ## Conclusie
 
 De drie gecontroleerde producten zijn gelijk. De overige 29 producten zijn
