@@ -31,9 +31,9 @@ Bronpagina's:
 
 ## Conclusie
 
-De drie gecontroleerde producten zijn gelijk. De overige 29 producten zijn
-niet betrouwbaar te openen vanaf deze omgeving: de fabrikant blokkeert de
-pagina's en de zooplus-variantenkeuze is niet zonder foutmarge te koppelen.
-Er is daarom niets automatisch gewijzigd. Voor die producten blijven de
-opgeslagen waarden staan met bron en controledatum; controleer bij twijfel de
-verpakking of een niet-geblokkeerde netwerkomgeving.
+De drie voorbeeldproducten zijn gelijk. Daarna zijn via zooplus.nl en
+maxizoo.be **30 van de 32** Terra Canis-producten alsnog volledig vergeleken;
+die zijn gelijk. Canireo Adult kip wijkt af en Canireo Wild is niet bij de
+gebruikte retailers gevonden. Zie `terra-zooplus-controle.md` voor de volledige
+tabel en bronlinks. Er is niets automatisch gewijzigd; de verpakking blijft
+leidend.
