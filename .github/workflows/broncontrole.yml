@@ -54,6 +54,10 @@ jobs:
         id: voeding
         continue-on-error: true
         run: node scripts/controleer-voedingswaarden-bronnen.mjs --parallel=6 --pauze=300
+      - name: Voedingswaarden van geblokkeerde sites in een echte browser controleren
+        id: voeding-browser
+        continue-on-error: true
+        run: node scripts/controleer-voedingswaarden-browser.mjs --parallel=3 --pauze=2000
       - name: Voedingswaarden op interne consistentie controleren
         id: plausibiliteit
         continue-on-error: true
@@ -69,7 +73,7 @@ jobs:
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
         run: node scripts/maak-backup.mjs
       - name: Melding maken of bijwerken
-        if: steps.vergelijken.outcome == 'failure' || steps.browser.outcome == 'failure' || steps.voeding.outcome == 'failure' || steps.plausibiliteit.outcome == 'failure'
+        if: steps.vergelijken.outcome == 'failure' || steps.browser.outcome == 'failure' || steps.voeding.outcome == 'failure' || steps.voeding-browser.outcome == 'failure' || steps.plausibiliteit.outcome == 'failure'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -86,6 +90,10 @@ jobs:
             if [ -f data/import/voedingswaarden/broncontrole.md ]; then
               echo ''
               cat data/import/voedingswaarden/broncontrole.md
+            fi
+            if [ -f data/import/voedingswaarden/broncontrole-browser.md ]; then
+              echo ''
+              cat data/import/voedingswaarden/broncontrole-browser.md
             fi
             if [ -f data/import/voedingswaarden/plausibiliteit.md ]; then
               echo ''
@@ -115,5 +123,6 @@ jobs:
             data/import/broncontrole.md
             data/import/broncontrole-browser.md
             data/import/voedingswaarden/broncontrole.md
+            data/import/voedingswaarden/broncontrole-browser.md
             data/import/voedingswaarden/plausibiliteit.md
             data/backup/**
