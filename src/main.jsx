@@ -10,6 +10,7 @@ import { leesAllergenen, leesMerken, leesSortering, leesTraitFilters, leesVoedin
 import { classifyProduct, LIFE_STAGE_OPTIONS, SIZE_OPTIONS } from './lib/traits'
 import { SORTING_BY_KEY, SORTING_OPTIONS } from './lib/sorting'
 import { supabase } from './lib/supabase'
+import FeedbackButton from './components/Feedback'
 import './styles.css'
 
 const MISSING_RPC = /PGRST202|Could not find the function|schema cache/i
@@ -1462,6 +1463,7 @@ function App() {
                         {SORTING_OPTIONS.map((optie) => <option key={optie.key} value={optie.key}>{optie.label}</option>)}
                       </select>
                     </label>
+                    <FeedbackButton />
                   </div>
                 </div>
                 {sortering !== 'standaard' && <p className="sort-note"><small>{gegroepeerdOpOordeel ? 'Sortering geldt binnen Geschikt, Controleer en Uitgesloten.' : 'Sortering geldt over alle producten.'}</small></p>}

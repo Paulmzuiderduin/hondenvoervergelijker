@@ -192,12 +192,31 @@ try {
   meld(privacy.includes('mijn.host'), 'privacybeleid noemt de hostingpartij')
   meld(privacy.includes('hondenvoervergelijker@paulzuiderduin.com'), 'privacybeleid heeft het juiste contactadres')
   meld(privacy.includes('Umami'), 'privacybeleid noemt de bezoekersstatistieken')
+  meld(/feedbackknop/i.test(privacy) && /twaalf maanden/i.test(privacy), 'privacybeleid beschrijft de feedback en bewaartermijn')
 
   await open('/hondenvoer-zonder-kip.html', '.answer-box')
   const faqAantal = await page.locator('.faq details').count()
   meld(faqAantal >= 4, 'allergeenpagina heeft een FAQ', `${faqAantal} vragen`)
   const citeerblok = await page.locator('.cite').innerText()
   meld(/Citeer deze pagina/.test(citeerblok), 'allergeenpagina heeft een citeerblok')
+
+  // 5b. Feedbackknop en -dialoog
+  await open('/', '.product-card')
+  const feedbackKnoppen = await page.locator('.feedback-button').count()
+  const feedbackPositie = await page.locator('.feedback-button').evaluate((el) => getComputedStyle(el).position)
+  meld(feedbackKnoppen === 1 && feedbackPositie === 'static', 'feedbackknop staat één keer in de resultatenkop en zweeft niet over de inhoud', `${feedbackKnoppen} knop · ${feedbackPositie}`)
+  await page.locator('.feedback-button').click()
+  await page.waitForSelector('.feedback-dialog', { timeout: 10000 })
+  const feedbackTitel = await page.locator('#feedback-titel').innerText()
+  const feedbackVragen = await page.locator('.feedback-fieldset legend').allInnerTexts()
+  meld(/verbeteren/i.test(feedbackTitel) && feedbackVragen.length === 2, 'feedbackdialoog opent met de korte vragen', `${feedbackTitel} · ${feedbackVragen.join(' / ')}`)
+  const feedbackPrivacy = await page.locator('.feedback-privacy').innerText()
+  meld(/geen medische gegevens/i.test(feedbackPrivacy) && /privacybeleid/i.test(feedbackPrivacy), 'feedbackdialoog waarschuwt voor medische gegevens en linkt het privacybeleid')
+  await page.keyboard.press('Escape')
+  await page.waitForTimeout(100)
+  meld(await page.locator('.feedback-dialog').count() === 0, 'feedbackdialoog sluit met Escape')
+  const focusTerug = await page.evaluate(() => document.activeElement?.classList.contains('feedback-button'))
+  meld(focusTerug, 'focus keert na sluiten terug naar de feedbackknop')
 
   await open('/etikettenonderzoek.html', '.stat-grid')
   const onderzoek = await page.locator('.stat-grid').innerText()
@@ -266,6 +285,29 @@ try {
     count: document.querySelector('.filters-count')?.innerText ?? ''
   }))
   meld(/Bekijk .* producten/.test(mobielOpen.jump) && /producten/.test(mobielOpen.count), 'filterkolom op mobiel toont resultaat en springlink', `${mobielOpen.count} · ${mobielOpen.jump}`)
+
+  await page.locator('.feedback-button').scrollIntoViewIfNeeded()
+  const mobielFeedback = await page.evaluate(() => {
+    const knop = document.querySelector('.feedback-button')
+    const rect = knop?.getBoundingClientRect()
+    const sorteer = document.querySelector('.sort-select')?.getBoundingClientRect()
+    const overlaptSorteer = Boolean(rect && sorteer) && !(rect.right < sorteer.left || rect.left > sorteer.right || rect.bottom < sorteer.top || rect.top > sorteer.bottom)
+    return {
+      positie: knop ? getComputedStyle(knop).position : 'ontbreekt',
+      weergave: knop ? getComputedStyle(knop).display : 'ontbreekt',
+      hoogte: rect?.height ?? 0,
+      inBeeld: Boolean(rect) && rect.top >= 0 && rect.bottom <= window.innerHeight + 1 && rect.left >= 0 && rect.right <= window.innerWidth + 1,
+      overlaptSorteer
+    }
+  })
+  meld(['flex', 'inline-flex'].includes(mobielFeedback.weergave) && mobielFeedback.positie === 'static', 'feedbackknop staat op mobiel in de resultatenkop en niet zwevend', `${mobielFeedback.weergave} · ${mobielFeedback.positie}`)
+  meld(mobielFeedback.hoogte >= 44 && mobielFeedback.inBeeld && !mobielFeedback.overlaptSorteer, 'feedbackknop is op mobiel groot genoeg en botst niet met de sorteerkeuze', `${Math.round(mobielFeedback.hoogte)}px`)
+  await page.locator('.feedback-button').click()
+  await page.waitForSelector('.feedback-dialog', { timeout: 10000 })
+  meld(await page.locator('.feedback-dialog').getAttribute('aria-modal') === 'true', 'feedbackdialoog opent vanaf mobiel in de resultatenkop')
+  await page.keyboard.press('Escape')
+  await page.waitForTimeout(100)
+  meld(await page.locator('.feedback-dialog').count() === 0, 'feedbackdialoog sluit op mobiel met Escape')
 
   // 7. Geen JavaScript-fouten
   meld(consoleFouten.length === 0, 'geen console- of JavaScript-fouten', consoleFouten.slice(0, 3).join(' | '))

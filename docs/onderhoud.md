@@ -62,6 +62,29 @@ privacy-/404-pagina. Bezoekers kunnen zich afmelden via
 `/?umami-optout=1` en weer aanmelden via `/?umami-optin=1`. Het dashboard staat
 op `https://cloud.umami.is`.
 
+## Feedback
+
+De knop **Feedback** staat in de resultatenkop en opent een korte, anonieme
+vragenlijst. De invoer gaat naar de Supabase-tabel `public.feedback`. Bezoekers
+hebben alleen insert-rechten; lezen kan uitsluitend via het
+Supabase-dashboard of de SQL-editor.
+
+```sql
+-- Nieuwe feedback bekijken
+select created_at, page, rating, results_logical, message, contact
+from public.feedback
+order by created_at desc;
+
+-- Feedback ouder dan twaalf maanden verwijderen
+delete from public.feedback
+where created_at < now() - interval '12 months';
+```
+
+De Umami-events `feedback-geopend` en `feedback-verzonden` tonen alleen dát de
+knop wordt gebruikt, niet de inhoud. Vrije tekst en e-mailadressen gaan nooit
+naar Umami. Verwijder een e-mailadres zodra je er niet meer op hoeft te
+reageren.
+
 ## Affiliate aanzetten (zodra Awin goedkeurt)
 
 1. Download de CSV-feeds van Zooplus en Medpets in Awin.
