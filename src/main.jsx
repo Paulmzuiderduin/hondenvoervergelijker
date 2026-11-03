@@ -1463,7 +1463,6 @@ function App() {
                         {SORTING_OPTIONS.map((optie) => <option key={optie.key} value={optie.key}>{optie.label}</option>)}
                       </select>
                     </label>
-                    <FeedbackButton />
                   </div>
                 </div>
                 {sortering !== 'standaard' && <p className="sort-note"><small>{gegroepeerdOpOordeel ? 'Sortering geldt binnen Geschikt, Controleer en Uitgesloten.' : 'Sortering geldt over alle producten.'}</small></p>}
@@ -1547,6 +1546,7 @@ function App() {
         </span>
       </div>
     </footer>
+    <FeedbackButton />
   </main>
 }
 createRoot(document.getElementById('root')).render(<App />)

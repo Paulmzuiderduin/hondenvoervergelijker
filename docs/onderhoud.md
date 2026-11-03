@@ -64,7 +64,7 @@ op `https://cloud.umami.is`.
 
 ## Feedback
 
-De knop **Feedback** staat in de resultatenkop en opent een korte, anonieme
+De knop **Feedback** zweeft rechtsonder in beeld en opent een korte, anonieme
 vragenlijst. De invoer gaat naar de Supabase-tabel `public.feedback`. Bezoekers
 hebben alleen insert-rechten; lezen kan uitsluitend via het
 Supabase-dashboard of de SQL-editor.

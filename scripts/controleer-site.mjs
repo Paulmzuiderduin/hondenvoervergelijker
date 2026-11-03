@@ -204,7 +204,10 @@ try {
   await open('/', '.product-card')
   const feedbackKnoppen = await page.locator('.feedback-button').count()
   const feedbackPositie = await page.locator('.feedback-button').evaluate((el) => getComputedStyle(el).position)
-  meld(feedbackKnoppen === 1 && feedbackPositie === 'static', 'feedbackknop staat één keer in de resultatenkop en zweeft niet over de inhoud', `${feedbackKnoppen} knop · ${feedbackPositie}`)
+  const feedbackBox = await page.locator('.feedback-button').boundingBox()
+  const scherm = page.viewportSize()
+  meld(feedbackKnoppen === 1 && feedbackPositie === 'fixed', 'feedbackknop zweeft rechtsonder en staat één keer op de pagina', `${feedbackKnoppen} knop · ${feedbackPositie}`)
+  meld(Boolean(feedbackBox) && feedbackBox.height >= 44 && feedbackBox.x >= 0 && feedbackBox.y >= 0 && feedbackBox.x + feedbackBox.width <= scherm.width + 1 && feedbackBox.y + feedbackBox.height <= scherm.height + 1, 'feedbackknop is groot genoeg en blijft binnen het scherm', feedbackBox ? `${Math.round(feedbackBox.width)}×${Math.round(feedbackBox.height)}` : 'niet gevonden')
   await page.locator('.feedback-button').click()
   await page.waitForSelector('.feedback-dialog', { timeout: 10000 })
   const feedbackTitel = await page.locator('#feedback-titel').innerText()
@@ -286,25 +289,38 @@ try {
   }))
   meld(/Bekijk .* producten/.test(mobielOpen.jump) && /producten/.test(mobielOpen.count), 'filterkolom op mobiel toont resultaat en springlink', `${mobielOpen.count} · ${mobielOpen.jump}`)
 
-  await page.locator('.feedback-button').scrollIntoViewIfNeeded()
   const mobielFeedback = await page.evaluate(() => {
     const knop = document.querySelector('.feedback-button')
     const rect = knop?.getBoundingClientRect()
-    const sorteer = document.querySelector('.sort-select')?.getBoundingClientRect()
-    const overlaptSorteer = Boolean(rect && sorteer) && !(rect.right < sorteer.left || rect.left > sorteer.right || rect.bottom < sorteer.top || rect.top > sorteer.bottom)
+    const main = document.querySelector('main')
+    const tekstRect = (el) => {
+      const bereik = document.createRange()
+      bereik.selectNodeContents(el)
+      const tekst = bereik.getBoundingClientRect()
+      return tekst.width ? tekst : el.getBoundingClientRect()
+    }
+    const overlap = ['.jump-to-results', '.filters-toggle', '.filter-jump'].map((selector) => {
+      const el = document.querySelector(selector)
+      if (!el) return { selector, overlapt: false }
+      const r = tekstRect(el)
+      const zichtbaar = r.bottom > 0 && r.top < window.innerHeight && r.right > 0 && r.left < window.innerWidth
+      const overlapt = zichtbaar && Boolean(rect) && !(r.right < rect.left || r.left > rect.right || r.bottom < rect.top || r.top > rect.bottom)
+      return { selector, overlapt }
+    })
     return {
       positie: knop ? getComputedStyle(knop).position : 'ontbreekt',
-      weergave: knop ? getComputedStyle(knop).display : 'ontbreekt',
       hoogte: rect?.height ?? 0,
       inBeeld: Boolean(rect) && rect.top >= 0 && rect.bottom <= window.innerHeight + 1 && rect.left >= 0 && rect.right <= window.innerWidth + 1,
-      overlaptSorteer
+      ruimteOnder: main ? parseFloat(getComputedStyle(main).paddingBottom) : 0,
+      overlap
     }
   })
-  meld(['flex', 'inline-flex'].includes(mobielFeedback.weergave) && mobielFeedback.positie === 'static', 'feedbackknop staat op mobiel in de resultatenkop en niet zwevend', `${mobielFeedback.weergave} · ${mobielFeedback.positie}`)
-  meld(mobielFeedback.hoogte >= 44 && mobielFeedback.inBeeld && !mobielFeedback.overlaptSorteer, 'feedbackknop is op mobiel groot genoeg en botst niet met de sorteerkeuze', `${Math.round(mobielFeedback.hoogte)}px`)
+  meld(mobielFeedback.positie === 'fixed' && mobielFeedback.hoogte >= 44 && mobielFeedback.inBeeld, 'feedbackknop zweeft op mobiel rechtsonder en blijft in beeld', `${mobielFeedback.positie} · ${Math.round(mobielFeedback.hoogte)}px`)
+  meld(mobielFeedback.ruimteOnder >= 64, 'de pagina houdt onderaan ruimte vrij voor de feedbackknop', `${Math.round(mobielFeedback.ruimteOnder)}px`)
+  meld(mobielFeedback.overlap.every((item) => !item.overlapt), 'feedbackknop valt niet over de springlinks of filterknop', mobielFeedback.overlap.map((item) => `${item.selector}:${item.overlapt ? 'overlap' : 'vrij'}`).join(' · '))
   await page.locator('.feedback-button').click()
   await page.waitForSelector('.feedback-dialog', { timeout: 10000 })
-  meld(await page.locator('.feedback-dialog').getAttribute('aria-modal') === 'true', 'feedbackdialoog opent vanaf mobiel in de resultatenkop')
+  meld(await page.locator('.feedback-dialog').getAttribute('aria-modal') === 'true', 'feedbackdialoog opent vanaf de zwevende knop op mobiel')
   await page.keyboard.press('Escape')
   await page.waitForTimeout(100)
   meld(await page.locator('.feedback-dialog').count() === 0, 'feedbackdialoog sluit op mobiel met Escape')
