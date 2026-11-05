@@ -1051,7 +1051,7 @@ ${zelfdeMerkLijst}
       <p>${relevanteAllergenen || '<a href="/hondenvoer-zonder.html">Alle overzichten zonder een specifiek allergeen</a>'}</p>
       <p>Lees <a href="/hoe-wij-vergelijken.html">hoe wij etiketten overnemen en controleren</a>, bekijk het <a href="/broncontrole.html">openbare broncontroleverslag</a> of lees <a href="/hondenvoer-allergieen.html">hoe je een etiket leest</a>.</p>
 
-      <p class="cite"><strong>Citeer deze pagina:</strong> Hondenvoervergelijker, “${escapeHtml(product.brand)} ${escapeHtml(product.name)}”, ${SITE}${pad}, geraadpleegd op ${datumNl(VANDAAG)}.${bronDatum ? ` Bron gecontroleerd op ${bronDatum}.` : ''}</p>`
+      <p class="cite"><strong>Citeer deze pagina:</strong> Hondenvoervergelijker, “${escapeHtml(product.brand)} ${escapeHtml(product.name)}”, ${SITE}${pad}.${bronDatum ? ` Bron gecontroleerd op ${bronDatum}.` : ''}${reviewDatum ? ` Handmatig nagelopen op ${reviewDatum}.` : ''}</p>`
 
   const breadcrumb = {
     '@context': 'https://schema.org',
