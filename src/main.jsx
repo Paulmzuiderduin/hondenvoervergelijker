@@ -1429,7 +1429,7 @@ function App() {
             const gekozen = group.allergens.filter(({ key }) => allergens.includes(key)).length
             return <details className="allergen-group" key={group.key} open={allergenSearch.trim() ? true : undefined}>
               <summary><span>{group.label}</span> <span className={gekozen ? 'group-count active' : 'group-count'}>{gekozen ? `${gekozen} gekozen` : `${group.allergens.length} ${group.allergens.length === 1 ? 'optie' : 'opties'}`}</span></summary>
-              <div className="choices">{group.allergens.map(({ key, label }) => <label className="inline" key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => wisselAllergeen(key, e.target.checked)} />{label}</label>)}</div>
+              <div className="choices">{group.allergens.map(({ key, label }) => <label className={`inline${label.length > 14 ? ' allergen-wide' : ''}`} key={key}><input type="checkbox" checked={allergens.includes(key)} onChange={(e) => wisselAllergeen(key, e.target.checked)} />{label}</label>)}</div>
             </details>
           }) : <p><small>Geen allergeen gevonden voor “{allergenSearch}”.</small></p>}
         </section>

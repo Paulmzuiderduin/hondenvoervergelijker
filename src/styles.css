@@ -1163,15 +1163,48 @@ button:disabled {
 }
 
 .allergen-group .choices {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  align-items: stretch;
+  gap: 0.05rem 0.35rem;
   margin-top: 0.55rem;
   padding-top: 0.5rem;
   border-top: 1px solid #e9eeea;
-  gap: 0.4rem 1.4rem;
 }
 
 .allergen-group .inline {
-  margin: 0.2rem 0.5rem 0.2rem 0;
-  font-size: 0.89rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0.06rem 0.15rem;
+  min-height: 24px;
+  border-radius: 2px;
+  font-size: 0.78rem;
+  line-height: 1.15;
+}
+
+.allergen-group .inline input {
+  flex: 0 0 auto;
+}
+
+.allergen-group .inline.allergen-wide {
+  grid-column: span 2;
+}
+
+.allergen-group .inline:hover {
+  background: #f4f7f4;
+}
+
+@media (max-width: 1100px) {
+  .allergen-group .choices {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .allergen-group .choices {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .allergen-group legend {
@@ -2824,7 +2857,8 @@ small {
    overlappen. Zodra de filters open zijn, maken we ruimte voor de filters;
    na het sluiten komt de knop vanzelf terug. */
 @media (max-width: 760px) {
-  body:has(.filters.open) .feedback-button {
+  body:has(.filters.open) .feedback-button,
+  body:has(.allergen-group[open]) .feedback-button {
     display: none;
   }
 }

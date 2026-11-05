@@ -72,6 +72,12 @@ try {
   meld(await page.locator('.filters-reset-inline').count() === 1, 'actieve filters hebben een wis-knop')
   const voorbeeld = await page.locator('.result-preview').innerText()
   meld(/Lijkt geschikt: \d+/i.test(voorbeeld) && /Controleer: \d+/.test(voorbeeld) && /Uitgesloten: \d+/.test(voorbeeld), 'driewegtelling staat direct onder de allergenenkeuze', voorbeeld.replace(/\n/g, ' ').slice(0, 120))
+  await page.locator('.allergen-group summary').first().click()
+  const allergenenRaster = await page.locator('.allergen-group .choices').first().evaluate((el) => {
+    const label = el.querySelector('.inline')
+    return { weergave: getComputedStyle(el).display, kolommen: getComputedStyle(el).gridTemplateColumns.split(' ').length, hoogte: label?.getBoundingClientRect().height ?? 0 }
+  })
+  meld(allergenenRaster.weergave === 'grid' && allergenenRaster.kolommen >= 3 && allergenenRaster.hoogte >= 24, 'allergenen staan in een compact uitgelijnd raster', `${allergenenRaster.weergave} · ${allergenenRaster.kolommen} kolommen · ${Math.round(allergenenRaster.hoogte)}px`)
 
   // 3. Merk-deeplink
   await open('/?merk=Acana', '.product-card')
