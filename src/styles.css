@@ -285,6 +285,12 @@ button:disabled {
   border-bottom-color: #f2c94c;
 }
 
+.hero-positioning {
+  margin-top: 0.3rem !important;
+  font-size: 0.78rem !important;
+  color: #cfe0d4 !important;
+}
+
 .hero-text strong,
 .hero-text em {
   color: #fff;
@@ -488,6 +494,16 @@ button:disabled {
   margin-top: 0.75rem;
   padding-top: 0.6rem;
   border-top: 1px solid #e6ece7;
+}
+
+.advanced-filters {
+  margin-top: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid #e6ece7;
+}
+
+.advanced-filters > summary {
+  margin-bottom: 0.25rem;
 }
 
 .filter-block:first-of-type {
@@ -992,6 +1008,34 @@ button:disabled {
   gap: 0.5rem;
 }
 
+.panel-step {
+  margin: 0 0 0.15rem !important;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5d6e61;
+}
+
+.result-preview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.75rem 0 0;
+  padding: 0.55rem 0.65rem;
+  background: #f4f8f5;
+  border: 1px solid #c3dbc9;
+  border-radius: 2px;
+}
+
+.result-preview-label {
+  margin-right: 0.15rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #274a31;
+}
+
 .jump-to-results {
   display: inline-block;
   padding: 0.34rem 0.6rem;
@@ -1068,6 +1112,14 @@ button:disabled {
   background: #f7e9e9;
   border-color: #cfa5a5;
   color: #8a2f2f;
+}
+
+.allergen-chip.static,
+.allergen-chip.static:hover {
+  background: #eaf1ec;
+  border-color: #b9cbbd;
+  color: #17512b;
+  cursor: default;
 }
 
 .allergen-search-label {
@@ -1426,13 +1478,16 @@ button:disabled {
 }
 
 .product-brand {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0.15rem 0.2rem;
+  margin: 0 0 0.05rem -0.2rem;
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #4a6252;
-  margin-bottom: 0.1rem;
   text-decoration: none;
 }
 
@@ -1447,6 +1502,19 @@ button:disabled {
   font-weight: 700;
   line-height: 1.35;
   color: #16241a;
+}
+
+.product-name a {
+  display: inline-block;
+  min-height: 24px;
+  padding: 0.1rem 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-name a:hover {
+  color: #175b30;
+  text-decoration: underline;
 }
 
 .product-badges {
@@ -1482,7 +1550,9 @@ button:disabled {
 }
 
 .meta-source {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   align-self: center;
   padding: 0.1rem 0.15rem;
   color: #175b30;
@@ -1492,6 +1562,22 @@ button:disabled {
 }
 
 .meta-source:hover {
+  text-decoration: underline;
+}
+
+.product-more {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0.1rem 0.2rem;
+  color: #175b30;
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.product-more:hover {
   text-decoration: underline;
 }
 
@@ -1548,6 +1634,9 @@ button:disabled {
 }
 
 .compare-bar {
+  position: sticky;
+  top: calc(var(--header-hoogte, 0px) + 0.5rem);
+  z-index: 20;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -1557,6 +1646,7 @@ button:disabled {
   background: #f4f8f5;
   border: 1px solid #c3dbc9;
   border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(20, 55, 31, 0.1);
 }
 
 .compare-bar-label {
@@ -1723,6 +1813,27 @@ button:disabled {
 
 .compare-missing {
   color: #9aa69c;
+}
+
+.compare-allergen-note {
+  margin-top: -0.15rem;
+}
+
+.compare-verdict-row td {
+  background: #fbfcfb;
+  text-align: left;
+}
+
+.compare-verdict-row td small {
+  display: block;
+  margin-top: 0.2rem;
+  color: #53645a;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.compare-verdict-row .verdict-badge {
+  margin-bottom: 0.15rem;
 }
 
 .verdict-badge {
@@ -2122,18 +2233,42 @@ small {
   color: #46574a;
 }
 
-.pager select {
-  display: inline-block;
-  width: auto;
-  max-width: 5rem;
-  margin: 0;
-  padding: 0.25rem 0.4rem;
+.pager-pages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.pager-pages button.active {
+  background: #175b30;
+  border-color: #175b30;
+  color: #fff;
+}
+
+.pager-ellipsis {
+  padding: 0 0.15rem;
+  color: #5d6e61;
+  font-size: 0.85rem;
+}
+
+.pager-status {
+  font-size: 0.8rem;
+  color: #46574a;
+  white-space: nowrap;
 }
 
 .pager button {
   min-width: 5.8rem;
+  min-height: 44px;
   padding: 0.35rem 0.7rem;
   font-size: 0.84rem;
+}
+
+.pager-pages button {
+  min-width: 2.6rem;
+  min-height: 44px;
+  padding: 0.3rem 0.5rem;
 }
 
 /* Beheer rijen */
@@ -2682,5 +2817,14 @@ small {
   }
   .pager {
     justify-content: center;
+  }
+}
+
+/* Op mobiel kan de zwevende feedbackknop de uitgeklapte filterkolom
+   overlappen. Zodra de filters open zijn, maken we ruimte voor de filters;
+   na het sluiten komt de knop vanzelf terug. */
+@media (max-width: 760px) {
+  body:has(.filters.open) .feedback-button {
+    display: none;
   }
 }

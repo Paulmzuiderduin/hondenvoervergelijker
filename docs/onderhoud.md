@@ -85,13 +85,17 @@ knop wordt gebruikt, niet de inhoud. Vrije tekst en e-mailadressen gaan nooit
 naar Umami. Verwijder een e-mailadres zodra je er niet meer op hoeft te
 reageren.
 
-## Affiliate aanzetten (zodra Awin goedkeurt)
+## Affiliate aanzetten (later, optioneel)
+
+De site is geen prijsvergelijker. Prijzen worden niet opgehaald, getoond of
+vergeleken. Een affiliate-link is alleen een doorverwijzing; de beoordeling,
+selectie en volgorde blijven daar volledig onafhankelijk van.
 
 1. Download de CSV-feeds van Zooplus en Medpets in Awin.
 2. Zet ze in `data/winkels/` en maak `feeds.json` (zie `data/winkels/README.md`).
 3. Draai `npm run winkels:koppel -- --dry-run`, daarna zonder `--dry-run`.
 4. Controleer `data/winkels/rapport.md`.
-5. Commit `public/winkels.json`. De winkelknoppen verschijnen automatisch.
+5. Commit `public/winkels.json`. De winkelknoppen verschijnen automatisch, zonder prijs.
 
 De koppeling beïnvloedt de volgorde en de beoordeling niet.
 

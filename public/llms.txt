@@ -8,7 +8,7 @@ Laatst bijgewerkt: 30 oktober 2026.
 
 - 1.478 producten van 60 merken.
 - 18 aparte allergeenpagina's, plus een overzichtspagina.
-- 89 pagina's in de sitemap.
+- 93 pagina's in de sitemap.
 - De bronnen worden wekelijks gecontroleerd.
 - De site is Nederlandstalig en richt zich op Nederland en België (Vlaanderen).
 
@@ -26,6 +26,8 @@ Laatst bijgewerkt: 30 oktober 2026.
 - [Hoe wij vergelijken](https://hondenvoervergelijker.paulzuiderduin.com/hoe-wij-vergelijken.html): bronnen, keuring en beperkingen.
 - [Hondenvoer en allergieën](https://hondenvoervergelijker.paulzuiderduin.com/hondenvoer-allergieen.html): hoe je een etiket leest.
 - [Etikettenonderzoek](https://hondenvoervergelijker.paulzuiderduin.com/etikettenonderzoek.html): cijfers over verzameltermen op hondenvoeretiketten.
+- [Broncontrole](https://hondenvoervergelijker.paulzuiderduin.com/broncontrole.html): openbaar overzicht van controledatums en handmatige controles.
+- [Hypoallergene hondenvoeding](https://hondenvoervergelijker.paulzuiderduin.com/hypoallergene-hondenvoeding.html): wat de term wel en niet betekent, en welke etiketten elke bron bij name noemen.
 - [Eiwitrijk hondenvoer](https://hondenvoervergelijker.paulzuiderduin.com/eiwitrijk-hondenvoer.html): producten met ten minste 30% ruw eiwit.
 - [Hondenvoer met weinig vet](https://hondenvoervergelijker.paulzuiderduin.com/hondenvoer-met-weinig-vet.html): producten met ten hoogste 10% ruw vet.
 - [Hondenvoer met veel vezel](https://hondenvoervergelijker.paulzuiderduin.com/hoog-vezel-hondenvoer.html): producten met ten minste 5% ruwe vezel.
@@ -34,9 +36,11 @@ Laatst bijgewerkt: 30 oktober 2026.
 - [Contact](https://hondenvoervergelijker.paulzuiderduin.com/contact.html)
 - [Privacybeleid](https://hondenvoervergelijker.paulzuiderduin.com/privacybeleid.html)
 
+Elke merkpagina linkt naar afzonderlijke productpagina's. Zo'n pagina bevat de letterlijke ingrediëntenlijst, de voedingswaarden, het oordeel per allergeen, de bron-URL en de controledatum. Er worden geen prijzen of aanbiedingen getoond.
+
 ## Methodiek
 
-De ingrediëntenlijsten komen van de officiële productpagina's van de fabrikant. De tekst wordt letterlijk overgenomen, inclusief percentages en volgorde. Verzameltermen zoals "dierlijk vet", "granen" of "vlees en dierlijke bijproducten" worden gemarkeerd. Een product krijgt alleen de status "Geschikt" als de gekozen bron aantoonbaar niet achter zo'n term kan zitten. Bij twijfel blijft het product op "Controleer etiket/fabrikant" staan.
+De ingrediëntenlijsten komen van de officiële productpagina's van de fabrikant. De tekst wordt letterlijk overgenomen, inclusief percentages en volgorde. Verzameltermen zoals "dierlijk vet", "granen" of "vlees en dierlijke bijproducten" worden gemarkeerd. Een product krijgt alleen de status "Lijkt geschikt" als de gekozen bron aantoonbaar niet achter zo'n term kan zitten. Bij twijfel blijft het product op "Controleer etiket/fabrikant" staan.
 
 Voedingswaarden zijn as-fed: de percentages zijn inclusief vocht. Brokken bevatten meestal 6–10% vocht, natvoer 75–85% en rauwvoer 60–75%. Vergelijk natvoer en brokken daarom niet direct op dezelfde percentages; vergelijk binnen hetzelfde voertype of reken om naar droge stof. Op de vergelijkingspagina zijn alle standaardwaarden met een minimum- en maximumschuif te filteren: eiwit, vet, vezel, as, vocht, energie, calcium, fosfor, omega-3 en omega-6. Eiwit, vet en energie staan direct open; de andere zeven zitten in één uitklapregel. Die filters gebruiken de as-fedwaarden; de site waarschuwt wanneer natvoer en brokken tegelijk worden gefilterd. De resultaten zijn binnen de drie oordeelgroepen te sorteren op eiwit, vet of energie; producten zonder die waarde blijven zichtbaar en zakken naar achteren.
 

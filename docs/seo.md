@@ -17,8 +17,16 @@ voor nodig.
    - `/hondenvoer-zonder-<allergeen>.html` — per allergeen de recepten die het
      etiket dat ingrediënt niet noemt (alleen als er minimaal 10 zijn), met
      kort antwoord, FAQ en citeerblok;
+   - `/producten/<merk>/<product>.html` — één indexeerbare pagina per product
+     met de letterlijke ingrediëntenlijst, voedingswaarden, het oordeel per
+     hoofdallergeen, bron-URL en controledatum;
+   - `/hypoallergene-hondenvoeding.html` — uitleg over de term en producten met
+     een volledig benoemd etiket;
+   - `/broncontrole.html` — openbaar controleverslag met controledatums en
+     aantallen handmatig nagekeken producten;
    - `/etikettenonderzoek.html` — dataonderzoek naar verzameltermen en allergenen;
-   - `/sitemap.xml` — alle pagina's met prioriteit en datum.
+   - `/sitemap.xml` — alle pagina's met prioriteit en datum;
+   - `/llms.txt` — bijgewerkte tellingen en links voor AI-systemen.
 3. Na de deploy controleert de workflow de upload, alle sitemap-URL's en de
    belangrijkste gebruikersroutes in een echte browser.
 4. Daarna meldt `scripts/indexnow.mjs` alle URL's uit de sitemap bij IndexNow.
@@ -31,6 +39,20 @@ gewoon werken; de build faalt dan niet.
 De allergeenpagina's gebruiken dezelfde keuring als de site, inclusief de
 woordenlijst uit `ingredient_terms`. Een pagina wordt alleen gemaakt als er
 minimaal tien recepten overblijven; zo ontstaan geen dunne pagina's.
+
+## Productpagina's
+
+Elke productpagina heeft een eigen canonical, unieke titel en beschrijving, de
+letterlijke ingrediëntenlijst, de as-fedvoedingswaarden, een tabel met de 18
+hoofdallergenen, de bron-URL en de controledata. De pagina's hebben
+`Product`-structured data zonder `offers`, prijzen of beoordelingen. Er wordt
+geen prijsinformatie getoond of vergeleken; de site blijft een vergelijker op
+ingrediënten, allergenen en voedingswaarden.
+
+De merkpagina's en allergeenpagina's linken naar de productpagina's. De
+productpagina's linken terug naar het merk, de vergelijker, de relevante
+allergeenoverzichten en het broncontroleverslag. Zo ontstaat een interne
+linksstructuur zonder geautomatiseerde dunne doorverwijspagina's.
 
 ## Google Search Console
 

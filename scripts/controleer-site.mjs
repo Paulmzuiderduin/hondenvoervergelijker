@@ -53,19 +53,25 @@ try {
   meld(/Hondenvoer vergelijken/.test(titel), 'homepage heeft de juiste titel', titel)
   const kaarten = await page.locator('.product-card').count()
   meld(kaarten >= 1, 'homepage toont producten', `${kaarten} kaarten`)
+  const pagerKnoppen = await page.locator('.pager-pages button').count()
+  meld(await page.locator('.pager select').count() === 0 && pagerKnoppen > 1, 'paginering gebruikt genummerde knoppen in plaats van een lange keuzelijst', `${pagerKnoppen} paginaknoppen`)
+  const kaartProductpad = await page.locator('.product-name a').first().getAttribute('href')
+  meld(/^\/producten\/[a-z0-9-]+\/[a-z0-9-]+\.html$/.test(kaartProductpad), 'productkaart linkt naar de indexeerbare productpagina', kaartProductpad)
 
   // 2. Allergeen via de URL
   await open('/?allergeen=chicken', '.product-card')
   const chips = await page.locator('.allergen-chip').allInnerTexts()
   meld(chips.some((tekst) => tekst.includes('Kip')), 'allergeen Kip staat als filter actief', chips.join(' / '))
   const samenvatting = await page.locator('.result-summary').innerText()
-  meld(/Geschikt:/.test(samenvatting), 'resultaten zijn per allergenen beoordeeld', samenvatting.replace(/\n/g, ' '))
+  meld(/Lijkt geschikt:/i.test(samenvatting), 'resultaten zijn per allergenen beoordeeld', samenvatting.replace(/\n/g, ' '))
 
   const status = await page.locator('.result-status').innerText()
   meld(/geschikt/.test(status), 'dynamische resultaatmelding noemt de geschikte producten', status.replace(/\n/g, ' ').slice(0, 120))
   const actieveChips = await page.locator('.active-filters .filter-chip').allInnerTexts()
   meld(actieveChips.some((tekst) => tekst.includes('Kip')), 'actief allergeen staat bij de resultaten', actieveChips.join(' / '))
   meld(await page.locator('.filters-reset-inline').count() === 1, 'actieve filters hebben een wis-knop')
+  const voorbeeld = await page.locator('.result-preview').innerText()
+  meld(/Lijkt geschikt: \d+/i.test(voorbeeld) && /Controleer: \d+/.test(voorbeeld) && /Uitgesloten: \d+/.test(voorbeeld), 'driewegtelling staat direct onder de allergenenkeuze', voorbeeld.replace(/\n/g, ' ').slice(0, 120))
 
   // 3. Merk-deeplink
   await open('/?merk=Acana', '.product-card')
@@ -159,20 +165,22 @@ try {
   const voedingsNaReset = await page.locator('.active-filters').innerText()
   meld(allergenenNaReset.some((tekst) => /Kip/.test(tekst)) && !/Eiwit/.test(voedingsNaReset), 'kolomreset laat de allergenenkeuze staan', `${allergenenNaReset.join(' / ')} · ${voedingsNaReset.replace(/\n/g, ' ').slice(0, 80)}`)
 
-  // 3e. Producten naast elkaar vergelijken
-  await open('/?merk=Acana', '.product-card')
+  // 3e. Producten naast elkaar vergelijken, met een allergenenkeuze.
+  await open('/?allergeen=chicken&merk=Acana', '.product-card')
   const vergelijkVinkjes = page.locator('.compare-toggle input')
   await vergelijkVinkjes.nth(0).check()
   await vergelijkVinkjes.nth(1).check()
   await vergelijkVinkjes.nth(2).check()
   const vierdeUit = await vergelijkVinkjes.nth(3).isDisabled()
   const vergelijkBar = await page.locator('.compare-bar').innerText()
-  meld(/3\/3 geselecteerd/.test(vergelijkBar) && vierdeUit, 'maximaal drie producten vergelijken', vergelijkBar.replace(/\n/g, ' ').slice(0, 100))
+  const vergelijkSticky = await page.locator('.compare-bar').evaluate((el) => getComputedStyle(el).position)
+  meld(/3\/3 geselecteerd/.test(vergelijkBar) && vierdeUit && vergelijkSticky === 'sticky', 'maximaal drie producten vergelijken en de balk blijft bij scrollen in beeld', `${vergelijkBar.replace(/\n/g, ' ').slice(0, 100)} · ${vergelijkSticky}`)
   await page.locator('.compare-open').click()
   await page.waitForSelector('.compare-panel', { timeout: 10000 })
   const vergelijkRijen = await page.locator('.compare-table tbody tr').count()
   const vergelijkKolommen = await page.locator('.compare-table thead th').count()
-  meld(vergelijkRijen >= 8 && vergelijkKolommen === 4, 'vergelijkingsdialoog toont de gekozen producten', `${vergelijkRijen} rijen · ${vergelijkKolommen} kolommen`)
+  const vergelijkOordeel = await page.locator('.compare-verdict-row').innerText()
+  meld(vergelijkRijen >= 8 && vergelijkKolommen === 4 && /Allergeenoordeel/.test(vergelijkOordeel) && /Noemt: Kip|Kan erin zitten|Nergens genoemd/.test(vergelijkOordeel), 'vergelijkingsdialoog toont producten en allergenoordeel', `${vergelijkRijen} rijen · ${vergelijkKolommen} kolommen · ${vergelijkOordeel.replace(/\n/g, ' ').slice(0, 100)}`)
   await page.keyboard.press('Escape')
   await page.waitForTimeout(100)
   meld(await page.locator('.compare-panel').count() === 0, 'vergelijkingsdialoog sluit met Escape')
@@ -186,6 +194,20 @@ try {
   await open('/merken/', '.product-list')
   const merken = await page.locator('.product-list a').count()
   meld(merken >= 60, 'merkenoverzicht is compleet', `${merken} merken`)
+
+  await open('/merken/acana.html', '.product-list')
+  const productHref = await page.locator('.product-list a.product-more').first().getAttribute('href')
+  const productAntwoord = await context.request.get(`${BASIS}${productHref}`)
+  const productHtml = await productAntwoord.text()
+  meld(productAntwoord.ok() && /<h1>/.test(productHtml) && /Allergenen en het etiket/.test(productHtml) && /Ingrediëntenlijst/.test(productHtml) && /"@type":"Product"/.test(productHtml) && !/"offers"/.test(productHtml) && !/>null</.test(productHtml), 'productpagina is indexeerbaar, gevuld en zonder prijsdata', productHref)
+
+  const broncontroleAntwoord = await context.request.get(`${BASIS}/broncontrole.html`)
+  const broncontroleHtml = await broncontroleAntwoord.text()
+  meld(broncontroleAntwoord.ok() && /Broncontrole/.test(broncontroleHtml) && /Handmatig nagelopen/.test(broncontroleHtml), 'openbaar broncontroleverslag is bereikbaar')
+
+  await open('/hypoallergene-hondenvoeding.html', '.stat-grid')
+  const hypo = await page.locator('body').innerText()
+  meld(/hypoallergeen/i.test(hypo) && /niet beschermd|geen beschermde term/i.test(hypo), 'hypoallergeen-pagina legt de term voorzichtig uit')
 
   await open('/privacybeleid.html', 'h1')
   const privacy = await page.locator('body').innerText()
@@ -234,18 +256,24 @@ try {
   meld(llms.ok() && llmsTekst.includes('# Hondenvoervergelijker'), 'llms.txt is bereikbaar en gevuld')
   const robots = await context.request.get(`${BASIS}/robots.txt`)
   const robotsTekst = await robots.text()
-  meld(robots.ok() && robotsTekst.includes('GPTBot') && robotsTekst.includes('Sitemap:'), 'robots.txt staat open voor AI-crawlers')
+  meld(robots.ok() && robotsTekst.includes('GPTBot') && robotsTekst.includes('Sitemap:') && robotsTekst.includes('Disallow: /catalog-assessment.json'), 'robots.txt staat open voor AI-crawlers en sluit machine-JSON uit')
 
   const sitemap = await context.request.get(`${BASIS}/sitemap.xml`)
   const xml = await sitemap.text()
   const aantalUrls = (xml.match(/<loc>/g) ?? []).length
-  meld(sitemap.ok() && aantalUrls >= 89, 'sitemap is bereikbaar en gevuld', `${aantalUrls} URL's`)
+  meld(sitemap.ok() && aantalUrls >= 1500, 'sitemap is bereikbaar en bevat de productpagina’s', `${aantalUrls} URL's`)
+  const llmsAantal = Number((llmsTekst.match(/- ([\d.]+) pagina's in de sitemap/) ?? [])[1]?.replace(/\./g, ''))
+  meld(llms.ok() && llmsAantal === aantalUrls, 'llms.txt en sitemap noemen hetzelfde aantal pagina’s', `${llmsAantal} vs ${aantalUrls}`)
 
   // 6. Lage desktop: de filterkolom moet intern scrollen en binnen de viewport
   // blijven, zodat Merken niet pas na de hele pagina bereikbaar is.
   await page.setViewportSize({ width: 1280, height: 700 })
   await open('/', '.product-card')
-  await page.mouse.wheel(0, 900)
+  const advancedDicht = await page.locator('.advanced-filters').evaluate((el) => el.open)
+  meld(advancedDicht === false, 'uitgebreide voedings- en merkfilters staan standaard ingeklapt')
+  await page.locator('.advanced-filters > summary').click()
+  await page.waitForTimeout(100)
+  await page.evaluate(() => window.scrollTo(0, 900))
   await page.waitForTimeout(150)
   const filterVoor = await page.locator('.filters').evaluate((el) => {
     const r = el.getBoundingClientRect()
@@ -288,6 +316,10 @@ try {
     count: document.querySelector('.filters-count')?.innerText ?? ''
   }))
   meld(/Bekijk .* producten/.test(mobielOpen.jump) && /producten/.test(mobielOpen.count), 'filterkolom op mobiel toont resultaat en springlink', `${mobielOpen.count} · ${mobielOpen.jump}`)
+  const feedbackVerborgen = await page.locator('.feedback-button').evaluate((el) => getComputedStyle(el).display === 'none')
+  meld(feedbackVerborgen, 'feedbackknop maakt ruimte voor de uitgeklapte mobiele filters')
+  await page.locator('.filters-toggle').click()
+  await page.waitForTimeout(100)
 
   const mobielFeedback = await page.evaluate(() => {
     const knop = document.querySelector('.feedback-button')

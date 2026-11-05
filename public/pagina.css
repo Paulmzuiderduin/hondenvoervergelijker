@@ -113,10 +113,17 @@ th { background: #f6f8f6; font-weight: 700; color: #22402c; }
 .tag { display: inline-block; padding: 0.08rem 0.4rem; border: 1px solid #dbe3dc; border-radius: 2px; background: #f7f9f7; font-size: 0.76rem; color: #44564a; }
 .tag.ok { background: #e6f1e9; border-color: #c3dbc9; color: #14532b; font-weight: 600; }
 .tag.check { background: #fdf3d6; border-color: #e7d29a; color: #66490a; font-weight: 600; }
+.tag.excluded { background: #fbe9e9; border-color: #e8c6c6; color: #8a2f2f; font-weight: 600; }
+.product-list .name a { color: inherit; text-decoration: none; }
+.product-list .name a:hover { color: #175b30; text-decoration: underline; }
+.product-list-action { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.product-more { font-size: 0.78rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.product-more:hover { text-decoration: underline; }
+.ingredients-text { padding: 0.75rem 0.85rem; background: #fbfcfb; border: 1px solid #e3e9e4; white-space: pre-wrap; overflow-wrap: anywhere; }
 
 .breadcrumb { margin: 0 0 0.9rem; font-size: 0.83rem; color: #5b6d5f; }
-.breadcrumb a { text-decoration: none; }
-.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb a { text-decoration: underline; text-underline-offset: 2px; }
+.breadcrumb a:hover { color: #0f3d20; }
 
 .related-allergens { line-height: 1.9; }
 .related-allergens a { font-weight: 600; }

@@ -14,9 +14,10 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { ALLERGEN_LABELS, ALLERGENS, FOOD_TYPES, assessLabel, markUncertainIngredients, setCustomTerms } from '../src/lib/allergens.js'
-import { productMatch } from '../src/lib/matcher.js'
-import { voedingswaardeMap } from '../src/lib/nutrition.js'
+import { isReviewOverdue, productMatch } from '../src/lib/matcher.js'
+import { NUTRIENTS, formatteerVoedingswaarde, voedingswaardeMap } from '../src/lib/nutrition.js'
 import { onbetrouwbareNutrienten } from '../src/lib/plausibility.js'
+import { productPad, slugify } from '../src/lib/productUrl.js'
 
 const WORTEL = dirname(dirname(fileURLToPath(import.meta.url)))
 const DIST = join(WORTEL, 'dist')
@@ -55,22 +56,7 @@ const datumNl = (waarde) => {
 
 const getal = (waarde) => new Intl.NumberFormat('nl-NL').format(waarde)
 
-const slug = (tekst = '') =>
-  String(tekst)
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[øØ]/g, 'o')
-    .replace(/[æÆ]/g, 'ae')
-    .replace(/[œŒ]/g, 'oe')
-    .replace(/[ß]/g, 'ss')
-    .replace(/[đĐðÐ]/g, 'd')
-    .replace(/[þÞ]/g, 'th')
-    .replace(/[łŁ]/g, 'l')
-    .replace(/&/g, ' en ')
-    .replace(/['’`]/g, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
+const slug = slugify
 
 const typeLabel = (key) => FOOD_TYPES.find(([sleutel]) => sleutel === key)?.[1] ?? key
 
@@ -137,6 +123,8 @@ ${inhoud}
           <a href="/hondenvoer-zonder.html">Zonder allergeen</a>
           <a href="/hoe-wij-vergelijken.html">Hoe wij vergelijken</a>
           <a href="/etikettenonderzoek.html">Etikettenonderzoek</a>
+          <a href="/broncontrole.html">Broncontrole</a>
+          <a href="/hypoallergene-hondenvoeding.html">Hypoallergeen</a>
           <a href="/eiwitrijk-hondenvoer.html">Eiwitrijk</a>
           <a href="/hondenvoer-met-weinig-vet.html">Weinig vet</a>
           <a href="/hoog-vezel-hondenvoer.html">Veel vezel</a>
@@ -147,7 +135,7 @@ ${inhoud}
           <a href="/disclaimer.html">Disclaimer</a>
           <a href="/privacybeleid.html">Privacybeleid</a>
         </nav>
-        <p>Sommige links naar webwinkels zijn affiliate-links. Wij ontvangen dan een kleine commissie, zonder extra kosten voor jou. De selectie en beoordeling blijven onafhankelijk.</p>
+        <p>Deze site vergelijkt ingrediënten, allergenen en voedingswaarden — geen prijzen of winkelaanbod. Sommige verwijzingen kunnen affiliate-links bevatten; de selectie, volgorde en beoordeling blijven daar volledig onafhankelijk van.</p>
         <p>© ${new Date().getFullYear()} Hondenvoervergelijker · Paul Zuiderduin · <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a></p>
         <p>Deze site vergelijkt uitsluitend overgenomen etiketinformatie. De resultaten vormen geen medisch advies en bieden geen 100% garantie. Controleer altijd zelf de verpakking en overleg bij medische klachten met een dierenarts.</p>
       </footer>
@@ -159,9 +147,22 @@ ${inhoud}
 
 const organisatie = {
   '@type': 'Organization',
+  '@id': `${SITE}/#organisatie`,
   name: 'Hondenvoervergelijker',
   url: SITE,
   email: 'hondenvoervergelijker@paulzuiderduin.com',
+  logo: {
+    '@type': 'ImageObject',
+    url: `${SITE}/favicon-512.png`,
+    width: 512,
+    height: 512
+  },
+  founder: {
+    '@type': 'Person',
+    '@id': `${SITE}/over-ons.html#paul-zuiderduin`,
+    name: 'Paul Zuiderduin'
+  },
+  sameAs: ['https://github.com/Paulmzuiderduin/hondenvoervergelijker'],
   description: 'Onafhankelijke vergelijker van hondenvoeding op ingrediënten en allergenen.'
 }
 
@@ -184,8 +185,12 @@ const allergiePagina = () => {
       antwoord: 'Dit betekent dat het eiwit in zulke kleine fragmenten is opgeknipt dat het immuunsysteem van de hond het in veel gevallen niet meer als allergeen herkent. Dit garandeert echter niet dat het voor elke hond 100% veilig is, aangezien de oorspronkelijke bron onveranderd blijft. Een dierenarts kan het beste inschatten of een gehydrolyseerd dieet geschikt is voor jouw hond.'
     },
     {
-      vraag: 'Is “grain free” (graanvrij) automatisch een veilige keuze bij een allergie?',
+      vraag: 'Is “graanvrij” automatisch een veilige keuze bij een allergie?',
       antwoord: 'Nee, zeker niet. Een voedselallergie wordt meestal veroorzaakt door een dierlijke eiwitbron (zoals kip, rund of zuivel), niet door granen. Een graanvrij product kan dus nog steeds de eiwitten bevatten waar je hond allergisch voor is. Omgekeerd kan een voeding mét granen, maar met slechts één gecontroleerde (hypoallergene) eiwitbron, wél uitstekend geschikt zijn.'
+    },
+    {
+      vraag: 'Is versvlees of KVV geschikt bij een allergie?',
+      antwoord: 'Dat kan, maar alleen als de dierlijke eiwitbron precies bekend is en de voeding past bij het eliminatiedieet dat je dierenarts heeft opgesteld. Versvlees en KVV bevatten veel vocht en kunnen bacteriën zoals Salmonella bevatten; hygiëne is dus extra belangrijk. Een onduidelijke term als “vlees” of “dierlijke bijproducten” maakt de voeding ongeschikt voor een gerichte eliminatieproef.'
     },
     {
       vraag: 'Kan ik deze website gebruiken als vervanging voor een eliminatiedieet?',
@@ -239,7 +244,7 @@ const allergiePagina = () => {
       <table>
         <thead><tr><th>Uitslag</th><th>Betekenis</th></tr></thead>
         <tbody>
-          <tr><td><strong>Geschikt</strong></td><td>Het etiket vermeldt de geselecteerde bron nergens. Daarnaast bevat de lijst geen onduidelijke verzameltermen waarachter dit allergeen verborgen kan zitten.</td></tr>
+          <tr><td><strong>Lijkt geschikt</strong></td><td>Het etiket vermeldt de geselecteerde bron nergens. Daarnaast bevat de lijst geen onduidelijke verzameltermen waarachter dit allergeen verborgen kan zitten.</td></tr>
           <tr><td><strong>Uitgesloten</strong></td><td>De geselecteerde bron staat expliciet met naam genoemd in de ingrediëntenlijst.</td></tr>
           <tr><td><strong>Controleer etiket/fabrikant</strong></td><td>Het etiket bevat een ingrediënt zonder gespecificeerde bron, of noemt een term die ons systeem niet herkent. Alleen de fabrikant of de originele verpakking kan hier uitsluitsel over geven.</td></tr>
         </tbody>
@@ -288,7 +293,7 @@ const methodePagina = () => {
       <p>Onbekende woorden worden door de beheerder eenmalig handmatig gecategoriseerd. Deze indeling wordt opgeslagen en direct toegepast op alle toekomstige en bestaande producten die ditzelfde woord bevatten. Zo leert de vergelijker continu nieuwe termen herkennen, zonder dat elk etiket volledig handwerk blijft.</p>
 
       <h2>5. Eerlijk over onzekerheid</h2>
-      <p>Wanneer een etiket de specifieke bron niet noemt, markeert onze site het product niet blindelings als “Geschikt”, maar geven we de status “Controleer etiket/fabrikant”. Dit is geen programmeerfout, maar een weerspiegeling van de onvolledigheid van het etiket zelf. In dergelijke gevallen kan uitsluitend de verpakking of de fabrikant helderheid verschaffen.</p>
+      <p>Wanneer een etiket de specifieke bron niet noemt, markeert onze site het product niet blindelings als “Lijkt geschikt”, maar geven we de status “Controleer etiket/fabrikant”. Dit is geen programmeerfout, maar een weerspiegeling van de onvolledigheid van het etiket zelf. In dergelijke gevallen kan uitsluitend de verpakking of de fabrikant helderheid verschaffen.</p>
 
       <h2>6. Actualiteit en bronbewaking</h2>
       <p>De bronpagina's worden wekelijks geautomatiseerd gecontroleerd. Is de tekst op de website van de fabrikant ongewijzigd? Dan updaten we enkel de controledatum. Signaleert het systeem een wijziging, dan blijft de oude samenstelling op onze site zichtbaar totdat een beheerder de nieuwe tekst handmatig heeft goedgekeurd en verwerkt. Hierdoor passen ingrediëntenlijsten op ons platform zich nooit ongemerkt aan. Voor de voedingswaarden draait een aparte controle op de vastgelegde analysetekst; ook daar verandert niets automatisch.</p>
@@ -296,7 +301,15 @@ const methodePagina = () => {
       <p>Benieuwd hoe vaak verzameltermen in de hele database voorkomen? Lees ons <a href="/etikettenonderzoek.html">etikettenonderzoek</a>.</p>
 
       <h2>7. Onafhankelijkheid en affiliate-links</h2>
-      <p>De weergavevolgorde en de uiteindelijke beoordeling van producten zijn uitsluitend gebaseerd op de feitelijke etiketinformatie en de door jou geselecteerde allergenen. Verwijzingen naar webwinkels kunnen soms affiliate-links bevatten, maar deze hebben geen enkele invloed op wélke producten we tonen, op de rangschikking, of op de keuringsuitslag. Meer hierover lees je in ons <a href="/privacybeleid.html">privacybeleid</a>.</p>
+      <p>Wij vergelijken ingrediënten, allergenen en voedingswaarden — geen prijzen of winkelaanbod. De weergavevolgorde en de uiteindelijke beoordeling van producten zijn uitsluitend gebaseerd op de feitelijke etiketinformatie en de door jou geselecteerde allergenen. Verwijzingen naar fabrikanten of webwinkels kunnen later affiliate-links bevatten, maar deze hebben geen enkele invloed op wélke producten we tonen, op de rangschikking, of op de keuringsuitslag.</p>
+      <ul>
+        <li>Merken betalen niet voor een hogere positie of een beter oordeel.</li>
+        <li>Het ontbreken van een productlink verandert niets aan de selectie of beoordeling.</li>
+        <li>De officiële productpagina van de fabrikant blijft de primaire bron.</li>
+        <li>Een commerciële link is een doorverwijzing, geen onderdeel van de keuring.</li>
+        <li>Fouten kunnen door gebruikers worden gemeld; na een bronwijziging gaat het product opnieuw ter controle.</li>
+      </ul>
+      <p>Meer hierover lees je in ons <a href="/privacybeleid.html">privacybeleid</a> en in het <a href="/broncontrole.html">openbare broncontroleverslag</a>.</p>
 
       <h2>8. Beperkingen</h2>
       <ul>
@@ -371,6 +384,8 @@ const overOnsPagina = () => {
         name: 'Hondenvoervergelijker',
         url: `${SITE}/`,
         email: 'hondenvoervergelijker@paulzuiderduin.com',
+        logo: { '@type': 'ImageObject', url: `${SITE}/favicon-512.png`, width: 512, height: 512 },
+        sameAs: ['https://github.com/Paulmzuiderduin/hondenvoervergelijker'],
         description: 'Onafhankelijke Nederlandse vergelijker van hondenvoeding op allergenen en ingrediënten.',
         founder: { '@type': 'Person', '@id': `${SITE}/over-ons.html#paul-zuiderduin` },
         areaServed: ['NL', 'BE'],
@@ -453,7 +468,7 @@ const voorwaardenPagina = () => {
       <p>De site geeft informatieve vergelijkingen op basis van openbare ingrediëntenlijsten. De informatie is geen medisch advies, diagnose of behandelplan. Raadpleeg bij twijfel altijd een dierenarts. Zie ook onze <a href="/disclaimer.html">disclaimer</a>.</p>
 
       <h2>4. Affiliate-links</h2>
-      <p>Sommige links naar webwinkels zijn affiliate-links. Als je via zo'n link een aankoop doet, ontvangen wij een kleine commissie. Dit kost jou niets extra. De selectie, sortering en beoordeling van producten zijn niet afhankelijk van deze commissie. Prijzen en beschikbaarheid worden bepaald door de betreffende winkel en kunnen wijzigen.</p>
+      <p>Sommige links naar webwinkels kunnen affiliate-links zijn. Als je via zo'n link een aankoop doet, ontvangen wij een kleine commissie. Dit kost jou niets extra. De selectie, sortering en beoordeling van producten zijn niet afhankelijk van deze commissie. Beschikbaarheid en voorwaarden worden bepaald door de betreffende winkel. Wij vergelijken geen prijzen en tonen geen actuele prijsdata.</p>
 
       <h2>5. Intellectueel eigendom</h2>
       <p>De teksten, data, vormgeving en andere inhoud van deze site zijn eigendom van Hondenvoervergelijker, tenzij anders vermeld. Overname voor commerciële doeleinden is niet toegestaan zonder toestemming. Korte citaten met een duidelijke bronvermelding zijn toegestaan.</p>
@@ -544,7 +559,7 @@ async function haalProducten() {
   return rijen
 }
 
-const verdictLabel = (transparant) => (transparant ? 'alle bronnen benoemd' : 'bron niet volledig benoemd')
+const verdictLabel = (transparant) => (transparant ? 'etiket noemt elke bron' : 'bron niet volledig benoemd')
 
 function productRegel(product) {
   const versie = product.recipe_versions?.[0]
@@ -556,13 +571,19 @@ function productRegel(product) {
     ? `Etiket noemt: ${bronnen.slice(0, 8).join(', ')}${bronnen.length > 8 ? ` en ${bronnen.length - 8} meer` : ''}`
     : 'Geen bekende allergeenbron in de lijst'
   const type = typeLabel(product.food_type)
-  const maat = product.package_size ? ` · ${escapeHtml(product.package_size)}` : ''
+  const maat = product.package_size && String(product.package_size).trim().toLowerCase() !== 'null'
+    ? ` · ${escapeHtml(product.package_size)}`
+    : ''
+  const pad = productPad(product)
   return `          <li>
             <span>
-              <span class="name">${escapeHtml(product.name)}</span><br />
+              <a class="name" href="${pad}">${escapeHtml(product.name)}</a><br />
               <span class="meta">${escapeHtml(type)}${maat} · ${escapeHtml(bronTekst)}</span>
             </span>
-            <span class="tag ${transparant ? 'ok' : 'check'}">${verdictLabel(transparant)}</span>
+            <span class="product-list-action">
+              <span class="tag ${transparant ? 'ok' : 'check'}">${verdictLabel(transparant)}</span>
+              <a class="product-more" href="${pad}">Details →</a>
+            </span>
           </li>`
 }
 
@@ -615,7 +636,7 @@ ${topTermen.map(([woord, aantal]) => `        <li><strong>${escapeHtml(woord)}</
         <a class="cta" href="/?merk=${encodeURIComponent(brand)}">Vergelijk ${escapeHtml(brand)} op allergenen</a>
       </p>
       <div class="callout">
-        <p>“Alle bronnen benoemd” betekent: bij elk ingrediënt staat waar het vandaan komt. “Bron niet volledig benoemd” betekent: er staat een verzamelterm in de lijst (zoals “dierlijk vet”, “gevogelte-eiwit” of “granen”) die een allergeen kan verbergen.${open ? ` Dat geldt voor ${open} van de ${getal(producten.length)} producten.` : ` Alle ${getal(producten.length)} producten noemen elke bron bij name.`}</p>
+        <p>“Etiket noemt elke bron” betekent: bij elk ingrediënt staat waar het vandaan komt. “Bron niet volledig benoemd” betekent: er staat een verzamelterm in de lijst (zoals “dierlijk vet”, “gevogelte-eiwit” of “granen”) die een allergeen kan verbergen.${open ? ` Dat geldt voor ${open} van de ${getal(producten.length)} producten.` : ` Alle ${getal(producten.length)} producten noemen elke bron bij name.`}</p>
       </div>
 
       <h2>Alle producten van ${escapeHtml(brand)}</h2>
@@ -626,7 +647,7 @@ ${producten.map(productRegel).join('\n')}
       ${termenBlok}
 
       <h2>Over deze merkpagina</h2>
-      <p>De ingrediëntenlijsten komen van de officiële productpagina's van ${escapeHtml(brand)}. De vergelijker neemt de tekst letterlijk over en beoordeelt per allergeen of de bron bij name genoemd is. Kies in de vergelijker de allergenen van jouw hond om te zien welke producten geschikt zijn, welke uitgesloten zijn en waar je het etiket moet controleren.</p>
+      <p>De ingrediëntenlijsten komen van de officiële productpagina's van ${escapeHtml(brand)}. De vergelijker neemt de tekst letterlijk over en beoordeelt per allergeen of de bron bij name genoemd is. Kies in de vergelijker de allergenen van jouw hond om te zien welke producten geschikt lijken, welke uitgesloten zijn en waar je het etiket moet controleren.</p>
       <p><a class="cta" href="/?merk=${encodeURIComponent(brand)}">Open ${escapeHtml(brand)} in de vergelijker</a> <a class="cta secondary" href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a></p>
 
       ${buren.length ? `<h2>Andere merken</h2>
@@ -635,14 +656,14 @@ ${buren.map((buur) => `        <li><a href="/merken/${buur.slugBrand}.html">${es
       </ul>
       <p><a href="/merken/">Bekijk alle merken</a></p>` : ''}
 
-      <p class="updated">Deze pagina wordt automatisch bijgewerkt wanneer de productdata verandert. Klopt er iets niet? Mail <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a>.</p>`
+      <p class="updated">Deze pagina wordt automatisch bijgewerkt wanneer de productdata verandert. Inhoud: <a href="/over-ons.html#redactie">Paul Zuiderduin</a>. Klopt er iets niet? Mail <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a>.</p>`
 
   const itemList = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: `${brand} hondenvoer`,
     numberOfItems: producten.length,
-    itemListElement: producten.slice(0, 50).map((p, index) => ({
+    itemListElement: producten.slice(0, 20).map((p, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       name: `${brand} — ${p.name} (${typeLabel(p.food_type).toLowerCase()})`
@@ -786,13 +807,19 @@ function allergeenPagina(key, kort, producten) {
       ? `Etiket noemt: ${bronnen.slice(0, 6).join(', ')}${bronnen.length > 6 ? ` en ${bronnen.length - 6} meer` : ''}`
       : 'Geen bekende allergeenbron in de lijst'
     const type = typeLabel(product.food_type)
-    const maat = product.package_size ? ` · ${escapeHtml(product.package_size)}` : ''
+    const maat = product.package_size && String(product.package_size).trim().toLowerCase() !== 'null'
+      ? ` · ${escapeHtml(product.package_size)}`
+      : ''
+    const pad = productPad(product)
     return `          <li>
             <span>
-              <span class="name">${escapeHtml(product.name)}</span><br />
+              <a class="name" href="${pad}">${escapeHtml(product.name)}</a><br />
               <span class="meta"><a href="/merken/${slug(product.brand)}.html">${escapeHtml(product.brand)}</a> · ${escapeHtml(type)}${maat} · ${escapeHtml(bronTekst)}</span>
             </span>
-            <span class="tag ok">${escapeHtml(ALLERGEN_LABELS[key] ?? kort)} niet genoemd</span>
+            <span class="product-list-action">
+              <span class="tag ok">${escapeHtml(ALLERGEN_LABELS[key] ?? kort)} niet genoemd</span>
+              <a class="product-more" href="${pad}">Details →</a>
+            </span>
           </li>`
   }).join('\n')
 
@@ -800,9 +827,10 @@ function allergeenPagina(key, kort, producten) {
       <p class="eyebrow">Allergeen</p>
       <h1>Hondenvoer zonder ${escapeHtml(kort)}</h1>
       <p class="lead">Een onafhankelijk overzicht van hondenvoeding waarbij het etiket ${escapeHtml(allergeenKlein)} niet noemt.</p>
+      <p class="updated">Bijgewerkt op ${datumNl(VANDAAG)}${datum ? ` · laatste broncontrole ${datum}` : ''} · inhoud: <a href="/over-ons.html#redactie">Paul Zuiderduin</a></p>
 
       <div class="answer-box">
-        <h2>Kort antwoord: welk hondenvoer is geschikt zonder ${escapeHtml(kort)}?</h2>
+        <h2>Kort antwoord: welk hondenvoer lijkt geschikt zonder ${escapeHtml(kort)}?</h2>
         <p>${getal(rijen.length)} producten van ${merkenAantal} merken noemen ${escapeHtml(allergeenKlein)} niet en bevatten geen onduidelijke term die ${escapeHtml(kort)} kan verbergen.${datum ? ` Laatst gecontroleerd op ${datum}.` : ''}</p>
         <p>Dit is een indicatie op basis van het etiket, geen medisch advies. Controleer altijd de verpakking.</p>
       </div>
@@ -813,13 +841,13 @@ function allergeenPagina(key, kort, producten) {
         <p><strong>Wat betekent dit?</strong> Deze producten noemen ${escapeHtml(kort)} nergens in de ingrediëntenlijst. Dat is geen garantie dat het product geschikt is voor jouw hond: een dierenarts beoordeelt dat. Controleer altijd de verpakking, want fabrikanten kunnen een recept aanpassen.</p>
       </div>
 
-      <h2>Geschikte producten zonder ${escapeHtml(kort)}</h2>
+      <h2>Producten die ${escapeHtml(kort)} niet noemen</h2>
       <ul class="product-list">
 ${lijst}
       </ul>
 
       <h2>Waar let je op bij “zonder ${escapeHtml(kort)}”?</h2>
-      <p>Een ingrediëntenlijst noemt niet altijd de bron. Woorden als ${voorbeeld} zeggen niet welke dier- of plantsoort erachter zit. Onze keuring markeert zulke woorden en laat het product alleen als “geschikt” zien als ${escapeHtml(kort)} daar aantoonbaar niet achter kan zitten.</p>
+      <p>Een ingrediëntenlijst noemt niet altijd de bron. Woorden als ${voorbeeld} zeggen niet welke dier- of plantsoort erachter zit. Onze keuring markeert zulke woorden en laat het product alleen als “lijkt geschikt” zien als ${escapeHtml(kort)} daar aantoonbaar niet achter kan zitten.</p>
       <p>Let ook op kruisbesmetting in de fabriek en op snacks of beloningen naast de hoofdmaaltijd. Die staan niet in deze lijst.</p>
 
       <h2>Veelgestelde vragen over hondenvoer zonder ${escapeHtml(kort)}</h2>
@@ -838,7 +866,7 @@ ${faq.map(({ vraag, antwoord }) => `        <details><summary>${escapeHtml(vraag
     kort,
     key,
     html: shell({
-      titel: `Hondenvoer zonder ${kort}: ${getal(rijen.length)} geschikte producten | Hondenvoervergelijker`,
+      titel: `Hondenvoer zonder ${kort}: ${getal(rijen.length)} producten die het niet noemen | Hondenvoervergelijker`,
       beschrijving: `${rijen.length} hondenvoeders waarbij het etiket ${ALLERGEN_LABELS[key] ?? kort} niet noemt en geen onduidelijke term die ${kort} kan verbergen. Onafhankelijk gecontroleerd${laatste ? ` op ${datumNl(laatste)}` : ''}.`,
       pad,
       inhoud,
@@ -876,13 +904,201 @@ ${faq.map(({ vraag, antwoord }) => `        <details><summary>${escapeHtml(vraag
           '@type': 'ItemList',
           name: `Hondenvoer zonder ${kort}`,
           numberOfItems: rijen.length,
-          itemListElement: rijen.slice(0, 50).map(({ product }, index) => ({
+          itemListElement: rijen.slice(0, 20).map(({ product }, index) => ({
             '@type': 'ListItem',
             position: index + 1,
             name: `${product.brand} — ${product.name}`
           }))
         }
       ]
+    })
+  }
+}
+
+function productPagina(product, alleProducten, allergeenPaginas) {
+  const versie = product.recipe_versions?.[0]
+  const tekst = versie?.ingredients_text ?? ''
+  const type = typeLabel(product.food_type)
+  const maat = product.package_size && String(product.package_size).trim().toLowerCase() !== 'null'
+    ? String(product.package_size)
+    : ''
+  const pad = productPad(product)
+  const bron = product.source_url && /^https?:/i.test(product.source_url) ? product.source_url : ''
+  const bronDomein = (() => {
+    try { return new URL(bron).hostname.replace(/^www\./, '') } catch { return '' }
+  })()
+  const bronDatum = datumNl(product.last_checked_at)
+  const reviewDatum = datumNl(versie?.reviewed_at)
+  const voedingsDatum = datumNl(versie?.nutrition_checked_at)
+  const importDatum = datumNl(versie?.imported_at)
+  const hoofdKeys = ALLERGEEN_KEUZE.map(([key]) => key)
+  const match = productMatch(product, hoofdKeys)
+  const perKey = new Map(match.states.map((state) => [state.key, state]))
+  const voeding = voedingswaardeMap(versie?.recipe_nutrition)
+  const onbetrouwbaar = onbetrouwbareNutrienten(voeding, product.food_type)
+  const voedingsRijen = NUTRIENTS.filter((nutrient) => voeding[nutrient.key] != null && !onbetrouwbaar.has(nutrient.key))
+  const onbetrouwbareLabels = NUTRIENTS.filter((nutrient) => onbetrouwbaar.has(nutrient.key)).map((nutrient) => nutrient.label)
+  const aantal = { suitable: 0, check: 0, excluded: 0 }
+  if (!match.hasLabel) aantal.check = hoofdKeys.length
+  else for (const state of match.states) {
+    if (state.state === 'present') aantal.excluded += 1
+    else if (state.state === 'unknown') aantal.check += 1
+    else aantal.suitable += 1
+  }
+  const symbool = (state) => state.state === 'present' ? '✕' : state.state === 'unknown' ? '?' : '✓'
+  const oordeel = (state) => state.state === 'present' ? 'Uitgesloten' : state.state === 'unknown' ? 'Controleer' : 'Lijkt geschikt'
+  const toelichting = (state) => {
+    if (state.state === 'present') {
+      const namen = state.members.map((key) => ALLERGEN_LABELS[key] ?? key)
+      return `Etiket noemt ${namen.join(', ')}.`
+    }
+    if (state.state === 'unknown') {
+      const woorden = [...new Set(state.words)].filter(Boolean)
+      if (woorden.includes('geen ingrediëntenlijst')) return 'Geen ingrediëntenlijst beschikbaar.'
+      if (!woorden.length) return 'Het etiket geeft onvoldoende uitsluitsel; controleer de verpakking of vraag de fabrikant.'
+      const kort = woorden.slice(0, 4).join(', ')
+      return `Geen bron genoemd voor ${kort}${woorden.length > 4 ? ` en ${woorden.length - 4} meer` : ''}.`
+    }
+    return 'Niet genoemd op het etiket.'
+  }
+  const allergenenRijen = hoofdKeys.map((key) => {
+    const state = perKey.get(key)
+    if (!state) return ''
+    const effectief = match.hasLabel ? state : { state: 'unknown', words: ['geen ingrediëntenlijst'] }
+    return `            <tr><th scope="row">${escapeHtml(ALLERGEN_LABELS[key] ?? key)}</th><td><span class="tag ${effectief.state === 'present' ? 'excluded' : effectief.state === 'unknown' ? 'check' : 'ok'}"><span aria-hidden="true">${symbool(effectief)}</span> ${oordeel(effectief)}</span></td><td>${escapeHtml(toelichting(effectief))}</td></tr>`
+  }).join('\n')
+
+  const bestaandeAllergenen = new Map(allergeenPaginas.map((pagina) => [pagina.key, pagina]))
+  const relevanteAllergenen = ALLERGEEN_KEUZE
+    .map(([key]) => key)
+    .filter((key) => perKey.get(key)?.state === 'absent' && bestaandeAllergenen.has(key))
+    .slice(0, 4)
+    .map((key) => bestaandeAllergenen.get(key))
+    .map((pagina) => `<a href="${pagina.pad}">Hondenvoer zonder ${escapeHtml(pagina.kort)}</a>`)
+    .join(' · ')
+
+  const zelfdeMerk = alleProducten
+    .filter((ander) => ander.brand === product.brand && ander.id !== product.id)
+    .slice(0, 6)
+  const zelfdeMerkLijst = zelfdeMerk.map((ander) => `<li><a href="${productPad(ander)}">${escapeHtml(ander.name)}</a> <span class="meta">(${escapeHtml(typeLabel(ander.food_type))})</span></li>`).join('\n')
+
+  const titel = `${product.brand} ${product.name}${maat ? ` (${maat})` : ''}: ingrediënten, allergenen en voedingswaarden | Hondenvoervergelijker`
+  const beschrijving = `Letterlijke ingrediëntenlijst, voedingswaarden en allergenoordeel van ${product.brand} ${product.name}${maat ? ` (${maat})` : ''}${type ? `, ${type.toLowerCase()}` : ''}. Bron gecontroleerd${bronDatum ? ` op ${bronDatum}` : ' volgens de officiële productpagina'}.`
+  const korteSamenvatting = aantal.excluded === 0 && aantal.check === 0
+    ? `Voor de ${hoofdKeys.length} hoofdallergenen noemt het etiket geen expliciete bron en bevat de lijst geen onduidelijke verzamelterm.`
+    : `${aantal.suitable} van de ${hoofdKeys.length} hoofdallergenen worden niet genoemd, ${aantal.check} vragen om controle en ${aantal.excluded} staan expliciet in de lijst.`
+  const datumRegel = [
+    bronDatum ? `Bron gecontroleerd ${bronDatum}` : '',
+    reviewDatum ? `Handmatig nagelopen ${reviewDatum}` : '',
+    voedingsDatum ? `Voedingswaarden gecontroleerd ${voedingsDatum}` : ''
+  ].filter(Boolean).join(' · ')
+
+  const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › <a href="/merken/">Merken</a> › <a href="/merken/${slug(product.brand)}.html">${escapeHtml(product.brand)}</a> › ${escapeHtml(product.name)}</p>
+      <p class="eyebrow">Product</p>
+      <h1>${escapeHtml(product.brand)} ${escapeHtml(product.name)}</h1>
+      <p class="lead">${escapeHtml(type)}${maat ? ` · ${escapeHtml(maat)}` : ''}${bronDomein ? ` · bron: ${escapeHtml(bronDomein)}` : ''}. Deze pagina toont de letterlijke ingrediëntenlijst, de voedingswaarden en het oordeel per allergeen.</p>
+      <p class="updated">${datumRegel ? `${escapeHtml(datumRegel)} · ` : ''}Inhoud: <a href="/over-ons.html#redactie">Paul Zuiderduin</a></p>
+
+      <div class="answer-box">
+        <h2>Kort antwoord</h2>
+        <p>${escapeHtml(korteSamenvatting)}</p>
+        <p>Dit is een indicatie op basis van het etiket, geen medisch advies. Controleer altijd de verpakking en overleg bij klachten met je dierenarts.</p>
+      </div>
+
+      ${match.stale || match.sourceChanged || !match.hasLabel ? `<div class="callout warn"><p><strong>Controle nodig:</strong> ${match.sourceChanged ? 'de bronpagina bij de fabrikant is gewijzigd' : !match.hasLabel ? 'er is geen ingrediëntenlijst beschikbaar' : 'de ingrediëntenlijst is langer dan zes maanden niet gecontroleerd'}. Controleer de verpakking of de officiële productpagina voordat je op deze gegevens vertrouwt.</p></div>` : ''}
+
+      <h2>Allergenen en het etiket</h2>
+      <p>De tabel laat voor de ${hoofdKeys.length} hoofdallergenen zien wat het etiket zegt. “Lijkt geschikt” betekent: de bron wordt niet genoemd en geen onduidelijke term kan hem verbergen. “Controleer” betekent: het etiket noemt de bron niet of bevat een woord dat de keuring niet kent. “Uitgesloten” betekent: de bron staat expliciet in de lijst.</p>
+      <p><small>De vergelijker beoordeelt daarnaast nog ${ALLERGENS.length - hoofdKeys.length} specifieke bronnen. Open dit product in de <a href="/?zoek=${encodeURIComponent(product.name)}">vergelijker</a> voor de volledige lijst.</small></p>
+      <table>
+        <thead><tr><th>Allergeen</th><th>Oordeel</th><th>Toelichting</th></tr></thead>
+        <tbody>
+${allergenenRijen}
+        </tbody>
+      </table>
+
+      <h2>Ingrediëntenlijst</h2>
+      ${tekst ? `<p class="ingredients-text">${escapeHtml(tekst)}</p>` : '<p>De ingrediëntenlijst is niet beschikbaar.</p>'}
+      ${versie?.import_note ? `<p class="callout"><small>${escapeHtml(versie.import_note)}</small></p>` : ''}
+
+      <h2>Voedingswaarden (as-fed)</h2>
+      ${voedingsRijen.length ? `<p>Deze waarden komen van de bron hieronder en zijn inclusief vocht (as-fed).</p>
+      <table>
+        <thead><tr><th>Voedingsstof</th><th>Waarde</th></tr></thead>
+        <tbody>
+${voedingsRijen.map((nutrient) => `          <tr><td>${escapeHtml(nutrient.label)}</td><td>${escapeHtml(formatteerVoedingswaarde(nutrient, voeding[nutrient.key]))}</td></tr>`).join('\n')}
+        </tbody>
+      </table>` : '<p>De fabrikant vermeldt geen bruikbare voedingswaarden voor dit product.</p>'}
+      ${onbetrouwbareLabels.length ? `<p class="callout warn"><strong>Niet getoond:</strong> ${escapeHtml(onbetrouwbareLabels.join(', '))} — deze waarde(n) zijn bij de plausibiliteitscontrole als onbetrouwbaar aangemerkt.</p>` : ''}
+      ${versie?.nutrition_note ? `<p><small>${escapeHtml(versie.nutrition_note)}</small></p>` : ''}
+
+      <h2>Bron en controle</h2>
+      <ul>
+        <li><strong>Productbron:</strong> ${bron ? `<a href="${escapeHtml(bron)}" target="_blank" rel="noreferrer">${escapeHtml(bronDomein || bron)} ↗</a>` : 'geen bron-URL vastgelegd'}${bronDatum ? ` · laatst gecontroleerd op ${escapeHtml(bronDatum)}` : ''}</li>
+        <li><strong>Handmatige controle:</strong> ${reviewDatum ? `nagekeken op ${escapeHtml(reviewDatum)}` : 'nog niet handmatig nagekeken; de tekst is automatisch overgenomen van de bron'}</li>
+        <li><strong>Voedingswaarden:</strong> ${voedingsDatum ? `gecontroleerd op ${escapeHtml(voedingsDatum)}` : 'controledatum onbekend'}${versie?.nutrition_source_url && versie.nutrition_source_url !== bron ? ' · andere bron dan de ingrediëntenlijst' : ''}</li>
+        <li><strong>Laatst geïmporteerd:</strong> ${importDatum || 'onbekend'}</li>
+      </ul>
+      <p><a class="cta" href="/?zoek=${encodeURIComponent(product.name)}">Vergelijk dit product in de vergelijker</a> <a class="cta secondary" href="/merken/${slug(product.brand)}.html">Alle producten van ${escapeHtml(product.brand)}</a></p>
+
+      <h2>Gerelateerde producten</h2>
+      ${zelfdeMerk.length ? `<ul class="product-list">
+${zelfdeMerkLijst}
+      </ul>` : '<p>Er zijn geen andere producten van dit merk in de vergelijker.</p>'}
+      <p><a href="/merken/${slug(product.brand)}.html">Bekijk alle producten van ${escapeHtml(product.brand)}</a> of <a href="/hondenvoer-zonder.html">zoek op allergeen</a>.</p>
+
+      <h2>Verder lezen</h2>
+      <p>${relevanteAllergenen || '<a href="/hondenvoer-zonder.html">Alle overzichten zonder een specifiek allergeen</a>'}</p>
+      <p>Lees <a href="/hoe-wij-vergelijken.html">hoe wij etiketten overnemen en controleren</a>, bekijk het <a href="/broncontrole.html">openbare broncontroleverslag</a> of lees <a href="/hondenvoer-allergieen.html">hoe je een etiket leest</a>.</p>
+
+      <p class="cite"><strong>Citeer deze pagina:</strong> Hondenvoervergelijker, “${escapeHtml(product.brand)} ${escapeHtml(product.name)}”, ${SITE}${pad}, geraadpleegd op ${datumNl(VANDAAG)}.${bronDatum ? ` Bron gecontroleerd op ${bronDatum}.` : ''}</p>`
+
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Hondenvoervergelijker', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Merken', item: `${SITE}/merken/` },
+      { '@type': 'ListItem', position: 3, name: product.brand, item: `${SITE}/merken/${slug(product.brand)}.html` },
+      { '@type': 'ListItem', position: 4, name: product.name, item: `${SITE}${pad}` }
+    ]
+  }
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `${product.brand} ${product.name}`,
+    brand: { '@type': 'Brand', name: product.brand },
+    category: type,
+    description: beschrijving,
+    url: `${SITE}${pad}`,
+    sku: product.id,
+    additionalProperty: [
+      { '@type': 'PropertyValue', name: 'Voertype', value: type },
+      ...(maat ? [{ '@type': 'PropertyValue', name: 'Verpakking', value: maat }] : [])
+    ]
+  }
+  const webPage = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: titel,
+    url: `${SITE}${pad}`,
+    dateModified: product.last_checked_at || versie?.reviewed_at || versie?.imported_at || VANDAAG,
+    inLanguage: 'nl-NL',
+    author: { '@type': 'Person', '@id': `${SITE}/over-ons.html#paul-zuiderduin`, name: 'Paul Zuiderduin' },
+    ...(reviewDatum ? { reviewedBy: { '@type': 'Person', '@id': `${SITE}/over-ons.html#paul-zuiderduin`, name: 'Paul Zuiderduin' } } : {}),
+    publisher: organisatie,
+    about: { '@type': 'Product', name: `${product.brand} ${product.name}` },
+    mainEntity: { '@type': 'Product', name: `${product.brand} ${product.name}`, brand: { '@type': 'Brand', name: product.brand } }
+  }
+
+  return {
+    pad,
+    html: shell({
+      titel,
+      beschrijving,
+      pad,
+      inhoud,
+      jsonLd: [breadcrumb, productSchema, webPage]
     })
   }
 }
@@ -978,17 +1194,17 @@ ${termRijen}
         </tbody>
       </table>
 
-      <h2>Welke allergenen hebben de meeste geschikte producten?</h2>
-      <p>Deze tabel laat zien hoeveel producten per allergeen als “geschikt” worden beoordeeld: het etiket noemt dat ingrediënt niet en bevat geen onduidelijke term die het kan verbergen.</p>
+      <h2>Welke allergenen noemen de minste producten?</h2>
+      <p>Deze tabel laat zien voor hoeveel producten het etiket het allergeen niet noemt en geen onduidelijke term bevat die het kan verbergen.</p>
       <table>
-        <thead><tr><th>Allergeen</th><th>Geschikte producten</th></tr></thead>
+        <thead><tr><th>Allergeen</th><th>Producten die het niet noemen</th></tr></thead>
         <tbody>
 ${allergeenRijen}
         </tbody>
       </table>
 
       <h2>Wat betekent dit voor honden met een allergie?</h2>
-      <p>Een verzamelterm is geen bewijs dat een product onveilig is. Het betekent wel dat het etiket onvoldoende uitsluitsel geeft. Onze vergelijker zet zo'n product daarom niet blind op “Geschikt”, maar op “Controleer etiket/fabrikant”. Alleen de fabrikant of een aanvullend onderzoek kan duidelijkheid geven over de werkelijke bron.</p>
+      <p>Een verzamelterm is geen bewijs dat een product onveilig is. Het betekent wel dat het etiket onvoldoende uitsluitsel geeft. Onze vergelijker zet zo'n product daarom niet blind op “Lijkt geschikt”, maar op “Controleer etiket/fabrikant”. Alleen de fabrikant of een aanvullend onderzoek kan duidelijkheid geven over de werkelijke bron.</p>
       <div class="callout warn">
         <p><strong>Geen medisch advies.</strong> Dit onderzoek is een momentopname van openbare etiketten. Een voedselallergie stel je niet zelf vast. Overleg bij jeuk, huidklachten, maag-darmproblemen of een vermoeden van een allergie altijd met een dierenarts.</p>
       </div>
@@ -1085,9 +1301,227 @@ ${top.map(({ product, waarde }) => `          <tr><td><a href="/?zoek=${encodeUR
   }
 }
 
-function llmsTxt(heeftOnderzoek) {
-  const basis = readFileSync(join(WORTEL, 'public', 'llms.txt'), 'utf8')
+function broncontrolePagina(producten) {
+  const totaal = producten.length
+  const merken = new Set(producten.map(({ brand }) => brand).filter(Boolean)).size
+  const metLabel = producten.filter((product) => Boolean(product.recipe_versions?.[0]?.ingredients_text)).length
+  const metVoeding = producten.filter((product) => (product.recipe_versions?.[0]?.recipe_nutrition ?? []).some((rij) => rij.value != null)).length
+  const reviewed = producten.filter((product) => Boolean(product.recipe_versions?.[0]?.reviewed_at)).length
+  const gecontroleerd = producten.filter((product) => !isReviewOverdue(product.last_checked_at)).length
+  const verouderd = totaal - gecontroleerd
+  const gewijzigd = producten.filter((product) => product.source_status === 'gewijzigd').length
+  const laatste = producten.map((product) => product.last_checked_at).filter(Boolean).sort().at(-1)
+  const reviewedPercentage = totaal ? Math.round((reviewed / totaal) * 100) : 0
+  const gecontroleerdPercentage = totaal ? Math.round((gecontroleerd / totaal) * 100) : 0
+
+  const perMerk = new Map()
+  for (const product of producten) {
+    if (!product.brand) continue
+    if (!perMerk.has(product.brand)) perMerk.set(product.brand, { aantal: 0, reviewed: 0, laatste: '' })
+    const rij = perMerk.get(product.brand)
+    rij.aantal += 1
+    if (product.recipe_versions?.[0]?.reviewed_at) rij.reviewed += 1
+    if (product.last_checked_at && product.last_checked_at > rij.laatste) rij.laatste = product.last_checked_at
+  }
+  const merkRijen = [...perMerk.entries()]
+    .sort(([a], [b]) => a.localeCompare(b, 'nl', { sensitivity: 'base' }))
+    .map(([brand, rij]) => `          <tr><td><a href="/merken/${slug(brand)}.html">${escapeHtml(brand)}</a></td><td>${getal(rij.aantal)}</td><td>${rij.reviewed}</td><td>${rij.laatste ? datumNl(rij.laatste) : 'onbekend'}</td></tr>`)
+    .join('\n')
+
+  const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › Broncontrole</p>
+      <p class="eyebrow">Transparantie</p>
+      <h1>Broncontrole: wat wij controleren en wat niet</h1>
+      <p class="lead">Deze pagina laat zien hoe actueel de onderliggende productdata is. De cijfers worden bij elke build opnieuw uit de database berekend; het is geen realtime belofte en geen medische garantie.</p>
+      <p class="updated">Bijgewerkt op ${datumNl(VANDAAG)}${laatste ? ` · laatste broncontrole ${datumNl(laatste)}` : ''} · inhoud: <a href="/over-ons.html#redactie">Paul Zuiderduin</a></p>
+
+      <div class="stat-grid">
+        <div class="stat-card"><strong>${getal(totaal)}</strong><span>producten</span></div>
+        <div class="stat-card"><strong>${merken}</strong><span>merken</span></div>
+        <div class="stat-card"><strong>${gecontroleerdPercentage}%</strong><span>binnen zes maanden gecontroleerd</span></div>
+        <div class="stat-card"><strong>${reviewedPercentage}%</strong><span>handmatig nagelopen</span></div>
+      </div>
+
+      <h2>Wat de cijfers betekenen</h2>
+      <ul>
+        <li><strong>${getal(metLabel)} van ${getal(totaal)}</strong> producten hebben een ingrediëntenlijst.</li>
+        <li><strong>${getal(metVoeding)} van ${getal(totaal)}</strong> producten hebben minstens één bruikbare voedingswaarde.</li>
+        <li><strong>${getal(gecontroleerd)} van ${getal(totaal)}</strong> ingrediëntenbronnen zijn binnen zes maanden gecontroleerd. Van <strong>${getal(verouderd)}</strong> producten is de controle ouder of ontbreekt een controledatum.</li>
+        <li><strong>${getal(reviewed)}</strong> producten zijn daadwerkelijk handmatig tegen de bron nagekeken. Dat is een bewust streng criterium: automatisch overnemen alleen telt niet als menselijke controle.</li>
+        <li><strong>${getal(gewijzigd)}</strong> producten hebben op dit moment de status “bron gewijzigd” en wachten op een nieuwe beoordeling.</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>Wat wij niet claimen:</strong> een controledatum betekent niet dat een recept nooit meer wijzigt. Fabrikanten kunnen hun formule aanpassen. De verpakking en de officiële productpagina blijven leidend. Kruisbesmetting in de fabriek kunnen wij niet vaststellen.</p>
+      </div>
+
+      <h2>Hoe de controle werkt</h2>
+      <ol>
+        <li>De ingrediëntenlijst wordt letterlijk van de officiële productpagina overgenomen.</li>
+        <li>De bron wordt periodiek opnieuw opgevraagd. Is de tekst ongewijzigd, dan wordt alleen de controledatum bijgewerkt.</li>
+        <li>Bij een wijziging blijft de oude tekst staan tot een beheerder de nieuwe tekst heeft beoordeeld.</li>
+        <li>Voedingswaarden worden apart gecontroleerd en op plausibiliteit getest. Een onmogelijke waarde wordt niet als filter- of sorteerwaarde gebruikt.</li>
+        <li>Een product zonder recente controle of met een onduidelijke bron krijgt de status “Controleer etiket/fabrikant”.</li>
+      </ol>
+      <p>De volledige werkwijze staat op <a href="/hoe-wij-vergelijken.html">Hoe wij hondenvoer vergelijken</a>. De geaggregeerde cijfers over verzameltermen staan in het <a href="/etikettenonderzoek.html">etikettenonderzoek</a>.</p>
+
+      <h2>Controle per merk</h2>
+      <table>
+        <thead><tr><th>Merk</th><th>Producten</th><th>Handmatig nagelopen</th><th>Laatste broncontrole</th></tr></thead>
+        <tbody>
+${merkRijen}
+        </tbody>
+      </table>
+
+      <h2>Een fout melden</h2>
+      <p>Klopt een ingrediëntenlijst, voedingswaarde of bron niet? Mail <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a> met het merk, de productnaam en de officiële bronpagina. We passen de tekst aan zodra de bron is gecontroleerd.</p>
+
+      <p class="cite"><strong>Citeer deze pagina:</strong> Hondenvoervergelijker, “Broncontrole: wat wij controleren en wat niet”, ${SITE}/broncontrole.html, geraadpleegd op ${datumNl(VANDAAG)}.</p>`
+
+  return shell({
+    titel: 'Broncontrole en actualiteit van de hondenvoerdata | Hondenvoervergelijker',
+    beschrijving: `Openbaar controleverslag: ${getal(totaal)} producten van ${merken} merken, ${gecontroleerdPercentage}% binnen zes maanden gecontroleerd en ${reviewed} producten handmatig nagelopen.`,
+    pad: '/broncontrole.html',
+    inhoud,
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Broncontrole en actualiteit van de hondenvoerdata',
+        url: `${SITE}/broncontrole.html`,
+        dateModified: VANDAAG,
+        inLanguage: 'nl-NL',
+        author: { '@type': 'Person', '@id': `${SITE}/over-ons.html#paul-zuiderduin`, name: 'Paul Zuiderduin' },
+        publisher: organisatie,
+        about: { '@type': 'Thing', name: 'Broncontrole van hondenvoerdata' }
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Dataset',
+        name: 'Hondenvoervergelijker: broncontrole',
+        description: `Actualiteit en menselijke controle van ${totaal} hondenvoerproducten.`,
+        creator: organisatie,
+        dateModified: VANDAAG,
+        inLanguage: 'nl-NL',
+        isAccessibleForFree: true,
+        variableMeasured: ['aantal producten', 'handmatig nagelopen producten', 'laatste broncontrole per merk']
+      }
+    ]
+  })
+}
+
+function hypoallergeenPagina(producten) {
+  const volledig = producten
+    .filter((product) => {
+      const uitslag = assessLabel(product.recipe_versions?.[0]?.ingredients_text ?? '')
+      return uitslag.hidden.length === 0 && uitslag.unknown.length === 0
+    })
+    .sort((a, b) => a.brand.localeCompare(b.brand, 'nl', { sensitivity: 'base' }) || a.name.localeCompare(b.name, 'nl', { sensitivity: 'base' }))
+  const merken = new Set(volledig.map(({ brand }) => brand)).size
+  const top = volledig.slice(0, 40)
+  const lijst = top.map((product) => `          <li>
+            <span>
+              <a class="name" href="${productPad(product)}">${escapeHtml(product.name)}</a><br />
+              <span class="meta"><a href="/merken/${slug(product.brand)}.html">${escapeHtml(product.brand)}</a> · ${escapeHtml(typeLabel(product.food_type))}</span>
+            </span>
+            <span class="tag ok">etiket noemt elke bron</span>
+          </li>`).join('\n')
+  const faq = [
+    {
+      vraag: 'Is “hypoallergeen” een beschermde term?',
+      antwoord: 'Nee. Er bestaat geen wettelijke definitie die voorschrijft wanneer een product zich hypoallergeen mag noemen. De term zegt dus niet automatisch dat een product veilig is voor een hond met een bewezen allergie.'
+    },
+    {
+      vraag: 'Wat is het verschil tussen hypoallergeen en gehydrolyseerd?',
+      antwoord: 'Bij gehydrolyseerd eiwit zijn de eiwitketens opgeknipt, waardoor het immuunsysteem de bron minder snel herkent. Dat is iets anders dan “hypoallergeen” op een verpakking. Alleen een dierenarts kan beoordelen of een gehydrolyseerd dieet past.'
+    },
+    {
+      vraag: 'Zijn producten met een volledig etiket automatisch veilig?',
+      antwoord: 'Nee. Een volledig etiket noemt elke bron bij name, maar zegt niets over kruisbesmetting in de fabriek, een gewijzigde receptuur of andere allergenen. Controleer altijd de verpakking en overleg bij klachten met je dierenarts.'
+    },
+    {
+      vraag: 'Kan ik zelf een eliminatiedieet starten?',
+      antwoord: 'Nee. Een eliminatiedieet en provocatietest horen onder begeleiding van een dierenarts. Deze pagina is een hulpmiddel om etiketten te vergelijken, geen medisch advies.'
+    }
+  ]
+  const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › Hypoallergene hondenvoeding</p>
+      <p class="eyebrow">Uitleg</p>
+      <h1>Hypoallergene hondenvoeding: wat zegt het etiket echt?</h1>
+      <p class="lead">“Hypoallergeen” is geen beschermde term. Deze pagina laat zien welke producten een etiket hebben dat elke bron bij name noemt — een eerste voorwaarde om een allergie te kunnen beoordelen, maar geen garantie.</p>
+      <p class="updated">Bijgewerkt op ${datumNl(VANDAAG)} · inhoud: <a href="/over-ons.html#redactie">Paul Zuiderduin</a></p>
+
+      <div class="callout warn">
+        <p><strong>Geen medisch advies:</strong> een hypoallergeen etiket maakt een product niet automatisch geschikt voor jouw hond. Een voedselallergie stel je niet zelf vast. Overleg bij jeuk, huidklachten, maag-darmproblemen of een vermoeden van een allergie altijd met een dierenarts.</p>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><strong>${getal(volledig.length)}</strong><span>producten met een volledig benoemd etiket</span></div>
+        <div class="stat-card"><strong>${merken}</strong><span>merken</span></div>
+        <div class="stat-card"><strong>${getal(producten.length)}</strong><span>producten in de vergelijker</span></div>
+      </div>
+
+      <h2>Wat betekent hypoallergeen?</h2>
+      <p>Fabrikanten gebruiken de term voor voeding die bedoeld is om minder snel een allergische reactie uit te lokken. In de praktijk kan dat betekenen dat er één dierlijke eiwitbron wordt gebruikt, dat de voeding gehydrolyseerd is of dat bepaalde ingrediënten zijn weggelaten. Omdat de term niet wettelijk is afgebakend, moet je altijd naar de ingrediëntenlijst kijken.</p>
+      <p>Een etiket dat elke bron bij name noemt, is duidelijker dan een etiket met termen als “vlees en dierlijke bijproducten” of “granen”. Maar ook een volledig etiket sluit kruisbesmetting in de fabriek of een gewijzigde receptuur niet uit.</p>
+
+      <h2>Producten met een volledig benoemd etiket</h2>
+      <p>Deze ${getal(volledig.length)} producten noemen in de ingrediëntenlijst elke bron bij name. Dat is een transparantiesignaal, geen medische kwalificatie. De lijst is alfabetisch en bevat de eerste ${top.length} producten; de vergelijker bevat alle ${getal(producten.length)} producten.</p>
+      <ul class="product-list">
+${lijst}
+      </ul>
+      ${volledig.length > top.length ? `<p><a href="/merken/">Bekijk alle merken</a> voor de overige producten.</p>` : ''}
+
+      <h2>Waar moet je op letten?</h2>
+      <ul>
+        <li><strong>Eén duidelijke eiwitbron:</strong> bij een eliminatiedieet is dat vaak makkelijker te beoordelen dan een lijst met meerdere diersoorten.</li>
+        <li><strong>Geen verzameltermen:</strong> woorden als “dierlijk vet”, “gevogelte” of “bouillon” verbergen de bron.</li>
+        <li><strong>Gehydrolyseerd eiwit:</strong> de eiwitketens zijn opgeknipt; dat is een veterinair dieet, geen gewone voeding.</li>
+        <li><strong>Kruisbesmetting:</strong> een etiket vertelt niet alles over de productielijn. Vraag de fabrikant bij twijfel om uitsluitsel.</li>
+      </ul>
+
+      <h2>Veelgestelde vragen</h2>
+      <div class="faq">
+${faq.map(({ vraag, antwoord }) => `        <details><summary>${escapeHtml(vraag)}</summary><p>${escapeHtml(antwoord)}</p></details>`).join('\n')}
+      </div>
+
+      <p><a class="cta" href="/">Open de vergelijker</a> <a class="cta secondary" href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a> <a class="cta secondary" href="/hoe-wij-vergelijken.html">Onze methode</a></p>
+      <p>Lees ook <a href="/hondenvoer-zonder.html">hondenvoer zonder een specifiek allergeen</a> of bekijk het <a href="/broncontrole.html">broncontroleverslag</a>.</p>`
+
+  return shell({
+    titel: 'Hypoallergene hondenvoeding: wat zegt het etiket? | Hondenvoervergelijker',
+    beschrijving: `Wat hypoallergeen betekent, waarom de term niet beschermd is en welke ${volledig.length} producten een etiket hebben dat elke bron bij name noemt.`,
+    pad: '/hypoallergene-hondenvoeding.html',
+    inhoud,
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.map(({ vraag, antwoord }) => ({ '@type': 'Question', name: vraag, acceptedAnswer: { '@type': 'Answer', text: antwoord } }))
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Hypoallergene hondenvoeding: wat zegt het etiket?',
+        url: `${SITE}/hypoallergene-hondenvoeding.html`,
+        dateModified: VANDAAG,
+        inLanguage: 'nl-NL',
+        author: { '@type': 'Person', '@id': `${SITE}/over-ons.html#paul-zuiderduin`, name: 'Paul Zuiderduin' }
+      }
+    ]
+  })
+}
+
+function llmsTxt(heeftOnderzoek, aantalAdressen = 0, aantalProducten = 0) {
+  let basis = readFileSync(join(WORTEL, 'public', 'llms.txt'), 'utf8')
     .replace(/Laatst bijgewerkt: .*?\./, `Laatst bijgewerkt: ${datumNl(VANDAAG)}.`)
+  if (aantalAdressen) {
+    basis = basis.replace(/- [\d.]+ pagina's in de sitemap\./, `- ${getal(aantalAdressen)} pagina's in de sitemap.`)
+  }
+  if (aantalProducten) {
+    basis = basis.replace(
+      /- De bronnen worden wekelijks gecontroleerd\./,
+      `- ${getal(aantalProducten)} aparte productpagina's met ingrediënten, voedingswaarden en allergenoordeel.\n- De bronnen worden wekelijks gecontroleerd.`
+    )
+  }
   if (heeftOnderzoek) return basis
   return basis.replace(/- \[Etikettenonderzoek\].*\n/, '')
 }
@@ -1233,6 +1667,27 @@ if (producten?.length) {
     console.log("Geschreven: etikettenonderzoek.html")
   }
 
+  // Elke productpagina is een zelfstandige, indexeerbare pagina met de
+  // letterlijke ingrediëntenlijst, de voedingswaarden en het oordeel per
+  // allergeen. De merk- en allergeenpagina's linken er al naar; hier worden de
+  // bestanden en sitemapvermeldingen aangemaakt.
+  mkdirSync(join(DIST, 'producten'), { recursive: true })
+  let productPaginas = 0
+  for (const product of producten) {
+    const pagina = productPagina(product, producten, allergeenPaginas)
+    const bestand = join(DIST, pagina.pad.replace(/^\//, ''))
+    mkdirSync(dirname(bestand), { recursive: true })
+    writeFileSync(bestand, pagina.html)
+    adressen.push({ loc: `${SITE}${pagina.pad}`, prioriteit: '0.6' })
+    productPaginas += 1
+  }
+  console.log(`Geschreven: ${productPaginas} productpagina's`)
+
+  const hypoallergeen = hypoallergeenPagina(producten)
+  writeFileSync(join(DIST, 'hypoallergene-hondenvoeding.html'), hypoallergeen)
+  adressen.push({ loc: `${SITE}/hypoallergene-hondenvoeding.html`, prioriteit: '0.8' })
+  console.log('Geschreven: hypoallergene-hondenvoeding.html')
+
   // Voedingspagina's zijn een aanvulling op de vergelijker: ze vangen
   // zoekopdrachten op als "eiwitrijk hondenvoer" of "laag calorisch" en
   // verwijzen door naar de bijbehorende filtercombinatie.
@@ -1249,9 +1704,16 @@ if (producten?.length) {
   }
 }
 
-// 3. Sitemap.
+// Het controleverslag werkt ook zonder database, zodat de footerlink nooit
+// naar een 404 wijst. Met data bevat het de echte aantallen en controledatums.
+const broncontrole = broncontrolePagina(producten ?? [])
+writeFileSync(join(DIST, 'broncontrole.html'), broncontrole)
+adressen.push({ loc: `${SITE}/broncontrole.html`, prioriteit: '0.7' })
+console.log('Geschreven: broncontrole.html')
+
+// 3. Sitemap en llms.txt.
 const heeftOnderzoek = existsSync(join(DIST, 'etikettenonderzoek.html'))
-writeFileSync(join(DIST, 'llms.txt'), llmsTxt(heeftOnderzoek))
+writeFileSync(join(DIST, 'llms.txt'), llmsTxt(heeftOnderzoek, adressen.length, producten?.length ?? 0))
 
 // Een buildstempel zorgt dat sitemap.xml bij elke deploy echt verandert. De
 // FTP-actie slaat bestanden met identieke inhoud over; zonder dit blijft een

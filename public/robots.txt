@@ -4,6 +4,8 @@
 
 User-agent: *
 Allow: /
+Disallow: /catalog-assessment.json
+Disallow: /winkels.json
 
 # OpenAI / ChatGPT
 User-agent: GPTBot
