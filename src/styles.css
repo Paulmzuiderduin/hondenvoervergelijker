@@ -1475,20 +1475,23 @@ button:disabled {
 }
 
 .product-card {
-  border: 1px solid #ccd6ce;
-  border-radius: 2px;
-  padding: 0.8rem 0.95rem;
-  margin: 0.45rem 0;
+  border: 1px solid #cbd5ce;
+  border-radius: 6px;
+  padding: 0.75rem 0.9rem 0.65rem;
+  margin: 0.5rem 0;
   background: #fff;
+  box-shadow: 0 2px 7px rgba(24, 38, 28, 0.045);
 }
 
 .product-card.check {
-  border-color: #d9caa5;
+  border-left: 1px solid #cbd5ce;
+  padding-left: 0.9rem;
 }
 
 .product-card.excluded {
-  border-color: #ddc5c5;
-  background: #fdfafa;
+  border-left: 1px solid #cbd5ce;
+  padding-left: 0.9rem;
+  background: #fff;
 }
 
 .product-card p {
@@ -1501,8 +1504,8 @@ button:disabled {
   align-items: flex-start;
   gap: 0.6rem;
   flex-wrap: wrap;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid #edf1ed;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid #e6ebe7;
 }
 
 .product-title-group {
@@ -1520,7 +1523,7 @@ button:disabled {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #4a6252;
+  color: #596b5d;
   text-decoration: none;
 }
 
@@ -1531,7 +1534,7 @@ button:disabled {
 
 .product-name {
   margin: 0;
-  font-size: 1.02rem;
+  font-size: 1.08rem;
   font-weight: 700;
   line-height: 1.35;
   color: #16241a;
@@ -1550,27 +1553,29 @@ button:disabled {
   text-decoration: underline;
 }
 
-.product-badges {
+.product-card-actions {
   display: flex;
+  flex: 0 0 auto;
+  align-items: flex-end;
+  flex-direction: column;
   flex-wrap: wrap;
-  gap: 0.3rem;
-  align-items: center;
+  gap: 0.45rem;
 }
 
 .product-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
-  margin: 0.5rem 0 0.6rem;
+  margin: 0.5rem 0 0;
 }
 
 .meta-pill {
   display: inline-block;
   padding: 0.1rem 0.4rem;
   border: 1px solid #dbe3dc;
-  border-radius: 2px;
+  border-radius: 999px;
   background: #f7f9f7;
-  color: #44564a;
+  color: #4b5d50;
   font-size: 0.76rem;
   font-weight: 500;
 }
@@ -1598,20 +1603,95 @@ button:disabled {
   text-decoration: underline;
 }
 
-.product-more {
-  display: inline-flex;
-  align-items: center;
-  min-height: 24px;
-  padding: 0.1rem 0.2rem;
-  color: #175b30;
-  font-size: 0.76rem;
+.product-card-info {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.75rem;
+  margin: 0.55rem 0 0.5rem;
+}
+
+.product-verdict-block,
+.nutrition-summary {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.18rem;
+  margin: 0;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #e1e8e2;
+  border-radius: 4px;
+  background: #fafbfa;
+}
+
+.product-verdict-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.18rem 0.5rem;
+}
+
+.product-verdict-heading > strong {
+  color: #4a5a4e;
+  font-size: 0.82rem;
   font-weight: 600;
+}
+
+.card-section-label {
+  color: #68766c;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nutrition-summary-values {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  color: #34483a;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.product-source-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid #e1e8e2;
+  color: #5c7061;
+  font-size: 0.74rem;
+}
+
+.manufacturer-link {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-height: 30px;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid #2f7544;
+  border-radius: 4px;
+  background: #2f7544;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
 }
 
-.product-more:hover {
-  text-decoration: underline;
+.manufacturer-link:hover {
+  background: #225b33;
+  color: #fff;
+}
+
+.manufacturer-link.unavailable {
+  border-color: #cbd5ce;
+  background: #f0f3f0;
+  color: #6b786e;
 }
 
 .compare-toggle {
@@ -1871,24 +1951,18 @@ button:disabled {
 
 .verdict-badge {
   display: inline-block;
-  padding: 0.14rem 0.45rem;
-  border: 1px solid transparent;
-  border-radius: 2px;
-  font-size: 0.74rem;
+  padding: 0.32rem 0.58rem;
+  border: 1px solid #cbd5ce;
+  border-radius: 4px;
+  font-size: 0.76rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  white-space: nowrap;
 }
 
 .verdict-badge.suitable {
-  background: transparent;
-  border-color: transparent;
-  color: #3f6b4d;
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: 0.76rem;
-  font-weight: 600;
-  padding: 0.1rem 0;
+  background: #e8f3eb;
+  border-color: #9dc3a6;
+  color: #205c30;
 }
 
 .verdict-badge.check {
@@ -1962,10 +2036,12 @@ button:disabled {
 }
 
 .ingredients summary {
-  padding: 0.15rem 0;
+  padding: 0.45rem 0.55rem;
+  border-top: 1px solid #e3e9e4;
+  border-bottom: 1px solid #e3e9e4;
   font-size: 0.82rem;
-  font-weight: 500;
-  color: #175b30;
+  font-weight: 700;
+  color: #334d3a;
   cursor: pointer;
 }
 
@@ -2009,13 +2085,15 @@ button:disabled {
 
 .nutrition-summary {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem;
-  margin: 0.45rem 0 0;
-  color: #44564a;
-  font-size: 0.8rem;
-  font-variant-numeric: tabular-nums;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.18rem;
+  margin: 0;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #e1e8e2;
+  border-radius: 4px;
+  background: #fafbfa;
 }
 
 .nutrition-flag {
@@ -2053,10 +2131,12 @@ button:disabled {
 }
 
 .nutrition summary {
-  padding: 0.15rem 0;
+  padding: 0.45rem 0.55rem;
+  border-top: 1px solid #e3e9e4;
+  border-bottom: 1px solid #e3e9e4;
   font-size: 0.82rem;
-  font-weight: 500;
-  color: #175b30;
+  font-weight: 700;
+  color: #334d3a;
   cursor: pointer;
 }
 
@@ -2191,36 +2271,38 @@ button:disabled {
   font-weight: 500;
 }
 
-/* Winkelknoppen (affiliate). Ze staan los van het oordeel en de sortering. */
+/* Winkelknoppen (affiliate). Ze staan bewust onderaan en blijven secundair. */
 .shop-links {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.4rem;
-  margin-top: 0.55rem;
+  margin-top: 0.8rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid #edf1ed;
 }
 
 .shop-link {
   display: inline-flex;
   align-items: center;
   padding: 0.28rem 0.55rem;
-  border: 1px solid #c3d3c7;
-  border-radius: 2px;
-  background: #f4f8f5;
-  color: #17512b;
-  font-size: 0.82rem;
-  font-weight: 600;
+  border: 1px solid #d4ddd6;
+  border-radius: 3px;
+  background: #fff;
+  color: #526257;
+  font-size: 0.76rem;
+  font-weight: 500;
   text-decoration: none;
 }
 
 .shop-link:hover {
-  background: #e6efe9;
-  border-color: #9fb8a6;
+  background: #f4f7f4;
+  border-color: #aebdb1;
 }
 
 .shop-note {
-  font-size: 0.72rem;
-  color: #6b7a6e;
+  font-size: 0.68rem;
+  color: #778379;
 }
 
 .product-link {
@@ -2841,6 +2923,30 @@ small {
   .nutrition-grid,
   .nutrition-form-grid {
     grid-template-columns: 1fr;
+  }
+  .product-card {
+    padding: 0.7rem 0.75rem 0.6rem;
+  }
+  .product-card.check,
+  .product-card.excluded {
+    padding-left: 0.75rem;
+  }
+  .product-card-info {
+    grid-template-columns: 1fr;
+  }
+  .product-card-actions {
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  .product-source-inline {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .manufacturer-link {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
   }
 }
 

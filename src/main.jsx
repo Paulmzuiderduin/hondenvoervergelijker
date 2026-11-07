@@ -235,7 +235,6 @@ function ProductCard({ product, match, aanbiedingen = [], nadruk = [], vergelijk
   // badge; zo blijft "door een mens gecontroleerd" een uitzondering die je
   // echt kunt zien.
   const reviewedOp = version?.reviewed_at ? new Date(version.reviewed_at).toLocaleDateString('nl-NL') : ''
-  const bronGecontroleerd = datumKort(product.last_checked_at)
   // Een etiket dat een bron niet noemt, krijgt één regel: de concrete woorden
   // ("geen bron voor bouillon") plus de allergenen die daar in kunnen zitten.
   // De algemene uitleg die hier eerder stond, zei hetzelfde en is vervallen.
@@ -288,39 +287,53 @@ function ProductCard({ product, match, aanbiedingen = [], nadruk = [], vergelijk
       <div className="product-title-group">
         <a className="product-brand" href={`/merken/${merkSlug(product.brand)}.html`} title={`Alle producten van ${product.brand}`}>{product.brand}</a>
         <h3 className="product-name"><a href={productPad(product)} title={`Productpagina van ${product.brand} ${product.name}`}>{product.name}</a></h3>
+        <div className="product-meta">
+          {foodTypeLabel && <span className="meta-pill">{foodTypeLabel}</span>}
+          {packageSize && <span className="meta-pill">{packageSize}</span>}
+          {hydrolysed.present && <span className="meta-pill hydrolysed-pill">Gehydrolyseerd eiwit</span>}
+        </div>
       </div>
-      <div className="product-badges">
+      <div className="product-card-actions">
         <span className={`verdict-badge ${match.kind}`}><span aria-hidden="true">{verdictSymbool}</span> {verdict}</span>
-        {match.reviewed && <span className="human-badge" title={`Ingrediëntenlijst handmatig tegen de bron gecontroleerd${reviewedOp ? ` op ${reviewedOp}` : ''}.`}>Door een mens gecontroleerd{reviewedOp ? ` · ${reviewedOp}` : ''}</span>}
+        <label className={`compare-toggle${vergelijk ? ' active' : ''}`} title={vergelijk ? 'Verwijder uit de vergelijking' : vergelijkVol ? 'Maximaal 3 producten' : 'Voeg toe aan de vergelijking'}>
+          <input type="checkbox" checked={vergelijk} disabled={vergelijkVol && !vergelijk} onChange={() => onVergelijk(product.id)} />
+          Vergelijk
+        </label>
       </div>
     </div>
-    <div className="product-meta">
-      {foodTypeLabel && <span className="meta-pill">{foodTypeLabel}</span>}
-      {packageSize && <span className="meta-pill">{packageSize}</span>}
-      {bronGecontroleerd && <span className="meta-pill" title="Laatste controle van de ingrediëntenbron">Bron gecontroleerd {bronGecontroleerd}</span>}
-      {hydrolysed.present && <span className="meta-pill hydrolysed-pill">Gehydrolyseerd eiwit</span>}
-      <label className={`compare-toggle${vergelijk ? ' active' : ''}`} title={vergelijk ? 'Verwijder uit de vergelijking' : vergelijkVol ? 'Maximaal 3 producten' : 'Voeg toe aan de vergelijking'}>
-        <input type="checkbox" checked={vergelijk} disabled={vergelijkVol && !vergelijk} onChange={() => onVergelijk(product.id)} />
-        Vergelijk
-      </label>
-      {product.source_url?.startsWith('http') && <a className="meta-source" href={product.source_url} target="_blank" rel="noreferrer" title="Officiële productpagina of gebruikte bron" onClick={() => track('bron-klik', { merk: product.brand, product: product.name, domein: sourceDomain(product.source_url) })}>Bekijk bron: {sourceDomain(product.source_url) || 'bron'} ↗</a>}
-      <a className="product-more" href={productPad(product)}>Details →</a>
+    <div className="product-card-info">
+      <div className="product-verdict-block">
+        <div className="product-verdict-heading">
+          <span className="card-section-label">Ons oordeel:</span>
+          <strong>{verdict}</strong>
+          {match.reviewed && <span className="human-badge" title={`Ingrediëntenlijst handmatig tegen de bron gecontroleerd${reviewedOp ? ` op ${reviewedOp}` : ''}.`}>Door een mens gecontroleerd{reviewedOp ? ` · ${reviewedOp}` : ''}</span>}
+        </div>
+        <div className="product-source-inline">
+          <span>Controleer het etiket bij de fabrikant</span>
+          {product.source_url?.startsWith('http')
+            ? <a className="manufacturer-link" href={product.source_url} target="_blank" rel="noreferrer" title="Officiële productpagina of gebruikte bron" onClick={() => track('bron-klik', { merk: product.brand, product: product.name, domein: sourceDomain(product.source_url) })}>Naar {product.brand} ↗</a>
+            : <span className="manufacturer-link unavailable">Bron niet beschikbaar</span>}
+        </div>
+      </div>
+      {voedingSamenvatting && <div className="nutrition-summary" title="Waarden zijn inclusief vocht (as-fed).">
+        <span className="card-section-label">Voedingswaarden</span>
+        <span className="nutrition-summary-values">
+          {product.food_type !== 'kibble' && <span className={`nutrition-kind ${product.food_type}`}>{foodTypeLabel}</span>}
+          {voedingSamenvatting}
+          {plausibiliteit.signalen.length > 0 && <span className="nutrition-flag" role="img" aria-label="Let op: de bronanalyse is niet consistent" title={plausibiliteit.signalen.join(' ')}>⚠</span>}
+        </span>
+      </div>}
     </div>
-    {voedingSamenvatting && <p className="nutrition-summary" title="Waarden zijn inclusief vocht (as-fed).">
-      {product.food_type !== 'kibble' && <span className={`nutrition-kind ${product.food_type}`}>{foodTypeLabel}</span>}
-      {voedingSamenvatting}
-      {plausibiliteit.signalen.length > 0 && <span className="nutrition-flag" role="img" aria-label="Let op: de bronanalyse is niet consistent" title={plausibiliteit.signalen.join(' ')}>⚠</span>}
-    </p>}
     {presentStates.length > 0 && !excluded && <p className="verdict present"><strong>Staat in de lijst:</strong> {presentStates.map((state) => `${ALLERGEN_LABELS[state.key]}${state.members.some((member) => member !== state.key) ? ` via ${labelList(state.members.filter((member) => member !== state.key))}` : ''}`).join(', ')}</p>}
     {unknownStates.length > 0 && <p className="verdict unknown"><strong>Kan erin zitten:</strong> {labelList(unknownStates.map((state) => state.key), 100)} — het etiket noemt geen bron voor {onbekendeWoorden.length > 5 ? `${onbekendeWoorden.slice(0, 5).join(', ')} en ${onbekendeWoorden.length - 5} meer` : onbekendeWoorden.length ? onbekendeWoorden.join(', ') : 'een ingrediënt'}</p>}
     {absentStates.length > 0 && <p className="verdict absent"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 100)}</p>}
     <details className="ingredients" onToggle={(event) => { if (event.currentTarget.open) laadIngredienten() }}>
-      <summary>Volledige ingrediëntenlijst bekijken{match.importNote && /vertaling/i.test(match.importNote) ? ' (vertaald)' : ''}</summary>
+      <summary>Ingrediëntenlijst bekijken{match.importNote && /vertaling/i.test(match.importNote) ? ' (vertaald)' : ''}</summary>
       <Ingredients text={ingredientText} loading={ingredientLoading} hasLabel={match.hasLabel} error={ingredientError} />
       {match.importNote && <p className="import-note"><small>{match.importNote}</small></p>}
     </details>
     {Object.keys(voeding).length > 0 && <details className="nutrition">
-      <summary>Alle voedingswaarden</summary>
+      <summary>Alle voedingswaarden bekijken</summary>
       <div className="nutrition-view">
         <div className="nutrition-view-toggle" role="group" aria-label="Weergave voedingswaarden">
           <button type="button" className={drogeStof ? '' : 'active'} aria-pressed={!drogeStof} onClick={() => setDrogeStof(false)}>As-fed</button>
