@@ -179,8 +179,8 @@ export const ALLERGEN_SYNONYMS = {
   chicken: ['kip*', 'chicken'], turkey: ['kalkoen*', 'turkey'], beef: ['rund*', 'beef', 'runder*'],
   kalf: ['kalf*', 'veal'], bizon: ['bizon*', 'bison*'],
   lamb: ['lam*', 'lamb'], schaap: ['schaap*', 'schapen*', 'mutton'],
-  duck: ['eend*', 'duck'], pork: ['varken*', 'pork'],
-  wildzwijn: ['wildzwijn*', 'everzwijn*', 'zwijn*', 'boar*'],
+  duck: ['eend*', 'duck'], pork: ['varken*', 'pork', 'reuzel*', 'smout*'],
+  wildzwijn: ['wildzwijn*', 'wild zwijn*', 'everzwijn*', 'zwijn*', 'boar*'],
   rabbit: ['konijn*', 'rabbit'], haas: ['haas*', 'hazen*', 'hare*'],
   venison: ['hert*', 'venison', 'ree*', 'edelhert*'], rendier: ['rendier*', 'reindeer*'],
   // "paard*" zou ook "paardenbloem" (paardenbloem) pakken; daarom alleen de
@@ -202,8 +202,8 @@ export const ALLERGEN_SYNONYMS = {
     // de hele/rauwe vorm telt, anders zou "bot" (been) of "tong" (orgaan)
     // steeds als vis gelden.
     'hele bot', 'rauwe bot', 'hele tong', 'rauwe tong'],
-  whitefish: ['witvis*', 'kabeljauw*', 'schelvis*', 'koolvis*', 'heek', 'wijting*', 'zeeduivel*', 'pangasius*'],
-  salmon: ['zalm*', 'salmon'], tuna: ['tonijn*', 'tuna'], trout: ['forel*', 'trout'], herring: ['haring*', 'herring'],
+  whitefish: ['witvis*', 'kabeljauw*', 'schelvis*', 'koolvis*', 'heek', 'wijting*', 'zeeduivel*', 'pangasius*', 'platvis*'],
+  salmon: ['zalm*', 'salmon'], tuna: ['tonijn*', 'tuna'], trout: ['forel*', 'trout', 'char', 'arctische char', 'steelhead'], herring: ['haring*', 'herring'],
   mackerel: ['makreel*', 'mackerel'], anchovy: ['ansjovis*', 'anchovies'], sardine: ['sardine*', 'sardines'],
   // "oester" zonder * is bewust: oesterzwam is een paddenstoel, geen schaaldier.
   // Oesterschelp en eierschaal zijn mineralen, geen schaaldier of ei; die staan
@@ -219,7 +219,7 @@ export const ALLERGEN_SYNONYMS = {
   chickpea: ['kikkererwt*', 'chickpea*', 'garbanzo*'],
   bean: ['boon', 'bonen', 'boontje*', 'sperzieboon*', 'snijboon*', 'kidneyboon*', 'tuinboon*', 'pintoboon*', 'navyboon*', 'bonenmix*', 'bonenmeel*', 'bonenextract*', 'bonenvezel*', 'beans'],
   lentil: ['linze*', 'lentil*'], lupin: ['lupine*', 'lupin*', 'lupinen*'], potato: ['aardappel*', 'potato*'],
-  sweetpotato: ['zoete aardappel', 'sweet potato'], tapioca: ['tapioca*', 'maniok*', 'cassave*', 'cassava*'],
+  sweetpotato: ['zoete aardappel*', 'sweet potato*'], tapioca: ['tapioca*', 'maniok*', 'cassave*', 'cassava*'],
   // Suiker: elke vorm waarin suiker op een etiket kan staan. "Ontsuikerd" valt
   // er bewust buiten (daar is de suiker juist uitgehaald) en glucosamine ook
   // (dat begint met "glucos", niet met "glucose").
@@ -229,12 +229,12 @@ export const ALLERGEN_SYNONYMS = {
   cauliflower: ['bloemkool*', 'cauliflower*'], kale: ['boerenkool*', 'kale'], broccoli: ['broccoli*'],
   courgette: ['courgette*', 'zucchini*'], vegetables: ['groente*', 'groenten*', 'vegetables', 'vegetable'],
   garlic: ['knoflook*', 'garlic*'], cucumber: ['komkommer*', 'cucumber*'], parsnip: ['pastinaak*', 'parsnip*'],
-  paprika: ['paprika*'], pumpkin: ['pompoen*', 'poempoen*', 'pumpkin*'], leek: ['prei*', 'leek'], celery: ['selderij*', 'selderie*', 'bleekselderij*', 'celery*'],
+  paprika: ['paprika*'], pumpkin: ['pompoen*', 'poempoen*', 'pumpkin*', 'muskaat pompoen', 'muskaatpompoen*'], leek: ['prei*', 'leek'], celery: ['selderij*', 'selderie*', 'bleekselderij*', 'celery*'],
   spinach: ['spinazie*', 'spinach*'], tomato: ['tomaat*', 'tomaten*', 'tomato*', 'tomatoes'],
   onion: ['ui', 'uien*', 'onion*'], carrot: ['wortel*', 'carrot*', 'peen*'],
   // Fruit
   strawberry: ['aardbei*', 'strawberry*'], apple: ['appel*', 'apple*', 'apples'], banana: ['banaan*', 'banana*', 'kookbanaan*'],
-  blackberry: ['braam*', 'blackberry*'], blueberry: ['bosbes*', 'blueberry*'], cranberry: ['cranberry*', 'veenbes*', 'cranberries'],
+  blackberry: ['braam*', 'blackberry*'], blueberry: ['bosbes*', 'blueberry*', 'blauwe bes*', 'blueberries'], cranberry: ['cranberry*', 'veenbes*', 'cranberries'],
   date: ['dadel*', 'dates'], raspberry: ['framboos*', 'raspberry*', 'frambozenblad*', 'frambozenbladeren*'],
   fruit: ['fruit*', 'vruchten*', 'bosvruchten*'], mango: ['mango*'], papaya: ['papaja*', 'papaya*'],
   pear: ['peer', 'peren*', 'pear*', 'pears'], peach: ['perzik*', 'peach*'],
@@ -242,8 +242,10 @@ export const ALLERGEN_SYNONYMS = {
   algae: ['algen*', 'alge*', 'zeealg*', 'algae*', 'microalg*', 'spirulina*', 'chlorella*', 'schizochytrium*'],
   seaweed: ['zeewier*', 'wier*', 'kelp*', 'zeegras*', 'seaweed*', 'fucus*', 'ascophyllum*', 'carrageen*', 'alginaat*'],
   egg: ['ei', 'eier*', 'eigeel', 'eidooier', 'eipoeder', 'egg', 'eggs'],
-  milk: ['melk*', 'wei', 'weipoeder', 'whey*', 'lactose*', 'yoghurt*', 'kwark*', 'kaas*', 'caseine*', 'caseinaat*', 'room*', 'boter*', 'milk'],
-  herbs: ['kruiden*', 'kruid*', 'specerij*', 'specerijen*', 'herbs', 'herb'],
+  milk: ['melk*', 'wei', 'weipoeder', 'whey*', 'lactose*', 'yoghurt*', 'kwark*', 'kaas*', 'caseine*', 'caseinaat*', 'room*', 'boter*', 'milk', 'colostrum*'],
+  herbs: ['kruiden*', 'kruid*', 'specerij*', 'specerijen*', 'herbs', 'herb',
+    'he shou wu*', 'tu si zi*', 'xian mao*', 'shan yao*', 'xu duan*',
+    'polygonum multiflorum*', 'polygoni multiflori*', 'macleaya cordata*'],
   mint: ['munt*', 'mint*'],
   nuts: ['noten*', 'noot', 'nootjes', 'hazelnoot*', 'hazelnoten*', 'amandel*', 'amandelen*', 'walnoot*', 'walnoten*', 'cashew*', 'pistache*', 'pecannoot*', 'macadamia*', 'paranoot*', 'kastanje*', 'nuts', 'nut'],
   pecan: ['pecan*', 'pecannoot*'], chestnut: ['kastanje*', 'chestnut*'],
@@ -259,7 +261,7 @@ export const ALLERGEN_SYNONYMS = {
   artichoke: ['artisjok*', 'artichoke*'], turnipgreens: ['raapsteel*', 'raapstelen*'],
   chard: ['snijbiet*', 'snijbieten*', 'chard'], cress: ['tuinkers*', 'cress'],
   alfalfa: ['luzerne*', 'alfalfa*', 'lucerne*'], cabbage: ['kool', 'witte kool*', 'rode kool*', 'spitskool*', 'savooiekool*', 'cabbage*'],
-  apricot: ['abrikoos*', 'abrikozen*', 'apricot*'], melon: ['meloen*', 'watermeloen*', 'melon*', 'watermelon*'],
+  apricot: ['abrikoos*', 'abrikozen*', 'apricot*', 'mume*'], melon: ['meloen*', 'watermeloen*', 'melon*', 'watermelon*'],
   coconut: ['kokos*', 'kokosnoot*', 'coconut*', 'kopra*'], olive: ['olijf*', 'olijven*', 'olive*'],
   grape: ['druif*', 'druiven*', 'druivenpit*', 'grape', 'grapes', 'rozijn*', 'raisin*'],
   rosehip: ['rozenbottel*', 'rosebottel*', 'rosehip*', 'rose hip'],
@@ -273,7 +275,7 @@ export const ALLERGEN_SYNONYMS = {
   plum: ['pruim*', 'plum*'], currant: ['aalbes*', 'zwarte bes*', 'rode bes*', 'witte bes*', 'currant*'],
   mulberry: ['moerbei*', 'morus*', 'mulberry*'], goji: ['lycium*', 'goji*', 'wolfberry*'],
   basil: ['basilicum*', 'basil*'], dill: ['dille*', 'dill*'], chive: ['bieslook*', 'chive*'],
-  sage: ['salie*', 'sage*'], chervil: ['kervel*', 'chervil*'], oregano: ['oregano*'],
+  sage: ['salie*', 'sage*'], chervil: ['kervel*', 'chervil*'], oregano: ['oregano*', 'origanum*', 'origanum vulgare*'],
   marjoram: ['marjolein*', 'marjoram*'], coriander: ['koriander*', 'coriander*', 'cilantro*'],
   lovage: ['lavas*', 'lovage*'], ginger: ['gember*', 'ginger*'],
   anise: ['anijs*', 'anijszaad*', 'anisvruchten*', 'anise*', 'aniseed*'],
@@ -290,7 +292,7 @@ export const ALLERGEN_SYNONYMS = {
   passionflower: ['passiebloem*', 'passionflower*', 'passiflora*'],
   milkthistle: ['mariadistel*', 'milk thistle*', 'silybum*'], borage: ['bernagie*', 'borage*'],
   eveningprimrose: ['teunisbloem*', 'evening primrose*', 'oenothera*'],
-  tagetes: ['tagetes*'], echinacea: ['echinacea*'], ginseng: ['ginseng*'], gentian: ['gentiaan*'],
+  tagetes: ['tagetes*'], echinacea: ['echinacea*', 'echinacea purpurea*'], ginseng: ['ginseng*'], gentian: ['gentiaan*'],
   burdock: ['klis*', 'kliswortel*', 'burdock*'], mistletoe: ['maretak*', 'maretakkruid*', 'mistletoe*'],
   sarsaparilla: ['sarsaparilla*'], devilsclaw: ['duivelsklauw*', 'devils claw*'],
   yarrow: ['duizendblad*', 'duizendbladkruid*', 'yarrow*'], centaury: ['duizendguldenkruid*', 'centaury*'],
@@ -328,7 +330,8 @@ export function allergenSearchTerms(key, label) {
 const VAGUE_TERM_GROUPS = [
   { keys: MEAT_KEYS, words: ['dierlijke bijproducten', 'vlees en dierlijke bijproducten', 'dierlijke derivaten'] },
   { keys: PLANT_ALL_KEYS, words: ['plantaardige bijproducten', 'derivaten van plantaardige oorsprong'] },
-  { keys: ALL_KEYS, words: ['plantaardige eiwitextracten', 'bijproduct*', 'bijprodukt*', 'derivaat*'] },
+  { keys: PLANT_ALL_KEYS, words: ['plantaardige eiwitextracten'] },
+  { keys: ALL_KEYS, words: ['bijproduct*', 'bijprodukt*', 'derivaat*'] },
   { keys: FAT_KEYS, words: ['olien en vetten'] },
   { keys: GRAIN_KEYS, words: ['granen*', 'cereals*'] },
   { keys: ['poultry'], words: ['gevogelte*', 'pluimvee*', 'poultry'] },
@@ -345,7 +348,7 @@ const VAGUE_TERM_GROUPS = [
   // Verzamelwoorden die een dier- of plantensoort verbergen, ook in anderstalige
   // etiketten: "dierlijk vet", "animal protein", "vegetable oil".
   { keys: MEAT_KEYS, words: ['dierlijk*', 'animal'] },
-  { keys: PLANT_ALL_KEYS, words: ['plantaardig*', 'vegetable', 'plant'] }
+  { keys: PLANT_ALL_KEYS, words: ['plantaardig*', 'planten*', 'vegetable', 'plant'] }
 ]
 
 // Risicowoorden: woorden die een allergeenbron kunnen verbergen zonder hem te
@@ -367,11 +370,11 @@ const RISK_TERM_GROUPS = [
     'bloem', 'semolina', 'vlokken', 'zemel', 'zemelen'
   ] },
   // vetten en oliën zonder bron
-  { keys: FAT_KEYS, words: ['olie', 'olien', 'oil', 'oils', 'vet', 'vetten', 'fat', 'fats', 'talg', 'reuzel', 'smout'] },
+  { keys: FAT_KEYS, words: ['olie', 'olien', 'oil', 'oils', 'vet', 'vetten', 'fat', 'fats', 'talg'] },
   // dierlijke reststromen, kookvocht en delen zonder genoemde soort
   { keys: MEAT_KEYS, words: [
     'bouillon', 'broth', 'stock', 'jus', 'vleesnat', 'vlees*', 'meat*', 'bloed', 'bloedmeel', 'beendermeel',
-    'vleesmeel', 'verenmeel', 'digest', 'spiervlees*', 'wildvet*', 'slachtafval*',
+    'vleesmeel', 'verenmeel', 'digest', 'spiervlees*', 'wildvet*', 'slachtafval*', 'fond',
     'rug', 'ruggen', 'rugstuk', 'hart', 'harten', 'pens', 'pensen', 'maag', 'magen', 'nier', 'nieren',
     'tong', 'tongen', 'tongbot', 'oor', 'oren', 'rib', 'ribben', 'lever', 'levers', 'long', 'longen',
     'karkas', 'karkassen', 'bot', 'botten', 'spier', 'spieren', 'orgaan', 'organen', 'kop', 'koppen',
@@ -590,7 +593,14 @@ function termTreffers(index, token) {
 function multiTreffers(index, tokens, start) {
   const kandidaten = index.multi.get(tokens[start])
   if (!kandidaten) return []
-  return kandidaten.filter((term) => term.parts.every((part, offset) => tokens[start + offset] === part))
+  return kandidaten.filter((term) => term.parts.every((part, offset) => {
+    const token = tokens[start + offset]
+    if (token === undefined) return false
+    // Ook meerwoordige termen met een * achter het laatste woord ("zwarte bes*")
+    // moeten meervouden meenemen: "zwarte bessen" is dezelfde bes.
+    if (offset === term.parts.length - 1 && term.prefix) return token.startsWith(part)
+    return token === part
+  }))
 }
 
 // De woordenschat wordt opgebouwd uit de vaste lijsten hierboven plus de
@@ -701,8 +711,43 @@ function sourceKeysOf(word) {
 // woord is een van de allergenen uit de lijst. "onduidelijk" betekent: het kan
 // een allergeen verbergen; met allergen_keys erbij weet de beheerder welke dat
 // kunnen zijn (leeg of ontbrekend = elk allergeen).
+// Enkele termen in de live woordenlijst hadden een te brede of verkeerde
+// indeling. De migratie 20261107160000_woordlijst_correcties.sql ruimt ze op;
+// deze correcties zorgen dat de site ook vóór die migratie al goed keurt.
+const LEGACY_TERM_CORRECTIES = new Map([
+  ['groenten', null],
+  ['zaden', null],
+  ['slachtafval', null],
+  ['bijprodukten', null],
+  ['oli', null],
+  // Losse delen van Chinese kruidennamen en Latijnse soortnamen mogen nooit
+  // zelf een allergeen aanwijzen; de volledige naam staat in de vaste lijst.
+  ['he', null], ['si', null], ['tu', null], ['wu', null], ['xu', null], ['yao', null],
+  ['zi', null], ['mao', null], ['shan', null], ['shou', null], ['xian', null], ['duan', null],
+  ['polygoni', null], ['multiflori', null], ['cordata', null], ['purpurea', null],
+  ['origanum', null], ['vulgare', null], ['mume', null],
+  // Proefregels uit een oude keuring.
+  ['test', null], ['veel', null],
+  ['luzerne', { kind: 'bron', allergen_keys: ['alfalfa'], note: 'Luzerne is alfalfa (een concrete plant).' }],
+  ['luzernemeel', { kind: 'bron', allergen_keys: ['alfalfa'], note: 'Meel van luzerne (alfalfa).' }],
+  ['colostrum', { kind: 'bron', allergen_keys: ['milk'], note: 'Colostrum is melk (meestal rund).' }],
+  ['fenegriekzaad', { kind: 'bron', allergen_keys: ['fenugreek'], note: 'Fenegriekzaad is fenegriek (een concrete plant).' }],
+  ['guargom', { kind: 'bron', allergen_keys: ['guar'], note: 'Guargom komt van de guarboon.' }],
+  ['plaqueoff', { kind: 'bron', allergen_keys: ['seaweed'], note: 'PlaqueOff is een zeewierproduct.' }],
+  ['planten', { kind: 'onduidelijk', allergen_keys: PLANT_ALL_KEYS, note: 'Verzamelwoord voor planten; de soort staat er niet bij. Staan de planten ernaast genoemd, dan vervalt de markering.' }],
+  ['plankton', { kind: 'onduidelijk', allergen_keys: ['fish', 'shellfish', 'algae', 'seaweed'], note: 'Plankton kan van vis, schaaldieren of algen afkomstig zijn; de bron staat er niet bij.' }],
+  ['veren', { kind: 'onduidelijk', allergen_keys: ['poultry'], note: 'Veren zijn afkomstig van gevogelte; de soort staat er niet bij.' }]
+])
+
 export function setCustomTerms(terms = []) {
-  const volgende = Array.isArray(terms) ? terms.filter(({ term, kind }) => term && kind) : []
+  const volgende = (Array.isArray(terms) ? terms : [])
+    .filter(({ term, kind }) => term && kind)
+    .map((term) => {
+      const correctie = LEGACY_TERM_CORRECTIES.get(normaliseText(term.term))
+      if (correctie === null) return null
+      return correctie ? { ...term, ...correctie } : term
+    })
+    .filter(Boolean)
   // De site geeft bij elke allergenenwissel dezelfde woordenlijst opnieuw door.
   // Zonder deze controle zou elke wissel de bewaarde keuringen hieronder wissen
   // en alle 228 etiketten opnieuw laten doorrekenen.
@@ -1009,7 +1054,31 @@ export function assessLabel(ingredientsText = '') {
     const term = termTreffers(UNCERTAIN_INDEX, token)[0]
     return term ? expandAllergenKeys(term.keys ?? ALL_KEYS) : null
   }
-  const vagueMatches = collect(UNCERTAIN_INDEX).filter(({ start }) => keep(start))
+  const REDUNDANT_FRUIT_WORDS = new Set(['fruit', 'vruchten'])
+  const vagueMatches = collect(UNCERTAIN_INDEX)
+    .filter(({ start }) => {
+      if (!keep(start) || insideConcreteSourcePhrase(tokens, start)) return false
+      // "Mume fruit", "Morus fruit": het algemene woord na een genoemde vrucht
+      // is geen tweede, onbekende bron. Andere verzamelwoorden ("dierlijk vet")
+      // houden hun eigen betekenis, ook als er een diersoort vóór staat.
+      const vorige = tokens[start - 1]
+      return !(REDUNDANT_FRUIT_WORDS.has(tokens[start]) && vorige && !breakBefore[start] && isConcreteSource(vorige))
+    })
+    .map((match) => {
+      // "Plantaardige bijprodukten" verbergt alleen plantaardige bronnen, niet
+      // ook vlees. Een voorafgaand verzamelwoord vernauwt de scope, net als bij
+      // de risicowoorden hieronder.
+      if ((match.term.keys && match.term.keys !== ALL_KEYS) || breakBefore[match.start]) return match
+      const vorige = tokens[match.start - 1]
+      if (vorige === 'plantaardige' || vorige === 'plantaardig') {
+        return { ...match, term: { ...match.term, keys: PLANT_ALL_KEYS } }
+      }
+      if (vorige === 'dierlijke' || vorige === 'dierlijk') {
+        return { ...match, term: { ...match.term, keys: MEAT_KEYS } }
+      }
+      const scope = precedingScope(match.start - 1)
+      return scope ? { ...match, term: { ...match.term, keys: scope } } : match
+    })
   const riskyMatches = collect(RISK_INDEX).flatMap((match) => {
     // Delen onder een kop met een genoemde bron ("13% vlees" onder "63% Konijn:")
     // horen bij die bron.
@@ -1108,9 +1177,14 @@ export function assessLabel(ingredientsText = '') {
   // allergeenwoord: "eierschaal" is geen ei en "graanvrije" is geen graan.
   const sourceTokens = tokens.filter((token) => !isNonSourceToken(token))
   const gevondenAllergenen = new Set()
-  sourceTokens.forEach((token, start) => {
+  sourceTokens.forEach((token) => {
     for (const term of termTreffers(ALLERGEN_INDEX, token)) gevondenAllergenen.add(term.key)
-    for (const term of multiTreffers(ALLERGEN_INDEX, sourceTokens, start)) gevondenAllergenen.add(term.key)
+  })
+  // Meerwoordige bronnen ("zwarte bes", "zoete aardappel") keuren we op de
+  // oorspronkelijke woordreeks. Anders breekt een onschuldig verklaard bijwoord
+  // zoals "zwarte" de bron in twee losse woorden en verdwijnt het allergeen.
+  tokens.forEach((token, start) => {
+    for (const term of multiTreffers(ALLERGEN_INDEX, tokens, start)) gevondenAllergenen.add(term.key)
   })
   const allergens = sortAllergenKeys([...gevondenAllergenen])
 
@@ -1179,11 +1253,18 @@ function buildSearchIndex(text = '') {
   for (const match of source.matchAll(/\b(?:bestaande|samengesteld)\s+uit\b/gi)) {
     for (let index = match.index; index < match.index + match[0].length; index += 1) overslaan[index] = true
   }
+  // De keuring voegt decimalen als "11,5" en "0.5" samen tot één token. Doe
+  // dat hier precies zo: dezelfde regex vervangt in markedTokens telkens twee
+  // cijfers met het scheidingsteken ertussen. Losse getallenrijen als
+  // "1,2,5,7" houden daardoor dezelfde woordgrens ("12" en "57"), zodat de
+  // markeringen niet verschuiven.
+  const decimaalTeken = new Set()
+  for (const match of source.matchAll(/(\d)[.,](\d)/g)) {
+    decimaalTeken.add(match.index + 1)
+  }
   for (let index = 0; index < source.length; index += 1) {
     if (overslaan[index]) continue
-    // De keuring voegt decimalen als "11,5" en "0.5" samen tot één token.
-    // Doe dat hier ook, anders verschuiven alle rode markeringen na zo'n getal.
-    if ((source[index] === ',' || source[index] === '.') && /\d/.test(source[index - 1] ?? '') && /\d/.test(source[index + 1] ?? '')) continue
+    if (decimaalTeken.has(index)) continue
     const base = source[index].normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('nl-NL')
     for (const character of base) {
       if (/[a-z0-9]/.test(character)) {
@@ -1223,15 +1304,27 @@ export function markUncertainIngredients(text = '') {
   const { normalised, positions } = buildSearchIndex(source)
   const words = searchWords(normalised)
 
-  const flagged = assessLabel(source).flagged
+  const keuring = assessLabel(source)
+  const flagged = keuring.flagged
+  // De keuring laat woorden als "met" en "bestaande uit" soms weg. Zoek elk
+  // overgebleven token daarom in volgorde op in de woordreeks van de bron. Zo
+  // blijven de gemarkeerde stukken ook dan op het juiste woord staan.
+  const tokenWoorden = []
+  let woordCursor = 0
+  for (const token of keuring.tokens) {
+    while (woordCursor < words.length && words[woordCursor].word !== token) woordCursor += 1
+    tokenWoorden.push(woordCursor < words.length ? words[woordCursor] : null)
+    if (woordCursor < words.length) woordCursor += 1
+  }
   const merged = []
   flagged.forEach((flag, index) => {
-    if (!flag || !words[index]) return
-    const range = [positions[words[index].start], positions[words[index].end - 1] + 1]
+    const woord = tokenWoorden[index]
+    if (!flag || !woord) return
+    const range = [positions[woord.start], positions[woord.end - 1] + 1]
     const previous = merged[merged.length - 1]
-    // Alleen woorden die door spaties gescheiden zijn horen bij elkaar ("oliën en
-    // vetten"); over een komma heen niet ("dierlijk vet, bouillon").
-    if (previous && /^\s*$/.test(source.slice(previous[1], range[0]))) previous[1] = range[1]
+    // Alleen woorden die op dezelfde regel door spaties gescheiden zijn horen
+    // bij elkaar ("oliën en vetten"); een newline of komma scheidt ingrediënten.
+    if (previous && /^[ \t]*$/.test(source.slice(previous[1], range[0]))) previous[1] = range[1]
     else merged.push(range)
   })
 

@@ -69,13 +69,28 @@ test('een zelf ingedeeld woord geldt meteen voor alle producten', () => {
   setCustomTerms([{ term: 'glucosamine', kind: 'onschuldig' }])
   assert.equal(assessLabel('Kip 40%, glucosamine, erwten').covered, true)
   assert.deepEqual(assessLabel('Kip 40%, glucosamine, erwten').keys.filter((key) => key !== 'chicken' && key !== 'pea'), [])
-  setCustomTerms([{ term: 'groenten', kind: 'onduidelijk' }])
-  assert.deepEqual(assessLabel('Kip 40%, groenten').unknown, [])
-  assert.equal(assessLabel('Kip 40%, groenten').keys.includes('soy'), true)
+  setCustomTerms([{ term: 'testgroente', kind: 'onduidelijk' }])
+  assert.deepEqual(assessLabel('Kip 40%, testgroente').unknown, [])
+  assert.equal(assessLabel('Kip 40%, testgroente').keys.includes('soy'), true)
   setCustomTerms([{ term: 'garbanzo', kind: 'bron', allergen_keys: ['chickpea'] }])
   assert.deepEqual(detectIngredientSignals('garbanzo, kip').allergens, ['chicken', 'chickpea'])
   setCustomTerms([])
   assert.deepEqual(assessLabel('Kip 40%, glucosamine, erwten').unknown, ['glucosamine'])
+})
+
+test('oude, te brede woordenlijsttermen worden gecorrigeerd', () => {
+  setCustomTerms([
+    { term: 'luzerne', kind: 'onduidelijk', allergen_keys: ['pea', 'bean'] },
+    { term: 'groenten', kind: 'onduidelijk', allergen_keys: null },
+    { term: 'colostrum', kind: 'onduidelijk', allergen_keys: ['milk'] }
+  ])
+  assert.deepEqual(assessLabel('Luzerne').allergens, ['alfalfa'])
+  assert.deepEqual(assessLabel('Luzerne').vague, [])
+  assert.deepEqual(assessLabel('Groenten').keys.includes('chicken'), false)
+  assert.equal(assessLabel('Groenten').keys.includes('carrot'), true)
+  assert.deepEqual(assessLabel('Colostrum').allergens, ['milk'])
+  assert.deepEqual(assessLabel('Colostrum').vague, [])
+  setCustomTerms([])
 })
 test('een onschuldig plantwoord wordt geen dierlijke bron', () => {
   setCustomTerms([
@@ -247,6 +262,112 @@ test('linzenvezel is bekend en telt als linze', () => {
   assert.deepEqual(assessLabel('Linzenvezel').unknown, [])
   assert.deepEqual(assessLabel('Linzenvezel').allergens, ['lentil'])
   assert.deepEqual(markUncertainIngredients('Linzenvezel'), [{ text: 'Linzenvezel', uncertain: false }])
+})
+
+test('luzerne en colostrum zijn concrete bronnen', () => {
+  assert.deepEqual(assessLabel('Luzerne').allergens, ['alfalfa'])
+  assert.deepEqual(assessLabel('Luzernemeel').allergens, ['alfalfa'])
+  assert.deepEqual(assessLabel('Colostrum').allergens, ['milk'])
+  assert.deepEqual(assessLabel('Luzerne').vague, [])
+  assert.deepEqual(assessLabel('Colostrum').vague, [])
+})
+
+test('fond en ontbrekende vissoorten worden herkend', () => {
+  assert.deepEqual(assessLabel('Fond').risky, ['fond'])
+  assert.deepEqual(assessLabel('Arctische char').allergens, ['trout'])
+  assert.deepEqual(assessLabel('Steelhead forel').allergens, ['trout', 'fish'])
+  assert.deepEqual(assessLabel('Platvis').allergens, ['whitefish'])
+})
+
+test('muskaat pompoen is een concrete pompoensoort', () => {
+  const uitslag = assessLabel('Verse hele muskaat pompoen')
+  assert.deepEqual(uitslag.allergens, ['pumpkin'])
+  assert.deepEqual(uitslag.vague, [])
+})
+
+test('plantaardige bijprodukten verbergt geen vlees', () => {
+  const uitslag = assessLabel('Plantaardige bijprodukten')
+  assert.equal(uitslag.keys.includes('chicken'), false)
+  assert.equal(uitslag.keys.includes('beef'), false)
+  assert.equal(uitslag.keys.includes('wheat'), true)
+})
+
+test('getallenreeksen en doseringen verschuiven de rode markering niet', () => {
+  const tekst = 'Hulpstoffen nr. 1,2,5,7, gelatine (500mg), lever (500mg)'
+  const rood = markUncertainIngredients(tekst).filter((segment) => segment.uncertain).map((segment) => segment.text.trim())
+  assert.deepEqual(rood, ['gelatine', 'lever'])
+  assert.equal(markUncertainIngredients(tekst).map((segment) => segment.text).join(''), tekst)
+})
+
+test('meerwoordige bronnen met een * werken ook in het meervoud', () => {
+  assert.equal(assessLabel('zwarte bessen').allergens.includes('currant'), true)
+  assert.deepEqual(markUncertainIngredients('zwarte bessen').filter((segment) => segment.uncertain), [])
+  assert.equal(assessLabel('rode kool').allergens.includes('cabbage'), true)
+  assert.equal(assessLabel('zoete aardappelen').allergens.includes('sweetpotato'), true)
+  assert.equal(assessLabel('blauwe bessen').allergens.includes('blueberry'), true)
+  assert.deepEqual(markUncertainIngredients('blauwe bessen').filter((segment) => segment.uncertain), [])
+})
+
+test('een onschuldig kleurwoord verbergt de bron niet', () => {
+  setCustomTerms([{ term: 'zwarte', kind: 'onschuldig' }])
+  assert.equal(assessLabel('zwarte bessen').allergens.includes('currant'), true)
+  assert.deepEqual(markUncertainIngredients('zwarte bessen').filter((segment) => segment.uncertain), [])
+  setCustomTerms([])
+})
+
+test('planten is onduidelijk, tenzij de planten ernaast staan', () => {
+  const los = assessLabel('Planten en kruiden (1%)')
+  assert.equal(los.vague.includes('planten'), true)
+  assert.equal(los.keys.includes('carrot'), true)
+  assert.equal(los.keys.includes('chicken'), false)
+  const uitgelegd = assessLabel('Producten van de verwerking van planten (Echinacea purpurea, Origanum vulgare)')
+  assert.deepEqual(uitgelegd.vague, [])
+})
+
+test('fenegriekzaad, guargom, reuzel en smout zijn concrete bronnen', () => {
+  assert.deepEqual(assessLabel('Fenegriekzaad').allergens, ['fenugreek'])
+  assert.deepEqual(assessLabel('Fenegriekzaad').risky, [])
+  assert.deepEqual(assessLabel('Guargom').allergens, ['guar'])
+  assert.deepEqual(assessLabel('Guargom').risky, [])
+  assert.deepEqual(assessLabel('Reuzel').allergens, ['pork'])
+  assert.deepEqual(assessLabel('Smout').risky, [])
+})
+
+test('mume is een abrikoos en origanum is oregano', () => {
+  assert.equal(assessLabel('Mume fruit').allergens.includes('apricot'), true)
+  assert.deepEqual(markUncertainIngredients('Mume fruit').filter((segment) => segment.uncertain), [])
+  assert.deepEqual(assessLabel('Origanum vulgare').allergens, ['oregano'])
+})
+
+test('volledige Chinese kruidennamen tellen als kruid, losse delen niet', () => {
+  for (const naam of ['He Shou Wu', 'Tu Si Zi', 'Xian Mao', 'Shan Yao', 'Xu Duan']) {
+    assert.equal(assessLabel(naam).allergens.includes('herbs'), true, naam)
+    assert.deepEqual(assessLabel(naam).unknown, [], naam)
+  }
+  assert.equal(assessLabel('he').allergens.includes('herbs'), false)
+  assert.equal(assessLabel('si').allergens.includes('herbs'), false)
+})
+
+test('een newline scheidt twee ingrediënten bij de rode markering', () => {
+  const segmenten = markUncertainIngredients('Granen\nPlantaardige bijproducten')
+  assert.deepEqual(segmenten.filter((segment) => segment.uncertain).map((segment) => segment.text), ['Granen', 'Plantaardige bijproducten'])
+})
+
+test('nieuwe woordenlijstcorrecties gelden ook vóór de databasemigratie', () => {
+  setCustomTerms([
+    { term: 'fenegriekzaad', kind: 'onduidelijk', allergen_keys: ['pea', 'soy'] },
+    { term: 'guargom', kind: 'onduidelijk', allergen_keys: ['pea'] },
+    { term: 'planten', kind: 'onschuldig' },
+    { term: 'plaqueoff', kind: 'onduidelijk', allergen_keys: ['seaweed'] }
+  ])
+  assert.deepEqual(assessLabel('Fenegriekzaad').allergens, ['fenugreek'])
+  assert.deepEqual(assessLabel('Fenegriekzaad').risky, [])
+  assert.deepEqual(assessLabel('Guargom').allergens, ['guar'])
+  assert.deepEqual(assessLabel('Guargom').risky, [])
+  assert.equal(assessLabel('Planten en kruiden').vague.includes('planten'), true)
+  assert.deepEqual(assessLabel('PlaqueOff').allergens, ['seaweed'])
+  assert.deepEqual(assessLabel('PlaqueOff').risky, [])
+  setCustomTerms([])
 })
 
 test('een etiket met alleen bronnen bij name is automatisch te beoordelen', () => {
