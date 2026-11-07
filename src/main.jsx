@@ -41,6 +41,7 @@ const ALLERGEEN_SLEUTELS = ALLERGENS.map(({ key }) => key)
 const GETAL2 = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 2 })
 const GETAL1 = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 1 })
 const GETAL0 = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 0 })
+const PRIJS = new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' })
 
 function formatteerFilterwaarde(filter, waarde) {
   const formatteer = filter.decimalen === 2 ? GETAL2 : filter.decimalen === 0 ? GETAL0 : GETAL1
@@ -205,7 +206,7 @@ const Ingredients = memo(function Ingredients({ text, loading = false, hasLabel 
   return <p>{markUncertainIngredients(text).map((segment, index) => segment.uncertain ? <mark className="uncertain-ingredient" key={index}>{segment.text}</mark> : segment.text)}</p>
 })
 
-function ProductCard({ product, match, aanbiedingen = [], nadruk = [], vergelijk = false, vergelijkVol = false, onVergelijk }) {
+function ProductCard({ product, match, aanbiedingen = [], aanbodBijgewerkt = '', nadruk = [], vergelijk = false, vergelijkVol = false, onVergelijk }) {
   const excluded = match.kind === 'excluded'
   const verdict = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controleer etiket/fabrikant' : match.states.length ? 'Lijkt geschikt' : 'Etiket volledig'
   const verdictSymbool = excluded ? '✕' : match.kind === 'check' ? '?' : '✓'
@@ -244,6 +245,11 @@ function ProductCard({ product, match, aanbiedingen = [], nadruk = [], vergelijk
         : match.stale ? 'Deze ingrediëntenlijst is langer dan zes maanden niet gecontroleerd.' : ''
   const foodTypeLabel = FOOD_TYPES.find(([key]) => key === product.food_type)?.[1]
   const packageSize = product.package_size && String(product.package_size).trim().toLowerCase() !== 'null' ? product.package_size : ''
+  const geprijsdeAanbiedingen = aanbiedingen.filter((aanbieding) => {
+    const prijs = Number(aanbieding.prijs)
+    return Number.isFinite(prijs) && prijs > 0
+  })
+  const prijsDatum = datumKort(aanbodBijgewerkt)
   const voeding = voedingswaardeMap(version?.recipe_nutrition)
   const onbetrouwbaar = onbetrouwbareNutrienten(voeding, product.food_type)
   const veiligeRijen = (version?.recipe_nutrition || []).filter((rij) => !onbetrouwbaar.has(rij.nutrient_key))
@@ -363,16 +369,25 @@ function ProductCard({ product, match, aanbiedingen = [], nadruk = [], vergelijk
       ? `dit etiket noemt geen bron voor ${verborgenWoorden.join(', ')}. ${nietHerkendeWoorden.length ? 'Omdat er ook woorden in staan die de keuring niet kent, kan elk allergeen erin zitten.' : dektElkAllergeen ? 'Daardoor kan elk allergeen erin zitten.' : `${labelList(verborgenKeys)} kunnen daar in zitten.`}`
       : 'dit etiket bevat woorden die de keuring niet kent. Daardoor kan elk allergeen erin zitten.'}</small></p>}
     {aanbiedingen.length > 0 && <div className="shop-links">
-      {aanbiedingen.map((aanbieding) => <a
-        key={`${aanbieding.winkel}-${aanbieding.url}`}
-        className="shop-link"
-        href={aanbieding.url}
-        target="_blank"
-        rel="sponsored nofollow noopener noreferrer"
-        title={`Affiliate-link naar ${aanbieding.winkel}. Wij ontvangen een kleine commissie.`}
-        onClick={() => track('winkel-klik', { winkel: aanbieding.winkel, merk: product.brand, product: product.name })}
-      >{aanbieding.winkel}{aanbieding.maat ? ` (${aanbieding.maat})` : ''}</a>)}
-      <span className="shop-note">Affiliate-links · rechtstreeks naar de winkel</span>
+      {aanbiedingen.map((aanbieding) => {
+        const prijs = Number(aanbieding.prijs)
+        const heeftPrijs = Number.isFinite(prijs) && prijs > 0
+        return <a
+          key={`${aanbieding.winkel}-${aanbieding.url}`}
+          className="shop-link"
+          href={aanbieding.url}
+          target="_blank"
+          rel="sponsored nofollow noopener noreferrer"
+          title={`Affiliate-link naar ${aanbieding.winkel}${heeftPrijs ? ` · vanaf ${PRIJS.format(prijs)}` : ''}. Wij ontvangen een kleine commissie.`}
+          onClick={() => track('winkel-klik', { winkel: aanbieding.winkel, merk: product.brand, product: product.name })}
+        >
+          <span className="shop-link-label">{aanbieding.winkel}{aanbieding.maat ? ` (${aanbieding.maat})` : ''}</span>
+          {heeftPrijs && <span className="shop-price" title="Laagste variantprijs uit de feed; de prijs van deze maat kan hoger zijn.">vanaf {PRIJS.format(prijs)}</span>}
+        </a>
+      })}
+      <span className="shop-note">{geprijsdeAanbiedingen.length
+        ? `Affiliate-links · vanaf-prijs (laagste variant) uit de feed${prijsDatum ? ` van ${prijsDatum}` : ''}, kan in de winkel afwijken`
+        : 'Affiliate-links · rechtstreeks naar de winkel'}</span>
     </div>}
   </article>
 }
@@ -928,6 +943,7 @@ function App() {
   const [admin, setAdmin] = useState(() => new URLSearchParams(window.location.search).get('beheer') === '1'); const [session, setSession] = useState(null); const [isAdmin, setIsAdmin] = useState(false); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [authMessage, setAuthMessage] = useState(''); const [recovery, setRecovery] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery'); const [newPassword, setNewPassword] = useState(''); const [repeatPassword, setRepeatPassword] = useState('')
   const [matches, setMatches] = useState([])
   const [aanbod, setAanbod] = useState({})
+  const [aanbodBijgewerkt, setAanbodBijgewerkt] = useState('')
   const [matchesKlaar, setMatchesKlaar] = useState(false)
   const [page, setPage] = useState(1)
   const [sortering, setSortering] = useState(() => leesSortering(new URLSearchParams(window.location.search)))
@@ -946,7 +962,10 @@ function App() {
     fetch('/winkels.json', { cache: 'no-cache' })
       .then((antwoord) => (antwoord.ok ? antwoord.json() : null))
       .then((data) => {
-        if (actief) setAanbod(data && typeof data.aanbieders === 'object' ? data.aanbieders : {})
+        if (actief) {
+          setAanbod(data && typeof data.aanbieders === 'object' ? data.aanbieders : {})
+          setAanbodBijgewerkt(data?.bijgewerkt || '')
+        }
       })
       .catch(() => {})
     return () => { actief = false }
@@ -1408,7 +1427,7 @@ function App() {
           <h2>Vind hondenvoer dat past bij de allergie én voedingsbehoefte van jouw hond</h2>
           <p>Vage termen zoals <em>“dierlijke bijproducten”</em> of <em>“granen”</em> verbergen de bron. Deze vergelijker laat zien welk voer <strong>lijkt te passen</strong>, <strong>uitgesloten</strong> of <strong>onzeker</strong> is. Filter daarnaast op eiwit, vet, energie en meer.</p>
           <p className="hero-meta"><strong>{products.length ? GETAL0.format(products.length) : '1.478'}</strong> producten · <strong>{alleMerken.length || '60'}</strong> merken · <strong>{ALLERGENS.length}</strong> allergenen &amp; bronnen</p>
-          <p className="hero-positioning">Wij vergelijken ingrediënten, allergenen en voedingswaarden — geen prijzen of winkelaanbod.</p>
+          <p className="hero-positioning">Wij vergelijken ingrediënten, allergenen en voedingswaarden. Een winkelprijs is een indicatie, geen onderdeel van ons oordeel.</p>
           <p className="hero-links"><a href="#vergelijken">Begin met allergenen</a> · <a href="#filters">Filter op voeding</a> · <a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a> · <a href="/hoe-wij-vergelijken.html">Onze methode</a></p>
         </div>
       </section>
@@ -1583,7 +1602,7 @@ function App() {
                   </div>
                 ) : null}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
-                {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} aanbiedingen={aanbod[product.id] ?? []} nadruk={actieveVoedingsfilters} vergelijk={vergelijkIds.includes(product.id)} vergelijkVol={vergelijkIds.length >= 3} onVergelijk={wisselVergelijk} />) : <p>Geen producten gevonden{zoekterm ? ` voor “${zoekterm}”` : ' voor deze keuze'}.</p>}
+                {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }) => <ProductCard key={product.id} product={product} match={match} aanbiedingen={aanbod[product.id] ?? []} aanbodBijgewerkt={aanbodBijgewerkt} nadruk={actieveVoedingsfilters} vergelijk={vergelijkIds.includes(product.id)} vergelijkVol={vergelijkIds.length >= 3} onVergelijk={wisselVergelijk} />) : <p>Geen producten gevonden{zoekterm ? ` voor “${zoekterm}”` : ' voor deze keuze'}.</p>}
                 <Pagination page={huidigePagina} total={aantalPaginas} onChange={gaNaarPagina} />
               </section>
             )}
@@ -1604,7 +1623,7 @@ function App() {
         </div>
         <div className="footer-col">
           <h3>Transparantie, Privacy &amp; Contact</h3>
-          <p>Deze website plaatst geen tracking-cookies en verkoopt geen bezoekersgegevens. Wij vergelijken ingrediënten, allergenen en voedingswaarden — geen prijzen of winkelaanbod. Sommige uitgaande links kunnen affiliate-links zijn; de selectie, sortering en beoordeling worden hier nooit door beïnvloed. Lees het volledige <a href="/privacybeleid.html">privacybeleid en de cookieverklaring</a>.</p>
+          <p>Deze website plaatst geen tracking-cookies en verkoopt geen bezoekersgegevens. Wij vergelijken ingrediënten, allergenen en voedingswaarden; een prijs bij een winkel is een indicatie en geen onderdeel van de vergelijking. Sommige uitgaande links kunnen affiliate-links zijn; de selectie, sortering en beoordeling worden hier nooit door beïnvloed. Lees het volledige <a href="/privacybeleid.html">privacybeleid en de cookieverklaring</a>.</p>
           <p className="footer-meta">Redactie: Paul Zuiderduin · Contact: <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a></p>
         </div>
       </div>

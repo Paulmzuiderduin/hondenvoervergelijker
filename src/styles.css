@@ -2285,6 +2285,7 @@ button:disabled {
 .shop-link {
   display: inline-flex;
   align-items: center;
+  gap: 0.45rem;
   padding: 0.28rem 0.55rem;
   border: 1px solid #d4ddd6;
   border-radius: 3px;
@@ -2293,6 +2294,14 @@ button:disabled {
   font-size: 0.76rem;
   font-weight: 500;
   text-decoration: none;
+}
+
+.shop-price {
+  padding-left: 0.45rem;
+  border-left: 1px solid #dfe6e1;
+  color: #1d3b27;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
 }
 
 .shop-link:hover {

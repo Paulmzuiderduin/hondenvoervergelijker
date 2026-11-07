@@ -98,7 +98,8 @@ for (const { product, aanbieding } of koppelingen) {
   lijst.push({
     winkel: WINKEL,
     url: aanbieding.url,
-    maat: aanbieding.maat
+    maat: aanbieding.maat,
+    prijs: Number.isFinite(aanbieding.prijs) && aanbieding.prijs > 0 ? Number(aanbieding.prijs.toFixed(2)) : null
   })
   bestaand.aanbieders[product.id] = lijst
 }
@@ -119,9 +120,9 @@ const regels = [
   '',
   '## Gekoppeld',
   '',
-  '| Merk | Product | Maat | Feednaam |',
-  '|---|---|---|---|',
-  ...koppelingen.map(({ product, aanbieding }) => `| ${product.brand} | ${product.name} | ${aanbieding.maat || '—'} | ${aanbieding.titel} |`),
+  '| Merk | Product | Maat | Prijs | Feednaam |',
+  '|---|---|---|---|---|',
+  ...koppelingen.map(({ product, aanbieding }) => `| ${product.brand} | ${product.name} | ${aanbieding.maat || '—'} | ${aanbieding.prijs != null ? `€ ${aanbieding.prijs.toFixed(2).replace('.', ',')}` : '—'} | ${aanbieding.titel} |`),
   '',
   '## Dubbelzinnig — geen link',
   '',

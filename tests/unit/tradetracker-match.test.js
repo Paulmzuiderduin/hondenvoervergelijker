@@ -77,4 +77,12 @@ test('parser leest alleen hondenvoeding en maakt een schonere URL', () => {
   assert.equal(rijen[0].titelZonderMerk, 'Senior Recipe')
   assert.equal(rijen[0].url, 'https://winkel.test/?tt=1&r=https%3A%2F%2Fwinkel.test%2Fproduct%2Facana')
   assert.deepEqual(rijen[0].maten, [6000])
+  assert.equal(rijen[0].prijs, 49.99)
+})
+
+test('parser bewaart alleen een positieve europrijs als indicatie', () => {
+  const product = (id, naam, prijsTag) => `<product ID="${id}"><name>${naam}</name>${prijsTag}<URL>https://winkel.test/${id}</URL><properties><property name="categoryPath"><value>hond-voeding</value></property></properties></product>`
+  const xml = `<products>${product(1, 'Merk - Voer Een', '<price currency="EUR">12.50</price>')}${product(2, 'Merk - Voer Twee', '<price currency="USD">9.99</price>')}${product(3, 'Merk - Voer Drie', '<price currency="EUR">0</price>')}${product(4, 'Merk - Voer Vier', '')}</products>`
+  const rijen = parseTradeTrackerFeed(xml)
+  assert.deepEqual(rijen.map((rij) => rij.prijs), [12.5, null, null, null])
 })

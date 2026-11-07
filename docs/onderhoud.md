@@ -87,15 +87,16 @@ reageren.
 
 ## Affiliate aanzetten (later, optioneel)
 
-De site is geen prijsvergelijker. Prijzen worden niet opgehaald, getoond of
-vergeleken. Een affiliate-link is alleen een doorverwijzing; de beoordeling,
-selectie en volgorde blijven daar volledig onafhankelijk van.
+De site is geen prijsvergelijker. Bij een winkelknop kan een vanaf-prijs uit de
+productfeed staan (de laagste variantprijs); prijzen worden niet onderling
+vergeleken en beïnvloeden de selectie, volgorde en beoordeling niet. Ververs de
+feeds daarom regelmatig: de actuele winkelprijs kan afwijken.
 
 1. Download de CSV-feeds van Zooplus en Medpets in Awin.
 2. Zet ze in `data/winkels/` en maak `feeds.json` (zie `data/winkels/README.md`).
 3. Draai `npm run winkels:koppel -- --dry-run`, daarna zonder `--dry-run`.
 4. Controleer `data/winkels/rapport.md`.
-5. Commit `public/winkels.json`. De winkelknoppen verschijnen automatisch, zonder prijs.
+5. Commit `public/winkels.json`. De winkelknoppen verschijnen automatisch, met de vanaf-prijs uit de feed.
 
 De koppeling beïnvloedt de volgorde en de beoordeling niet.
 
@@ -111,7 +112,9 @@ lokaal in `data/winkels/dierenwinkelxl.xml` en wordt niet gecommit.
 
 De import gebruikt strikte matching: exacte merk- en productnaam, en waar
 mogelijk een overlappende verpakking. Bij twijfel wordt er geen link toegevoegd.
-Prijzen worden niet opgeslagen of getoond.
+De europrijs uit de feed wordt als vanaf-prijs (laagste variantprijs) opgeslagen
+en bij de winkelknop getoond. Ververs de feed regelmatig; de actuele winkelprijs
+kan afwijken.
 
 ## Terugvallen op GitHub Pages
 

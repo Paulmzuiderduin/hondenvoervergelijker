@@ -26,14 +26,18 @@ const VANDAAG = new Date().toISOString().slice(0, 10)
 
 // Alleen door de handmatige/ strikte koppeling goedgekeurde winkel links.
 // De feed zelf staat niet in de repository.
-const WINKELAANBOD = (() => {
+const WINKELDATA = (() => {
   try {
     const bestand = JSON.parse(readFileSync(join(WORTEL, 'public', 'winkels.json'), 'utf8'))
-    return bestand && typeof bestand.aanbieders === 'object' ? bestand.aanbieders : {}
+    return {
+      aanbieders: bestand && typeof bestand.aanbieders === 'object' ? bestand.aanbieders : {},
+      bijgewerkt: bestand?.bijgewerkt || ''
+    }
   } catch {
-    return {}
+    return { aanbieders: {}, bijgewerkt: '' }
   }
 })()
+const WINKELAANBOD = WINKELDATA.aanbieders
 
 function leesEnv() {
   const env = {}
@@ -66,6 +70,12 @@ const datumNl = (waarde) => {
 }
 
 const getal = (waarde) => new Intl.NumberFormat('nl-NL').format(waarde)
+const prijsNl = (waarde) => {
+  const prijs = Number(waarde)
+  return Number.isFinite(prijs) && prijs > 0
+    ? new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(prijs)
+    : ''
+}
 
 const slug = slugify
 
@@ -146,7 +156,7 @@ ${inhoud}
           <a href="/disclaimer.html">Disclaimer</a>
           <a href="/privacybeleid.html">Privacybeleid</a>
         </nav>
-        <p>Deze site vergelijkt ingrediënten, allergenen en voedingswaarden — geen prijzen of winkelaanbod. Sommige verwijzingen kunnen affiliate-links bevatten; de selectie, volgorde en beoordeling blijven daar volledig onafhankelijk van.</p>
+        <p>Deze site vergelijkt ingrediënten, allergenen en voedingswaarden — geen prijsvergelijker. Bij een winkel kan een vanaf-prijs staan; die kan afwijken en is geen onderdeel van de vergelijking. Sommige verwijzingen kunnen affiliate-links bevatten; de selectie, volgorde en beoordeling blijven daar volledig onafhankelijk van.</p>
         <p>© ${new Date().getFullYear()} Hondenvoervergelijker · Paul Zuiderduin · <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a></p>
         <p>Deze site vergelijkt uitsluitend overgenomen etiketinformatie. De resultaten vormen geen medisch advies en bieden geen 100% garantie. Controleer altijd zelf de verpakking en overleg bij medische klachten met een dierenarts.</p>
       </footer>
@@ -312,7 +322,7 @@ const methodePagina = () => {
       <p>Benieuwd hoe vaak verzameltermen in de hele database voorkomen? Lees ons <a href="/etikettenonderzoek.html">etikettenonderzoek</a>.</p>
 
       <h2>7. Onafhankelijkheid en affiliate-links</h2>
-      <p>Wij vergelijken ingrediënten, allergenen en voedingswaarden — geen prijzen of winkelaanbod. De weergavevolgorde en de uiteindelijke beoordeling van producten zijn uitsluitend gebaseerd op de feitelijke etiketinformatie en de door jou geselecteerde allergenen. Verwijzingen naar fabrikanten of webwinkels kunnen later affiliate-links bevatten, maar deze hebben geen enkele invloed op wélke producten we tonen, op de rangschikking, of op de keuringsuitslag.</p>
+      <p>Wij vergelijken ingrediënten, allergenen en voedingswaarden — geen prijsvergelijker. De weergavevolgorde en de uiteindelijke beoordeling van producten zijn uitsluitend gebaseerd op de feitelijke etiketinformatie en de door jou geselecteerde allergenen. Verwijzingen naar fabrikanten of webwinkels kunnen affiliate-links bevatten. Bij een winkel kan een vanaf-prijs staan; die kan afwijken en heeft geen enkele invloed op wélke producten we tonen, op de rangschikking, of op de keuringsuitslag.</p>
       <ul>
         <li>Merken betalen niet voor een hogere positie of een beter oordeel.</li>
         <li>Het ontbreken van een productlink verandert niets aan de selectie of beoordeling.</li>
@@ -479,7 +489,7 @@ const voorwaardenPagina = () => {
       <p>De site geeft informatieve vergelijkingen op basis van openbare ingrediëntenlijsten. De informatie is geen medisch advies, diagnose of behandelplan. Raadpleeg bij twijfel altijd een dierenarts. Zie ook onze <a href="/disclaimer.html">disclaimer</a>.</p>
 
       <h2>4. Affiliate-links</h2>
-      <p>Sommige links naar webwinkels kunnen affiliate-links zijn. Als je via zo'n link een aankoop doet, ontvangen wij een kleine commissie. Dit kost jou niets extra. De selectie, sortering en beoordeling van producten zijn niet afhankelijk van deze commissie. Beschikbaarheid en voorwaarden worden bepaald door de betreffende winkel. Wij vergelijken geen prijzen en tonen geen actuele prijsdata.</p>
+      <p>Sommige links naar webwinkels kunnen affiliate-links zijn. Als je via zo'n link een aankoop doet, ontvangen wij een kleine commissie. Dit kost jou niets extra. De selectie, sortering en beoordeling van producten zijn niet afhankelijk van deze commissie. Beschikbaarheid en voorwaarden worden bepaald door de betreffende winkel. Wij vergelijken geen prijzen. Bij een winkel-link kan een vanaf-prijs uit de productfeed staan; die kan afwijken van de actuele winkelprijs en is geen onderdeel van de vergelijking.</p>
 
       <h2>5. Intellectueel eigendom</h2>
       <p>De teksten, data, vormgeving en andere inhoud van deze site zijn eigendom van Hondenvoervergelijker, tenzij anders vermeld. Overname voor commerciële doeleinden is niet toegestaan zonder toestemming. Korte citaten met een duidelijke bronvermelding zijn toegestaan.</p>
@@ -1054,8 +1064,8 @@ ${voedingsRijen.map((nutrient) => `          <tr><td>${escapeHtml(nutrient.label
       <p><a class="cta" href="/?zoek=${encodeURIComponent(product.name)}">Vergelijk dit product in de vergelijker</a> <a class="cta secondary" href="/merken/${slug(product.brand)}.html">Alle producten van ${escapeHtml(product.brand)}</a></p>
 
       ${aanbiedingen.length ? `<div class="callout">
-        <p><strong>Bij Dierenwinkel XL:</strong> ${aanbiedingen.map((aanbieding) => `<a class="cta secondary" href="${escapeHtml(aanbieding.url)}" target="_blank" rel="sponsored nofollow noopener noreferrer">Bekijk bij Dierenwinkel XL${aanbieding.maat ? ` (${escapeHtml(aanbieding.maat)})` : ''}</a>`).join(' ')}</p>
-        <p><small>Partnerlink. De selectie, volgorde en beoordeling zijn niet van deze link afhankelijk. Er worden geen prijzen getoond.</small></p>
+        <p><strong>Bij Dierenwinkel XL:</strong> ${aanbiedingen.map((aanbieding) => `<a class="cta secondary" href="${escapeHtml(aanbieding.url)}" target="_blank" rel="sponsored nofollow noopener noreferrer">Bekijk bij Dierenwinkel XL${aanbieding.maat ? ` (${escapeHtml(aanbieding.maat)})` : ''}${prijsNl(aanbieding.prijs) ? ` · vanaf ${prijsNl(aanbieding.prijs)}` : ''}</a>`).join(' ')}</p>
+        <p><small>Partnerlink. De selectie, volgorde en beoordeling zijn niet van deze link afhankelijk. ${aanbiedingen.some((aanbieding) => prijsNl(aanbieding.prijs)) ? `De prijs is de laagste variantprijs uit de productfeed${WINKELDATA.bijgewerkt ? ` van ${escapeHtml(datumNl(WINKELDATA.bijgewerkt))}` : ''}; de actuele winkelprijs en de prijs voor deze maat kunnen afwijken.` : 'Er worden geen prijzen getoond.'}</small></p>
       </div>` : ''}
 
       <h2>Gerelateerde producten</h2>

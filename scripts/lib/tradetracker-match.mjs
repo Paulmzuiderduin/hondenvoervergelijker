@@ -71,7 +71,12 @@ export function parseTradeTrackerFeed(xml, { categorie = 'hond-voeding' } = {}) 
     const beschrijving = tag(blok, 'description').replace(/<[^>]+>/g, ' ')
     const maatTekst = [props.EAN ?? '', naam, beschrijving].join(' ')
     const matenLijst = maten(maatTekst)
-    const prijs = Number(tag(blok, 'price'))
+    // Alleen een positieve europrijs is bruikbaar als indicatie. Een lege of
+    // buitenlandse prijs wordt niet als € 0,00 op de site gezet.
+    const prijsBlok = blok.match(/<price\b([^>]*)>([\s\S]*?)<\/price>/i)
+    const valuta = (prijsBlok?.[1].match(/currency="([^"]+)"/i)?.[1] ?? 'EUR').toUpperCase()
+    const prijsGetal = Number(decodeer(prijsBlok?.[2] ?? '').replace(/<!\[CDATA\[|\]\]>/g, '').trim())
+    const prijs = valuta === 'EUR' && Number.isFinite(prijsGetal) && prijsGetal > 0 ? prijsGetal : null
     producten.push({
       titel: naam,
       merk,
@@ -80,7 +85,7 @@ export function parseTradeTrackerFeed(xml, { categorie = 'hond-voeding' } = {}) 
       ean: /^\d{8,14}$/.test((props.EAN ?? '').replace(/\D/g, '')) ? (props.EAN ?? '').replace(/\D/g, '') : '',
       maat: formaatMaat(matenLijst[0]),
       maten: matenLijst,
-      prijs: Number.isFinite(prijs) ? prijs : null,
+      prijs,
       url,
       winkel: 'Dierenwinkel XL'
     })

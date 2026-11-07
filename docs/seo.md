@@ -45,9 +45,10 @@ minimaal tien recepten overblijven; zo ontstaan geen dunne pagina's.
 Elke productpagina heeft een eigen canonical, unieke titel en beschrijving, de
 letterlijke ingrediëntenlijst, de as-fedvoedingswaarden, een tabel met de 18
 hoofdallergenen, de bron-URL en de controledata. De pagina's hebben
-`Product`-structured data zonder `offers`, prijzen of beoordelingen. Er wordt
-geen prijsinformatie getoond of vergeleken; de site blijft een vergelijker op
-ingrediënten, allergenen en voedingswaarden.
+`Product`-structured data zonder `offers`, prijzen of beoordelingen. De
+productpagina kan bij de partnerlink wel een vanaf-prijs uit de productfeed
+tonen. Prijzen worden niet onderling vergeleken; de site blijft een vergelijker
+op ingrediënten, allergenen en voedingswaarden.
 
 De merkpagina's en allergeenpagina's linken naar de productpagina's. De
 productpagina's linken terug naar het merk, de vergelijker, de relevante

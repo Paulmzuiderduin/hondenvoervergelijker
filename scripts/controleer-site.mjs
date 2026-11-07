@@ -205,7 +205,7 @@ try {
   const productHref = await page.locator('.product-list a.product-more').first().getAttribute('href')
   const productAntwoord = await context.request.get(`${BASIS}${productHref}`)
   const productHtml = await productAntwoord.text()
-  meld(productAntwoord.ok() && /<h1>/.test(productHtml) && /Allergenen en het etiket/.test(productHtml) && /Ingrediëntenlijst/.test(productHtml) && /"@type":"Product"/.test(productHtml) && !/"offers"/.test(productHtml) && !/>null</.test(productHtml), 'productpagina is indexeerbaar, gevuld en zonder prijsdata', productHref)
+  meld(productAntwoord.ok() && /<h1>/.test(productHtml) && /Allergenen en het etiket/.test(productHtml) && /Ingrediëntenlijst/.test(productHtml) && /"@type":"Product"/.test(productHtml) && !/"offers"/.test(productHtml) && !/>null</.test(productHtml), 'productpagina is indexeerbaar, gevuld en zonder offers-schema', productHref)
 
   const broncontroleAntwoord = await context.request.get(`${BASIS}/broncontrole.html`)
   const broncontroleHtml = await broncontroleAntwoord.text()
@@ -213,20 +213,22 @@ try {
 
   const matchedProduct = await context.request.get(`${BASIS}/producten/acana/adult-dog-recipe-08c788d6.html`)
   const matchedHtml = await matchedProduct.text()
-  meld(matchedProduct.ok() && /Dierenwinkel XL/.test(matchedHtml) && /rel="sponsored nofollow noopener noreferrer"/.test(matchedHtml) && !/"offers"/.test(matchedHtml), 'gekoppelde productpagina toont partnerlink zonder prijsdata')
+  meld(matchedProduct.ok() && /Dierenwinkel XL/.test(matchedHtml) && /rel="sponsored nofollow noopener noreferrer"/.test(matchedHtml) && /€\s?\d/.test(matchedHtml) && /vanaf/i.test(matchedHtml) && !/"offers"/.test(matchedHtml), 'gekoppelde productpagina toont partnerlink met vanaf-prijs en zonder offers-schema')
 
   const winkelsAntwoord = await context.request.get(`${BASIS}/winkels.json`)
   const winkelsJson = winkelsAntwoord.ok() ? await winkelsAntwoord.json().catch(() => ({})) : {}
   const winkelLinks = Object.values(winkelsJson.aanbieders ?? {}).flat()
-  meld(winkelsAntwoord.ok() && winkelLinks.length >= 30 && winkelLinks.every((link) => link.winkel === 'Dierenwinkel XL' && !('prijs' in link) && /tt=4019_/.test(link.url)), 'winkelkoppeling bevat alleen betrouwbare Dierenwinkel XL-links', `${winkelLinks.length} links`)
+  const winkelLinksMetPrijs = winkelLinks.filter((link) => Number.isFinite(link.prijs) && link.prijs > 0)
+  meld(winkelsAntwoord.ok() && winkelLinks.length >= 30 && winkelLinks.every((link) => link.winkel === 'Dierenwinkel XL' && /tt=4019_/.test(link.url) && (link.prijs == null || (Number.isFinite(link.prijs) && link.prijs > 0))) && winkelLinksMetPrijs.length >= 30, 'winkelkoppeling bevat betrouwbare Dierenwinkel XL-links met vanaf-prijs', `${winkelLinks.length} links, ${winkelLinksMetPrijs.length} met prijs`)
 
   await open('/?zoek=Acana%20Adult%20Dog%20Recipe', '.product-card')
   await page.waitForSelector('.shop-link', { timeout: 10000 })
   const shopLink = page.locator('.shop-link').first()
   const shopRel = await shopLink.getAttribute('rel')
   const shopTekst = await shopLink.innerText()
-  const shopArea = await page.locator('.shop-links').first().innerText()
-  meld(/Dierenwinkel XL/.test(shopTekst) && /sponsored/.test(shopRel || '') && !/€|prijs/i.test(shopArea), 'winkelknop is herkenbaar, gesponsord en zonder prijs', `${shopTekst} · ${shopRel}`)
+  const shopNote = await page.locator('.shop-note').first().innerText()
+  meld(/Dierenwinkel XL/.test(shopTekst) && /sponsored/.test(shopRel || '') && /€/.test(shopTekst), 'winkelknop toont winkel, maat en vanaf-prijs', `${shopTekst} · ${shopRel}`)
+  meld(/vanaf-prijs/i.test(shopNote) && /afwijken/i.test(shopNote), 'winkelprijs is als vanaf-prijs gelabeld', shopNote)
 
   await open('/hypoallergene-hondenvoeding.html', '.stat-grid')
   const hypo = await page.locator('body').innerText()
