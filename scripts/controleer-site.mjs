@@ -211,6 +211,23 @@ try {
   const broncontroleHtml = await broncontroleAntwoord.text()
   meld(broncontroleAntwoord.ok() && /Broncontrole/.test(broncontroleHtml) && /Handmatig nagelopen/.test(broncontroleHtml), 'openbaar broncontroleverslag is bereikbaar')
 
+  const matchedProduct = await context.request.get(`${BASIS}/producten/acana/adult-dog-recipe-08c788d6.html`)
+  const matchedHtml = await matchedProduct.text()
+  meld(matchedProduct.ok() && /Dierenwinkel XL/.test(matchedHtml) && /rel="sponsored nofollow noopener noreferrer"/.test(matchedHtml) && !/"offers"/.test(matchedHtml), 'gekoppelde productpagina toont partnerlink zonder prijsdata')
+
+  const winkelsAntwoord = await context.request.get(`${BASIS}/winkels.json`)
+  const winkelsJson = winkelsAntwoord.ok() ? await winkelsAntwoord.json().catch(() => ({})) : {}
+  const winkelLinks = Object.values(winkelsJson.aanbieders ?? {}).flat()
+  meld(winkelsAntwoord.ok() && winkelLinks.length >= 30 && winkelLinks.every((link) => link.winkel === 'Dierenwinkel XL' && !('prijs' in link) && /tt=4019_/.test(link.url)), 'winkelkoppeling bevat alleen betrouwbare Dierenwinkel XL-links', `${winkelLinks.length} links`)
+
+  await open('/?zoek=Acana%20Adult%20Dog%20Recipe', '.product-card')
+  await page.waitForSelector('.shop-link', { timeout: 10000 })
+  const shopLink = page.locator('.shop-link').first()
+  const shopRel = await shopLink.getAttribute('rel')
+  const shopTekst = await shopLink.innerText()
+  const shopArea = await page.locator('.shop-links').first().innerText()
+  meld(/Dierenwinkel XL/.test(shopTekst) && /sponsored/.test(shopRel || '') && !/€|prijs/i.test(shopArea), 'winkelknop is herkenbaar, gesponsord en zonder prijs', `${shopTekst} · ${shopRel}`)
+
   await open('/hypoallergene-hondenvoeding.html', '.stat-grid')
   const hypo = await page.locator('body').innerText()
   meld(/hypoallergeen/i.test(hypo) && /niet beschermd|geen beschermde term/i.test(hypo), 'hypoallergeen-pagina legt de term voorzichtig uit')
@@ -221,6 +238,7 @@ try {
   meld(privacy.includes('hondenvoervergelijker@paulzuiderduin.com'), 'privacybeleid heeft het juiste contactadres')
   meld(privacy.includes('Umami'), 'privacybeleid noemt de bezoekersstatistieken')
   meld(/feedbackknop/i.test(privacy) && /twaalf maanden/i.test(privacy), 'privacybeleid beschrijft de feedback en bewaartermijn')
+  meld(/TradeTracker/i.test(privacy) && /Dierenwinkel XL/i.test(privacy), 'privacybeleid noemt TradeTracker en Dierenwinkel XL')
 
   await open('/hondenvoer-zonder-kip.html', '.answer-box')
   const faqAantal = await page.locator('.faq details').count()

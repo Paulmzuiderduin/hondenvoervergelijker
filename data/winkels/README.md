@@ -75,3 +75,20 @@ affiliate-vermelding staat in de footer en het privacybeleid.
 
 Alleen `public/winkels.json` wordt gecommit, zodat de statische site de knoppen
 kan tonen.
+
+## Dierenwinkel XL (TradeTracker)
+
+Deze winkel gebruikt een TradeTracker-productfeed in XML. De feed is groot en
+bevat een publisher-specifieke URL; hij wordt daarom niet gecommit.
+
+1. Ga in TradeTracker naar **Promotiemateriaal → Productfeeds**.
+2. Genereer de feed voor **Dierenwinkelxl.nl** als XML of CSV en sla hem op als
+   `data/winkels/dierenwinkelxl.xml`.
+3. Draai `npm run winkels:dierenwinkelxl -- --dry-run` om de koppelingen te
+   controleren.
+4. Draai `npm run winkels:dierenwinkelxl` om `public/winkels.json` bij te werken.
+5. Controleer `data/winkels/rapport-dierenwinkelxl.md`.
+
+De koppeling is bewust streng: alleen exacte merk- en productnamen, en waar
+mogelijk een overlappende verpakking. Bij twijfel komt er geen link. Prijzen
+worden niet opgeslagen of getoond.

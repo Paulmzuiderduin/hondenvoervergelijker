@@ -1,5 +1,300 @@
 {
-  "bijgewerkt": null,
-  "netwerk": "Awin",
-  "aanbieders": {}
+  "bijgewerkt": "2026-11-07T10:37:36.384Z",
+  "netwerk": "TradeTracker",
+  "aanbieders": {
+    "08c788d6-941d-433e-ba73-6f1c99405be5": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-adult-dog-recipe%2F",
+        "maat": "6 kg"
+      }
+    ],
+    "27d6a584-9e81-4dad-8993-66cbd36c4f5d": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-adult-large-breed-recipe%2F",
+        "maat": "11,4 kg"
+      }
+    ],
+    "b2bee777-c588-4ac0-b660-45455d2d57ca": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-adult-small-breed-recipe%2F",
+        "maat": "6 kg"
+      }
+    ],
+    "ad1fe4d6-0fe5-4572-aa8a-36f1e662097f": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-singles-free-run-duck%2F",
+        "maat": "11,4 kg"
+      }
+    ],
+    "7f9f2d49-488c-4a83-bff9-4a51c7b050d7": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-singles-grass-fed-lamb%2F",
+        "maat": "2 kg"
+      }
+    ],
+    "10e4d9a9-f9bd-483a-bc62-7e055174fdfc": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-light-fit-recipe%2F",
+        "maat": ""
+      }
+    ],
+    "a824a437-ca37-445f-9304-7520dd933f4f": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-classic-prairie-poultry-recipe%2F",
+        "maat": "2 kg"
+      }
+    ],
+    "b50f63b2-0326-492b-9019-1cdeb8427401": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-puppy-recipe%2F",
+        "maat": ""
+      }
+    ],
+    "8d364006-cf82-487f-8175-911981fc5391": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-puppy-small-breed-recipe%2F",
+        "maat": "6 kg"
+      }
+    ],
+    "b6faf53e-c062-42b1-a716-cc779ad100fc": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-regionals-ranchlands-dog%2F",
+        "maat": ""
+      }
+    ],
+    "fd2dcb4d-604c-4d8e-bce0-76b328ee4b94": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-senior-recipe%2F",
+        "maat": "6 kg"
+      }
+    ],
+    "85e23703-ab98-4425-993d-61e140f79424": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-highest-protein-wild-prairie%2F",
+        "maat": "6 kg"
+      }
+    ],
+    "9166cbb3-4ffd-4049-b280-1ebb0fd625e8": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-singles-yorkshire-pork%2F",
+        "maat": "11,4 kg"
+      }
+    ],
+    "1612d255-ee7b-43b9-a8ce-7d78ac9f41f6": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fcavom-compleet-lam-en-rijst%2F",
+        "maat": ""
+      }
+    ],
+    "bfca69b0-ab81-4420-88f0-a2d46af35c7e": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fcavom-compleet-senior%2F",
+        "maat": ""
+      }
+    ],
+    "3eb53d08-67b1-4adc-b206-20111ec58869": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fdarf-vol-kalkoen%2F",
+        "maat": ""
+      }
+    ],
+    "c2a42490-a3c4-4b6a-9e1e-3d26adc30061": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fdarf-vol-pup%2F",
+        "maat": ""
+      }
+    ],
+    "7cf02367-b27c-4384-8681-2cf03c4c7697": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fdarf-vol-regular%2F",
+        "maat": "4 kg"
+      }
+    ],
+    "ac0e7c33-2afa-43b9-a391-ef93659cffd2": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fdarf-vol-wild%2F",
+        "maat": ""
+      }
+    ],
+    "f30d79c5-2ed0-47bd-a703-1f9e85f78196": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fedgard-cooper-biologisch-rund%2F",
+        "maat": ""
+      }
+    ],
+    "25f99e81-3e24-4772-97ab-67093d5b409a": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fedgard-cooper-biologische-kalkoen%2F",
+        "maat": ""
+      }
+    ],
+    "4f14c8a4-7320-431b-b8a6-c3d0b4f4fd16": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fedgard-cooper-lam-rund-kuipje%2F",
+        "maat": ""
+      }
+    ],
+    "22696aeb-1a0c-42b8-b804-0cbf0253f0c9": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Forijen-puppy-large-breed%2F",
+        "maat": "6 kg"
+      }
+    ],
+    "dddf12b5-e0a7-4ef5-b6d8-f8adf12c65e3": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Forijen-original-dog%2F",
+        "maat": ""
+      }
+    ],
+    "09f8ba07-ace4-4d92-a5ea-0b4ac9e433b0": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Forijen-puppy%2F",
+        "maat": ""
+      }
+    ],
+    "78288c8c-a8c2-4883-885d-0ef15ce1f93c": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Forijen-senior-dog%2F",
+        "maat": "2 kg"
+      }
+    ],
+    "608653cd-654d-4c93-96e9-e0e98dffff89": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Forijen-six-fish-dog%2F",
+        "maat": "6 kg"
+      }
+    ],
+    "b6ea781e-9d63-44cb-ab21-fbfa161a6cf8": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Forijen-tundra%2F",
+        "maat": ""
+      }
+    ],
+    "b12ad4bf-0ff8-4a16-a406-5e6116abd54a": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-chihuahua-adult%2F",
+        "maat": ""
+      }
+    ],
+    "3b8a3d03-937d-4965-b885-97895c4142da": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-dental-care-medium%2F",
+        "maat": ""
+      }
+    ],
+    "6b2a4193-d201-4797-a421-253d458e8fc1": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-dental-care-mini%2F",
+        "maat": "3 kg"
+      }
+    ],
+    "dfaffd78-1212-4110-a537-96640acf3f03": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-french-bulldog-adult%2F",
+        "maat": "9 kg"
+      }
+    ],
+    "de23eec5-a500-42f5-961f-29fd29453448": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-golden-retriever-adult%2F",
+        "maat": "3 kg"
+      }
+    ],
+    "46498903-f571-4c35-a595-635faa5fca95": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-maxi-adult-5%2F",
+        "maat": "4 kg"
+      }
+    ],
+    "7d61ac75-cbf9-4c23-befb-d2eb626faa21": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-maxi-ageing-8%2F",
+        "maat": "15 kg"
+      }
+    ],
+    "60815eef-979a-464c-ae70-432764dd7fbd": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-medium-adult%2F",
+        "maat": "15 kg"
+      }
+    ],
+    "247dea35-64d2-46a7-ace4-5ffa3c09c5e3": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-mini-adult-2%2F",
+        "maat": ""
+      }
+    ],
+    "dbb0bf4b-ddb8-4489-af8f-0bccef7f290a": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-mini-ageing-12%2F",
+        "maat": "1,5 kg"
+      }
+    ],
+    "cbdfde56-d131-4093-a51e-a7353b3275fb": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-mini-puppy%2F",
+        "maat": ""
+      }
+    ],
+    "c6812757-a5b6-4017-b615-63a1d172a1a7": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-shih-tzu-adult%2F",
+        "maat": ""
+      }
+    ],
+    "6f03b644-8cb2-4b6e-9e49-de931b9db4d3": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-sterilised-mini%2F",
+        "maat": "3 kg"
+      }
+    ],
+    "52edaac4-fb16-4730-a858-797efe9ce7d0": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-yorkshire-terrier-adult%2F",
+        "maat": ""
+      }
+    ]
+  }
 }

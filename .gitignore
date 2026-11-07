@@ -12,8 +12,10 @@ data/import/controlelijst-*.html
 
 # Lokale affiliate-feeds en configuratie (public/winkels.json wordt wel gecommit).
 data/winkels/*.csv
+data/winkels/*.xml
 data/winkels/feeds.json
 data/winkels/rapport.md
+data/winkels/rapport-dierenwinkelxl.md
 
 # Lokale database-back-ups (gaan als artifact mee in de workflow).
 data/backup/

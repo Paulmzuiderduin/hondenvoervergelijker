@@ -24,6 +24,17 @@ const DIST = join(WORTEL, 'dist')
 const SITE = 'https://hondenvoervergelijker.paulzuiderduin.com'
 const VANDAAG = new Date().toISOString().slice(0, 10)
 
+// Alleen door de handmatige/ strikte koppeling goedgekeurde winkel links.
+// De feed zelf staat niet in de repository.
+const WINKELAANBOD = (() => {
+  try {
+    const bestand = JSON.parse(readFileSync(join(WORTEL, 'public', 'winkels.json'), 'utf8'))
+    return bestand && typeof bestand.aanbieders === 'object' ? bestand.aanbieders : {}
+  } catch {
+    return {}
+  }
+})()
+
 function leesEnv() {
   const env = {}
   const pad = join(WORTEL, '.env.local')
@@ -923,6 +934,7 @@ function productPagina(product, alleProducten, allergeenPaginas) {
     ? String(product.package_size)
     : ''
   const pad = productPad(product)
+  const aanbiedingen = (WINKELAANBOD[product.id] ?? []).filter((aanbieding) => aanbieding?.url)
   const bron = product.source_url && /^https?:/i.test(product.source_url) ? product.source_url : ''
   const bronDomein = (() => {
     try { return new URL(bron).hostname.replace(/^www\./, '') } catch { return '' }
@@ -1040,6 +1052,11 @@ ${voedingsRijen.map((nutrient) => `          <tr><td>${escapeHtml(nutrient.label
         <li><strong>Laatst geïmporteerd:</strong> ${importDatum || 'onbekend'}</li>
       </ul>
       <p><a class="cta" href="/?zoek=${encodeURIComponent(product.name)}">Vergelijk dit product in de vergelijker</a> <a class="cta secondary" href="/merken/${slug(product.brand)}.html">Alle producten van ${escapeHtml(product.brand)}</a></p>
+
+      ${aanbiedingen.length ? `<div class="callout">
+        <p><strong>Bij Dierenwinkel XL:</strong> ${aanbiedingen.map((aanbieding) => `<a class="cta secondary" href="${escapeHtml(aanbieding.url)}" target="_blank" rel="sponsored nofollow noopener noreferrer">Bekijk bij Dierenwinkel XL${aanbieding.maat ? ` (${escapeHtml(aanbieding.maat)})` : ''}</a>`).join(' ')}</p>
+        <p><small>Partnerlink. De selectie, volgorde en beoordeling zijn niet van deze link afhankelijk. Er worden geen prijzen getoond.</small></p>
+      </div>` : ''}
 
       <h2>Gerelateerde producten</h2>
       ${zelfdeMerk.length ? `<ul class="product-list">

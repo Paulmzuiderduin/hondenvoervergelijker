@@ -99,6 +99,20 @@ selectie en volgorde blijven daar volledig onafhankelijk van.
 
 De koppeling beïnvloedt de volgorde en de beoordeling niet.
 
+### Dierenwinkel XL (TradeTracker)
+
+Dierenwinkel XL is goedgekeurd als TradeTracker-campagne. De productfeed staat
+lokaal in `data/winkels/dierenwinkelxl.xml` en wordt niet gecommit.
+
+1. Download de actuele XML-feed uit TradeTracker en vervang het lokale bestand.
+2. Draai `npm run winkels:dierenwinkelxl -- --dry-run` en controleer het rapport.
+3. Draai `npm run winkels:dierenwinkelxl` om `public/winkels.json` bij te werken.
+4. Commit alleen `public/winkels.json`.
+
+De import gebruikt strikte matching: exacte merk- en productnaam, en waar
+mogelijk een overlappende verpakking. Bij twijfel wordt er geen link toegevoegd.
+Prijzen worden niet opgeslagen of getoond.
+
 ## Terugvallen op GitHub Pages
 
 GitHub Pages is ingericht als terugvaloptie en heeft geen eigen domein meer.
