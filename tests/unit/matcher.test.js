@@ -229,6 +229,26 @@ test('markeert ook woorden met diakritische tekens', () => {
   assert.equal(segmenten.map((segment) => segment.text).join(''), 'Oliën en vetten (5%), pluimveevlees')
 })
 
+test('decimalen verschuiven de rode markering niet', () => {
+  const tekst = 'Kip (18%), visolie (3,5%), 4%, 5%, linzenvezel'
+  const segmenten = markUncertainIngredients(tekst)
+  assert.deepEqual(segmenten.filter((segment) => segment.uncertain).map((segment) => segment.text), ['visolie'])
+  assert.equal(segmenten.map((segment) => segment.text).join(''), tekst)
+})
+
+test('“bestaande uit” verschuift de rode markering niet', () => {
+  const tekst = 'Groentemengsel (bestaande uit erwten, wortels) 18%, hennepolie 4,5%, visolie 3%'
+  const segmenten = markUncertainIngredients(tekst)
+  assert.deepEqual(segmenten.filter((segment) => segment.uncertain).map((segment) => segment.text), ['visolie'])
+  assert.equal(segmenten.map((segment) => segment.text).join(''), tekst)
+})
+
+test('linzenvezel is bekend en telt als linze', () => {
+  assert.deepEqual(assessLabel('Linzenvezel').unknown, [])
+  assert.deepEqual(assessLabel('Linzenvezel').allergens, ['lentil'])
+  assert.deepEqual(markUncertainIngredients('Linzenvezel'), [{ text: 'Linzenvezel', uncertain: false }])
+})
+
 test('een etiket met alleen bronnen bij name is automatisch te beoordelen', () => {
   const uitslag = assessLabel('Verse kip 41%, aardappelen, erwten, kippenvet, lijnzaad, mineralen')
   assert.equal(uitslag.status, 'schoon')

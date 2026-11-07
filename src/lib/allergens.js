@@ -1172,7 +1172,18 @@ function buildSearchIndex(text = '') {
   const source = String(text)
   const characters = []
   const positions = []
+  // De keuring vervangt "bestaande uit" en "samengesteld uit" door een
+  // scheidingsteken. Deze woorden mogen dus geen eigen token in de
+  // markeringslijst worden, anders verschuiven alle markeringen erna.
+  const overslaan = new Array(source.length).fill(false)
+  for (const match of source.matchAll(/\b(?:bestaande|samengesteld)\s+uit\b/gi)) {
+    for (let index = match.index; index < match.index + match[0].length; index += 1) overslaan[index] = true
+  }
   for (let index = 0; index < source.length; index += 1) {
+    if (overslaan[index]) continue
+    // De keuring voegt decimalen als "11,5" en "0.5" samen tot één token.
+    // Doe dat hier ook, anders verschuiven alle rode markeringen na zo'n getal.
+    if ((source[index] === ',' || source[index] === '.') && /\d/.test(source[index - 1] ?? '') && /\d/.test(source[index + 1] ?? '')) continue
     const base = source[index].normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('nl-NL')
     for (const character of base) {
       if (/[a-z0-9]/.test(character)) {
