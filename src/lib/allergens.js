@@ -15,7 +15,7 @@ export const ALLERGEN_GROUPS = [
     label: 'Koolhydraatbron',
     allergenPairs: [
       ['potato', 'Aardappel'], ['buckwheat', 'Boekweit'], ['bean', 'Boon'], ['pea', 'Erwt'], ['barley', 'Gerst'],
-      ['millet', 'Gierst'], ['grains', 'Granen (algemeen)'], ['oats', 'Haver'], ['chickpea', 'Kikkererwt'], ['lentil', 'Linze'],
+      ['millet', 'Gierst'], ['grains', 'Granen (algemeen)'], ['oats', 'Haver'], ['chickpea', 'Kikkererwt'], ['lentil', 'Linzen'],
       ['lupin', 'Lupine'], ['corn', 'Maïs'], ['quinoa', 'Quinoa'], ['rice', 'Rijst'], ['rye', 'Rogge'],
       ['soy', 'Soja'], ['spelt', 'Spelt'], ['sugar', 'Suiker'], ['tapioca', 'Tapioca'], ['wheat', 'Tarwe'], ['sweetpotato', 'Zoete aardappel'],
       ['amaranth', 'Amarant'], ['teff', 'Teff'], ['carob', 'Johannesbrood'], ['sorghum', 'Sorghum']
