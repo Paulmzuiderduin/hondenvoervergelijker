@@ -197,7 +197,7 @@ li { margin: 0.25rem 0; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  scroll-margin-top: 1rem;
+  scroll-margin-top: 4.5rem;
 }
 .section-card > h2:first-child, .section-card > .section-head:first-child { margin-top: 0; }
 .section-head {
@@ -218,17 +218,18 @@ li { margin: 0.25rem 0; }
   gap: 0.35rem;
   margin: 0.2rem 0.4rem 0.2rem 0;
   padding: 0.55rem 0.95rem;
-  background: var(--accent);
+  background: var(--cta-accent, var(--accent));
   color: #fff;
   font-weight: 700;
   font-size: 0.9rem;
   text-decoration: none;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--cta-accent, var(--accent));
   border-radius: 4px;
 }
 .cta:hover { background: #114624; color: #fff; }
-.cta.secondary { background: #fff; color: var(--accent); }
-.cta.secondary:hover { background: var(--accent-soft); color: var(--accent); }
+.cta.secondary { background: #fff; color: var(--cta-accent, var(--accent)); }
+.cta.secondary:hover { background: var(--cta-soft, var(--accent-soft)); color: var(--cta-accent, var(--accent)); }
+.page-product .hero-actions { --cta-accent: #175b30; --cta-soft: #eaf1ec; }
 .link-button {
   padding: 0;
   border: 0;
@@ -243,18 +244,14 @@ li { margin: 0.25rem 0; }
 
 /* Productoverzicht: filterbalk */
 .product-toolbar {
-  position: sticky;
-  top: 0.75rem;
-  z-index: 10;
   display: grid;
   gap: 0.65rem;
   margin-bottom: 1rem;
   padding: 0.75rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
+  background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: 0 4px 18px rgba(19, 47, 28, 0.06);
+  box-shadow: 0 4px 18px rgba(19, 47, 28, 0.04);
 }
 .toolbar-row { display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap; }
 .toolbar-row-wrap { justify-content: space-between; }
@@ -528,7 +525,7 @@ mark.uncertain {
   border: 1px solid var(--line-soft);
   border-radius: 4px;
 }
-.nutrition-tile.is-core { background: var(--accent-soft); border-color: transparent; }
+.nutrition-tile.is-core { background: var(--surface-soft); border-color: var(--line-soft); }
 .nutrition-label { color: var(--muted); font-size: 0.74rem; }
 .nutrition-value { color: var(--ink); font-size: 1.05rem; line-height: 1.2; font-variant-numeric: tabular-nums; }
 
@@ -648,7 +645,6 @@ mark.uncertain {
 .allergen-card .allergen-name { grid-column: 2; color: var(--ink); font-weight: 700; }
 .allergen-card .allergen-count { grid-column: 2; margin: 0; color: var(--muted); font-size: 0.78rem; }
 .allergen-arrow { grid-column: 3; grid-row: 1 / span 2; color: var(--accent); font-weight: 700; }
-.allergen-card .allergen-count { margin: 0; }
 .related-allergens { display: flex; flex-wrap: wrap; gap: 0.45rem; line-height: 1.5; }
 .related-allergen {
   display: inline-flex;
@@ -724,12 +720,8 @@ footer nav a { font-weight: 600; text-decoration: none; }
 footer nav a:hover { text-decoration: underline; }
 
 /* Responsief */
-@media (min-width: 760px) {
-  header.site { position: sticky; top: 0; z-index: 30; backdrop-filter: blur(8px); }
-}
 @media (max-width: 760px) {
   .overview-grid { grid-template-columns: 1fr; }
-  .product-toolbar { position: static; }
   .allergen-row { grid-template-columns: 8rem minmax(0, 1fr); }
   .allergen-explain { grid-column: 1 / -1; }
 }
