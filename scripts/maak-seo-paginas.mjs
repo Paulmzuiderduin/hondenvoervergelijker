@@ -11,11 +11,12 @@
 // blijven de uitlegpagina's en de basissitemap gewoon werken.
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { createHash } from 'node:crypto'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { ALLERGEN_LABELS, ALLERGENS, FOOD_TYPES, assessLabel, markUncertainIngredients, setCustomTerms } from '../src/lib/allergens.js'
 import { isReviewOverdue, productMatch } from '../src/lib/matcher.js'
-import { NUTRIENTS, formatteerVoedingswaarde, voedingswaardeMap } from '../src/lib/nutrition.js'
+import { NUTRIENTS, CORE_NUTRIENTS, formatteerVoedingswaarde, voedingswaardeMap } from '../src/lib/nutrition.js'
 import { onbetrouwbareNutrienten } from '../src/lib/plausibility.js'
 import { productPad, slugify } from '../src/lib/productUrl.js'
 
@@ -23,6 +24,23 @@ const WORTEL = dirname(dirname(fileURLToPath(import.meta.url)))
 const DIST = join(WORTEL, 'dist')
 const SITE = 'https://hondenvoervergelijker.paulzuiderduin.com'
 const VANDAAG = new Date().toISOString().slice(0, 10)
+
+// De statische bestanden krijgen een jaar cache. Een nieuwe inhoud moet dus
+// een nieuwe URL krijgen, anders blijven bezoekers de oude versie zien.
+const assetVersie = (bestand) => createHash('sha1')
+  .update(readFileSync(join(WORTEL, 'public', bestand)))
+  .digest('hex')
+  .slice(0, 8)
+const PAGINA_CSS = `/pagina.css?v=${assetVersie('pagina.css')}`
+const PAGINA_JS = `/pagina.js?v=${assetVersie('pagina.js')}`
+
+const ALLERGEEN_CONTENT = (() => {
+  try {
+    return JSON.parse(readFileSync(join(WORTEL, 'data', 'allergeen-content.json'), 'utf8'))
+  } catch {
+    return {}
+  }
+})()
 
 // Alleen door de handmatige/ strikte koppeling goedgekeurde winkel links.
 // De feed zelf staat niet in de repository.
@@ -69,6 +87,25 @@ const datumNl = (waarde) => {
   return datum.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })
 }
 
+const datumIso = (waarde) => {
+  if (!waarde) return ''
+  const tekst = String(waarde)
+  if (/^\d{4}-\d{2}-\d{2}/.test(tekst)) return tekst.slice(0, 10)
+  const datum = new Date(waarde)
+  return Number.isNaN(datum.getTime()) ? '' : datum.toISOString().slice(0, 10)
+}
+
+const productDatum = (product) => {
+  const versie = product.recipe_versions?.[0]
+  return [product.last_checked_at, versie?.reviewed_at, versie?.nutrition_checked_at, versie?.imported_at]
+    .map(datumIso)
+    .filter(Boolean)
+    .sort()
+    .at(-1) ?? ''
+}
+
+const laatsteDatum = (producten = []) => producten.map(productDatum).filter(Boolean).sort().at(-1) ?? ''
+
 const getal = (waarde) => new Intl.NumberFormat('nl-NL').format(waarde)
 const prijsNl = (waarde) => {
   const prijs = Number(waarde)
@@ -81,7 +118,52 @@ const slug = slugify
 
 const typeLabel = (key) => FOOD_TYPES.find(([sleutel]) => sleutel === key)?.[1] ?? key
 
-function shell({ titel, beschrijving, pad, inhoud, jsonLd = [], extraKop = '' }) {
+// Elke allergeenpagina krijgt een eigen accentkleur. Zo voelt een pagina over
+// kip anders dan een pagina over granen, zonder de huisstijl te verlaten.
+const ALLERGEEN_ACCENTEN = {
+  chicken: { accent: '#8a5a00', soft: '#fdf3d6' },
+  turkey: { accent: '#8a5a00', soft: '#fdf3d6' },
+  duck: { accent: '#8a5a00', soft: '#fdf3d6' },
+  beef: { accent: '#8a2f2f', soft: '#fbe9e9' },
+  lamb: { accent: '#8a2f2f', soft: '#fbe9e9' },
+  horse: { accent: '#8a2f2f', soft: '#fbe9e9' },
+  fish: { accent: '#1f5f8b', soft: '#e3f0f8' },
+  salmon: { accent: '#1f5f8b', soft: '#e3f0f8' },
+  wheat: { accent: '#7a5b00', soft: '#fbf2d5' },
+  grains: { accent: '#7a5b00', soft: '#fbf2d5' },
+  corn: { accent: '#7a5b00', soft: '#fbf2d5' },
+  rice: { accent: '#7a5b00', soft: '#fbf2d5' },
+  milk: { accent: '#5e3f7a', soft: '#f1eaf7' },
+  egg: { accent: '#5e3f7a', soft: '#f1eaf7' },
+  soy: { accent: '#5e3f7a', soft: '#f1eaf7' },
+  potato: { accent: '#2f6b4f', soft: '#e6f1e9' },
+  pea: { accent: '#2f6b4f', soft: '#e6f1e9' },
+  insect: { accent: '#556b2f', soft: '#eef3e2' }
+}
+const STANDAARD_ACCENT = { accent: '#175b30', soft: '#eaf1ec' }
+const allergeenAccent = (key) => ALLERGEEN_ACCENTEN[key] ?? STANDAARD_ACCENT
+const accentStijl = (accent) => `style="--accent: ${accent.accent}; --accent-soft: ${accent.soft}"`
+
+const TONES = {
+  ok: { accent: '#175b30', soft: '#e6f1e9', label: 'Lijkt geschikt' },
+  check: { accent: '#8a5a00', soft: '#fdf3d6', label: 'Controleer etiket' },
+  excluded: { accent: '#8a2f2f', soft: '#fbe9e9', label: 'Allergeen genoemd' }
+}
+
+// Vaste indeling voor het overzicht zonder allergeen. Dezelfde volgorde houdt
+// de hub en de losse pagina's herkenbaar.
+const ALLERGEEN_GROEPEN = [
+  { titel: 'Dierlijke eiwitten', keys: ['chicken', 'beef', 'lamb', 'turkey', 'duck', 'fish', 'salmon', 'milk', 'egg', 'insect', 'horse'] },
+  { titel: 'Granen en zetmeel', keys: ['wheat', 'grains', 'corn', 'rice', 'potato'] },
+  { titel: 'Peulvruchten en soja', keys: ['pea', 'soy'] }
+]
+
+const zoekNorm = (tekst = '') => String(tekst)
+  .toLocaleLowerCase('nl')
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+
+function shell({ titel, beschrijving, pad, inhoud, jsonLd = [], extraKop = '', bodyClass = '', stijl = '' }) {
   const canonical = `${SITE}${pad}`
   return `<!doctype html>
 <html lang="nl">
@@ -108,7 +190,8 @@ function shell({ titel, beschrijving, pad, inhoud, jsonLd = [], extraKop = '' })
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
-    <link rel="stylesheet" href="/pagina.css" />
+    <link rel="stylesheet" href="${PAGINA_CSS}" />
+    <script>document.documentElement.classList.add('js')</script>
     <script>
       try {
         const params = new URLSearchParams(window.location.search)
@@ -117,11 +200,12 @@ function shell({ titel, beschrijving, pad, inhoud, jsonLd = [], extraKop = '' })
       } catch {}
     </script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="85273e9f-2c35-4a6e-83ff-7b61de38dec0" data-domains="hondenvoervergelijker.paulzuiderduin.com"></script>
+    <script defer src="${PAGINA_JS}"></script>
     <title>${escapeHtml(titel)}</title>
     ${jsonLd.map((blok) => `<script type="application/ld+json">${JSON.stringify(blok)}</script>`).join('\n    ')}
     ${extraKop}
   </head>
-  <body>
+  <body${bodyClass ? ` class="${bodyClass}"` : ''}>
     <header class="site">
       <div class="header-inner">
         <a class="brand" href="/">
@@ -134,7 +218,7 @@ function shell({ titel, beschrijving, pad, inhoud, jsonLd = [], extraKop = '' })
         <a class="back" href="/">Naar de vergelijker →</a>
       </div>
     </header>
-    <main class="wrap">
+    <main class="wrap"${stijl ? ` ${stijl}` : ''}>
 ${inhoud}
       <footer>
         <nav aria-label="Informatie">
@@ -566,7 +650,7 @@ async function haalTermen() {
 
 async function haalProducten() {
   if (!SUPABASE_URL || !SUPABASE_KEY) return null
-  const basis = `${SUPABASE_URL}/rest/v1/products?select=id,brand,name,food_type,package_size,source_url,last_checked_at,source_status,recipe_versions(ingredients_text,imported_at,reviewed_at,recipe_ingredients(allergen_key,certainty),recipe_nutrition(nutrient_key,value,basis))&published=eq.true&recipe_versions.is_current=eq.true&order=brand.asc,name.asc`
+  const basis = `${SUPABASE_URL}/rest/v1/products?select=id,brand,name,food_type,package_size,source_url,last_checked_at,source_status,recipe_versions(ingredients_text,imported_at,reviewed_at,nutrition_source_url,nutrition_checked_at,nutrition_note,recipe_ingredients(allergen_key,certainty),recipe_nutrition(nutrient_key,value,basis))&published=eq.true&recipe_versions.is_current=eq.true&order=brand.asc,name.asc`
   const rijen = []
   for (let offset = 0; ; offset += 1000) {
     const antwoord = await fetch(`${basis}&limit=1000&offset=${offset}`, {
@@ -610,7 +694,7 @@ function productRegel(product) {
 
 function merkPagina(brand, producten, buren = []) {
   const slugBrand = slug(brand)
-  const laatste = producten.map((p) => p.last_checked_at).filter(Boolean).sort().at(-1)
+  const laatste = laatsteDatum(producten)
   const controledatum = datumNl(laatste)
   const aantallen = producten.reduce((acc, p) => {
     acc[p.food_type] = (acc[p.food_type] ?? 0) + 1
@@ -702,6 +786,7 @@ ${buren.map((buur) => `        <li><a href="/merken/${buur.slugBrand}.html">${es
 
   return {
     pad: `/merken/${slugBrand}.html`,
+    laatste,
     html: shell({
       titel: `${brand} hondenvoer: alle ingrediënten en allergenen | Hondenvoervergelijker`,
       beschrijving: `Alle ${getal(producten.length)} producten van ${brand} met de letterlijke ingrediëntenlijst, voertype en de bronnen die het etiket noemt. Onafhankelijk gecontroleerd${controledatum ? ` op ${controledatum}` : ''}.`,
@@ -783,6 +868,37 @@ const VOORBEELDEN = {
   horse: '“dierlijk vet”, “bouillon” of “dierlijke bijproducten”'
 }
 
+const SELECTIE_AANTAL = 40
+
+function kiesSelectie(rijen, aantal = SELECTIE_AANTAL) {
+  const perMerk = new Map()
+  for (const rij of rijen) {
+    const merk = rij.product.brand
+    if (!perMerk.has(merk)) perMerk.set(merk, [])
+    perMerk.get(merk).push(rij)
+  }
+  const merken = [...perMerk.keys()].sort((a, b) => a.localeCompare(b, 'nl', { sensitivity: 'base' }))
+  for (const merk of merken) {
+    perMerk.get(merk).sort((a, b) =>
+      (productDatum(b.product) || '').localeCompare(productDatum(a.product) || '') ||
+      a.product.name.localeCompare(b.product.name, 'nl', { sensitivity: 'base' })
+    )
+  }
+  const selectie = []
+  for (let ronde = 0; selectie.length < aantal; ronde += 1) {
+    let toegevoegd = false
+    for (const merk of merken) {
+      const rij = perMerk.get(merk)[ronde]
+      if (!rij) continue
+      selectie.push(rij)
+      toegevoegd = true
+      if (selectie.length >= aantal) break
+    }
+    if (!toegevoegd) break
+  }
+  return selectie
+}
+
 function allergeenPagina(key, kort, producten) {
   const rijen = producten
     .map((product) => ({ product, match: productMatch(product, [key]) }))
@@ -794,13 +910,25 @@ function allergeenPagina(key, kort, producten) {
 
   if (rijen.length < 10) return null
 
-  const laatste = rijen.map(({ product }) => product.last_checked_at).filter(Boolean).sort().at(-1)
+  const context = ALLERGEEN_CONTENT[key] ?? {}
+  const laatste = rijen.map(({ product }) => productDatum(product)).filter(Boolean).sort().at(-1)
+  const contentDatum = datumIso(ALLERGEEN_CONTENT._bijgewerkt)
+  const laatsteIso = [laatste, contentDatum].filter(Boolean).sort().at(-1) ?? ''
   const pad = `/hondenvoer-zonder-${slug(kort)}.html`
-  const voorbeeld = VOORBEELDEN[key] ?? '“dierlijk vet”, “granen” of “bijproducten”'
   const allergeenLabel = ALLERGEN_LABELS[key] ?? kort
   const allergeenKlein = allergeenLabel.toLowerCase()
   const merkenAantal = new Set(rijen.map(({ product }) => product.brand)).size
   const datum = laatste ? datumNl(laatste) : datumNl(VANDAAG)
+  const verbergt = (context.verbergt?.length ? context.verbergt : ['dierlijk vet', 'granen', 'bijproducten'])
+    .map((term) => `“${term}”`)
+  const verbergtTekst = verbergt.slice(0, 3).join(', ')
+  const direct = context.direct?.length ? context.direct : [allergeenLabel.toLowerCase()]
+  const tips = context.tips?.length ? context.tips : [
+    'Lees de volledige ingrediëntenlijst, niet alleen de eerste regels.',
+    'Let op verzameltermen die de dier- of plantsoort niet noemen.',
+    'Vraag bij twijfel de fabrikant om uitsluitsel over de bron.'
+  ]
+  const extraFaq = Array.isArray(context.faq) ? context.faq : []
   const faq = [
     {
       vraag: `Is hondenvoer zonder ${kort} altijd hypoallergeen?`,
@@ -812,85 +940,187 @@ function allergeenPagina(key, kort, producten) {
     },
     {
       vraag: `Hoe weet ik of ${allergeenKlein} toch in hondenvoer zit?`,
-      antwoord: `Kijk op het etiket naar termen als ${voorbeeld}. Die noemen niet altijd de bron. Vraag bij twijfel de fabrikant om uitsluitsel.`
+      antwoord: `Kijk op het etiket naar termen als ${verbergtTekst}. Die noemen niet altijd de bron. Vraag bij twijfel de fabrikant om uitsluitsel.`
     },
     {
       vraag: `Zijn deze producten geschikt voor een eliminatiedieet?`,
       antwoord: `Deze lijst is een hulpmiddel, geen medisch advies. Een eliminatiedieet hoort onder begeleiding van een dierenarts. Gebruik de lijst om voor te sorteren, niet om zelf een diagnose te stellen.`
-    }
+    },
+    ...extraFaq
   ]
 
-  const lijst = rijen.map(({ product }) => {
+  const selectie = kiesSelectie(rijen, SELECTIE_AANTAL)
+  const typeKeys = [...new Set(selectie.map(({ product }) => product.food_type).filter(Boolean))]
+  const types = typeKeys.map((type) => [type, typeLabel(type)])
+  const merken = [...new Set(selectie.map(({ product }) => product.brand).filter(Boolean))]
+    .sort((eerste, tweede) => eerste.localeCompare(tweede, 'nl', { sensitivity: 'base' }))
+
+  const lijst = selectie.map(({ product }) => {
     const versie = product.recipe_versions?.[0]
     const uitslag = assessLabel(versie?.ingredients_text ?? '')
     const bronnen = (uitslag.allergens ?? []).map((k) => ALLERGEN_LABELS[k] ?? k)
     const bronTekst = bronnen.length
-      ? `Etiket noemt: ${bronnen.slice(0, 6).join(', ')}${bronnen.length > 6 ? ` en ${bronnen.length - 6} meer` : ''}`
+      ? `Etiket noemt: ${bronnen.slice(0, 3).join(', ')}${bronnen.length > 3 ? ` en ${bronnen.length - 3} meer` : ''}`
       : 'Geen bekende allergeenbron in de lijst'
     const type = typeLabel(product.food_type)
     const maat = product.package_size && String(product.package_size).trim().toLowerCase() !== 'null'
-      ? ` · ${escapeHtml(product.package_size)}`
+      ? String(product.package_size)
       : ''
-    const pad = productPad(product)
-    return `          <li>
-            <span>
-              <a class="name" href="${pad}">${escapeHtml(product.name)}</a><br />
-              <span class="meta"><a href="/merken/${slug(product.brand)}.html">${escapeHtml(product.brand)}</a> · ${escapeHtml(type)}${maat} · ${escapeHtml(bronTekst)}</span>
-            </span>
-            <span class="product-list-action">
-              <span class="tag ok">${escapeHtml(ALLERGEN_LABELS[key] ?? kort)} niet genoemd</span>
-              <a class="product-more" href="${pad}">Details →</a>
-            </span>
+    const productLink = productPad(product)
+    const zoek = zoekNorm([product.brand, product.name, type, maat, bronnen.join(' ')].filter(Boolean).join(' '))
+    return `          <li class="product-card type-${escapeHtml(product.food_type || 'onbekend')}" data-product data-type="${escapeHtml(product.food_type || '')}" data-brand="${escapeHtml(product.brand)}" data-zoek="${escapeHtml(zoek)}">
+            <div class="product-card-top">
+              <a class="product-brand" href="/merken/${slug(product.brand)}.html">${escapeHtml(product.brand)}</a>
+              <span class="product-type">${escapeHtml(type)}</span>
+            </div>
+            <h3 class="product-title"><a href="${productLink}">${escapeHtml(product.name)}</a></h3>
+            ${maat ? `<p class="product-meta">Verpakking: ${escapeHtml(maat)}</p>` : ''}
+            <p class="product-etiket">${escapeHtml(bronTekst)}</p>
+            <a class="product-details" href="${productLink}">Bekijk ingrediënten en voedingswaarden <span aria-hidden="true">→</span></a>
           </li>`
   }).join('\n')
 
-  const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › <a href="/hondenvoer-zonder.html">Zonder allergeen</a> › ${escapeHtml(ALLERGEN_LABELS[key] ?? kort)}</p>
-      <p class="eyebrow">Allergeen</p>
-      <h1>Hondenvoer zonder ${escapeHtml(kort)}</h1>
-      <p class="lead">Een onafhankelijk overzicht van hondenvoeding waarbij het etiket ${escapeHtml(allergeenKlein)} niet noemt.</p>
-      <p class="updated">Bijgewerkt op ${datumNl(VANDAAG)}${datum ? ` · laatste broncontrole ${datum}` : ''} · inhoud: <a href="/over-ons.html#redactie">Paul Zuiderduin</a></p>
+  const typeKnoppen = types.map(([type, label]) => `<button type="button" class="chip" data-type-filter="${escapeHtml(type)}" aria-pressed="false">${escapeHtml(label)}</button>`).join('')
+  const merkOpties = merken.map((merk) => `<option value="${escapeHtml(merk)}">${escapeHtml(merk)}</option>`).join('')
+  const accent = allergeenAccent(key)
+  const letter = escapeHtml((kort || '?').charAt(0).toUpperCase())
+  const vergelijkUrl = `/?allergeen=${encodeURIComponent(key)}`
+  const herkenRijen = [
+    ...direct.map((term) => `<tr><td>${escapeHtml(term)}</td><td>Noemt ${escapeHtml(allergeenKlein)} bij name.</td></tr>`),
+    ...verbergt.map((term) => `<tr><td>${escapeHtml(term)}</td><td>Kan ${escapeHtml(allergeenKlein)} verbergen; de bron staat er niet bij.</td></tr>`)
+  ].join('\n')
 
-      <div class="answer-box">
-        <h2>Kort antwoord: welk hondenvoer lijkt geschikt zonder ${escapeHtml(kort)}?</h2>
-        <p>${getal(rijen.length)} producten van ${merkenAantal} merken noemen ${escapeHtml(allergeenKlein)} niet en bevatten geen onduidelijke term die ${escapeHtml(kort)} kan verbergen.${datum ? ` Laatst gecontroleerd op ${datum}.` : ''}</p>
-        <p>Dit is een indicatie op basis van het etiket, geen medisch advies. Controleer altijd de verpakking.</p>
+  const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › <a href="/hondenvoer-zonder.html">Zonder allergeen</a> › ${escapeHtml(ALLERGEN_LABELS[key] ?? kort)}</p>
+      <section class="page-hero allergen-hero">
+        <div class="hero-top">
+          <p class="eyebrow">Allergeen</p>
+          <span class="hero-mark" aria-hidden="true">${letter}</span>
+        </div>
+        <h1>Hondenvoer zonder ${escapeHtml(kort)}</h1>
+        <p class="lead">Een onafhankelijk overzicht van hondenvoeding waarbij het etiket ${escapeHtml(allergeenKlein)} niet noemt.</p>
+        <p class="updated">Laatst gecontroleerd op ${escapeHtml(datum)} · inhoud: <a href="/over-ons.html#redactie">Paul Zuiderduin</a></p>
+        <div class="hero-actions">
+          <a class="cta" href="${vergelijkUrl}">Vergelijk zelf zonder ${escapeHtml(kort)}</a>
+          <a class="cta secondary" href="#producten">Bekijk ${getal(selectie.length)} voorbeelden</a>
+        </div>
+      </section>
+
+      <div class="stat-grid">
+        <div class="stat-card"><strong>${getal(rijen.length)}</strong><span>producten in de volledige lijst</span></div>
+        <div class="stat-card"><strong>${getal(merkenAantal)}</strong><span>merken</span></div>
+        <div class="stat-card"><strong>${escapeHtml(datum)}</strong><span>laatste broncontrole</span></div>
       </div>
 
-      <p><a class="cta" href="/?allergeen=${encodeURIComponent(key)}">Vergelijk zelf zonder ${escapeHtml(kort)}</a></p>
+      <div class="answer-box">
+        <p class="answer-label">Kort antwoord</p>
+        <h2>Welk hondenvoer lijkt geschikt zonder ${escapeHtml(kort)}?</h2>
+        <p>${getal(rijen.length)} producten van ${merkenAantal} merken noemen ${escapeHtml(allergeenKlein)} niet en bevatten geen onduidelijke term die ${escapeHtml(kort)} kan verbergen.${datum ? ` Laatst gecontroleerd op ${datum}.` : ''}</p>
+        <p>Hieronder staan ${getal(selectie.length)} voorbeelden, gespreid over merken. De volledige lijst bekijk je in de vergelijker.</p>
+        <p class="answer-note">Dit is een indicatie op basis van het etiket, geen medisch advies. Controleer altijd de verpakking.</p>
+      </div>
 
       <div class="callout">
         <p><strong>Wat betekent dit?</strong> Deze producten noemen ${escapeHtml(kort)} nergens in de ingrediëntenlijst. Dat is geen garantie dat het product geschikt is voor jouw hond: een dierenarts beoordeelt dat. Controleer altijd de verpakking, want fabrikanten kunnen een recept aanpassen.</p>
       </div>
 
-      <h2>Producten die ${escapeHtml(kort)} niet noemen</h2>
-      <ul class="product-list">
+      <section class="section-card">
+        <h2>Wat is ${escapeHtml(kort)} en waar zit het in?</h2>
+        <p>${escapeHtml(context.wat ?? `Een etiket noemt ${allergeenKlein} niet altijd letterlijk. Soms staat er een verzamelterm of een andere naam voor dezelfde bron.`)}</p>
+        <p>Op etiketten kan ${escapeHtml(allergeenKlein)} ook schuilgaan achter termen als ${verbergtTekst}. Die termen noemen de bron niet altijd. Daarom beoordeelt de vergelijker niet alleen het woord zelf, maar ook de woorden eromheen.</p>
+      </section>
+
+      <section class="section-card">
+        <h2>Zo herken je ${escapeHtml(kort)} op het etiket</h2>
+        <p>Deze termen noemen ${escapeHtml(allergeenKlein)} meestal bij name of kunnen erachter schuilgaan:</p>
+        <table>
+          <thead><tr><th>Term</th><th>Wat het betekent</th></tr></thead>
+          <tbody>
+${herkenRijen}
+          </tbody>
+        </table>
+      </section>
+
+      <section id="producten" class="section-card product-section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Overzicht</p>
+            <h2>Producten die ${escapeHtml(kort)} niet noemen</h2>
+          </div>
+          <p class="section-note">Hieronder staan ${getal(selectie.length)} voorbeelden, gespreid over merken. De volledige lijst van ${getal(rijen.length)} producten bekijk je in de vergelijker. Zoek of filter op merk en voertype.</p>
+        </div>
+
+        <div class="product-toolbar" data-product-toolbar hidden>
+          <div class="toolbar-row">
+            <label class="search-field">
+              <span class="sr-only">Zoek op product of merk</span>
+              <input type="search" data-product-search placeholder="Zoek op product of merk…" autocomplete="off" />
+            </label>
+            <label class="select-field">
+              <span class="sr-only">Filter op merk</span>
+              <select data-brand-filter>
+                <option value="">Alle merken</option>
+                ${merkOpties}
+              </select>
+            </label>
+            <button type="button" class="chip chip-reset" data-product-reset disabled>Wis filters</button>
+          </div>
+          <div class="toolbar-row toolbar-row-wrap">
+            <div class="type-chips" role="group" aria-label="Filter op voertype">
+              <button type="button" class="chip is-active" data-type-filter="" aria-pressed="true">Alle typen</button>
+              ${typeKnoppen}
+            </div>
+            <p class="toolbar-status" data-product-status aria-live="polite">${getal(selectie.length)} voorbeelden</p>
+          </div>
+        </div>
+
+        <ul class="product-grid" data-product-list>
 ${lijst}
-      </ul>
+        </ul>
+        <p class="empty-state" data-product-empty hidden>Geen producten gevonden met deze filters. <button type="button" class="link-button" data-product-reset>Wis de filters</button></p>
+        <div class="product-more-wrap" data-product-more-wrap hidden>
+          <button type="button" class="cta secondary" data-product-more>Meer voorbeelden laden</button>
+        </div>
+        <p><a class="cta" href="${vergelijkUrl}">Bekijk alle ${getal(rijen.length)} producten in de vergelijker</a></p>
+      </section>
 
-      <h2>Waar let je op bij “zonder ${escapeHtml(kort)}”?</h2>
-      <p>Een ingrediëntenlijst noemt niet altijd de bron. Woorden als ${voorbeeld} zeggen niet welke dier- of plantsoort erachter zit. Onze keuring markeert zulke woorden en laat het product alleen als “lijkt geschikt” zien als ${escapeHtml(kort)} daar aantoonbaar niet achter kan zitten.</p>
-      <p>Let ook op kruisbesmetting in de fabriek en op snacks of beloningen naast de hoofdmaaltijd. Die staan niet in deze lijst.</p>
+      <section class="section-card">
+        <h2>Waar let je op bij “zonder ${escapeHtml(kort)}”?</h2>
+        <p>Een ingrediëntenlijst noemt niet altijd de bron. Woorden als ${verbergtTekst} zeggen niet welke dier- of plantsoort erachter zit. Onze keuring markeert zulke woorden en laat het product alleen als “lijkt geschikt” zien als ${escapeHtml(allergeenKlein)} daar aantoonbaar niet achter kan zitten.</p>
+        <ul>
+${tips.map((tip) => `          <li>${escapeHtml(tip)}</li>`).join('\n')}
+        </ul>
+        <p>Let ook op kruisbesmetting in de fabriek en op snacks of beloningen naast de hoofdmaaltijd. Die staan niet in deze lijst.</p>
+      </section>
 
-      <h2>Veelgestelde vragen over hondenvoer zonder ${escapeHtml(kort)}</h2>
-      <div class="faq">
+      <section class="section-card">
+        <h2>Veelgestelde vragen over hondenvoer zonder ${escapeHtml(kort)}</h2>
+        <div class="faq">
 ${faq.map(({ vraag, antwoord }) => `        <details><summary>${escapeHtml(vraag)}</summary><p>${escapeHtml(antwoord)}</p></details>`).join('\n')}
-      </div>
+        </div>
+      </section>
 
-      <h2>Andere allergenen</h2>
-      <p class="related-allergens"><!-- ANDERE_ALLERGENEN --></p>
-      <p><a href="/hondenvoer-zonder.html">Bekijk alle overzichten zonder een specifiek allergeen</a>, of lees <a href="/hondenvoer-allergieen.html">hoe je een etiket leest</a>.</p>
+      <section class="section-card">
+        <h2>Andere allergenen</h2>
+        ${context.relatie ? `<p>${escapeHtml(context.relatie)}</p>` : ''}
+        <div class="related-allergens"><!-- ANDERE_ALLERGENEN --></div>
+        <p><a href="/hondenvoer-zonder.html">Bekijk alle overzichten zonder een specifiek allergeen</a>, of lees <a href="/hondenvoer-allergieen.html">hoe je een etiket leest</a>.</p>
+      </section>
       <p class="cite"><strong>Citeer deze pagina:</strong> Hondenvoervergelijker, “Hondenvoer zonder ${escapeHtml(kort)}”, ${SITE}${pad}, geraadpleegd op ${datumNl(VANDAAG)}.${laatste ? ` Laatst gecontroleerd op ${datumNl(laatste)}.` : ''}</p>`
 
   return {
     pad,
     aantal: rijen.length,
+    selectie: selectie.length,
+    laatste: laatsteIso,
     kort,
     key,
     html: shell({
       titel: `Hondenvoer zonder ${kort}: ${getal(rijen.length)} producten die het niet noemen | Hondenvoervergelijker`,
-      beschrijving: `${rijen.length} hondenvoeders waarbij het etiket ${ALLERGEN_LABELS[key] ?? kort} niet noemt en geen onduidelijke term die ${kort} kan verbergen. Onafhankelijk gecontroleerd${laatste ? ` op ${datumNl(laatste)}` : ''}.`,
+      beschrijving: `${rijen.length} hondenvoeders waarbij het etiket ${ALLERGEN_LABELS[key] ?? kort} niet noemt en geen onduidelijke term die ${kort} kan verbergen. Met uitleg en een selectie van ${selectie.length} producten. Onafhankelijk gecontroleerd${laatste ? ` op ${datumNl(laatste)}` : ''}.`,
       pad,
       inhoud,
+      bodyClass: 'page-allergen',
+      stijl: accentStijl(accent),
       jsonLd: [
         {
           '@context': 'https://schema.org',
@@ -906,7 +1136,7 @@ ${faq.map(({ vraag, antwoord }) => `        <details><summary>${escapeHtml(vraag
           '@type': 'WebPage',
           name: `Hondenvoer zonder ${kort}`,
           url: `${SITE}${pad}`,
-          dateModified: VANDAAG,
+          ...(laatsteIso ? { dateModified: laatsteIso } : {}),
           inLanguage: 'nl-NL',
           isPartOf: { '@type': 'WebSite', name: 'Hondenvoervergelijker', url: `${SITE}/` },
           about: { '@type': 'Thing', name: `Hondenvoer zonder ${kort}` }
@@ -923,9 +1153,9 @@ ${faq.map(({ vraag, antwoord }) => `        <details><summary>${escapeHtml(vraag
         {
           '@context': 'https://schema.org',
           '@type': 'ItemList',
-          name: `Hondenvoer zonder ${kort}`,
-          numberOfItems: rijen.length,
-          itemListElement: rijen.slice(0, 20).map(({ product }, index) => ({
+          name: `Hondenvoer zonder ${kort}: selectie per merk`,
+          numberOfItems: selectie.length,
+          itemListElement: selectie.slice(0, 20).map(({ product }, index) => ({
             '@type': 'ListItem',
             position: index + 1,
             name: `${product.brand} — ${product.name}`
@@ -983,12 +1213,91 @@ function productPagina(product, alleProducten, allergeenPaginas) {
     }
     return 'Niet genoemd op het etiket.'
   }
-  const allergenenRijen = hoofdKeys.map((key) => {
+  const effectieveState = (state) => match.hasLabel ? state : { state: 'unknown', words: ['geen ingrediëntenlijst'] }
+  const alleAllergenen = hoofdKeys.map((key) => {
     const state = perKey.get(key)
-    if (!state) return ''
-    const effectief = match.hasLabel ? state : { state: 'unknown', words: ['geen ingrediëntenlijst'] }
-    return `            <tr><th scope="row">${escapeHtml(ALLERGEN_LABELS[key] ?? key)}</th><td><span class="tag ${effectief.state === 'present' ? 'excluded' : effectief.state === 'unknown' ? 'check' : 'ok'}"><span aria-hidden="true">${symbool(effectief)}</span> ${oordeel(effectief)}</span></td><td>${escapeHtml(toelichting(effectief))}</td></tr>`
-  }).join('\n')
+    if (!state) return null
+    const effectief = effectieveState(state)
+    return {
+      key,
+      label: ALLERGEN_LABELS[key] ?? key,
+      state: effectief,
+      symbool: symbool(effectief),
+      oordeel: oordeel(effectief),
+      uitleg: toelichting(effectief)
+    }
+  }).filter(Boolean)
+  const uitgesloten = alleAllergenen.filter(({ state }) => state.state === 'present')
+  const controle = alleAllergenen.filter(({ state }) => state.state === 'unknown')
+  const geschikt = alleAllergenen.filter(({ state }) => state.state === 'absent')
+  const toneKey = aantal.excluded > 0 ? 'excluded' : aantal.check > 0 ? 'check' : 'ok'
+  const tone = TONES[toneKey]
+  const verdictLabel = !match.hasLabel
+    ? 'Geen ingrediëntenlijst'
+    : aantal.excluded > 0
+      ? `${aantal.excluded} van ${hoofdKeys.length} allergenen genoemd`
+      : aantal.check > 0
+        ? `${aantal.check} allergenen vragen controle`
+        : `Geen van de ${hoofdKeys.length} hoofdallergenen genoemd`
+
+  const allergeenRij = ({ label, symbool: teken, oordeel: uitslag, uitleg }) => `            <li class="allergen-row">
+              <span class="allergen-name">${escapeHtml(label)}</span>
+              <span class="tag ${uitslag === 'Uitgesloten' ? 'excluded' : 'check'}"><span aria-hidden="true">${teken}</span> ${uitslag}</span>
+              <span class="allergen-explain">${escapeHtml(uitleg)}</span>
+            </li>`
+  const allergeenBlok = (titel, rijen, soort, uitleg) => rijen.length ? `        <section class="allergen-block tone-${soort}">
+          <div class="allergen-block-head">
+            <h3>${titel} <span class="allergen-count">${rijen.length}</span></h3>
+            <p>${uitleg}</p>
+          </div>
+          <ul class="allergen-rows">
+${rijen.map(allergeenRij).join('\n')}
+          </ul>
+        </section>` : ''
+  const geschiktBlok = geschikt.length ? `        <section class="allergen-block tone-ok">
+          <div class="allergen-block-head">
+            <h3>Lijkt geschikt <span class="allergen-count">${geschikt.length}</span></h3>
+            <p>Deze bronnen worden niet genoemd en kunnen niet verborgen zitten in een onduidelijke term.</p>
+          </div>
+          <div class="allergen-chips">
+${geschikt.map(({ label }) => `            <span class="tag ok">${escapeHtml(label)}</span>`).join('\n')}
+          </div>
+        </section>` : ''
+  const allergenenBlokken = [
+    allergeenBlok('Uitgesloten', uitgesloten, 'excluded', 'Deze bronnen staan expliciet op het etiket.'),
+    allergeenBlok('Controleer', controle, 'check', 'Het etiket geeft hierover onvoldoende uitsluitsel.'),
+    geschiktBlok
+  ].filter(Boolean).join('\n')
+  const ingredientSegmenten = markUncertainIngredients(tekst)
+  const heeftOnzekereTermen = ingredientSegmenten.some((segment) => segment.uncertain)
+  const ingredientenHtml = ingredientSegmenten
+    .map((segment) => segment.uncertain ? `<mark class="uncertain">${escapeHtml(segment.text)}</mark>` : escapeHtml(segment.text))
+    .join('')
+  const kernKeys = new Set(CORE_NUTRIENTS.map(({ key }) => key))
+  const voedingHtml = voedingsRijen.map((nutrient) => `<div class="nutrition-tile${kernKeys.has(nutrient.key) ? ' is-core' : ''}">
+            <span class="nutrition-label">${escapeHtml(nutrient.label)}</span>
+            <strong class="nutrition-value">${escapeHtml(formatteerVoedingswaarde(nutrient, voeding[nutrient.key]))}</strong>
+          </div>`).join('\n')
+  const kernWaarde = (key) => {
+    const nutrient = NUTRIENTS.find((item) => item.key === key)
+    if (!nutrient || voeding[key] == null || onbetrouwbaar.has(key)) return { waarde: '—', eenheid: '' }
+    if (key === 'kcal') return { waarde: getal(Math.round(voeding[key])), eenheid: 'kcal/100 g' }
+    return { waarde: formatteerVoedingswaarde(nutrient, voeding[key]), eenheid: '' }
+  }
+  const kernEiwit = kernWaarde('protein')
+  const kernVet = kernWaarde('fat')
+  const kernEnergie = kernWaarde('kcal')
+  const bronKaart = (label, waarde, toelichting, ok) => `          <div class="source-card ${ok ? 'is-ok' : 'is-check'}">
+            <span class="source-label">${escapeHtml(label)}</span>
+            <strong class="source-value">${waarde}</strong>
+            <span class="source-note">${toelichting}</span>
+          </div>`
+  const bronKaarten = [
+    bronKaart('Productbron', bron ? `<a href="${escapeHtml(bron)}" target="_blank" rel="noreferrer">${escapeHtml(bronDomein || bron)} ↗</a>` : 'Niet vastgelegd', bronDatum ? `Laatst gecontroleerd op ${escapeHtml(bronDatum)}` : 'Geen controledatum', Boolean(bron)),
+    bronKaart('Handmatige controle', reviewDatum ? `Nagekeken op ${escapeHtml(reviewDatum)}` : 'Nog niet nagekeken', reviewDatum ? 'Handmatig door een mens gecontroleerd.' : 'De tekst is automatisch overgenomen van de bron.', Boolean(reviewDatum)),
+    bronKaart('Voedingswaarden', voedingsDatum ? `Gecontroleerd op ${escapeHtml(voedingsDatum)}` : 'Controledatum onbekend', versie?.nutrition_source_url && versie.nutrition_source_url !== bron ? 'Andere bron dan de ingrediëntenlijst.' : 'Zelfde bron als de ingrediëntenlijst.', Boolean(voedingsDatum)),
+    bronKaart('Laatste import', importDatum ? `Geïmporteerd op ${escapeHtml(importDatum)}` : 'Onbekend', 'Laatste keer bijgewerkt in de database.', Boolean(importDatum))
+  ].join('\n')
 
   const bestaandeAllergenen = new Map(allergeenPaginas.map((pagina) => [pagina.key, pagina]))
   const relevanteAllergenen = ALLERGEEN_KEUZE
@@ -996,13 +1305,34 @@ function productPagina(product, alleProducten, allergeenPaginas) {
     .filter((key) => perKey.get(key)?.state === 'absent' && bestaandeAllergenen.has(key))
     .slice(0, 4)
     .map((key) => bestaandeAllergenen.get(key))
-    .map((pagina) => `<a href="${pagina.pad}">Hondenvoer zonder ${escapeHtml(pagina.kort)}</a>`)
-    .join(' · ')
+    .map((pagina) => `<a class="related-allergen" href="${pagina.pad}">Zonder ${escapeHtml(pagina.kort)}</a>`)
+    .join('\n')
 
   const zelfdeMerk = alleProducten
     .filter((ander) => ander.brand === product.brand && ander.id !== product.id)
     .slice(0, 6)
-  const zelfdeMerkLijst = zelfdeMerk.map((ander) => `<li><a href="${productPad(ander)}">${escapeHtml(ander.name)}</a> <span class="meta">(${escapeHtml(typeLabel(ander.food_type))})</span></li>`).join('\n')
+  const relatieveUitslag = (ander) => {
+    const relMatch = productMatch(ander, hoofdKeys)
+    if (relMatch.kind === 'excluded') return { label: 'Allergeen genoemd', klasse: 'excluded' }
+    if (relMatch.kind === 'check') return { label: 'Controle nodig', klasse: 'check' }
+    return { label: 'Geen hoofdallergeen genoemd', klasse: 'ok' }
+  }
+  const zelfdeMerkLijst = zelfdeMerk.map((ander) => {
+    const uitslag = relatieveUitslag(ander)
+    const relMaat = ander.package_size && String(ander.package_size).trim().toLowerCase() !== 'null' ? ` · ${escapeHtml(ander.package_size)}` : ''
+    return `            <li class="related-card">
+              <div>
+                <a class="related-name" href="${productPad(ander)}">${escapeHtml(ander.name)}</a>
+                <span class="related-meta">${escapeHtml(typeLabel(ander.food_type))}${relMaat}</span>
+              </div>
+              <span class="tag ${uitslag.klasse}">${uitslag.label}</span>
+            </li>`
+  }).join('\n')
+
+  const affiliateKnoppen = aanbiedingen.map((aanbieding) => `<a class="cta secondary" href="${escapeHtml(aanbieding.url)}" target="_blank" rel="sponsored nofollow noopener noreferrer">Bekijk bij ${escapeHtml(aanbieding.winkel)}${aanbieding.maat ? ` (${escapeHtml(aanbieding.maat)})` : ''}${prijsNl(aanbieding.prijs) ? ` · vanaf ${prijsNl(aanbieding.prijs)}` : ''}</a>`).join(' ')
+  const affiliateNotitie = aanbiedingen.length
+    ? `      <p class="partner-note"><small>Partnerlink. De selectie, volgorde en beoordeling zijn niet van deze link afhankelijk. ${aanbiedingen.some((aanbieding) => prijsNl(aanbieding.prijs)) ? `De prijs is de laagste variantprijs uit de productfeed${WINKELDATA.bijgewerkt ? ` van ${escapeHtml(datumNl(WINKELDATA.bijgewerkt))}` : ''}; de actuele winkelprijs en de prijs voor deze maat kunnen afwijken.` : 'Er worden geen prijzen getoond.'}</small></p>`
+    : ''
 
   const titel = `${product.brand} ${product.name}${maat ? ` (${maat})` : ''}: ingrediënten, allergenen en voedingswaarden | Hondenvoervergelijker`
   const beschrijving = `Letterlijke ingrediëntenlijst, voedingswaarden en allergenoordeel van ${product.brand} ${product.name}${maat ? ` (${maat})` : ''}${type ? `, ${type.toLowerCase()}` : ''}. Bron gecontroleerd${bronDatum ? ` op ${bronDatum}` : ' volgens de officiële productpagina'}.`
@@ -1016,67 +1346,124 @@ function productPagina(product, alleProducten, allergeenPaginas) {
   ].filter(Boolean).join(' · ')
 
   const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › <a href="/merken/">Merken</a> › <a href="/merken/${slug(product.brand)}.html">${escapeHtml(product.brand)}</a> › ${escapeHtml(product.name)}</p>
-      <p class="eyebrow">Product</p>
-      <h1>${escapeHtml(product.brand)} ${escapeHtml(product.name)}</h1>
-      <p class="lead">${escapeHtml(type)}${maat ? ` · ${escapeHtml(maat)}` : ''}${bronDomein ? ` · bron: ${escapeHtml(bronDomein)}` : ''}. Deze pagina toont de letterlijke ingrediëntenlijst, de voedingswaarden en het oordeel per allergeen.</p>
-      <p class="updated">${datumRegel ? `${escapeHtml(datumRegel)} · ` : ''}Inhoud: <a href="/over-ons.html#redactie">Paul Zuiderduin</a></p>
+      <section class="page-hero product-hero">
+        <div class="hero-top">
+          <p class="eyebrow">Product · ${escapeHtml(type)}</p>
+          <span class="verdict-badge">${escapeHtml(verdictLabel)}</span>
+        </div>
+        <h1>${escapeHtml(product.brand)} ${escapeHtml(product.name)}</h1>
+        <p class="lead">${escapeHtml(type)}${maat ? ` · ${escapeHtml(maat)}` : ''}${bronDomein ? ` · bron: ${escapeHtml(bronDomein)}` : ''}. Deze pagina toont de letterlijke ingrediëntenlijst, de voedingswaarden en het oordeel per allergeen.</p>
+        <p class="updated">${datumRegel ? `${escapeHtml(datumRegel)} · ` : ''}Inhoud: <a href="/over-ons.html#redactie">Paul Zuiderduin</a></p>
+        <div class="hero-actions">
+          <a class="cta" href="/?zoek=${encodeURIComponent(product.name)}">Vergelijk in de vergelijker</a>
+          <a class="cta secondary" href="/merken/${slug(product.brand)}.html">Alle producten van ${escapeHtml(product.brand)}</a>
+          ${affiliateKnoppen}
+        </div>
+      </section>
+${affiliateNotitie}
+
+      <div class="overview-grid">
+        <div class="overview-card">
+          <p class="overview-label">Allergenen</p>
+          <div class="allergen-meter" role="img" aria-label="${aantal.suitable} allergenen niet genoemd, ${aantal.check} vragen om controle en ${aantal.excluded} staan in de lijst">
+            <span class="meter-ok" style="flex:${aantal.suitable}"></span>
+            <span class="meter-check" style="flex:${aantal.check}"></span>
+            <span class="meter-excluded" style="flex:${aantal.excluded}"></span>
+          </div>
+          <ul class="meter-legend">
+            <li><span class="dot ok"></span><strong>${aantal.suitable}</strong> niet genoemd</li>
+            <li><span class="dot check"></span><strong>${aantal.check}</strong> controle</li>
+            <li><span class="dot excluded"></span><strong>${aantal.excluded}</strong> genoemd</li>
+          </ul>
+        </div>
+        <div class="overview-card">
+          <p class="overview-label">Voeding (as-fed)</p>
+          <div class="mini-stats">
+            <div><strong>${kernEiwit.waarde}</strong><span>eiwit</span></div>
+            <div><strong>${kernVet.waarde}</strong><span>vet</span></div>
+            <div><strong>${kernEnergie.waarde}</strong><span>${kernEnergie.eenheid || 'energie'}</span></div>
+          </div>
+        </div>
+        <div class="overview-card">
+          <p class="overview-label">Bron</p>
+          <p class="overview-value">${bronDomein ? escapeHtml(bronDomein) : 'Geen bron-URL'}</p>
+          <p class="overview-note">${bronDatum ? `Gecontroleerd op ${escapeHtml(bronDatum)}` : 'Controledatum onbekend'}</p>
+        </div>
+      </div>
 
       <div class="answer-box">
-        <h2>Kort antwoord</h2>
+        <p class="answer-label">Kort antwoord</p>
+        <h2>${escapeHtml(verdictLabel)}</h2>
         <p>${escapeHtml(korteSamenvatting)}</p>
-        <p>Dit is een indicatie op basis van het etiket, geen medisch advies. Controleer altijd de verpakking en overleg bij klachten met je dierenarts.</p>
+        <p class="answer-note">Dit is een indicatie op basis van het etiket, geen medisch advies. Controleer altijd de verpakking en overleg bij klachten met je dierenarts.</p>
       </div>
 
       ${match.stale || match.sourceChanged || !match.hasLabel ? `<div class="callout warn"><p><strong>Controle nodig:</strong> ${match.sourceChanged ? 'de bronpagina bij de fabrikant is gewijzigd' : !match.hasLabel ? 'er is geen ingrediëntenlijst beschikbaar' : 'de ingrediëntenlijst is langer dan zes maanden niet gecontroleerd'}. Controleer de verpakking of de officiële productpagina voordat je op deze gegevens vertrouwt.</p></div>` : ''}
 
-      <h2>Allergenen en het etiket</h2>
-      <p>De tabel laat voor de ${hoofdKeys.length} hoofdallergenen zien wat het etiket zegt. “Lijkt geschikt” betekent: de bron wordt niet genoemd en geen onduidelijke term kan hem verbergen. “Controleer” betekent: het etiket noemt de bron niet of bevat een woord dat de keuring niet kent. “Uitgesloten” betekent: de bron staat expliciet in de lijst.</p>
-      <p><small>De vergelijker beoordeelt daarnaast nog ${ALLERGENS.length - hoofdKeys.length} specifieke bronnen. Open dit product in de <a href="/?zoek=${encodeURIComponent(product.name)}">vergelijker</a> voor de volledige lijst.</small></p>
-      <table>
-        <thead><tr><th>Allergeen</th><th>Oordeel</th><th>Toelichting</th></tr></thead>
-        <tbody>
-${allergenenRijen}
-        </tbody>
-      </table>
+      <nav class="section-nav" aria-label="Op deze pagina">
+        <a href="#allergenen">Allergenen</a>
+        <a href="#ingredienten">Ingrediënten</a>
+        <a href="#voeding">Voedingswaarden</a>
+        <a href="#bron">Bron en controle</a>
+        <a href="#gerelateerd">Gerelateerd</a>
+      </nav>
 
-      <h2>Ingrediëntenlijst</h2>
-      ${tekst ? `<p class="ingredients-text">${escapeHtml(tekst)}</p>` : '<p>De ingrediëntenlijst is niet beschikbaar.</p>'}
-      ${versie?.import_note ? `<p class="callout"><small>${escapeHtml(versie.import_note)}</small></p>` : ''}
+      <section id="allergenen" class="section-card">
+        <div class="section-head">
+          <div><p class="eyebrow">Etiket</p><h2>Allergenen en het etiket</h2></div>
+          <p class="section-note">De ${hoofdKeys.length} hoofdallergenen, gegroepeerd op wat het etiket zegt.</p>
+        </div>
+        <p>“Lijkt geschikt” betekent: de bron wordt niet genoemd en geen onduidelijke term kan hem verbergen. “Controleer” betekent: het etiket noemt de bron niet of bevat een woord dat de keuring niet kent. “Uitgesloten” betekent: de bron staat expliciet in de lijst.</p>
+${allergenenBlokken}
+        <p class="section-footnote"><small>De vergelijker beoordeelt daarnaast nog ${ALLERGENS.length - hoofdKeys.length} specifieke bronnen. Open dit product in de <a href="/?zoek=${encodeURIComponent(product.name)}">vergelijker</a> voor de volledige lijst.</small></p>
+      </section>
 
-      <h2>Voedingswaarden (as-fed)</h2>
-      ${voedingsRijen.length ? `<p>Deze waarden komen van de bron hieronder en zijn inclusief vocht (as-fed).</p>
-      <table>
-        <thead><tr><th>Voedingsstof</th><th>Waarde</th></tr></thead>
-        <tbody>
-${voedingsRijen.map((nutrient) => `          <tr><td>${escapeHtml(nutrient.label)}</td><td>${escapeHtml(formatteerVoedingswaarde(nutrient, voeding[nutrient.key]))}</td></tr>`).join('\n')}
-        </tbody>
-      </table>` : '<p>De fabrikant vermeldt geen bruikbare voedingswaarden voor dit product.</p>'}
-      ${onbetrouwbareLabels.length ? `<p class="callout warn"><strong>Niet getoond:</strong> ${escapeHtml(onbetrouwbareLabels.join(', '))} — deze waarde(n) zijn bij de plausibiliteitscontrole als onbetrouwbaar aangemerkt.</p>` : ''}
-      ${versie?.nutrition_note ? `<p><small>${escapeHtml(versie.nutrition_note)}</small></p>` : ''}
+      <section id="ingredienten" class="section-card">
+        <div class="section-head">
+          <div><p class="eyebrow">Samenstelling</p><h2>Ingrediëntenlijst</h2></div>
+          <p class="section-note">Letterlijk overgenomen van de bron.</p>
+        </div>
+        ${tekst ? `<div class="ingredients-box">${ingredientenHtml}</div>${heeftOnzekereTermen ? `<p class="ingredients-legend"><mark class="uncertain">rood gemarkeerd</mark> = term die de keuring niet kan herleiden.</p>` : ''}` : '<p>De ingrediëntenlijst is niet beschikbaar.</p>'}
+        ${versie?.import_note ? `<p class="callout"><small>${escapeHtml(versie.import_note)}</small></p>` : ''}
+      </section>
 
-      <h2>Bron en controle</h2>
-      <ul>
-        <li><strong>Productbron:</strong> ${bron ? `<a href="${escapeHtml(bron)}" target="_blank" rel="noreferrer">${escapeHtml(bronDomein || bron)} ↗</a>` : 'geen bron-URL vastgelegd'}${bronDatum ? ` · laatst gecontroleerd op ${escapeHtml(bronDatum)}` : ''}</li>
-        <li><strong>Handmatige controle:</strong> ${reviewDatum ? `nagekeken op ${escapeHtml(reviewDatum)}` : 'nog niet handmatig nagekeken; de tekst is automatisch overgenomen van de bron'}</li>
-        <li><strong>Voedingswaarden:</strong> ${voedingsDatum ? `gecontroleerd op ${escapeHtml(voedingsDatum)}` : 'controledatum onbekend'}${versie?.nutrition_source_url && versie.nutrition_source_url !== bron ? ' · andere bron dan de ingrediëntenlijst' : ''}</li>
-        <li><strong>Laatst geïmporteerd:</strong> ${importDatum || 'onbekend'}</li>
-      </ul>
-      <p><a class="cta" href="/?zoek=${encodeURIComponent(product.name)}">Vergelijk dit product in de vergelijker</a> <a class="cta secondary" href="/merken/${slug(product.brand)}.html">Alle producten van ${escapeHtml(product.brand)}</a></p>
+      <section id="voeding" class="section-card">
+        <div class="section-head">
+          <div><p class="eyebrow">Analyse</p><h2>Voedingswaarden (as-fed)</h2></div>
+          <p class="section-note">Inclusief vocht, zoals de fabrikant ze publiceert.</p>
+        </div>
+        ${voedingsRijen.length ? `<div class="nutrition-grid">${voedingHtml}</div>` : '<p>De fabrikant vermeldt geen bruikbare voedingswaarden voor dit product.</p>'}
+        ${onbetrouwbareLabels.length ? `<p class="callout warn"><strong>Niet getoond:</strong> ${escapeHtml(onbetrouwbareLabels.join(', '))} — deze waarde(n) zijn bij de plausibiliteitscontrole als onbetrouwbaar aangemerkt.</p>` : ''}
+        ${versie?.nutrition_note ? `<p class="section-footnote"><small>${escapeHtml(versie.nutrition_note)}</small></p>` : ''}
+        <p class="section-footnote"><small>Vergelijk waarden alleen binnen hetzelfde voertype. <a href="/hoe-wij-vergelijken.html">Lees hoe wij voedingswaarden overnemen</a>.</small></p>
+      </section>
 
-      ${aanbiedingen.length ? `<div class="callout">
-        <p><strong>Bij Dierenwinkel XL:</strong> ${aanbiedingen.map((aanbieding) => `<a class="cta secondary" href="${escapeHtml(aanbieding.url)}" target="_blank" rel="sponsored nofollow noopener noreferrer">Bekijk bij Dierenwinkel XL${aanbieding.maat ? ` (${escapeHtml(aanbieding.maat)})` : ''}${prijsNl(aanbieding.prijs) ? ` · vanaf ${prijsNl(aanbieding.prijs)}` : ''}</a>`).join(' ')}</p>
-        <p><small>Partnerlink. De selectie, volgorde en beoordeling zijn niet van deze link afhankelijk. ${aanbiedingen.some((aanbieding) => prijsNl(aanbieding.prijs)) ? `De prijs is de laagste variantprijs uit de productfeed${WINKELDATA.bijgewerkt ? ` van ${escapeHtml(datumNl(WINKELDATA.bijgewerkt))}` : ''}; de actuele winkelprijs en de prijs voor deze maat kunnen afwijken.` : 'Er worden geen prijzen getoond.'}</small></p>
-      </div>` : ''}
+      <section id="bron" class="section-card">
+        <div class="section-head">
+          <div><p class="eyebrow">Controle</p><h2>Bron en controle</h2></div>
+          <p class="section-note">Zo zie je waar de gegevens vandaan komen en hoe recent ze zijn.</p>
+        </div>
+        <div class="source-grid">
+${bronKaarten}
+        </div>
+      </section>
 
-      <h2>Gerelateerde producten</h2>
-      ${zelfdeMerk.length ? `<ul class="product-list">
-${zelfdeMerkLijst}
-      </ul>` : '<p>Er zijn geen andere producten van dit merk in de vergelijker.</p>'}
-      <p><a href="/merken/${slug(product.brand)}.html">Bekijk alle producten van ${escapeHtml(product.brand)}</a> of <a href="/hondenvoer-zonder.html">zoek op allergeen</a>.</p>
+      <section id="gerelateerd" class="section-card">
+        <div class="section-head">
+          <div><p class="eyebrow">Verder kijken</p><h2>Gerelateerde producten</h2></div>
+          <p class="section-note">Andere producten van ${escapeHtml(product.brand)}.</p>
+        </div>
+        ${zelfdeMerk.length ? `<ul class="related-grid">${zelfdeMerkLijst}</ul>` : '<p>Er zijn geen andere producten van dit merk in de vergelijker.</p>'}
+        <p><a href="/merken/${slug(product.brand)}.html">Bekijk alle producten van ${escapeHtml(product.brand)}</a> of <a href="/hondenvoer-zonder.html">zoek op allergeen</a>.</p>
+      </section>
 
-      <h2>Verder lezen</h2>
-      <p>${relevanteAllergenen || '<a href="/hondenvoer-zonder.html">Alle overzichten zonder een specifiek allergeen</a>'}</p>
-      <p>Lees <a href="/hoe-wij-vergelijken.html">hoe wij etiketten overnemen en controleren</a>, bekijk het <a href="/broncontrole.html">openbare broncontroleverslag</a> of lees <a href="/hondenvoer-allergieen.html">hoe je een etiket leest</a>.</p>
+      <section class="section-card">
+        <h2>Verder lezen</h2>
+        <div class="related-allergens">
+${relevanteAllergenen || '<a class="related-allergen" href="/hondenvoer-zonder.html">Alle overzichten zonder een specifiek allergeen</a>'}
+        </div>
+        <p>Lees <a href="/hoe-wij-vergelijken.html">hoe wij etiketten overnemen en controleren</a>, bekijk het <a href="/broncontrole.html">openbare broncontroleverslag</a> of lees <a href="/hondenvoer-allergieen.html">hoe je een etiket leest</a>.</p>
+      </section>
 
       <p class="cite"><strong>Citeer deze pagina:</strong> Hondenvoervergelijker, “${escapeHtml(product.brand)} ${escapeHtml(product.name)}”, ${SITE}${pad}.${bronDatum ? ` Bron gecontroleerd op ${bronDatum}.` : ''}${reviewDatum ? ` Handmatig nagelopen op ${reviewDatum}.` : ''}</p>`
 
@@ -1125,32 +1512,68 @@ ${zelfdeMerkLijst}
       beschrijving,
       pad,
       inhoud,
+      bodyClass: 'page-product',
+      stijl: accentStijl(tone),
       jsonLd: [breadcrumb, productSchema, webPage]
     })
   }
 }
 
 function zonderHub(paginas) {
-  const regels = [...paginas]
-    .map(({ pad, kort, aantal }) => `          <li><a href="${pad}">Hondenvoer zonder ${escapeHtml(kort)}</a> <span class="meta">(${getal(aantal)} producten)</span></li>`)
-    .join('\n')
+  const perKey = new Map(paginas.map((pagina) => [pagina.key, pagina]))
+  const groepen = ALLERGEEN_GROEPEN
+    .map(({ titel, keys }) => ({ titel, paginas: keys.map((key) => perKey.get(key)).filter(Boolean) }))
+    .filter(({ paginas: groep }) => groep.length)
+  const gebruikt = new Set(groepen.flatMap(({ paginas: groep }) => groep.map(({ key }) => key)))
+  const rest = paginas.filter(({ key }) => !gebruikt.has(key))
+  if (rest.length) groepen.push({ titel: 'Overig', paginas: rest })
+
+  const kaart = (pagina) => `          <a class="allergen-card" href="${pagina.pad}" ${accentStijl(allergeenAccent(pagina.key))}>
+            <span class="allergen-mark" aria-hidden="true">${escapeHtml(pagina.kort.charAt(0).toUpperCase())}</span>
+            <span class="allergen-name">Zonder ${escapeHtml(pagina.kort)}</span>
+            <span class="allergen-count">${getal(pagina.aantal)} producten</span>
+            <span class="allergen-arrow" aria-hidden="true">→</span>
+          </a>`
+
+  const groepenHtml = groepen.map(({ titel, paginas: groep }) => `        <section class="allergen-group">
+          <div class="section-head">
+            <h2>${escapeHtml(titel)}</h2>
+            <p class="section-note">${groep.length} ${groep.length === 1 ? 'overzicht' : 'overzichten'}</p>
+          </div>
+          <div class="allergen-grid">
+${groep.map(kaart).join('\n')}
+          </div>
+        </section>`).join('\n')
 
   const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › Zonder allergeen</p>
-      <p class="eyebrow">Overzicht</p>
-      <h1>Hondenvoer zonder een specifiek allergeen</h1>
-      <p class="lead">Kies het ingrediënt dat je wilt vermijden. Per allergeen zie je hoeveel producten het etiket dat ingrediënt niet noemt en waarbij geen onduidelijke term het kan verbergen.</p>
-      <div class="card">
-        <ul class="product-list">
-${regels}
-        </ul>
+      <section class="page-hero allergen-hero">
+        <div class="hero-top">
+          <p class="eyebrow">Overzicht</p>
+          <span class="hero-mark" aria-hidden="true">A</span>
+        </div>
+        <h1>Hondenvoer zonder een specifiek allergeen</h1>
+        <p class="lead">Kies het ingrediënt dat je wilt vermijden. Per allergeen zie je hoeveel producten het etiket dat ingrediënt niet noemt en waarbij geen onduidelijke term het kan verbergen.</p>
+        <p class="updated">Bijgewerkt op ${datumNl(VANDAAG)} · inhoud: <a href="/over-ons.html#redactie">Paul Zuiderduin</a></p>
+        <div class="hero-actions">
+          <a class="cta" href="/">Vergelijk op alle allergenen tegelijk</a>
+        </div>
+      </section>
+
+      <div class="callout">
+        <p><strong>Hoe lees ik dit overzicht?</strong> De aantallen zeggen hoeveel producten het allergeen niet noemen en geen onduidelijke term bevatten die het kan verbergen. Het is een indicatie op basis van het etiket, geen garantie en geen medisch advies.</p>
       </div>
-      <p><a class="cta" href="/">Vergelijk op alle allergenen tegelijk</a></p>`
+
+      <div class="allergen-groups">
+${groepenHtml}
+      </div>`
 
   return shell({
     titel: 'Hondenvoer zonder kip, rund, granen en meer | Hondenvoervergelijker',
     beschrijving: `Overzichten van hondenvoer zonder kip, rund, lam, vis, tarwe, granen, melk, ei, soja en meer. Onafhankelijk gecontroleerd op de officiële etiketten.`,
     pad: '/hondenvoer-zonder.html',
     inhoud,
+    bodyClass: 'page-allergen-hub',
+    stijl: accentStijl(STANDAARD_ACCENT),
     jsonLd: [{ '@context': 'https://schema.org', ...organisatie }]
   })
 }
@@ -1603,9 +2026,9 @@ if (producten?.length) {
   mkdirSync(join(DIST, 'merken'), { recursive: true })
   merken.forEach((merk, index) => {
     const buren = Array.from({ length: Math.min(8, merken.length - 1) }, (_, offset) => merken[(index + offset + 1) % merken.length])
-    const { pad, html } = merkPagina(merk.brand, merk.lijst, buren)
+    const { pad, html, laatste } = merkPagina(merk.brand, merk.lijst, buren)
     writeFileSync(join(DIST, pad.replace(/^\//, '')), html)
-    adressen.push({ loc: `${SITE}${pad}`, prioriteit: '0.7' })
+    adressen.push({ loc: `${SITE}${pad}`, prioriteit: '0.7', lastmod: laatste })
   })
   writeFileSync(join(DIST, 'merken', 'index.html'), merkenIndex(merken))
   console.log(`Geschreven: ${merken.length} merkpagina's en /merken/`)
@@ -1667,30 +2090,29 @@ if (producten?.length) {
   for (const [key, kort] of ALLERGEEN_KEUZE) {
     const pagina = allergeenPagina(key, kort, producten)
     if (!pagina) continue
-    adressen.push({ loc: `${SITE}${pagina.pad}`, prioriteit: '0.8' })
+    adressen.push({ loc: `${SITE}${pagina.pad}`, prioriteit: '0.8', lastmod: pagina.laatste })
     allergeenPaginas.push(pagina)
   }
   // Pas na de eerste ronde weten we welke pagina's echt bestaan. Zo linken we
   // alleen naar pagina's met genoeg geschikte recepten en nooit naar een 404.
   // De links schuiven per pagina door, zodat elke pagina ook links van andere
   // pagina's ontvangt in plaats van alleen de grootste acht.
-  const gesorteerd = [...allergeenPaginas].sort((eerste, tweede) => tweede.aantal - eerste.aantal || eerste.kort.localeCompare(tweede.kort, 'nl'))
   for (const pagina of allergeenPaginas) {
-    const start = gesorteerd.findIndex(({ key }) => key === pagina.key)
-    const andere = Array.from({ length: Math.min(8, gesorteerd.length - 1) }, (_, nummer) => gesorteerd[(start + 1 + nummer) % gesorteerd.length])
-      .map(({ pad, kort }) => `<a href="${pad}">Zonder ${escapeHtml(kort)}</a>`)
-      .join(' · ')
+    const andere = allergeenPaginas
+      .filter(({ key }) => key !== pagina.key)
+      .map(({ pad, kort, aantal }) => `<a class="related-allergen" href="${pad}">Zonder ${escapeHtml(kort)} <span>${getal(aantal)}</span></a>`)
+      .join('\n')
     const html = pagina.html.replace('<!-- ANDERE_ALLERGENEN -->', andere)
     writeFileSync(join(DIST, pagina.pad.replace(/^\//, '')), html)
   }
   if (allergeenPaginas.length) {
     writeFileSync(join(DIST, 'hondenvoer-zonder.html'), zonderHub(allergeenPaginas))
-    adressen.push({ loc: `${SITE}/hondenvoer-zonder.html`, prioriteit: '0.9' })
+    adressen.push({ loc: `${SITE}/hondenvoer-zonder.html`, prioriteit: '0.9', lastmod: laatsteDatum(producten) })
     console.log(`Geschreven: ${allergeenPaginas.length} allergeenpagina's en /hondenvoer-zonder.html`)
 
     const onderzoek = etikettenonderzoekPagina(producten, allergeenPaginas)
     writeFileSync(join(DIST, 'etikettenonderzoek.html'), onderzoek)
-    adressen.push({ loc: `${SITE}/etikettenonderzoek.html`, prioriteit: '0.6' })
+    adressen.push({ loc: `${SITE}/etikettenonderzoek.html`, prioriteit: '0.6', lastmod: laatsteDatum(producten) })
     console.log("Geschreven: etikettenonderzoek.html")
   }
 
@@ -1705,14 +2127,14 @@ if (producten?.length) {
     const bestand = join(DIST, pagina.pad.replace(/^\//, ''))
     mkdirSync(dirname(bestand), { recursive: true })
     writeFileSync(bestand, pagina.html)
-    adressen.push({ loc: `${SITE}${pagina.pad}`, prioriteit: '0.6' })
+    adressen.push({ loc: `${SITE}${pagina.pad}`, prioriteit: '0.6', lastmod: productDatum(product) })
     productPaginas += 1
   }
   console.log(`Geschreven: ${productPaginas} productpagina's`)
 
   const hypoallergeen = hypoallergeenPagina(producten)
   writeFileSync(join(DIST, 'hypoallergene-hondenvoeding.html'), hypoallergeen)
-  adressen.push({ loc: `${SITE}/hypoallergene-hondenvoeding.html`, prioriteit: '0.8' })
+  adressen.push({ loc: `${SITE}/hypoallergene-hondenvoeding.html`, prioriteit: '0.8', lastmod: laatsteDatum(producten ?? []) })
   console.log('Geschreven: hypoallergene-hondenvoeding.html')
 
   // Voedingspagina's zijn een aanvulling op de vergelijker: ze vangen
@@ -1721,7 +2143,7 @@ if (producten?.length) {
   const voedingsPaginas = VOEDINGS_PAGINAS.map((config) => voedingsPagina(config, producten))
   for (const pagina of voedingsPaginas) {
     writeFileSync(join(DIST, pagina.pad.replace(/^\//, '')), pagina.html)
-    adressen.push({ loc: `${SITE}${pagina.pad}`, prioriteit: '0.7' })
+    adressen.push({ loc: `${SITE}${pagina.pad}`, prioriteit: '0.7', lastmod: laatsteDatum(producten ?? []) })
   }
   console.log(`Geschreven: ${voedingsPaginas.length} voedingspagina's`)
 } else if (existsSync(join(WORTEL, 'public', 'sitemap.xml'))) {
@@ -1731,11 +2153,21 @@ if (producten?.length) {
   }
 }
 
+// De homepage en het merkenoverzicht tonen productaantallen en controledatums;
+// hun lastmod volgt daarom de laatste productcontrole, niet de builddatum.
+const laatsteProductDatum = laatsteDatum(producten ?? [])
+if (laatsteProductDatum) {
+  for (const loc of [`${SITE}/`, `${SITE}/merken/`]) {
+    const rij = adressen.find((item) => item.loc === loc)
+    if (rij) rij.lastmod = laatsteProductDatum
+  }
+}
+
 // Het controleverslag werkt ook zonder database, zodat de footerlink nooit
 // naar een 404 wijst. Met data bevat het de echte aantallen en controledatums.
 const broncontrole = broncontrolePagina(producten ?? [])
 writeFileSync(join(DIST, 'broncontrole.html'), broncontrole)
-adressen.push({ loc: `${SITE}/broncontrole.html`, prioriteit: '0.7' })
+adressen.push({ loc: `${SITE}/broncontrole.html`, prioriteit: '0.7', lastmod: laatsteDatum(producten ?? []) })
 console.log('Geschreven: broncontrole.html')
 
 // 3. Sitemap en llms.txt.
@@ -1749,7 +2181,7 @@ const sitemap = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   `<!-- build: ${new Date().toISOString()} -->`,
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  ...adressen.map(({ loc, prioriteit }) => `  <url><loc>${loc}</loc><lastmod>${VANDAAG}</lastmod><priority>${prioriteit}</priority></url>`),
+  ...adressen.map(({ loc, prioriteit, lastmod }) => `  <url><loc>${loc}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}<priority>${prioriteit}</priority></url>`),
   '</urlset>',
   ''
 ].join('\n')

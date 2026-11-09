@@ -1,0 +1,381 @@
+{
+  "_bijgewerkt": "2026-11-09",
+  "chicken": {
+    "wat": "Kip is een van de meest gebruikte eiwitbronnen in hondenvoer. Een etiket noemt lang niet altijd letterlijk “kip”; soms staat er alleen “gevogelte”, “kippenvet” of een bouillon.",
+    "direct": ["kip", "kippenvet", "kippenlever", "kippenei"],
+    "verbergt": ["gevogelte", "gevogeltevet", "bouillon", "dierlijk eiwit", "pluimveevlees", "kippenhydrolysaat"],
+    "tips": [
+      "Let op “gevogelte”: dat kan kip, kalkoen, eend of gans zijn.",
+      "Kijk ook naar vetten, bouillons en hydrolysaat; die kunnen van kip komen.",
+      "Vraag de fabrikant naar de diersoort achter een verzamelterm als “dierlijk eiwit”."
+    ],
+    "faq": [
+      {
+        "vraag": "Is “gevogelte” hetzelfde als kip?",
+        "antwoord": "Nee. Gevogelte is een verzamelnaam voor kip, kalkoen, eend en gans. Zonder nadere aanduiding weet je niet of kip erin zit."
+      },
+      {
+        "vraag": "Kan kip in “dierlijk vet” zitten?",
+        "antwoord": "Ja. Dierlijk vet kan van kip, maar ook van rund, varken of lam komen. Het etiket noemt de diersoort niet."
+      }
+    ],
+    "relatie": "Kip hoort bij de groep gevogelte, net als kalkoen, eend en gans."
+  },
+  "beef": {
+    "wat": "Rund is een veelgebruikte bron van vlees, vet en bouillon. Op etiketten kan rund ook achter “dierlijk vet”, “bouillon” of “gelatine” schuilgaan.",
+    "direct": ["rund", "rundvet", "runderlever", "runderbouillon"],
+    "verbergt": ["dierlijk vet", "bouillon", "gelatine", "collageen", "dierlijke bijproducten", "hemoglobine"],
+    "tips": [
+      "Let op “dierlijk vet” en “bouillon”: de diersoort staat er vaak niet bij.",
+      "Gelatine en collageen kunnen van rund komen, maar ook van varken of vis.",
+      "Kijk bij orgaanvlees naar woorden als lever, hart en nier; de soort moet apart genoemd zijn."
+    ],
+    "faq": [
+      {
+        "vraag": "Is “dierlijk vet” altijd rundvet?",
+        "antwoord": "Nee. Dierlijk vet kan van rund, kip, varken of lam komen. Zonder bron is het niet toe te wijzen."
+      },
+      {
+        "vraag": "Kan rund in gelatine zitten?",
+        "antwoord": "Ja. Gelatine wordt vaak van rund of varken gemaakt, maar het etiket noemt de bron niet altijd."
+      }
+    ],
+    "relatie": "Rund hoort bij de dierlijke eiwitten, net als lam en paard."
+  },
+  "lamb": {
+    "wat": "Lam is een eiwitbron die vaak als alternatief voor kip of rund wordt gekozen. Toch noemt een etiket niet altijd letterlijk “lam”; “schaap”, “lamsvet” of “bouillon” kunnen hetzelfde dier aanduiden.",
+    "direct": ["lam", "lamsvlees", "lamsvet", "lamsbouillon"],
+    "verbergt": ["schapenvlees", "dierlijk vet", "bouillon", "dierlijke bijproducten", "schapenvet"],
+    "tips": [
+      "Let op “schaap” en “lamsvlees”: beide wijzen op hetzelfde dier.",
+      "Lamsvet en lamsbouillon kunnen in het product zitten zonder dat “lam” in de hoofdlijst staat.",
+      "Controleer ook snacks en kauwsticks; die vallen buiten de ingrediëntenlijst."
+    ],
+    "faq": [
+      {
+        "vraag": "Is “schaap” hetzelfde als lam?",
+        "antwoord": "Nee, lam is een jong schaap. Voor de allergenenlijst tellen beide als schaap/lam."
+      },
+      {
+        "vraag": "Kan lam in “dierlijk vet” zitten?",
+        "antwoord": "Ja, dierlijk vet kan van lam komen, maar ook van andere dieren."
+      }
+    ],
+    "relatie": "Lam hoort bij de dierlijke eiwitten, net als rund en paard."
+  },
+  "turkey": {
+    "wat": "Kalkoen is een gevogeltebron die vaak als alternatief voor kip wordt gebruikt. Een etiket dat alleen “gevogelte” noemt, zegt niet of kalkoen erin zit.",
+    "direct": ["kalkoen", "kalkoenvlees", "kalkoenvet", "kalkoenlever"],
+    "verbergt": ["gevogelte", "gevogeltevet", "bouillon", "dierlijk eiwit", "pluimveevlees", "gevogeltehydrolysaat"],
+    "tips": [
+      "Let op “gevogelte”: dat kan kip, kalkoen, eend of gans zijn.",
+      "Kalkoenvet en kalkoenbouillon kunnen onder een verzamelterm staan.",
+      "Vraag bij “pluimveevlees” naar de soort."
+    ],
+    "faq": [
+      {
+        "vraag": "Is kalkoen hetzelfde als gevogelte?",
+        "antwoord": "Kalkoen valt onder gevogelte, maar gevogelte is breder: het kan ook kip, eend of gans zijn."
+      },
+      {
+        "vraag": "Kan kalkoen in “dierlijk eiwit” zitten?",
+        "antwoord": "Ja, dierlijk eiwit kan van kalkoen komen, maar ook van andere dieren."
+      }
+    ],
+    "relatie": "Kalkoen hoort bij de groep gevogelte, net als kip, eend en gans."
+  },
+  "duck": {
+    "wat": "Eend is een gevogeltebron met een eigen smaak en vetgehalte. Op het etiket kan eend ook achter “gevogelte”, “gevogeltevet” of “bouillon” schuilgaan.",
+    "direct": ["eend", "eendenvlees", "eendenvet", "eendenlever"],
+    "verbergt": ["gevogelte", "gevogeltevet", "bouillon", "dierlijk eiwit", "pluimveevlees", "eendenhydrolysaat"],
+    "tips": [
+      "Let op “gevogelte”: dat kan eend, kip, kalkoen of gans zijn.",
+      "Eendenvet en eendenlever zijn dierlijke delen; de soort moet duidelijk zijn.",
+      "Controleer ook paté en natvoer; daar staat vaker een verzamelterm."
+    ],
+    "faq": [
+      {
+        "vraag": "Is eend hetzelfde als gevogelte?",
+        "antwoord": "Eend valt onder gevogelte, maar gevogelte omvat meer soorten."
+      },
+      {
+        "vraag": "Kan eend in “dierlijk vet” zitten?",
+        "antwoord": "Ja, dierlijk vet kan van eend komen, maar ook van andere dieren."
+      }
+    ],
+    "relatie": "Eend hoort bij de groep gevogelte, net als kip, kalkoen en gans."
+  },
+  "fish": {
+    "wat": "Vis is een brede categorie met veel soorten, zoals kabeljauw, zalm, haring en witvis. Een etiket dat alleen “vis” of “vismeel” noemt, zegt niet welke soort erin zit.",
+    "direct": ["vis", "vismeel", "visolie", "witvis", "zalm", "kabeljauw"],
+    "verbergt": ["visbijproducten", "zeevis", "zoetwatervis", "viseiwit", "visbouillon", "vismeel"],
+    "tips": [
+      "Let op “vis” en “vismeel”: de soort staat er vaak niet bij.",
+      "Visolie kan van zalm, kabeljauw of een andere vis komen.",
+      "Kies bij een visallergie bij voorkeur een product dat de soort bij name noemt."
+    ],
+    "faq": [
+      {
+        "vraag": "Is “vis” hetzelfde als zalm?",
+        "antwoord": "Nee. Zalm is één vissoort; “vis” kan van alles zijn."
+      },
+      {
+        "vraag": "Kan vis in “dierlijk vet” zitten?",
+        "antwoord": "Nee, vis valt op Europese etiketten buiten “dierlijk vet”; visolie en vismeel staan er meestal apart op."
+      }
+    ],
+    "relatie": "Vis omvat ook zalm; bekijk die pagina als je specifiek zalm wilt vermijden."
+  },
+  "salmon": {
+    "wat": "Zalm is een populaire vissoort in hondenvoer, zowel als vlees, meel als olie. Een etiket dat alleen “vis” of “visolie” noemt, noemt niet automatisch zalm.",
+    "direct": ["zalm", "zalmolie", "zalmeiwit", "zalmmeel"],
+    "verbergt": ["vis", "visolie", "vismeel", "visbijproducten", "viseiwit"],
+    "tips": [
+      "Let op “vis” en “visolie”: daar kan zalm achter zitten.",
+      "Zalmeiwit en zalmolie kunnen ook onder “vis” staan.",
+      "Controleer de volledige ingrediëntenlijst, niet alleen de eerste regel."
+    ],
+    "faq": [
+      {
+        "vraag": "Is zalm hetzelfde als vis?",
+        "antwoord": "Zalm is een vissoort, maar “vis” kan ook kabeljauw, haring of witvis betekenen."
+      },
+      {
+        "vraag": "Kan zalm in visolie zitten?",
+        "antwoord": "Ja, visolie kan van zalm komen, maar ook van andere vissoorten."
+      }
+    ],
+    "relatie": "Zalm valt onder vis; bekijk ook de vispagina."
+  },
+  "wheat": {
+    "wat": "Tarwe is een graansoort die gluten bevat. Op etiketten kan tarwe ook als “meel”, “bloem”, “tarwegluten” of “granen” staan.",
+    "direct": ["tarwe", "tarwegluten", "tarwebloem", "tarwezetmeel"],
+    "verbergt": ["meel", "bloem", "granen", "zetmeel", "mout", "graanproducten"],
+    "tips": [
+      "Let op “granen” en “meel”: die noemen niet altijd tarwe.",
+      "Tarwegluten en tarwezetmeel zijn nog steeds tarwe.",
+      "Lees ook de kleine lettertjes bij “bestaande uit”."
+    ],
+    "faq": [
+      {
+        "vraag": "Is “granen” hetzelfde als tarwe?",
+        "antwoord": "Nee. Granen is een verzamelnaam voor tarwe, gerst, haver, maïs, rijst en meer."
+      },
+      {
+        "vraag": "Kan tarwe in “zetmeel” zitten?",
+        "antwoord": "Ja, zetmeel kan van tarwe, maïs of aardappel komen."
+      }
+    ],
+    "relatie": "Tarwe hoort bij de granen, net als maïs en rijst."
+  },
+  "grains": {
+    "wat": "Granen is een verzamelnaam voor tarwe, gerst, haver, maïs, rijst, spelt en andere graansoorten. Een etiket dat alleen “granen” noemt, zegt niet welke soort erin zit.",
+    "direct": ["tarwe", "gerst", "haver", "maïs", "rijst", "spelt"],
+    "verbergt": ["granen", "graanproducten", "meel", "zetmeel", "mout", "gluten"],
+    "tips": [
+      "Let op “granen” en “graanproducten”: de soort staat er vaak niet bij.",
+      "Mout en moutmeel zijn meestal van gerst, maar niet altijd.",
+      "Bij een glutenallergie is de specifieke graansoort belangrijk."
+    ],
+    "faq": [
+      {
+        "vraag": "Betekent “granen” dat er tarwe in zit?",
+        "antwoord": "Niet per se. Het kan ook gerst, haver, maïs of rijst zijn."
+      },
+      {
+        "vraag": "Is “graanvrij” hetzelfde als glutenvrij?",
+        "antwoord": "Nee. Graanvrij zegt niets over sporen of andere glutenbronnen; glutenvrij is een strengere claim."
+      }
+    ],
+    "relatie": "Granen omvat tarwe, maïs en rijst; bekijk die pagina's voor meer detail."
+  },
+  "milk": {
+    "wat": "Melk en zuivel kunnen in hondenvoer zitten als melkpoeder, wei, lactose of caseïne. Een etiket dat alleen “zuivel” noemt, zegt niet welk zuivelproduct erin zit.",
+    "direct": ["melk", "melkpoeder", "wei", "weipoeder", "lactose", "caseïne"],
+    "verbergt": ["kaas", "yoghurt", "boter", "room", "zuivel", "melkeiwit"],
+    "tips": [
+      "Let op “wei” en “weipoeder”: dat zijn melkbestanddelen.",
+      "Caseïne en lactose wijzen op melk.",
+      "Ook “boter” en “room” zijn zuivel."
+    ],
+    "faq": [
+      {
+        "vraag": "Is lactosevrij hetzelfde als melkvrij?",
+        "antwoord": "Nee. Lactosevrij kan nog steeds melkeiwit bevatten."
+      },
+      {
+        "vraag": "Kan melk in “dierlijk vet” zitten?",
+        "antwoord": "Nee, melk valt niet onder dierlijk vet; het staat er meestal apart op."
+      }
+    ],
+    "relatie": "Melk hoort bij de dierlijke producten, net als ei."
+  },
+  "egg": {
+    "wat": "Ei kan in hondenvoer zitten als eipoeder, eigeel of eialbumine. Het woord “eiwit” alleen betekent niet automatisch ei; dat kan ook dierlijk of plantaardig eiwit zijn.",
+    "direct": ["ei", "eieren", "eipoeder", "eigeel", "eialbumine"],
+    "verbergt": ["eiproducten", "eibijproducten", "lysozym", "eiwit", "albumine"],
+    "tips": [
+      "Let op “ei” en “eipoeder”; die zijn meestal duidelijk.",
+      "Eialbumine en lysozym zijn eibestanddelen.",
+      "Het losse woord “eiwit” is geen bewijs voor ei."
+    ],
+    "faq": [
+      {
+        "vraag": "Is “eiwit” hetzelfde als ei?",
+        "antwoord": "Nee. Eiwit is een voedingsstof; ei is een ingrediënt. Alleen “ei”, “eipoeder” of “eialbumine” wijzen op ei."
+      },
+      {
+        "vraag": "Kan ei in “dierlijk eiwit” zitten?",
+        "antwoord": "Nee, ei staat op Europese etiketten apart van dierlijk eiwit."
+      }
+    ],
+    "relatie": "Ei hoort bij de dierlijke producten, net als melk."
+  },
+  "soy": {
+    "wat": "Soja kan in hondenvoer zitten als sojameel, sojaolie of soja-eiwit. Een etiket dat alleen “plantaardige eiwitten” of “plantaardige olie” noemt, kan soja verbergen.",
+    "direct": ["soja", "sojameel", "sojaolie", "soja-eiwit", "sojaboon"],
+    "verbergt": ["plantaardige eiwitten", "plantaardige olie", "plantaardige bijproducten", "eiwitextracten"],
+    "tips": [
+      "Let op “plantaardige eiwitten”: de plantensoort staat er niet bij.",
+      "Sojaolie en sojameel zijn duidelijke sojavormen.",
+      "Bij een soja-allergie zijn ook “plantaardige bijproducten” onbetrouwbaar."
+    ],
+    "faq": [
+      {
+        "vraag": "Is “plantaardige olie” altijd sojaolie?",
+        "antwoord": "Nee. Het kan ook zonnebloem, koolzaad of een andere plant zijn."
+      },
+      {
+        "vraag": "Kan soja in “plantaardige eiwitten” zitten?",
+        "antwoord": "Ja, soja is een van de plantaardige eiwitbronnen die achter die term kan zitten."
+      }
+    ],
+    "relatie": "Soja hoort bij de peulvruchten, net als erwt."
+  },
+  "corn": {
+    "wat": "Maïs is een graansoort die vaak als zetmeel- of eiwitbron wordt gebruikt. Op etiketten kan maïs ook als “maïsmeel”, “maïszetmeel” of “granen” staan.",
+    "direct": ["maïs", "maïsmeel", "maïszetmeel", "maïsolie", "maïseiwit"],
+    "verbergt": ["granen", "zetmeel", "graanproducten", "meel"],
+    "tips": [
+      "Let op “zetmeel” en “granen”: de bron staat er niet altijd bij.",
+      "Maïsolie en maïsmeel zijn duidelijke maïsvormen.",
+      "Bij een maïsallergie is de specifieke graansoort belangrijk."
+    ],
+    "faq": [
+      {
+        "vraag": "Is “zetmeel” altijd maïs?",
+        "antwoord": "Nee. Zetmeel kan ook van tarwe, aardappel of tapioca komen."
+      },
+      {
+        "vraag": "Kan maïs in “granen” zitten?",
+        "antwoord": "Ja, maïs is een graansoort."
+      }
+    ],
+    "relatie": "Maïs hoort bij de granen, net als tarwe en rijst."
+  },
+  "rice": {
+    "wat": "Rijst is een graansoort die vaak als zetmeelbron wordt gebruikt. Op etiketten kan rijst ook als “rijstmeel”, “rijstzetmeel” of “granen” staan.",
+    "direct": ["rijst", "rijstmeel", "rijstzetmeel", "zilvervliesrijst", "breukrijst"],
+    "verbergt": ["granen", "zetmeel", "graanproducten", "meel"],
+    "tips": [
+      "Let op “zetmeel” en “granen”: de bron staat er niet altijd bij.",
+      "Rijstmeel en rijstzetmeel zijn duidelijke rijstvormen.",
+      "Bij een rijstallergie is de specifieke graansoort belangrijk."
+    ],
+    "faq": [
+      {
+        "vraag": "Is “zetmeel” altijd rijst?",
+        "antwoord": "Nee. Zetmeel kan ook van tarwe, maïs of aardappel komen."
+      },
+      {
+        "vraag": "Kan rijst in “granen” zitten?",
+        "antwoord": "Ja, rijst is een graansoort."
+      }
+    ],
+    "relatie": "Rijst hoort bij de granen, net als tarwe en maïs."
+  },
+  "potato": {
+    "wat": "Aardappel kan in hondenvoer zitten als aardappelmeel, aardappelzetmeel of aardappeleiwit. Een etiket dat alleen “zetmeel” of “plantaardige bijproducten” noemt, kan aardappel verbergen.",
+    "direct": ["aardappel", "aardappelmeel", "aardappelzetmeel", "aardappeleiwit", "zoete aardappel"],
+    "verbergt": ["zetmeel", "plantaardige bijproducten", "plantaardige eiwitten", "eiwitextracten"],
+    "tips": [
+      "Let op “zetmeel”: dat kan van aardappel, tarwe of maïs komen.",
+      "Aardappeleiwit is een duidelijke aardappelvorm.",
+      "Bij een aardappelallergie zijn “plantaardige bijproducten” onbetrouwbaar."
+    ],
+    "faq": [
+      {
+        "vraag": "Is “zetmeel” altijd aardappelzetmeel?",
+        "antwoord": "Nee. Zetmeel kan ook van tarwe, maïs of tapioca komen."
+      },
+      {
+        "vraag": "Kan aardappel in “plantaardige bijproducten” zitten?",
+        "antwoord": "Ja, dat is een verzamelterm waar aardappel achter kan zitten."
+      }
+    ],
+    "relatie": "Aardappel hoort bij de zetmeelbronnen, net als maïs en rijst."
+  },
+  "pea": {
+    "wat": "Erwt is een peulvrucht die als eiwit- en vezelbron wordt gebruikt. Op etiketten kan erwt ook als “erwteneiwit”, “erwtenvezel” of “plantaardige eiwitten” staan.",
+    "direct": ["erwt", "erwten", "erwteneiwit", "erwtenvezel", "spliterwt"],
+    "verbergt": ["plantaardige eiwitten", "plantaardige bijproducten", "eiwitextracten", "plantaardige vezels"],
+    "tips": [
+      "Let op “plantaardige eiwitten”: de plantensoort staat er niet bij.",
+      "Erwteneiwit en erwtenvezel zijn duidelijke erwtvormen.",
+      "Bij een erwtallergie zijn “plantaardige bijproducten” onbetrouwbaar."
+    ],
+    "faq": [
+      {
+        "vraag": "Is “plantaardig eiwit” altijd erwt?",
+        "antwoord": "Nee. Het kan ook soja, aardappel of een andere plant zijn."
+      },
+      {
+        "vraag": "Kan erwt in “plantaardige bijproducten” zitten?",
+        "antwoord": "Ja, dat is een verzamelterm waar erwt achter kan zitten."
+      }
+    ],
+    "relatie": "Erwt hoort bij de peulvruchten, net als soja."
+  },
+  "insect": {
+    "wat": "Insecten worden steeds vaker als duurzame eiwitbron gebruikt. Op etiketten staan ze als “insecten”, “larven”, “meelwormen” of bijvoorbeeld “soldatenvlieg”.",
+    "direct": ["insecten", "larven", "meelwormen", "buffalowormen", "soldatenvlieg", "insectenmeel"],
+    "verbergt": ["dierlijke eiwitten", "dierlijk eiwit", "bijproducten", "insectenolie", "chitine"],
+    "tips": [
+      "Let op de Latijnse naam: bijvoorbeeld Hermetia illucens is de zwarte soldatenvlieg.",
+      "Ook “dierlijke eiwitten” kan insecten bevatten.",
+      "Controleer snacks en kauwproducten apart."
+    ],
+    "faq": [
+      {
+        "vraag": "Zijn insecten hetzelfde als vlees?",
+        "antwoord": "Nee. Insecten zijn een aparte dierlijke eiwitbron."
+      },
+      {
+        "vraag": "Kan insect in “dierlijk eiwit” zitten?",
+        "antwoord": "Ja, dierlijk eiwit is een verzamelterm waar insecten onder kunnen vallen."
+      }
+    ],
+    "relatie": "Insecten horen bij de dierlijke eiwitten, net als vis en gevogelte."
+  },
+  "horse": {
+    "wat": "Paard is een minder gebruikelijke eiwitbron in hondenvoer, maar komt voor in rauwvoer en speciale producten. Op etiketten kan paard ook achter “dierlijk vet” of “bouillon” schuilgaan.",
+    "direct": ["paard", "paardenvlees", "paardenvet", "paardenlever", "paardenbouillon"],
+    "verbergt": ["dierlijk vet", "bouillon", "dierlijke bijproducten", "gelatine", "collageen"],
+    "tips": [
+      "Let op “paardenvlees” en “paardenvet”; die zijn meestal duidelijk.",
+      "Paardenbouillon en paardenlever zijn dierlijke delen.",
+      "Bij twijfel over “dierlijk vet” kan de diersoort paard zijn."
+    ],
+    "faq": [
+      {
+        "vraag": "Is paard hetzelfde als rund?",
+        "antwoord": "Nee, paard is een aparte diersoort."
+      },
+      {
+        "vraag": "Kan paard in “dierlijk vet” zitten?",
+        "antwoord": "Ja, dierlijk vet kan van paard komen, maar ook van andere dieren."
+      }
+    ],
+    "relatie": "Paard hoort bij de dierlijke eiwitten, net als rund en lam."
+  }
+}
