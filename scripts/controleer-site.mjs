@@ -82,7 +82,7 @@ try {
   // 3. Merk-deeplink
   await open('/?merk=Acana', '.product-card')
   const filter = await page.locator('.brand-filter .filter-summary').innerText()
-  meld(/1 van 60 merken/.test(filter), 'merk-deeplink selecteert één merk', filter)
+  meld(/1 van \d+ merken/.test(filter), 'merk-deeplink selecteert één merk', filter)
 
   // 3b. Voedingswaarden op de kaart en in het detail
   await open('/?merk=Prins%20Petfoods', '.product-card')

@@ -1919,17 +1919,19 @@ ${faq.map(({ vraag, antwoord }) => `        <details><summary>${escapeHtml(vraag
   })
 }
 
-function llmsTxt(heeftOnderzoek, aantalAdressen = 0, aantalProducten = 0) {
+function llmsTxt(heeftOnderzoek, aantalAdressen = 0, aantalProducten = 0, aantalMerken = 0) {
   let basis = readFileSync(join(WORTEL, 'public', 'llms.txt'), 'utf8')
     .replace(/Laatst bijgewerkt: .*?\./, `Laatst bijgewerkt: ${datumNl(VANDAAG)}.`)
   if (aantalAdressen) {
     basis = basis.replace(/- [\d.]+ pagina's in de sitemap\./, `- ${getal(aantalAdressen)} pagina's in de sitemap.`)
   }
   if (aantalProducten) {
-    basis = basis.replace(
-      /- De bronnen worden wekelijks gecontroleerd\./,
-      `- ${getal(aantalProducten)} aparte productpagina's met ingrediënten, voedingswaarden en allergenoordeel.\n- De bronnen worden wekelijks gecontroleerd.`
-    )
+    basis = basis
+      .replace(/- [\d.]+ producten van [\d.]+ merken\./, `- ${getal(aantalProducten)} producten van ${getal(aantalMerken)} merken.`)
+      .replace(
+        /- De bronnen worden wekelijks gecontroleerd\./,
+        `- ${getal(aantalProducten)} aparte productpagina's met ingrediënten, voedingswaarden en allergenoordeel.\n- De bronnen worden wekelijks gecontroleerd.`
+      )
   }
   if (heeftOnderzoek) return basis
   return basis.replace(/- \[Etikettenonderzoek\].*\n/, '')
@@ -2131,7 +2133,7 @@ console.log('Geschreven: broncontrole.html')
 
 // 3. Sitemap en llms.txt.
 const heeftOnderzoek = existsSync(join(DIST, 'etikettenonderzoek.html'))
-writeFileSync(join(DIST, 'llms.txt'), llmsTxt(heeftOnderzoek, adressen.length, producten?.length ?? 0))
+writeFileSync(join(DIST, 'llms.txt'), llmsTxt(heeftOnderzoek, adressen.length, producten?.length ?? 0, new Set((producten ?? []).map((product) => product.brand)).size))
 
 // Een buildstempel zorgt dat sitemap.xml bij elke deploy echt verandert. De
 // FTP-actie slaat bestanden met identieke inhoud over; zonder dit blijft een
