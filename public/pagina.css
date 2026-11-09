@@ -1,23 +1,23 @@
 /* Gedeelde opmaak voor de statische inhoudspagina's (geen React nodig). */
 :root {
-  --bg: #f5f7f4;
+  --bg: #f6f7f5;
   --surface: #ffffff;
-  --surface-soft: #f0f4ef;
+  --surface-soft: #f3f5f2;
   --ink: #18261c;
   --ink-soft: #3b4f42;
   --muted: #5f7065;
   --line: #d6dfd7;
   --line-soft: #e8eee9;
   --accent: #175b30;
-  --accent-soft: #e8f1ea;
-  --ok: #175b30;
-  --ok-soft: #e6f1e9;
-  --check: #8a5a00;
-  --check-soft: #fdf3d6;
-  --excluded: #8a2f2f;
-  --excluded-soft: #fbe9e9;
-  --radius: 6px;
-  --shadow: 0 1px 2px rgba(19, 47, 28, 0.04), 0 10px 26px rgba(19, 47, 28, 0.05);
+  --accent-soft: #eef3ef;
+  --ok: #25603e;
+  --ok-soft: #f1f6f2;
+  --check: #7a5a12;
+  --check-soft: #fbf6e8;
+  --excluded: #8a3b3b;
+  --excluded-soft: #fbf1f1;
+  --radius: 3px;
+  --shadow: none;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   color: var(--ink);
   background: var(--bg);
@@ -84,53 +84,33 @@ li { margin: 0.25rem 0; }
 .page-hero {
   position: relative;
   margin: 0 0 1.1rem;
-  padding: 1.6rem 1.7rem 1.5rem;
+  padding: 1.5rem 1.6rem 1.4rem;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 100% 0%, var(--accent-soft) 0, rgba(255, 255, 255, 0) 42%),
-    var(--surface);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-.page-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 5px;
-  background: var(--accent);
 }
 .page-hero h1 { max-width: 22ch; }
 .page-hero .lead { margin-bottom: 0.7rem; }
 .page-hero .updated { margin-bottom: 1rem; }
 .hero-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
-.hero-mark {
-  display: grid;
-  place-items: center;
-  width: 3rem;
-  height: 3rem;
-  flex: 0 0 auto;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent);
-  border: 1px solid var(--accent-soft);
-  font-size: 1.2rem;
-  font-weight: 800;
-}
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
 .verdict-badge {
   display: inline-flex;
   align-items: center;
   max-width: 100%;
   padding: 0.32rem 0.65rem;
-  border: 1px solid var(--accent-soft);
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--surface-soft);
+  color: var(--ink-soft);
   font-size: 0.78rem;
   font-weight: 700;
   line-height: 1.3;
 }
+.verdict-badge.tone-ok { background: var(--ok-soft); border-color: #d7e4da; color: var(--ok); }
+.verdict-badge.tone-check { background: var(--check-soft); border-color: #eadfc4; color: var(--check); }
+.verdict-badge.tone-excluded { background: var(--excluded-soft); border-color: #ead6d6; color: var(--excluded); }
 .partner-note { margin: 0 0 1.2rem; color: var(--muted); }
 
 /* Statistieken */
@@ -144,9 +124,7 @@ li { margin: 0.25rem 0; }
   padding: 0.9rem 1rem;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-top: 3px solid var(--accent);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
 }
 .stat-card strong {
   display: block;
@@ -160,10 +138,9 @@ li { margin: 0.25rem 0; }
 /* Antwoord en callouts */
 .answer-box {
   margin: 1.1rem 0;
-  padding: 1.1rem 1.25rem;
-  background: linear-gradient(135deg, var(--accent-soft), var(--surface) 70%);
+  padding: 1.05rem 1.2rem;
+  background: var(--surface-soft);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--accent);
   border-radius: var(--radius);
 }
 .answer-label {
@@ -183,11 +160,11 @@ li { margin: 0.25rem 0; }
   margin: 1.1rem 0;
   padding: 0.9rem 1rem;
   background: var(--surface-soft);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 var(--radius) var(--radius) 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
 }
 .callout p:last-child { margin-bottom: 0; }
-.callout.warn { background: var(--check-soft); border-left-color: var(--check); }
+.callout.warn { background: var(--check-soft); border-color: #eadfc4; }
 
 /* Secties */
 .section-card {
@@ -196,7 +173,6 @@ li { margin: 0.25rem 0; }
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
   scroll-margin-top: 4.5rem;
 }
 .section-card > h2:first-child, .section-card > .section-head:first-child { margin-top: 0; }
@@ -218,18 +194,17 @@ li { margin: 0.25rem 0; }
   gap: 0.35rem;
   margin: 0.2rem 0.4rem 0.2rem 0;
   padding: 0.55rem 0.95rem;
-  background: var(--cta-accent, var(--accent));
+  background: var(--accent);
   color: #fff;
   font-weight: 700;
   font-size: 0.9rem;
   text-decoration: none;
-  border: 1px solid var(--cta-accent, var(--accent));
-  border-radius: 4px;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
 }
 .cta:hover { background: #114624; color: #fff; }
-.cta.secondary { background: #fff; color: var(--cta-accent, var(--accent)); }
-.cta.secondary:hover { background: var(--cta-soft, var(--accent-soft)); color: var(--cta-accent, var(--accent)); }
-.page-product .hero-actions { --cta-accent: #175b30; --cta-soft: #eaf1ec; }
+.cta.secondary { background: #fff; color: var(--accent); border-color: #b9c9bd; }
+.cta.secondary:hover { background: var(--surface-soft); color: var(--accent); }
 .link-button {
   padding: 0;
   border: 0;
@@ -251,7 +226,6 @@ li { margin: 0.25rem 0; }
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: 0 4px 18px rgba(19, 47, 28, 0.04);
 }
 .toolbar-row { display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap; }
 .toolbar-row-wrap { justify-content: space-between; }
@@ -281,7 +255,7 @@ li { margin: 0.25rem 0; }
   justify-content: center;
   padding: 0.32rem 0.65rem;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 3px;
   background: #fff;
   color: var(--ink-soft);
   font: inherit;
@@ -313,18 +287,13 @@ li { margin: 0.25rem 0; }
   padding: 0.95rem 1rem;
   background: #fff;
   border: 1px solid var(--line);
-  border-top: 3px solid var(--type-color, var(--accent));
   border-radius: var(--radius);
-  transition: border-color 0.12s ease, box-shadow 0.12s ease, transform 0.12s ease;
+  transition: border-color 0.12s ease, background 0.12s ease;
 }
 .product-card:hover {
-  border-color: var(--type-color, var(--accent));
-  box-shadow: 0 6px 18px rgba(19, 47, 28, 0.08);
-  transform: translateY(-1px);
+  border-color: #b9c9bd;
+  background: #fcfdfb;
 }
-.product-card.type-kibble { --type-color: #175b30; }
-.product-card.type-wet { --type-color: #1f5f8b; }
-.product-card.type-raw { --type-color: #8a5a00; }
 .product-card-top { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; }
 .product-brand {
   overflow: hidden;
@@ -338,7 +307,7 @@ li { margin: 0.25rem 0; }
   white-space: nowrap;
 }
 .product-brand:hover { color: var(--accent); }
-.product-type { flex: 0 0 auto; font-size: 0.72rem; color: var(--type-color, var(--muted)); font-weight: 600; }
+.product-type { flex: 0 0 auto; font-size: 0.72rem; color: var(--muted); font-weight: 600; }
 .product-title { margin: 0; font-size: 1.02rem; line-height: 1.35; }
 .product-title a { color: var(--ink); text-decoration: none; }
 .product-title a:hover { color: var(--accent); text-decoration: underline; }
@@ -384,7 +353,6 @@ li { margin: 0.25rem 0; }
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
 }
 .overview-label {
   margin: 0 0 0.55rem;
@@ -424,46 +392,49 @@ li { margin: 0.25rem 0; }
 /* Productpagina: inhoudsopgave */
 .section-nav {
   position: sticky;
-  top: 0.5rem;
+  top: 0;
   z-index: 9;
   display: flex;
-  gap: 0.4rem;
+  gap: 1rem;
   overflow-x: auto;
   margin: 0 0 1.1rem;
-  padding: 0.45rem;
-  background: rgba(245, 247, 244, 0.94);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--line);
-  border-radius: 999px;
+  padding: 0.55rem 0;
+  background: rgba(246, 247, 245, 0.96);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 .section-nav a {
   flex: 0 0 auto;
-  padding: 0.3rem 0.65rem;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-size: 0.78rem;
+  padding: 0.15rem 0;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  font-size: 0.8rem;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
 }
-.section-nav a:hover { border-color: var(--accent); color: var(--accent); }
+.section-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
 /* Productpagina: allergenen */
 .allergen-block {
   margin: 0.8rem 0;
   padding: 0.9rem 1rem;
   border: 1px solid var(--line-soft);
-  border-left: 4px solid var(--tone);
-  border-radius: 4px;
+  border-radius: var(--radius);
   background: var(--surface);
 }
-.allergen-block.tone-excluded { --tone: var(--excluded); background: linear-gradient(90deg, var(--excluded-soft), #fff 55%); }
-.allergen-block.tone-check { --tone: #c28a1a; background: linear-gradient(90deg, var(--check-soft), #fff 55%); }
-.allergen-block.tone-ok { --tone: var(--ok); background: linear-gradient(90deg, var(--ok-soft), #fff 55%); }
+.allergen-block.tone-excluded { --tone: var(--excluded); }
+.allergen-block.tone-check { --tone: #a7791f; }
+.allergen-block.tone-ok { --tone: var(--ok); }
 .allergen-block-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.8rem; flex-wrap: wrap; }
 .allergen-block-head h3 { display: flex; align-items: center; gap: 0.4rem; margin: 0; font-size: 0.95rem; }
+.allergen-block-head h3::before {
+  content: '';
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: var(--tone);
+}
 .allergen-block-head p { margin: 0; color: var(--muted); font-size: 0.8rem; }
 .allergen-block .allergen-count {
   display: inline-grid;
@@ -471,9 +442,9 @@ li { margin: 0.25rem 0; }
   min-width: 1.4rem;
   height: 1.4rem;
   padding: 0 0.35rem;
-  border-radius: 999px;
-  background: var(--tone);
-  color: #fff;
+  border-radius: 3px;
+  background: var(--surface-soft);
+  color: var(--ink-soft);
   font-size: 0.72rem;
   line-height: 1;
 }
@@ -541,12 +512,9 @@ mark.uncertain {
   gap: 0.2rem;
   padding: 0.8rem 0.9rem;
   border: 1px solid var(--line-soft);
-  border-top: 3px solid var(--line);
-  border-radius: 4px;
+  border-radius: var(--radius);
   background: #fbfcfb;
 }
-.source-card.is-ok { border-top-color: var(--ok); }
-.source-card.is-check { border-top-color: #c28a1a; }
 .source-label { color: var(--muted); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
 .source-value { color: var(--ink); font-size: 0.9rem; }
 .source-value a { text-decoration: none; }
@@ -583,16 +551,16 @@ mark.uncertain {
   display: inline-block;
   padding: 0.15rem 0.45rem;
   border: 1px solid var(--line);
-  border-radius: 3px;
+  border-radius: 2px;
   background: #f7f9f7;
   color: var(--ink-soft);
   font-size: 0.74rem;
   line-height: 1.4;
   white-space: nowrap;
 }
-.tag.ok { background: var(--ok-soft); border-color: #c3dbc9; color: var(--ok); font-weight: 600; }
-.tag.check { background: var(--check-soft); border-color: #e7d29a; color: var(--check); font-weight: 600; }
-.tag.excluded { background: var(--excluded-soft); border-color: #e8c6c6; color: var(--excluded); font-weight: 600; }
+.tag.ok { background: var(--ok-soft); border-color: #d7e4da; color: var(--ok); font-weight: 600; }
+.tag.check { background: var(--check-soft); border-color: #eadfc4; color: var(--check); font-weight: 600; }
+.tag.excluded { background: var(--excluded-soft); border-color: #ead6d6; color: var(--excluded); font-weight: 600; }
 
 /* Allergenenhub en verwante links */
 .allergen-groups { display: grid; gap: 1.1rem; }
@@ -606,45 +574,24 @@ mark.uncertain {
 .allergen-card {
   position: relative;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 0.15rem 0.6rem;
   align-items: center;
   padding: 0.85rem 0.9rem;
-  overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
   color: inherit;
   text-decoration: none;
-  transition: border-color 0.12s ease, box-shadow 0.12s ease, transform 0.12s ease;
-}
-.allergen-card::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 4px;
-  background: var(--accent);
+  transition: border-color 0.12s ease, background 0.12s ease;
 }
 .allergen-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 6px 18px rgba(19, 47, 28, 0.08);
-  transform: translateY(-1px);
+  border-color: #b9c9bd;
+  background: #fcfdfb;
 }
-.allergen-mark {
-  display: grid;
-  place-items: center;
-  width: 2.1rem;
-  height: 2.1rem;
-  grid-row: span 2;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-weight: 800;
-}
-.allergen-card .allergen-name { grid-column: 2; color: var(--ink); font-weight: 700; }
-.allergen-card .allergen-count { grid-column: 2; margin: 0; color: var(--muted); font-size: 0.78rem; }
-.allergen-arrow { grid-column: 3; grid-row: 1 / span 2; color: var(--accent); font-weight: 700; }
+.allergen-card .allergen-name { color: var(--ink); font-weight: 700; }
+.allergen-card .allergen-count { margin: 0; color: var(--muted); font-size: 0.78rem; }
+.allergen-arrow { grid-column: 2; grid-row: 1 / span 2; color: var(--muted); font-weight: 700; }
 .related-allergens { display: flex; flex-wrap: wrap; gap: 0.45rem; line-height: 1.5; }
 .related-allergen {
   display: inline-flex;
@@ -732,7 +679,6 @@ footer nav a:hover { text-decoration: underline; }
   h1 { font-size: 1.6rem; }
   .page-hero { padding: 1.2rem 1.15rem 1.15rem; }
   .page-hero h1 { max-width: none; }
-  .hero-mark { width: 2.5rem; height: 2.5rem; font-size: 1rem; }
   .stat-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-card:last-child { grid-column: 1 / -1; }
   .product-grid { grid-template-columns: 1fr; }

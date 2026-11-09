@@ -118,38 +118,6 @@ const slug = slugify
 
 const typeLabel = (key) => FOOD_TYPES.find(([sleutel]) => sleutel === key)?.[1] ?? key
 
-// Elke allergeenpagina krijgt een eigen accentkleur. Zo voelt een pagina over
-// kip anders dan een pagina over granen, zonder de huisstijl te verlaten.
-const ALLERGEEN_ACCENTEN = {
-  chicken: { accent: '#8a5a00', soft: '#fdf3d6' },
-  turkey: { accent: '#8a5a00', soft: '#fdf3d6' },
-  duck: { accent: '#8a5a00', soft: '#fdf3d6' },
-  beef: { accent: '#8a2f2f', soft: '#fbe9e9' },
-  lamb: { accent: '#8a2f2f', soft: '#fbe9e9' },
-  horse: { accent: '#8a2f2f', soft: '#fbe9e9' },
-  fish: { accent: '#1f5f8b', soft: '#e3f0f8' },
-  salmon: { accent: '#1f5f8b', soft: '#e3f0f8' },
-  wheat: { accent: '#7a5b00', soft: '#fbf2d5' },
-  grains: { accent: '#7a5b00', soft: '#fbf2d5' },
-  corn: { accent: '#7a5b00', soft: '#fbf2d5' },
-  rice: { accent: '#7a5b00', soft: '#fbf2d5' },
-  milk: { accent: '#5e3f7a', soft: '#f1eaf7' },
-  egg: { accent: '#5e3f7a', soft: '#f1eaf7' },
-  soy: { accent: '#5e3f7a', soft: '#f1eaf7' },
-  potato: { accent: '#2f6b4f', soft: '#e6f1e9' },
-  pea: { accent: '#2f6b4f', soft: '#e6f1e9' },
-  insect: { accent: '#556b2f', soft: '#eef3e2' }
-}
-const STANDAARD_ACCENT = { accent: '#175b30', soft: '#eaf1ec' }
-const allergeenAccent = (key) => ALLERGEEN_ACCENTEN[key] ?? STANDAARD_ACCENT
-const accentStijl = (accent) => `style="--accent: ${accent.accent}; --accent-soft: ${accent.soft}"`
-
-const TONES = {
-  ok: { accent: '#175b30', soft: '#e6f1e9', label: 'Lijkt geschikt' },
-  check: { accent: '#8a5a00', soft: '#fdf3d6', label: 'Controleer etiket' },
-  excluded: { accent: '#8a2f2f', soft: '#fbe9e9', label: 'Allergeen genoemd' }
-}
-
 // Vaste indeling voor het overzicht zonder allergeen. Dezelfde volgorde houdt
 // de hub en de losse pagina's herkenbaar.
 const ALLERGEEN_GROEPEN = [
@@ -982,8 +950,6 @@ function allergeenPagina(key, kort, producten) {
 
   const typeKnoppen = types.map(([type, label]) => `<button type="button" class="chip" data-type-filter="${escapeHtml(type)}" aria-pressed="false">${escapeHtml(label)}</button>`).join('')
   const merkOpties = merken.map((merk) => `<option value="${escapeHtml(merk)}">${escapeHtml(merk)}</option>`).join('')
-  const accent = allergeenAccent(key)
-  const letter = escapeHtml((kort || '?').charAt(0).toUpperCase())
   const vergelijkUrl = `/?allergeen=${encodeURIComponent(key)}`
   const herkenRijen = [
     ...direct.map((term) => `<tr><td>${escapeHtml(term)}</td><td>Noemt ${escapeHtml(allergeenKlein)} bij name.</td></tr>`),
@@ -994,7 +960,6 @@ function allergeenPagina(key, kort, producten) {
       <section class="page-hero allergen-hero">
         <div class="hero-top">
           <p class="eyebrow">Allergeen</p>
-          <span class="hero-mark" aria-hidden="true">${letter}</span>
         </div>
         <h1>Hondenvoer zonder ${escapeHtml(kort)}</h1>
         <p class="lead">Een onafhankelijk overzicht van hondenvoeding waarbij het etiket ${escapeHtml(allergeenKlein)} niet noemt.</p>
@@ -1120,7 +1085,6 @@ ${faq.map(({ vraag, antwoord }) => `        <details><summary>${escapeHtml(vraag
       pad,
       inhoud,
       bodyClass: 'page-allergen',
-      stijl: accentStijl(accent),
       jsonLd: [
         {
           '@context': 'https://schema.org',
@@ -1231,7 +1195,6 @@ function productPagina(product, alleProducten, allergeenPaginas) {
   const controle = alleAllergenen.filter(({ state }) => state.state === 'unknown')
   const geschikt = alleAllergenen.filter(({ state }) => state.state === 'absent')
   const toneKey = aantal.excluded > 0 ? 'excluded' : aantal.check > 0 ? 'check' : 'ok'
-  const tone = TONES[toneKey]
   const verdictLabel = !match.hasLabel
     ? 'Geen ingrediëntenlijst'
     : aantal.excluded > 0
@@ -1349,7 +1312,7 @@ ${geschikt.map(({ label }) => `            <span class="tag ok">${escapeHtml(lab
       <section class="page-hero product-hero">
         <div class="hero-top">
           <p class="eyebrow">Product · ${escapeHtml(type)}</p>
-          <span class="verdict-badge">${escapeHtml(verdictLabel)}</span>
+          <span class="verdict-badge tone-${toneKey}">${escapeHtml(verdictLabel)}</span>
         </div>
         <h1>${escapeHtml(product.brand)} ${escapeHtml(product.name)}</h1>
         <p class="lead">${escapeHtml(type)}${maat ? ` · ${escapeHtml(maat)}` : ''}${bronDomein ? ` · bron: ${escapeHtml(bronDomein)}` : ''}. Deze pagina toont de letterlijke ingrediëntenlijst, de voedingswaarden en het oordeel per allergeen.</p>
@@ -1513,7 +1476,6 @@ ${relevanteAllergenen || '<a class="related-allergen" href="/hondenvoer-zonder.h
       pad,
       inhoud,
       bodyClass: 'page-product',
-      stijl: accentStijl(tone),
       jsonLd: [breadcrumb, productSchema, webPage]
     })
   }
@@ -1528,8 +1490,7 @@ function zonderHub(paginas) {
   const rest = paginas.filter(({ key }) => !gebruikt.has(key))
   if (rest.length) groepen.push({ titel: 'Overig', paginas: rest })
 
-  const kaart = (pagina) => `          <a class="allergen-card" href="${pagina.pad}" ${accentStijl(allergeenAccent(pagina.key))}>
-            <span class="allergen-mark" aria-hidden="true">${escapeHtml(pagina.kort.charAt(0).toUpperCase())}</span>
+  const kaart = (pagina) => `          <a class="allergen-card" href="${pagina.pad}">
             <span class="allergen-name">Zonder ${escapeHtml(pagina.kort)}</span>
             <span class="allergen-count">${getal(pagina.aantal)} producten</span>
             <span class="allergen-arrow" aria-hidden="true">→</span>
@@ -1549,7 +1510,6 @@ ${groep.map(kaart).join('\n')}
       <section class="page-hero allergen-hero">
         <div class="hero-top">
           <p class="eyebrow">Overzicht</p>
-          <span class="hero-mark" aria-hidden="true">A</span>
         </div>
         <h1>Hondenvoer zonder een specifiek allergeen</h1>
         <p class="lead">Kies het ingrediënt dat je wilt vermijden. Per allergeen zie je hoeveel producten het etiket dat ingrediënt niet noemt en waarbij geen onduidelijke term het kan verbergen.</p>
@@ -1573,7 +1533,6 @@ ${groepenHtml}
     pad: '/hondenvoer-zonder.html',
     inhoud,
     bodyClass: 'page-allergen-hub',
-    stijl: accentStijl(STANDAARD_ACCENT),
     jsonLd: [{ '@context': 'https://schema.org', ...organisatie }]
   })
 }
