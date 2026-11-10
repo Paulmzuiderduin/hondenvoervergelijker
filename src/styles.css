@@ -3053,21 +3053,58 @@ small {
 }
 
 
-.results-sticky-stack {
+.results-action-bar {
   position: sticky;
   top: calc(var(--header-hoogte, 0px) + 0.5rem);
   z-index: 20;
-  display: grid;
-  gap: 0.4rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.8rem;
   margin: 0 0 0.75rem;
+  padding: 0.55rem 0.7rem;
+  background: #f4f8f5;
+  border: 1px solid #c3dbc9;
+  border-left: 3px solid #2f7d45;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(24, 38, 28, 0.04);
 }
 
-.results-sticky-stack .selected-allergens-bar,
-.results-sticky-stack .compare-bar {
+.results-action-bar .action-group {
+  flex: 1 1 300px;
+  min-width: 0;
+}
+
+.results-action-bar .selected-allergens-bar,
+.results-action-bar .compare-bar {
   position: static;
   top: auto;
   z-index: auto;
   margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.results-action-bar .compare-bar {
+  justify-content: flex-end;
+}
+
+.action-divider {
+  align-self: stretch;
+  flex: 0 0 1px;
+  background: #d3dcd4;
+}
+
+.action-group-label,
+.results-action-bar .selected-label {
+  color: #68766c;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .selected-allergens-bar {
@@ -3324,8 +3361,22 @@ button.summary-pill {
     position: static;
   }
 
-  .results-sticky-stack {
+  .results-action-bar {
     position: static;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .results-action-bar .action-group {
+    flex-basis: auto;
+  }
+
+  .action-divider {
+    display: none;
+  }
+
+  .results-action-bar .compare-bar {
+    justify-content: flex-start;
   }
 
   .result-status {
