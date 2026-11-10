@@ -5,6 +5,13 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
+      // De snacksectie is een eigen pagina met dezelfde componenten en
+      // styles als de voervergelijker. Zo blijft de startpagina klein en
+      // krijgt /hondensnacks/ een eigen HTML-entry.
+      input: {
+        main: 'index.html',
+        snacks: 'hondensnacks/index.html'
+      },
       output: {
         // React en Supabase veranderen veel minder vaak dan de app zelf. Door ze
         // apart te bundelen blijft de app-chunk kleiner en kan de browser de

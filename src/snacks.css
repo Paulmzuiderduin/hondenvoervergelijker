@@ -1,0 +1,133 @@
+/* Aanvullende stijlen voor de snacksectie. De basis, kaarten, filters en het
+   vergelijkingsdialoog komen uit styles.css; hier staan alleen de onderdelen
+   die specifiek zijn voor snacks. */
+
+.snack-section-label {
+  display: inline-block;
+  padding: 0.18rem 0.5rem;
+  border: 1px solid #b9cbbd;
+  border-radius: 999px;
+  background: #eaf1ec;
+  color: #17512b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.snack-hero .hero-kicker {
+  margin: 0 0 0.25rem !important;
+  color: #f2c94c !important;
+  font-size: 0.7rem !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.snack-pill-good {
+  border-color: #b9d3bf;
+  background: #eef7f0;
+  color: #1f5a31;
+  font-weight: 600;
+}
+
+.snack-import-badge {
+  display: inline-block;
+  padding: 0.14rem 0.45rem;
+  border: 1px solid #d6d9d6;
+  border-radius: 2px;
+  background: #f4f5f4;
+  color: #59645a;
+  font-size: 0.73rem;
+  font-weight: 600;
+}
+
+.snack-import-badge::before {
+  content: "↻ ";
+}
+
+.snack-card .product-name {
+  margin-right: 0.25rem;
+}
+
+.snack-card .product-verdict-block,
+.snack-card .nutrition-summary {
+  min-height: 100%;
+}
+
+.snack-trace {
+  border-left-width: 3px;
+}
+
+.snack-trace-note {
+  margin: 0.4rem 0;
+  padding: 0.3rem 0.65rem;
+  border-left: 2px solid #c78600;
+  background: #fefaf0;
+  color: #5f4a12;
+  font-size: 0.84rem;
+}
+
+.snack-kcal {
+  color: #5c7061;
+  font-size: 0.78rem;
+}
+
+.snack-source {
+  margin: 0.5rem 0 0;
+  padding-top: 0.4rem;
+  border-top: 1px solid #e6ebe7;
+  color: #5c7061;
+  line-height: 1.45;
+}
+
+.snack-source a {
+  color: #175b30;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.snack-source a:hover {
+  text-decoration: underline;
+}
+
+.snack-toggle-block h3 {
+  margin-bottom: 0.35rem;
+}
+
+.snack-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.42rem;
+  margin: 0.35rem 0;
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.snack-toggle input {
+  margin-top: 0.15rem;
+}
+
+.snack-no-suitable {
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 780px) {
+  .snack-section-label {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .snack-card .product-card-top {
+    flex-direction: column;
+  }
+
+  .snack-card .product-card-actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
