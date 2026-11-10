@@ -3336,6 +3336,11 @@ button.summary-pill {
     width: 100%;
   }
 
+  .compare-table thead th:first-child,
+  .compare-table tbody th {
+    width: 130px;
+  }
+
   .result-group-heading {
     margin-top: 0.8rem;
   }
