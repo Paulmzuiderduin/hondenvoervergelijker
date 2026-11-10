@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "node scripts/maak-seo-paginas.mjs && node scripts/maak-blog.mjs",
+    "postbuild": "node scripts/maak-seo-paginas.mjs && node scripts/maak-blog.mjs && node scripts/maak-snack-paginas.mjs",
     "preview": "vite preview",
     "test:unit": "node --test tests/unit/**/*.test.js",
     "blog:planning": "node scripts/controleer-blogplanning.mjs",
+    "snacks:controle": "node scripts/controleer-snackdata.mjs",
     "controleer:site": "node scripts/controleer-site.mjs",
     "backup:db": "node scripts/maak-backup.mjs",
     "check:bronnen": "node scripts/controleer-bronnen.mjs --parallel=6 --pauze=1500",

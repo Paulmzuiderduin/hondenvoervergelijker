@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, allergenSearchTerms, markUncertainIngredients, setCustomTerms, sortAllergenKeys } from './lib/allergens'
-import { SNACK_TERMS, SNACK_TYPES, SIZE_CLASSES, snackMatch, snackTypeLabel, sizeLabel, toProduct } from './lib/snacks'
+import { SNACK_TERMS, SNACK_TYPES, SIZE_CLASSES, snackMatch, snackMerkPad, snackTypeLabel, sizeLabel, toProduct } from './lib/snacks'
 import snackData from '../data/snacks.json'
 import './styles.css'
 import './snacks.css'
@@ -191,7 +191,7 @@ function SnackCard({ product, match, heeftKeuze, vergelijk, vergelijkVol, onVerg
   return <article className={`product-card ${match.kind} snack-card`}>
     <div className="product-card-top">
       <div className="product-title-group">
-        <span className="product-brand">{product.brand}</span>
+        <a className="product-brand" href={snackMerkPad(product.brand)} title={`Alle snacks van ${product.brand}`}>{product.brand}</a>
         <h3 className="product-name">{product.name}</h3>
         <div className="product-meta">
           <span className="meta-pill">{foodTypeLabel}</span>
@@ -507,7 +507,7 @@ function App() {
         <p>Ook in snacks zitten bronnen die het etiket niet altijd bij name noemt. Deze vergelijker laat zien welke snacks <strong>lijken te passen</strong>, welke je moet <strong>controleren</strong> en welke <strong>uitgesloten</strong> zijn. We kijken naar ingrediënten, dierlijke eiwitbronnen en sporenmeldingen.</p>
         <p className="hero-meta"><strong>{PRODUCTEN.length}</strong> snacks · <strong>{MERKEN.length}</strong> merken · <strong>{ALLERGENS.length}</strong> allergenen &amp; bronnen</p>
         <p className="hero-positioning">Snacks zijn aanvullend voer. Een snack met één dierlijke eiwitbron is niet automatisch geschikt voor elke hond met een allergie.</p>
-        <p className="hero-links"><a href="#vergelijken">Begin met allergenen</a> · <a href="#resultaten">Bekijk snacks ↓</a></p>
+        <p className="hero-links"><a href="#vergelijken">Begin met allergenen</a> · <a href="#resultaten">Bekijk snacks ↓</a> · <a href="/hondensnacks/merken/">Alle snackmerken</a></p>
       </div>
     </section>
 
@@ -551,6 +551,7 @@ function App() {
               <button type="button" className={filters.brands.length === 0 ? 'active' : ''} aria-pressed={filters.brands.length === 0} onClick={() => update({ brands: [] })}>Niets</button>
             </div>
             <div className="brand-list">{MERKEN.map((merk) => <label className="brand-row" key={merk}><span><input type="checkbox" checked={filters.brands.includes(merk)} onChange={(event) => wisselFilter('brands', merk, event.target.checked)} /> {merk}</span><span className="brand-count">{PRODUCTEN.filter((product) => product.brand === merk).length}</span></label>)}</div>
+            <a className="filter-heading-link" href="/hondensnacks/merken/">Alle snackmerken bekijken</a>
           </details>
           <a className="filter-jump" href="#resultaten">Bekijk {GETAL0.format(statusGefilterd.length)} snacks ↓</a>
         </div>
@@ -665,6 +666,7 @@ function App() {
           <a href="/">Voervergelijker</a>
           <a href="/blog/">Blog</a>
           <a href="/merken/">Alle merken</a>
+          <a href="/hondensnacks/merken/">Alle snackmerken</a>
           <a href="/hondenvoer-allergieen.html">Hondenvoer &amp; allergieën</a>
           <a href="/hoe-wij-vergelijken.html">Onze methode</a>
           <a href="/broncontrole.html">Broncontrole</a>

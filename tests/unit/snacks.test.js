@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { setCustomTerms } from '../../src/lib/allergens.js'
-import { SNACK_TERMS, snackMatch, snackTypeLabel, sizeLabel, toProduct, traceAllergens } from '../../src/lib/snacks.js'
+import { SNACK_TERMS, snackMatch, snackMerkPad, snackTypeLabel, sizeLabel, toProduct, traceAllergens } from '../../src/lib/snacks.js'
 
 setCustomTerms(SNACK_TERMS)
 
@@ -69,4 +69,10 @@ test('snacktype en formaat hebben leesbare labels', () => {
   assert.equal(snackTypeLabel('onbekend'), 'onbekend')
   assert.equal(sizeLabel('klein'), 'Klein')
   assert.equal(sizeLabel('onbekend'), 'onbekend')
+})
+
+test('snackmerken krijgen een eigen pad buiten de voermerken', () => {
+  assert.equal(snackMerkPad('Renske'), '/hondensnacks/merken/renske.html')
+  assert.equal(snackMerkPad('Edgard & Cooper'), '/hondensnacks/merken/edgard-en-cooper.html')
+  assert.equal(snackMerkPad(''), '/hondensnacks/merken/merk.html')
 })

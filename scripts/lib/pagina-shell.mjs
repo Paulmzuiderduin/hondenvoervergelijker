@@ -71,6 +71,7 @@ export function shell({
   jsonLd = [],
   extraKop = '',
   bodyClass = '',
+  robots = 'index, follow',
   stijl = '',
   ogType = 'website',
   ogImage = `${SITE}/og-image.png`,
@@ -93,7 +94,7 @@ export function shell({
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="${escapeHtml(beschrijving)}" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="${escapeHtml(robots)}" />
     <link rel="canonical" href="${canonical}" />
     <meta property="og:type" content="${escapeHtml(ogType)}" />
     <meta property="og:site_name" content="Hondenvoervergelijker" />

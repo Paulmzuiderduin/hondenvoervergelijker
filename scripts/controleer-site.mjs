@@ -334,9 +334,15 @@ try {
   const snackActiebalk = await page.locator('.results-action-bar').innerText()
   const snackKaartlabel = await page.locator('.snack-card .card-section-label').first().innerText()
   const snackMerkLinks = await page.locator('.snack-card a.product-brand').count()
+  const snackMerkHrefs = await page.locator('.snack-card a.product-brand').evaluateAll((links) => links.map((link) => link.getAttribute('href')))
   meld(snackStatusKnoppen >= 2 && /Je sluit uit/i.test(snackActiebalk), 'snackresultaten hebben dezelfde statusfilters en actiebalk', `${snackStatusKnoppen} statusknoppen · ${snackActiebalk.replace(/\n/g, ' ').slice(0, 80)}`)
   meld(/Uitsluiting/i.test(snackKaartlabel), 'snackkaarten gebruiken dezelfde uitsluitingsopbouw', snackKaartlabel)
-  meld(snackMerkLinks === 0, 'snackmerken linken niet naar voermerkenpagina’s', `${snackMerkLinks} merklink(en)`)
+  meld(snackMerkLinks > 0 && snackMerkHrefs.every((href) => href?.startsWith('/hondensnacks/merken/')), 'snackmerken linken naar snackmerkpagina’s', `${snackMerkLinks} merklink(en)`)
+  if (snackMerkHrefs[0]) {
+    const snackMerkPagina = await context.request.get(`${BASIS}${snackMerkHrefs[0]}`)
+    const snackMerkHtml = await snackMerkPagina.text()
+    meld(snackMerkPagina.ok() && /Hondensnacks/.test(snackMerkHtml) && /noindex/i.test(snackMerkHtml), 'snackmerkpagina is bereikbaar en noindex', snackMerkHrefs[0])
+  }
 
   const beoordelingen = await context.request.get(`${BASIS}/catalog-assessment.json`)
   const beoordelingenJson = beoordelingen.ok() ? await beoordelingen.json().catch(() => ({})) : {}
