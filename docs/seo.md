@@ -25,8 +25,18 @@ voor nodig.
    - `/broncontrole.html` — openbaar controleverslag met controledatums en
      aantallen handmatig nagekeken producten;
    - `/etikettenonderzoek.html` — dataonderzoek naar verzameltermen en allergenen;
+   - `/blog/` — overzicht van de blogartikelen;
+   - `/blog/<artikel>.html` — één statische pagina per blogartikel met
+     `Article`-structured data, bronnen en interne links;
+   - `/blog/categorie/<categorie>.html` — categoriepagina zodra er minstens
+     drie artikelen in die categorie staan;
+   - `/blog/feed.xml` — RSS-feed van de blog;
    - `/sitemap.xml` — alle pagina's met prioriteit en datum;
    - `/llms.txt` — bijgewerkte tellingen en links voor AI-systemen.
+
+   De blog wordt door `scripts/maak-blog.mjs` gemaakt, direct na
+   `scripts/maak-seo-paginas.mjs`. Zie `docs/blog.md` voor het toevoegen van
+   artikelen.
 3. Na de deploy controleert de workflow de upload, alle sitemap-URL's en de
    belangrijkste gebruikersroutes in een echte browser.
 4. Daarna meldt `scripts/indexnow.mjs` alle URL's uit de sitemap bij IndexNow.
@@ -91,6 +101,11 @@ site beheert.
   geselecteerd.
 - Elke merkpagina kan met `/?merk=<naam>` direct in de vergelijker worden geopend;
   een allergeen met `/?allergeen=<key>`.
+- De blog linkt per artikel naar minimaal twee relevante pagina's en naar de
+  vergelijker of een passende filterpagina. De header en footer van alle
+  statische pagina's linken naar `/blog/`.
+- Categoriepagina's worden pas gemaakt bij minimaal drie artikelen, zodat geen
+  dunne pagina's ontstaan.
 
 ## LLM's en AI-zoekresultaten
 

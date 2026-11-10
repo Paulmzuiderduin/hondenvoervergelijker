@@ -1494,6 +1494,7 @@ function App() {
           <a href="#vergelijken"><span className="nav-lang">Allergenen kiezen</span><span className="nav-kort">Allergenen</span></a>
           <a href="#filters"><span className="nav-lang">Voedingswaarden</span><span className="nav-kort">Voeding</span></a>
           <a href="#resultaten"><span className="nav-lang">Producten ({products.length || '…'})</span><span className="nav-kort">Producten</span></a>
+          <a href="/blog/"><span className="nav-lang">Blog</span><span className="nav-kort">Blog</span></a>
           <a href="#over-deze-site"><span className="nav-lang">Hoe het werkt</span><span className="nav-kort">Uitleg</span></a>
         </>}
         {admin && <button type="button" className="link" onClick={sluitBeheer}>Terug naar vergelijken</button>}
@@ -1513,7 +1514,7 @@ function App() {
           <p>Vage termen zoals <em>“dierlijke bijproducten”</em> of <em>“granen”</em> verbergen de bron. Deze vergelijker laat zien welk voer <strong>lijkt te passen</strong>, <strong>uitgesloten</strong> of <strong>onzeker</strong> is. Filter daarnaast op eiwit, vet, energie en meer.</p>
           <p className="hero-meta"><strong>{products.length ? GETAL0.format(products.length) : '1.478'}</strong> producten · <strong>{alleMerken.length || '60'}</strong> merken · <strong>{ALLERGENS.length}</strong> allergenen &amp; bronnen</p>
           <p className="hero-positioning">Wij vergelijken ingrediënten, allergenen en voedingswaarden. Een winkelprijs is een indicatie, geen onderdeel van ons oordeel.</p>
-          <p className="hero-links"><a href="#vergelijken">Begin met allergenen</a> · <a href="#filters">Filter op voeding</a> · <a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a> · <a href="/hoe-wij-vergelijken.html">Onze methode</a></p>
+          <p className="hero-links"><a href="#vergelijken">Begin met allergenen</a> · <a href="#filters">Filter op voeding</a> · <a href="/blog/">Blog</a> · <a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a> · <a href="/hoe-wij-vergelijken.html">Onze methode</a></p>
         </div>
       </section>
       <div className="layout">
@@ -1753,6 +1754,7 @@ function App() {
         <span>© {new Date().getFullYear()} Hondenvoervergelijker — Alle ingrediëntdata onder voorbehoud van wijzigingen door de fabrikant.</span>
         <span className="footer-links">
           <a href="/merken/">Alle merken</a>
+          <a href="/blog/">Blog</a>
           <a href="/hondenvoer-allergieen.html">Hondenvoer &amp; allergieën</a>
           <a href="/hondenvoer-zonder.html">Zonder allergeen</a>
           <a href="/hoe-wij-vergelijken.html">Onze methode</a>

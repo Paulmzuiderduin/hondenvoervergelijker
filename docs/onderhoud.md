@@ -54,6 +54,18 @@ De beheerlink staat bewust niet meer in de publieke footer. Open Beheer via
 blijft verplicht; de URL is alleen bedoeld om de beheeromgeving buiten het
 publieke menu te houden.
 
+## Blog
+
+Blogartikelen staan als Markdown in `content/blog/`. De build maakt daar
+statische pagina's, categoriepagina's, een RSS-feed en sitemapvermeldingen van.
+Een nieuw artikel toevoegen is een bestand toevoegen en de site opnieuw bouwen.
+Zie `docs/blog.md` voor de frontmatter, de redactionele checklist en de
+affiliate-afspraken.
+
+Controleer na een inhoudelijke wijziging altijd de bronlinks en werk `updated`
+bij. Categoriepagina's verschijnen pas bij minimaal drie artikelen in die
+categorie.
+
 ## Bezoekersstatistieken
 
 De site gebruikt **Umami Cloud** voor cookieloze, geaggregeerde statistieken.

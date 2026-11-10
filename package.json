@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "node scripts/maak-seo-paginas.mjs",
+    "postbuild": "node scripts/maak-seo-paginas.mjs && node scripts/maak-blog.mjs",
     "preview": "vite preview",
     "test:unit": "node --test tests/unit/**/*.test.js",
     "controleer:site": "node scripts/controleer-site.mjs",

@@ -303,6 +303,20 @@ try {
   const onderzoek = await page.locator('.stat-grid').innerText()
   meld(/producten/.test(onderzoek), 'etikettenonderzoek toont cijfers', onderzoek.replace(/\n/g, ' ').slice(0, 100))
 
+  await open('/blog/', '.blog-grid')
+  const blogKaarten = await page.locator('.blog-grid .blog-card').count()
+  const blogHref = await page.locator('.blog-grid .blog-card h2 a').first().getAttribute('href')
+  meld(blogKaarten >= 3 && Boolean(blogHref), 'blogoverzicht toont artikelen', `${blogKaarten} artikelen`)
+  if (blogHref) {
+    await open(blogHref, '.blog-content')
+    const blogTekst = await page.locator('.blog-content').innerText()
+    const blogSchema = await page.locator('script[type="application/ld+json"]').first().textContent()
+    meld(blogTekst.length > 400 && /"Article"/.test(blogSchema || ''), 'blogartikel heeft inhoud en Article-structured-data')
+  }
+  const feed = await context.request.get(`${BASIS}/blog/feed.xml`)
+  const feedTekst = await feed.text()
+  meld(feed.ok() && feedTekst.includes('<rss') && feedTekst.includes('<item>'), 'blog-rss is bereikbaar en bevat artikelen')
+
   const beoordelingen = await context.request.get(`${BASIS}/catalog-assessment.json`)
   const beoordelingenJson = beoordelingen.ok() ? await beoordelingen.json().catch(() => ({})) : {}
   const beoordelingenAantal = Object.keys(beoordelingenJson.producten ?? beoordelingenJson).length
