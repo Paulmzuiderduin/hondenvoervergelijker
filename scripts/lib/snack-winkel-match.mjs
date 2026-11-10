@@ -62,6 +62,105 @@ export const SNACK_FEED_REGELS = [
     titel: 'Edgard & Cooper- Dental Sticks Appel',
     snackId: 'edgard-en-cooper-doggy-dental-appel-eucalyptus',
     note: 'Doggy Dental Appel & Eucalyptus, 7 stuks'
+  },
+  {
+    ean: '8718627750049',
+    snackId: 'whimzees-toothbrush',
+    maat: 'M',
+    note: 'Whimzees Toothbrush, maat M'
+  },
+  {
+    ean: '8718627750162',
+    snackId: 'whimzees-stix',
+    maat: 'L',
+    note: 'Whimzees Stix, maat L'
+  },
+  {
+    titel: 'Farm Food - Dental Roll',
+    snackId: 'farm-food-dental-roll',
+    maat: 'S',
+    note: 'Farm Food Dental Roll, maat S'
+  },
+  {
+    titel: 'Farm Food - Dental Donut',
+    snackId: 'farm-food-dental-donut',
+    maat: 'L',
+    note: 'Farm Food Dental Donut, maat L'
+  },
+  {
+    titel: 'Farm Food - Antlers Original',
+    snackId: 'farm-food-original-antlers',
+    maat: 'XL',
+    note: 'Farm Food Original Antlers, maat XL'
+  },
+  {
+    titel: 'Farm Food - Trainers (runderhart)',
+    snackId: 'farm-food-trainers',
+    maat: '333 g',
+    note: 'Farm Food Trainers van runderhart, 333 g'
+  },
+  {
+    titel: 'Farm Food Dental Bone',
+    snackId: 'farm-food-dental-bone',
+    maat: 'M',
+    note: 'Farm Food Dental Bone, maat M'
+  },
+  {
+    titel: 'Farm Food - Dental Chips',
+    snackId: 'farm-food-dental-chips',
+    maat: '500 g',
+    note: 'Farm Food Dental Chips, 500 g'
+  },
+  {
+    titel: 'Farm Food - Antlers Easy',
+    snackId: 'farm-food-easy-antlers',
+    maat: 'S',
+    note: 'Farm Food Easy Antlers, maat S'
+  },
+  {
+    titel: 'Farm Food - Dental Munchie Heart & Rice',
+    snackId: 'farm-food-dental-munchie-heart-rice',
+    note: 'Farm Food Dental Munchie Heart & Rice'
+  },
+  {
+    titel: 'Farm Food - Dental Munchie Pens',
+    snackId: 'farm-food-dental-munchie-tripe-rice',
+    note: 'Farm Food Dental Munchie Pens'
+  },
+  {
+    titel: 'Farm Food - Freezies Zalm 40gr',
+    snackId: 'farm-food-freezies-salmon',
+    maat: '40 g',
+    note: 'Farm Food Freezies Zalm, 40 g'
+  },
+  {
+    titel: 'Farm Food - Freezies Kalkoen 40gr',
+    snackId: 'farm-food-freezies-turkey',
+    maat: '40 g',
+    note: 'Farm Food Freezies Kalkoen, 40 g'
+  },
+  {
+    titel: 'Farm Food - Freezies Runderlever 40gr',
+    snackId: 'farm-food-freezies-beef-liver',
+    maat: '40 g',
+    note: 'Farm Food Freezies Runderlever, 40 g'
+  },
+  {
+    eanBevat: 'carnilove crunchy snack ostrich with blackberries 200gr',
+    snackId: 'carnilove-crunchy-snack-struisvogel-en-bramen',
+    maat: '200 g',
+    note: 'Carnilove Crunchy Snack Struisvogel & Bramen, 200 g'
+  },
+  {
+    eanBevat: 'carnilove soft snack trout with dill 200gr',
+    snackId: 'carnilove-soft-snack-forel-en-dille',
+    maat: '200 g',
+    note: 'Carnilove Soft Snack Forel & Dille, 200 g'
+  },
+  {
+    ean: '4000819005919',
+    snackId: 'dibo-gedroogde-vis',
+    note: 'DIBO Gedroogde Vis (Oostzeeharing)'
   }
 ]
 
@@ -71,16 +170,23 @@ export function koppelSnacksBetrouwbaar(snacks, aanbiedingen) {
   const onbekend = []
 
   for (const aanbieding of aanbiedingen) {
-    const regel = SNACK_FEED_REGELS.find(({ ean, titel }) => ean
+    const eanTekst = normaliseerTitel(aanbieding.eanTekst ?? '')
+    const regel = SNACK_FEED_REGELS.find(({ ean, eanBevat, titel }) => ean
       ? aanbieding.ean === ean
-      : normaliseerTitel(aanbieding.titel) === normaliseerTitel(titel))
+      : eanBevat
+        ? eanTekst.includes(normaliseerTitel(eanBevat))
+        : normaliseerTitel(aanbieding.titel) === normaliseerTitel(titel))
     if (!regel) continue
     const product = perId.get(regel.snackId)
     if (!product) {
       onbekend.push({ aanbieding, regel, reden: `snack ${regel.snackId} ontbreekt` })
       continue
     }
-    koppelingen.push({ product, aanbieding, note: regel.note })
+    koppelingen.push({
+      product,
+      aanbieding: { ...aanbieding, maat: regel.maat ?? aanbieding.maat },
+      note: regel.note
+    })
   }
 
   // Dezelfde snack of dezelfde feed-URL mag maar één winkelknop opleveren.

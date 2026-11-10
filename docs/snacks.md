@@ -46,28 +46,67 @@ opgenomen. Bij de openbare lancering wordt dat `index, follow`.
 
 ## Batch
 
-De batch bevat 598 snacks van tien merken:
+De batch bevat 1244 snacks van veertig merken:
 
 | merk | producten |
 |---|---:|
-| Renske | 10 |
-| Yarrah | 8 |
+| 8in1 | 37 |
+| Animonda | 15 |
+| Bosch | 18 |
+| Braaaf | 68 |
+| Briantos | 35 |
+| Brit Care | 17 |
+| Carnilove | 18 |
+| Chewies | 26 |
+| Cookie's | 9 |
+| DeliBest | 12 |
+| DIBO | 23 |
+| Dokas | 43 |
+| Edgard & Cooper | 21 |
+| Farm Food | 17 |
+| Frolic | 6 |
+| George & Bobs | 18 |
+| Greenies | 1 |
 | Happy Dog | 10 |
+| Heim | 12 |
+| Hill's | 2 |
+| Josera | 16 |
+| Larsson Farm | 5 |
+| Lily's Kitchen | 13 |
+| Lucky Jim | 15 |
+| Lukullus | 16 |
+| Nature's Variety | 4 |
 | Pedigree | 23 |
 | Purina | 17 |
-| Frolic | 6 |
+| Renske | 10 |
+| Rinti | 38 |
+| Rocco | 39 |
+| Rosie's Farm | 10 |
 | Royal Canin | 6 |
-| Edgard & Cooper | 21 |
-| Trixie | 306 |
+| SmartBones | 12 |
 | Timo | 191 |
+| Trixie | 306 |
+| Vitakraft | 67 |
+| Whimzees | 10 |
+| Wolf of Wilderness | 30 |
+| Yarrah | 8 |
 
-De samenstellingen zijn letterlijk overgenomen. De officiële merkpagina is de
-eerste bron. Alleen voor Frolic is een verkoopsite als backup gebruikt, omdat
-de officiële Frolic-site geen volledige snacketiketten meer heeft; dat staat
-per product in `source_note`. Timo is het huismerk van Pets Place (voorheen
-Happy Bite); de opdracht noemde het “Tim's”, maar de officiële merknaam is Timo.
-Van Royal Canin en Trixie zijn de functionele supplementchews bewust niet in de
-snackvergelijker opgenomen; die horen bij de supplementenvergelijker.
+
+De samenstellingen zijn letterlijk overgenomen. De officiële merkpagina of
+merkshop is de eerste bron. Voor veel van de nieuwere merken ontbreekt daar een
+volledige Nederlandse ingrediëntenlijst; dan is een Nederlandse verkoopsite
+als backup gebruikt (Zooplus, Pets Place, Brekz, Medpets of Veroonline). Dat
+staat per product in `source_note`. Voor Frolic geldt dezelfde uitzondering.
+Timo is het huismerk van Pets Place (voorheen Happy Bite); de opdracht noemde
+het “Tim's”, maar de officiële merknaam is Timo. Van Royal Canin en Trixie zijn
+de functionele supplementchews bewust niet in de snackvergelijker opgenomen;
+die horen bij de supplementenvergelijker.
+
+De veertig merken zijn gekozen op basis van de Nederlandse Zooplus-
+snackranking en beschikbaarheid bij Pets Place. Eukanuba heeft in Nederland
+geen losse hondensnacks en is daarom niet opgenomen. Greenies en Hill's hebben
+in Nederland een klein snackassortiment; dat is bewust niet aangevuld met
+buitenlandse varianten.
 
 `reviewed_at` is gevuld en `imported_at` is leeg. Voor toekomstige automatische
 imports geldt: staat `imported_at` wel gevuld en `reviewed_at` niet, dan toont
@@ -86,11 +125,15 @@ een affiliate-link naar Dierenwinkel XL tonen. De links staan in
   gecommit).
 - Koppelen gebeurt op EAN of op een vaste, exacte feedtitel. Bij twijfel komt er
   geen link.
-- In de batch van 10 november 2026 zijn 10 snacks gekoppeld: 1 Bonzo, 2
-  DentaLife, 3 DentaStix en 4 Edgard & Cooper-producten.
-- Drie feedaanbiedingen zijn bewust overgeslagen: DentaLife Maxi en Edgard &
-  Cooper Kip Reep geven HTTP 404, en de DentaLife Loyalty Pack is één URL voor
-  drie maten.
+- In de batch van 10 november 2026 zijn 27 snacks gekoppeld: 10 uit de eerste
+  batch, 2 Whimzees, 12 Farm Food, 2 Carnilove en 1 DIBO.
+- Vier feedaanbiedingen zijn bewust overgeslagen: DentaLife Maxi en Edgard &
+  Cooper Kip Reep geven HTTP 404, de DentaLife Loyalty Pack is één URL voor
+  drie maten, en Farm Food Dental Braid is niet eenduidig te koppelen aan de
+  braided stick of donut.
+- Van de tweede-batchmerken staat alleen `Dibo - Fisch` in de feed. Die is via
+  EAN 4000819005919 gekoppeld aan `DIBO Gedroogde Vis` (Oostzeeharing). Voor de
+  overige nieuwe merken bevat de feed geen hondensnacks.
 - De getoonde prijs is een indicatie uit de feed en geen vergelijkingsprijs.
   Ververs de feed en draai `npm run winkels:dierenwinkelxl` om de links bij te
   werken. Het rapport staat in `data/winkels/rapport-dierenwinkelxl.md`.
@@ -132,6 +175,7 @@ sporen zijn.
    voervergelijker lekken.
 4. Productpagina's en allergeenoverzichten voor snacks toevoegen; daarna de
    snackpagina's indexeerbaar maken en in de sitemap en `llms.txt` opnemen.
-5. Whimzees is als mogelijke elfde merk bekeken, maar uit de actieve set
-   gehaald om op tien merken uit te komen. De onderzoeksdata is niet bewaard;
-   bij een latere uitbreiding moet het merk opnieuw worden gecontroleerd.
+5. De veertig merken zijn de huidige set. Nieuwe merken pas toevoegen nadat
+   de officiële pagina of een Nederlandse verkoopsite met een volledige
+   ingrediëntenlijst is gecontroleerd. Whimzees is in de tweede batch opnieuw
+   opgenomen; de eerdere onderzoeksdata was niet bewaard.

@@ -14,6 +14,22 @@ setCustomTerms(SNACK_TERMS)
 
 const TYPES = new Set(SNACK_TYPES.map(([key]) => key))
 const MATEN = new Set(SIZE_CLASSES.map(([key]) => key))
+const DIERLIJKE_KEYS = [
+  'chicken', 'turkey', 'duck', 'goose', 'beef', 'lamb', 'pork', 'horse', 'rabbit', 'venison', 'fish', 'salmon', 'whitefish', 'tuna', 'trout', 'herring', 'mackerel', 'anchovy', 'sardine', 'shellfish', 'insect', 'milk', 'egg'
+]
+// Vet is geen eiwitbron. Voor de single_protein-controle tellen we daarom
+// alleen de bronnen die overblijven als de vetwoorden uit het etiket zijn
+// gehaald. De allergeenkeuring zelf blijft het volledige etiket gebruiken.
+const VET_WOORDEN = /\b(?:kippenvet|gevogeltevet|eendenvet|ganzenvet|kalkoenvet|rundvet|varkensvet|lamvet|paardenvet|konijnenvet|hertenvet|visvet|zalmolie|visolie)\b/g
+
+function dierlijkeBronnen(uitslag) {
+  let keys = uitslag.allergens.filter((key) => DIERLIJKE_KEYS.includes(key))
+  const specifiekeVissen = keys.filter((key) => ['salmon', 'whitefish', 'tuna', 'trout', 'herring', 'mackerel', 'anchovy', 'sardine'].includes(key))
+  if (specifiekeVissen.length) keys = keys.filter((key) => key !== 'fish')
+  const specifiekGevogelte = keys.filter((key) => ['chicken', 'turkey', 'duck', 'goose'].includes(key))
+  if (specifiekGevogelte.length) keys = keys.filter((key) => key !== 'poultry')
+  return keys
+}
 
 const data = JSON.parse(readFileSync(join(WORTEL, 'data', 'snacks.json'), 'utf8'))
 const producten = Array.isArray(data.producten) ? data.producten : []
@@ -42,30 +58,17 @@ for (const [index, product] of producten.entries()) {
   if (product.imported_at && product.reviewed_at) waarschuwingen.push(`${label}: zowel reviewed_at als imported_at gevuld`)
   // Een enkelvoudige kauwsnack mag een korte, volledige lijst hebben
   // ("100% rund", "Kippennekken"). Alleen echt lege of onbruikbare tekst telt.
-  if (!product.ingredients_text || product.ingredients_text.length < 5) problemen.push(`${label}: ingrediëntenlijst lijkt te kort`)
+  if (!product.ingredients_text || product.ingredients_text.trim().length < 3) problemen.push(`${label}: ingrediëntenlijst lijkt te kort`)
   if (product.source_url && !/^https:\/\//.test(product.source_url)) problemen.push(`${label}: source_url is geen https-URL`)
 
   const uitslag = assessLabel(product.ingredients_text ?? '')
   const onbekend = uitslag.unknown ?? []
   if (onbekend.length) waarschuwingen.push(`${label}: woorden die de keuring niet kent: ${onbekend.join(', ')}`)
 
-  let dierlijk = uitslag.allergens.filter((key) => [
-    'chicken', 'turkey', 'duck', 'goose', 'beef', 'lamb', 'pork', 'horse', 'rabbit', 'venison', 'fish', 'salmon', 'whitefish', 'tuna', 'trout', 'herring', 'mackerel', 'anchovy', 'sardine', 'shellfish', 'insect', 'milk', 'egg'
-  ].includes(key))
   const tekst = norm(product.ingredients_text)
-  // Oliën zijn geen eiwitbron. "Zalmolie" naast kip maakt het product dus
-  // niet automatisch een meer-eiwitproduct. Staat er naast de olie nog een
-  // concrete vissoort, dan blijft die wel meetellen.
-  const andereVis = /(kabeljauw|tonijn|forel|haring|makreel|ansjovis|sardine|zalm(?!olie)|witvis|schelvis|koolvis|heek|wijting|zeeduivel|pangasius)/.test(tekst)
-  if (!andereVis && (tekst.includes('zalmolie') || tekst.includes('visolie'))) {
-    dierlijk = dierlijk.filter((key) => !['fish', 'salmon', 'whitefish'].includes(key))
-  }
-  // Een concreet vis- of gevogelte-allergeen maakt de algemene categorie
-  // overbodig voor deze telling.
-  const specifiekeVissen = dierlijk.filter((key) => ['salmon', 'whitefish', 'tuna', 'trout', 'herring', 'mackerel', 'anchovy', 'sardine'].includes(key))
-  if (specifiekeVissen.length) dierlijk = dierlijk.filter((key) => key !== 'fish')
-  const specifiekGevogelte = dierlijk.filter((key) => ['chicken', 'turkey', 'duck', 'goose'].includes(key))
-  if (specifiekGevogelte.length) dierlijk = dierlijk.filter((key) => key !== 'poultry')
+  const tekstZonderVet = tekst.replace(VET_WOORDEN, ' ')
+  const uitslagZonderVet = tekstZonderVet === tekst ? uitslag : assessLabel(tekstZonderVet)
+  const dierlijk = dierlijkeBronnen(uitslagZonderVet)
   if (product.single_protein && dierlijk.length > 1) waarschuwingen.push(`${label}: single_protein=true, maar meerdere dierlijke bronnen: ${dierlijk.map((key) => ALLERGEN_LABELS[key] ?? key).join(', ')}`)
 
   const granen = uitslag.allergens.filter((key) => ['grains', 'wheat', 'corn', 'rice', 'oats', 'barley', 'rye', 'spelt', 'buckwheat', 'millet', 'quinoa', 'amaranth', 'teff', 'sorghum'].includes(key))

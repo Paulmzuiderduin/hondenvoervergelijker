@@ -9,7 +9,12 @@
 //
 // De test gebruikt playwright-core met de Chrome die al op de machine staat.
 
+import { readFileSync } from 'node:fs'
 import { chromium } from 'playwright-core'
+
+const snackData = JSON.parse(readFileSync(new URL('../data/snacks.json', import.meta.url), 'utf8'))
+const verwachteSnacks = snackData.producten?.length ?? 0
+const verwachteSnackMerken = new Set((snackData.producten ?? []).map((product) => product.brand)).size
 
 const argumenten = new Map(
   process.argv
@@ -350,10 +355,16 @@ try {
     tekst: link.textContent.replace(/\s+/g, ' ').trim()
   })))
   meld(snackShopLinks.length >= 2 && snackShopLinks.every(({ href, rel }) => /dierenwinkelxl\.nl/.test(href) && /tt=4019/.test(href) && /sponsored/.test(rel) && /nofollow/.test(rel)), 'snackwinkelkoppeling gebruikt de Dierenwinkel XL-affiliatelink', `${snackShopLinks.length} snacklink(s) · ${snackShopLinks[0]?.tekst || '—'}`)
+  await open('/hondensnacks/?merk=Farm%20Food', '.snack-card .shop-link')
+  const nieuweSnackShopLinks = await page.locator('.snack-card .shop-link').evaluateAll((links) => links.map((link) => ({ href: link.getAttribute('href') || '', rel: link.getAttribute('rel') || '' })))
+  meld(nieuweSnackShopLinks.length >= 5 && nieuweSnackShopLinks.every(({ href, rel }) => /dierenwinkelxl\.nl/.test(href) && /tt=4019/.test(href) && /sponsored/.test(rel)), 'nieuwe snackmerken krijgen ook Dierenwinkel XL-links', `${nieuweSnackShopLinks.length} Farm Food-link(s)`)
   const snackWinkelPagina = await context.request.get(`${BASIS}/hondensnacks/merken/purina.html`)
   const snackWinkelHtml = await snackWinkelPagina.text()
   const snackWinkelLinks = (snackWinkelHtml.match(/rel="sponsored nofollow noopener noreferrer"/g) ?? []).length
   meld(snackWinkelPagina.ok() && snackWinkelLinks >= 3 && /partner-note/.test(snackWinkelHtml), 'snackmerkpagina toont affiliate-links met partnervermelding', `${snackWinkelLinks} winkellink(en)`)
+  const snackMerkenPagina = await context.request.get(`${BASIS}/hondensnacks/merken/`)
+  const snackMerkenHtml = await snackMerkenPagina.text()
+  meld(snackMerkenPagina.ok() && snackMerkenHtml.includes(`Ontdek ${verwachteSnackMerken} snackmerken met in totaal ${verwachteSnacks} snacks`), 'snackmerkenoverzicht telt alle merken en snacks', `${verwachteSnackMerken} merken · ${verwachteSnacks} snacks`)
 
   const beoordelingen = await context.request.get(`${BASIS}/catalog-assessment.json`)
   const beoordelingenJson = beoordelingen.ok() ? await beoordelingen.json().catch(() => ({})) : {}

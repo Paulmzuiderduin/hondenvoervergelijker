@@ -12,6 +12,7 @@ const aanbieding = (titel, extra = {}) => ({
   titelZonderMerk: titel.includes(' - ') ? titel.slice(titel.indexOf(' - ') + 3) : titel,
   categorie: 'hond-snacks',
   ean: '',
+  eanTekst: '',
   maat: '',
   maten: [],
   prijs: 1.99,
@@ -44,6 +45,30 @@ test('snack zonder EAN matcht alleen op de vaste feedtitel', () => {
 test('een onbekende snacknaam levert geen winkelknop op', () => {
   const { koppelingen } = koppelSnacksBetrouwbaar(snacks, [
     aanbieding('Edgard & Cooper - Kip Reep', { ean: '5425039487083' })
+  ])
+  assert.equal(koppelingen.length, 0)
+})
+
+test('nieuwe snackmerken worden op EAN of vaste feedtitel gekoppeld', () => {
+  const { koppelingen } = koppelSnacksBetrouwbaar(snacks, [
+    aanbieding('Whimzees - Toothbrush - Medium', { ean: '8718627750049', prijs: 1.19 }),
+    aanbieding('Farm Food - Dental Roll', { prijs: 1.89 }),
+    aanbieding('Carnilove - Crunchy Snack 200 gram', { eanTekst: 'carnilove crunchy snack ostrich with blackberries 200gr', prijs: 4.25 }),
+    aanbieding('Dibo - Fisch', { ean: '4000819005919', prijs: 6.59 })
+  ])
+  assert.equal(koppelingen.length, 4)
+  assert.deepEqual(koppelingen.map(({ product }) => product.id).sort(), [
+    'carnilove-crunchy-snack-struisvogel-en-bramen',
+    'dibo-gedroogde-vis',
+    'farm-food-dental-roll',
+    'whimzees-toothbrush'
+  ])
+  assert.equal(koppelingen.find(({ product }) => product.id === 'whimzees-toothbrush').aanbieding.maat, 'M')
+})
+
+test('een generieke Carnilove-feedtitel matcht niet zonder smaak in de EAN-tekst', () => {
+  const { koppelingen } = koppelSnacksBetrouwbaar(snacks, [
+    aanbieding('Carnilove - Crunchy Snack 200 gram')
   ])
   assert.equal(koppelingen.length, 0)
 })

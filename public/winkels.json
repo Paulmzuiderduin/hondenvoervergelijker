@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-11-10T19:57:01.432Z",
+  "bijgewerkt": "2026-11-10T20:53:52.092Z",
   "netwerk": "TradeTracker",
   "aanbieders": {
     "08c788d6-941d-433e-ba73-6f1c99405be5": [
@@ -338,6 +338,30 @@
         "prijs": 18.49
       }
     ],
+    "carnilove-crunchy-snack-struisvogel-en-bramen": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fcarnilove-crunchy-snack-200-gram%2F",
+        "maat": "200 g",
+        "prijs": 4.25
+      }
+    ],
+    "carnilove-soft-snack-forel-en-dille": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fcarnilove-soft-snack-200-gram%2F",
+        "maat": "200 g",
+        "prijs": 4.25
+      }
+    ],
+    "dibo-gedroogde-vis": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fdibo-fisch%2F",
+        "maat": "",
+        "prijs": 6.59
+      }
+    ],
     "edgard-en-cooper-doggy-dental-appel-eucalyptus": [
       {
         "winkel": "Dierenwinkel XL",
@@ -370,11 +394,107 @@
         "prijs": 4.49
       }
     ],
+    "farm-food-dental-bone": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Ffarm-food-dental-bone%2F",
+        "maat": "M",
+        "prijs": 2.5
+      }
+    ],
+    "farm-food-dental-chips": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Ffarm-food-dental-chips%2F",
+        "maat": "500 g",
+        "prijs": 6.49
+      }
+    ],
+    "farm-food-dental-donut": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Ffarm-food-dental-donut%2F",
+        "maat": "L",
+        "prijs": 6.69
+      }
+    ],
+    "farm-food-dental-munchie-heart-rice": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Ffarm-food-dental-munchie-heart-rice%2F",
+        "maat": "",
+        "prijs": 5.4
+      }
+    ],
+    "farm-food-dental-munchie-tripe-rice": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Ffarm-food-dental-munchie-pens%2F",
+        "maat": "",
+        "prijs": 5.4
+      }
+    ],
+    "farm-food-dental-roll": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Ffarm-food-dental-roll%2F",
+        "maat": "S",
+        "prijs": 1.89
+      }
+    ],
+    "farm-food-easy-antlers": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Ffarm-food-antlers-easy%2F",
+        "maat": "S",
+        "prijs": 7.75
+      }
+    ],
+    "farm-food-freezies-beef-liver": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Ffarm-food-freezies-runderlever-40gr%2F",
+        "maat": "40 g",
+        "prijs": 5.9
+      }
+    ],
+    "farm-food-freezies-salmon": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Ffarm-food-freezies-zalm-40gr%2F",
+        "maat": "40 g",
+        "prijs": 6.99
+      }
+    ],
+    "farm-food-freezies-turkey": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Ffarm-food-freezies-kalkoen-40gr%2F",
+        "maat": "40 g",
+        "prijs": 4.99
+      }
+    ],
+    "farm-food-original-antlers": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Ffarm-food-antlers-original%2F",
+        "maat": "XL",
+        "prijs": 9.95
+      }
+    ],
+    "farm-food-trainers": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Ffarm-food-trainers-runderhart%2F",
+        "maat": "333 g",
+        "prijs": 6.45
+      }
+    ],
     "pedigree-dentastix-maxi": [
       {
         "winkel": "Dierenwinkel XL",
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fpedigree-denta-stix-maxi-multipack-21-pack-810gr%2F",
-        "maat": "",
+        "maat": "5.010.394.006.088 kg",
         "prijs": 10.99
       }
     ],
@@ -382,7 +502,7 @@
       {
         "winkel": "Dierenwinkel XL",
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fpedigree-denta-stix-medium-multipack-28-pack-720gr%2F",
-        "maat": "",
+        "maat": "5.010.394.006.132 kg",
         "prijs": 10.99
       }
     ],
@@ -390,7 +510,7 @@
       {
         "winkel": "Dierenwinkel XL",
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fpedigree-dentastix-mini-multipack-35-pack-550gr%2F",
-        "maat": "",
+        "maat": "5.010.394.006.095 kg",
         "prijs": 10.99
       }
     ],
@@ -416,6 +536,22 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fpurina-dentalife-small%2F",
         "maat": "",
         "prijs": 1.99
+      }
+    ],
+    "whimzees-stix": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fwhimzees-stix-large%2F",
+        "maat": "L",
+        "prijs": 1.99
+      }
+    ],
+    "whimzees-toothbrush": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fwhimzees-toothbrush-medium%2F",
+        "maat": "M",
+        "prijs": 1.19
       }
     ]
   }

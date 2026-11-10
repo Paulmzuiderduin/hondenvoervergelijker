@@ -121,7 +121,7 @@ for (const { product, aanbieding } of snackKoppelingen) {
   lijst.push({
     winkel: WINKEL,
     url: aanbieding.url,
-    maat: '',
+    maat: aanbieding.maat,
     prijs: Number.isFinite(aanbieding.prijs) && aanbieding.prijs > 0 ? Number(aanbieding.prijs.toFixed(2)) : null
   })
   bestaand.aanbieders[product.id] = lijst
@@ -162,6 +162,7 @@ const regels = [
   '- Purina DentaLife Maxi: de productpagina in de feed geeft HTTP 404; geen link toegevoegd.',
   '- Edgard & Cooper Kip Reep: de productpagina in de feed geeft HTTP 404; geen link toegevoegd.',
   '- Purina DentaLife Loyalty Pack: één feed-URL voor Small, Medium en Maxi; geen eenduidige snack.',
+  '- Farm Food Dental Braid: de feednaam is niet eenduidig te koppelen aan Dental Braided Stick of Dental Braided Donut; geen link toegevoegd.',
   ...(snackOnbekend.length
     ? ['', '## Snackregels zonder catalogusproduct', '', ...snackOnbekend.map(({ aanbieding, regel, reden }) => `- ${aanbieding.titel} ↔ ${regel.snackId}: ${reden}`)]
     : []),

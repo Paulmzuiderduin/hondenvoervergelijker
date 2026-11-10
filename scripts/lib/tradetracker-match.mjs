@@ -71,7 +71,8 @@ export function parseTradeTrackerFeed(xml, { categorie = 'hond-voeding', categor
     const merk = naam.includes(' - ') ? naam.split(' - ')[0].trim() : ''
     const titelZonderMerk = naam.includes(' - ') ? naam.slice(naam.indexOf(' - ') + 3).trim() : naam
     const beschrijving = tag(blok, 'description').replace(/<[^>]+>/g, ' ')
-    const maatTekst = [props.EAN ?? '', naam, beschrijving].join(' ')
+    const eanTekst = (props.EAN ?? '').trim()
+    const maatTekst = [eanTekst, naam, beschrijving].join(' ')
     const matenLijst = maten(maatTekst)
     // Alleen een positieve europrijs is bruikbaar als indicatie. Een lege of
     // buitenlandse prijs wordt niet als € 0,00 op de site gezet.
@@ -84,7 +85,8 @@ export function parseTradeTrackerFeed(xml, { categorie = 'hond-voeding', categor
       merk,
       titelZonderMerk,
       categorie: categoryPath,
-      ean: /^\d{8,14}$/.test((props.EAN ?? '').replace(/\D/g, '')) ? (props.EAN ?? '').replace(/\D/g, '') : '',
+      ean: /^\d{8,14}$/.test(eanTekst.replace(/\D/g, '')) ? eanTekst.replace(/\D/g, '') : '',
+      eanTekst,
       maat: formaatMaat(matenLijst[0]),
       maten: matenLijst,
       prijs,
