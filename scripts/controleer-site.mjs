@@ -307,7 +307,7 @@ try {
 
   await open('/blog/', '.blog-grid')
   const blogKaarten = await page.locator('.blog-grid .blog-card').count()
-  const blogHref = await page.locator('.blog-grid .blog-card h2 a').first().getAttribute('href')
+  const blogHref = await page.locator('.blog-grid .blog-card h3 a, .blog-grid .blog-card h2 a').first().getAttribute('href')
   meld(blogKaarten >= 3 && Boolean(blogHref), 'blogoverzicht toont artikelen', `${blogKaarten} artikelen`)
   if (blogHref) {
     await open(blogHref, '.blog-content')

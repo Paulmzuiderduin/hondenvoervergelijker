@@ -151,25 +151,63 @@ function datumKort(waarde) {
     : datum.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })
 }
 
-function artikelKaart(artikel) {
+function artikelKaart(artikel, kopNiveau = 'h2') {
+  const kop = kopNiveau === 'h3' ? 'h3' : 'h2'
   const categorie = artikel.categorieHeeftPagina
-    ? `<a href="${artikel.categoriePad}">${escapeHtml(artikel.categorie)}</a>`
-    : escapeHtml(artikel.categorie)
+    ? `<a class="blog-card-categorie" href="${artikel.categoriePad}">${escapeHtml(artikel.categorie)}</a>`
+    : `<span class="blog-card-categorie">${escapeHtml(artikel.categorie)}</span>`
   return `        <article class="blog-card">
-          <p class="blog-card-kicker">${categorie} · ${escapeHtml(datumKort(artikel.datum))}</p>
-          <h2><a href="${artikel.pad}">${escapeHtml(artikel.titel)}</a></h2>
+          <div class="blog-card-kop">
+            ${categorie}
+            <time datetime="${escapeHtml(artikel.datum)}">${escapeHtml(datumKort(artikel.datum))}</time>
+          </div>
+          <${kop}><a href="${artikel.pad}">${escapeHtml(artikel.titel)}</a></${kop}>
           <p>${escapeHtml(artikel.beschrijving)}</p>
-          <p class="blog-card-meta">${artikel.leestijd} min lezen · <a href="${artikel.pad}">Lees artikel →</a></p>
+          <p class="blog-card-meta"><span>${artikel.leestijd} min lezen</span><a href="${artikel.pad}">Lees artikel <span aria-hidden="true">→</span></a></p>
         </article>`
 }
 
-function categorieChips(categorieen, { link = true } = {}) {
-  return categorieen.map((categorie) => {
-    const inhoud = `${escapeHtml(categorie.naam)} <span>${categorie.artikelen.length}</span>`
-    return link && categorie.heeftPagina
-      ? `<a class="blog-category-chip" href="${categorie.pad}">${inhoud}</a>`
-      : `<span class="blog-category-chip">${inhoud}</span>`
-  }).join('\n          ')
+function categorieKaart(categorie) {
+  const href = categorie.heeftPagina ? categorie.pad : `${BLOG_PAD}#${categorie.slug}`
+  const linkTekst = categorie.heeftPagina ? 'Bekijk categorie' : 'Bekijk artikelen'
+  const laatste = categorie.artikelen[0]
+  return `          <a class="blog-category-card" href="${href}">
+            <span class="blog-category-card-count">${categorie.artikelen.length} artikel${categorie.artikelen.length === 1 ? '' : 'en'}</span>
+            <h3>${escapeHtml(categorie.naam)}</h3>
+            <p>${escapeHtml(categorie.beschrijving)}</p>
+            ${laatste ? `<span class="blog-category-card-laatste">Laatst: ${escapeHtml(laatste.titel)}</span>` : ''}
+            <span class="blog-category-card-link">${linkTekst} →</span>
+          </a>`
+}
+
+function blogSubnav(categorieen, actiefPad, actieveCategorie = '') {
+  const items = [
+    { href: BLOG_PAD, label: 'Alle artikelen', aantal: null, actief: actiefPad === BLOG_PAD, current: actiefPad === BLOG_PAD },
+    ...categorieen.map((categorie) => {
+      const href = categorie.heeftPagina ? categorie.pad : `${BLOG_PAD}#${categorie.slug}`
+      return {
+        href,
+        label: categorie.naam,
+        aantal: categorie.artikelen.length,
+        actief: actiefPad === categorie.pad || actieveCategorie === categorie.naam,
+        current: actiefPad === categorie.pad
+      }
+    })
+  ]
+  return `<nav class="blog-subnav" aria-label="Blognavigatie">
+    ${items.map(({ href, label, aantal, actief, current }) => `<a href="${href}" class="${actief ? 'is-active' : ''}"${current ? ' aria-current="page"' : ''}>${escapeHtml(label)}${aantal != null ? ` <span>${aantal}</span>` : ''}</a>`).join('\n    ')}
+  </nav>`
+}
+
+function inhoudsopgave(html, extraClass = '') {
+  const koppen = [...html.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)]
+    .map(([, id, tekst]) => ({ id, tekst: tekst.replace(/<[^>]+>/g, '').trim() }))
+    .filter(({ tekst }) => tekst)
+  if (koppen.length < 3) return ''
+  return `<nav class="blog-toc${extraClass ? ` ${extraClass}` : ''}" aria-label="In dit artikel">
+    <p class="blog-toc-titel">In dit artikel</p>
+    <ol>${koppen.map(({ id, tekst }) => `<li><a href="#${escapeHtml(id)}">${escapeHtml(tekst)}</a></li>`).join('')}</ol>
+  </nav>`
 }
 
 function artikelPagina(artikel, artikelen, categorieen) {
@@ -214,32 +252,55 @@ ${gerelateerd.map(artikelKaart).join('\n')}
         </section>`
     : ''
 
+  const toc = inhoudsopgave(artikel.html)
+  const tocInline = inhoudsopgave(artikel.html, 'blog-toc-inline')
+
   const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › <a href="${BLOG_PAD}">Blog</a> › ${categorieLink}</p>
-      <article class="blog-artikel">
-        <p class="eyebrow">${escapeHtml(artikel.categorie)}</p>
-        <h1>${escapeHtml(artikel.titel)}</h1>
-        <p class="lead">${escapeHtml(artikel.beschrijving)}</p>
-        <p class="updated">Gepubliceerd op ${escapeHtml(datumKort(artikel.datum))}${artikel.bijgewerkt !== artikel.datum ? ` · bijgewerkt op ${escapeHtml(datumKort(artikel.bijgewerkt))}` : ''} · ${artikel.leestijd} min lezen · inhoud: <a href="/over-ons.html#redactie">Paul Zuiderduin</a></p>
+      ${blogSubnav(categorieen, artikel.pad, artikel.categorie)}
+      <div class="blog-layout">
+        <article class="blog-artikel">
+          <header class="blog-artikel-kop">
+            <p class="eyebrow">${escapeHtml(artikel.categorie)}</p>
+            <h1>${escapeHtml(artikel.titel)}</h1>
+            <p class="lead">${escapeHtml(artikel.beschrijving)}</p>
+            <p class="updated">Gepubliceerd op ${escapeHtml(datumKort(artikel.datum))}${artikel.bijgewerkt !== artikel.datum ? ` · bijgewerkt op ${escapeHtml(datumKort(artikel.bijgewerkt))}` : ''} · ${artikel.leestijd} min lezen · inhoud: <a href="/over-ons.html#redactie">Paul Zuiderduin</a></p>
+            <div class="blog-meta-notes">
+              <p><strong>Onafhankelijk</strong> · In de vergelijker en op productpagina’s kunnen affiliate-links staan. <a href="/privacybeleid.html">Lees meer</a>.</p>
+              ${artikel.medical ? `<p><strong>Geen medisch advies</strong> · Bij jeuk, braken, diarree of een vermoeden van een allergie is een dierenarts de juiste persoon.</p>` : ''}
+            </div>
+          </header>
 
-        <div class="callout">
-          <p><strong>Transparantie:</strong> in de vergelijker en op productpagina’s kunnen affiliate-links staan. Als je via zo’n link iets koopt, ontvangen wij een kleine commissie. Dat kost jou niets extra en heeft geen invloed op onze uitleg, de selectie of de beoordeling. Lees meer in ons <a href="/privacybeleid.html">privacybeleid</a>.</p>
-        </div>
-        ${artikel.medical ? `<div class="callout warn"><p><strong>Geen medisch advies:</strong> dit artikel is algemene uitleg. Bij jeuk, braken, diarree, gewichtsverlies of een vermoeden van een allergie is een dierenarts de juiste persoon.</p></div>` : ''}
+          ${tocInline}
 
-        <div class="blog-content">
+          <div class="blog-content">
 ${artikel.html}
-        </div>
+          </div>
 
-        <div class="blog-cta">
-          <h2>${escapeHtml(artikel.cta.titel)}</h2>
-          <p>${escapeHtml(artikel.cta.tekst)}</p>
-          <p><a class="cta" href="${escapeHtml(artikel.cta.url)}">${escapeHtml(artikel.cta.label)}</a> <a class="cta secondary" href="/hondenvoer-zonder.html">Bekijk zonder allergeen</a></p>
-        </div>
+          <div class="blog-cta">
+            <h2>${escapeHtml(artikel.cta.titel)}</h2>
+            <p>${escapeHtml(artikel.cta.tekst)}</p>
+            <p><a class="cta" href="${escapeHtml(artikel.cta.url)}">${escapeHtml(artikel.cta.label)}</a> <a class="cta secondary" href="/hondenvoer-zonder.html">Bekijk zonder allergeen</a></p>
+          </div>
 
+          <div class="blog-artikel-extra">
 ${bronnen}
 ${relatedLinks}
-${relatedArtikelen}
-      </article>`
+          </div>
+
+          <p class="blog-terug"><a href="${BLOG_PAD}">← Terug naar alle blogartikelen</a></p>
+        </article>
+
+        <aside class="blog-zijbalk" aria-label="Artikelinfo">
+          ${toc}
+          <div class="blog-cta-card">
+            <p class="eyebrow">Vergelijken</p>
+            <h2>${escapeHtml(artikel.cta.titel)}</h2>
+            <p>${escapeHtml(artikel.cta.tekst)}</p>
+            <a class="cta" href="${escapeHtml(artikel.cta.url)}">${escapeHtml(artikel.cta.label)}</a>
+          </div>
+        </aside>
+      </div>
+${relatedArtikelen}`
 
   const jsonLd = [
     {
@@ -291,38 +352,44 @@ ${relatedArtikelen}
 
 function blogIndex(artikelen, categorieen) {
   const laatste = artikelen.find((artikel) => artikel.uitgelicht) ?? artikelen[0]
-  const kaarten = artikelen.map(artikelKaart).join('\n')
   const inhoud = `      <section class="blog-hero">
         <p class="eyebrow">Blog</p>
         <h1>Hondenvoeding begrijpen en vergelijken</h1>
         <p class="lead">Hier leggen we uit hoe je een etiket leest, wat voedingswaarden betekenen en hoe je een keuze maakt die bij jouw hond past. Waar dat helpt, verwijzen we naar de vergelijker.</p>
         <p class="blog-hero-note">Onafhankelijk, met bronnen en zonder medische claims. Affiliate-links beïnvloeden de selectie en beoordeling niet.</p>
-        <p><a class="cta" href="/">Open de vergelijker</a> <a class="cta secondary" href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a></p>
+        <p class="blog-hero-meta">${categorieen.length} categorieën · ${artikelen.length} artikelen · onafhankelijk en met bronnen</p>
+        <p><a class="cta" href="/">Open de vergelijker</a> <a class="cta secondary" href="#categorieen">Bekijk categorieën</a></p>
+        ${laatste ? `<p class="blog-hero-uitgelicht"><span>Uitgelicht</span> <a href="${laatste.pad}">${escapeHtml(laatste.titel)}</a></p>` : ''}
       </section>
 
-      <nav class="blog-categorieen" aria-label="Blogcategorieën">
-        ${categorieChips(categorieen)}
-      </nav>
+      ${blogSubnav(categorieen, BLOG_PAD)}
 
-      ${laatste ? `<section class="blog-uitgelicht">
-        <p class="eyebrow">Uitgelicht artikel</p>
-        <h2><a href="${laatste.pad}">${escapeHtml(laatste.titel)}</a></h2>
-        <p>${escapeHtml(laatste.beschrijving)}</p>
-        <p class="blog-card-meta">${escapeHtml(laatste.categorie)} · ${escapeHtml(datumKort(laatste.datum))} · ${laatste.leestijd} min lezen</p>
-      </section>` : ''}
-
-      <section aria-labelledby="alle-artikelen">
+      <section id="categorieen" class="blog-sectie">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Alle artikelen</p>
-            <h2 id="alle-artikelen">Lees verder</h2>
+            <p class="eyebrow">Categorieën</p>
+            <h2>Kies een onderwerp</h2>
           </div>
-          <p class="section-note">${artikelen.length} artikel${artikelen.length === 1 ? '' : 'en'} over voeding, etiketten en keuzes.</p>
+          <p class="section-note">Drie ingangen: uitleg, kiezen en praktisch voeren.</p>
         </div>
-        <div class="blog-grid">
-${kaarten}
+        <div class="blog-category-grid">
+${categorieen.map(categorieKaart).join('\n')}
         </div>
       </section>
+
+${categorieen.map((categorie) => `      <section id="${categorie.slug}" class="blog-sectie blog-categorie-sectie">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Categorie</p>
+            <h2>${escapeHtml(categorie.naam)}</h2>
+          </div>
+          <p class="section-note">${escapeHtml(categorie.beschrijving)}</p>
+        </div>
+        <div class="blog-grid">
+${categorie.artikelen.map((artikel) => artikelKaart(artikel, 'h3')).join('\n')}
+        </div>
+        ${categorie.heeftPagina ? `<p class="blog-sectie-link"><a href="${categorie.pad}">Alle artikelen in ${escapeHtml(categorie.naam)} →</a></p>` : ''}
+      </section>`).join('\n')}
 
       <div class="callout">
         <p><strong>Geen medisch advies:</strong> de informatie op deze blog is algemeen en vervangt geen onderzoek of advies van een dierenarts. Controleer voor een aankoop altijd de verpakking en de actuele productinformatie.</p>
@@ -366,21 +433,47 @@ ${kaarten}
   })
 }
 
-function categoriePagina(categorie) {
-  const kaarten = categorie.artikelen.map(artikelKaart).join('\n')
+function categoriePagina(categorie, categorieen) {
+  const [uitgelicht, ...overige] = categorie.artikelen
+  const andereCategorieen = categorieen.filter((item) => item.naam !== categorie.naam)
   const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › <a href="${BLOG_PAD}">Blog</a> › ${escapeHtml(categorie.naam)}</p>
-      <p class="eyebrow">Blogcategorie</p>
-      <h1>${escapeHtml(categorie.naam)}</h1>
-      <p class="lead">${escapeHtml(categorie.beschrijving)}</p>
-      <p class="updated">${categorie.artikelen.length} artikelen · bijgewerkt op ${escapeHtml(datumKort(categorie.artikelen.map((artikel) => artikel.bijgewerkt).sort().at(-1)))}</p>
+      ${blogSubnav(categorieen, categorie.pad, categorie.naam)}
 
-      <div class="blog-grid">
-${kaarten}
-      </div>
+      <header class="blog-categorie-kop">
+        <p class="eyebrow">Blogcategorie</p>
+        <h1>${escapeHtml(categorie.naam)}</h1>
+        <p class="lead">${escapeHtml(categorie.beschrijving)}</p>
+        <p class="updated">${categorie.artikelen.length} artikelen · bijgewerkt op ${escapeHtml(datumKort(categorie.artikelen.map((artikel) => artikel.bijgewerkt).sort().at(-1)))}</p>
+      </header>
+
+      ${uitgelicht ? `<article class="blog-featured-card">
+        <p class="eyebrow">Uitgelicht in deze categorie</p>
+        <h2><a href="${uitgelicht.pad}">${escapeHtml(uitgelicht.titel)}</a></h2>
+        <p>${escapeHtml(uitgelicht.beschrijving)}</p>
+        <p class="blog-card-meta">${escapeHtml(datumKort(uitgelicht.datum))} · ${uitgelicht.leestijd} min lezen</p>
+        <p><a class="cta" href="${uitgelicht.pad}">Lees artikel</a></p>
+      </article>` : ''}
+
+      ${overige.length ? `<div class="blog-grid">
+${overige.map((artikel) => artikelKaart(artikel)).join('\n')}
+      </div>` : ''}
+
+      ${andereCategorieen.length ? `<section class="blog-sectie" aria-labelledby="andere-categorieen">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Verder kijken</p>
+            <h2 id="andere-categorieen">Andere categorieën</h2>
+          </div>
+        </div>
+        <div class="blog-category-grid">
+${andereCategorieen.map(categorieKaart).join('\n')}
+        </div>
+      </section>` : ''}
 
       <div class="callout">
         <p><a class="cta" href="/">Naar de vergelijker</a> <a class="cta secondary" href="${BLOG_PAD}">Alle blogartikelen</a></p>
-      </div>`
+      </div>
+      <p class="blog-terug"><a href="${BLOG_PAD}">← Terug naar alle blogartikelen</a></p>`
 
   const jsonLd = [
     {
@@ -531,7 +624,7 @@ console.log(`Geschreven: ${artikelen.length} blogartikel(en).`)
 
 writeFileSync(join(DIST, 'blog', 'index.html'), blogIndex(artikelen, categorieen))
 for (const categorie of categorieen.filter((item) => item.heeftPagina)) {
-  writeFileSync(join(DIST, categorie.pad.replace(/^\//, '')), categoriePagina(categorie))
+  writeFileSync(join(DIST, categorie.pad.replace(/^\//, '')), categoriePagina(categorie, categorieen))
 }
 console.log(`Geschreven: /blog/ en ${categorieen.filter((item) => item.heeftPagina).length} categoriepagina('s).`)
 
