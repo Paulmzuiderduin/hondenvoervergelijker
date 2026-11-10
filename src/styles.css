@@ -1528,7 +1528,7 @@ button:disabled {
   text-decoration: none;
 }
 
-.product-brand:hover {
+a.product-brand:hover {
   color: #175b30;
   text-decoration: underline;
 }

@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, allergenSearchTerms, markUncertainIngredients, setCustomTerms, sortAllergenKeys } from './lib/allergens'
-import { merkPad } from './lib/productUrl'
 import { SNACK_TERMS, SNACK_TYPES, SIZE_CLASSES, snackMatch, snackTypeLabel, sizeLabel, toProduct } from './lib/snacks'
 import snackData from '../data/snacks.json'
 import './styles.css'
@@ -192,7 +191,7 @@ function SnackCard({ product, match, heeftKeuze, vergelijk, vergelijkVol, onVerg
   return <article className={`product-card ${match.kind} snack-card`}>
     <div className="product-card-top">
       <div className="product-title-group">
-        <a className="product-brand" href={merkPad(product.brand)} title={`Alle producten van ${product.brand}`}>{product.brand}</a>
+        <span className="product-brand">{product.brand}</span>
         <h3 className="product-name">{product.name}</h3>
         <div className="product-meta">
           <span className="meta-pill">{foodTypeLabel}</span>
