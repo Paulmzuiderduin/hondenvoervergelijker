@@ -1513,7 +1513,7 @@ function App() {
           <p>Vage termen zoals <em>“dierlijke bijproducten”</em> of <em>“granen”</em> verbergen de bron. Deze vergelijker laat zien welk voer <strong>lijkt te passen</strong>, <strong>uitgesloten</strong> of <strong>onzeker</strong> is. Filter daarnaast op eiwit, vet, energie en meer.</p>
           <p className="hero-meta"><strong>{products.length ? GETAL0.format(products.length) : '1.478'}</strong> producten · <strong>{alleMerken.length || '60'}</strong> merken · <strong>{ALLERGENS.length}</strong> allergenen &amp; bronnen</p>
           <p className="hero-positioning">Wij vergelijken ingrediënten, allergenen en voedingswaarden. Een winkelprijs is een indicatie, geen onderdeel van ons oordeel.</p>
-          <p className="hero-links"><a href="#vergelijken">Begin met allergenen</a> · <a href="#filters">Filter op voeding</a> · <a href="/hondensnacks/">Bekijk hondensnacks</a> · <a href="/blog/">Blog</a> · <a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a> · <a href="/hoe-wij-vergelijken.html">Onze methode</a></p>
+          <p className="hero-links"><a href="#vergelijken">Begin met allergenen</a> · <a href="#filters">Filter op voeding</a> · <a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a></p>
         </div>
       </section>
       <div className="layout">

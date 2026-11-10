@@ -484,7 +484,7 @@ function App() {
         <p>Ook in snacks zitten bronnen die het etiket niet altijd bij name noemt. Deze vergelijker laat zien welke snacks <strong>lijken te passen</strong>, welke je moet <strong>controleren</strong> en welke <strong>uitgesloten</strong> zijn. We kijken naar ingrediënten, dierlijke eiwitbronnen en sporenmeldingen.</p>
         <p className="hero-meta"><strong>{PRODUCTEN.length}</strong> snacks · <strong>{MERKEN.length}</strong> merken · <strong>{ALLERGENS.length}</strong> allergenen &amp; bronnen</p>
         <p className="hero-positioning">Snacks zijn aanvullend voer. Een snack met één dierlijke eiwitbron is niet automatisch geschikt voor elke hond met een allergie.</p>
-        <p className="hero-links"><a href="#vergelijken">Begin met allergenen</a> · <a href="/">Naar de voervergelijker</a> · <a href="#uitleg">Hoe wij kijken</a></p>
+        <p className="hero-links"><a href="#vergelijken">Begin met allergenen</a> · <a href="#resultaten">Bekijk snacks ↓</a></p>
       </div>
     </section>
 
