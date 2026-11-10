@@ -3418,3 +3418,21 @@ button.summary-pill {
     margin-top: 0.8rem;
   }
 }
+
+/* De matrix gebruikt dezelfde statussen als de legenda, maar met tekst.
+   Zonder deze override dwingt de legenda-cirkel (1,25rem) de tekst in een
+   veel te smal vak, waardoor het vinkje wegvalt. */
+.compare-table .compare-matrix-cell .compare-state {
+  width: auto;
+  height: auto;
+  min-height: 1.25rem;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* De secties hebben al een eigen kop; een verticale streep tussen twee
+   gewrapte regels leest als een losse lijn. */
+.action-divider {
+  display: none;
+}

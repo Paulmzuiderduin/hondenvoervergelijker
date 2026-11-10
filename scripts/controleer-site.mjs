@@ -195,6 +195,8 @@ try {
   const vergelijkOordeel = await page.locator('.compare-section-row').first().innerText()
   const vergelijkMatrix = await page.locator('.compare-table').innerText()
   meld(vergelijkRijen >= 8 && vergelijkKolommen === 4 && /Jouw allergenen/i.test(vergelijkOordeel) && /Niet genoemd|Kan erin zitten|Genoemd/.test(vergelijkMatrix), 'vergelijkingsdialoog toont producten en allergenoordeel', `${vergelijkRijen} rijen · ${vergelijkKolommen} kolommen · ${vergelijkMatrix.replace(/\n/g, ' ').slice(0, 100)}`)
+  const matrixPill = await page.locator('.compare-table .compare-matrix-cell .compare-state').first().evaluate((el) => ({ tekst: el.innerText, breedte: el.getBoundingClientRect().width }))
+  meld(matrixPill.breedte > 60 && /Niet genoemd|Genoemd|Kan erin zitten/.test(matrixPill.tekst), 'allergenenmatrix toont volledige statuslabels', `${matrixPill.tekst} · ${Math.round(matrixPill.breedte)}px`)
   await page.keyboard.press('Escape')
   await page.waitForTimeout(100)
   meld(await page.locator('.compare-panel').count() === 0, 'vergelijkingsdialoog sluit met Escape')
