@@ -128,9 +128,7 @@ button:disabled {
 
 /* Header & navigatie */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 30;
+  position: static;
   display: block;
   margin: -1.5rem -1.5rem 1.25rem;
   padding: 0.7rem 1.5rem 0.75rem;
@@ -297,12 +295,15 @@ button:disabled {
 }
 
 /* Layout & Filters */
+/* Stap 1 en de resultaten staan links; de verfijning is een secundaire
+   kolom rechts. Zo leest de pagina op desktop van stap 1 naar stap 2 en
+   houdt de brede kolom de resultaten. */
 .layout {
   display: grid;
-  grid-template-columns: 272px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 272px;
   grid-template-areas:
-    "filters allergens"
-    "filters results";
+    "allergens filters"
+    "results filters";
   gap: 1rem 1.4rem;
   align-items: start;
   margin-top: 1rem;
@@ -316,8 +317,8 @@ button:disabled {
 .filters {
   grid-area: filters;
   position: sticky;
-  top: calc(var(--header-hoogte) + 0.75rem);
-  max-height: calc(100vh - var(--header-hoogte) - 1.5rem);
+  top: calc(var(--header-hoogte) + 0.5rem);
+  max-height: calc(100vh - var(--header-hoogte) - 1rem);
   overflow: auto;
   /* Zonder border-box valt de padding buiten de max-height en steekt de
      onderkant van de klep onder de viewport. Dan is het laatste blok (Merken)
@@ -2813,7 +2814,7 @@ small {
 /* Responsiveness */
 @media (max-width: 1100px) {
   .layout {
-    grid-template-columns: 236px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 236px;
     gap: 1rem;
   }
 }

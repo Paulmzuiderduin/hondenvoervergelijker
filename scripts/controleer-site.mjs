@@ -53,6 +53,21 @@ try {
   meld(/Hondenvoer vergelijken/.test(titel), 'homepage heeft de juiste titel', titel)
   const kaarten = await page.locator('.product-card').count()
   meld(kaarten >= 1, 'homepage toont producten', `${kaarten} kaarten`)
+  const desktopHierarchie = await page.evaluate(() => {
+    const rect = (selector) => document.querySelector(selector)?.getBoundingClientRect()
+    const allergen = rect('#vergelijken')
+    const filters = rect('.filters')
+    const resultaten = rect('#resultaten')
+    return {
+      header: getComputedStyle(document.querySelector('.site-header')).position,
+      allergenLinks: allergen?.left ?? 0,
+      filtersLinks: filters?.left ?? 0,
+      resultatenLinks: resultaten?.left ?? 0,
+      areas: getComputedStyle(document.querySelector('.layout')).gridTemplateAreas
+    }
+  })
+  meld(desktopHierarchie.header === 'static', 'desktopheader schuift mee en neemt geen resultaatruimte in', desktopHierarchie.header)
+  meld(desktopHierarchie.allergenLinks < desktopHierarchie.filtersLinks && desktopHierarchie.resultatenLinks < desktopHierarchie.filtersLinks, 'stap 1 en resultaten staan links, verfijnen staat rechts', `${Math.round(desktopHierarchie.allergenLinks)}px · ${Math.round(desktopHierarchie.resultatenLinks)}px · ${Math.round(desktopHierarchie.filtersLinks)}px`)
   const pagerKnoppen = await page.locator('.pager-pages button').count()
   meld(await page.locator('.pager select').count() === 0 && pagerKnoppen > 1, 'paginering gebruikt genummerde knoppen in plaats van een lange keuzelijst', `${pagerKnoppen} paginaknoppen`)
   const kaartProductpad = await page.locator('.product-name a').first().getAttribute('href')
@@ -188,6 +203,11 @@ try {
     return eerste.right <= tweede.left || tweede.right <= eerste.left || eerste.bottom <= tweede.top || tweede.bottom <= eerste.top
   })
   meld(/3\/3 geselecteerd/.test(vergelijkBar) && vierdeUit && vergelijkSticky === 'sticky' && geenBalkOverlap, 'maximaal drie producten vergelijken en de gecombineerde balk blijft zonder overlap in beeld', `${vergelijkBar.replace(/\n/g, ' ').slice(0, 100)} · ${vergelijkSticky} · overlap ${geenBalkOverlap ? 'nee' : 'ja'}`)
+  await page.evaluate(() => document.getElementById('resultaten')?.scrollIntoView({ block: 'start' }))
+  await page.waitForTimeout(150)
+  const actieTop = await page.locator('.results-action-bar').evaluate((el) => el.getBoundingClientRect().top)
+  const headerWeg = await page.locator('.site-header').evaluate((el) => el.getBoundingClientRect().bottom <= 0)
+  meld(headerWeg && actieTop >= 0 && actieTop <= 24, 'actiebalk plakt direct boven de resultaten zonder vaste header', `header weg: ${headerWeg ? 'ja' : 'nee'} · balk ${Math.round(actieTop)}px`)
   await page.locator('.compare-open').click()
   await page.waitForSelector('.compare-panel', { timeout: 10000 })
   const vergelijkRijen = await page.locator('.compare-table tbody tr').count()

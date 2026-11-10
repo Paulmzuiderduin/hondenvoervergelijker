@@ -1054,25 +1054,9 @@ function App() {
       .catch(() => {})
     return () => { actief = false }
   }, [])
-  // De header is op desktop sticky. De ankers en de filterkolom moeten precies
-  // onder de echte header uitkomen; de hoogte verschilt namelijk per scherm en
-  // verandert wanneer de disclaimer of beheerregel verdwijnt.
-  useEffect(() => {
-    const header = document.querySelector('.site-header')
-    if (!header) return
-    const mobiel = window.matchMedia('(max-width: 760px)')
-    const zetHoogte = () => {
-      document.documentElement.style.setProperty('--header-hoogte', mobiel.matches ? '0px' : `${header.getBoundingClientRect().height}px`)
-    }
-    zetHoogte()
-    const observer = new ResizeObserver(zetHoogte)
-    observer.observe(header)
-    mobiel.addEventListener('change', zetHoogte)
-    return () => {
-      observer.disconnect()
-      mobiel.removeEventListener('change', zetHoogte)
-    }
-  }, [admin, recovery])
+  // De header schuift mee met de pagina; alleen de actiebalk boven de
+  // resultaten blijft staan. Zo blijft er op een lage laptop genoeg ruimte
+  // over voor de producten zelf.
   // Een merkpagina of een gedeelde link kan verwijzen naar /?merk=Royal%20Canin.
   // Pas die selectie één keer toe zodra de producten geladen zijn.
   useEffect(() => {
