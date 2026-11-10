@@ -465,11 +465,10 @@ function App() {
           <span className="snack-section-label">Hondensnacks</span>
         </div>
         <nav className="site-nav" aria-label="Snelmenu">
-          <a href="/"><span className="nav-lang">Voervergelijker</span><span className="nav-kort">Voer</span></a>
-          <a href="#vergelijken"><span className="nav-lang">Allergenen</span><span className="nav-kort">Allergenen</span></a>
-          <a href="#filters"><span className="nav-lang">Filters</span><span className="nav-kort">Filters</span></a>
-          <a href="#resultaten"><span className="nav-lang">Snacks ({resultaten.length || '…'})</span><span className="nav-kort">Snacks</span></a>
-          <a href="#uitleg"><span className="nav-lang">Uitleg</span><span className="nav-kort">Uitleg</span></a>
+          <a href="/" title="Hondenvoervergelijker"><span className="nav-lang">Hondenvoer</span><span className="nav-kort">Voer</span></a>
+          <a href="/hondensnacks/" title="Hondensnacksvergelijker"><span className="nav-lang">Hondensnacks</span><span className="nav-kort">Snacks</span></a>
+          <a href="/blog/" title="Blog"><span className="nav-lang">Blog</span><span className="nav-kort">Blog</span></a>
+          <a href="/hoe-wij-vergelijken.html" title="Hoe wij vergelijken"><span className="nav-lang">Hoe het werkt</span><span className="nav-kort">Uitleg</span></a>
         </nav>
       </div>
       <details className="site-note site-note-compact">
@@ -600,6 +599,7 @@ function App() {
         <span>© {new Date().getFullYear()} Hondenvoervergelijker — Hondensnacks. Alle ingrediëntdata onder voorbehoud van wijzigingen door de fabrikant.</span>
         <span className="footer-links">
           <a href="/">Voervergelijker</a>
+          <a href="/blog/">Blog</a>
           <a href="/merken/">Alle merken</a>
           <a href="/hondenvoer-allergieen.html">Hondenvoer &amp; allergieën</a>
           <a href="/hoe-wij-vergelijken.html">Onze methode</a>

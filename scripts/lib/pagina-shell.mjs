@@ -140,8 +140,10 @@ export function shell({
           </span>
         </a>
         <nav class="header-nav" aria-label="Hoofdnavigatie">
-          <a class="back" href="/blog/">Blog</a>
-          <a class="back" href="/">Naar de vergelijker →</a>
+          <a class="back" href="/" title="Hondenvoervergelijker">Hondenvoer</a>
+          <a class="back" href="/hondensnacks/" title="Hondensnacksvergelijker">Hondensnacks</a>
+          <a class="back" href="/blog/" title="Blog">Blog</a>
+          <a class="back" href="/hoe-wij-vergelijken.html" title="Hoe wij vergelijken">Hoe het werkt</a>
         </nav>
       </div>
     </header>

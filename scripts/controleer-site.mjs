@@ -53,6 +53,8 @@ try {
   meld(/Hondenvoer vergelijken/.test(titel), 'homepage heeft de juiste titel', titel)
   const kaarten = await page.locator('.product-card').count()
   meld(kaarten >= 1, 'homepage toont producten', `${kaarten} kaarten`)
+  const hoofdnavigatie = await page.locator('.site-nav a').evaluateAll((links) => links.map((link) => link.getAttribute('href')))
+  meld(hoofdnavigatie.length === 4 && hoofdnavigatie.includes('/') && hoofdnavigatie.includes('/hondensnacks/') && hoofdnavigatie.includes('/blog/') && hoofdnavigatie.includes('/hoe-wij-vergelijken.html'), 'hoofdnavigatie heeft vier duidelijke secties', hoofdnavigatie.filter(Boolean).join(' · '))
   const desktopHierarchie = await page.evaluate(() => {
     const rect = (selector) => document.querySelector(selector)?.getBoundingClientRect()
     const allergen = rect('#vergelijken')
@@ -316,6 +318,16 @@ try {
   const feed = await context.request.get(`${BASIS}/blog/feed.xml`)
   const feedTekst = await feed.text()
   meld(feed.ok() && feedTekst.includes('<rss') && feedTekst.includes('<item>'), 'blog-rss is bereikbaar en bevat artikelen')
+
+  await open('/hondensnacks/', '.snack-card')
+  const snackKaarten = await page.locator('.snack-card').count()
+  const snackTitel = await page.title()
+  const snackRobots = await page.locator('meta[name="robots"]').getAttribute('content')
+  const snackCanonical = await page.locator('link[rel="canonical"]').getAttribute('href')
+  const snackBlogLink = await page.locator('footer a[href="/blog/"]').count()
+  meld(snackKaarten >= 1 && /Hondensnacks vergelijken/.test(snackTitel), 'snackvergelijker toont snacks', `${snackKaarten} snacks · ${snackTitel}`)
+  meld(/noindex/i.test(snackRobots || '') && Boolean(snackCanonical?.includes('/hondensnacks/')), 'snacksectie is een noindex-preview met eigen canonical', `${snackRobots} · ${snackCanonical}`)
+  meld(snackBlogLink === 1, 'snacksectie linkt terug naar de blog', `${snackBlogLink} bloglink`)
 
   const beoordelingen = await context.request.get(`${BASIS}/catalog-assessment.json`)
   const beoordelingenJson = beoordelingen.ok() ? await beoordelingen.json().catch(() => ({})) : {}
