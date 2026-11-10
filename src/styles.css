@@ -3052,6 +3052,24 @@ small {
   color: #fff;
 }
 
+
+.results-sticky-stack {
+  position: sticky;
+  top: calc(var(--header-hoogte, 0px) + 0.5rem);
+  z-index: 20;
+  display: grid;
+  gap: 0.4rem;
+  margin: 0 0 0.75rem;
+}
+
+.results-sticky-stack .selected-allergens-bar,
+.results-sticky-stack .compare-bar {
+  position: static;
+  top: auto;
+  z-index: auto;
+  margin: 0;
+}
+
 .selected-allergens-bar {
   position: sticky;
   top: calc(var(--header-hoogte, 0px) + 0.5rem);
@@ -3303,6 +3321,10 @@ button.summary-pill {
 
 @media (max-width: 760px) {
   .selected-allergens-bar {
+    position: static;
+  }
+
+  .results-sticky-stack {
     position: static;
   }
 

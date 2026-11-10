@@ -180,8 +180,13 @@ try {
   await vergelijkVinkjes.nth(2).check()
   const vierdeUit = await vergelijkVinkjes.nth(3).isDisabled()
   const vergelijkBar = await page.locator('.compare-bar').innerText()
-  const vergelijkSticky = await page.locator('.compare-bar').evaluate((el) => getComputedStyle(el).position)
-  meld(/3\/3 geselecteerd/.test(vergelijkBar) && vierdeUit && vergelijkSticky === 'sticky', 'maximaal drie producten vergelijken en de balk blijft bij scrollen in beeld', `${vergelijkBar.replace(/\n/g, ' ').slice(0, 100)} · ${vergelijkSticky}`)
+  const vergelijkSticky = await page.locator('.results-sticky-stack').evaluate((el) => getComputedStyle(el).position)
+  const geenBalkOverlap = await page.evaluate(() => {
+    const boven = document.querySelector('.selected-allergens-bar')?.getBoundingClientRect()
+    const onder = document.querySelector('.compare-bar')?.getBoundingClientRect()
+    return !boven || !onder || onder.top >= boven.bottom - 1
+  })
+  meld(/3\/3 geselecteerd/.test(vergelijkBar) && vierdeUit && vergelijkSticky === 'sticky' && geenBalkOverlap, 'maximaal drie producten vergelijken en de balken blijven zonder overlap in beeld', `${vergelijkBar.replace(/\n/g, ' ').slice(0, 100)} · ${vergelijkSticky} · overlap ${geenBalkOverlap ? 'nee' : 'ja'}`)
   await page.locator('.compare-open').click()
   await page.waitForSelector('.compare-panel', { timeout: 10000 })
   const vergelijkRijen = await page.locator('.compare-table tbody tr').count()

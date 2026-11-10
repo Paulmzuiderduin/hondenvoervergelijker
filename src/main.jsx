@@ -1653,6 +1653,7 @@ function App() {
             </details>
             {geenMerken || geenTypes ? <section id="resultaten"><h2>Geen producten</h2><p>{filterMelding}</p></section> : (
               <section id="resultaten">
+                {(allergens.length > 0 || vergelijkProducten.length > 0) && <div className="results-sticky-stack">
                 {allergens.length > 0 && <div className="selected-allergens-bar" aria-label="Gekozen allergenen">
                   <div className="selected-allergens-main">
                     <span className="selected-label">Je sluit uit:</span>
@@ -1669,6 +1670,7 @@ function App() {
                   <div className="compare-bar-chips">{vergelijkProducten.map((product) => <button type="button" className="compare-chip" key={product.id} onClick={() => wisselVergelijk(product.id)} title="Verwijder uit de vergelijking">{product.brand} {product.name} <span aria-hidden="true">×</span></button>)}</div>
                   <button type="button" className="compare-open" disabled={vergelijkProducten.length < 2} onClick={openVergelijk} title={vergelijkProducten.length < 2 ? 'Kies minstens twee producten' : 'Open de vergelijking'}>Vergelijk</button>
                   <button type="button" className="link" onClick={wisVergelijk}>Wissen</button>
+                </div>}
                 </div>}
                 <div className="results-header">
                   <h2>Producten ({GETAL0.format(statusGefilterd.length)}{statusFilter !== 'alle' ? ` van ${GETAL0.format(alleResultaten.length)}` : ''})</h2>
