@@ -90,7 +90,10 @@ bevat een publisher-specifieke URL; hij wordt daarom niet gecommit.
 5. Controleer `data/winkels/rapport-dierenwinkelxl.md`.
 
 De koppeling is bewust streng: alleen exacte merk- en productnamen, en waar
-mogelijk een overlappende verpakking. Bij twijfel komt er geen link. De europrijs
-uit de feed wordt als vanaf-prijs (laagste variantprijs) opgeslagen en bij de
-winkelknop getoond. Ververs de feed regelmatig; de actuele winkelprijs en de
-prijs voor de gekozen maat kunnen afwijken.
+mogelijk een overlappende verpakking. Bij twijfel komt er geen link. Voor snacks
+wordt gekoppeld op EAN of op een vaste feedtitel in
+`scripts/lib/snack-winkel-match.mjs`. Dezelfde run werkt `public/winkels.json`
+bij voor voer én snacks. De europrijs uit de feed wordt als vanaf-prijs (laagste
+variantprijs) opgeslagen en bij de winkelknop getoond. Ververs de feed
+regelmatig; de actuele winkelprijs en de prijs voor de gekozen maat kunnen
+afwijken.

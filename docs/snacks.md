@@ -36,8 +36,13 @@ opgenomen. Bij de openbare lancering wordt dat `index, follow`.
   merkenoverzicht.
 - `scripts/controleer-snackdata.mjs` — controle op verplichte velden, dubbele
   producten en tegenstrijdige `single_protein`/`grain_free`-waarden.
+- `scripts/lib/snack-winkel-match.mjs` — vaste EAN-/titelkoppelingen tussen de
+  Dierenwinkel XL-feed en snacks.
+- `public/winkels.json` — gegenereerde winkel links en indicatieprijzen voor
+  voer en snacks.
 - `tests/unit/snacks.test.js` — tests voor het snackoordeel, sporen en
   snackmerkpaden.
+- `tests/unit/snack-winkel-match.test.js` — tests voor de snack-winkelkoppeling.
 
 ## Batch
 
@@ -68,6 +73,27 @@ snackvergelijker opgenomen; die horen bij de supplementenvergelijker.
 imports geldt: staat `imported_at` wel gevuld en `reviewed_at` niet, dan toont
 de kaart “Automatisch overgenomen” in plaats van “Door een mens gecontroleerd”.
 Dat verschil mag nooit verdwijnen.
+
+## Winkellinks (Dierenwinkel XL)
+
+De snackkaarten in de vergelijker en op de statische snackmerkpagina's kunnen
+een affiliate-link naar Dierenwinkel XL tonen. De links staan in
+`public/winkels.json`, samen met de voerlinks. De koppeling wordt gemaakt door
+`scripts/koppel-dierenwinkelxl.mjs` met de regels uit
+`scripts/lib/snack-winkel-match.mjs`.
+
+- Bron: de lokale TradeTracker-feed `data/winkels/dierenwinkelxl.xml` (niet
+  gecommit).
+- Koppelen gebeurt op EAN of op een vaste, exacte feedtitel. Bij twijfel komt er
+  geen link.
+- In de batch van 10 november 2026 zijn 10 snacks gekoppeld: 1 Bonzo, 2
+  DentaLife, 3 DentaStix en 4 Edgard & Cooper-producten.
+- Drie feedaanbiedingen zijn bewust overgeslagen: DentaLife Maxi en Edgard &
+  Cooper Kip Reep geven HTTP 404, en de DentaLife Loyalty Pack is één URL voor
+  drie maten.
+- De getoonde prijs is een indicatie uit de feed en geen vergelijkingsprijs.
+  Ververs de feed en draai `npm run winkels:dierenwinkelxl` om de links bij te
+  werken. Het rapport staat in `data/winkels/rapport-dierenwinkelxl.md`.
 
 ## Snackmerkpagina's
 

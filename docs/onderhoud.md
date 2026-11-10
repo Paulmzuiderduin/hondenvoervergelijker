@@ -129,9 +129,11 @@ lokaal in `data/winkels/dierenwinkelxl.xml` en wordt niet gecommit.
 
 De import gebruikt strikte matching: exacte merk- en productnaam, en waar
 mogelijk een overlappende verpakking. Bij twijfel wordt er geen link toegevoegd.
-De europrijs uit de feed wordt als vanaf-prijs (laagste variantprijs) opgeslagen
-en bij de winkelknop getoond. Ververs de feed regelmatig; de actuele winkelprijs
-kan afwijken.
+Voor snacks gebeurt de koppeling op EAN of op een vaste feedtitel in
+`scripts/lib/snack-winkel-match.mjs`; dezelfde run werkt zowel de voer- als de
+snacklinks bij. De europrijs uit de feed wordt als vanaf-prijs (laagste
+variantprijs) opgeslagen en bij de winkelknop getoond. Ververs de feed
+regelmatig; de actuele winkelprijs kan afwijken.
 
 ## Terugvallen op GitHub Pages
 

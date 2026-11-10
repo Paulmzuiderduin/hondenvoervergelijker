@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-11-07T14:15:24.551Z",
+  "bijgewerkt": "2026-11-10T19:57:01.432Z",
   "netwerk": "TradeTracker",
   "aanbieders": {
     "08c788d6-941d-433e-ba73-6f1c99405be5": [
@@ -336,6 +336,86 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-yorkshire-terrier-adult%2F",
         "maat": "",
         "prijs": 18.49
+      }
+    ],
+    "edgard-en-cooper-doggy-dental-appel-eucalyptus": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fedgard-cooper-dental-sticks-appel%2F",
+        "maat": "",
+        "prijs": 3.99
+      }
+    ],
+    "edgard-en-cooper-reep-appel-en-bosbes": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fedgardcooper-bar-adult-apple-30gr%2F",
+        "maat": "",
+        "prijs": 1.99
+      }
+    ],
+    "edgard-en-cooper-reep-lam-en-kalkoen": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fedgardcooper-bar-adult-lambturkey-30gr%2F",
+        "maat": "",
+        "prijs": 1.99
+      }
+    ],
+    "edgard-en-cooper-strips-kip": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fedgard-cooper-kip-jerky%2F",
+        "maat": "",
+        "prijs": 4.49
+      }
+    ],
+    "pedigree-dentastix-maxi": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fpedigree-denta-stix-maxi-multipack-21-pack-810gr%2F",
+        "maat": "",
+        "prijs": 10.99
+      }
+    ],
+    "pedigree-dentastix-medium": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fpedigree-denta-stix-medium-multipack-28-pack-720gr%2F",
+        "maat": "",
+        "prijs": 10.99
+      }
+    ],
+    "pedigree-dentastix-mini": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fpedigree-dentastix-mini-multipack-35-pack-550gr%2F",
+        "maat": "",
+        "prijs": 10.99
+      }
+    ],
+    "purina-bonzo-funtastix-bacon-kaas": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fbonzo-funtastix%2F",
+        "maat": "",
+        "prijs": 2.39
+      }
+    ],
+    "purina-dentalife-daily-medium": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fpurina-dentalife-medium%2F",
+        "maat": "",
+        "prijs": 1.79
+      }
+    ],
+    "purina-dentalife-daily-small": [
+      {
+        "winkel": "Dierenwinkel XL",
+        "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fpurina-dentalife-small%2F",
+        "maat": "",
+        "prijs": 1.99
       }
     ]
   }

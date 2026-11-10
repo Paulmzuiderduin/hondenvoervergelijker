@@ -1,18 +1,20 @@
 #!/usr/bin/env node
-// Koppelt Dierenwinkel XL (TradeTracker, campagne 4019) aan de productcatalogus.
+// Koppelt Dierenwinkel XL (TradeTracker, campagne 4019) aan de productcatalogus
+// van de voervergelijker én de snackvergelijker.
 //
 // De feed wordt niet gecommit: hij is groot en bevat een publisher-specifieke
 // URL. Download hem lokaal als data/winkels/dierenwinkelxl.xml en draai:
 //
 //   npm run winkels:dierenwinkelxl
 //
-// Alleen exacte merk- en productnaammatches komen in public/winkels.json.
-// Bij twijfel of meerdere kandidaten wordt er geen link toegevoegd.
+// Voer matcht op exacte merk- en productnaam; snacks op EAN of een vaste
+// feedtitel. Bij twijfel of meerdere kandidaten wordt er geen link toegevoegd.
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { koppelBetrouwbaar, parseTradeTrackerFeed } from './lib/tradetracker-match.mjs'
+import { koppelSnacksBetrouwbaar } from './lib/snack-winkel-match.mjs'
 
 const WORTEL = dirname(dirname(fileURLToPath(import.meta.url)))
 const FEED = join(WORTEL, 'data', 'winkels', 'dierenwinkelxl.xml')
@@ -72,9 +74,19 @@ async function haalProducten() {
 }
 
 const xml = readFileSync(feedPad, 'utf8')
-const aanbiedingen = parseTradeTrackerFeed(xml)
+const alleAanbiedingen = parseTradeTrackerFeed(xml, { categorieen: ['hond-voeding', 'hond-snacks', 'hond'] })
+const voerAanbiedingen = alleAanbiedingen.filter((aanbieding) => aanbieding.categorie === 'hond-voeding')
+const snackAanbiedingen = alleAanbiedingen.filter((aanbieding) => ['hond-snacks', 'hond'].includes(aanbieding.categorie))
 const producten = await haalProducten()
-const { koppelingen, dubbelzinnig } = koppelBetrouwbaar(producten, aanbiedingen)
+const { koppelingen: voerKoppelingen, dubbelzinnig: voerDubbelzinnig } = koppelBetrouwbaar(producten, voerAanbiedingen)
+
+const snackData = JSON.parse(readFileSync(join(WORTEL, 'data', 'snacks.json'), 'utf8'))
+const snacks = Array.isArray(snackData.producten) ? snackData.producten : []
+const {
+  koppelingen: snackKoppelingen,
+  dubbelzinnig: snackDubbelzinnig,
+  onbekend: snackOnbekend
+} = koppelSnacksBetrouwbaar(snacks, snackAanbiedingen)
 
 let bestaand = { aanbieders: {} }
 if (existsSync(OUTPUT)) {
@@ -93,12 +105,23 @@ for (const [productId, lijst] of Object.entries(bestaand.aanbieders ?? {})) {
   else delete bestaand.aanbieders[productId]
 }
 
-for (const { product, aanbieding } of koppelingen) {
+for (const { product, aanbieding } of voerKoppelingen) {
   const lijst = bestaand.aanbieders[product.id] ?? []
   lijst.push({
     winkel: WINKEL,
     url: aanbieding.url,
     maat: aanbieding.maat,
+    prijs: Number.isFinite(aanbieding.prijs) && aanbieding.prijs > 0 ? Number(aanbieding.prijs.toFixed(2)) : null
+  })
+  bestaand.aanbieders[product.id] = lijst
+}
+
+for (const { product, aanbieding } of snackKoppelingen) {
+  const lijst = bestaand.aanbieders[product.id] ?? []
+  lijst.push({
+    winkel: WINKEL,
+    url: aanbieding.url,
+    maat: '',
     prijs: Number.isFinite(aanbieding.prijs) && aanbieding.prijs > 0 ? Number(aanbieding.prijs.toFixed(2)) : null
   })
   bestaand.aanbieders[product.id] = lijst
@@ -113,32 +136,54 @@ const resultaat = {
 const regels = [
   '# Dierenwinkel XL — TradeTracker-koppeling',
   '',
-  `- Feedproducten: ${aanbiedingen.length} hondenvoeding`,
-  `- Catalogus: ${producten.length} producten`,
-  `- Betrouwbare koppelingen: ${koppelingen.length}`,
-  `- Dubbelzinnig overgeslagen: ${dubbelzinnig.length}`,
+  `- Feedproducten hondenvoeding: ${voerAanbiedingen.length}`,
+  `- Catalogus voeding: ${producten.length} producten`,
+  `- Betrouwbare voerkoppelingen: ${voerKoppelingen.length}`,
+  `- Dubbelzinnig voer overgeslagen: ${voerDubbelzinnig.length}`,
+  `- Feedproducten snacks: ${snackAanbiedingen.length}`,
+  `- Catalogus snacks: ${snacks.length} producten`,
+  `- Betrouwbare snackkoppelingen: ${snackKoppelingen.length}`,
+  `- Dubbelzinnig snacks overgeslagen: ${snackDubbelzinnig.length}`,
   '',
-  '## Gekoppeld',
+  '## Gekoppeld voer',
   '',
   '| Merk | Product | Maat | Prijs | Feednaam |',
   '|---|---|---|---|---|',
-  ...koppelingen.map(({ product, aanbieding }) => `| ${product.brand} | ${product.name} | ${aanbieding.maat || '—'} | ${aanbieding.prijs != null ? `€ ${aanbieding.prijs.toFixed(2).replace('.', ',')}` : '—'} | ${aanbieding.titel} |`),
+  ...voerKoppelingen.map(({ product, aanbieding }) => `| ${product.brand} | ${product.name} | ${aanbieding.maat || '—'} | ${aanbieding.prijs != null ? `€ ${aanbieding.prijs.toFixed(2).replace('.', ',')}` : '—'} | ${aanbieding.titel} |`),
   '',
-  '## Dubbelzinnig — geen link',
+  '## Gekoppelde snacks',
   '',
-  ...(dubbelzinnig.length
-    ? dubbelzinnig.map(({ product, aanbieding }) => `- ${product.brand} — ${product.name} ↔ ${aanbieding.titel}`)
-    : ['Geen.'])
+  '| Merk | Snack | Prijs | Feednaam | Toelichting |',
+  '|---|---|---|---|---|',
+  ...snackKoppelingen.map(({ product, aanbieding, note }) => `| ${product.brand} | ${product.name} | ${aanbieding.prijs != null ? `€ ${aanbieding.prijs.toFixed(2).replace('.', ',')}` : '—'} | ${aanbieding.titel} | ${note} |`),
+  '',
+  '## Snacks bewust niet gekoppeld',
+  '',
+  '- Purina DentaLife Maxi: de productpagina in de feed geeft HTTP 404; geen link toegevoegd.',
+  '- Edgard & Cooper Kip Reep: de productpagina in de feed geeft HTTP 404; geen link toegevoegd.',
+  '- Purina DentaLife Loyalty Pack: één feed-URL voor Small, Medium en Maxi; geen eenduidige snack.',
+  ...(snackOnbekend.length
+    ? ['', '## Snackregels zonder catalogusproduct', '', ...snackOnbekend.map(({ aanbieding, regel, reden }) => `- ${aanbieding.titel} ↔ ${regel.snackId}: ${reden}`)]
+    : []),
+  '',
+  '## Dubbelzinnig voer — geen link',
+  '',
+  ...(voerDubbelzinnig.length
+    ? voerDubbelzinnig.map(({ product, aanbieding }) => `- ${product.brand} — ${product.name} ↔ ${aanbieding.titel}`)
+    : ['Geen.']),
+  ...(snackDubbelzinnig.length
+    ? ['', '## Dubbelzinnige snacks — geen link', '', ...snackDubbelzinnig.map(({ product, aanbieding }) => `- ${product.brand} — ${product.name} ↔ ${aanbieding.titel}`)]
+    : [])
 ]
 
 if (droog) {
   console.log(regels.join('\n'))
-  console.log(`\nProefrun: ${koppelingen.length} koppelingen; public/winkels.json is niet aangepast.`)
+  console.log(`\nProefrun: ${voerKoppelingen.length} voerkoppelingen en ${snackKoppelingen.length} snackkoppelingen; public/winkels.json is niet aangepast.`)
 } else {
   mkdirSync(dirname(RAPPORT), { recursive: true })
   writeFileSync(RAPPORT, `${regels.join('\n')}\n`)
   writeFileSync(OUTPUT, `${JSON.stringify(resultaat, null, 2)}\n`)
-  console.log(`Geschreven: public/winkels.json (${koppelingen.length} Dierenwinkel XL-links)`)
+  console.log(`Geschreven: public/winkels.json (${voerKoppelingen.length} voerlinks, ${snackKoppelingen.length} snacklinks)`)
   console.log(`Rapport: data/winkels/rapport-dierenwinkelxl.md`)
-  console.log(`${dubbelzinnig.length} dubbelzinnige kandidaten overgeslagen.`)
+  console.log(`${voerDubbelzinnig.length} dubbelzinnige voerkandidaten en ${snackDubbelzinnig.length} dubbelzinnige snackkandidaten overgeslagen.`)
 }

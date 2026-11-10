@@ -15,7 +15,24 @@ import { DIST, SITE, WORTEL, datumNl, escapeHtml, shell } from './lib/pagina-she
 setCustomTerms(SNACK_TERMS)
 
 const DATA = join(WORTEL, 'data', 'snacks.json')
+const WINKELS = join(WORTEL, 'public', 'winkels.json')
 const SITE_URL = SITE
+
+function leesWinkels() {
+  try {
+    const bestand = JSON.parse(readFileSync(WINKELS, 'utf8'))
+    return {
+      aanbieders: bestand && typeof bestand.aanbieders === 'object' ? bestand.aanbieders : {},
+      bijgewerkt: bestand?.bijgewerkt ?? ''
+    }
+  } catch {
+    return { aanbieders: {}, bijgewerkt: '' }
+  }
+}
+
+const WINKELDATA = leesWinkels()
+const WINKELAANBOD = WINKELDATA.aanbieders
+const PRIJS = new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
 function leesSnacks() {
   try {
@@ -43,6 +60,7 @@ function uniekeWoorden(lijst = []) {
 }
 
 function productKaart(product) {
+  const aanbiedingen = (WINKELAANBOD[product.id] ?? []).filter((aanbieding) => aanbieding?.url)
   const uitslag = assessLabel(product.ingredients_text)
   const onbenoemd = uniekeWoorden(uitslag.hidden)
   const onbekend = [...new Set(uitslag.unknown)]
@@ -88,6 +106,11 @@ function productKaart(product) {
             <p class="product-meta">Bron: ${bronRegel} · ${escapeHtml(herkomst)}</p>
             ${product.source_note ? `<p class="product-meta">${escapeHtml(product.source_note)}</p>` : ''}
           </details>
+          ${aanbiedingen.map((aanbieding) => {
+            const prijs = Number(aanbieding.prijs)
+            const heeftPrijs = Number.isFinite(prijs) && prijs > 0
+            return `<a class="cta secondary" href="${escapeHtml(aanbieding.url)}" target="_blank" rel="sponsored nofollow noopener noreferrer">Bekijk bij ${escapeHtml(aanbieding.winkel)}${heeftPrijs ? ` · ${PRIJS.format(prijs)}` : ''}</a>`
+          }).join('\n          ')}
           <a class="product-details" href="${zoekUrl}">Bekijk in de snackvergelijker →</a>
         </article>`
 }
@@ -106,6 +129,7 @@ function merkPagina(brand, producten, buren = []) {
     const uitslag = assessLabel(product.ingredients_text)
     return uitslag.hidden.length > 0 || uitslag.unknown.length > 0
   }).length
+  const heeftWinkelLinks = producten.some((product) => (WINKELAANBOD[product.id] ?? []).some((aanbieding) => aanbieding?.url))
   const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › <a href="/hondensnacks/">Hondensnacks</a> › <a href="/hondensnacks/merken/">Snackmerken</a> › ${escapeHtml(brand)}</p>
       <p class="eyebrow">Snackmerk</p>
       <h1>${escapeHtml(brand)} hondensnacks: ingrediënten en allergenen</h1>
@@ -119,6 +143,7 @@ function merkPagina(brand, producten, buren = []) {
       <div class="product-grid">
 ${producten.map(productKaart).join('\n')}
       </div>
+      ${heeftWinkelLinks ? `<p class="partner-note"><small>Sommige winkellinks zijn affiliate-links. De selectie, volgorde en beoordeling zijn daar niet van afhankelijk. De getoonde prijs komt uit de productfeed${WINKELDATA.bijgewerkt ? ` van ${escapeHtml(datumNl(WINKELDATA.bijgewerkt))}` : ''} en kan in de winkel afwijken.</small></p>` : ''}
 
       <h2>Over deze snackmerkpagina</h2>
       <p>De ingrediëntenlijsten komen van de officiële productpagina's van ${escapeHtml(brand)}. De snackvergelijker neemt de tekst letterlijk over en beoordeelt per allergeen of de bron bij name genoemd is. Kies in de vergelijker de allergenen van jouw hond om te zien welke snacks geschikt lijken, welke uitgesloten zijn en waar je het etiket moet controleren.</p>

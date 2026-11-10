@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, allergenSearchTerms, markUncertainIngredients, setCustomTerms, sortAllergenKeys } from './lib/allergens'
 import { SNACK_TERMS, SNACK_TYPES, SIZE_CLASSES, snackMatch, snackMerkPad, snackTypeLabel, sizeLabel, toProduct } from './lib/snacks'
+import { track } from './lib/analytics'
 import snackData from '../data/snacks.json'
 import './styles.css'
 import './snacks.css'
@@ -20,6 +21,7 @@ const SNEL_ALLERGENEN = ['chicken', 'beef', 'grains', 'milk', 'egg', 'fish', 'sa
 const LIJST_SCHEIDING = '|'
 const GETAL0 = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 0 })
 const KCAL = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 0 })
+const PRIJS = new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
 function normaliseerZoektekst(tekst = '') {
   return String(tekst)
@@ -150,7 +152,7 @@ function Pagination({ page, total, onChange }) {
   </nav>
 }
 
-function SnackCard({ product, match, heeftKeuze, vergelijk, vergelijkVol, onVergelijk }) {
+function SnackCard({ product, match, heeftKeuze, aanbiedingen = [], aanbodBijgewerkt = '', vergelijk, vergelijkVol, onVergelijk }) {
   const excluded = match.kind === 'excluded'
   let verdict = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controleer etiket/fabrikant' : match.states.length ? 'Lijkt geschikt' : 'Etiket volledig'
   const verdictSymbool = excluded ? '✕' : match.kind === 'check' ? '?' : '✓'
@@ -178,6 +180,11 @@ function SnackCard({ product, match, heeftKeuze, vergelijk, vergelijkVol, onVerg
   const kcalRegel = product.kcal_per_100g != null
     ? `${KCAL.format(product.kcal_per_100g)} kcal per 100 g`
     : product.kcal_per_piece != null ? `${KCAL.format(product.kcal_per_piece)} kcal per stuk` : ''
+  const geprijsdeAanbiedingen = aanbiedingen.filter((aanbieding) => {
+    const prijs = Number(aanbieding.prijs)
+    return Number.isFinite(prijs) && prijs > 0
+  })
+  const prijsDatum = datumKort(aanbodBijgewerkt)
   const checkReason = excluded || match.kind !== 'check' ? ''
     : !match.hasLabel ? 'Er is nog geen ingrediëntenlijst ingevoerd.'
       : !match.reviewed && !match.imported ? 'Deze samenstelling is nog niet tegen de bron gecontroleerd.'
@@ -240,6 +247,27 @@ function SnackCard({ product, match, heeftKeuze, vergelijk, vergelijkVol, onVerg
       {product.source_note && <p className="import-note"><small>{product.source_note}</small></p>}
       {match.importNote && match.importNote !== product.source_note && <p className="import-note"><small>{match.importNote}</small></p>}
     </details>
+    {aanbiedingen.length > 0 && <div className="shop-links">
+      {aanbiedingen.map((aanbieding) => {
+        const prijs = Number(aanbieding.prijs)
+        const heeftPrijs = Number.isFinite(prijs) && prijs > 0
+        return <a
+          key={`${aanbieding.winkel}-${aanbieding.url}`}
+          className="shop-link"
+          href={aanbieding.url}
+          target="_blank"
+          rel="sponsored nofollow noopener noreferrer"
+          title={`Affiliate-link naar ${aanbieding.winkel}${heeftPrijs ? ` · ${PRIJS.format(prijs)}` : ''}. Wij ontvangen een kleine commissie.`}
+          onClick={() => track('winkel-klik', { winkel: aanbieding.winkel, merk: product.brand, product: product.name })}
+        >
+          <span className="shop-link-label">{aanbieding.winkel}{aanbieding.maat ? ` (${aanbieding.maat})` : ''}</span>
+          {heeftPrijs && <span className="shop-price">{PRIJS.format(prijs)}</span>}
+        </a>
+      })}
+      <span className="shop-note">{geprijsdeAanbiedingen.length
+        ? `Affiliate-link · prijs van de aanbieding in de feed${prijsDatum ? ` van ${prijsDatum}` : ''}, kan afwijken`
+        : 'Affiliate-link · rechtstreeks naar de winkel'}</span>
+    </div>}
     <p className="snack-source"><small>Bron: {source
       ? <a href={source} target="_blank" rel="noreferrer">{sourceDomain(source) || 'open bron'} ↗</a>
       : 'niet vermeld'} · gecontroleerd op {bronDatum || 'onbekend'}{match.stale ? ' · controle nodig' : ''} · sporen: {product.trace_text ? 'apart vermeld' : 'niet vermeld op de bronpagina'}</small></p>
@@ -386,6 +414,24 @@ function App() {
   const [allergenSearch, setAllergenSearch] = useState('')
   const [compareIds, setCompareIds] = useState([])
   const [compareOpen, setCompareOpen] = useState(false)
+  const [aanbod, setAanbod] = useState({})
+  const [aanbodBijgewerkt, setAanbodBijgewerkt] = useState('')
+
+  // Winkelaanbiedingen zijn een losse laag. Ontbreekt het bestand of is het
+  // leeg, dan verandert er niets aan de snackkaarten.
+  useEffect(() => {
+    let actief = true
+    fetch('/winkels.json', { cache: 'no-cache' })
+      .then((antwoord) => (antwoord.ok ? antwoord.json() : null))
+      .then((data) => {
+        if (actief) {
+          setAanbod(data && typeof data.aanbieders === 'object' ? data.aanbieders : {})
+          setAanbodBijgewerkt(data?.bijgewerkt || '')
+        }
+      })
+      .catch(() => {})
+    return () => { actief = false }
+  }, [])
 
   useEffect(() => { schrijfUrl(filters) }, [filters])
   useEffect(() => { setPage(1) }, [filters])
@@ -627,7 +673,7 @@ function App() {
               const toonKop = heeftKeuze && statusFilter === 'alle' && match.kind !== vorige
               return <React.Fragment key={product.id}>
                 {toonKop && <h3 className={`result-group-heading ${match.kind}`}>{statusKop[match.kind]} <span>{statusAantal[match.kind]}</span></h3>}
-                <SnackCard product={product} match={match} heeftKeuze={heeftKeuze} vergelijk={compareIds.includes(product.id)} vergelijkVol={compareIds.length >= 3} onVergelijk={wisselVergelijk} />
+                <SnackCard product={product} match={match} heeftKeuze={heeftKeuze} aanbiedingen={aanbod[product.id] ?? []} aanbodBijgewerkt={aanbodBijgewerkt} vergelijk={compareIds.includes(product.id)} vergelijkVol={compareIds.length >= 3} onVergelijk={wisselVergelijk} />
               </React.Fragment>
             }) : <div className="empty-results">
               <strong>Geen snacks gevonden{statusFilter !== 'alle' ? ` met status “${statusKop[statusFilter]}”` : ''}.</strong>
@@ -648,7 +694,7 @@ function App() {
       <div className="footer-grid">
         <div className="footer-col">
           <h3>Over deze snacksectie</h3>
-          <p>Deze eerste batch bevat snacks van Renske, Yarrah en Happy Dog. De samenstellingen zijn letterlijk overgenomen van de officiële productpagina's en in deze batch tegen de bron gecontroleerd.</p>
+          <p>Deze batch bevat {PRODUCTEN.length} snacks van {MERKEN.length} merken. De samenstellingen zijn letterlijk overgenomen van de officiële productpagina's en tegen de bron gecontroleerd. Alleen voor Frolic is een verkoopsite als backup gebruikt, omdat de officiële merkpagina geen volledige ingrediëntenlijst heeft.</p>
         </div>
         <div className="footer-col">
           <h3>Hoe wij kijken</h3>
@@ -656,7 +702,7 @@ function App() {
         </div>
         <div className="footer-col">
           <h3>Onafhankelijk en privacy</h3>
-          <p>Wij vergelijken ingrediënten, allergenen en praktische kenmerken; een prijs is geen onderdeel van ons oordeel. Deze site plaatst geen tracking-cookies en verkoopt geen bezoekersgegevens. Lees het volledige <a href="/privacybeleid.html">privacybeleid</a>.</p>
+          <p>Wij vergelijken ingrediënten, allergenen en praktische kenmerken; een prijs is geen onderdeel van ons oordeel. Sommige uitgaande winkellinks zijn affiliate-links. De selectie, sortering en beoordeling worden daar nooit door beïnvloed. Deze site plaatst geen tracking-cookies en verkoopt geen bezoekersgegevens. Lees het volledige <a href="/privacybeleid.html">privacybeleid</a>.</p>
           <p className="footer-meta">Redactie: Paul Zuiderduin · Contact: <a href="mailto:hondenvoervergelijker@paulzuiderduin.com">hondenvoervergelijker@paulzuiderduin.com</a></p>
         </div>
       </div>

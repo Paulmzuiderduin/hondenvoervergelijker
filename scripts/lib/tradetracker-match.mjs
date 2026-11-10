@@ -54,19 +54,21 @@ export function formaatMaat(milligrammen) {
   return `${new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 1 }).format(waarde)} ${eenheid}`
 }
 
-export function parseTradeTrackerFeed(xml, { categorie = 'hond-voeding' } = {}) {
+export function parseTradeTrackerFeed(xml, { categorie = 'hond-voeding', categorieen = null } = {}) {
   const producten = []
+  const toegestaneCategorieen = categorieen ?? (Array.isArray(categorie) ? categorie : [categorie])
   for (const match of String(xml).matchAll(/<product\b[^>]*>([\s\S]*?)<\/product>/gi)) {
     const blok = match[1]
     const props = eigenschappen(blok)
     const categoryPath = (props.categoryPath ?? '').trim()
-    if (categorie && categoryPath !== categorie) continue
+    if (toegestaneCategorieen.length && !toegestaneCategorieen.includes(categoryPath)) continue
     const naam = tag(blok, 'name')
     if (!naam) continue
     const url = tag(blok, 'URL')
     if (!/^https?:\/\//i.test(url)) continue
+    // Niet elk feedproduct gebruikt "Merk - Product". Bewaar zulke titels wel;
+    // de snackkoppeling werkt op EAN en hoeft het merk niet uit de titel te halen.
     const merk = naam.includes(' - ') ? naam.split(' - ')[0].trim() : ''
-    if (!merk) continue
     const titelZonderMerk = naam.includes(' - ') ? naam.slice(naam.indexOf(' - ') + 3).trim() : naam
     const beschrijving = tag(blok, 'description').replace(/<[^>]+>/g, ' ')
     const maatTekst = [props.EAN ?? '', naam, beschrijving].join(' ')

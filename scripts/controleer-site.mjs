@@ -343,6 +343,17 @@ try {
     const snackMerkHtml = await snackMerkPagina.text()
     meld(snackMerkPagina.ok() && /Hondensnacks/.test(snackMerkHtml) && /noindex/i.test(snackMerkHtml), 'snackmerkpagina is bereikbaar en noindex', snackMerkHrefs[0])
   }
+  await open('/hondensnacks/?merk=Purina&zoek=dentalife', '.snack-card .shop-link')
+  const snackShopLinks = await page.locator('.snack-card .shop-link').evaluateAll((links) => links.map((link) => ({
+    href: link.getAttribute('href') || '',
+    rel: link.getAttribute('rel') || '',
+    tekst: link.textContent.replace(/\s+/g, ' ').trim()
+  })))
+  meld(snackShopLinks.length >= 2 && snackShopLinks.every(({ href, rel }) => /dierenwinkelxl\.nl/.test(href) && /tt=4019/.test(href) && /sponsored/.test(rel) && /nofollow/.test(rel)), 'snackwinkelkoppeling gebruikt de Dierenwinkel XL-affiliatelink', `${snackShopLinks.length} snacklink(s) · ${snackShopLinks[0]?.tekst || '—'}`)
+  const snackWinkelPagina = await context.request.get(`${BASIS}/hondensnacks/merken/purina.html`)
+  const snackWinkelHtml = await snackWinkelPagina.text()
+  const snackWinkelLinks = (snackWinkelHtml.match(/rel="sponsored nofollow noopener noreferrer"/g) ?? []).length
+  meld(snackWinkelPagina.ok() && snackWinkelLinks >= 3 && /partner-note/.test(snackWinkelHtml), 'snackmerkpagina toont affiliate-links met partnervermelding', `${snackWinkelLinks} winkellink(en)`)
 
   const beoordelingen = await context.request.get(`${BASIS}/catalog-assessment.json`)
   const beoordelingenJson = beoordelingen.ok() ? await beoordelingen.json().catch(() => ({})) : {}
