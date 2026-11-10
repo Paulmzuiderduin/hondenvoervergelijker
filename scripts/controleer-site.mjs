@@ -328,6 +328,13 @@ try {
   meld(snackKaarten >= 1 && /Hondensnacks vergelijken/.test(snackTitel), 'snackvergelijker toont snacks', `${snackKaarten} snacks · ${snackTitel}`)
   meld(/noindex/i.test(snackRobots || '') && Boolean(snackCanonical?.includes('/hondensnacks/')), 'snacksectie is een noindex-preview met eigen canonical', `${snackRobots} · ${snackCanonical}`)
   meld(snackBlogLink === 1, 'snacksectie linkt terug naar de blog', `${snackBlogLink} bloglink`)
+  await page.locator('.quick-allergen', { hasText: 'Kip' }).click()
+  await page.waitForTimeout(100)
+  const snackStatusKnoppen = await page.locator('.result-summary button').count()
+  const snackActiebalk = await page.locator('.results-action-bar').innerText()
+  const snackKaartlabel = await page.locator('.snack-card .card-section-label').first().innerText()
+  meld(snackStatusKnoppen >= 2 && /Je sluit uit/i.test(snackActiebalk), 'snackresultaten hebben dezelfde statusfilters en actiebalk', `${snackStatusKnoppen} statusknoppen · ${snackActiebalk.replace(/\n/g, ' ').slice(0, 80)}`)
+  meld(/Uitsluiting/i.test(snackKaartlabel), 'snackkaarten gebruiken dezelfde uitsluitingsopbouw', snackKaartlabel)
 
   const beoordelingen = await context.request.get(`${BASIS}/catalog-assessment.json`)
   const beoordelingenJson = beoordelingen.ok() ? await beoordelingen.json().catch(() => ({})) : {}

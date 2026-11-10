@@ -17,6 +17,7 @@ const ALLE_MATEN = SIZE_CLASSES.map(([key]) => key)
 const ALLE_EIWITTEN = [...EIWITTEN]
 const ALLE_MERKEN = [...MERKEN]
 const PAGE_SIZE = 12
+const SNEL_ALLERGENEN = ['chicken', 'beef', 'grains', 'milk', 'egg', 'fish', 'salmon', 'soy']
 const LIJST_SCHEIDING = '|'
 const GETAL0 = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 0 })
 const KCAL = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 0 })
@@ -152,7 +153,7 @@ function Pagination({ page, total, onChange }) {
 
 function SnackCard({ product, match, heeftKeuze, vergelijk, vergelijkVol, onVergelijk }) {
   const excluded = match.kind === 'excluded'
-  const verdict = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controleer etiket/fabrikant' : heeftKeuze ? 'Lijkt geschikt' : 'Etiket volledig'
+  let verdict = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controleer etiket/fabrikant' : match.states.length ? 'Lijkt geschikt' : 'Etiket volledig'
   const verdictSymbool = excluded ? '✕' : match.kind === 'check' ? '?' : '✓'
   const version = product.recipe_versions?.[0]
   const presentStates = match.presentStates ?? []
@@ -160,6 +161,15 @@ function SnackCard({ product, match, heeftKeuze, vergelijk, vergelijkVol, onVerg
   const absentStates = (match.states ?? []).filter((state) => state.state === 'absent')
   const verborgenWoorden = bronlozeWoorden(match.hidden ?? [], product.ingredients_text)
   const onbekendeWoorden = [...new Set(match.unknownWords ?? [])]
+  let conclusie = verdict
+  if (match.states.length) {
+    conclusie = excluded
+      ? `${labelList(presentStates.map((state) => state.key), 4)} genoemd`
+      : match.kind === 'check'
+        ? (unknownStates.length ? `${labelList(unknownStates.map((state) => state.key), 4)} kan niet worden uitgesloten` : 'Controleer het etiket')
+        : (absentStates.length ? `${labelList(absentStates.map((state) => state.key), 4)} niet genoemd` : verdict)
+    verdict = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controle nodig' : 'Niet genoemd'
+  }
   const bronDatum = datumKort(product.last_checked_at)
   const reviewedOp = version?.reviewed_at ? datumKort(version.reviewed_at) : ''
   const importedOp = version?.imported_at ? datumKort(version.imported_at) : ''
@@ -170,15 +180,15 @@ function SnackCard({ product, match, heeftKeuze, vergelijk, vergelijkVol, onVerg
     ? `${KCAL.format(product.kcal_per_100g)} kcal per 100 g`
     : product.kcal_per_piece != null ? `${KCAL.format(product.kcal_per_piece)} kcal per stuk` : ''
   const checkReason = excluded || match.kind !== 'check' ? ''
-    : !match.hasLabel ? 'er is nog geen ingrediëntenlijst ingevoerd.'
-      : !match.reviewed && !match.imported ? 'deze samenstelling is nog niet tegen de bron gecontroleerd.'
-        : match.stale ? 'de laatste controle is ouder dan zes maanden.'
-          : match.sourceChanged ? 'de bronpagina is gewijzigd en wordt opnieuw gecontroleerd.'
-            : verborgenWoorden.length && onbekendeWoorden.length ? `het etiket noemt geen bron voor ${verborgenWoorden.join(', ')} en de keuring kent deze woorden niet: ${onbekendeWoorden.join(', ')}. Daardoor kan elk allergeen erin zitten.`
-              : verborgenWoorden.length ? `het etiket noemt geen bron voor ${verborgenWoorden.join(', ')}.`
-                : match.traceStates.length ? `de verpakking noemt sporen van ${match.traceStates.map((key) => ALLERGEN_LABELS[key] ?? key).join(', ')}.`
-                  : onbekendeWoorden.length ? `de keuring kent deze woorden niet: ${onbekendeWoorden.join(', ')}. Daardoor kan elk allergeen erin zitten.`
-                    : 'het etiket noemt niet elke bron bij name.'
+    : !match.hasLabel ? 'Er is nog geen ingrediëntenlijst ingevoerd.'
+      : !match.reviewed && !match.imported ? 'Deze samenstelling is nog niet tegen de bron gecontroleerd.'
+        : match.stale ? 'De laatste controle is ouder dan zes maanden.'
+          : match.sourceChanged ? 'De bronpagina is gewijzigd en wordt opnieuw gecontroleerd.'
+            : verborgenWoorden.length && onbekendeWoorden.length ? `Het etiket noemt geen bron voor ${verborgenWoorden.join(', ')} en de keuring kent deze woorden niet: ${onbekendeWoorden.join(', ')}. Daardoor kan elk allergeen erin zitten.`
+              : verborgenWoorden.length ? `Het etiket noemt geen bron voor ${verborgenWoorden.join(', ')}.`
+                : match.traceStates.length ? `De verpakking noemt sporen van ${match.traceStates.map((key) => ALLERGEN_LABELS[key] ?? key).join(', ')}.`
+                  : onbekendeWoorden.length ? `De keuring kent deze woorden niet: ${onbekendeWoorden.join(', ')}. Daardoor kan elk allergeen erin zitten.`
+                    : 'Het etiket noemt niet elke bron bij name.'
   return <article className={`product-card ${match.kind} snack-card`}>
     <div className="product-card-top">
       <div className="product-title-group">
@@ -203,13 +213,13 @@ function SnackCard({ product, match, heeftKeuze, vergelijk, vergelijkVol, onVerg
     <div className="product-card-info">
       <div className="product-verdict-block">
         <div className="product-verdict-heading">
-          <span className="card-section-label">Ons oordeel:</span>
-          <strong>{verdict}</strong>
+          <span className="card-section-label">Uitsluiting:</span>
+          <strong>{conclusie}</strong>
           {match.reviewed && <span className="human-badge" title={`Samenstelling handmatig tegen de bron gecontroleerd${reviewedOp ? ` op ${reviewedOp}` : ''}.`}>Door een mens gecontroleerd{reviewedOp ? ` · ${reviewedOp}` : ''}</span>}
           {!match.reviewed && match.imported && <span className="snack-import-badge" title={match.importNote || 'Automatisch overgenomen; nog niet door een mens nagelopen.'}>Automatisch overgenomen{importedOp ? ` · ${importedOp}` : ''}</span>}
         </div>
         <div className="product-source-inline">
-          <span>Controleer het etiket bij de fabrikant</span>
+          <span>Controleer altijd de verpakking</span>
           {source.startsWith('http')
             ? <a className="manufacturer-link" href={source} target="_blank" rel="noreferrer" title="Officiële productpagina of gebruikte bron">Naar {product.brand} ↗</a>
             : <span className="manufacturer-link unavailable">Bron niet beschikbaar</span>}
@@ -221,11 +231,8 @@ function SnackCard({ product, match, heeftKeuze, vergelijk, vergelijkVol, onVerg
         <span className="nutrition-summary-values snack-kcal">{kcalRegel || 'Energie niet vermeld op de bronpagina'}</span>
       </div>
     </div>
-    {presentStates.length > 0 && !excluded && <p className="verdict present"><strong>Staat in de lijst:</strong> {presentStates.map((state) => `${ALLERGEN_LABELS[state.key]}${state.members.some((member) => member !== state.key) ? ` via ${labelList(state.members.filter((member) => member !== state.key))}` : ''}`).join(', ')}</p>}
-    {unknownStates.length > 0 && <p className="verdict unknown"><strong>Kan erin zitten:</strong> {labelList(unknownStates.map((state) => state.key), 100)} — het etiket noemt geen bron voor {onbekendeWoorden.length ? onbekendeWoorden.slice(0, 5).join(', ') : 'een ingrediënt'}{onbekendeWoorden.length > 5 ? ` en ${onbekendeWoorden.length - 5} meer` : ''}</p>}
-    {heeftKeuze && absentStates.length > 0 && <p className="verdict absent"><strong>Nergens genoemd:</strong> {labelList(absentStates.map((state) => state.key), 6)}</p>}
+    {unknownStates.length > 0 && <p className="verdict unknown"><strong>Kan niet worden uitgesloten:</strong> {labelList(unknownStates.map((state) => state.key), 100)} — het etiket noemt geen bron voor {onbekendeWoorden.length > 5 ? `${onbekendeWoorden.slice(0, 5).join(', ')} en ${onbekendeWoorden.length - 5} meer` : onbekendeWoorden.length ? onbekendeWoorden.join(', ') : 'een ingrediënt'}</p>}
     {match.traceStates.length > 0 && <p className="verdict unknown snack-trace"><strong>Sporen mogelijk:</strong> {match.traceStates.map((key) => ALLERGEN_LABELS[key] ?? key).join(', ')}. De verpakking noemt dit als sporen, niet als ingrediënt.</p>}
-    {excluded && <p className="reason excluded">Uitgesloten vanwege: {presentStates.map((state) => ALLERGEN_LABELS[state.key]).join(' · ')}</p>}
     {checkReason && <p className="reason">Controleer: {checkReason}</p>}
     {product.trace_text && !match.traceStates.length && <p className="snack-trace-note"><small>Sporenmelding op de verpakking: {product.trace_text}</small></p>}
     <details className="ingredients">
@@ -253,7 +260,7 @@ function AllergenChooser({ gekozen, zoekterm, onZoek, onWissel, onWis, suitable 
       <div>
         <p className="panel-step">Stap 1 · Kies wat je wilt vermijden</p>
         <h2>Allergieën en intoleranties</h2>
-        <p><small>Vink aan wat je wilt uitsluiten. De keuring kijkt naar de ingrediëntenlijst en naar sporenmeldingen.</small></p>
+        <p><small>Vink aan wat je wilt uitsluiten. Klap een categorie open of zoek direct op naam. De keuring kijkt ook naar sporenmeldingen.</small></p>
       </div>
       <div className="allergen-panel-actions">
         <a className="jump-to-results" href="#resultaten">Bekijk snacks ↓</a>
@@ -263,14 +270,18 @@ function AllergenChooser({ gekozen, zoekterm, onZoek, onWissel, onWis, suitable 
     {gekozen.length > 0 && <div className="result-preview" aria-live="polite">
       <span className="result-preview-label">Resultaat van je keuze:</span>
       <span className="summary-pill suitable" title="Lijkt geschikt op basis van het etiket."><span aria-hidden="true">✓</span> Lijkt geschikt: {suitable}</span>
-      <span className="summary-pill check" title="Controleer het etiket of de fabrikant."><span aria-hidden="true">?</span> Controleer: {check}</span>
+      <span className="summary-pill check" title="Controleer het etiket of de fabrikant."><span aria-hidden="true">?</span> Controle nodig: {check}</span>
       <span className="summary-pill excluded" title="Bevat minstens één gekozen allergeen."><span aria-hidden="true">✕</span> Uitgesloten: {excluded}</span>
     </div>}
     {gekozen.length > 0 && <div className="selected-allergens" aria-label="Gekozen allergenen">
-      <span className="selected-label">Je vermijdt nu:</span>
+      <span className="selected-label">Je sluit uit:</span>
       {gekozen.map((key) => <span className="allergen-chip static" key={key}>{ALLERGEN_LABELS[key] ?? key}</span>)}
     </div>}
     <label className="brand-search-label allergen-search-label">Zoek allergeen<input type="search" value={zoekterm} onChange={(event) => onZoek(event.target.value)} placeholder="Bijv. kip, rund, rijst, zalm of erwten" /></label>
+    {!zoekterm.trim() && <div className="quick-allergens" aria-label="Veelgekozen allergenen">
+      <span className="quick-allergens-label">Veelgekozen:</span>
+      {SNEL_ALLERGENEN.map((key) => <button type="button" key={key} className={`quick-allergen${gekozen.includes(key) ? ' active' : ''}`} aria-pressed={gekozen.includes(key)} onClick={() => onWissel(key, !gekozen.includes(key))}>{ALLERGEN_LABELS[key] ?? key}</button>)}
+    </div>}
     {groepen.length ? groepen.map((groep, index) => {
       const gekozenInGroep = groep.allergens.filter(({ key }) => gekozen.includes(key)).length
       return <details className="allergen-group" key={groep.key} open={zoekterm.trim() ? true : index === 0 ? true : undefined}>
@@ -306,8 +317,8 @@ function CompareDialog({ producten, allergenen = [], onClose }) {
   }, [onClose])
   const matchVoor = (product) => snackMatch(product, allergenen)
   const oordeelLabel = (match) => allergenen.length
-    ? match.kind === 'excluded' ? 'Uitgesloten' : match.kind === 'check' ? 'Controleer' : 'Lijkt geschikt'
-    : match.transparent ? 'Etiket volledig' : 'Controleer etiket'
+    ? match.kind === 'excluded' ? 'Uitgesloten' : match.kind === 'check' ? 'Controle nodig' : 'Lijkt geschikt'
+    : match.transparent ? 'Etiket volledig' : 'Controle nodig'
   const oordeelSymbool = (match) => allergenen.length
     ? match.kind === 'excluded' ? '✕' : match.kind === 'check' ? '?' : '✓'
     : match.transparent ? '✓' : '?'
@@ -371,6 +382,7 @@ function CompareDialog({ producten, allergenen = [], onClose }) {
 function App() {
   const [filters, setFilters] = useState(leesFilters)
   const [page, setPage] = useState(1)
+  const [statusFilter, setStatusFilter] = useState('alle')
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [allergenSearch, setAllergenSearch] = useState('')
   const [compareIds, setCompareIds] = useState([])
@@ -378,6 +390,8 @@ function App() {
 
   useEffect(() => { schrijfUrl(filters) }, [filters])
   useEffect(() => { setPage(1) }, [filters])
+  useEffect(() => { setPage(1) }, [statusFilter])
+  useEffect(() => { setStatusFilter('alle') }, [filters.allergens])
 
   const update = (patch) => setFilters((oud) => ({ ...oud, ...patch }))
   const wisselFilter = (key, waarde, aan) => setFilters((oud) => ({
@@ -411,12 +425,16 @@ function App() {
   const suitable = resultaten.filter(({ match }) => match.kind === 'suitable')
   const check = resultaten.filter(({ match }) => match.kind === 'check')
   const excluded = resultaten.filter(({ match }) => match.kind === 'excluded')
-  const aantalPaginas = Math.max(1, Math.ceil(resultaten.length / PAGE_SIZE))
+  const statusGefilterd = statusFilter !== 'alle'
+    ? resultaten.filter(({ match }) => match.kind === statusFilter)
+    : resultaten
+  const statusKop = { suitable: 'Lijkt geschikt', check: 'Controle nodig', excluded: 'Uitgesloten' }
+  const statusAantal = { suitable: suitable.length, check: check.length, excluded: excluded.length }
+  const aantalPaginas = Math.max(1, Math.ceil(statusGefilterd.length / PAGE_SIZE))
   const veiligePagina = Math.min(page, aantalPaginas)
-  const zichtbareProducten = resultaten.slice((veiligePagina - 1) * PAGE_SIZE, veiligePagina * PAGE_SIZE)
+  const zichtbareProducten = statusGefilterd.slice((veiligePagina - 1) * PAGE_SIZE, veiligePagina * PAGE_SIZE)
   const heeftKeuze = filters.allergens.length > 0
-  const actieveFilterCount = (filters.allergens.length ? 1 : 0)
-    + (filters.brands.length !== ALLE_MERKEN.length ? 1 : 0)
+  const actieveFilterCount = (filters.brands.length !== ALLE_MERKEN.length ? 1 : 0)
     + (filters.types.length !== ALLE_TYPES.length ? 1 : 0)
     + (filters.sizes.length !== ALLE_MATEN.length ? 1 : 0)
     + (filters.proteins.length !== ALLE_EIWITTEN.length ? 1 : 0)
@@ -428,26 +446,32 @@ function App() {
   const gekozenEiwitLabels = filters.proteins.join(', ')
 
   const wisAllergenen = () => update({ allergens: [] })
-  const wisFilterkolom = () => setFilters((oud) => ({
-    ...oud,
-    types: [...ALLE_TYPES],
-    sizes: [...ALLE_MATEN],
-    proteins: [...ALLE_EIWITTEN],
-    brands: [...ALLE_MERKEN],
-    singleProtein: false,
-    grainFree: false,
-    zoekterm: ''
-  }))
-  const wisAlles = () => setFilters({
-    allergens: [],
-    types: [...ALLE_TYPES],
-    sizes: [...ALLE_MATEN],
-    proteins: [...ALLE_EIWITTEN],
-    brands: [...ALLE_MERKEN],
-    singleProtein: false,
-    grainFree: false,
-    zoekterm: ''
-  })
+  const wisFilterkolom = () => {
+    setStatusFilter('alle')
+    setFilters((oud) => ({
+      ...oud,
+      types: [...ALLE_TYPES],
+      sizes: [...ALLE_MATEN],
+      proteins: [...ALLE_EIWITTEN],
+      brands: [...ALLE_MERKEN],
+      singleProtein: false,
+      grainFree: false,
+      zoekterm: ''
+    }))
+  }
+  const wisAlles = () => {
+    setStatusFilter('alle')
+    setFilters({
+      allergens: [],
+      types: [...ALLE_TYPES],
+      sizes: [...ALLE_MATEN],
+      proteins: [...ALLE_EIWITTEN],
+      brands: [...ALLE_MERKEN],
+      singleProtein: false,
+      grainFree: false,
+      zoekterm: ''
+    })
+  }
   const wisMerkfilter = () => update({ brands: [...ALLE_MERKEN] })
   const wisTypefilter = () => update({ types: [...ALLE_TYPES] })
   const wisMaatfilter = () => update({ sizes: [...ALLE_MATEN] })
@@ -492,14 +516,17 @@ function App() {
       <AllergenChooser gekozen={filters.allergens} zoekterm={allergenSearch} onZoek={setAllergenSearch} onWissel={wisselAllergeen} onWis={wisAllergenen} suitable={suitable.length} check={check.length} excluded={excluded.length} />
       <aside id="filters" className={`filters${filtersOpen ? ' open' : ''}`} aria-label="Filters">
         <button type="button" className="filters-toggle" aria-expanded={filtersOpen} aria-controls="filters-body" onClick={() => setFiltersOpen(!filtersOpen)}>
-          <span>Filters{actieveFilterCount ? ` (${actieveFilterCount} actief)` : ''}</span>
+          <span>Verfijn resultaten{actieveFilterCount ? ` (${actieveFilterCount} actief)` : ''}</span>
         </button>
         <div id="filters-body" className="filters-body">
           <div className="filters-head">
-            <h2>Filters</h2>
-            <span className="filters-count" aria-live="polite" aria-atomic="true">{GETAL0.format(resultaten.length)} snacks</span>
+            <div>
+              <p className="panel-step">Stap 2</p>
+              <h2>Verfijn resultaten</h2>
+            </div>
             {actieveFilterCount > 0 && <button type="button" className="filters-reset" onClick={wisFilterkolom} title="Alleen de filters in deze kolom wissen; je allergenenkeuze blijft staan.">Wissen</button>}
           </div>
+          <p className="filters-intro"><small><span className="filters-count">{GETAL0.format(statusGefilterd.length)} snacks</span> · soort snack, formaat, eiwitbron en merk.</small></p>
           <label className="product-search">Zoek snack<input type="search" maxLength={80} value={filters.zoekterm} onChange={(event) => update({ zoekterm: event.target.value })} placeholder="Bijv. eend, lam of crunchy" /></label>
           <div className="filter-block">
             <h3>Soort snack</h3>
@@ -526,34 +553,56 @@ function App() {
             </div>
             <div className="brand-list">{MERKEN.map((merk) => <label className="brand-row" key={merk}><span><input type="checkbox" checked={filters.brands.includes(merk)} onChange={(event) => wisselFilter('brands', merk, event.target.checked)} /> {merk}</span><span className="brand-count">{PRODUCTEN.filter((product) => product.brand === merk).length}</span></label>)}</div>
           </details>
-          <a className="filter-jump" href="#resultaten">Bekijk {GETAL0.format(resultaten.length)} snacks ↓</a>
+          <a className="filter-jump" href="#resultaten">Bekijk {GETAL0.format(statusGefilterd.length)} snacks ↓</a>
         </div>
       </aside>
       <div className="content">
         <details className="legend">
           <summary><mark className="uncertain-ingredient">Rood gemarkeerd</mark> = de bron wordt niet genoemd</summary>
-          <p>Het etiket noemt de specifieke dier- of plantbron niet (bijv. “dierlijke bijproducten” of “granen”). {heeftKeuze ? 'Het oordeel geldt per gekozen allergeen: een snack staat alleen op “Controleer” als zo’n niet-gespecificeerd ingrediënt jouw gekozen allergeen kan bevatten.' : 'Kies hierboven één of meer allergenen om direct te filteren op snacks die geschikt lijken.'}</p>
-          <p><strong>Sporen:</strong> een melding als “kan sporen van kip bevatten” is geen ingrediënt, maar ook geen bewijs dat de snack kipvrij is. Zo’n snack blijft op “Controleer” staan.</p>
+          <p>Het etiket noemt de specifieke dier- of plantbron niet (bijv. “dierlijke bijproducten” of “granen”). {heeftKeuze ? 'Het oordeel geldt per gekozen allergeen: een snack staat alleen op “Controle nodig” als zo’n niet-gespecificeerd ingrediënt jouw gekozen allergeen kan bevatten.' : 'Kies hierboven één of meer allergenen om direct te filteren op snacks die geschikt lijken.'}</p>
+          <p><strong>Sporen:</strong> een melding als “kan sporen van kip bevatten” is geen ingrediënt, maar ook geen bewijs dat de snack kipvrij is. Zo’n snack blijft op “Controle nodig” staan.</p>
         </details>
-        {resultaten.length === 0 ? <section id="resultaten"><h2>Geen snacks</h2><p>Pas je merk-, type- of formaatfilter aan. {heeftKeuze ? 'Of wis je allergenenkeuze.' : ''}</p><div className="no-suitable-actions"><button type="button" onClick={wisAlles}>Alle filters wissen</button></div></section> : (
+        {resultaten.length === 0 ? <div className="empty-results" id="resultaten">
+          <strong>Geen snacks gevonden.</strong>
+          <p>Pas je merk-, type- of formaatfilter aan. {heeftKeuze ? 'Je allergenenkeuze blijft staan.' : 'Kies daarna eventueel een allergeen.'}</p>
+          <div className="empty-results-actions">
+            <button type="button" onClick={wisAlles}>Wis alle filters</button>
+            {heeftKeuze && <button type="button" onClick={wisAllergenen}>Allergenen wissen</button>}
+          </div>
+        </div> : (
           <section id="resultaten">
-            {vergelijkProducten.length > 0 && <div className="compare-bar" aria-label="Snacks vergelijken">
-              <span className="compare-bar-label">{vergelijkProducten.length}/3 geselecteerd</span>
-              <div className="compare-bar-chips">{vergelijkProducten.map((product) => <button type="button" className="compare-chip" key={product.id} onClick={() => wisselVergelijk(product.id)} title="Verwijder uit de vergelijking">{product.brand} {product.name} <span aria-hidden="true">×</span></button>)}</div>
-              <button type="button" className="compare-open" disabled={vergelijkProducten.length < 2} onClick={openVergelijk} title={vergelijkProducten.length < 2 ? 'Kies minstens twee snacks' : 'Open de vergelijking'}>Vergelijk</button>
-              <button type="button" className="link" onClick={wisVergelijk}>Wissen</button>
+            {(heeftKeuze || vergelijkProducten.length > 0) && <div className="results-action-bar">
+              {heeftKeuze && <div className="selected-allergens-bar" aria-label="Gekozen allergenen">
+                <div className="selected-allergens-main">
+                  <span className="selected-label">Je sluit uit:</span>
+                  {filters.allergens.map((key) => <button type="button" key={key} className="selected-allergen-chip" onClick={() => wisselAllergeen(key, false)} title={`Verwijder ${ALLERGEN_LABELS[key] ?? key}`}>{ALLERGEN_LABELS[key] ?? key} <span aria-hidden="true">×</span></button>)}
+                </div>
+                <div className="selected-allergens-actions">
+                  <span className="selected-count">{statusFilter === 'alle' ? `${GETAL0.format(suitable.length)} geschikt` : `${GETAL0.format(statusGefilterd.length)} getoond`}</span>
+                  <button type="button" className="link" onClick={() => document.getElementById('vergelijken')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}>Wijzig</button>
+                  <button type="button" className="link muted-link" onClick={wisAllergenen}>Wis</button>
+                </div>
+              </div>}
+              {heeftKeuze && vergelijkProducten.length > 0 && <span className="action-divider" aria-hidden="true" />}
+              {vergelijkProducten.length > 0 && <div className="compare-bar" aria-label="Snacks vergelijken">
+                <span className="action-group-label">Vergelijken:</span>
+                <span className="compare-bar-label">{vergelijkProducten.length}/3 geselecteerd</span>
+                <div className="compare-bar-chips">{vergelijkProducten.map((product) => <button type="button" className="compare-chip" key={product.id} onClick={() => wisselVergelijk(product.id)} title="Verwijder uit de vergelijking">{product.brand} {product.name} <span aria-hidden="true">×</span></button>)}</div>
+                <button type="button" className="compare-open" disabled={vergelijkProducten.length < 2} onClick={openVergelijk} title={vergelijkProducten.length < 2 ? 'Kies minstens twee snacks' : 'Open de vergelijking'}>Vergelijk</button>
+                <button type="button" className="link" onClick={wisVergelijk}>Wissen</button>
+              </div>}
             </div>}
             <div className="results-header">
-              <h2>Snacks ({GETAL0.format(resultaten.length)})</h2>
+              <h2>Snacks ({GETAL0.format(statusGefilterd.length)}{statusFilter !== 'alle' ? ` van ${GETAL0.format(resultaten.length)}` : ''})</h2>
               <p className="result-summary">
-                <span className="summary-pill suitable" title={heeftKeuze ? 'Lijkt geschikt op basis van de gekozen allergenen en het etiket.' : 'Het etiket noemt elke bron bij name.'}><span aria-hidden="true">✓</span> {heeftKeuze ? 'Lijkt geschikt' : 'Etiket volledig'}: {suitable.length}</span>
-                <span className="summary-pill check" title={heeftKeuze ? 'Controleer het etiket of de fabrikant.' : 'Het etiket noemt niet elke bron of bevat een woord dat de keuring niet kent.'}><span aria-hidden="true">?</span> {heeftKeuze ? 'Controleer' : 'Etiket controle'}: {check.length}</span>
-                {heeftKeuze && <span className="summary-pill excluded"><span aria-hidden="true">✕</span> Uitgesloten: {excluded.length}</span>}
+                {heeftKeuze ? <button type="button" className={`summary-pill suitable${statusFilter === 'suitable' ? ' active' : ''}`} aria-pressed={statusFilter === 'suitable'} title="Toon alleen snacks die het gekozen allergeen niet noemen." onClick={() => setStatusFilter(statusFilter === 'suitable' ? 'alle' : 'suitable')}><span aria-hidden="true">✓</span> Lijkt geschikt: {suitable.length}</button> : <span className="summary-pill suitable" title="Het etiket noemt elke bron bij name."><span aria-hidden="true">✓</span> Etiket volledig: {suitable.length}</span>}
+                {heeftKeuze ? <button type="button" className={`summary-pill check${statusFilter === 'check' ? ' active' : ''}`} aria-pressed={statusFilter === 'check'} title="Toon alleen snacks waarvoor controle nodig is." onClick={() => setStatusFilter(statusFilter === 'check' ? 'alle' : 'check')}><span aria-hidden="true">?</span> Controle nodig: {check.length}</button> : <span className="summary-pill check" title="Het etiket noemt niet elke bron of bevat een woord dat de keuring niet kent."><span aria-hidden="true">?</span> Etiket controle: {check.length}</span>}
+                {heeftKeuze && <button type="button" className={`summary-pill excluded${statusFilter === 'excluded' ? ' active' : ''}`} aria-pressed={statusFilter === 'excluded'} title="Toon alleen snacks die een gekozen allergeen noemen." onClick={() => setStatusFilter(statusFilter === 'excluded' ? 'alle' : 'excluded')}><span aria-hidden="true">✕</span> Uitgesloten: {excluded.length}</button>}
+                {statusFilter !== 'alle' && <button type="button" className="summary-reset" onClick={() => setStatusFilter('alle')}>Toon alles</button>}
               </p>
             </div>
             {actieveFilterCount > 0 && <div className="active-filters" aria-label="Actieve filters">
-              <span className="active-filters-label">Actief:</span>
-              {filters.allergens.map((key) => <button type="button" key={key} className="filter-chip" onClick={() => wisselAllergeen(key, false)} title={`Verwijder ${ALLERGEN_LABELS[key] ?? key}`}>{ALLERGEN_LABELS[key] ?? key} <span aria-hidden="true">×</span></button>)}
+              <span className="active-filters-label">Verfijning:</span>
               {filters.brands.length !== ALLE_MERKEN.length && <button type="button" className="filter-chip" onClick={wisMerkfilter} title="Merkfilter verwijderen">Merken: {filters.brands.length === 0 ? 'geen' : filters.brands.join(', ')} <span aria-hidden="true">×</span></button>}
               {filters.types.length !== ALLE_TYPES.length && <button type="button" className="filter-chip" onClick={wisTypefilter} title="Typefilter verwijderen">Type: {gekozenTypeLabels} <span aria-hidden="true">×</span></button>}
               {filters.sizes.length !== ALLE_MATEN.length && <button type="button" className="filter-chip" onClick={wisMaatfilter} title="Formaatfilter verwijderen">Formaat: {gekozenMaatLabels} <span aria-hidden="true">×</span></button>}
@@ -572,7 +621,23 @@ function App() {
               <div className="no-suitable-actions"><button type="button" onClick={wisAllergenen}>Allergenen wissen</button><button type="button" onClick={wisAlles}>Alle filters wissen</button><a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a></div>
             </div> : null}
             <Pagination page={veiligePagina} total={aantalPaginas} onChange={setPage} />
-            {zichtbareProducten.map(({ product, match }) => <SnackCard key={product.id} product={product} match={match} heeftKeuze={heeftKeuze} vergelijk={compareIds.includes(product.id)} vergelijkVol={compareIds.length >= 3} onVergelijk={wisselVergelijk} />)}
+            {heeftKeuze && statusFilter !== 'alle' && <h3 className={`result-group-heading ${statusFilter}`}>{statusKop[statusFilter]} <span>{statusAantal[statusFilter]}</span></h3>}
+            {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }, index) => {
+              const vorige = index > 0 ? zichtbareProducten[index - 1].match.kind : null
+              const toonKop = heeftKeuze && statusFilter === 'alle' && match.kind !== vorige
+              return <React.Fragment key={product.id}>
+                {toonKop && <h3 className={`result-group-heading ${match.kind}`}>{statusKop[match.kind]} <span>{statusAantal[match.kind]}</span></h3>}
+                <SnackCard product={product} match={match} heeftKeuze={heeftKeuze} vergelijk={compareIds.includes(product.id)} vergelijkVol={compareIds.length >= 3} onVergelijk={wisselVergelijk} />
+              </React.Fragment>
+            }) : <div className="empty-results">
+              <strong>Geen snacks gevonden{statusFilter !== 'alle' ? ` met status “${statusKop[statusFilter]}”` : ''}.</strong>
+              <p>Pas je status of verfijning aan. Je allergenenkeuze blijft staan.</p>
+              <div className="empty-results-actions">
+                {statusFilter !== 'alle' && <button type="button" onClick={() => setStatusFilter('alle')}>Toon alle statussen</button>}
+                <button type="button" onClick={wisFilterkolom}>Wis verfijning</button>
+                <button type="button" onClick={wisAlles}>Wis alles</button>
+              </div>
+            </div>}
             <Pagination page={veiligePagina} total={aantalPaginas} onChange={setPage} />
           </section>
         )}
