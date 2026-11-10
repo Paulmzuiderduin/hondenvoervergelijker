@@ -71,6 +71,7 @@ related:
 | `author` | nee | Standaard Paul Zuiderduin |
 | `medical` | nee | Toont een extra medische disclaimer |
 | `uitgelicht` | nee | Zet dit artikel in het uitgelichte blok op de blogindex |
+| `draft` | nee | `true` slaat het artikel altijd over, ook na de publicatiedatum |
 | `cta_titel` | nee | Kop boven de call-to-action |
 | `cta_tekst` | nee | Tekst boven de call-to-action |
 | `cta_url` | nee | Interne of externe CTA-link |
@@ -117,6 +118,17 @@ Belangrijke regels:
   Markdown: externe links krijgen wel `rel="noopener noreferrer"`, maar niet
   automatisch `rel="sponsored"`.
 - Geen medische claims en geen suggestie dat voer een aandoening behandelt.
+
+## Wekelijkse publicatie
+
+Een artikel met een toekomstdatum wordt nog niet gepubliceerd. De build neemt
+alleen artikelen mee waarvan `date` op of vóór vandaag ligt. De deployworkflow
+draait elke maandag om 05:00 UTC, zodat het artikel van die week automatisch
+online komt.
+
+De volledige planning en de controle staan in `docs/blog-planning.md`.
+Gebruik `npm run blog:planning` om te zien welke artikelen klaarstaan en of er
+gaten in de planning zitten. Houd minimaal vier weken voorraad aan.
 
 ## SEO en publicatie
 

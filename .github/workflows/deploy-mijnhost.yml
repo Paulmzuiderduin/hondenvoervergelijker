@@ -14,6 +14,10 @@ name: Deploy naar mijn.host
 on:
   push:
     branches: [main]
+  # Elke maandag om 05:00 UTC bouwen en uitrollen. Een blogartikel met de
+  # datum van vandaag (of eerder) wordt dan automatisch zichtbaar.
+  schedule:
+    - cron: '0 5 * * 1'
   workflow_dispatch:
 
 permissions:

@@ -23,7 +23,9 @@ const CATEGORIE_BESCHRIJVING = {
   'Hondenvoer kiezen': 'Van natvoer of brokken tot voer zonder een specifieke bron. Zo maak je een onderbouwde keuze.',
   'Praktisch voeren': 'Overstappen, doseren, bewaren en dagelijkse keuzes rond het voer van je hond.'
 }
-const VANDAAG = new Date().toISOString().slice(0, 10)
+const VANDAAG = /^\d{4}-\d{2}-\d{2}$/.test(process.env.BLOG_VANDAAG ?? '')
+  ? process.env.BLOG_VANDAAG
+  : new Date().toISOString().slice(0, 10)
 const getal = (waarde) => new Intl.NumberFormat('nl-NL').format(waarde)
 
 const xmlEscape = (waarde = '') => String(waarde)
@@ -45,17 +47,23 @@ function splitLabelUrl(waarde) {
 }
 
 function leesArtikelen() {
-  if (!existsSync(BLOG_DIR)) return []
+  if (!existsSync(BLOG_DIR)) return { artikelen: [], gepland: [] }
   const bestanden = readdirSync(BLOG_DIR)
     .filter((bestand) => bestand.endsWith('.md'))
     .sort()
 
   const artikelen = []
+  const gepland = []
   const slugs = new Set()
 
   for (const bestand of bestanden) {
     const bron = readFileSync(join(BLOG_DIR, bestand), 'utf8')
     const { data, body } = parseFrontmatter(bron)
+    if (data.draft === true) {
+      console.log(`Concept overgeslagen: ${bestand}`)
+      continue
+    }
+
     const titel = String(data.title ?? '').trim()
     const beschrijving = String(data.description ?? '').trim()
     const categorie = String(data.category ?? '').trim()
@@ -78,7 +86,7 @@ function leesArtikelen() {
       .map(splitLabelUrl)
       .filter(Boolean)
 
-    artikelen.push({
+    const artikel = {
       bestand,
       titel,
       beschrijving,
@@ -102,12 +110,21 @@ function leesArtikelen() {
         url: String(data.cta_url ?? '/'),
         label: String(data.cta_label ?? 'Open de vergelijker')
       }
-    })
+    }
+
+    if (datum > VANDAAG) gepland.push(artikel)
+    else artikelen.push(artikel)
   }
 
-  return artikelen.sort((eerste, tweede) =>
+  const sorteer = (eerste, tweede) =>
     tweede.datum.localeCompare(eerste.datum) || eerste.titel.localeCompare(tweede.titel, 'nl')
-  )
+
+  return {
+    artikelen: artikelen.sort(sorteer),
+    gepland: gepland.sort((eerste, tweede) =>
+      eerste.datum.localeCompare(tweede.datum) || eerste.titel.localeCompare(tweede.titel, 'nl')
+    )
+  }
 }
 
 function groepeerCategorieen(artikelen) {
@@ -609,8 +626,15 @@ function werkLlmsBij(aantalAdressen, artikelen, categorieen) {
 /* Uitvoeren                                                           */
 /* ------------------------------------------------------------------ */
 
-const artikelen = leesArtikelen()
+const { artikelen, gepland } = leesArtikelen()
 const categorieen = groepeerCategorieen(artikelen)
+
+if (gepland.length) {
+  const eerste = gepland[0]
+  console.log(`Nog ${gepland.length} blogartikel(en) gepland. Eerstvolgende: ${eerste.datum} — ${eerste.titel}`)
+} else {
+  console.log('Geen geplande blogartikelen meer; vul de planning aan.')
+}
 
 mkdirSync(join(DIST, 'blog'), { recursive: true })
 if (categorieen.some((categorie) => categorie.heeftPagina)) {

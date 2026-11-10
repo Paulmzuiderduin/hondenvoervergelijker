@@ -84,3 +84,29 @@ test('alle blogartikelen hebben verplichte metadata en een unieke slug', () => {
     slugs.add(slug)
   }
 })
+
+test('geplande artikelen staan op unieke maandagen', () => {
+  const map = join(WORTEL, 'content', 'blog')
+  const vandaag = new Date().toISOString().slice(0, 10)
+  const isoWeek = (waarde) => {
+    const dag = new Date(`${waarde}T00:00:00Z`)
+    const weekdag = dag.getUTCDay() || 7
+    dag.setUTCDate(dag.getUTCDate() + 4 - weekdag)
+    const jaarStart = new Date(Date.UTC(dag.getUTCFullYear(), 0, 1))
+    const week = Math.ceil((((dag - jaarStart) / 86400000) + 1) / 7)
+    return `${dag.getUTCFullYear()}-W${String(week).padStart(2, '0')}`
+  }
+
+  const datums = new Set()
+  const weken = new Set()
+  for (const bestand of readdirSync(map).filter((bestand) => bestand.endsWith('.md'))) {
+    const { data } = parseFrontmatter(readFileSync(join(map, bestand), 'utf8'))
+    const datum = String(data.date ?? '').slice(0, 10)
+    if (!datum || datum <= vandaag) continue
+    assert.equal(new Date(`${datum}T00:00:00Z`).getUTCDay(), 1, `${bestand} staat niet op maandag`)
+    assert.ok(!datums.has(datum), `${bestand} heeft dezelfde datum als een ander artikel`)
+    assert.ok(!weken.has(isoWeek(datum)), `${bestand} valt in dezelfde week als een ander artikel`)
+    datums.add(datum)
+    weken.add(isoWeek(datum))
+  }
+})

@@ -66,6 +66,11 @@ Controleer na een inhoudelijke wijziging altijd de bronlinks en werk `updated`
 bij. Categoriepagina's verschijnen pas bij minimaal drie artikelen in die
 categorie.
 
+De deployworkflow draait elke maandag om 05:00 UTC. Een artikel met een
+toekomstdatum wordt dan automatisch gepubliceerd. De redactieplanning staat in
+`docs/blog-planning.md`; controleer regelmatig met `npm run blog:planning` of
+er nog minimaal vier weken voorraad is.
+
 ## Bezoekersstatistieken
 
 De site gebruikt **Umami Cloud** voor cookieloze, geaggregeerde statistieken.
