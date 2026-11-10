@@ -67,11 +67,12 @@ try {
 
   const status = await page.locator('.result-status').innerText()
   meld(/geschikt/.test(status), 'dynamische resultaatmelding noemt de geschikte producten', status.replace(/\n/g, ' ').slice(0, 120))
-  const actieveChips = await page.locator('.active-filters .filter-chip').allInnerTexts()
+  const actieveChips = await page.locator('.selected-allergens-bar .selected-allergen-chip').allInnerTexts()
   meld(actieveChips.some((tekst) => tekst.includes('Kip')), 'actief allergeen staat bij de resultaten', actieveChips.join(' / '))
-  meld(await page.locator('.filters-reset-inline').count() === 1, 'actieve filters hebben een wis-knop')
+  const wisKnoppen = await page.locator('.selected-allergens-actions .link').allInnerTexts()
+  meld(wisKnoppen.some((tekst) => /Wis/.test(tekst)), 'actieve filters hebben een wis-knop', wisKnoppen.join(' / '))
   const voorbeeld = await page.locator('.result-preview').innerText()
-  meld(/Lijkt geschikt: \d+/i.test(voorbeeld) && /Controleer: \d+/.test(voorbeeld) && /Uitgesloten: \d+/.test(voorbeeld), 'driewegtelling staat direct onder de allergenenkeuze', voorbeeld.replace(/\n/g, ' ').slice(0, 120))
+  meld(/Lijkt geschikt: \d+/i.test(voorbeeld) && /Controle nodig: \d+/.test(voorbeeld) && /Uitgesloten: \d+/.test(voorbeeld), 'driewegtelling staat direct onder de allergenenkeuze', voorbeeld.replace(/\n/g, ' ').slice(0, 120))
   await page.locator('.allergen-group summary').first().click()
   const allergenenRaster = await page.locator('.allergen-group .choices').first().evaluate((el) => {
     const label = el.querySelector('.inline')
@@ -168,8 +169,8 @@ try {
   await open('/?allergeen=chicken&eiwit=25-35', '.product-card')
   await page.locator('.filters-reset').click()
   const allergenenNaReset = await page.locator('.selected-allergens .allergen-chip').allInnerTexts()
-  const voedingsNaReset = await page.locator('.active-filters').innerText()
-  meld(allergenenNaReset.some((tekst) => /Kip/.test(tekst)) && !/Eiwit/.test(voedingsNaReset), 'kolomreset laat de allergenenkeuze staan', `${allergenenNaReset.join(' / ')} · ${voedingsNaReset.replace(/\n/g, ' ').slice(0, 80)}`)
+  const voedingsNaReset = await page.locator('.active-filters').count()
+  meld(allergenenNaReset.some((tekst) => /Kip/.test(tekst)) && voedingsNaReset === 0, 'kolomreset laat de allergenenkeuze staan', `${allergenenNaReset.join(' / ')} · ${voedingsNaReset} verfijningsblokken`)
 
   // 3e. Producten naast elkaar vergelijken, met een allergenenkeuze.
   await open('/?allergeen=chicken&merk=Acana', '.product-card')
@@ -185,8 +186,9 @@ try {
   await page.waitForSelector('.compare-panel', { timeout: 10000 })
   const vergelijkRijen = await page.locator('.compare-table tbody tr').count()
   const vergelijkKolommen = await page.locator('.compare-table thead th').count()
-  const vergelijkOordeel = await page.locator('.compare-verdict-row').innerText()
-  meld(vergelijkRijen >= 8 && vergelijkKolommen === 4 && /Allergeenoordeel/.test(vergelijkOordeel) && /Noemt: Kip|Kan erin zitten|Nergens genoemd/.test(vergelijkOordeel), 'vergelijkingsdialoog toont producten en allergenoordeel', `${vergelijkRijen} rijen · ${vergelijkKolommen} kolommen · ${vergelijkOordeel.replace(/\n/g, ' ').slice(0, 100)}`)
+  const vergelijkOordeel = await page.locator('.compare-section-row').first().innerText()
+  const vergelijkMatrix = await page.locator('.compare-table').innerText()
+  meld(vergelijkRijen >= 8 && vergelijkKolommen === 4 && /Jouw allergenen/i.test(vergelijkOordeel) && /Niet genoemd|Kan erin zitten|Genoemd/.test(vergelijkMatrix), 'vergelijkingsdialoog toont producten en allergenoordeel', `${vergelijkRijen} rijen · ${vergelijkKolommen} kolommen · ${vergelijkMatrix.replace(/\n/g, ' ').slice(0, 100)}`)
   await page.keyboard.press('Escape')
   await page.waitForTimeout(100)
   meld(await page.locator('.compare-panel').count() === 0, 'vergelijkingsdialoog sluit met Escape')

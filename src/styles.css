@@ -1673,19 +1673,20 @@ button:disabled {
   align-items: center;
   min-height: 30px;
   padding: 0.2rem 0.55rem;
-  border: 1px solid #2f7544;
+  border: 1px solid #cbd5ce;
   border-radius: 4px;
-  background: #2f7544;
-  color: #fff;
+  background: #fff;
+  color: #175b30;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
 }
 
 .manufacturer-link:hover {
-  background: #225b33;
-  color: #fff;
+  background: #eaf1ec;
+  border-color: #aebdb1;
+  color: #175b30;
 }
 
 .manufacturer-link.unavailable {
@@ -1878,6 +1879,7 @@ button:disabled {
   width: 100%;
   min-width: 560px;
   border-collapse: collapse;
+  table-layout: fixed;
   font-size: 0.82rem;
 }
 
@@ -1899,6 +1901,7 @@ button:disabled {
   position: sticky;
   left: 0;
   z-index: 1;
+  width: 190px;
   background: #fff;
   text-align: left;
 }
@@ -2975,5 +2978,365 @@ small {
   body:has(.filters.open) .feedback-button,
   body:has(.allergen-group[open]) .feedback-button {
     display: none;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Verduidelijking van de resultaten en vergelijking                   */
+/* ------------------------------------------------------------------ */
+
+.filters-head > div {
+  min-width: 0;
+  flex: 1 1 10rem;
+}
+
+.filters-head {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.advanced-filters-heading {
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.1rem 0.35rem;
+}
+
+.advanced-filters-heading .filter-summary {
+  margin-left: auto;
+  color: #68766c;
+  font-size: 0.76rem;
+  text-align: right;
+}
+
+.filters-intro {
+  margin: 0 0 0.7rem;
+  color: #5d6e61;
+}
+
+.quick-allergens {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.25rem 0 0.75rem;
+  padding: 0.45rem 0.55rem;
+  background: #f7f9f7;
+  border: 1px solid #e1e8e2;
+  border-radius: 4px;
+}
+
+.quick-allergens-label {
+  color: #4b5d50;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.quick-allergen {
+  padding: 0.18rem 0.55rem;
+  border: 1px solid #cbd5ce;
+  border-radius: 999px;
+  background: #fff;
+  color: #274a31;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.quick-allergen:hover:not(:disabled) {
+  background: #eef4ef;
+  border-color: #aebdb1;
+}
+
+.quick-allergen.active {
+  background: #175b30;
+  border-color: #175b30;
+  color: #fff;
+}
+
+.selected-allergens-bar {
+  position: sticky;
+  top: calc(var(--header-hoogte, 0px) + 0.5rem);
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 0.75rem;
+  padding: 0.55rem 0.7rem;
+  background: #f2f8f3;
+  border: 1px solid #c3dbc9;
+  border-left: 3px solid #2f7d45;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(24, 38, 28, 0.04);
+}
+
+.selected-allergens-main {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.selected-allergen-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.16rem 0.5rem;
+  border: 1px solid #b9cbbd;
+  border-radius: 999px;
+  background: #fff;
+  color: #17512b;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.selected-allergen-chip:hover:not(:disabled) {
+  background: #fbe9e9;
+  border-color: #cfa5a5;
+  color: #8a2f2f;
+}
+
+.selected-allergens-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.selected-count {
+  color: #274a31;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.muted-link {
+  color: #5d6e61;
+}
+
+button.summary-pill {
+  font: inherit;
+  cursor: pointer;
+}
+
+.summary-pill.active {
+  outline: 2px solid currentColor;
+  outline-offset: 1px;
+}
+
+.summary-reset {
+  padding: 0.18rem 0.5rem;
+  border: 1px solid #cbd5ce;
+  border-radius: 4px;
+  background: #fff;
+  color: #4b5d50;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.summary-reset:hover:not(:disabled) {
+  background: #f4f7f4;
+}
+
+.result-group-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  margin: 1rem 0 0.35rem;
+  padding: 0 0 0.3rem;
+  border-bottom: 1px solid #d6dfd7;
+  color: #274a31;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.result-group-heading span {
+  color: #5d6e61;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.result-group-heading.suitable { color: #14532b; }
+.result-group-heading.check { color: #7a5b00; }
+.result-group-heading.excluded { color: #8a2f2f; }
+
+.empty-results {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f7f9f7;
+  border: 1px solid #d3dcd4;
+  border-radius: 4px;
+}
+
+.empty-results strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: #274a31;
+}
+
+.empty-results p {
+  margin: 0 0 0.6rem;
+  color: #53645a;
+  font-size: 0.86rem;
+}
+
+.empty-results-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.compare-subtitle {
+  margin: 0.25rem 0 0;
+  color: #5d6e61;
+  font-size: 0.8rem;
+}
+
+.compare-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.8rem 0 0.3rem;
+}
+
+.compare-toolbar .nutrition-view-toggle {
+  margin: 0;
+}
+
+.compare-diff {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  color: #394c3e;
+  font-size: 0.8rem;
+}
+
+.compare-diff input {
+  width: auto;
+  margin: 0;
+  accent-color: #175b30;
+}
+
+.compare-copy {
+  padding: 0.32rem 0.6rem;
+  border: 1px solid #175b30;
+  border-radius: 4px;
+  background: #fff;
+  color: #175b30;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.compare-copy:hover:not(:disabled) {
+  background: #eaf1ec;
+}
+
+.compare-view-note {
+  margin-top: 0.25rem;
+}
+
+.compare-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 0.45rem 0 0.2rem;
+  color: #53645a;
+  font-size: 0.76rem;
+}
+
+.compare-legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.compare-state {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.compare-state.absent { background: #e6f1e9; color: #14532b; }
+.compare-state.unknown { background: #fdf3d6; color: #66490a; }
+.compare-state.present { background: #fbe9e9; color: #8a2f2f; }
+
+.compare-table td.compare-matrix-cell {
+  text-align: left;
+}
+
+.compare-matrix-cell small {
+  display: block;
+  margin-top: 0.2rem;
+  color: #53645a;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.compare-section-row th {
+  padding-top: 0.8rem;
+  padding-bottom: 0.3rem;
+  background: #f7f9f7;
+  border-bottom: 1px solid #d3dcd4;
+  color: #274a31;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.compare-empty {
+  padding: 0.8rem 0.45rem;
+  color: #5d6e61;
+  text-align: left;
+}
+
+@media (max-width: 760px) {
+  .selected-allergens-bar {
+    position: static;
+  }
+
+  .result-status {
+    padding: 0.55rem 0.7rem;
+  }
+
+  .result-status p {
+    display: none;
+  }
+
+  .result-status strong {
+    margin: 0;
+  }
+
+  .selected-allergens-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .compare-toolbar {
+    align-items: flex-start;
+  }
+
+  .compare-toolbar .nutrition-view-toggle {
+    width: 100%;
+  }
+
+  .compare-diff,
+  .compare-copy {
+    width: 100%;
+  }
+
+  .result-group-heading {
+    margin-top: 0.8rem;
   }
 }
