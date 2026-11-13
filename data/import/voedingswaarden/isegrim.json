@@ -1,0 +1,1114 @@
+{
+  "merk": "Isegrim",
+  "opgehaald": "2026-11-13",
+  "producten": [
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Zalm met gierst, blauwe bosbessen & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98000100",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.6,
+        "fat": 6.3,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,60%, vetgehalte 6,30%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "TUNDRA Eend met pastinaak & wegedoornbessen",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98001300",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.8,
+        "fat": 6.5,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,80%, vetgehalte 6,50%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Forel met pastinaak, cranberry's & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "12 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98003800",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.4,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,40%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Rendier met bramen, champignons & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98002400",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.5,
+        "fat": 6.9,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,50%, vetgehalte 6,90%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "STEPPE Lam met bessen & wilde kruiden",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.alsa-nature.nl/p/98006300",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 28,
+        "fat": 14,
+        "fiber": 3.5,
+        "ash": 7.8,
+        "calcium": 1.6,
+        "phosphorus": 1.2
+      },
+      "bronTekst": "Eiwit 28%, vetgehalte 14%, ruwe as 7,8%, ruwe celstof 3,5%, calcium 1,6%, fosfor 1,2%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "Puppy en Junior RIVER Zalm met gierst",
+      "voertype": "wet",
+      "verpakking": "12 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98006900",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 11.1,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 11,1%, vetgehalte 6,6%, ruwe as 2,5%, ruwe celstof 0,5%, vochtgehalte 75%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "TUNDRA Eend met pastinaak & wegedoornbessen",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98001500",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.8,
+        "fat": 6.5,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,80%, vetgehalte 6,50%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Zalm met gierst, blauwe bosbessen & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "12 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98000200",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.6,
+        "fat": 6.3,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,60%, vetgehalte 6,30%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "STEPPE Paard met appelbessen, champignons & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98003300",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.1,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,10%, vetgehalte 6,60%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Forel met pastinaak, cranberry's & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98003700",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.4,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,40%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Zalm met gierst, blauwe bosbessen & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98000300",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.6,
+        "fat": 6.3,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,60%, vetgehalte 6,30%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "PRAIRIE Gans met zoete aardappelen, rozenbottels en wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98001900",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,60%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Rendier met bramen, champignons & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "12 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98002900",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.5,
+        "fat": 6.9,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,50%, vetgehalte 6,90%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "GREEN HILLS Eend met bessen & wilde kruiden",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.alsa-nature.nl/p/98006000",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 36,
+        "fat": 17,
+        "fiber": 2.3,
+        "ash": 8.2,
+        "calcium": 1.8,
+        "phosphorus": 1.3
+      },
+      "bronTekst": "Eiwit 36%, vetgehalte 17%, ruwe as 8,2%, ruwe celstof 2,3%, calcium 1,8%, fosfor 1,3%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "Puppy en Junior RIVER Zalm met gierst",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98006500",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 11.1,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 11,1%, vetgehalte 6,6%, ruwe as 2,5%, ruwe celstof 0,5%, vochtgehalte 75%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Forel met pastinaak, cranberry's & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "12 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98004100",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.4,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,40%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "Puppy en Junior FOREST Wildzwijn met aardappelen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98012201",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.6,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.2,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,60%, vetgehalte 6,60%, ruwe as 2,20%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "Puppy en Junior FOREST Wildzwijn met aardappelen",
+      "voertype": "wet",
+      "verpakking": "12 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98012401",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.6,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.2,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,60%, vetgehalte 6,60%, ruwe as 2,20%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "STEPPE Paard met appelbessen, champignons & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98003000",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.1,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,10%, vetgehalte 6,60%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "Puppy en Junior RIVER Zalm met bessen",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.alsa-nature.nl/p/98005400",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 37,
+        "fat": 18,
+        "fiber": 2,
+        "ash": 8.2,
+        "calcium": 1.5,
+        "phosphorus": 1.1
+      },
+      "bronTekst": "Eiwit 37%, vetgehalte 18%, ruwe as 8,2%, ruwe celstof 2,0%, calcium 1,5%, fosfor 1,1%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "PRAIRIE Gans met zoete aardappelen, rozenbottels en wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98002200",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,60%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Forel met pastinaak, cranberry's & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98004000",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.4,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,40%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "Puppy en Junior RIVER Zalm met gierst",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98006800",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 11.1,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 11,1%, vetgehalte 6,6%, ruwe as 2,5%, ruwe celstof 0,5%, vochtgehalte 75%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "STEPPE Paard met appelbessen, champignons & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98003100",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.1,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,10%, vetgehalte 6,60%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "TUNDRA Eend met pastinaak & wegedoornbessen",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98001200",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.8,
+        "fat": 6.5,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,80%, vetgehalte 6,50%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "TUNDRA Eend met pastinaak & wegedoornbessen",
+      "voertype": "wet",
+      "verpakking": "12 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98001700",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.8,
+        "fat": 6.5,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,80%, vetgehalte 6,50%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Rendier met bramen, champignons & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "12 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98002600",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.5,
+        "fat": 6.9,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,50%, vetgehalte 6,90%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Rendier met bramen, champignons & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98002700",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.5,
+        "fat": 6.9,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,50%, vetgehalte 6,90%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "TUNDRA Eend met pastinaak & wegedoornbessen",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98001600",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.8,
+        "fat": 6.5,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,80%, vetgehalte 6,50%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "PRAIRIE Gans met zoete aardappelen, rozenbottels en wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "12 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98002000",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,60%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "Puppy en Junior RIVER Zalm met gierst",
+      "voertype": "wet",
+      "verpakking": "12 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98006600",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 11.1,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 11,1%, vetgehalte 6,6%, ruwe as 2,5%, ruwe celstof 0,5%, vochtgehalte 75%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "PRAIRIE Gans met zoete aardappelen, rozenbottels en wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98002100",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,60%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "PRAIRIE Gans met zoete aardappelen, rozenbottels en wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98001800",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,60%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Rendier met bramen, champignons & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98002800",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.5,
+        "fat": 6.9,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,50%, vetgehalte 6,90%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "Puppy en Junior FOREST Wildzwijn met aardappelen",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98012301",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.6,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.2,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,60%, vetgehalte 6,60%, ruwe as 2,20%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Zalm met gierst, blauwe bosbessen & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98000000",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.6,
+        "fat": 6.3,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,60%, vetgehalte 6,30%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Hert met aardperen, rode bosbessen & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "12 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98000800",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.4,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,40%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "PRAIRIE Gans met zoete aardappelen, rozenbottels en wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "12 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98002300",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,60%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "STEPPE Paard met appelbessen, champignons & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "12 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98003500",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.1,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,10%, vetgehalte 6,60%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Forel met pastinaak, cranberry's & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98003600",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.4,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,40%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Hert met aardperen, rode bosbessen & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "12 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98001100",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.4,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,40%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "TUNDRA Eend met pastinaak & wegedoornbessen",
+      "voertype": "wet",
+      "verpakking": "12 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98001400",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.8,
+        "fat": 6.5,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,80%, vetgehalte 6,50%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Hert met aardperen, rode bosbessen & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98000900",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.4,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,40%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Rendier met bramen, champignons & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98002500",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.5,
+        "fat": 6.9,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,50%, vetgehalte 6,90%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "Puppy en Junior RIVER Zalm met gierst",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98006700",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 11.1,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 11,1%, vetgehalte 6,6%, ruwe as 2,5%, ruwe celstof 0,5%, vochtgehalte 75%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "GREEN HILLS Eend met bessen & wilde kruiden",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.alsa-nature.nl/p/98006100",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 36,
+        "fat": 17,
+        "fiber": 2.3,
+        "ash": 8.2,
+        "calcium": 1.8,
+        "phosphorus": 1.3
+      },
+      "bronTekst": "Eiwit 36%, vetgehalte 17%, ruwe as 8,2%, ruwe celstof 2,3%, calcium 1,8%, fosfor 1,3%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "Puppy en Junior RIVER Zalm met bessen",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.alsa-nature.nl/p/98005500",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 37,
+        "fat": 18,
+        "fiber": 2,
+        "ash": 8.2,
+        "calcium": 1.5,
+        "phosphorus": 1.1
+      },
+      "bronTekst": "Eiwit 37%, vetgehalte 18%, ruwe as 8,2%, ruwe celstof 2,0%, calcium 1,5%, fosfor 1,1%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Edelhert met bessen & wilde kruiden",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.alsa-nature.nl/p/98005800",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 26,
+        "fat": 15,
+        "fiber": 3.2,
+        "ash": 9,
+        "calcium": 1.6,
+        "phosphorus": 1.1
+      },
+      "bronTekst": "Eiwit 26%, vetgehalte 15%, ruwe as 9%, ruwe celstof 3,2%, calcium 1,6%, fosfor 1,1%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Edelhert met bessen & wilde kruiden",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.alsa-nature.nl/p/98005900",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 26,
+        "fat": 15,
+        "fiber": 3.2,
+        "ash": 9,
+        "calcium": 1.6,
+        "phosphorus": 1.1
+      },
+      "bronTekst": "Eiwit 26%, vetgehalte 15%, ruwe as 9%, ruwe celstof 3,2%, calcium 1,6%, fosfor 1,1%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Hert met aardperen, rode bosbessen & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98000700",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.4,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,40%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Zalm met gierst, blauwe bosbessen & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98000400",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.6,
+        "fat": 6.3,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,60%, vetgehalte 6,30%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Hert met aardperen, rode bosbessen & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98000600",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.4,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,40%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "STEPPE Paard met appelbessen, champignons & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "12 x 400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98003200",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.1,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,10%, vetgehalte 6,60%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Zalm met gierst, blauwe bosbessen & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "12 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98000500",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.6,
+        "fat": 6.3,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,60%, vetgehalte 6,30%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "STEPPE Paard met appelbessen, champignons & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98003400",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.1,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,10%, vetgehalte 6,60%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "FOREST Hert met aardperen, rode bosbessen & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "6 x 800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98001000",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.4,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,40%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Forel met pastinaak, cranberry's & wilde kruiden",
+      "voertype": "wet",
+      "verpakking": "800 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98003900",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.7,
+        "fat": 6.4,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 10,70%, vetgehalte 6,40%, ruwe as 2,50%, ruwe celstof 0,50%, vochtgehalte 75,00%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Zalm met bessen & wilde kruiden",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.alsa-nature.nl/p/98005600",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 34,
+        "fat": 15,
+        "fiber": 2,
+        "ash": 8.3,
+        "calcium": 1.3,
+        "phosphorus": 1
+      },
+      "bronTekst": "Eiwit 34%, vetgehalte 15%, ruwe as 8,3%, ruwe celstof 2,0%, calcium 1,3%, fosfor 1%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "RIVER Zalm met bessen & wilde kruiden",
+      "voertype": "kibble",
+      "verpakking": "12 kg",
+      "bronUrl": "https://www.alsa-nature.nl/p/98005700",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 34,
+        "fat": 15,
+        "fiber": 2,
+        "ash": 8.3,
+        "calcium": 1.3,
+        "phosphorus": 1
+      },
+      "bronTekst": "Eiwit 34%, vetgehalte 15%, ruwe as 8,3%, ruwe celstof 2,0%, calcium 1,3%, fosfor 1%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "Puppy en Junior RIVER Zalm met gierst",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.alsa-nature.nl/p/98006400",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 11.1,
+        "fat": 6.6,
+        "fiber": 0.5,
+        "ash": 2.5,
+        "moisture": 75
+      },
+      "bronTekst": "Eiwit 11,1%, vetgehalte 6,6%, ruwe as 2,5%, ruwe celstof 0,5%, vochtgehalte 75%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Isegrim",
+      "naam": "STEPPE Lam met bessen & wilde kruiden",
+      "voertype": "kibble",
+      "verpakking": "3 kg",
+      "bronUrl": "https://www.alsa-nature.nl/p/98006200",
+      "gecontroleerd": "2026-11-13",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 28,
+        "fat": 14,
+        "fiber": 3.5,
+        "ash": 7.8,
+        "calcium": 1.6,
+        "phosphorus": 1.2
+      },
+      "bronTekst": "Eiwit 28%, vetgehalte 14%, ruwe as 7,8%, ruwe celstof 3,5%, calcium 1,6%, fosfor 1,2%",
+      "notitie": "Automatisch overgenomen van de officiële productpagina op 2026-11-13. Ontbrekende waarden zijn niet vermeld."
+    }
+  ]
+}

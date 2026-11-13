@@ -149,6 +149,27 @@ niet in de catalogus staan, levert de koppeling nul links op. Het script staat
 klaar om ze automatisch te koppelen zodra de producten met ingrediënten en
 voedingswaarden zijn toegevoegd.
 
+### Alsa Nature en Isegrim importeren
+
+De officiële productpagina's van Alsa Nature bevatten de samenstelling en
+analytische bestanddelen. Het importscript haalt die één keer op en schrijft:
+
+- `data/import/alsa-nature.json`, `isegrim.json` en `isegrim-roots.json`
+- bijbehorende voeding in `data/import/voedingswaarden/`
+- nieuwe snacks in `data/snacks.json`
+
+```bash
+npm run import:affiliate -- --concurrency=8
+npm run import:affiliate -- --alleen=voer
+npm run import:affiliate -- --alleen=snacks
+```
+
+Daarna genereert `node scripts/maak-import-sql.mjs --bestanden=alsa-nature,isegrim,isegrim-roots`
+de SQL-batches. De gecombineerde versie staat in
+`data/import/sql/alsa-isegrim-import-20261113.sql`. Die moet in de Supabase
+SQL Editor worden uitgevoerd voordat de voerproducten live zichtbaar zijn.
+Snacks gaan direct mee met de site.
+
 ### Ultra Premium Direct (Daisycon)
 
 Ultra Premium Direct is goedgekeurd als Daisycon-campagne. De feed staat lokaal

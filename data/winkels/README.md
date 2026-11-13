@@ -75,6 +75,14 @@ Download hem in TradeTracker via **Promotiemateriaal → Productfeeds** en draai
 bevat vooral de merken `alsa-nature` en `isegrim`; zolang die niet in de
 catalogus staan, worden er geen links toegevoegd.
 
+## Snackaffiliates Alsa Nature en Ultra Premium Direct
+
+Nadat de snacks uit de feeds zijn geïmporteerd, koppelt
+`npm run winkels:snacks-alsa-upd` de snack-ID's aan de bijbehorende
+affiliate-URL's. Het script matcht op de directe bron-URL en schrijft de
+winkels naar `public/winkels.json`. Het rapport staat lokaal in
+`data/winkels/rapport-snack-affiliates.md`.
+
 ## Ultra Premium Direct (Daisycon)
 
 De Ultra Premium Direct-feed staat lokaal in

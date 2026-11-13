@@ -257,11 +257,16 @@ try {
   const winkelLinks = Object.values(winkelsJson.aanbieders ?? {}).flat()
   const winkelLinksMetPrijs = winkelLinks.filter((link) => Number.isFinite(link.prijs) && link.prijs > 0)
   const geldigeWinkellink = (link) =>
-    ['Dierenwinkel XL', 'Ultra Premium Direct'].includes(link.winkel) &&
-    (link.winkel === 'Dierenwinkel XL' ? /tt=4019_/.test(link.url) : /^https:\/\/glp8\.net\/c\//.test(link.url)) &&
+    ['Dierenwinkel XL', 'Ultra Premium Direct', 'Alsa Nature'].includes(link.winkel) &&
+    (link.winkel === 'Dierenwinkel XL'
+      ? /tt=4019_/.test(link.url)
+      : link.winkel === 'Ultra Premium Direct'
+        ? /^https:\/\/glp8\.net\/c\//.test(link.url)
+        : /tt=31843_/.test(link.url)) &&
     (link.prijs == null || (Number.isFinite(link.prijs) && link.prijs > 0))
   const updLinks = winkelLinks.filter((link) => link.winkel === 'Ultra Premium Direct')
-  meld(winkelsAntwoord.ok() && winkelLinks.length >= 30 && winkelLinks.every(geldigeWinkellink) && winkelLinksMetPrijs.length >= 30 && updLinks.length >= 10, 'winkelkoppelingen bevatten betrouwbare links met vanaf-prijs', `${winkelLinks.length} links, ${winkelLinksMetPrijs.length} met prijs, ${updLinks.length} Ultra Premium Direct`)
+  const alsaLinks = winkelLinks.filter((link) => link.winkel === 'Alsa Nature')
+  meld(winkelsAntwoord.ok() && winkelLinks.length >= 30 && winkelLinks.every(geldigeWinkellink) && winkelLinksMetPrijs.length >= 30 && updLinks.length >= 10 && alsaLinks.length >= 100, 'winkelkoppelingen bevatten betrouwbare links met vanaf-prijs', `${winkelLinks.length} links, ${winkelLinksMetPrijs.length} met prijs, ${updLinks.length} Ultra Premium Direct, ${alsaLinks.length} Alsa Nature`)
 
   await open('/?zoek=Acana%20Adult%20Dog%20Recipe', '.product-card')
   await page.waitForSelector('.shop-link', { timeout: 10000 })

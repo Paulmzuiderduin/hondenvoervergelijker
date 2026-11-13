@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-11-13T12:41:40.383Z",
+  "bijgewerkt": "2026-11-13T14:02:39.464Z",
   "netwerk": "TradeTracker en Daisycon",
   "aanbieders": {
     "08c788d6-941d-433e-ba73-6f1c99405be5": [
@@ -680,6 +680,2822 @@
         "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=d2fd907f0721f1d1a4ad411aba579335&dl=producten%2FSuper-Premium-brokken-voor-puppy-van-alle-groottes%2F&ws=",
         "maat": "12 kg",
         "prijs": 47.9
+      }
+    ],
+    "alsa-nature-struisvogel-trainer-snack-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950007",
+        "maat": "250 g",
+        "prijs": 17.95
+      }
+    ],
+    "alsa-nature-buffeloren-10-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95011700",
+        "maat": "10 stuks",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-buffeloren-3-x-10-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95011900",
+        "maat": "3 x 10 stuks",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-wild-repen-3-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95014300",
+        "maat": "3 x 100 g",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-paarden-repen-2-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95014600",
+        "maat": "2 x 100 g",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-runder-minis-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95015800",
+        "maat": "2 x 250 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-paardenlong-blokjes-150-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95031900",
+        "maat": "150 g",
+        "prijs": 9.95
+      }
+    ],
+    "alsa-nature-paardenlong-blokjes-2-x-150-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95032000",
+        "maat": "2 x 150 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-runder-kauwsticks-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95037800",
+        "maat": "250 g",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-hertenvlees-blokjes-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950576",
+        "maat": "200 g",
+        "prijs": 7.95
+      }
+    ],
+    "alsa-nature-geitenoren-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950630",
+        "maat": "3 x 200 g",
+        "prijs": 27.95
+      }
+    ],
+    "alsa-nature-paarden-hoofdhuid-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950633",
+        "maat": "2 x 200 g",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-m-3-x-1-stuk": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95070001",
+        "maat": "3 x 1 stuk",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-xl-1-stuk": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95070601",
+        "maat": "1 stuk",
+        "prijs": 19.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-xl-3-x-1-stuk": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95070801",
+        "maat": "3 x 1 stuk",
+        "prijs": 57.95
+      }
+    ],
+    "alsa-nature-bullenpees-5-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95170101",
+        "maat": "5 stuks",
+        "prijs": 11.95
+      }
+    ],
+    "alsa-nature-bullenpees-2-x-5-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95170201",
+        "maat": "2 x 5 stuks",
+        "prijs": 22.95
+      }
+    ],
+    "alsa-nature-bullenpees-3-x-5-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95170301",
+        "maat": "3 x 5 stuks",
+        "prijs": 34.95
+      }
+    ],
+    "alsa-nature-oostzee-haring-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95180101",
+        "maat": "250 g",
+        "prijs": 13.95
+      }
+    ],
+    "alsa-nature-oostzee-haring-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95180201",
+        "maat": "2 x 250 g",
+        "prijs": 26.95
+      }
+    ],
+    "alsa-nature-schaapspens-4-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95260401",
+        "maat": "4 x 500 g",
+        "prijs": 47.95
+      }
+    ],
+    "alsa-nature-long-schnitzels-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95460101",
+        "maat": "200 g",
+        "prijs": 9.9
+      }
+    ],
+    "alsa-nature-long-schnitzels-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95460301",
+        "maat": "3 x 200 g",
+        "prijs": 27.9
+      }
+    ],
+    "alsa-nature-ossenoor-2-x-5-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95470201",
+        "maat": "2 x 5 stuks",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-ossenoor-3-x-5-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95470301",
+        "maat": "3 x 5 stuks",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-gebitsverzorging-snack-denta-zack-10-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95510101",
+        "maat": "10 stuks",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-gebitsverzorging-snack-denta-zack-3-x-10-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95510301",
+        "maat": "3 x 10 stuks",
+        "prijs": 43.95
+      }
+    ],
+    "alsa-nature-gebitsverzorging-snack-minident-10-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95520101",
+        "maat": "10 stuks",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-gebitsverzorging-snack-minident-3-x-10-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95520301",
+        "maat": "3 x 10 stuks",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-ossenstaart-2-x-150-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95910201",
+        "maat": "2 x 150 g",
+        "prijs": 13.95
+      }
+    ],
+    "alsa-nature-lam-sticks-3-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95920301",
+        "maat": "3 x 100 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-kippenborstfilets-maat-1-4-x-170-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95930401",
+        "maat": "4 x 170 g",
+        "prijs": 22.95
+      }
+    ],
+    "alsa-nature-zalmrolletjes-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96001001",
+        "maat": "500 g",
+        "prijs": 4.95
+      }
+    ],
+    "alsa-nature-mini-trainer-mix-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960035",
+        "maat": "250 g",
+        "prijs": 4.95
+      }
+    ],
+    "alsa-nature-pens-brokken-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96012901",
+        "maat": "1 kg",
+        "prijs": 11.95
+      }
+    ],
+    "alsa-nature-mini-leverhartjes-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96031800",
+        "maat": "3 x 250 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-kalkoen-en-cranberry-harten-2-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96058900",
+        "maat": "2 x 500 g",
+        "prijs": 11.5
+      }
+    ],
+    "alsa-nature-lam-en-appel-botjes-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96059200",
+        "maat": "500 g",
+        "prijs": 5.95
+      }
+    ],
+    "alsa-nature-herten-dropjes-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960670",
+        "maat": "250 g",
+        "prijs": 4.95
+      }
+    ],
+    "alsa-nature-herten-dropjes-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960671",
+        "maat": "2 x 250 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-eenden-daalders-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960676",
+        "maat": "3 x 250 g",
+        "prijs": 13.5
+      }
+    ],
+    "alsa-nature-vegan-bessenmix-3-x-125-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960718",
+        "maat": "3 x 125 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-kalkoen-balletjes-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960760",
+        "maat": "2 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-groente-bommetjes-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960769",
+        "maat": "3 x 250 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-kerstkoeken-sneeuwpop-en-peperkoekman-3-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960974",
+        "maat": "3 x 2 stuks",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-wild-aalbes-praline-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96109401",
+        "maat": "3 x 250 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-bananen-rosetjes-2-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96110201",
+        "maat": "2 x 500 g",
+        "prijs": 13.5
+      }
+    ],
+    "alsa-nature-insectum-groentepastei-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96112901",
+        "maat": "250 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-kruiden-hartjes-2-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96116901",
+        "maat": "2 x 500 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-broodbrok-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96200101",
+        "maat": "1 kg",
+        "prijs": 9.95
+      }
+    ],
+    "alsa-nature-broodbrok-2-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96200201",
+        "maat": "2 x 1 kg",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-buffelpens-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95011300",
+        "maat": "250 g",
+        "prijs": 4.95
+      }
+    ],
+    "alsa-nature-buffelvlees-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95012100",
+        "maat": "250 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-wild-repen-2-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95014200",
+        "maat": "2 x 100 g",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-kangoeroe-rollen-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95017100",
+        "maat": "3 x 250 g",
+        "prijs": 41.95
+      }
+    ],
+    "alsa-nature-eendennekken-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95024900",
+        "maat": "2 x 250 g",
+        "prijs": 14.95
+      }
+    ],
+    "alsa-nature-pens-kauwbotten-2-x-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95025300",
+        "maat": "2 x 3 stuks",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-paardenslokdarm-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95030700",
+        "maat": "2 x 200 g",
+        "prijs": 17.5
+      }
+    ],
+    "alsa-nature-konijnenoren-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95037100",
+        "maat": "2 x 200 g",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-runder-kauwsticks-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95037900",
+        "maat": "2 x 250 g",
+        "prijs": 20.95
+      }
+    ],
+    "alsa-nature-runder-kauwsticks-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95038000",
+        "maat": "3 x 250 g",
+        "prijs": 29.95
+      }
+    ],
+    "alsa-nature-fitness-sticks-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950421",
+        "maat": "200 g",
+        "prijs": 9.95
+      }
+    ],
+    "alsa-nature-fitness-sticks-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950422",
+        "maat": "2 x 200 g",
+        "prijs": 19.5
+      }
+    ],
+    "alsa-nature-fitness-sticks-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950423",
+        "maat": "3 x 200 g",
+        "prijs": 28.95
+      }
+    ],
+    "alsa-nature-eenden-minis-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950426",
+        "maat": "2 x 200 g",
+        "prijs": 22.95
+      }
+    ],
+    "alsa-nature-eenden-minis-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950427",
+        "maat": "3 x 200 g",
+        "prijs": 33.95
+      }
+    ],
+    "alsa-nature-rundvlees-koekjes-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950438",
+        "maat": "2 x 200 g",
+        "prijs": 20.95
+      }
+    ],
+    "alsa-nature-paardenvlees-koeken-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950447",
+        "maat": "3 x 200 g",
+        "prijs": 31.95
+      }
+    ],
+    "alsa-nature-geitenlong-blokjes-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950637",
+        "maat": "2 x 200 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-varkensoren-2-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95132101",
+        "maat": "2 x 500 g",
+        "prijs": 29.95
+      }
+    ],
+    "alsa-nature-runder-halsvlees-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95140201",
+        "maat": "2 x 250 g",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-runder-halsvlees-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95140301",
+        "maat": "3 x 250 g",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-2-m-pensworst-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95250201",
+        "maat": "2 x 250 g",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-2-m-lamsworsten-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95251101",
+        "maat": "250 g",
+        "prijs": 13.95
+      }
+    ],
+    "alsa-nature-farmer-bone-kauwbot-maat-1-3-x-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95293201",
+        "maat": "3 x 3 stuks",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-farmer-bone-gebitsverzorgingchips-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95294201",
+        "maat": "250 g",
+        "prijs": 9.95
+      }
+    ],
+    "alsa-nature-aardappel-gnocchi-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96014201",
+        "maat": "2 x 250 g",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-aardappel-gnocchi-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96014301",
+        "maat": "3 x 250 g",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-kangoeroe-dropjes-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96024300",
+        "maat": "3 x 250 g",
+        "prijs": 42.95
+      }
+    ],
+    "alsa-nature-mini-leverhartjes-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96031700",
+        "maat": "2 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-eend-en-sinaasappel-mini-botjes-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96059600",
+        "maat": "1 kg",
+        "prijs": 9.95
+      }
+    ],
+    "alsa-nature-eend-en-sinaasappel-mini-botjes-4-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96059900",
+        "maat": "4 x 1 kg",
+        "prijs": 37.95
+      }
+    ],
+    "alsa-nature-kippen-hartjes-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960765",
+        "maat": "3 x 250 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-fruit-bommetjes-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960772",
+        "maat": "2 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-insectum-fruitpastei-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96113501",
+        "maat": "3 x 250 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-johannesbrood-pretzels-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96690101",
+        "maat": "500 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-agility-cracker-4-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96960401",
+        "maat": "4 x 1 kg",
+        "prijs": 20.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-m-2-x-1-stuk": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95069901",
+        "maat": "2 x 1 stuk",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-l-1-stuk": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95070201",
+        "maat": "1 stuk",
+        "prijs": 14.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-l-3-x-1-stuk": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95070401",
+        "maat": "3 x 1 stuk",
+        "prijs": 42.95
+      }
+    ],
+    "alsa-nature-kaaspops-3-x-50-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95071201",
+        "maat": "3 x 50 g",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-paardenlong-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95071401",
+        "maat": "100 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-paardenlong-2-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95071501",
+        "maat": "2 x 100 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-runderpens-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95120201",
+        "maat": "2 x 250 g",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-runderpens-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95120301",
+        "maat": "3 x 250 g",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-runder-halsvlees-4-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95140401",
+        "maat": "4 x 250 g",
+        "prijs": 31.95
+      }
+    ],
+    "alsa-nature-runderhuid-strips-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95230201",
+        "maat": "2 x 250 g",
+        "prijs": 14.5
+      }
+    ],
+    "alsa-nature-2-m-lamsworsten-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95251301",
+        "maat": "3 x 250 g",
+        "prijs": 36.95
+      }
+    ],
+    "alsa-nature-denta-struisvogelbot-3-x-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95420301",
+        "maat": "3 x 3 stuks",
+        "prijs": 21.95
+      }
+    ],
+    "alsa-nature-mikados-2-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95870201",
+        "maat": "2 x 100 g",
+        "prijs": 22.95
+      }
+    ],
+    "alsa-nature-agility-cracker-2-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96960201",
+        "maat": "2 x 1 kg",
+        "prijs": 11.95
+      }
+    ],
+    "alsa-nature-agility-cracker-3-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96960301",
+        "maat": "3 x 1 kg",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-struisvogel-trainer-snack-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950008",
+        "maat": "2 x 250 g",
+        "prijs": 34.95
+      }
+    ],
+    "alsa-nature-struisvogel-chips-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95006800",
+        "maat": "250 g",
+        "prijs": 13.95
+      }
+    ],
+    "alsa-nature-buffelpens-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95011500",
+        "maat": "3 x 250 g",
+        "prijs": 13.95
+      }
+    ],
+    "alsa-nature-buffeloren-2-x-10-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95011800",
+        "maat": "2 x 10 stuks",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-paarden-repen-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95014500",
+        "maat": "100 g",
+        "prijs": 5.95
+      }
+    ],
+    "alsa-nature-paarden-repen-3-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95014700",
+        "maat": "3 x 100 g",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-lam-repen-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95014900",
+        "maat": "100 g",
+        "prijs": 5.95
+      }
+    ],
+    "alsa-nature-lam-repen-2-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95015000",
+        "maat": "2 x 100 g",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-lam-repen-3-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95015100",
+        "maat": "3 x 100 g",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-pens-kauwbotten-3-x-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95025400",
+        "maat": "3 x 3 stuks",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-paardenslokdarm-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95030800",
+        "maat": "3 x 200 g",
+        "prijs": 25.95
+      }
+    ],
+    "alsa-nature-hertenlong-blokjes-150-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95031500",
+        "maat": "150 g",
+        "prijs": 9.95
+      }
+    ],
+    "alsa-nature-hertenlong-blokjes-3-x-150-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95031700",
+        "maat": "3 x 150 g",
+        "prijs": 27.95
+      }
+    ],
+    "alsa-nature-wild-minis-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950431",
+        "maat": "3 x 200 g",
+        "prijs": 30.95
+      }
+    ],
+    "alsa-nature-paarden-kauwsticks-2-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950459",
+        "maat": "2 x 100 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-paarden-kauwsticks-3-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950460",
+        "maat": "3 x 100 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-kauwbotten-zeebries-3-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95050701",
+        "maat": "3 x 2 stuks",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-insectum-denta-bone-maat-2-2-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95051001",
+        "maat": "2 x 2 stuks",
+        "prijs": 14.95
+      }
+    ],
+    "alsa-nature-insectum-denta-bone-maat-1-3-x-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95051501",
+        "maat": "3 x 3 stuks",
+        "prijs": 19.95
+      }
+    ],
+    "alsa-nature-struisvogel-kauwsticks-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95051801",
+        "maat": "2 x 250 g",
+        "prijs": 26.95
+      }
+    ],
+    "alsa-nature-struisvogel-kauwsticks-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95051901",
+        "maat": "3 x 250 g",
+        "prijs": 37.95
+      }
+    ],
+    "alsa-nature-hertenvlees-blokjes-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950577",
+        "maat": "2 x 200 g",
+        "prijs": 14.95
+      }
+    ],
+    "alsa-nature-geitenoren-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950628",
+        "maat": "200 g",
+        "prijs": 9.95
+      }
+    ],
+    "alsa-nature-geitenoren-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950629",
+        "maat": "2 x 200 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-paarden-hoofdhuid-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950632",
+        "maat": "200 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-paarden-hoofdhuid-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950634",
+        "maat": "3 x 200 g",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-xs-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95069001",
+        "maat": "3 stuks",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-s-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95069401",
+        "maat": "2 stuks",
+        "prijs": 13.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-s-2-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95069501",
+        "maat": "2 x 2 stuks",
+        "prijs": 26.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-m-1-stuk": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95069801",
+        "maat": "1 stuk",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-varkensoren-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95132001",
+        "maat": "500 g",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-varkensoren-4-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95132301",
+        "maat": "4 x 500 g",
+        "prijs": 49.95
+      }
+    ],
+    "alsa-nature-runder-halsvlees-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95140101",
+        "maat": "250 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-sprot-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95240101",
+        "maat": "500 g",
+        "prijs": 21.95
+      }
+    ],
+    "alsa-nature-sprot-2-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95240201",
+        "maat": "2 x 500 g",
+        "prijs": 42.95
+      }
+    ],
+    "alsa-nature-sprot-3-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95240301",
+        "maat": "3 x 500 g",
+        "prijs": 59.95
+      }
+    ],
+    "alsa-nature-2-m-pensworst-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95250101",
+        "maat": "250 g",
+        "prijs": 13.95
+      }
+    ],
+    "alsa-nature-farmer-bone-kauwbot-maat-1-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95293001",
+        "maat": "3 stuks",
+        "prijs": 5.95
+      }
+    ],
+    "alsa-nature-farmer-bone-kauwbot-maat-1-2-x-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95293101",
+        "maat": "2 x 3 stuks",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-denta-maxi-egel-4-x-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95597301",
+        "maat": "4 x 3 stuks",
+        "prijs": 27.95
+      }
+    ],
+    "alsa-nature-rundernekpezen-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95660101",
+        "maat": "250 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-rundernekpezen-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95660201",
+        "maat": "2 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-rundernekpezen-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95660301",
+        "maat": "3 x 250 g",
+        "prijs": 17.95
+      }
+    ],
+    "alsa-nature-kalfsvlees-botten-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95730101",
+        "maat": "2 stuks",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-lam-sticks-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95920101",
+        "maat": "100 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-kippenborstfilets-maat-1-170-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95930101",
+        "maat": "170 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-kippenborstfilets-maat-1-2-x-170-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95930201",
+        "maat": "2 x 170 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-kippenborstfilets-maat-1-3-x-170-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95930301",
+        "maat": "3 x 170 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-kippenborstfilets-maat-2-2-x-170-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95940201",
+        "maat": "2 x 170 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-kippenborstfilets-maat-2-4-x-170-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95940401",
+        "maat": "4 x 170 g",
+        "prijs": 22.95
+      }
+    ],
+    "alsa-nature-zalmrolletjes-2-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96001101",
+        "maat": "2 x 500 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-bio-smileys-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96012201",
+        "maat": "2 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-bio-smileys-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96012301",
+        "maat": "3 x 250 g",
+        "prijs": 17.95
+      }
+    ],
+    "alsa-nature-aardappel-gnocchi-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960141",
+        "maat": "250 g",
+        "prijs": 5.95
+      }
+    ],
+    "alsa-nature-kangoeroe-dropjes-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96024100",
+        "maat": "250 g",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-kalkoen-balletjes-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960759",
+        "maat": "250 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-kippen-hartjes-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960763",
+        "maat": "250 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-groente-bommetjes-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960767",
+        "maat": "250 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-groente-bommetjes-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960768",
+        "maat": "2 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-fruit-bommetjes-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960773",
+        "maat": "3 x 250 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-wild-aalbes-praline-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96108901",
+        "maat": "2 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-kruiden-hartjes-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96116801",
+        "maat": "500 g",
+        "prijs": 4.95
+      }
+    ],
+    "alsa-nature-kruiden-hartjes-3-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96117001",
+        "maat": "3 x 500 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-struisvogel-snack-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96120601",
+        "maat": "500 g",
+        "prijs": 5.95
+      }
+    ],
+    "alsa-nature-struisvogel-snack-2-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96120701",
+        "maat": "2 x 500 g",
+        "prijs": 11.5
+      }
+    ],
+    "alsa-nature-struisvogel-snack-3-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96120801",
+        "maat": "3 x 500 g",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-pens-koekjes-3-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96360301",
+        "maat": "3 x 1 kg",
+        "prijs": 19.95
+      }
+    ],
+    "alsa-nature-kaaskoekjes-4-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96640401",
+        "maat": "4 x 1 kg",
+        "prijs": 26.95
+      }
+    ],
+    "alsa-nature-johannesbrood-pretzels-2-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96690201",
+        "maat": "2 x 500 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-johannesbrood-pretzels-3-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96690301",
+        "maat": "3 x 500 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-groente-hartjes-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96900101",
+        "maat": "500 g",
+        "prijs": 3.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-xs-3-x-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95069201",
+        "maat": "3 x 3 stuks",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-mikados-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95870101",
+        "maat": "100 g",
+        "prijs": 11.95
+      }
+    ],
+    "alsa-nature-mikados-3-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95870301",
+        "maat": "3 x 100 g",
+        "prijs": 32.95
+      }
+    ],
+    "alsa-nature-ossenstaart-3-x-150-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95910301",
+        "maat": "3 x 150 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-lam-sticks-2-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95920201",
+        "maat": "2 x 100 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-bio-smileys-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96012101",
+        "maat": "250 g",
+        "prijs": 7.5
+      }
+    ],
+    "alsa-nature-pens-brokken-3-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96013101",
+        "maat": "3 x 1 kg",
+        "prijs": 29.95
+      }
+    ],
+    "alsa-nature-kalkoen-hartjes-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96041800",
+        "maat": "250 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-kalkoen-hartjes-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96041900",
+        "maat": "2 x 250 g",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-kip-en-groentemix-3-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96058500",
+        "maat": "3 x 1 kg",
+        "prijs": 28.95
+      }
+    ],
+    "alsa-nature-kip-en-groentemix-4-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96058600",
+        "maat": "4 x 1 kg",
+        "prijs": 37.95
+      }
+    ],
+    "alsa-nature-herten-dropjes-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960672",
+        "maat": "3 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-eenden-daalders-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960675",
+        "maat": "2 x 250 g",
+        "prijs": 9.5
+      }
+    ],
+    "alsa-nature-zalm-kokos-kogels-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960775",
+        "maat": "250 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-zalm-kokos-kogels-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960777",
+        "maat": "3 x 250 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-kalkoen-trainer-mix-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96106501",
+        "maat": "2 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-goedenacht-koekjes-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96111101",
+        "maat": "2 x 250 g",
+        "prijs": 7.95
+      }
+    ],
+    "alsa-nature-goedenacht-koekjes-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96111201",
+        "maat": "3 x 250 g",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-insectum-groentepastei-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96113001",
+        "maat": "2 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-insectum-groentepastei-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96113101",
+        "maat": "3 x 250 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-insectum-fruitpastei-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96113401",
+        "maat": "2 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-broodbrok-3-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96200301",
+        "maat": "3 x 1 kg",
+        "prijs": 27.95
+      }
+    ],
+    "alsa-nature-pens-koekjes-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96360101",
+        "maat": "1 kg",
+        "prijs": 7.95
+      }
+    ],
+    "alsa-nature-dieet-koeken-4-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96600401",
+        "maat": "4 x 1 kg",
+        "prijs": 27.9
+      }
+    ],
+    "alsa-nature-groente-hartjes-2-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96900201",
+        "maat": "2 x 500 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-groente-hartjes-3-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96900301",
+        "maat": "3 x 500 g",
+        "prijs": 9.95
+      }
+    ],
+    "alsa-nature-agility-cracker-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96960101",
+        "maat": "1 kg",
+        "prijs": 6.5
+      }
+    ],
+    "alsa-nature-buffelvlees-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95012200",
+        "maat": "2 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-paardenslokdarm-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95030600",
+        "maat": "200 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-paardenvlees-koeken-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950445",
+        "maat": "200 g",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-paardenvlees-koeken-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950446",
+        "maat": "2 x 200 g",
+        "prijs": 21.95
+      }
+    ],
+    "alsa-nature-kabeljauw-kauwbotten-2-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950476",
+        "maat": "2 x 2 stuks",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-kauwbotten-zeebries-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95050501",
+        "maat": "2 stuks",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-kauwbotten-zeebries-2-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95050601",
+        "maat": "2 x 2 stuks",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-insectum-denta-bone-maat-2-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95050901",
+        "maat": "2 stuks",
+        "prijs": 7.95
+      }
+    ],
+    "alsa-nature-hertenvlees-blokjes-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950578",
+        "maat": "3 x 200 g",
+        "prijs": 21.95
+      }
+    ],
+    "alsa-nature-geitenlong-blokjes-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950636",
+        "maat": "200 g",
+        "prijs": 9.95
+      }
+    ],
+    "alsa-nature-lamslong-blokjes-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950652",
+        "maat": "200 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-xs-2-x-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95069101",
+        "maat": "2 x 3 stuks",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-varkensoren-3-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95132201",
+        "maat": "3 x 500 g",
+        "prijs": 43.95
+      }
+    ],
+    "alsa-nature-bullenpees-4-x-5-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95170401",
+        "maat": "4 x 5 stuks",
+        "prijs": 44.95
+      }
+    ],
+    "alsa-nature-oostzee-haring-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95180301",
+        "maat": "3 x 250 g",
+        "prijs": 39.95
+      }
+    ],
+    "alsa-nature-runderhuid-strips-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95230101",
+        "maat": "250 g",
+        "prijs": 7.5
+      }
+    ],
+    "alsa-nature-2-m-lamsworsten-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95251201",
+        "maat": "2 x 250 g",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-farmer-bone-gebitsverzorgingchips-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95294301",
+        "maat": "2 x 250 g",
+        "prijs": 19.5
+      }
+    ],
+    "alsa-nature-farmer-bone-gebitsverzorgingchips-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95294401",
+        "maat": "3 x 250 g",
+        "prijs": 27.95
+      }
+    ],
+    "alsa-nature-gebitsverzorging-snack-minident-2-x-10-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95520201",
+        "maat": "2 x 10 stuks",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-gebitsverzorging-snack-minident-4-x-10-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95520401",
+        "maat": "4 x 10 stuks",
+        "prijs": 23.95
+      }
+    ],
+    "alsa-nature-kalfsvlees-botten-2-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95730201",
+        "maat": "2 x 2 stuks",
+        "prijs": 20.95
+      }
+    ],
+    "alsa-nature-zalmrolletjes-3-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96001201",
+        "maat": "3 x 500 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-mini-trainer-mix-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960036",
+        "maat": "2 x 250 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-mini-trainer-mix-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960037",
+        "maat": "3 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-pens-brokken-2-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96013001",
+        "maat": "2 x 1 kg",
+        "prijs": 22.95
+      }
+    ],
+    "alsa-nature-kangoeroe-dropjes-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96024200",
+        "maat": "2 x 250 g",
+        "prijs": 29.95
+      }
+    ],
+    "alsa-nature-mini-leverhartjes-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96031600",
+        "maat": "250 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-mini-kalkoen-botjes-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96041100",
+        "maat": "2 x 250 g",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-mini-kalkoen-botjes-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96041200",
+        "maat": "3 x 250 g",
+        "prijs": 23.95
+      }
+    ],
+    "alsa-nature-groente-snack-3-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96043200",
+        "maat": "3 x 500 g",
+        "prijs": 9.95
+      }
+    ],
+    "alsa-nature-kip-en-groentemix-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96058300",
+        "maat": "1 kg",
+        "prijs": 9.95
+      }
+    ],
+    "alsa-nature-kip-en-groentemix-2-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96058400",
+        "maat": "2 x 1 kg",
+        "prijs": 19.5
+      }
+    ],
+    "alsa-nature-kalkoen-en-cranberry-harten-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96058800",
+        "maat": "500 g",
+        "prijs": 5.95
+      }
+    ],
+    "alsa-nature-kalkoen-en-cranberry-harten-3-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96059000",
+        "maat": "3 x 500 g",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-lam-en-appel-botjes-3-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96059400",
+        "maat": "3 x 500 g",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-eend-en-sinaasappel-mini-botjes-2-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96059700",
+        "maat": "2 x 1 kg",
+        "prijs": 19.5
+      }
+    ],
+    "alsa-nature-eenden-daalders-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960674",
+        "maat": "250 g",
+        "prijs": 5.2
+      }
+    ],
+    "alsa-nature-kippen-harten-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960678",
+        "maat": "250 g",
+        "prijs": 4.95
+      }
+    ],
+    "alsa-nature-kerstkoeken-sneeuwpop-en-peperkoekman-1-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960972",
+        "maat": "1 x 2 stuks",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-kerstkoeken-sneeuwpop-en-peperkoekman-2-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960973",
+        "maat": "2 x 2 stuks",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-kalkoen-trainer-mix-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96106401",
+        "maat": "250 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-kalkoen-trainer-mix-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96106601",
+        "maat": "3 x 250 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-wild-aalbes-praline-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96108801",
+        "maat": "250 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-struisvogel-trainer-snack-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950009",
+        "maat": "3 x 250 g",
+        "prijs": 49.95
+      }
+    ],
+    "alsa-nature-struisvogel-chips-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95006900",
+        "maat": "2 x 250 g",
+        "prijs": 26.95
+      }
+    ],
+    "alsa-nature-paardenhuid-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95030400",
+        "maat": "3 x 200 g",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-hertenlong-blokjes-2-x-150-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95031600",
+        "maat": "2 x 150 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-geitenlong-blokjes-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950638",
+        "maat": "3 x 200 g",
+        "prijs": 27.95
+      }
+    ],
+    "alsa-nature-lamslong-blokjes-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950653",
+        "maat": "2 x 200 g",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-kippenborstfilets-maat-2-170-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95940101",
+        "maat": "170 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-kippenborstfilets-maat-2-3-x-170-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95940301",
+        "maat": "3 x 170 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-dieet-koeken-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96600101",
+        "maat": "1 kg",
+        "prijs": 7.9
+      }
+    ],
+    "alsa-nature-dieet-koeken-3-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96600301",
+        "maat": "3 x 1 kg",
+        "prijs": 21.9
+      }
+    ],
+    "alsa-nature-kaaskoekjes-2-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96640201",
+        "maat": "2 x 1 kg",
+        "prijs": 14.95
+      }
+    ],
+    "alsa-nature-wild-repen-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95014100",
+        "maat": "100 g",
+        "prijs": 5.95
+      }
+    ],
+    "alsa-nature-runder-minis-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95015900",
+        "maat": "3 x 250 g",
+        "prijs": 25.95
+      }
+    ],
+    "alsa-nature-kangoeroe-rollen-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95016900",
+        "maat": "250 g",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-kangoeroe-rollen-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95017000",
+        "maat": "2 x 250 g",
+        "prijs": 29.95
+      }
+    ],
+    "alsa-nature-zalmhuid-kauwbotten-3-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95022000",
+        "maat": "3 x 2 stuks",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-kippen-stukjes-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95027300",
+        "maat": "250 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-kippen-stukjes-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95027500",
+        "maat": "3 x 250 g",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-paardenhuid-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95030300",
+        "maat": "2 x 200 g",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-konijnenoren-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95037000",
+        "maat": "200 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-rundvlees-koekjes-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950439",
+        "maat": "3 x 200 g",
+        "prijs": 29.95
+      }
+    ],
+    "alsa-nature-paarden-kauwsticks-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950458",
+        "maat": "100 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-kabeljauw-kauwbotten-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950475",
+        "maat": "2 stuks",
+        "prijs": 7.95
+      }
+    ],
+    "alsa-nature-eenden-repen-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95054601",
+        "maat": "100 g",
+        "prijs": 5.95
+      }
+    ],
+    "alsa-nature-eenden-repen-3-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95054801",
+        "maat": "3 x 100 g",
+        "prijs": 15.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-xl-2-x-1-stuk": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95070701",
+        "maat": "2 x 1 stuk",
+        "prijs": 38.95
+      }
+    ],
+    "alsa-nature-kaaspops-50-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95071001",
+        "maat": "50 g",
+        "prijs": 5.95
+      }
+    ],
+    "alsa-nature-kaaspops-2-x-50-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95071101",
+        "maat": "2 x 50 g",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-runderpens-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95120101",
+        "maat": "250 g",
+        "prijs": 5.95
+      }
+    ],
+    "alsa-nature-2-m-pensworst-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95250301",
+        "maat": "3 x 250 g",
+        "prijs": 36.95
+      }
+    ],
+    "alsa-nature-schaapspens-3-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95260301",
+        "maat": "3 x 500 g",
+        "prijs": 35.95
+      }
+    ],
+    "alsa-nature-denta-struisvogelbot-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95420101",
+        "maat": "3 stuks",
+        "prijs": 7.95
+      }
+    ],
+    "alsa-nature-long-schnitzels-4-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95460401",
+        "maat": "4 x 200 g",
+        "prijs": 34.9
+      }
+    ],
+    "alsa-nature-gebitsverzorging-snack-denta-zack-2-x-10-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95510201",
+        "maat": "2 x 10 stuks",
+        "prijs": 29.95
+      }
+    ],
+    "alsa-nature-gebitsverzorging-snack-denta-zack-4-x-10-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95510401",
+        "maat": "4 x 10 stuks",
+        "prijs": 52.95
+      }
+    ],
+    "alsa-nature-runderslokdarm-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95530101",
+        "maat": "250 g",
+        "prijs": 9.95
+      }
+    ],
+    "alsa-nature-runderslokdarm-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95530201",
+        "maat": "2 x 250 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-runderslokdarm-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95530301",
+        "maat": "3 x 250 g",
+        "prijs": 27.95
+      }
+    ],
+    "alsa-nature-denta-maxi-egel-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95597001",
+        "maat": "3 stuks",
+        "prijs": 7.95
+      }
+    ],
+    "alsa-nature-denta-maxi-egel-3-x-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95597201",
+        "maat": "3 x 3 stuks",
+        "prijs": 21.95
+      }
+    ],
+    "alsa-nature-ossenstaart-150-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95910101",
+        "maat": "150 g",
+        "prijs": 7.5
+      }
+    ],
+    "alsa-nature-kalkoen-hartjes-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96042000",
+        "maat": "3 x 250 g",
+        "prijs": 23.95
+      }
+    ],
+    "alsa-nature-groente-snack-2-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96043100",
+        "maat": "2 x 500 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-eend-en-sinaasappel-mini-botjes-3-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96059800",
+        "maat": "3 x 1 kg",
+        "prijs": 28.95
+      }
+    ],
+    "alsa-nature-kippen-harten-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960680",
+        "maat": "3 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-vegan-bessenmix-125-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960716",
+        "maat": "125 g",
+        "prijs": 4.95
+      }
+    ],
+    "alsa-nature-vegan-bessenmix-2-x-125-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960717",
+        "maat": "2 x 125 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-zalm-kokos-kogels-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960776",
+        "maat": "2 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-bananen-rosetjes-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96110101",
+        "maat": "500 g",
+        "prijs": 7.5
+      }
+    ],
+    "alsa-nature-bananen-rosetjes-3-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96110301",
+        "maat": "3 x 500 g",
+        "prijs": 19.95
+      }
+    ],
+    "alsa-nature-goedenacht-koekjes-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96111001",
+        "maat": "250 g",
+        "prijs": 4.65
+      }
+    ],
+    "alsa-nature-insectum-fruitpastei-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96113301",
+        "maat": "250 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-pens-koekjes-2-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96360201",
+        "maat": "2 x 1 kg",
+        "prijs": 14.95
+      }
+    ],
+    "alsa-nature-dieet-koeken-2-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96600201",
+        "maat": "2 x 1 kg",
+        "prijs": 14.9
+      }
+    ],
+    "alsa-nature-kaaskoekjes-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96640101",
+        "maat": "1 kg",
+        "prijs": 7.95
+      }
+    ],
+    "alsa-nature-adventskalender-ca-500-g-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F34700701",
+        "maat": "500 g",
+        "prijs": 19.95
+      }
+    ],
+    "alsa-nature-runder-minis-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95015700",
+        "maat": "250 g",
+        "prijs": 9.95
+      }
+    ],
+    "alsa-nature-paardenhuid-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95030200",
+        "maat": "200 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-konijnenoren-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95037200",
+        "maat": "3 x 200 g",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-struisvogel-kauwsticks-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95051701",
+        "maat": "250 g",
+        "prijs": 13.95
+      }
+    ],
+    "alsa-nature-lamslong-blokjes-3-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950654",
+        "maat": "3 x 200 g",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-s-3-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95069601",
+        "maat": "3 x 2 stuks",
+        "prijs": 39.95
+      }
+    ],
+    "alsa-nature-kauwkaas-maat-l-2-x-1-stuk": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95070301",
+        "maat": "2 x 1 stuk",
+        "prijs": 28.95
+      }
+    ],
+    "alsa-nature-paardenlong-3-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95071601",
+        "maat": "3 x 100 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-schaapspens-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95260101",
+        "maat": "500 g",
+        "prijs": 13.95
+      }
+    ],
+    "alsa-nature-schaapspens-2-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95260201",
+        "maat": "2 x 500 g",
+        "prijs": 24.95
+      }
+    ],
+    "alsa-nature-denta-struisvogelbot-2-x-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95420201",
+        "maat": "2 x 3 stuks",
+        "prijs": 14.95
+      }
+    ],
+    "alsa-nature-long-schnitzels-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95460201",
+        "maat": "2 x 200 g",
+        "prijs": 18.9
+      }
+    ],
+    "alsa-nature-ossenoor-5-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95470101",
+        "maat": "5 stuks",
+        "prijs": 5.95
+      }
+    ],
+    "alsa-nature-ossenoor-4-x-5-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95470401",
+        "maat": "4 x 5 stuks",
+        "prijs": 19.95
+      }
+    ],
+    "alsa-nature-kalfsvlees-botten-3-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95730301",
+        "maat": "3 x 2 stuks",
+        "prijs": 29.95
+      }
+    ],
+    "alsa-nature-mini-kalkoen-botjes-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96041000",
+        "maat": "250 g",
+        "prijs": 8.5
+      }
+    ],
+    "alsa-nature-groente-snack-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96043000",
+        "maat": "500 g",
+        "prijs": 3.95
+      }
+    ],
+    "alsa-nature-lam-en-appel-botjes-2-x-500-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96059300",
+        "maat": "2 x 500 g",
+        "prijs": 11.5
+      }
+    ],
+    "alsa-nature-kippen-harten-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960679",
+        "maat": "2 x 250 g",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-kalkoen-balletjes-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960761",
+        "maat": "3 x 250 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-kippen-hartjes-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960764",
+        "maat": "2 x 250 g",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-fruit-bommetjes-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F960771",
+        "maat": "250 g",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-struisvogel-chips-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95007000",
+        "maat": "3 x 250 g",
+        "prijs": 37.95
+      }
+    ],
+    "alsa-nature-buffelpens-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95011400",
+        "maat": "2 x 250 g",
+        "prijs": 9.5
+      }
+    ],
+    "alsa-nature-buffelvlees-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95012300",
+        "maat": "3 x 250 g",
+        "prijs": 18.95
+      }
+    ],
+    "alsa-nature-zalmhuid-kauwbotten-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95021800",
+        "maat": "2 stuks",
+        "prijs": 6.95
+      }
+    ],
+    "alsa-nature-zalmhuid-kauwbotten-2-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95021900",
+        "maat": "2 x 2 stuks",
+        "prijs": 12.95
+      }
+    ],
+    "alsa-nature-eendennekken-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95024800",
+        "maat": "250 g",
+        "prijs": 7.95
+      }
+    ],
+    "alsa-nature-eendennekken-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95025000",
+        "maat": "3 x 250 g",
+        "prijs": 19.95
+      }
+    ],
+    "alsa-nature-pens-kauwbotten-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95025200",
+        "maat": "3 stuks",
+        "prijs": 8.95
+      }
+    ],
+    "alsa-nature-kippen-stukjes-2-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95027400",
+        "maat": "2 x 250 g",
+        "prijs": 16.95
+      }
+    ],
+    "alsa-nature-paardenlong-blokjes-3-x-150-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95032100",
+        "maat": "3 x 150 g",
+        "prijs": 27.95
+      }
+    ],
+    "alsa-nature-eenden-minis-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950425",
+        "maat": "200 g",
+        "prijs": 11.95
+      }
+    ],
+    "alsa-nature-wild-minis-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950429",
+        "maat": "200 g",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-wild-minis-2-x-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950430",
+        "maat": "2 x 200 g",
+        "prijs": 20.95
+      }
+    ],
+    "alsa-nature-rundvlees-koekjes-200-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950437",
+        "maat": "200 g",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-kabeljauw-kauwbotten-3-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F950477",
+        "maat": "3 x 2 stuks",
+        "prijs": 17.95
+      }
+    ],
+    "alsa-nature-insectum-denta-bone-maat-2-3-x-2-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95051101",
+        "maat": "3 x 2 stuks",
+        "prijs": 19.95
+      }
+    ],
+    "alsa-nature-insectum-denta-bone-maat-1-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95051301",
+        "maat": "3 stuks",
+        "prijs": 7.95
+      }
+    ],
+    "alsa-nature-insectum-denta-bone-maat-1-2-x-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95051401",
+        "maat": "2 x 3 stuks",
+        "prijs": 14.95
+      }
+    ],
+    "alsa-nature-eenden-repen-2-x-100-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95054701",
+        "maat": "2 x 100 g",
+        "prijs": 10.95
+      }
+    ],
+    "alsa-nature-runderhuid-strips-3-x-250-g": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95230301",
+        "maat": "3 x 250 g",
+        "prijs": 19.95
+      }
+    ],
+    "alsa-nature-denta-maxi-egel-2-x-3-stuks": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F95597101",
+        "maat": "2 x 3 stuks",
+        "prijs": 14.95
+      }
+    ],
+    "alsa-nature-kaaskoekjes-3-x-1-kg": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F96640301",
+        "maat": "3 x 1 kg",
+        "prijs": 20.95
+      }
+    ],
+    "ultra-premium-direct-zalmreepjes-80-g": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=f790b52b7dca89256e0419cb613b5e12&dl=producten%2Fsnack-gewricht-hond%2F&ws=",
+        "maat": "80 g",
+        "prijs": 7.9
+      }
+    ],
+    "ultra-premium-direct-28-kauwstaven-voor-honden-van-2-tot-25kg-720-g": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=77b5f7b526abc24f2e6d33b1a026271d&dl=producten%2Fkauwsticks-voor-honden-minder-dan-25-kg%2F&ws=",
+        "maat": "720 g",
+        "prijs": 10.9
+      }
+    ],
+    "ultra-premium-direct-koekjes-voor-honden-met-een-gevoelige-spijsvertering-lam-150-g": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=fcc394920735b492e59f0cc3126f022c&dl=producten%2Fgevoelige-hond-snack-lam%2F&ws=",
+        "maat": "150 g",
+        "prijs": 4.9
+      }
+    ],
+    "ultra-premium-direct-graanvrije-koekjes-voor-honden-kip-405-g": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=ba94ea28735c3843cdce660066df89f6&dl=producten%2Fkoekjes-voor-hond%2F&ws=",
+        "maat": "405 g",
+        "prijs": 5.9
+      }
+    ],
+    "ultra-premium-direct-koekjes-voor-honden-zalm-150-g": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=6eb0732abc3114c7bce48e55b14e0f51&dl=producten%2Fsnack-huid-en-vacht-zalm%2F&ws=",
+        "maat": "150 g",
+        "prijs": 4.9
+      }
+    ],
+    "ultra-premium-direct-graanvrije-trainingssnacks-voor-honden-kip-200-g": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=77b9e4d2d217218c4926a436b8af5a07&dl=producten%2Fsnack-training-kip%2F&ws=",
+        "maat": "200 g",
+        "prijs": 5.9
+      }
+    ],
+    "ultra-premium-direct-16-kauwstaven-voor-honden-van-meer-dan-25-kg-880-g": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=f103a99c79469b94cb5155ac8d4eed0f&dl=producten%2Fkauwstaafjes-voor-honden-vanaf-25-kg%2F&ws=",
+        "maat": "880 g",
+        "prijs": 11.9
+      }
+    ],
+    "ultra-premium-direct-kipreepjes-219-g": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=9ba19826972b0fdb07509472f239e0e4&dl=producten%2Fkip-plakjes-voor-honden%2F&ws=",
+        "maat": "219 g",
+        "prijs": 10.5
       }
     ]
   }

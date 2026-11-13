@@ -1,0 +1,192 @@
+# Affiliate-import — Alsa Nature, Isegrim en Ultra Premium Direct
+
+- Datum: 2026-11-13
+- Voerproducten opgehaald: 757
+- Alsa-snacks opgehaald: 364
+- UPD-snacks opgehaald: 11
+- Voer met samenstelling: 611
+- Nieuwe snacks met samenstelling: 352
+- Overgeslagen/fouten: 169
+
+## Voer per merk
+
+- Alsa Nature: 529
+- Isegrim: 61
+- Isegrim Roots: 21
+
+## Nieuwe snacks per merk
+
+- Alsa Nature: 344
+- Ultra Premium Direct: 8
+
+## Fouten en ontbrekende pagina's
+
+- VOER alsa-nature JUBILEUM blikmenu-mix, 400 g, Aantal: 30 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUBILEUM blikmenu-mix, 800 g, Aantal: 60 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 400 g, Aantal: 60 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 800 g, Aantal: 30 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUNIOR blikmenu-mix, 400 g, Aantal: 6 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUNIOR blikmenu-mix, 400 g, Aantal: 12 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUNIOR blikmenu-mix, 400 g, Aantal: 120 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUNIOR blikmenu-mix, 400 g, Aantal: 30 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FINEST Spiervlees blikmenu-mix, 400 g, Aantal: 120 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Fruit-bijlage, 375 g, Aantal: 375 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Fruit-bijlage, 375 g, Aantal: 12 x 375 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Kip puur, 400 g, Aantal: 12 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Groente-bijlage, 375 g, Aantal: 12 x 375 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Vleesblikken-mix, 400 g, Aantal: 24 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Vleesblikken-mix, 800 g, Aantal: 96 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUBILEUM blikmenu-mix, 400 g, Aantal: 90 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Senior blikmenu-mix, 400 g, Aantal: 90 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Senior blikmenu-mix, 800 g, Aantal: 12 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Senior blikmenu-mix, 800 g, Aantal: 6 x 800 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Blikmenu-Mix, 400 g, Aantal: 60 x 400 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Blikmenu-Mix, 400 g, Aantal: 30 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FOODLOVE Multipack Quinoa, 300 g, Aantal: 120 x 300 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FOODLOVE Multipack Amarant, 300 g, Aantal: 6 x 300 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 1 Rund, 6 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 1 Rund, 60 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 2 Kip, 120 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 1 Rund, 12 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 3 Mix, 60 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Vleesblikken-mix, 800 g, Aantal: 24 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Vleesblikken-mix, 400 g, Aantal: 48 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 400 g, Aantal: 90 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Senior blikmenu-mix, 400 g, Aantal: 6 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Senior blikmenu-mix, 400 g, Aantal: 30 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Worstmix, 200 g, Aantal: 36 x 200 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Roots Multipack 2, 410 g, Aantal: 6 x 410 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Roots Multipack 2, 410 g, Aantal: 30 x 410 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Roots Multipack 2, 410 g, Aantal: 120 x 410 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Roots Multipack 2, 410 g, Aantal: 90 x 410 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Roots Multipack 1 Enkel-eiwit, 410 g, Aantal: 120 x 410 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Roots Multipack 2, 410 g, Aantal: 60 x 410 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Roots Multipack 2, 410 g, Aantal: 12 x 410 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FOODLOVE Multipack Quinoa, 300 g, Aantal: 90 x 300 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FOODLOVE Multipack Amarant, 300 g, Aantal: 90 x 300 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 1 Rund, 90 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix 2, 400 g, Aantal: 30 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix 2, 400 g, Aantal: 60 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Kip puur, 800 g, Aantal: 6 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Kip puur, 800 g, Aantal: 12 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Kip puur, 400 g, Aantal: 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Groente-bijlage, 375 g, Aantal: 6 x 375 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUBILEUM blikmenu-mix, 400 g, Aantal: 6 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUBILEUM blikmenu-mix, 800 g, Aantal: 90 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Startpakket Wild: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUBILEUM blikmenu-mix, 800 g, Aantal: 6 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 400 g, Aantal: 12 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 400 g, Aantal: 120 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 400 g, Aantal: 30 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 800 g, Aantal: 6 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 800 g, Aantal: 12 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Senior blikmenu-mix, 800 g, Aantal: 90 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Senior blikmenu-mix, 800 g, Aantal: 120 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 2 Kip, 6 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 2 Kip, 30 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 1 Rund, 120 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FOODLOVE Multipack Quinoa, 300 g, Aantal: 30 x 300 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix 2, 400 g, Aantal: 90 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix 2, 400 g, Aantal: 120 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUNIOR blikmenu-mix, 400 g, Aantal: 90 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Vleesblikken-mix, 800 g, Aantal: 48 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FINEST Spiervlees blikmenu-mix, 400 g, Aantal: 12 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUNIOR blikmenu-mix, 400 g, Aantal: 60 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Vleesblikken-mix, 400 g, Aantal: 96 x 400 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Blikmenu-Mix, 800 g, Aantal: 12 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FOODLOVE Multipack Amarant, 300 g, Aantal: 12 x 300 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 3 Mix, 120 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 3 Mix, 90 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FINEST Spiervlees blikmenu-mix, 400 g, Aantal: 6 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FINEST Spiervlees blikmenu-mix, 400 g, Aantal: 90 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 800 g, Aantal: 60 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 800 g, Aantal: 120 x 800 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Blikmenu-Mix, 400 g, Aantal: 6 x 400 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Blikmenu-Mix, 800 g, Aantal: 120 x 800 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Roots Multipack 1 Enkel-eiwit, 410 g, Aantal: 12 x 410 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 3 Mix, 6 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 2 Kip, 60 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 3 Mix, 12 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUBILEUM blikmenu-mix, 400 g, Aantal: 12 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUBILEUM blikmenu-mix, 400 g, Aantal: 60 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUBILEUM blikmenu-mix, 800 g, Aantal: 30 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 200 g, Aantal: 6 x 200 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 400 g, Aantal: 6 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 200 g, Aantal: 12 x 200 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 200 g, Aantal: 30 x 200 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 200 g, Aantal: 60 x 200 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUBILEUM blikmenu-mix, 800 g, Aantal: 12 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUBILEUM blikmenu-mix, 400 g, Aantal: 120 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 200 g, Aantal: 90 x 200 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Startpakket Kip: geen bruikbare samenstelling gevonden
+- VOER alsa-nature JUBILEUM blikmenu-mix, 800 g, Aantal: 120 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Senior blikmenu-mix, 400 g, Aantal: 120 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Senior blikmenu-mix, 400 g, Aantal: 12 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Senior blikmenu-mix, 400 g, Aantal: 60 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Worstmix, 800 g, Aantal: 72 x 800 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Blikmenu-Mix, 400 g, Aantal: 12 x 400 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Blikmenu-Mix, 800 g, Aantal: 6 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FOODLOVE Multipack Amarant, 300 g, Aantal: 30 x 300 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FOODLOVE Multipack Amarant, 300 g, Aantal: 120 x 300 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 1 Rund, 30 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FINEST Spiervlees blikmenu-mix, 400 g, Aantal: 60 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix 2, 400 g, Aantal: 12 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix 2, 800 g, Aantal: 12 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix 2, 800 g, Aantal: 90 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix 2, 800 g, Aantal: 120 x 800 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Blikmenu-Mix, 800 g, Aantal: 60 x 800 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Blikmenu-Mix, 800 g, Aantal: 30 x 800 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Blikmenu-Mix, 800 g, Aantal: 90 x 800 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Roots Multipack 1 Enkel-eiwit, 410 g, Aantal: 60 x 410 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Roots Multipack 1 Enkel-eiwit, 410 g, Aantal: 90 x 410 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Roots Multipack 1 Enkel-eiwit, 410 g, Aantal: 30 x 410 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FOODLOVE Multipack Amarant, 300 g, Aantal: 60 x 300 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FOODLOVE Multipack Quinoa, 300 g, Aantal: 6 x 300 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 2 Kip, 90 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 2 Kip, 12 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature CLASSIC Multipack 3 Mix, 30 x 500 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FOODLOVE Multipack Quinoa, 300 g, Aantal: 60 x 300 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FOODLOVE Multipack Quinoa, 300 g, Aantal: 12 x 300 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix 2, 400 g, Aantal: 6 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix 2, 800 g, Aantal: 60 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix 2, 800 g, Aantal: 6 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Kip puur, 400 g, Aantal: 6 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Groente-bijlage, 375 g, Aantal: 375 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 800 g, Aantal: 90 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix, 200 g, Aantal: 120 x 200 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Worstmix, 200 g, Aantal: 72 x 200 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Worstmix, 200 g, Aantal: 18 x 200 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Worstmix, 800 g, Aantal: 36 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Senior blikmenu-mix, 800 g, Aantal: 30 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Senior blikmenu-mix, 800 g, Aantal: 60 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Worstmix, 800 g, Aantal: 18 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature Classic Blikmenu-mix 2, 800 g, Aantal: 30 x 800 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Fruit-bijlage, 375 g, Aantal: 6 x 375 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature FINEST Spiervlees blikmenu-mix, 400 g, Aantal: 30 x 400 g: geen bruikbare samenstelling gevonden
+- VOER alsa-nature SIMPLE Kip puur, 800 g, Aantal: 800 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Blikmenu-Mix, 400 g, Aantal: 120 x 400 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Blikmenu-Mix, 400 g, Aantal: 90 x 400 g: geen bruikbare samenstelling gevonden
+- VOER isegrim® Roots Multipack 1 Enkel-eiwit, 410 g, Aantal: 6 x 410 g: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Kruiden-bommetjes, 250 g: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Kauwwortel, Maat: 3: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Geitenvlees, 100 g: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Mini-spelt-hartjes, 250 g: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Algen-hartjes, 3 x 100 g: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Snackpakket Light-mix: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Mini-spelt-hartjes, 2 x 250 g: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Kruiden-bommetjes, 2 x 250 g: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Algen-hartjes, 2 x 100 g: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Mini-spelt-hartjes, 3 x 250 g: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Kauwwortel, Maat: 2: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Lam & Rijst botten, 2 x 10 stuks: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Geitenvlees, 3 x 100 g: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Geitenvlees, 2 x 100 g: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Lam & Rijst botten, 3 x 10 stuks: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Kruiden-bommetjes, 3 x 250 g: geen bruikbare samenstelling gevonden
+- SNACK Koekjesblik-set Every bite you take, blauw: geen zelfstandige snack of merk ontbreekt
+- SNACK alsa-nature Lam & Rijst botten, 10 stuks: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Kauwwortel, Maat: 1: geen bruikbare samenstelling gevonden
+- SNACK alsa-nature Algen-hartjes, 100 g: geen bruikbare samenstelling gevonden
+- SNACK Kippennekken: geen bruikbare samenstelling gevonden
+- SNACK Hambot: geen bruikbare samenstelling gevonden
+- SNACK Varkensoren: geen bruikbare samenstelling gevonden

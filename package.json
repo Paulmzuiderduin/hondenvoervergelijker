@@ -30,7 +30,9 @@
     "voeding:broncontrole:browser": "node scripts/controleer-voedingswaarden-browser.mjs",
     "voeding:plausibiliteit": "node scripts/controleer-voedingswaarden-plausibiliteit.mjs",
     "winkels:ultra-premium-direct": "node scripts/koppel-ultra-premium-direct.mjs",
-    "winkels:alsa-nature": "node scripts/koppel-alsa-nature.mjs"
+    "winkels:alsa-nature": "node scripts/koppel-alsa-nature.mjs",
+    "import:affiliate": "node scripts/importeer-affiliate-merken.mjs",
+    "winkels:snacks-alsa-upd": "node scripts/koppel-alsa-upd-snacks.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4",
