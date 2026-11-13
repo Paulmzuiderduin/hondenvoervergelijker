@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-11-13T14:02:39.464Z",
+  "bijgewerkt": "2026-11-13T14:32:17.523Z",
   "netwerk": "TradeTracker en Daisycon",
   "aanbieders": {
     "08c788d6-941d-433e-ba73-6f1c99405be5": [
@@ -3496,6 +3496,4894 @@
         "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=9ba19826972b0fdb07509472f239e0e4&dl=producten%2Fkip-plakjes-voor-honden%2F&ws=",
         "maat": "219 g",
         "prijs": 10.5
+      }
+    ],
+    "632e01ff-20c4-4d25-ba3f-30dabe17926f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92089901",
+        "maat": "400 g",
+        "prijs": 3.05
+      }
+    ],
+    "5e6a198f-f053-4f75-9896-0dd081b2802b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92090001",
+        "maat": "6 x 400 g",
+        "prijs": 16.95
+      }
+    ],
+    "d9164df0-60fe-46f9-a94d-491c5f588fa5": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92090101",
+        "maat": "12 x 400 g",
+        "prijs": 29.95
+      }
+    ],
+    "e27751d2-849e-4972-b640-3a791159745e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92089601",
+        "maat": "400 g",
+        "prijs": 3.05
+      }
+    ],
+    "c52c4871-bb52-41f6-a45a-16889ccc44ec": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92089701",
+        "maat": "6 x 400 g",
+        "prijs": 16.95
+      }
+    ],
+    "fa5bbc92-d3c4-49a0-9d58-8ec098782ffb": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92089801",
+        "maat": "12 x 400 g",
+        "prijs": 29.95
+      }
+    ],
+    "041ec2eb-de3b-4593-bfa6-5418e67f0c4b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91110201",
+        "maat": "3 kg",
+        "prijs": 22.95
+      }
+    ],
+    "fa0e9832-1a57-4085-abae-603bcaedc69f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91110301",
+        "maat": "6 kg",
+        "prijs": 43.95
+      }
+    ],
+    "1c5f9228-7dfc-4c8f-8ca4-8ca54db60941": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91110401",
+        "maat": "12 kg",
+        "prijs": 73.95
+      }
+    ],
+    "e41fd7ca-0abc-4f63-96a0-75ce73a89378": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91110501",
+        "maat": "2 x 12 kg",
+        "prijs": 136.95
+      }
+    ],
+    "03ff5d7e-b6ae-45e1-b385-1903ff55adf5": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91360201",
+        "maat": "3 kg",
+        "prijs": 22.95
+      }
+    ],
+    "995fc25f-17f7-4b17-8d9a-e51571250cc5": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91360301",
+        "maat": "6 kg",
+        "prijs": 39.95
+      }
+    ],
+    "9cacdbfc-e74f-42ab-8375-b39f3a75a19a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91360401",
+        "maat": "12 kg",
+        "prijs": 69.95
+      }
+    ],
+    "27af3f14-fd16-42fc-8d72-7767329f558f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91360501",
+        "maat": "2 x 12 kg",
+        "prijs": 127.95
+      }
+    ],
+    "779ed8e8-4475-4efd-91a2-faf7418543ef": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920214",
+        "maat": "400 g",
+        "prijs": 4.4
+      }
+    ],
+    "a6beceaf-662d-4185-8e9f-c79c5d3f706a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92021500",
+        "maat": "6 x 400 g",
+        "prijs": 25.57
+      }
+    ],
+    "c02e0ba9-1427-445b-a48e-23e8bc38ebea": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92021600",
+        "maat": "12 x 400 g",
+        "prijs": 49.47
+      }
+    ],
+    "ed9c522f-345e-47a8-8f8d-abc2ac895df2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92022000",
+        "maat": "400 g",
+        "prijs": 4.4
+      }
+    ],
+    "1ce29524-a7d0-4224-8da3-6e1386e5bc5c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92022100",
+        "maat": "6 x 400 g",
+        "prijs": 25.57
+      }
+    ],
+    "ba95657a-f7e1-49d8-8a7e-5e18967c6ca1": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92022200",
+        "maat": "12 x 400 g",
+        "prijs": 49.47
+      }
+    ],
+    "ecd3757f-8261-4719-a5a4-9b86210d3852": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92026300",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "d367f8cf-7c1c-4017-9184-3b11f5c9a70d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92026400",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "d2f0992e-9d47-4c2e-825b-f53dc4257b89": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92026500",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "c5a482f3-d17c-44a8-aaa9-b9e469ec29ab": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92026600",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "d5cd329f-2f67-4ba4-bc6c-2941090ef838": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92026700",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "0e14721c-612c-4b41-a995-2527c30b1ef3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92026800",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "10e5cc5b-be95-43b7-a589-13ac725b4123": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99010401",
+        "maat": "6 x 500 g",
+        "prijs": 20.95
+      }
+    ],
+    "43850c2e-7fb8-47d9-b1ac-adf81d6f30cd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99010501",
+        "maat": "12 x 500 g",
+        "prijs": 40.58
+      }
+    ],
+    "d2f67683-8de3-4092-abb8-adf865ce0b99": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99010601",
+        "maat": "30 x 500 g",
+        "prijs": 98.15
+      }
+    ],
+    "8280cb2f-a896-49cb-b092-153a1d56df24": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99010701",
+        "maat": "60 x 500 g",
+        "prijs": 189.7
+      }
+    ],
+    "35ba9c59-cc57-41d8-8379-5c1aefcc615d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99010801",
+        "maat": "90 x 500 g",
+        "prijs": 274.65
+      }
+    ],
+    "439b8bb9-6a44-45c4-8ab5-014e5822bdf0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99010901",
+        "maat": "120 x 500 g",
+        "prijs": 353.01
+      }
+    ],
+    "4e2295a5-17ca-4199-ade7-cf60ae8b5c81": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92190401",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "7a57977b-86e1-44e5-85b8-635122a4d453": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92190501",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "313b7e78-bba7-4101-a783-c72c0e5ae3d8": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92190601",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "06f0549d-0a31-45f0-86f9-858cad4e7294": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92190701",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "6c656389-3919-4a3e-8c15-8256dd5aefbc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92190801",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "093b913e-7565-40cc-8c2c-6efdae498add": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92190901",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "a7a5a5cd-eb0a-4b7c-9bc3-7af68d1c0226": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92100101",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "add6e328-044f-4f1e-aa25-d966f042d1ba": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92100201",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "a06d4a6d-02e6-41d8-8093-81c724264b8a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92100301",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "57898102-d479-4902-9f5b-5c7d1416407f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92100401",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "79c6cb06-83f0-4a92-81d6-abb9e15a2d6a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92100501",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "45036379-4185-4d6c-ae49-ef99ccf9473e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92100601",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "ee3343ff-f262-45ab-8cc9-80bd225c915a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92100701",
+        "maat": "200 g",
+        "prijs": 2.35
+      }
+    ],
+    "14e6d3c5-83a8-40c7-bef5-b1f0f3384bc9": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92100801",
+        "maat": "6 x 200 g",
+        "prijs": 13.66
+      }
+    ],
+    "c103b97a-1b4e-4eca-a5f4-bacaf299c83e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92100901",
+        "maat": "12 x 200 g",
+        "prijs": 26.42
+      }
+    ],
+    "6d471533-71f4-4135-a49d-ba3823178b9b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99013401",
+        "maat": "6 x 500 g",
+        "prijs": 20.95
+      }
+    ],
+    "5485fc65-57c3-4167-8c99-4060b4c398ca": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99013501",
+        "maat": "12 x 500 g",
+        "prijs": 40.58
+      }
+    ],
+    "d1e60063-9161-4614-8f7c-6337efc4b2c3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99013601",
+        "maat": "30 x 500 g",
+        "prijs": 98.15
+      }
+    ],
+    "07be9f05-613a-417c-9cdb-c658a1cc90b0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99013701",
+        "maat": "60 x 500 g",
+        "prijs": 189.7
+      }
+    ],
+    "a7b356a2-cde6-477f-a1c0-72abf5b56b94": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99013801",
+        "maat": "90 x 500 g",
+        "prijs": 274.65
+      }
+    ],
+    "9954b5bd-5888-4a4c-b5ee-6168bfade442": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99013901",
+        "maat": "120 x 500 g",
+        "prijs": 353.01
+      }
+    ],
+    "35ec5779-ed9d-4845-a141-d71230f0f99b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92007101",
+        "maat": "200 g",
+        "prijs": 2.35
+      }
+    ],
+    "5a85ce0b-2c3a-4a08-a4bf-76d3d67cb461": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92007201",
+        "maat": "6 x 200 g",
+        "prijs": 13.66
+      }
+    ],
+    "b80e89d6-2945-419a-b4e2-d7b2a34f61be": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92007301",
+        "maat": "12 x 200 g",
+        "prijs": 26.42
+      }
+    ],
+    "b536b8d6-eb0e-4b12-a214-9195bbc055bd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92007401",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "e71e6a22-6e41-40ee-abc6-d5017e43696e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92007501",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "05bb1b22-7068-4510-96a4-e0ca3bd71f9c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92007601",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "6afd5c35-ca3d-4651-b1de-8bd655592f32": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92007701",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "7c01a643-b1a4-445f-a40f-7d81e2023a8c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92007801",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "ac7d5659-1064-4d5a-bfdf-7c4a1a366c42": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92007901",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "0fdd1da3-da73-4905-b296-f903d6423439": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92001501",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "f8d65906-f309-40b4-9964-7cd3733eb0e3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92001601",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "1fb1fb6b-7d0e-455c-957f-99f1874ffe02": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92001701",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "9e1f612a-f45a-4c43-b553-b42db8f97680": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92001801",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "5668a338-cb0e-420e-b342-459795716650": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92001901",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "e36e507d-28c4-4673-9bd7-527a52546d77": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92002601",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "d5946e6c-3232-4e40-84ad-8f5a3e7cd5e1": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99011001",
+        "maat": "6 x 500 g",
+        "prijs": 20.95
+      }
+    ],
+    "6abeae76-762d-4185-a0d6-c45a160866b7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99011101",
+        "maat": "12 x 500 g",
+        "prijs": 40.58
+      }
+    ],
+    "963365ba-bf2f-425d-a354-c17c6d52b0c4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99011201",
+        "maat": "30 x 500 g",
+        "prijs": 98.15
+      }
+    ],
+    "621aab64-1f9a-4ea9-aeb1-ff57cd3b570e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99011301",
+        "maat": "60 x 500 g",
+        "prijs": 189.7
+      }
+    ],
+    "79aa5fa5-3e87-485b-972e-3131126c9bec": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99011401",
+        "maat": "90 x 500 g",
+        "prijs": 274.65
+      }
+    ],
+    "232c975c-5c99-402e-8f88-9cba12b859c4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99011501",
+        "maat": "120 x 500 g",
+        "prijs": 353.01
+      }
+    ],
+    "3e53725a-039b-4a38-9715-fd689893c8d5": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92026900",
+        "maat": "200 g",
+        "prijs": 2.35
+      }
+    ],
+    "4a40cc03-bfac-4e97-8ab5-97dfc4690f36": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92027000",
+        "maat": "6 x 200 g",
+        "prijs": 13.66
+      }
+    ],
+    "462f420f-644c-4c27-bcd6-99657f0991ef": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92027100",
+        "maat": "12 x 200 g",
+        "prijs": 26.42
+      }
+    ],
+    "979a9971-068e-41ef-a769-ea54d2a9b02d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92027200",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "f510a9bd-825c-48ce-bb1b-88217dc76f96": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92027300",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "b258f32e-6bd2-4ff6-85b9-6187f6faa589": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92027400",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "0d3a8341-a8d9-4502-872a-f8b9ff5d40a6": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92027500",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "1223c51a-d8aa-4139-bf0f-ffcbb311e12b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92027600",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "37125af9-bef3-44c0-92f4-4b734545a0f9": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92027700",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "1e5967ca-861e-4035-8e49-f7c9a77c2ca8": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92002001",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "02517688-3d6c-4714-9470-3220dfce19d0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92002101",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "99875ee6-2ae5-4cc7-94a1-64540ba41a37": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92002201",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "ba29df9f-9585-4154-b169-fb37d8faf6d9": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92002301",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "829c53f8-af73-4e88-a692-dfd49c6a300a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92002401",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "87f058d7-2116-4ef8-8cc6-a0596794f573": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92002501",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "7971fd41-f903-4a04-8467-5db3f0c0d250": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92013100",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "d3cd8e99-724b-4f8a-bf8f-50d0bfbc9a02": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92013200",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "ad722494-2702-44b6-867b-ebbc55b3e941": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92013300",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "29c8c059-ae97-4f14-bc7d-35c5059d2b18": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92013400",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "17c9619a-4102-4ab7-8a36-0d7dd2ed33a3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92013500",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "fa30e09d-8be7-41bc-bd31-d70b620f3d84": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92013600",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "ef2ed653-d80f-4d34-8652-f78596bbb70b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99012201",
+        "maat": "6 x 500 g",
+        "prijs": 20.95
+      }
+    ],
+    "58d1ea9e-e1e3-4818-a9d7-58df97c14192": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99012301",
+        "maat": "12 x 500 g",
+        "prijs": 40.58
+      }
+    ],
+    "a5c3640c-90db-4d5d-9c4b-8194f857cd2e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99012401",
+        "maat": "30 x 500 g",
+        "prijs": 98.15
+      }
+    ],
+    "c2da2103-46aa-471a-99aa-b354e3a9a5be": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99012501",
+        "maat": "60 x 500 g",
+        "prijs": 189.7
+      }
+    ],
+    "adaffa76-61dc-4de4-b3f9-40ae1956b5cd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99012601",
+        "maat": "90 x 500 g",
+        "prijs": 274.65
+      }
+    ],
+    "df41a00f-e5e1-4571-aabf-a6430474a9fe": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99012701",
+        "maat": "120 x 500 g",
+        "prijs": 353.01
+      }
+    ],
+    "9b504202-6f95-4db3-ba0e-74d892861bc6": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92130101",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "cc0414d2-9b56-4af8-a3fb-c3f84dbf9465": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92130201",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "fc67100b-d446-4737-88b5-c051cd029dcd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92130301",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "2be7a8b8-ab9f-45f3-b00d-53b68d4247c8": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92130401",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "4b569533-29b6-42a5-96ed-25fb6aa67640": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92130501",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "1fc275fc-4734-44b1-b62b-8e71f8f3a36d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92130601",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "48af980a-5f4f-4632-94d0-a5bcc6c79f75": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92130701",
+        "maat": "200 g",
+        "prijs": 2.35
+      }
+    ],
+    "788b46cb-86c9-485a-8987-84b79a7c36e0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92130801",
+        "maat": "6 x 200 g",
+        "prijs": 13.66
+      }
+    ],
+    "ee5e4298-46d0-4afa-9b78-e3bdfc707abb": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92130901",
+        "maat": "12 x 200 g",
+        "prijs": 26.42
+      }
+    ],
+    "d25f3e34-3400-4415-bd3b-a9e3ab84d258": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92200101",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "79f6cc05-e542-4d04-baa9-7a0a19df8edb": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92200201",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "8490379e-37f7-4549-adcd-8aa73bd0a7b1": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92200301",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "9ac349a9-c44c-4803-aca8-533885678852": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92200401",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "53a2f70a-c0c8-4952-83ec-8f4fc07f4ed2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92200501",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "a0fe34ef-f4cf-43cc-abc0-cfa1520fbe2d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92200601",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "db2f18c0-c57e-4db8-8391-b12908d9df83": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99012801",
+        "maat": "6 x 500 g",
+        "prijs": 20.95
+      }
+    ],
+    "983c9d0f-a3ba-46fc-a0cf-27374a6d6ea2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99012901",
+        "maat": "12 x 500 g",
+        "prijs": 40.58
+      }
+    ],
+    "f95bbdb1-e150-4fec-9443-1cf7a2caf2bc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99013001",
+        "maat": "30 x 500 g",
+        "prijs": 98.15
+      }
+    ],
+    "34edbba6-7d16-43e5-bafc-6280758ad1dd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99013101",
+        "maat": "60 x 500 g",
+        "prijs": 189.7
+      }
+    ],
+    "6c4a4dbb-3d91-4948-ae0f-ffdfa10b8df3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99013201",
+        "maat": "90 x 500 g",
+        "prijs": 274.65
+      }
+    ],
+    "461ec371-b541-4bae-a015-6aab1c040af6": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99013301",
+        "maat": "120 x 500 g",
+        "prijs": 353.01
+      }
+    ],
+    "a03e6b0e-8142-40b4-89a3-7829de82bd1d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92340101",
+        "maat": "200 g",
+        "prijs": 2.35
+      }
+    ],
+    "358ab32a-5227-4e60-917d-dd6c7deeffb0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92340201",
+        "maat": "6 x 200 g",
+        "prijs": 13.66
+      }
+    ],
+    "3646b49a-f095-4194-be82-c03e4beff298": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92340301",
+        "maat": "12 x 200 g",
+        "prijs": 26.42
+      }
+    ],
+    "75bcf274-a578-4a1d-a3c3-56f5a13e3d98": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92340401",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "0aba2cf6-6f70-4d0e-8601-474694fc8bd6": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92340501",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "cf24e381-9eb2-44fa-a6c1-99495236aba2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92340601",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "b2fece89-ffef-47fc-849d-34949b80fc5f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92340701",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "6516593b-8f74-4c92-88bd-d94229790ed6": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92340801",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "98faec9c-af73-41bb-9f7d-e4c22f526397": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92340901",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "1ad6a5d2-af4b-462b-b7da-817978d3ac46": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92013700",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "38872dcf-82ae-4e53-8735-c9f8a6c3fc2f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92013800",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "97abef12-9120-4137-ad71-b3a94c55460d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92013900",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "658ba049-5722-443c-9ace-8206c4484305": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92014000",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "a2903977-1f61-48ee-9102-371c8095682b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92014100",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "81c86ed2-8e33-40e9-9397-46ceecd6893c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92014200",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "44208a22-61d3-40b8-af13-fa4e31198cb0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92014300",
+        "maat": "200 g",
+        "prijs": 2.35
+      }
+    ],
+    "24cf90b9-cdaa-48d6-9b94-f3b72632b0c1": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92014400",
+        "maat": "6 x 200 g",
+        "prijs": 13.66
+      }
+    ],
+    "a85b6237-4390-44ba-92e1-dc0089663164": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92014500",
+        "maat": "12 x 200 g",
+        "prijs": 26.42
+      }
+    ],
+    "ec360bec-b618-430c-b197-9b00768daf25": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92005901",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "debab7d8-0de0-4bc7-9903-5e7594669339": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92006001",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "727271d9-e7f1-4f90-b914-165eb01867cb": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92006101",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "c52ec3cb-e4e5-4700-8e0c-98a287b75295": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92006201",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "f8f15182-881a-4a82-9a39-db6bb3663444": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92006301",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "76e5fb3c-4925-4aa4-ad54-a765e878af09": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92006401",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "89fc70b1-2bf2-4bee-af88-41332a14ed5f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99011601",
+        "maat": "6 x 500 g",
+        "prijs": 20.95
+      }
+    ],
+    "a04d6770-fd1e-4f43-9a1c-c01042023bd5": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99011701",
+        "maat": "12 x 500 g",
+        "prijs": 40.58
+      }
+    ],
+    "9570d777-8024-44fa-a9b7-5026f9a02e6d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99011801",
+        "maat": "30 x 500 g",
+        "prijs": 98.15
+      }
+    ],
+    "33b7c534-3e29-4849-b687-50f7d2e45abe": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99011901",
+        "maat": "60 x 500 g",
+        "prijs": 189.7
+      }
+    ],
+    "1157e275-181f-4c75-b8ed-d33e9993c817": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99012001",
+        "maat": "90 x 500 g",
+        "prijs": 274.65
+      }
+    ],
+    "55595f2f-c914-4159-8d85-e188f41bbf79": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99012101",
+        "maat": "120 x 500 g",
+        "prijs": 353.01
+      }
+    ],
+    "cd0da36f-7d47-463e-9d04-87f9ef2d2d03": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91008000",
+        "maat": "1,5 kg",
+        "prijs": 15.95
+      }
+    ],
+    "cf857ca2-5f9d-4d97-b6db-fe645a50e0f1": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91008100",
+        "maat": "3 kg",
+        "prijs": 29.95
+      }
+    ],
+    "8409ac22-840f-4b91-91e8-a572c8e1c515": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91008200",
+        "maat": "6 kg",
+        "prijs": 51.95
+      }
+    ],
+    "fa305822-00e8-40a6-8bc5-dfbfff0d091f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91008300",
+        "maat": "12 kg",
+        "prijs": 87.5
+      }
+    ],
+    "4e29ab2c-b6d7-4de7-95c9-457231ebd8d6": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91008400",
+        "maat": "2 x 12 kg",
+        "prijs": 162.95
+      }
+    ],
+    "083b6862-31fd-4664-bf92-255c1e410e63": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920443",
+        "maat": "400 g",
+        "prijs": 3.45
+      }
+    ],
+    "c9ba446b-d930-4749-8c66-c6844566b6fd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920444",
+        "maat": "6 x 400 g",
+        "prijs": 20.05
+      }
+    ],
+    "5d65abc9-ea84-4e71-9efb-8b8231cbe4a2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920445",
+        "maat": "12 x 400 g",
+        "prijs": 38.79
+      }
+    ],
+    "0445efdc-7e0c-4b6c-be72-820bb99e54f9": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920440",
+        "maat": "400 g",
+        "prijs": 3.45
+      }
+    ],
+    "a2c79983-069e-4982-b6ad-afd16faa6a4b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920441",
+        "maat": "6 x 400 g",
+        "prijs": 20.05
+      }
+    ],
+    "ceb427a2-055b-490e-ab6b-6e31e6383098": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920442",
+        "maat": "12 x 400 g",
+        "prijs": 38.79
+      }
+    ],
+    "72085291-6b80-4618-ae6e-5dfaf73fac07": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920446",
+        "maat": "400 g",
+        "prijs": 3.45
+      }
+    ],
+    "7099e010-86d8-44f9-ae34-eee9ffd14458": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920447",
+        "maat": "6 x 400 g",
+        "prijs": 20.05
+      }
+    ],
+    "623cd6c4-ac17-47de-9049-54709b79bdb5": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920448",
+        "maat": "12 x 400 g",
+        "prijs": 38.79
+      }
+    ],
+    "13486dfd-349c-4afe-919d-df0e373f8a81": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99006200",
+        "maat": "6 x 300 g",
+        "prijs": 13.1
+      }
+    ],
+    "9a7fa890-f21d-4444-8318-1ae16ac8d5dc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99006300",
+        "maat": "12 x 300 g",
+        "prijs": 25.37
+      }
+    ],
+    "cfa2a6ae-3def-4e17-8522-35a4a4c7625a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99006400",
+        "maat": "30 x 300 g",
+        "prijs": 61.37
+      }
+    ],
+    "031e9dfb-4c9f-44ff-a1c7-e58c5608e3e4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99006500",
+        "maat": "60 x 300 g",
+        "prijs": 118.62
+      }
+    ],
+    "f7eb24cc-a2c4-45f2-9269-ad3fba25e9c4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99006600",
+        "maat": "90 x 300 g",
+        "prijs": 171.74
+      }
+    ],
+    "4c0f9737-50d4-46b8-aa40-ba421341e767": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99006700",
+        "maat": "120 x 300 g",
+        "prijs": 220.74
+      }
+    ],
+    "66cfcf8e-32fa-41a4-a996-0d574abf04fc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99005500",
+        "maat": "6 x 300 g",
+        "prijs": 13.1
+      }
+    ],
+    "b352a70f-3561-481f-9d81-d536681181e2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99005600",
+        "maat": "12 x 300 g",
+        "prijs": 25.37
+      }
+    ],
+    "1d00fcc1-11b6-47ab-9d1a-b1f54ce32dcd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99005700",
+        "maat": "30 x 300 g",
+        "prijs": 61.37
+      }
+    ],
+    "8f930445-ce1c-4fdd-b766-7b848f902085": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99005800",
+        "maat": "60 x 300 g",
+        "prijs": 118.62
+      }
+    ],
+    "afc1bdf3-a709-49ac-ad81-23d338667e63": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99005900",
+        "maat": "90 x 300 g",
+        "prijs": 171.74
+      }
+    ],
+    "be9f5a09-fac6-4b8d-bbf4-ccc1a3f46b2a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99006000",
+        "maat": "120 x 300 g",
+        "prijs": 220.74
+      }
+    ],
+    "65efcb42-a271-4808-a972-0e6a7554330a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99007600",
+        "maat": "6 x 300 g",
+        "prijs": 13.1
+      }
+    ],
+    "81adfb8b-5a98-45ee-b8dc-9a1c9ec97fcc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99007700",
+        "maat": "12 x 300 g",
+        "prijs": 25.37
+      }
+    ],
+    "1de589f4-e685-4047-8266-aef3868fff33": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99007800",
+        "maat": "30 x 300 g",
+        "prijs": 61.37
+      }
+    ],
+    "2cf02b45-120f-44d6-9995-c5872ba6ea58": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99007900",
+        "maat": "60 x 300 g",
+        "prijs": 118.62
+      }
+    ],
+    "95a2492f-8f90-4390-815f-e3072fcb9a46": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99008000",
+        "maat": "90 x 300 g",
+        "prijs": 171.74
+      }
+    ],
+    "3af3f79d-031d-43fd-8b25-1517e473f771": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99008100",
+        "maat": "120 x 300 g",
+        "prijs": 220.74
+      }
+    ],
+    "91c50018-6c56-43e4-95e7-db4954652d09": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99006900",
+        "maat": "6 x 300 g",
+        "prijs": 13.1
+      }
+    ],
+    "850ca86b-facf-41ae-9254-07806b8fd4f8": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99007000",
+        "maat": "12 x 300 g",
+        "prijs": 25.37
+      }
+    ],
+    "718cb30e-240e-4b54-b7d1-60bf7e1ca6ff": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99007100",
+        "maat": "30 x 300 g",
+        "prijs": 61.37
+      }
+    ],
+    "acab556b-e78a-48bc-95bb-ff6f77442175": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99007200",
+        "maat": "60 x 300 g",
+        "prijs": 118.62
+      }
+    ],
+    "21571c5a-0bf4-4bd5-95a0-5c104964e382": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99007300",
+        "maat": "90 x 300 g",
+        "prijs": 171.74
+      }
+    ],
+    "450815ec-465f-439a-8285-1c995c79d661": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99007400",
+        "maat": "120 x 300 g",
+        "prijs": 220.74
+      }
+    ],
+    "6bfdc083-ee5e-452f-a7f4-030ea4301736": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99004100",
+        "maat": "6 x 300 g",
+        "prijs": 13.1
+      }
+    ],
+    "0cace0e9-fac8-4965-9541-726b53121dd0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99004200",
+        "maat": "12 x 300 g",
+        "prijs": 25.37
+      }
+    ],
+    "1c76cfbf-b261-48c2-a215-9c18cec887a0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99004300",
+        "maat": "30 x 300 g",
+        "prijs": 61.37
+      }
+    ],
+    "91781e65-a18c-45fe-b7f4-9fbe2c562361": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99004400",
+        "maat": "60 x 300 g",
+        "prijs": 118.62
+      }
+    ],
+    "4b87b89e-c31f-411e-a1fd-e617216d00ea": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99004500",
+        "maat": "90 x 300 g",
+        "prijs": 171.74
+      }
+    ],
+    "4e66649d-95cb-44c8-bfe5-a0057083520d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99004600",
+        "maat": "120 x 300 g",
+        "prijs": 220.74
+      }
+    ],
+    "45569b3c-0de7-4a54-a478-49f7bc91cd42": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99004800",
+        "maat": "6 x 300 g",
+        "prijs": 13.1
+      }
+    ],
+    "354bebbf-6f2f-4a78-8ff0-444a1a4bc9d7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99004900",
+        "maat": "12 x 300 g",
+        "prijs": 25.37
+      }
+    ],
+    "28f1ba92-bb7e-4703-a5e3-0cb35b5df47c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99005000",
+        "maat": "30 x 300 g",
+        "prijs": 61.37
+      }
+    ],
+    "590d9be7-ab2d-4cb8-9938-2b99ee62a37c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99005100",
+        "maat": "60 x 300 g",
+        "prijs": 118.62
+      }
+    ],
+    "9ddf9d77-7a21-4dae-a160-305b5a7e5941": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99005200",
+        "maat": "90 x 300 g",
+        "prijs": 171.74
+      }
+    ],
+    "4fb6cea4-d3d6-411c-acb3-1e9161a3dec1": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F99005300",
+        "maat": "120 x 300 g",
+        "prijs": 220.74
+      }
+    ],
+    "fbd3a712-4313-4098-ab66-9dfcb2cefe2a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910103",
+        "maat": "1,5 kg",
+        "prijs": 14.5
+      }
+    ],
+    "896f366a-b1c2-4c28-8fe3-67fc430d4cbc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910104",
+        "maat": "3 kg",
+        "prijs": 27.95
+      }
+    ],
+    "7859f9cd-9add-4b64-80cd-19967aae24b7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910105",
+        "maat": "6 kg",
+        "prijs": 46.95
+      }
+    ],
+    "5f5e4336-0649-42e7-b2f6-9687c66acf59": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910106",
+        "maat": "12 kg",
+        "prijs": 82.95
+      }
+    ],
+    "8417fac0-55fb-44f7-9124-933f9f2a7f53": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910107",
+        "maat": "2 x 12 kg",
+        "prijs": 149.95
+      }
+    ],
+    "a0ba23d5-27bb-419c-af32-443e3b147c67": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91004900",
+        "maat": "1,5 kg",
+        "prijs": 12.5
+      }
+    ],
+    "dd639a4c-3e14-4b6e-9e4d-c91d33c05422": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91005000",
+        "maat": "3 kg",
+        "prijs": 21.95
+      }
+    ],
+    "3287104e-f1f0-4b8a-92d7-3ee2949c38b2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91005100",
+        "maat": "6 kg",
+        "prijs": 35.95
+      }
+    ],
+    "308f31e5-5f26-424f-a3de-b1caaf859c29": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91005200",
+        "maat": "12 kg",
+        "prijs": 61.95
+      }
+    ],
+    "43a3ca3c-236e-4146-af3a-a3e5b3128636": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91005300",
+        "maat": "2 x 12 kg",
+        "prijs": 119.95
+      }
+    ],
+    "72461e8a-b8c7-479a-b58a-f4b0eba0842f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F93440201",
+        "maat": "6 x 200 g",
+        "prijs": 14.95
+      }
+    ],
+    "f6ce580c-a72a-4f2d-bca6-dd892d31d805": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F93440801",
+        "maat": "6 x 800 g",
+        "prijs": 35.95
+      }
+    ],
+    "3c6c030d-6a61-45b4-b8af-bbfd926ab499": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91004200",
+        "maat": "1,5 kg",
+        "prijs": 13.95
+      }
+    ],
+    "e312347c-62aa-4b67-9299-df3740731776": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91004300",
+        "maat": "3 kg",
+        "prijs": 23.95
+      }
+    ],
+    "15417e7c-888a-471e-8fca-f4983a4b378d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91004400",
+        "maat": "6 kg",
+        "prijs": 40.95
+      }
+    ],
+    "3086020d-7c4e-41ba-9f9c-5d7ebc34cdc5": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91004500",
+        "maat": "12 kg",
+        "prijs": 71.95
+      }
+    ],
+    "6accb5a5-950e-4555-b321-8671fbed98b9": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91004600",
+        "maat": "2 x 12 kg",
+        "prijs": 131.95
+      }
+    ],
+    "bf7d29ea-4c4d-443e-b107-f7dca6086a9c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91005700",
+        "maat": "1,5 kg",
+        "prijs": 14.5
+      }
+    ],
+    "c3a6e24c-37df-4aa7-8ae5-05a115ad3208": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91005800",
+        "maat": "3 kg",
+        "prijs": 25.95
+      }
+    ],
+    "4ac0001c-a63b-406c-91b9-8b56b188e668": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91005900",
+        "maat": "6 kg",
+        "prijs": 48.95
+      }
+    ],
+    "dae51ee3-49d1-4055-9dbb-269b72884391": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91006000",
+        "maat": "12 kg",
+        "prijs": 87.5
+      }
+    ],
+    "080368d7-b37d-4b67-bdec-3e1c58ec9f9b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91006100",
+        "maat": "2 x 12 kg",
+        "prijs": 149.95
+      }
+    ],
+    "32fa8860-475f-495d-a61b-1293047292a7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910089",
+        "maat": "3 kg",
+        "prijs": 25.95
+      }
+    ],
+    "e0cef5f7-9e7f-4c01-ba1c-2b63fdc5162a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910090",
+        "maat": "6 kg",
+        "prijs": 44.95
+      }
+    ],
+    "bfc80294-f979-47f6-a632-843a9f7aebdd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910091",
+        "maat": "12 kg",
+        "prijs": 79.95
+      }
+    ],
+    "83e80faa-0b7f-4bf0-9db5-522111b2f817": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910092",
+        "maat": "2 x 12 kg",
+        "prijs": 144.95
+      }
+    ],
+    "3cd3bd29-4e26-4c15-a400-47f30ff3e2bd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920512",
+        "maat": "375 g",
+        "prijs": 3.2
+      }
+    ],
+    "263652df-f5fe-4e73-8454-d978c930e064": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920513",
+        "maat": "6 x 375 g",
+        "prijs": 18.6
+      }
+    ],
+    "078c89db-96c0-4a52-99b3-bad450789e5b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920514",
+        "maat": "12 x 375 g",
+        "prijs": 35.98
+      }
+    ],
+    "482941a6-cb3d-4482-9466-77599ad3399a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920515",
+        "maat": "750 g",
+        "prijs": 4.6
+      }
+    ],
+    "02285a7c-4fbb-4149-9c3a-e0ada53043a0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920516",
+        "maat": "6 x 750 g",
+        "prijs": 26.73
+      }
+    ],
+    "20d9b818-2be8-4d7d-b85b-102ba471e5ff": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920517",
+        "maat": "12 x 750 g",
+        "prijs": 51.72
+      }
+    ],
+    "f5866e62-45aa-49d7-ad16-d7c618afad94": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920518",
+        "maat": "375 g",
+        "prijs": 3.2
+      }
+    ],
+    "d03f114d-764b-46bb-80d8-6a01dd865379": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920519",
+        "maat": "6 x 375 g",
+        "prijs": 18.6
+      }
+    ],
+    "e71469c8-7102-48c9-8fdb-c50a4ca5a9dd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920520",
+        "maat": "12 x 375 g",
+        "prijs": 35.98
+      }
+    ],
+    "7c1ba9c6-c69f-4b7a-97d9-2f8872aa0882": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920521",
+        "maat": "750 g",
+        "prijs": 4.6
+      }
+    ],
+    "53b3c939-bce7-4bc4-960b-b13afe48f3fb": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920522",
+        "maat": "6 x 750 g",
+        "prijs": 26.73
+      }
+    ],
+    "423ec66f-7147-4903-be42-a55424f7ba05": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920523",
+        "maat": "12 x 750 g",
+        "prijs": 51.72
+      }
+    ],
+    "d6a82a66-50f3-4865-a98f-9f20699a870c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910094",
+        "maat": "1,5 kg",
+        "prijs": 12.95
+      }
+    ],
+    "31776377-2691-424a-92b1-d4db53ccf79d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910095",
+        "maat": "3 kg",
+        "prijs": 24.95
+      }
+    ],
+    "a12bc50d-7a77-4972-9af8-e846f595a04e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910096",
+        "maat": "6 kg",
+        "prijs": 41.95
+      }
+    ],
+    "80ad5047-e38c-4f3a-bed8-7e310b1c5c20": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910097",
+        "maat": "12 kg",
+        "prijs": 72.95
+      }
+    ],
+    "3cac7786-0937-4887-80d5-2331532610bc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910098",
+        "maat": "2 x 12 kg",
+        "prijs": 134.95
+      }
+    ],
+    "2dc261b1-62db-49fe-8989-7f8d7cdaf874": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92074401",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "9a56a3d7-0d92-4b6b-9e80-84bf22f12775": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92074501",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "937152e4-79fa-4112-a937-e1e3fda640a9": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92074601",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "3456adfc-3167-4bff-a46d-f70b4adb8bff": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92074701",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "bfaf4da8-3943-4d04-b9bb-02d9b6b168bd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92074801",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "9752d835-9c9e-45f2-ae6c-45a13015e1f8": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92074901",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "006f9e4c-13f5-49a0-909e-2161ba730d1c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92073801",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "06142d3c-8f00-49f2-8570-0abb93dad811": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92073901",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "deca1351-8649-411d-882d-25172b0f0c51": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92074001",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "e6ce4dd7-8e6a-40e0-9244-6cc28c16f24e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92074101",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "68ff7704-bbe8-4675-92fa-fd29ec1458ad": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92074201",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "ff2fb17e-d95f-4771-b984-d5f27e1db243": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92074301",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "d21feab8-85a4-4db3-9bfa-9e515e79d821": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92076801",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "91d6494b-cab8-42e6-be49-87bf507a079e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92076901",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "c57d4691-b73d-4e27-ab1a-08000ff8ba96": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92077001",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "b4b83010-0715-4b82-9869-eeaa12292f4c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92077101",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "2b93ea2c-c296-4fa5-a41c-7783d9e632c7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92077201",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "abd2e248-7315-475e-b4d1-798362e0e793": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92077301",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "1e2c68c6-fe09-4484-abc7-f50e26a4f965": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92075601",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "d793df7f-93f4-4dd4-954d-9768189c8a20": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92075701",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "e5787392-676d-4650-8c9c-9414df7dc5c7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92075801",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "4db1857a-f8a5-4816-98fe-2990da42d0d1": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92075901",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "0fdb1d8b-c97d-4a1f-aa52-826c6a344fdb": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92076001",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "24f89965-5cbd-4363-bdae-2ed228fd1cbe": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92076101",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "4a2ba65f-df8c-4265-83ae-77d90aea8a8b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92075001",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "22e4a792-65d5-4211-8832-de0ff0f65556": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92075101",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "d2189f36-ae25-47db-83cd-44efd4bf853c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92075201",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "8513348e-93f4-470a-b197-2ed33b1e3d9d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92075301",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "bb8cd7f5-f9ac-4a5e-91ca-5efc49a5229a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92075401",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "c65dc747-9066-478e-8df6-6658e0bcb763": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92075501",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "3b66b2dc-6b68-4642-8e59-82f338e66b4a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92076201",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "49a21ff4-c3c4-4f2f-b9e7-eec1be7ac833": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92076301",
+        "maat": "6 x 400 g",
+        "prijs": 18.6
+      }
+    ],
+    "cb8fbe49-3d6c-413d-ba14-af8a7328eaca": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92076401",
+        "maat": "12 x 400 g",
+        "prijs": 35.98
+      }
+    ],
+    "40b55400-fd15-4874-90bc-eb519810b942": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92076501",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "f034b98c-1c13-4a20-b6dd-9af8f4f59e06": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92076601",
+        "maat": "6 x 800 g",
+        "prijs": 26.73
+      }
+    ],
+    "390872d5-4b39-47cb-8b44-11c4cb30c639": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92076701",
+        "maat": "12 x 800 g",
+        "prijs": 51.72
+      }
+    ],
+    "dfcde868-f808-470f-a61d-3770a40ebe50": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92029600",
+        "maat": "400 g",
+        "prijs": 2.5
+      }
+    ],
+    "02352f92-a2a7-4e64-a6be-288dde6c6691": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92029700",
+        "maat": "6 x 400 g",
+        "prijs": 14.53
+      }
+    ],
+    "63816822-f105-4d04-a05e-cb22c696f3e8": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92029800",
+        "maat": "12 x 400 g",
+        "prijs": 28.11
+      }
+    ],
+    "0e8ccd4a-f741-4213-8624-43f80b43621d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92041000",
+        "maat": "400 g",
+        "prijs": 2.5
+      }
+    ],
+    "4d506c81-373c-413e-a7e2-12196d59b2c7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92041100",
+        "maat": "6 x 400 g",
+        "prijs": 14.53
+      }
+    ],
+    "6e9fd069-d1b4-41fd-ad75-140043632c73": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92041200",
+        "maat": "12 x 400 g",
+        "prijs": 28.11
+      }
+    ],
+    "0edf82e4-c0d0-49d2-8e02-80d516b0fffc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92028700",
+        "maat": "400 g",
+        "prijs": 2.5
+      }
+    ],
+    "14e41437-50ed-48ab-802f-4c59bc1c891e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92028800",
+        "maat": "6 x 400 g",
+        "prijs": 14.53
+      }
+    ],
+    "c53f3491-dad4-43d8-9f5d-ddf702b51e66": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92028900",
+        "maat": "12 x 400 g",
+        "prijs": 28.11
+      }
+    ],
+    "7e5d9c24-0bdc-48c4-b7d0-ba383afd2028": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92028400",
+        "maat": "400 g",
+        "prijs": 2.5
+      }
+    ],
+    "6e418c63-d179-4f89-8841-96e03265995e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92028500",
+        "maat": "6 x 400 g",
+        "prijs": 14.53
+      }
+    ],
+    "45aec15a-afd8-4ab3-a296-083ec32c488a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92028600",
+        "maat": "12 x 400 g",
+        "prijs": 28.11
+      }
+    ],
+    "c5c681c1-67d6-47bc-a570-60879b8de746": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91120501",
+        "maat": "1,5 kg",
+        "prijs": 13.95
+      }
+    ],
+    "0ab0c7d1-1c86-4001-9215-83c27e2b28d8": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91120601",
+        "maat": "3 kg",
+        "prijs": 22.95
+      }
+    ],
+    "000d8656-1d75-4a43-b7f9-09efc1b80361": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91120701",
+        "maat": "6 kg",
+        "prijs": 39.95
+      }
+    ],
+    "51348fc9-5123-4fe5-86cc-2354057f1d06": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91120801",
+        "maat": "12 kg",
+        "prijs": 69.95
+      }
+    ],
+    "7045e090-cec3-4f5f-a67b-e439c8ee21f3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91120901",
+        "maat": "2 x 12 kg",
+        "prijs": 127.95
+      }
+    ],
+    "08dd26a0-d31e-4b2a-a98c-66e4ab9729bf": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92029300",
+        "maat": "400 g",
+        "prijs": 2.5
+      }
+    ],
+    "fab840ed-8793-459f-a794-af8392d72bc7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92029400",
+        "maat": "6 x 400 g",
+        "prijs": 14.53
+      }
+    ],
+    "8fb1cdf7-ea19-4368-b04e-4fce0eb08135": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92029500",
+        "maat": "12 x 400 g",
+        "prijs": 28.11
+      }
+    ],
+    "211ec9b0-c3ff-4c27-a377-58d6e7b724d6": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92029900",
+        "maat": "400 g",
+        "prijs": 2.5
+      }
+    ],
+    "477a8e66-a234-4ecf-bdce-1df1fd2918fb": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92030000",
+        "maat": "6 x 400 g",
+        "prijs": 14.53
+      }
+    ],
+    "000a162b-9ed6-4b09-9319-1db2f2d1f39c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92030100",
+        "maat": "12 x 400 g",
+        "prijs": 28.11
+      }
+    ],
+    "d3993c99-3479-434a-a140-7f81f84ce15b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91007200",
+        "maat": "1,5 kg",
+        "prijs": 14.95
+      }
+    ],
+    "3a88bf10-bc19-4343-98be-244ed7711231": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91007300",
+        "maat": "3 kg",
+        "prijs": 27.95
+      }
+    ],
+    "39346ca4-6e9b-4eba-af0c-a0857e10916b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91007400",
+        "maat": "6 kg",
+        "prijs": 47.95
+      }
+    ],
+    "4a87058f-28e0-45d9-9ff9-82edad301c11": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91007500",
+        "maat": "12 kg",
+        "prijs": 82.95
+      }
+    ],
+    "2af1b8fb-f994-4955-888f-af634bb35cf0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91007600",
+        "maat": "2 x 12 kg",
+        "prijs": 149.95
+      }
+    ],
+    "4c9d4e5a-c6e1-490a-83f2-24b3f22d2d7f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91160201",
+        "maat": "3 kg",
+        "prijs": 16.5
+      }
+    ],
+    "4977b526-f7bb-458b-ba6a-51438d01eb10": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91160301",
+        "maat": "6 kg",
+        "prijs": 28.95
+      }
+    ],
+    "7fb6a98d-ddf2-4aae-9be7-809177b7e45c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91160401",
+        "maat": "12 kg",
+        "prijs": 54.95
+      }
+    ],
+    "2579306b-5ad3-4497-bbac-22a6caf23a3e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91160501",
+        "maat": "2 x 12 kg",
+        "prijs": 98.95
+      }
+    ],
+    "7526b6a2-75fa-4959-8b40-71b10b74e11b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F93410201",
+        "maat": "6 x 200 g",
+        "prijs": 14.95
+      }
+    ],
+    "7f44ca0c-4822-4567-811f-15b1a38965de": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F93410801",
+        "maat": "6 x 800 g",
+        "prijs": 35.95
+      }
+    ],
+    "cae908be-1705-49f2-9cf8-47c11c98c8e4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91011001",
+        "maat": "1,5 kg",
+        "prijs": 14.95
+      }
+    ],
+    "e9280316-fb6d-443d-b428-376248b76c29": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91011101",
+        "maat": "3 kg",
+        "prijs": 27.95
+      }
+    ],
+    "8b035d28-a0c9-4ba9-8073-79f9c9914c57": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91011201",
+        "maat": "6 kg",
+        "prijs": 46.95
+      }
+    ],
+    "17edf129-1349-4050-96fb-b1972620b4bc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91011301",
+        "maat": "12 kg",
+        "prijs": 76.95
+      }
+    ],
+    "2c4ad016-a9dd-4ca5-95c8-2aa13ab4da78": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91011401",
+        "maat": "2 x 12 kg",
+        "prijs": 141.95
+      }
+    ],
+    "d218e2ee-f643-4b3a-b5c5-c3601e301821": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91310101",
+        "maat": "1,5 kg",
+        "prijs": 12.95
+      }
+    ],
+    "dd8b7dd1-f3ef-47bc-ba09-aa20d4fb4652": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91310201",
+        "maat": "3 kg",
+        "prijs": 22.95
+      }
+    ],
+    "93bd6032-ed4f-4af7-9e42-630dd8759ff2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91310301",
+        "maat": "6 kg",
+        "prijs": 37.95
+      }
+    ],
+    "26c9c7af-caa9-42f6-b3f1-1a392b0c6a4d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91310401",
+        "maat": "12 kg",
+        "prijs": 69.95
+      }
+    ],
+    "c027846d-0b08-4bc3-b046-8f6be0e82d77": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91310501",
+        "maat": "2 x 12 kg",
+        "prijs": 124.95
+      }
+    ],
+    "754341c4-7853-4d64-89a5-e80e0a380f27": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91011601",
+        "maat": "1,5 kg",
+        "prijs": 14.95
+      }
+    ],
+    "2637b51c-a42f-40e9-b2bc-ca92722c3b6b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91011701",
+        "maat": "3 kg",
+        "prijs": 27.95
+      }
+    ],
+    "3a376098-fd1d-4fa8-a835-601bab014aa0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91011801",
+        "maat": "6 kg",
+        "prijs": 46.95
+      }
+    ],
+    "5b8b3a09-3d97-43fe-a916-4ffb21c6a162": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91011901",
+        "maat": "12 kg",
+        "prijs": 76.95
+      }
+    ],
+    "e3dabf9b-b9f5-4d05-8260-11323bed9ba2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91012001",
+        "maat": "2 x 12 kg",
+        "prijs": 141.95
+      }
+    ],
+    "00a2762f-12e3-49fa-85fe-af700d9ce9bb": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F93450201",
+        "maat": "6 x 200 g",
+        "prijs": 14.95
+      }
+    ],
+    "9fee361e-ab1d-4612-b0b4-e9368299fd33": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F93450801",
+        "maat": "6 x 800 g",
+        "prijs": 35.95
+      }
+    ],
+    "c234b60b-128f-4db1-9138-3afc0a4619bc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92620401",
+        "maat": "400 g",
+        "prijs": 3.05
+      }
+    ],
+    "1bf09482-64a2-47f2-9af5-51ac1a85a581": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92620501",
+        "maat": "6 x 400 g",
+        "prijs": 17.72
+      }
+    ],
+    "8746f4d7-e7d4-40ed-a470-b2c303055da9": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92620601",
+        "maat": "12 x 400 g",
+        "prijs": 34.29
+      }
+    ],
+    "6fa54444-7d3a-4c9a-879b-7e73be61b4c7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92620701",
+        "maat": "800 g",
+        "prijs": 4.4
+      }
+    ],
+    "a5543a90-786f-43eb-a777-cb74a5fb7ff7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92620801",
+        "maat": "6 x 800 g",
+        "prijs": 25.57
+      }
+    ],
+    "0ada5440-ea81-4661-ae14-8c3d2dfe8c13": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92620901",
+        "maat": "12 x 800 g",
+        "prijs": 49.47
+      }
+    ],
+    "fe85b99a-1706-4ede-b9f9-32f81dccef59": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92041300",
+        "maat": "400 g",
+        "prijs": 3.05
+      }
+    ],
+    "20c99eed-f8f8-47c0-ab7f-a9d4552b9496": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92041400",
+        "maat": "6 x 400 g",
+        "prijs": 17.72
+      }
+    ],
+    "6ddea1a2-6a2d-458f-b64a-8f9de722ce00": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92041500",
+        "maat": "12 x 400 g",
+        "prijs": 34.29
+      }
+    ],
+    "79d2cd55-2314-4819-84a5-d356d41016a2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92041600",
+        "maat": "800 g",
+        "prijs": 4.4
+      }
+    ],
+    "6c0d806e-27c1-4046-9ad0-e70701a06ec2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92041700",
+        "maat": "6 x 800 g",
+        "prijs": 25.57
+      }
+    ],
+    "fb5f3d1f-29cc-482f-9d5c-16dcde1153fb": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92041800",
+        "maat": "12 x 800 g",
+        "prijs": 49.47
+      }
+    ],
+    "5a15d2ff-e461-4958-b1b7-b431ccd6c079": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92005001",
+        "maat": "400 g",
+        "prijs": 3.05
+      }
+    ],
+    "03d00439-e4f9-4e43-a818-a241022591e1": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92005101",
+        "maat": "6 x 400 g",
+        "prijs": 17.72
+      }
+    ],
+    "dd35b223-45fa-4283-963b-a069be90e51b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92005201",
+        "maat": "12 x 400 g",
+        "prijs": 34.29
+      }
+    ],
+    "c421fc86-fdb5-4dba-aad3-ea193f5a154a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92005301",
+        "maat": "800 g",
+        "prijs": 4.4
+      }
+    ],
+    "bbb949e3-3b9e-440d-89dd-3e34650d402d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92005401",
+        "maat": "6 x 800 g",
+        "prijs": 25.57
+      }
+    ],
+    "e79a2bc6-fdeb-4994-a1ef-6759d15cc430": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92005501",
+        "maat": "12 x 800 g",
+        "prijs": 49.47
+      }
+    ],
+    "74307664-4162-4bd7-a839-8a3324b1f56d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91002900",
+        "maat": "1,5 kg",
+        "prijs": 14.95
+      }
+    ],
+    "b66e29a2-b1b7-43fe-a09e-954f9a24d815": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91003000",
+        "maat": "3 kg",
+        "prijs": 27.95
+      }
+    ],
+    "5c77a4ff-600e-495b-86ae-efc0a1b8793f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F910031",
+        "maat": "6 kg",
+        "prijs": 46.95
+      }
+    ],
+    "772d9746-7dea-47cf-979f-ad5b006fe5cd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91003200",
+        "maat": "12 kg",
+        "prijs": 82.95
+      }
+    ],
+    "41a6b6df-4938-4db2-b463-36474c8bcf60": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91003300",
+        "maat": "2 x 12 kg",
+        "prijs": 149.95
+      }
+    ],
+    "cd6d5c25-b67f-45a6-9411-021e966715b8": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91130101",
+        "maat": "1,5 kg",
+        "prijs": 14.5
+      }
+    ],
+    "a8ff9340-157e-4b29-bfdc-9f49a23ee821": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91130201",
+        "maat": "3 kg",
+        "prijs": 24.95
+      }
+    ],
+    "e58d6553-9c89-4c13-943f-fdbb292f034d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91130301",
+        "maat": "6 kg",
+        "prijs": 44.95
+      }
+    ],
+    "5e604453-e724-4470-945a-17ba473296ab": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91130401",
+        "maat": "12 kg",
+        "prijs": 74.95
+      }
+    ],
+    "a0060570-f537-4a5b-bb42-e877809b301b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91131001",
+        "maat": "2 x 12 kg",
+        "prijs": 139.95
+      }
+    ],
+    "afffb9f9-25a1-4ec2-a80a-624076f32aaf": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91130601",
+        "maat": "3 kg",
+        "prijs": 24.95
+      }
+    ],
+    "089bdb3a-7946-431b-88f4-4e50f1dfb8a1": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91130701",
+        "maat": "6 kg",
+        "prijs": 44.95
+      }
+    ],
+    "dff3373d-95ad-446b-9c90-9d88dc01c755": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91130801",
+        "maat": "12 kg",
+        "prijs": 79.95
+      }
+    ],
+    "b871c59f-b414-4dcc-9ac4-25e319f4cd70": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91131101",
+        "maat": "2 x 12 kg",
+        "prijs": 149.95
+      }
+    ],
+    "8f89a03c-62c8-41dc-bdb0-29f11fc796b2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920541",
+        "maat": "400 g",
+        "prijs": 4.2
+      }
+    ],
+    "3c86d0ec-0453-4b27-bad6-c28d466203cc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920542",
+        "maat": "6 x 400 g",
+        "prijs": 24.41
+      }
+    ],
+    "40680995-22c2-4c59-a854-42dcb9a0f587": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920543",
+        "maat": "12 x 400 g",
+        "prijs": 47.22
+      }
+    ],
+    "abd8b6df-e16f-423c-84d5-fddc680df83c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920544",
+        "maat": "800 g",
+        "prijs": 5.9
+      }
+    ],
+    "a42e97c5-4728-4cd8-9086-98b291d4487c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920545",
+        "maat": "6 x 800 g",
+        "prijs": 34.28
+      }
+    ],
+    "4205ef9c-16fa-411b-a3b2-8c6a2885a4a1": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920546",
+        "maat": "12 x 800 g",
+        "prijs": 66.34
+      }
+    ],
+    "1f95f195-3e9d-40bd-b375-a16644c9daf5": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920547",
+        "maat": "400 g",
+        "prijs": 3.3
+      }
+    ],
+    "318854fb-517d-47db-a96d-75ac05012932": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920548",
+        "maat": "6 x 400 g",
+        "prijs": 19.18
+      }
+    ],
+    "b2ec2dad-3ba5-4d92-87fb-591ae01434ef": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920549",
+        "maat": "12 x 400 g",
+        "prijs": 37.11
+      }
+    ],
+    "3bb0e4a5-abd2-4372-8062-5265548232d1": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920550",
+        "maat": "800 g",
+        "prijs": 4.85
+      }
+    ],
+    "46a5ebf6-c6e8-408c-915a-d0b02c2960d6": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920551",
+        "maat": "6 x 800 g",
+        "prijs": 28.18
+      }
+    ],
+    "261680b6-8682-4599-99e5-b2774bd42d6a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920552",
+        "maat": "12 x 800 g",
+        "prijs": 54.53
+      }
+    ],
+    "b7e83232-e246-435d-93e7-4424e5311346": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920559",
+        "maat": "400 g",
+        "prijs": 3.3
+      }
+    ],
+    "1e95d705-5c26-4b34-9b5b-7b9bfc0dc49e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920560",
+        "maat": "6 x 400 g",
+        "prijs": 19.18
+      }
+    ],
+    "249655e1-14b4-40a3-b6bf-33f63083cf1c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920561",
+        "maat": "12 x 400 g",
+        "prijs": 37.11
+      }
+    ],
+    "b0819bc0-9a83-4d7e-8e5d-2c4ba6b2e47e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920562",
+        "maat": "800 g",
+        "prijs": 4.85
+      }
+    ],
+    "2fd3de93-74e8-48ee-aa66-48ba5d5135d0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920563",
+        "maat": "6 x 800 g",
+        "prijs": 28.18
+      }
+    ],
+    "66f2b8a9-5eba-4a8c-ab02-669d59908518": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920564",
+        "maat": "12 x 800 g",
+        "prijs": 54.53
+      }
+    ],
+    "29e1b5e8-5c10-4ae6-88a2-21f4e27f07d4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920656",
+        "maat": "30 x 400 g",
+        "prijs": 97.79
+      }
+    ],
+    "2cae4f86-8a79-4ae8-8050-5cd0d6ce4772": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920657",
+        "maat": "60 x 400 g",
+        "prijs": 188.78
+      }
+    ],
+    "a9b58a4e-6547-42cf-96e6-a19c2ea5dfd4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920658",
+        "maat": "90 x 400 g",
+        "prijs": 272.97
+      }
+    ],
+    "9ee8b092-8b13-4123-87ee-d1815b8bc796": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920659",
+        "maat": "120 x 400 g",
+        "prijs": 350.35
+      }
+    ],
+    "c01bfe36-abb2-4e54-a04c-b92f521f3d16": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920660",
+        "maat": "30 x 800 g",
+        "prijs": 133.11
+      }
+    ],
+    "cd64a841-e5a9-48b6-860e-5f1dab7f0b52": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920661",
+        "maat": "60 x 800 g",
+        "prijs": 256.96
+      }
+    ],
+    "7d7cbc41-b7e7-40b4-87c9-0c7762b9927a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920662",
+        "maat": "90 x 800 g",
+        "prijs": 371.54
+      }
+    ],
+    "cdd7be46-246e-4371-b2c0-b9b461a19590": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920663",
+        "maat": "120 x 800 g",
+        "prijs": 476.87
+      }
+    ],
+    "4cc30e61-3d81-43b0-80a8-d6d331f51646": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92260401",
+        "maat": "400 g",
+        "prijs": 3.6
+      }
+    ],
+    "2b68c2a2-b472-4ce1-bcfd-2a361139263d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92260501",
+        "maat": "6 x 400 g",
+        "prijs": 20.92
+      }
+    ],
+    "54e56257-573a-443a-91cb-076876f5ef27": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92260601",
+        "maat": "12 x 400 g",
+        "prijs": 40.48
+      }
+    ],
+    "a0e36e4b-97bc-4ae0-b917-82837c9f3f1f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92260701",
+        "maat": "800 g",
+        "prijs": 4.9
+      }
+    ],
+    "f2c828e8-0454-47af-8674-20fb261f3477": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92260801",
+        "maat": "6 x 800 g",
+        "prijs": 28.47
+      }
+    ],
+    "e1e08ee0-292f-4a87-9876-a2d1afa3b265": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92260901",
+        "maat": "12 x 800 g",
+        "prijs": 55.1
+      }
+    ],
+    "e157dd20-5e6a-4045-8157-792eb154ec86": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920432",
+        "maat": "6 x 400 g",
+        "prijs": 24.41
+      }
+    ],
+    "859d5006-3975-4640-9a92-cbad1f042984": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920433",
+        "maat": "12 x 400 g",
+        "prijs": 47.22
+      }
+    ],
+    "11a881c3-0fe1-479d-b28e-644754feb2e5": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920434",
+        "maat": "800 g",
+        "prijs": 5.9
+      }
+    ],
+    "ad9e5671-02fe-4f20-b35a-94c20c20e543": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920435",
+        "maat": "6 x 800 g",
+        "prijs": 34.28
+      }
+    ],
+    "ce615e56-cc2a-4de2-8871-5a6d4b787e48": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920436",
+        "maat": "12 x 800 g",
+        "prijs": 66.34
+      }
+    ],
+    "6c49e6cd-b6f6-4e02-992a-74c94013416d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920664",
+        "maat": "30 x 400 g",
+        "prijs": 114.09
+      }
+    ],
+    "a63e7820-0e44-4a77-8e00-9bdf95172daa": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920665",
+        "maat": "60 x 400 g",
+        "prijs": 220.25
+      }
+    ],
+    "a64a6d8e-a37c-45d0-8ec8-12a54ddd0eaf": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920666",
+        "maat": "90 x 400 g",
+        "prijs": 318.47
+      }
+    ],
+    "89ad5074-c2fa-477f-8968-5cdce19e8beb": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920667",
+        "maat": "120 x 400 g",
+        "prijs": 408.74
+      }
+    ],
+    "fc166ffb-d461-4b1e-8830-b9d2e21ef2b3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920668",
+        "maat": "30 x 800 g",
+        "prijs": 160.27
+      }
+    ],
+    "961a0131-9c2d-4f12-89a4-02c28ae77181": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920669",
+        "maat": "60 x 800 g",
+        "prijs": 309.4
+      }
+    ],
+    "42e2167f-4cac-4f2b-8a46-ed640176457b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920670",
+        "maat": "90 x 800 g",
+        "prijs": 447.37
+      }
+    ],
+    "840f59ec-6b6b-4a2d-9c77-1f95162edb7e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920671",
+        "maat": "120 x 800 g",
+        "prijs": 574.19
+      }
+    ],
+    "b1f8f18d-2cf8-4a1b-a769-384dce0ef32a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92027800",
+        "maat": "400 g",
+        "prijs": 3.6
+      }
+    ],
+    "71ffe365-7179-46d0-b48a-c4d7663660b2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92027900",
+        "maat": "6 x 400 g",
+        "prijs": 20.92
+      }
+    ],
+    "ea2b7768-e8ce-4a32-8a04-f2ed32e1144d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92028000",
+        "maat": "12 x 400 g",
+        "prijs": 40.48
+      }
+    ],
+    "a2148ae5-f40e-42ff-8f8d-f8a2c3edccdb": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92028100",
+        "maat": "800 g",
+        "prijs": 4.9
+      }
+    ],
+    "5e87613a-30b7-4a75-acb7-f279cb3993a3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92028200",
+        "maat": "6 x 800 g",
+        "prijs": 28.47
+      }
+    ],
+    "50447459-abb2-4a0d-a1f1-ca7833bec41d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92028300",
+        "maat": "12 x 800 g",
+        "prijs": 55.1
+      }
+    ],
+    "af0bd2ec-8f94-4a4a-8caf-5de8638af1f6": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920616",
+        "maat": "30 x 400 g",
+        "prijs": 97.79
+      }
+    ],
+    "8e0c22e1-d0b6-44f9-975b-8bfc08f5ee41": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920617",
+        "maat": "60 x 400 g",
+        "prijs": 188.78
+      }
+    ],
+    "95ee2f09-25e5-463d-9e0c-34aead933fcd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920618",
+        "maat": "90 x 400 g",
+        "prijs": 272.97
+      }
+    ],
+    "15401708-66ac-4bad-b18c-bc1368d5c5b3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920619",
+        "maat": "120 x 400 g",
+        "prijs": 350.35
+      }
+    ],
+    "5bcda273-3303-4684-9248-4046f5540c5c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920620",
+        "maat": "30 x 800 g",
+        "prijs": 133.11
+      }
+    ],
+    "413ed4c5-7bb9-45c5-ab47-7b675385131e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920621",
+        "maat": "60 x 800 g",
+        "prijs": 256.96
+      }
+    ],
+    "f1bb927e-495a-484b-943e-23edc1262260": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920622",
+        "maat": "90 x 800 g",
+        "prijs": 371.54
+      }
+    ],
+    "a05b10c5-999f-4850-b83c-22a23e76a39f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920623",
+        "maat": "120 x 800 g",
+        "prijs": 476.87
+      }
+    ],
+    "4a236a8a-aabb-435f-80f1-9b3fa274b17c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92004401",
+        "maat": "400 g",
+        "prijs": 4.2
+      }
+    ],
+    "fc1ad543-a90f-46d5-976f-59c7d2812717": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92004501",
+        "maat": "6 x 400 g",
+        "prijs": 24.41
+      }
+    ],
+    "f48ee400-d2ab-4399-b251-11d9fcd368de": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92004601",
+        "maat": "12 x 400 g",
+        "prijs": 47.22
+      }
+    ],
+    "0e583d7f-d15e-4582-bb85-4218149fad5a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92004701",
+        "maat": "800 g",
+        "prijs": 5.9
+      }
+    ],
+    "155ce387-0bc6-4a48-80df-1364d7d20143": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92004801",
+        "maat": "6 x 800 g",
+        "prijs": 34.28
+      }
+    ],
+    "abbd5087-9fe4-4d6a-9891-86c1c20fad93": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92004901",
+        "maat": "12 x 800 g",
+        "prijs": 66.34
+      }
+    ],
+    "a2fd8ff9-857f-438a-a9ba-5ed08b81610d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920624",
+        "maat": "30 x 400 g",
+        "prijs": 114.09
+      }
+    ],
+    "87e83d3d-1bde-4c09-aa52-64244eaa4466": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920625",
+        "maat": "60 x 400 g",
+        "prijs": 220.25
+      }
+    ],
+    "efe7e604-a5c7-49c1-b6fb-5288d95d68de": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920626",
+        "maat": "90 x 400 g",
+        "prijs": 318.47
+      }
+    ],
+    "56e53837-ab83-4dd2-ba98-fb61b188b056": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920627",
+        "maat": "120 x 400 g",
+        "prijs": 408.74
+      }
+    ],
+    "0fba8436-0add-465d-831f-83bd650bcb81": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920628",
+        "maat": "30 x 800 g",
+        "prijs": 160.27
+      }
+    ],
+    "492f906e-c992-4c2e-b872-8a3f9babc391": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920629",
+        "maat": "60 x 800 g",
+        "prijs": 309.4
+      }
+    ],
+    "68460bbf-a339-47fa-b9aa-556204e6f6b7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920630",
+        "maat": "90 x 800 g",
+        "prijs": 447.37
+      }
+    ],
+    "6856077a-554d-4a08-bd24-7517e6c8ac42": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920631",
+        "maat": "120 x 800 g",
+        "prijs": 574.19
+      }
+    ],
+    "536dbedf-24c8-4ef9-abba-09730f89f826": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920632",
+        "maat": "30 x 400 g",
+        "prijs": 97.79
+      }
+    ],
+    "93f4f6da-7868-4621-9180-4553e702e8ab": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920633",
+        "maat": "60 x 400 g",
+        "prijs": 188.78
+      }
+    ],
+    "83a3dd59-3f8e-4f09-815d-0590d71ca539": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920634",
+        "maat": "90 x 400 g",
+        "prijs": 272.97
+      }
+    ],
+    "e74beed6-cd84-4041-9b77-c36eb3a5f33f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920635",
+        "maat": "120 x 400 g",
+        "prijs": 350.35
+      }
+    ],
+    "874400f7-2c98-4f3d-9271-0306a03ce6d4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920636",
+        "maat": "30 x 800 g",
+        "prijs": 133.11
+      }
+    ],
+    "92aa3c47-6d4c-4b12-9b19-6c7460a09562": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920637",
+        "maat": "60 x 800 g",
+        "prijs": 256.96
+      }
+    ],
+    "6a822b32-5488-4679-93ed-6471843481c2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920638",
+        "maat": "90 x 800 g",
+        "prijs": 371.54
+      }
+    ],
+    "d5ecac6b-80a0-4c06-bf3c-8a881acc73c4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920639",
+        "maat": "120 x 800 g",
+        "prijs": 476.87
+      }
+    ],
+    "65d62a70-276c-495d-b277-890e648e0ab4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92510401",
+        "maat": "400 g",
+        "prijs": 3.6
+      }
+    ],
+    "c1657349-9929-4d71-80e3-5e81db51c95d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92510501",
+        "maat": "6 x 400 g",
+        "prijs": 20.92
+      }
+    ],
+    "c5958623-a869-419b-9ee3-e2413a06cf05": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92510601",
+        "maat": "12 x 400 g",
+        "prijs": 40.48
+      }
+    ],
+    "d0af5157-3aa9-4f0d-a2d4-192d455de29c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92510701",
+        "maat": "800 g",
+        "prijs": 4.9
+      }
+    ],
+    "b7894579-6f50-41d0-8fab-d72b406d8b4b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92510801",
+        "maat": "6 x 800 g",
+        "prijs": 28.47
+      }
+    ],
+    "ab7899de-de4e-4ba1-826a-6954b77b9cd6": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92510901",
+        "maat": "12 x 800 g",
+        "prijs": 55.1
+      }
+    ],
+    "9d821d35-8dcd-4418-8939-10d6704af5b7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92018900",
+        "maat": "400 g",
+        "prijs": 3.75
+      }
+    ],
+    "0dde323c-003d-40fd-826f-441fe01711ee": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92019000",
+        "maat": "6 x 400 g",
+        "prijs": 21.79
+      }
+    ],
+    "f83a26ca-bfb3-41d5-b727-aa633bb68fe5": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92019100",
+        "maat": "12 x 400 g",
+        "prijs": 42.17
+      }
+    ],
+    "7bdb6695-7afa-4316-94d1-dda0d5b3dd46": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92019200",
+        "maat": "800 g",
+        "prijs": 5.1
+      }
+    ],
+    "610eb0c9-583c-492f-9ea0-d7b3c13a3492": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92019300",
+        "maat": "6 x 800 g",
+        "prijs": 29.64
+      }
+    ],
+    "4f78f653-1a09-4bab-a239-e16f8c5090d8": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92019400",
+        "maat": "12 x 800 g",
+        "prijs": 57.34
+      }
+    ],
+    "32ccfeed-a69d-46c2-95a5-f4683001f192": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920640",
+        "maat": "30 x 400 g",
+        "prijs": 101.87
+      }
+    ],
+    "1c761e69-c7e3-449b-83bd-a95913e3b514": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920641",
+        "maat": "60 x 400 g",
+        "prijs": 196.65
+      }
+    ],
+    "10e1b852-ee88-4ce1-b6e1-dad46d8e982d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920642",
+        "maat": "90 x 400 g",
+        "prijs": 284.34
+      }
+    ],
+    "6055ca68-249f-448a-ae8e-81833e543359": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920643",
+        "maat": "120 x 400 g",
+        "prijs": 364.95
+      }
+    ],
+    "5bd6c2bf-1c5a-4abe-a1af-42a3b22c4a86": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920644",
+        "maat": "30 x 800 g",
+        "prijs": 138.54
+      }
+    ],
+    "18a02fcb-cece-4120-b221-9edb0ef75923": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920645",
+        "maat": "60 x 800 g",
+        "prijs": 267.44
+      }
+    ],
+    "49469349-9413-49ed-b4e7-704f1d408e95": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920646",
+        "maat": "90 x 800 g",
+        "prijs": 386.71
+      }
+    ],
+    "5ac4504c-3496-40a5-a03e-4e0326008fc4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920647",
+        "maat": "120 x 800 g",
+        "prijs": 496.33
+      }
+    ],
+    "9f92bba5-bb09-4d11-9a12-1310fed18095": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920648",
+        "maat": "30 x 400 g",
+        "prijs": 97.79
+      }
+    ],
+    "d9fb985c-b22c-4bfb-a289-31e5a83f6d53": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920649",
+        "maat": "60 x 400 g",
+        "prijs": 188.78
+      }
+    ],
+    "461abdcf-6388-4051-92e7-5b9f0fa7f090": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920650",
+        "maat": "90 x 400 g",
+        "prijs": 272.97
+      }
+    ],
+    "7a42f8f7-ad13-4ae3-bacd-f415d3afa0ca": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920651",
+        "maat": "120 x 400 g",
+        "prijs": 350.35
+      }
+    ],
+    "19a4f385-9378-4cab-9532-b4a665f01885": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920652",
+        "maat": "30 x 800 g",
+        "prijs": 133.11
+      }
+    ],
+    "8d6ce4c5-c900-49ad-b2d7-02f753a99780": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920653",
+        "maat": "60 x 800 g",
+        "prijs": 256.96
+      }
+    ],
+    "879fb5e2-fe52-47f4-b7b0-1ac986c395fc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920654",
+        "maat": "90 x 800 g",
+        "prijs": 371.54
+      }
+    ],
+    "c18a8eca-a02f-46e8-829b-c413ca785e86": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F920655",
+        "maat": "120 x 800 g",
+        "prijs": 476.87
+      }
+    ],
+    "6e2350e1-643e-433b-81d6-6fdcb8882080": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92520401",
+        "maat": "400 g",
+        "prijs": 3.6
+      }
+    ],
+    "b7ea12a2-5da5-46c8-b6bb-d9579b33df0f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92520501",
+        "maat": "6 x 400 g",
+        "prijs": 20.92
+      }
+    ],
+    "b2632218-75fe-47c9-b86c-266bd370271f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92520601",
+        "maat": "12 x 400 g",
+        "prijs": 40.48
+      }
+    ],
+    "bd5075cf-71a1-4075-8f86-9d29501cd834": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92520701",
+        "maat": "800 g",
+        "prijs": 4.9
+      }
+    ],
+    "22485f2f-7b3f-4dfb-8ad4-d2b991a6b8b7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92520801",
+        "maat": "6 x 800 g",
+        "prijs": 28.47
+      }
+    ],
+    "a46d93ec-a508-45ce-8004-abbcc407ce11": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92520901",
+        "maat": "12 x 800 g",
+        "prijs": 55.1
+      }
+    ],
+    "4db06b41-21d4-43b2-8f86-781272e4f573": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92040600",
+        "maat": "30 x 400 g",
+        "prijs": 96.44
+      }
+    ],
+    "4aff97a9-5282-45d5-9379-87c43c427ce5": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92040700",
+        "maat": "60 x 400 g",
+        "prijs": 186.16
+      }
+    ],
+    "389eae4e-cdcc-4050-a0db-f425bf0e82ea": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92330401",
+        "maat": "400 g",
+        "prijs": 3.55
+      }
+    ],
+    "87dc6e35-c278-4e22-9c6c-2dd66e3848c1": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92330501",
+        "maat": "6 x 400 g",
+        "prijs": 20.63
+      }
+    ],
+    "3082fef9-af4f-4339-8826-9932284ce21a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92330601",
+        "maat": "12 x 400 g",
+        "prijs": 39.92
+      }
+    ],
+    "89750c78-c593-45b0-a963-d3fd730594fc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92040000",
+        "maat": "30 x 400 g",
+        "prijs": 96.44
+      }
+    ],
+    "8532be18-2338-4a45-9343-6bffb2a7311a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92040100",
+        "maat": "60 x 400 g",
+        "prijs": 186.16
+      }
+    ],
+    "27bdacd9-a138-4201-beae-b51eeaa2b098": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92180101",
+        "maat": "400 g",
+        "prijs": 3.55
+      }
+    ],
+    "21672b82-e6a1-4cac-8d64-eef06abb0037": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92180201",
+        "maat": "6 x 400 g",
+        "prijs": 20.63
+      }
+    ],
+    "4e635e83-452f-418a-a6ad-fdd6cc30dab5": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92180301",
+        "maat": "12 x 400 g",
+        "prijs": 39.92
+      }
+    ],
+    "a1e86999-b500-412d-9afa-116cb2b34ce0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92040200",
+        "maat": "30 x 200 g",
+        "prijs": 71.99
+      }
+    ],
+    "eeb20962-4ede-4383-bc5b-4a976f881eb3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92040300",
+        "maat": "60 x 200 g",
+        "prijs": 138.97
+      }
+    ],
+    "0aedb641-96a3-422d-8552-66dcf2f7c156": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92040400",
+        "maat": "30 x 400 g",
+        "prijs": 96.44
+      }
+    ],
+    "2059549c-f442-4f73-ae8e-50ae25a699dd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92040500",
+        "maat": "60 x 400 g",
+        "prijs": 186.16
+      }
+    ],
+    "8ff6fd5f-8ce3-48a3-a40d-d64801a0812a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92170101",
+        "maat": "400 g",
+        "prijs": 3.55
+      }
+    ],
+    "d04a0711-9687-41e2-aec6-9e92ed3f0fdd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92170201",
+        "maat": "6 x 400 g",
+        "prijs": 20.63
+      }
+    ],
+    "63cc20f0-d370-482c-a5f6-96ba7bc0d78d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92170301",
+        "maat": "12 x 400 g",
+        "prijs": 39.92
+      }
+    ],
+    "7c9bdabe-f9e3-46a4-9dd1-188e18583327": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92170401",
+        "maat": "200 g",
+        "prijs": 2.65
+      }
+    ],
+    "c890b791-df3b-462c-aa6b-81d72c4c217f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92170501",
+        "maat": "6 x 200 g",
+        "prijs": 15.4
+      }
+    ],
+    "5644534d-b437-4667-ba4a-ebb7e31bc71c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92170601",
+        "maat": "12 x 200 g",
+        "prijs": 29.8
+      }
+    ],
+    "46740d30-fa90-473c-a774-963f91208e56": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92030200",
+        "maat": "400 g",
+        "prijs": 3.65
+      }
+    ],
+    "299219e7-f8c4-46a3-af3b-03a99ed1c2e8": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92030300",
+        "maat": "6 x 400 g",
+        "prijs": 21.21
+      }
+    ],
+    "e8d52025-34ab-41eb-846e-4bbeb052dba4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92030400",
+        "maat": "12 x 400 g",
+        "prijs": 41.04
+      }
+    ],
+    "1d88e166-8961-413f-beaf-ed244b8c1d9d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92040800",
+        "maat": "30 x 400 g",
+        "prijs": 99.15
+      }
+    ],
+    "d9262231-19be-405f-9842-da11fea68a2c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92040900",
+        "maat": "60 x 400 g",
+        "prijs": 191.41
+      }
+    ],
+    "017b9ecc-42d5-4a00-b0e2-a7ef54ebcf79": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91350101",
+        "maat": "1,5 kg",
+        "prijs": 14.5
+      }
+    ],
+    "90efe963-c079-452d-9e8f-a2f1f71faddf": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91350201",
+        "maat": "3 kg",
+        "prijs": 24.95
+      }
+    ],
+    "789e1f90-cd08-4f37-ad64-6bb950dc580a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91350301",
+        "maat": "6 kg",
+        "prijs": 44.95
+      }
+    ],
+    "90c08eb4-8e12-4466-9b2d-69dcae23bb3e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91350401",
+        "maat": "12 kg",
+        "prijs": 74.95
+      }
+    ],
+    "2185be02-7ff7-42b6-bb4e-83dd537481f0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91350501",
+        "maat": "2 x 12 kg",
+        "prijs": 139.95
+      }
+    ],
+    "eeb86906-fa1a-43d2-8111-56606056d767": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91140301",
+        "maat": "6 kg",
+        "prijs": 39.95
+      }
+    ],
+    "39920e4d-e9d7-4292-afee-513e37ee31d3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92037000",
+        "maat": "375 g",
+        "prijs": 3.1
+      }
+    ],
+    "e6e56d11-f403-45a1-856b-82b098235561": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92037100",
+        "maat": "6 x 375 g",
+        "prijs": 18.01
+      }
+    ],
+    "d2ad1745-9bb3-4dab-ad63-e4d08697d602": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92037200",
+        "maat": "12 x 375 g",
+        "prijs": 34.86
+      }
+    ],
+    "70b0c18e-6e4a-4da2-abee-b98be9e6925a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92036700",
+        "maat": "375 g",
+        "prijs": 3.1
+      }
+    ],
+    "e6ed7f48-62b4-4796-a789-a18a6b60a723": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92036800",
+        "maat": "6 x 375 g",
+        "prijs": 18.01
+      }
+    ],
+    "f5bcb2b1-31ce-4f09-8f35-df87ad5c8d65": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F92036900",
+        "maat": "12 x 375 g",
+        "prijs": 34.86
+      }
+    ],
+    "c6f66dcf-84cb-43c4-8cc1-ae2cfd521322": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91100101",
+        "maat": "1,5 kg",
+        "prijs": 12.5
+      }
+    ],
+    "2aa69d0d-ff65-4885-af14-355f39ed7a7f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91100201",
+        "maat": "3 kg",
+        "prijs": 19.95
+      }
+    ],
+    "dc3541c9-0dbb-456c-b54e-2f82210a68e3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91100301",
+        "maat": "6 kg",
+        "prijs": 33.5
+      }
+    ],
+    "cef26387-3901-41e8-b4d6-adde0ff328c4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91100401",
+        "maat": "12 kg",
+        "prijs": 59.95
+      }
+    ],
+    "c228c91b-1bee-4eff-966b-c7dd77982df7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91101001",
+        "maat": "2 x 12 kg",
+        "prijs": 105.95
+      }
+    ],
+    "29bc7072-80e4-45dd-bfce-6e596cc90c6f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91100601",
+        "maat": "3 kg",
+        "prijs": 20.95
+      }
+    ],
+    "454c7dc6-b756-4b95-a35f-070845ef5916": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91100701",
+        "maat": "6 kg",
+        "prijs": 39.95
+      }
+    ],
+    "e47f5a03-e801-4fe1-9aa7-ad202b3f148f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91100801",
+        "maat": "12 kg",
+        "prijs": 69.95
+      }
+    ],
+    "d34241cf-56b9-4a68-b4ff-42f1c9685fda": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91101101",
+        "maat": "2 x 12 kg",
+        "prijs": 129.95
+      }
+    ],
+    "6027a64b-6138-4f1f-a6bc-886f0a16f1cb": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91290101",
+        "maat": "3 kg",
+        "prijs": 21.95
+      }
+    ],
+    "72605e1b-801d-44d0-9d03-39c11f759cd8": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91290201",
+        "maat": "6 kg",
+        "prijs": 40.95
+      }
+    ],
+    "64fc7731-0946-47ef-b991-1c610137bb5a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91290301",
+        "maat": "12 kg",
+        "prijs": 70.95
+      }
+    ],
+    "b7536bb7-ad29-4e24-8e14-b337c15290e0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F91290401",
+        "maat": "2 x 12 kg",
+        "prijs": 127.95
+      }
+    ],
+    "dc7aa9d9-0c0e-40c6-b15d-f9c83a88cd62": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98005800",
+        "maat": "3 kg",
+        "prijs": 29.95
+      }
+    ],
+    "10b2885f-081a-4244-bd61-434c4581ce03": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98005900",
+        "maat": "12 kg",
+        "prijs": 89.95
+      }
+    ],
+    "e93f7f4f-f06f-40ec-9006-805ee8c07839": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98000600",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "ecb5f5f7-7383-433c-bd02-08eaa3a51207": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98000700",
+        "maat": "6 x 400 g",
+        "prijs": 18.48
+      }
+    ],
+    "f533e0ce-1184-44b0-8e6d-41e45896a97a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98000800",
+        "maat": "12 x 400 g",
+        "prijs": 35.52
+      }
+    ],
+    "cf684879-87f1-4dd4-b599-4ed1fc6fb88f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98000900",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "a5490001-f42e-4075-83fa-f83c575a8f6e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98001000",
+        "maat": "6 x 800 g",
+        "prijs": 26.57
+      }
+    ],
+    "a034ea51-2b7f-41a5-8c4e-55892099039f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98001100",
+        "maat": "12 x 800 g",
+        "prijs": 51.06
+      }
+    ],
+    "ea19de73-90ac-4e7c-ab19-c95ca8eb5c3a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98002400",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "f0d1b995-f908-4a34-95d6-f2d75df816a7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98002500",
+        "maat": "6 x 400 g",
+        "prijs": 18.48
+      }
+    ],
+    "20a16e27-fc8d-46e8-8be3-aea1f2de680c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98002600",
+        "maat": "12 x 400 g",
+        "prijs": 35.52
+      }
+    ],
+    "3e01929c-21fc-450c-8d1f-526010fd99f3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98002700",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "f3f4f557-c9ea-40f9-b24a-895521426d95": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98002800",
+        "maat": "6 x 800 g",
+        "prijs": 26.57
+      }
+    ],
+    "6c48f0eb-bdf7-4a52-8d11-d2d8bd072ef8": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98002900",
+        "maat": "12 x 800 g",
+        "prijs": 51.06
+      }
+    ],
+    "95597697-5547-48de-99d7-bfa089fe5134": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98006000",
+        "maat": "3 kg",
+        "prijs": 29.95
+      }
+    ],
+    "5ec29c11-9755-4e39-8b9a-936a02f3eb85": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98006100",
+        "maat": "12 kg",
+        "prijs": 89.95
+      }
+    ],
+    "9d1b2a47-7cfd-4476-8b7b-7a7e216346e0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98001800",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "ee9b41f6-f139-4c97-9713-ebf656156398": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98001900",
+        "maat": "6 x 400 g",
+        "prijs": 18.48
+      }
+    ],
+    "1f835379-85c7-4ff7-bb99-5df0b1169ce3": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98002000",
+        "maat": "12 x 400 g",
+        "prijs": 35.52
+      }
+    ],
+    "63cbaa1c-a5e2-48bf-8882-92639e69db59": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98002100",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "15394201-adb6-48bf-9d3e-ff2be4fa3048": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98002200",
+        "maat": "6 x 800 g",
+        "prijs": 26.57
+      }
+    ],
+    "aecd3c9c-f3a8-4178-8cb1-279a3454a028": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98002300",
+        "maat": "12 x 800 g",
+        "prijs": 51.06
+      }
+    ],
+    "766e0319-7e03-4c6e-a522-8b9d5e624561": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98012201",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "481d3ee8-1feb-41ba-bd59-2a497c312e34": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98012301",
+        "maat": "6 x 400 g",
+        "prijs": 18.48
+      }
+    ],
+    "ce7c661c-cbc6-4d25-8250-979e2a9eeed4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98012401",
+        "maat": "12 x 400 g",
+        "prijs": 35.52
+      }
+    ],
+    "37d32ec2-c938-428f-81bc-a399dda140aa": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98005400",
+        "maat": "3 kg",
+        "prijs": 29.95
+      }
+    ],
+    "9f431231-8402-4a50-a644-b1dbc3bc4199": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98005500",
+        "maat": "12 kg",
+        "prijs": 89.95
+      }
+    ],
+    "4d8a7c3e-8c5f-447f-83c7-30660d90976b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98006400",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "18816e48-f188-4740-9235-bb9fae6455ac": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98006500",
+        "maat": "6 x 400 g",
+        "prijs": 18.48
+      }
+    ],
+    "05ec91a4-e66d-4caf-a46e-ec346f0a3657": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98006600",
+        "maat": "12 x 400 g",
+        "prijs": 35.52
+      }
+    ],
+    "461eb331-7ed7-4fc1-923e-8d0dc7170f3a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98006700",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "ef5c54b4-7fd6-4cfd-8aa2-944dd16ec51a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98006800",
+        "maat": "6 x 800 g",
+        "prijs": 26.57
+      }
+    ],
+    "8f6dbcf3-1e0a-4645-94cd-036073f05c58": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98006900",
+        "maat": "12 x 800 g",
+        "prijs": 51.06
+      }
+    ],
+    "36de012c-ac91-409e-ad39-f4fe1f4d98be": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98003600",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "179e56e2-c2e4-490a-a413-fc14ad9aaa4f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98003700",
+        "maat": "6 x 400 g",
+        "prijs": 18.48
+      }
+    ],
+    "2d608cc9-73aa-4606-89b2-e8ab14d199a7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98003800",
+        "maat": "12 x 400 g",
+        "prijs": 35.52
+      }
+    ],
+    "aeab54a9-fb53-428d-aa72-6276514cd05f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98003900",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "252d779c-67bd-45ed-a0bc-37e4aa72f4fc": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98004000",
+        "maat": "6 x 800 g",
+        "prijs": 26.57
+      }
+    ],
+    "f577a560-35f6-4955-b37f-b30faafe5382": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98004100",
+        "maat": "12 x 800 g",
+        "prijs": 51.06
+      }
+    ],
+    "c2c197c1-900c-46fb-9e8c-84d7bde3fcb5": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98005600",
+        "maat": "3 kg",
+        "prijs": 29.95
+      }
+    ],
+    "7a7c46ca-ce88-40bd-817c-53346db90f80": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98005700",
+        "maat": "12 kg",
+        "prijs": 89.95
+      }
+    ],
+    "f40266c0-7195-447d-98b1-f26c3dda595f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98000000",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "1f4c3f81-0f23-4a0d-a500-e391b2867733": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98000100",
+        "maat": "6 x 400 g",
+        "prijs": 18.48
+      }
+    ],
+    "80f5462b-04f6-477d-bae7-b0fbc67da5f9": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98000200",
+        "maat": "12 x 400 g",
+        "prijs": 35.52
+      }
+    ],
+    "9b76cdf0-8cc2-458e-9948-9c9270273a73": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98000300",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "b5070b1b-40ae-422d-9620-f7ef6a76feb7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98000400",
+        "maat": "6 x 800 g",
+        "prijs": 26.57
+      }
+    ],
+    "3028516c-09f4-4fcf-bc90-9259bf46ba23": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98000500",
+        "maat": "12 x 800 g",
+        "prijs": 51.06
+      }
+    ],
+    "d1da6709-68ef-4e82-af95-98b953e9657a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98006200",
+        "maat": "3 kg",
+        "prijs": 29.95
+      }
+    ],
+    "03b731dd-5e83-4906-9a38-961fc0a5e343": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98006300",
+        "maat": "12 kg",
+        "prijs": 89.95
+      }
+    ],
+    "e09d52be-300c-48bc-a046-90ff38516b32": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98003000",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "fd4cb292-a5cb-4454-9e1e-cf94508c7c97": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98003100",
+        "maat": "6 x 400 g",
+        "prijs": 18.48
+      }
+    ],
+    "0872cb81-31a3-4a67-acad-5d5076502b29": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98003200",
+        "maat": "12 x 400 g",
+        "prijs": 35.52
+      }
+    ],
+    "63363909-ce6b-4379-b296-42eebfaada05": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98003300",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "d956f4a2-9a88-4c39-861d-3f3c3f5d1666": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98003400",
+        "maat": "6 x 800 g",
+        "prijs": 26.57
+      }
+    ],
+    "4e963758-41f6-4c53-ae2d-2636599ad5f4": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98003500",
+        "maat": "12 x 800 g",
+        "prijs": 51.06
+      }
+    ],
+    "f3e72df5-4da1-4fbf-8f55-82d1cd9760a1": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98001200",
+        "maat": "400 g",
+        "prijs": 3.2
+      }
+    ],
+    "4a51c4ce-5a38-49b8-995f-b4ea5aff7e12": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98001300",
+        "maat": "6 x 400 g",
+        "prijs": 18.48
+      }
+    ],
+    "9664f6f5-2e63-4ba7-a7ac-eef5c4286377": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98001400",
+        "maat": "12 x 400 g",
+        "prijs": 35.52
+      }
+    ],
+    "6e99046f-78a5-4909-ac5e-7bc3bc609ea9": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98001500",
+        "maat": "800 g",
+        "prijs": 4.6
+      }
+    ],
+    "dc6d0c56-571c-490f-8eaa-79ae7106e78b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98001600",
+        "maat": "6 x 800 g",
+        "prijs": 26.57
+      }
+    ],
+    "8af92bf4-c96b-47bc-a99c-b82dfe4202c0": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F98001700",
+        "maat": "12 x 800 g",
+        "prijs": 51.06
+      }
+    ],
+    "517e8381-8fc2-45b8-82b2-435d7286110b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980100",
+        "maat": "7 x 410 g",
+        "prijs": 19.2
+      }
+    ],
+    "33a53bd5-2d60-482d-b1a3-d26cdb1ffffd": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980101",
+        "maat": "14 x 410 g",
+        "prijs": 36.96
+      }
+    ],
+    "140ae22d-b302-4389-ac82-e3cf6c945f9e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980102",
+        "maat": "35 x 410 g",
+        "prijs": 88.8
+      }
+    ],
+    "58a03f81-13b2-42fa-bf67-b002403b2feb": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980088",
+        "maat": "7 x 410 g",
+        "prijs": 19.2
+      }
+    ],
+    "fadbff26-dbb4-4a19-8fe0-82dc55f8c108": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980089",
+        "maat": "14 x 410 g",
+        "prijs": 36.96
+      }
+    ],
+    "5b19ad3e-90a0-412d-8344-5d0392d4a9ee": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980090",
+        "maat": "35 x 410 g",
+        "prijs": 88.8
+      }
+    ],
+    "b03a42c0-e47d-4ba7-a03e-d0c138f34b6b": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980094",
+        "maat": "7 x 410 g",
+        "prijs": 19.2
+      }
+    ],
+    "04022afa-e3d4-4dd0-af35-d0ed4e65ee35": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980095",
+        "maat": "14 x 410 g",
+        "prijs": 36.96
+      }
+    ],
+    "030b20c7-43bd-499a-92c3-b37c9d5ae45a": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980096",
+        "maat": "35 x 410 g",
+        "prijs": 88.8
+      }
+    ],
+    "a5dcd8c6-a7c0-4927-a27d-854fcc47634d": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980097",
+        "maat": "7 x 410 g",
+        "prijs": 19.2
+      }
+    ],
+    "9a1b98ed-34f1-4dc6-8a6b-1764ec6b012c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980098",
+        "maat": "14 x 410 g",
+        "prijs": 36.96
+      }
+    ],
+    "a961dd6d-1e4a-4f6c-ac08-68235d8c1cde": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980099",
+        "maat": "35 x 410 g",
+        "prijs": 88.8
+      }
+    ],
+    "76315225-5ae0-41e4-83c9-d44829f8cee7": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980091",
+        "maat": "7 x 410 g",
+        "prijs": 19.2
+      }
+    ],
+    "58ce291a-23b8-4e8f-9e23-26212b527a25": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980092",
+        "maat": "14 x 410 g",
+        "prijs": 36.96
+      }
+    ],
+    "e4eb22ca-ab42-447d-a2b2-c25254568f2f": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980093",
+        "maat": "35 x 410 g",
+        "prijs": 88.8
+      }
+    ],
+    "939aa4d8-9222-4298-9232-e64480342d3c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980082",
+        "maat": "7 x 410 g",
+        "prijs": 19.2
+      }
+    ],
+    "18a78461-9ddf-45fe-8851-532a045ee32c": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980083",
+        "maat": "14 x 410 g",
+        "prijs": 36.96
+      }
+    ],
+    "b9a1b15c-d1de-4170-a885-f3e44caf4b1e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980084",
+        "maat": "35 x 410 g",
+        "prijs": 88.8
+      }
+    ],
+    "bdc230da-f0b8-45ba-9d65-4b309ba7d5ce": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980085",
+        "maat": "7 x 410 g",
+        "prijs": 19.2
+      }
+    ],
+    "ac2cbf5b-b399-48a5-a962-8eedbb5e9c5e": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980086",
+        "maat": "14 x 410 g",
+        "prijs": 36.96
+      }
+    ],
+    "645f1e0a-8abd-4601-bfb6-ddeaccb9bae2": [
+      {
+        "winkel": "Alsa Nature",
+        "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980087",
+        "maat": "35 x 410 g",
+        "prijs": 88.8
       }
     ]
   }

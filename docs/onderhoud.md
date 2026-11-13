@@ -144,10 +144,10 @@ lokaal in `data/winkels/alsa-nature.xml` en wordt niet gecommit.
 2. Draai `npm run winkels:alsa-nature -- --dry-run` en controleer het rapport.
 3. Draai `npm run winkels:alsa-nature` om `public/winkels.json` bij te werken.
 
-De feed bevat vooral het merk `alsa-nature` en `isegrim`. Zolang die producten
-niet in de catalogus staan, levert de koppeling nul links op. Het script staat
-klaar om ze automatisch te koppelen zodra de producten met ingrediënten en
-voedingswaarden zijn toegevoegd.
+De feed bevat vooral het merk `alsa-nature` en `isegrim`. Het script koppelt
+voer alleen op een exact gelijk EAN of de directe product-URL uit de
+affiliate-link. Bij twijfel blijft de winkelknop weg. Snacklinks worden apart
+beheerd met `npm run winkels:snacks-alsa-upd`.
 
 ### Alsa Nature en Isegrim importeren
 
@@ -166,9 +166,21 @@ npm run import:affiliate -- --alleen=snacks
 
 Daarna genereert `node scripts/maak-import-sql.mjs --bestanden=alsa-nature,isegrim,isegrim-roots`
 de SQL-batches. De gecombineerde versie staat in
-`data/import/sql/alsa-isegrim-import-20261113.sql`. Die moet in de Supabase
+`data/import/sql/alsa-isegrim-import-20261113.sql`; de voedings-SQL staat los in
+`data/import/sql/alsa-isegrim-voeding-20261113.sql`. Die moeten in de Supabase
 SQL Editor worden uitgevoerd voordat de voerproducten live zichtbaar zijn.
 Snacks gaan direct mee met de site.
+
+Koppel daarna de voerlinks:
+
+```bash
+npm run winkels:alsa-nature -- --dry-run
+npm run winkels:alsa-nature
+```
+
+Het script laat bestaande snacklinks met rust en vervangt alleen de
+Alsa/Isegirm-voerlinks. Controleer in het rapport dat het aantal koppelingen
+gelijk is aan het aantal geïmporteerde voerproducten.
 
 ### Ultra Premium Direct (Daisycon)
 

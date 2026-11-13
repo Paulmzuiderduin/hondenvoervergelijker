@@ -72,8 +72,9 @@ affiliate-vermelding staat in de footer en het privacybeleid.
 De Alsa Nature-feed staat lokaal in `data/winkels/alsa-nature.xml` (niet in git).
 Download hem in TradeTracker via **Promotiemateriaal → Productfeeds** en draai
 `npm run winkels:alsa-nature -- --dry-run` daarna zonder `--dry-run`. De feed
-bevat vooral de merken `alsa-nature` en `isegrim`; zolang die niet in de
-catalogus staan, worden er geen links toegevoegd.
+bevat vooral de merken `alsa-nature` en `isegrim`. Het script koppelt voer
+alleen op een exact gelijk EAN of de directe product-URL en laat bestaande
+snacklinks ongemoeid. Bij twijfel wordt geen link toegevoegd.
 
 ## Snackaffiliates Alsa Nature en Ultra Premium Direct
 

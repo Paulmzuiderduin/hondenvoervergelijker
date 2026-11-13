@@ -7,15 +7,17 @@
 //   npm run winkels:alsa-nature -- --dry-run
 //   npm run winkels:alsa-nature
 //
-// De feed bevat vooral het merk alsa-nature en isegrim. Zolang die merken niet
-// in de catalogus staan, levert dit script bewust nul links op. Zodra ze zijn
-// toegevoegd, worden de links bij de volgende run automatisch meegenomen.
+// De feed bevat vooral het merk alsa-nature en isegrim. De koppeling gebruikt
+// alleen een exact gelijk EAN of de directe product-URL uit de affiliate-link.
+// Bij twijfel blijft de winkelknop weg. Snacklinks worden apart beheerd door
+// scripts/koppel-alsa-upd-snacks.mjs.
 
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { koppelBetrouwbaar, parseTradeTrackerFeed } from './lib/tradetracker-match.mjs'
-import { koppelSnacksBetrouwbaar } from './lib/snack-winkel-match.mjs'
+import { parseTradeTrackerFeed } from './lib/tradetracker-match.mjs'
+import { directeTradeTrackerUrl, koppelAlsaOpEanOfUrl } from './lib/alsa-match.mjs'
+import { normaliseer } from './lib/winkel-match.mjs'
 
 const WORTEL = dirname(dirname(fileURLToPath(import.meta.url)))
 const FEED = join(WORTEL, 'data', 'winkels', 'alsa-nature.xml')
@@ -30,13 +32,6 @@ const VOEDING_PREFIXEN = [
   'Hondenvoeding > Granenvrij hondenvoer > Dieet & speciaalvoeding',
   'Hondenvoeding > Hondenworst',
   'Hondenvoeding > Puppyvoeding & bijvoeding'
-]
-const SNACK_PREFIXEN = [
-  'Hondenvoeding > Kauwproducten',
-  'Hondenvoeding > Hondenkoekjes',
-  'Hondenvoeding > Granenvrij hondenvoer > Hondenkoekjes',
-  'Hondenvoeding > Granenvrij hondenvoer > Kauwproducten',
-  'Hondenvoeding > Pakketten & sets'
 ]
 
 const argumenten = new Map(
@@ -79,7 +74,16 @@ if (!SUPABASE_URL || !SUPABASE_KEY) {
 async function haalProducten() {
   const rijen = []
   for (let offset = 0; ; offset += 1000) {
-    const antwoord = await fetch(`${SUPABASE_URL}/rest/v1/products?select=id,brand,name,gtin,package_size,food_type&published=eq.true&order=brand.asc,name.asc&limit=1000&offset=${offset}`, {
+    const url = new URL(`${SUPABASE_URL}/rest/v1/products`)
+    url.searchParams.set('select', 'id,brand,name,gtin,package_size,food_type,source_url')
+    url.searchParams.set('published', 'eq.true')
+    // Alsa Nature en Isegirm staan allemaal onder deze bronhost. Filteren op
+    // bron-URL is betrouwbaarder gebleken dan filteren op de merknaam.
+    url.searchParams.set('source_url', 'like.https://www.alsa-nature.nl/*')
+    url.searchParams.set('order', 'source_url.asc,id.asc')
+    url.searchParams.set('limit', '1000')
+    url.searchParams.set('offset', String(offset))
+    const antwoord = await fetch(url, {
       headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}` }
     })
     if (!antwoord.ok) throw new Error(`Supabase gaf HTTP ${antwoord.status}: ${await antwoord.text()}`)
@@ -92,18 +96,17 @@ async function haalProducten() {
 
 const xml = readFileSync(feedPad, 'utf8')
 const voerAanbiedingen = parseTradeTrackerFeed(xml, { categorieen: [], categoriePrefixen: VOEDING_PREFIXEN, winkel: WINKEL })
-  .map((aanbieding) => ({ ...aanbieding, soort: 'voer' }))
-const snackAanbiedingen = parseTradeTrackerFeed(xml, { categorieen: [], categoriePrefixen: SNACK_PREFIXEN, winkel: WINKEL })
+  .map((aanbieding) => ({ ...aanbieding, soort: 'voer', directeUrl: directeTradeTrackerUrl(aanbieding.url) }))
 const producten = await haalProducten()
-const { koppelingen: voerKoppelingen, dubbelzinnig: voerDubbelzinnig } = koppelBetrouwbaar(producten, voerAanbiedingen)
-
-const snackData = JSON.parse(readFileSync(join(WORTEL, 'data', 'snacks.json'), 'utf8'))
-const snacks = Array.isArray(snackData.producten) ? snackData.producten : []
-const { koppelingen: snackKoppelingen, dubbelzinnig: snackDubbelzinnig } = koppelSnacksBetrouwbaar(snacks, snackAanbiedingen)
+const {
+  koppelingen: voerKoppelingen,
+  dubbelzinnig: voerDubbelzinnig,
+  zonderMatch: voerZonderMatch
+} = koppelAlsaOpEanOfUrl(producten, voerAanbiedingen)
 
 const feedMerken = [...new Set(voerAanbiedingen.map((aanbieding) => aanbieding.merk).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'nl'))
-const catalogusMerken = new Set(producten.map((product) => product.brand))
-const ontbrekendeMerken = feedMerken.filter((merk) => ![...catalogusMerken].some((brand) => brand.toLowerCase() === merk.toLowerCase()))
+const catalogusMerken = new Set(producten.map((product) => normaliseer(product.brand)))
+const ontbrekendeMerken = feedMerken.filter((merk) => !catalogusMerken.has(normaliseer(merk)))
 
 let bestaand = { aanbieders: {} }
 if (existsSync(OUTPUT)) {
@@ -115,18 +118,22 @@ if (existsSync(OUTPUT)) {
   }
 }
 
+// Alleen voerlinks van Alsa Nature vervangen. Snacklinks worden door
+// scripts/koppel-alsa-upd-snacks.mjs beheerd en blijven ongemoeid.
+const voerProductIds = new Set(producten.map((product) => product.id))
 for (const [productId, lijst] of Object.entries(bestaand.aanbieders ?? {})) {
+  if (!voerProductIds.has(productId)) continue
   const over = (Array.isArray(lijst) ? lijst : []).filter((aanbieding) => aanbieding.winkel !== WINKEL)
   if (over.length) bestaand.aanbieders[productId] = over
   else delete bestaand.aanbieders[productId]
 }
 
-for (const { product, aanbieding } of [...voerKoppelingen, ...snackKoppelingen]) {
+for (const { product, aanbieding } of voerKoppelingen) {
   const lijst = bestaand.aanbieders[product.id] ?? []
   lijst.push({
     winkel: WINKEL,
     url: aanbieding.url,
-    maat: aanbieding.maat,
+    maat: product.package_size || aanbieding.maat,
     prijs: Number.isFinite(aanbieding.prijs) && aanbieding.prijs > 0 ? Number(aanbieding.prijs.toFixed(2)) : null
   })
   bestaand.aanbieders[product.id] = lijst
@@ -142,13 +149,10 @@ const regels = [
   '# Alsa Nature — TradeTracker-koppeling',
   '',
   `- Feedproducten voeding: ${voerAanbiedingen.length}`,
-  `- Feedproducten snacks: ${snackAanbiedingen.length}`,
   `- Catalogus voeding: ${producten.length} producten`,
-  `- Catalogus snacks: ${snacks.length} producten`,
   `- Betrouwbare voerkoppelingen: ${voerKoppelingen.length}`,
-  `- Betrouwbare snackkoppelingen: ${snackKoppelingen.length}`,
   `- Dubbelzinnig voer overgeslagen: ${voerDubbelzinnig.length}`,
-  `- Dubbelzinnige snacks overgeslagen: ${snackDubbelzinnig.length}`,
+  `- Voer zonder exacte EAN/URL-match: ${voerZonderMatch.length}`,
   '',
   '## Merken in de feed',
   '',
@@ -158,27 +162,27 @@ const regels = [
   '',
   ...(ontbrekendeMerken.length ? ontbrekendeMerken.map((merk) => `- ${merk}`) : ['- Geen.']),
   '',
-  'Alsa Nature verkoopt vooral zijn eigen merk en Isegrim. Zolang die producten niet in de catalogus staan, is er geen product-ID om een link aan te hangen. Voeg eerst de producten met ingrediënten en voedingswaarden toe; daarna maakt dit script de koppelingen automatisch.',
+  'Alsa Nature verkoopt vooral zijn eigen merk en Isegrim. De koppeling gebruikt',
+  'alleen een exact gelijk EAN of de directe product-URL uit de affiliate-link.',
+  'Bij twijfel blijft de winkelknop weg.',
   '',
   '## Gekoppeld voer',
   '',
   ...(voerKoppelingen.length
-    ? ['| Merk | Product | Maat | Prijs | Feednaam |', '|---|---|---|---|---|', ...voerKoppelingen.map(({ product, aanbieding }) => `| ${product.brand} | ${product.name} | ${aanbieding.maat || '—'} | ${aanbieding.prijs != null ? `€ ${aanbieding.prijs.toFixed(2).replace('.', ',')}` : '—'} | ${aanbieding.titel} |`)]
+    ? ['| Merk | Product | Maat | Prijs | Feednaam |', '|---|---|---|---|---|', ...voerKoppelingen.map(({ product, aanbieding }) => `| ${product.brand} | ${product.name} | ${product.package_size || aanbieding.maat || '—'} | ${aanbieding.prijs != null ? `€ ${aanbieding.prijs.toFixed(2).replace('.', ',')}` : '—'} | ${aanbieding.titel} |`)]
     : ['Geen betrouwbare koppelingen.']),
   '',
-  '## Gekoppelde snacks',
+  '## Voer zonder match',
   '',
-  ...(snackKoppelingen.length
-    ? ['| Merk | Snack | Prijs | Feednaam |', '|---|---|---|---|', ...snackKoppelingen.map(({ product, aanbieding }) => `| ${product.brand} | ${product.name} | ${aanbieding.prijs != null ? `€ ${aanbieding.prijs.toFixed(2).replace('.', ',')}` : '—'} | ${aanbieding.titel} |`)]
-    : ['Geen betrouwbare koppelingen.'])
+  ...(voerZonderMatch.length ? voerZonderMatch.map((product) => `- ${product.brand} — ${product.name} (${product.package_size || 'geen maat'})`) : ['- Geen.'])
 ]
 
 if (droog) {
   console.log(regels.join('\n'))
-  console.log(`\nDry-run: ${voerKoppelingen.length + snackKoppelingen.length} koppelingen, public/winkels.json niet gewijzigd.`)
+  console.log(`\nDry-run: ${voerKoppelingen.length} koppelingen, public/winkels.json niet gewijzigd.`)
 } else {
   writeFileSync(OUTPUT, `${JSON.stringify(resultaat, null, 2)}\n`)
   writeFileSync(RAPPORT, `${regels.join('\n')}\n`)
-  console.log(`Alsa Nature: ${voerKoppelingen.length + snackKoppelingen.length} koppelingen toegevoegd aan public/winkels.json.`)
+  console.log(`Alsa Nature: ${voerKoppelingen.length} voerkoppelingen toegevoegd aan public/winkels.json.`)
   console.log(`Rapport: ${RAPPORT}`)
 }
