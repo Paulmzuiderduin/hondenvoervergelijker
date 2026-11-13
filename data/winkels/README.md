@@ -67,6 +67,22 @@ Wijkt je feed af? Zet de kolomnaam expliciet in `feeds.json`:
 De winkelknop op de site krijgt `rel="sponsored nofollow noopener"` en de
 affiliate-vermelding staat in de footer en het privacybeleid.
 
+## Alsa Nature (TradeTracker)
+
+De Alsa Nature-feed staat lokaal in `data/winkels/alsa-nature.xml` (niet in git).
+Download hem in TradeTracker via **Promotiemateriaal → Productfeeds** en draai
+`npm run winkels:alsa-nature -- --dry-run` daarna zonder `--dry-run`. De feed
+bevat vooral de merken `alsa-nature` en `isegrim`; zolang die niet in de
+catalogus staan, worden er geen links toegevoegd.
+
+## Ultra Premium Direct (Daisycon)
+
+De Ultra Premium Direct-feed staat lokaal in
+`data/winkels/ultra-premium-direct.xml` (niet in git). Download hem in Daisycon
+via **Materiaal → Productfeeds** en draai
+`npm run winkels:ultra-premium-direct -- --dry-run` daarna zonder `--dry-run`.
+De koppeling gebruikt alleen een exacte EAN.
+
 ## Bestanden die niet in git horen
 
 - `feeds.json` (lokale configuratie)

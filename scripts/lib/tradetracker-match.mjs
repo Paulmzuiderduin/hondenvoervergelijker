@@ -54,25 +54,41 @@ export function formaatMaat(milligrammen) {
   return `${new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 1 }).format(waarde)} ${eenheid}`
 }
 
-export function parseTradeTrackerFeed(xml, { categorie = 'hond-voeding', categorieen = null } = {}) {
+export function parseTradeTrackerFeed(xml, { categorie = 'hond-voeding', categorieen = null, categoriePrefixen = null, winkel = 'Dierenwinkel XL' } = {}) {
   const producten = []
   const toegestaneCategorieen = categorieen ?? (Array.isArray(categorie) ? categorie : [categorie])
   for (const match of String(xml).matchAll(/<product\b[^>]*>([\s\S]*?)<\/product>/gi)) {
     const blok = match[1]
     const props = eigenschappen(blok)
-    const categoryPath = (props.categoryPath ?? '').trim()
-    if (toegestaneCategorieen.length && !toegestaneCategorieen.includes(categoryPath)) continue
+    // Dierenwinkel XL zet de categorie in categoryPath; Alsa Nature gebruikt
+    // het aparte <categories><category path="...">-blok.
+    const categoryPaths = [...blok.matchAll(/<category\b[^>]*\bpath="([^"]*)"/gi)]
+      .map((rij) => decodeer(rij[1]).trim())
+      .filter(Boolean)
+    const categoryPath = (props.categoryPath ?? '').trim() || categoryPaths[0] || ''
+    const heeftCategorieFilter = toegestaneCategorieen.length > 0 || (categoriePrefixen?.length ?? 0) > 0
+    const inToegestaneCategorie = toegestaneCategorieen.length > 0 && toegestaneCategorieen.includes(categoryPath)
+    const inToegestaanPrefix = categoriePrefixen?.some((prefix) => categoryPath === prefix || categoryPath.startsWith(`${prefix} >`)) ?? false
+    if (heeftCategorieFilter && !inToegestaneCategorie && !inToegestaanPrefix) continue
     const naam = tag(blok, 'name')
     if (!naam) continue
     const url = tag(blok, 'URL')
     if (!/^https?:\/\//i.test(url)) continue
     // Niet elk feedproduct gebruikt "Merk - Product". Bewaar zulke titels wel;
     // de snackkoppeling werkt op EAN en hoeft het merk niet uit de titel te halen.
-    const merk = naam.includes(' - ') ? naam.split(' - ')[0].trim() : ''
-    const titelZonderMerk = naam.includes(' - ') ? naam.slice(naam.indexOf(' - ') + 3).trim() : naam
+    // Alsa Nature gebruikt "merk Product, maat" en levert het merk als property.
+    const merkUitTitel = naam.includes(' - ') ? naam.split(' - ')[0].trim() : ''
+    const merk = merkUitTitel || String(props.brand ?? '').trim()
+    let titelZonderMerk = naam
+    if (naam.includes(' - ')) titelZonderMerk = naam.slice(naam.indexOf(' - ') + 3).trim()
+    else if (merk && naam.toLowerCase().startsWith(`${merk.toLowerCase()} `)) titelZonderMerk = naam.slice(merk.length).trim()
     const beschrijving = tag(blok, 'description').replace(/<[^>]+>/g, ' ')
     const eanTekst = (props.EAN ?? '').trim()
-    const maatTekst = [eanTekst, naam, beschrijving].join(' ')
+    // Bij Dierenwinkel XL staat in het EAN-veld soms een maat als "15kg".
+    // Bij Alsa Nature staat daar een echte numerieke EAN; die mag niet als
+    // gewicht worden gelezen.
+    const eanBevatMaat = /\b\d+(?:[.,]\d+)?\s*(?:kg|g|gram|gr)\b/i.test(eanTekst)
+    const maatTekst = [eanBevatMaat ? eanTekst : '', naam, beschrijving].join(' ')
     const matenLijst = maten(maatTekst)
     // Alleen een positieve europrijs is bruikbaar als indicatie. Een lege of
     // buitenlandse prijs wordt niet als € 0,00 op de site gezet.
@@ -91,7 +107,7 @@ export function parseTradeTrackerFeed(xml, { categorie = 'hond-voeding', categor
       maten: matenLijst,
       prijs,
       url,
-      winkel: 'Dierenwinkel XL'
+      winkel
     })
   }
   return producten
@@ -99,7 +115,7 @@ export function parseTradeTrackerFeed(xml, { categorie = 'hond-voeding', categor
 
 export function isBetrouwbareMatch(product, aanbieding) {
   if (!product?.brand || !product?.name || !aanbieding?.merk || !aanbieding?.titelZonderMerk) return false
-  if (aanbieding.categorie && aanbieding.categorie !== 'hond-voeding') return false
+  if (aanbieding.categorie && aanbieding.categorie !== 'hond-voeding' && aanbieding.soort !== 'voer') return false
   if (!gelijkeVerzameling(tokens(product.brand), tokens(aanbieding.merk))) return false
   if (!gelijkeVerzameling(tokens(product.name), tokens(aanbieding.titelZonderMerk))) return false
   const productMaten = maten(product.package_size)

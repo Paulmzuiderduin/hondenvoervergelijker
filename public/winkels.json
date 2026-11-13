@@ -1,6 +1,6 @@
 {
-  "bijgewerkt": "2026-11-10T20:53:52.092Z",
-  "netwerk": "TradeTracker",
+  "bijgewerkt": "2026-11-13T12:41:40.383Z",
+  "netwerk": "TradeTracker en Daisycon",
   "aanbieders": {
     "08c788d6-941d-433e-ba73-6f1c99405be5": [
       {
@@ -552,6 +552,134 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fwhimzees-toothbrush-medium%2F",
         "maat": "M",
         "prijs": 1.19
+      }
+    ],
+    "6d729d9e-7959-4305-9311-fc1b549f7d89": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=231634d2fe11743f0ca4661393832f2a&dl=producten%2Feend-vertering-hond-brokken%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 66.9
+      }
+    ],
+    "2b922f86-9c25-4854-a6a8-e360462d5a81": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=9d269e8684c1c741e34abbab95568065&dl=producten%2Fgraanvrije-brokken-verse-kip-volwassen-honden-alle-formaten%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 62.9
+      }
+    ],
+    "0330ea9f-233a-47ad-9c22-30e5eaad5fcc": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=3394936ee95b17632eaf252ba12878a5&dl=producten%2Fbrokken-zalm-vers-hond-volwassen-kleintjes%2F&ws=",
+        "maat": "7 kg",
+        "prijs": 46.9
+      }
+    ],
+    "515c649d-96dd-4981-86e7-998aaf5e2f96": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=dc5d5fd40e38bb362089819daa8d5382&dl=producten%2Fgraanvrije-brokken-met-verse-zalm-voor-puppy-van-alle-rassen%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 67.9
+      }
+    ],
+    "79974f28-d522-4504-bea8-240fd9dcc438": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=7988ab38d1f5d05dd3eda080cb0eb632&dl=producten%2Fgraanvrije-brokken-verse-zalm-volwassen-honden-alle-formaten%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 67.9
+      }
+    ],
+    "606efdd8-8ab3-4887-905a-1c007f34507f": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=ee5cc6544fec983948683e150a666ac8&dl=producten%2Fgraanvrije-brokken-origineel-volwassen-honden-en-gigantisch-sup-40-kg%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 62.9
+      }
+    ],
+    "0e0e9dbd-53ec-48d9-bd5d-bcb6234ae30a": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=3230ea30f72f61e6587dee0aa0303d8a&dl=producten%2Flight-graanvrije-brokken-voor-gesteriliseerde-honden-met-overgewicht%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 62.9
+      }
+    ],
+    "cf010be2-827c-4fba-8c19-d3186634c177": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=29243c1b574a5a8a9f058906d99bf3aa&dl=producten%2Fbrokken-huid-en-pels-voor-honden%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 71.9
+      }
+    ],
+    "790f2ed6-82f0-446a-b5cb-6c013b78bb04": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=7e433bdcb665157ad0255cace361c3fe&dl=producten%2Fhypoallergene-brokken-allergische-honden%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 63.9
+      }
+    ],
+    "3e4a8040-4121-4f60-9e05-ba5e00b2efcc": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=9741a42d959cae310ad6a9f02e3e7619&dl=producten%2Flight-super-premium-brokken-voor-gesteriliseerde-honden-met-overgewicht%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 47.9
+      }
+    ],
+    "d9fdcf20-723c-4a9b-a4ea-5fb9943f37a6": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=2813c71a3e3c7c5f6b6ab5ea128a2635&dl=producten%2Fbrokken-honden-senior-love-care%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 59.9
+      }
+    ],
+    "590141d3-04df-4748-9022-7f3b4db5c886": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=f283a4933633cc7d5652b6ec11686525&dl=producten%2Fbrokken-super-premium-voor-honden-zalm-en-rijst%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 48.9
+      }
+    ],
+    "5a798ec6-84e0-4f6f-96a0-9e6e26d9e7ef": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=21da87912a7675f27102ce2cc37a0734&dl=producten%2Fbrokken-super-premium-voor-actieve-honden-van-alle-formaten%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 46.9
+      }
+    ],
+    "4327737f-4ffc-49e5-bf22-43f5663c6165": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=80a79c364b025cf5b13aa11892f7656e&dl=producten%2Fbrokken-super-premium-voor-kleine-honden%2F&ws=",
+        "maat": "8 kg",
+        "prijs": 36.9
+      }
+    ],
+    "6b026cfa-5704-4253-b17d-81832937596c": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=c45e9ac474413f8ffee87c69eb4c907f&dl=producten%2Fbrokken-super-premium-voor-middelgrote-honden%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 46.9
+      }
+    ],
+    "c221963f-b477-4125-90da-bdd96ee50394": [
+      {
+        "winkel": "Ultra Premium Direct",
+        "url": "https://glp8.net/c/?si=21834&li=1984214&wi=446454&pid=d2fd907f0721f1d1a4ad411aba579335&dl=producten%2FSuper-Premium-brokken-voor-puppy-van-alle-groottes%2F&ws=",
+        "maat": "12 kg",
+        "prijs": 47.9
       }
     ]
   }

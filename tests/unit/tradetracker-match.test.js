@@ -86,3 +86,14 @@ test('parser bewaart alleen een positieve europrijs als indicatie', () => {
   const rijen = parseTradeTrackerFeed(xml)
   assert.deepEqual(rijen.map((rij) => rij.prijs), [12.5, null, null, null])
 })
+
+test('parser leest Alsa-achtige feed met category path en brand-property', () => {
+  const xml = `<products><product><name>alsa-nature Hert &amp; Aardappel granenvrij, 12 kg</name><price currency="EUR">87.50</price><URL>https://winkel.test/?tt=31843_1814066_518755_&amp;r=https%3A%2F%2Fwinkel.test%2Fp%2F1</URL><description><![CDATA[Compleet voer]]></description><categories><category path="Hondenvoeding &gt; Droogvoer">Hondenvoeding &gt; Droogvoer</category></categories><properties><property name="EAN"><value>4050001106344</value></property><property name="brand"><value>alsa-nature</value></property></properties></product></products>`
+  const rijen = parseTradeTrackerFeed(xml, { categorieen: [], categoriePrefixen: ['Hondenvoeding > Droogvoer'], winkel: 'Alsa Nature' })
+  assert.equal(rijen.length, 1)
+  assert.equal(rijen[0].merk, 'alsa-nature')
+  assert.equal(rijen[0].titelZonderMerk, 'Hert & Aardappel granenvrij, 12 kg')
+  assert.equal(rijen[0].winkel, 'Alsa Nature')
+  assert.equal(rijen[0].ean, '4050001106344')
+  assert.deepEqual(rijen[0].maten, [12000])
+})

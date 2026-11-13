@@ -16,6 +16,8 @@ data/winkels/*.xml
 data/winkels/feeds.json
 data/winkels/rapport.md
 data/winkels/rapport-dierenwinkelxl.md
+data/winkels/rapport-alsa-nature.md
+data/winkels/rapport-ultra-premium-direct.md
 
 # Lokale database-back-ups (gaan als artifact mee in de workflow).
 data/backup/

@@ -135,6 +135,33 @@ snacklinks bij. De europrijs uit de feed wordt als vanaf-prijs (laagste
 variantprijs) opgeslagen en bij de winkelknop getoond. Ververs de feed
 regelmatig; de actuele winkelprijs kan afwijken.
 
+### Alsa Nature (TradeTracker)
+
+Alsa Nature is goedgekeurd als TradeTracker-campagne. De productfeed staat
+lokaal in `data/winkels/alsa-nature.xml` en wordt niet gecommit.
+
+1. Download de actuele XML-feed uit TradeTracker en vervang het lokale bestand.
+2. Draai `npm run winkels:alsa-nature -- --dry-run` en controleer het rapport.
+3. Draai `npm run winkels:alsa-nature` om `public/winkels.json` bij te werken.
+
+De feed bevat vooral het merk `alsa-nature` en `isegrim`. Zolang die producten
+niet in de catalogus staan, levert de koppeling nul links op. Het script staat
+klaar om ze automatisch te koppelen zodra de producten met ingrediënten en
+voedingswaarden zijn toegevoegd.
+
+### Ultra Premium Direct (Daisycon)
+
+Ultra Premium Direct is goedgekeurd als Daisycon-campagne. De feed staat lokaal
+in `data/winkels/ultra-premium-direct.xml` en wordt niet gecommit.
+
+1. Download de actuele XML-feed uit Daisycon en vervang het lokale bestand.
+2. Draai `npm run winkels:ultra-premium-direct -- --dry-run`.
+3. Draai `npm run winkels:ultra-premium-direct` om `public/winkels.json` bij te werken.
+
+De koppeling gebruikt alleen een exacte EAN. Producten zonder EAN of met een
+afwijkende EAN krijgen geen winkelknop; een verkeerde link is erger dan geen
+link. Het rapport staat in `data/winkels/rapport-ultra-premium-direct.md`.
+
 ## Terugvallen op GitHub Pages
 
 GitHub Pages is ingericht als terugvaloptie en heeft geen eigen domein meer.

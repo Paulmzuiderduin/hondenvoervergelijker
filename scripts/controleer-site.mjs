@@ -256,7 +256,12 @@ try {
   const winkelsJson = winkelsAntwoord.ok() ? await winkelsAntwoord.json().catch(() => ({})) : {}
   const winkelLinks = Object.values(winkelsJson.aanbieders ?? {}).flat()
   const winkelLinksMetPrijs = winkelLinks.filter((link) => Number.isFinite(link.prijs) && link.prijs > 0)
-  meld(winkelsAntwoord.ok() && winkelLinks.length >= 30 && winkelLinks.every((link) => link.winkel === 'Dierenwinkel XL' && /tt=4019_/.test(link.url) && (link.prijs == null || (Number.isFinite(link.prijs) && link.prijs > 0))) && winkelLinksMetPrijs.length >= 30, 'winkelkoppeling bevat betrouwbare Dierenwinkel XL-links met vanaf-prijs', `${winkelLinks.length} links, ${winkelLinksMetPrijs.length} met prijs`)
+  const geldigeWinkellink = (link) =>
+    ['Dierenwinkel XL', 'Ultra Premium Direct'].includes(link.winkel) &&
+    (link.winkel === 'Dierenwinkel XL' ? /tt=4019_/.test(link.url) : /^https:\/\/glp8\.net\/c\//.test(link.url)) &&
+    (link.prijs == null || (Number.isFinite(link.prijs) && link.prijs > 0))
+  const updLinks = winkelLinks.filter((link) => link.winkel === 'Ultra Premium Direct')
+  meld(winkelsAntwoord.ok() && winkelLinks.length >= 30 && winkelLinks.every(geldigeWinkellink) && winkelLinksMetPrijs.length >= 30 && updLinks.length >= 10, 'winkelkoppelingen bevatten betrouwbare links met vanaf-prijs', `${winkelLinks.length} links, ${winkelLinksMetPrijs.length} met prijs, ${updLinks.length} Ultra Premium Direct`)
 
   await open('/?zoek=Acana%20Adult%20Dog%20Recipe', '.product-card')
   await page.waitForSelector('.shop-link', { timeout: 10000 })
@@ -277,7 +282,7 @@ try {
   meld(privacy.includes('hondenvoervergelijker@paulzuiderduin.com'), 'privacybeleid heeft het juiste contactadres')
   meld(privacy.includes('Umami'), 'privacybeleid noemt de bezoekersstatistieken')
   meld(/feedbackknop/i.test(privacy) && /twaalf maanden/i.test(privacy), 'privacybeleid beschrijft de feedback en bewaartermijn')
-  meld(/TradeTracker/i.test(privacy) && /Dierenwinkel XL/i.test(privacy), 'privacybeleid noemt TradeTracker en Dierenwinkel XL')
+  meld(/TradeTracker/i.test(privacy) && /Dierenwinkel XL/i.test(privacy) && /Daisycon/i.test(privacy) && /Ultra Premium Direct/i.test(privacy), 'privacybeleid noemt de gebruikte affiliate-netwerken en winkels')
 
   await open('/hondenvoer-zonder-kip.html', '.answer-box')
   const faqAantal = await page.locator('.faq details').count()
