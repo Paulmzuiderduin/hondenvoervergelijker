@@ -352,6 +352,8 @@ try {
   const snackMerkHrefs = await page.locator('.snack-card a.product-brand').evaluateAll((links) => links.map((link) => link.getAttribute('href')))
   meld(snackStatusKnoppen >= 2 && /Je sluit uit/i.test(snackActiebalk), 'snackresultaten hebben dezelfde statusfilters en actiebalk', `${snackStatusKnoppen} statusknoppen · ${snackActiebalk.replace(/\n/g, ' ').slice(0, 80)}`)
   meld(/Uitsluiting/i.test(snackKaartlabel), 'snackkaarten gebruiken dezelfde uitsluitingsopbouw', snackKaartlabel)
+  const snackInfoMinHeight = await page.locator('.snack-card .product-verdict-block').first().evaluate((el) => getComputedStyle(el).minHeight)
+  meld(snackInfoMinHeight === '0px', 'snackkaarten hebben geen starre minimumhoogte', snackInfoMinHeight)
   meld(snackMerkLinks > 0 && snackMerkHrefs.every((href) => href?.startsWith('/hondensnacks/merken/')), 'snackmerken linken naar snackmerkpagina’s', `${snackMerkLinks} merklink(en)`)
   if (snackMerkHrefs[0]) {
     const snackMerkPagina = await context.request.get(`${BASIS}${snackMerkHrefs[0]}`)

@@ -53,7 +53,9 @@
 
 .snack-card .product-verdict-block,
 .snack-card .nutrition-summary {
-  min-height: 100%;
+  /* Geen min-height: 100%: in sommige browsers leidt dat bij een smalle
+     gridkolom tot een cyclische hoogte en extreem lange kaarten. */
+  min-height: 0;
 }
 
 .snack-trace {
