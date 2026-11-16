@@ -4555,3 +4555,66 @@ button.summary-pill {
 .product-details-section .nutrition-view {
   margin: 0.25rem 0 0.5rem;
 }
+
+.shop-links-label {
+  color: #334d3a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Alle winkel-links passen in de bestaande actieregel: één compacte,
+   horizontaal scrollbare rij in plaats van een extra blok onder de kaart. */
+.card-shops {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.shop-links-scroll {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: thin;
+  scrollbar-color: #b9c9bd transparent;
+}
+
+.shop-links-scroll .shop-link {
+  flex: 0 0 auto;
+  padding: 0.2rem 0.45rem;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.card-shops .shop-links-label {
+  flex: none;
+  font-size: 0.7rem;
+}
+
+.card-shops .shop-note {
+  flex: none;
+  font-size: 0.62rem;
+}
+
+@media (max-width: 700px) {
+  .product-card-actions .card-shops {
+    flex: 1 1 100%;
+    order: 2;
+  }
+
+  .product-card-actions .manufacturer-link {
+    order: 3;
+  }
+}
+
+@media (max-width: 560px) {
+  .product-card-actions .manufacturer-link {
+    order: 4;
+  }
+}

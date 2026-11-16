@@ -245,7 +245,30 @@ function SnackCard({ product, match, heeftKeuze, aanbiedingen = [], aanbodBijgew
         <input type="checkbox" checked={vergelijk} disabled={vergelijkVol && !vergelijk} onChange={() => onVergelijk(product.id)} />
         Vergelijk
       </label>
-      <span className="product-actions-spacer" />
+      {aanbiedingen.length > 0
+        ? <div className="card-shops" title={`Affiliate-links · prijzen uit de feed${prijsDatum ? ` van ${prijsDatum}` : ''}, kunnen afwijken`}>
+            <span className="shop-links-label">Waar te koop:</span>
+            <div className="shop-links-scroll">
+              {aanbiedingen.map((aanbieding) => {
+                const prijs = Number(aanbieding.prijs)
+                const heeftPrijs = Number.isFinite(prijs) && prijs > 0
+                return <a
+                  key={`${aanbieding.winkel}-${aanbieding.url}`}
+                  className="shop-link"
+                  href={aanbieding.url}
+                  target="_blank"
+                  rel="sponsored nofollow noopener noreferrer"
+                  title={`Affiliate-link naar ${aanbieding.winkel}${heeftPrijs ? ` · ${PRIJS.format(prijs)}` : ''}. Wij ontvangen een kleine commissie.`}
+                  onClick={() => track('winkel-klik', { winkel: aanbieding.winkel, merk: product.brand, product: product.name })}
+                >
+                  <span className="shop-link-label">{aanbieding.winkel}{aanbieding.maat ? ` (${aanbieding.maat})` : ''}</span>
+                  {heeftPrijs && <span className="shop-price">{PRIJS.format(prijs)}</span>}
+                </a>
+              })}
+            </div>
+            <span className="shop-note">Affiliate</span>
+          </div>
+        : <span className="product-actions-spacer" />}
       {source.startsWith('http')
         ? <a className="manufacturer-link" href={source} target="_blank" rel="noreferrer" title="Officiële productpagina of gebruikte bron">Etiket bij {product.brand} ↗</a>
         : <span className="manufacturer-link unavailable">Bron niet beschikbaar</span>}

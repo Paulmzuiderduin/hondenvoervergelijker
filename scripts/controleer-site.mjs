@@ -280,6 +280,9 @@ try {
   const prijsTekst = await page.locator('.product-price').first().innerText()
   meld(/Dierenwinkel XL/.test(prijsTekst) && /sponsored/.test(prijsRel || '') && /€/.test(prijsTekst), 'affiliateprijs toont winkel en vanaf-prijs', `${prijsTekst.replace(/\n/g, ' ')} · ${prijsRel}`)
   meld(/vanaf/i.test(prijsTekst) && /affiliate/i.test(prijsTekst), 'affiliateprijs is als zodanig gelabeld', prijsTekst.replace(/\n/g, ' '))
+  const shopRij = await page.locator('.product-card .card-shops .shop-link').count()
+  const shopInDetails = await page.locator('.product-details .shop-link').count()
+  meld(shopRij >= 1 && shopInDetails === 0, 'winkellinks staan zichtbaar op de kaart, niet in de details', `${shopRij} link(s) · ${shopInDetails} in details`)
 
   await open('/hypoallergene-hondenvoeding.html', '.stat-grid')
   const hypo = await page.locator('body').innerText()
