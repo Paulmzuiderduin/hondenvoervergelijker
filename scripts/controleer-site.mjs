@@ -243,8 +243,11 @@ try {
   const merken = await page.locator('.product-list a').count()
   meld(merken >= 60, 'merkenoverzicht is compleet', `${merken} merken`)
 
-  await open('/merken/acana.html', '.product-list')
-  const productHref = await page.locator('.product-list a.product-more').first().getAttribute('href')
+  await open('/merken/acana.html', '.product-grid')
+  const brandCards = await page.locator('.product-grid .product-card').count()
+  const brandTags = await page.locator('.product-grid .product-card .tag').count()
+  meld(brandCards >= 1 && brandTags >= 1, 'merkpagina toont productkaarten met status', `${brandCards} kaarten · ${brandTags} tags`)
+  const productHref = await page.locator('.product-grid .product-title a').first().getAttribute('href')
   const productAntwoord = await context.request.get(`${BASIS}${productHref}`)
   const productHtml = await productAntwoord.text()
   meld(productAntwoord.ok() && /<h1>/.test(productHtml) && /Allergenen en het etiket/.test(productHtml) && /Ingrediëntenlijst/.test(productHtml) && /"@type":"Product"/.test(productHtml) && !/"offers"/.test(productHtml) && !/>null</.test(productHtml) && /class="product-shops"/.test(productHtml), 'productpagina is indexeerbaar, gevuld en zonder offers-schema', productHref)

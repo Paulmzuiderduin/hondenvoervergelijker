@@ -965,3 +965,17 @@ a.blog-card-categorie:hover { text-decoration: underline; }
 .product-shops .partner-note {
   margin: 0.7rem 0 0;
 }
+
+/* Status en actie onderaan de productkaart */
+.product-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.3rem;
+}
+
+.product-card-footer .product-details {
+  margin-top: 0;
+}

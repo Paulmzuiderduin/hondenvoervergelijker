@@ -136,7 +136,7 @@ function merkPagina(brand, producten, buren = []) {
       <p class="lead">${producten.length} snack${producten.length === 1 ? '' : 's'} van ${escapeHtml(brand)}${typeSamenvatting ? ` (${typeSamenvatting})` : ''}, met de letterlijke ingrediëntenlijst en de bronnen die het etiket noemt.${laatste ? ` Laatst gecontroleerd op ${escapeHtml(datumNl(laatste))}.` : ''}</p>
       <p><a class="cta" href="/hondensnacks/?merk=${encodeURIComponent(brand)}">Vergelijk ${escapeHtml(brand)} in de snackvergelijker</a></p>
       <div class="callout">
-        <p>“Etiket volledig” betekent: elk ingrediënt noemt een bron bij name. “Controleer etiket” betekent: er staat een verzamelterm in de lijst (zoals “dierlijke bijproducten” of “granen”) of een woord dat de keuring niet kent.${controleNodig ? ` Dat geldt voor ${controleNodig} van de ${producten.length} snacks.` : ` Alle ${producten.length} snacks noemen elke bron bij name.`}</p>
+        <p>“Etiket volledig” betekent: elk ingrediënt noemt een bron bij naam. “Controleer etiket” betekent: er staat een verzamelterm in de lijst (zoals “dierlijke bijproducten” of “granen”) of een woord dat de keuring niet kent.${controleNodig ? ` Dat geldt voor ${controleNodig} van de ${producten.length} snacks.` : ` Alle ${producten.length} snacks noemen elke bron bij naam.`}</p>
       </div>
 
       <h2>Alle snacks van ${escapeHtml(brand)}</h2>
@@ -146,7 +146,7 @@ ${producten.map(productKaart).join('\n')}
       ${heeftWinkelLinks ? `<p class="partner-note"><small>Sommige winkellinks zijn affiliate-links. De selectie, volgorde en beoordeling zijn daar niet van afhankelijk. De getoonde prijs komt uit de productfeed${WINKELDATA.bijgewerkt ? ` van ${escapeHtml(datumNl(WINKELDATA.bijgewerkt))}` : ''} en kan in de winkel afwijken.</small></p>` : ''}
 
       <h2>Over deze snackmerkpagina</h2>
-      <p>De ingrediëntenlijsten komen van de officiële productpagina's van ${escapeHtml(brand)}. De snackvergelijker neemt de tekst letterlijk over en beoordeelt per allergeen of de bron bij name genoemd is. Kies in de vergelijker de allergenen van jouw hond om te zien welke snacks geschikt lijken, welke uitgesloten zijn en waar je het etiket moet controleren.</p>
+      <p>De ingrediëntenlijsten komen van de officiële productpagina's van ${escapeHtml(brand)}. De snackvergelijker neemt de tekst letterlijk over en beoordeelt per allergeen of de bron bij naam genoemd is. Kies in de vergelijker de allergenen van jouw hond om te zien welke snacks geschikt lijken, welke uitgesloten zijn en waar je het etiket moet controleren.</p>
       <p><a class="cta" href="/hondensnacks/?merk=${encodeURIComponent(brand)}">Open ${escapeHtml(brand)} in de snackvergelijker</a> <a class="cta secondary" href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a></p>
 
       ${buren.length ? `<h2>Andere snackmerken</h2>
