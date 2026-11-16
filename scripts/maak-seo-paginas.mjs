@@ -847,6 +847,7 @@ function allergeenPagina(key, kort, producten) {
       <section class="section-card">
         <h2>Wat is ${escapeHtml(kort)} en waar zit het in?</h2>
         <p>${escapeHtml(context.wat ?? `Een etiket noemt ${allergeenKlein} niet altijd letterlijk. Soms staat er een verzamelterm of een andere naam voor dezelfde bron.`)}</p>
+        ${Array.isArray(context.uitleg) ? context.uitleg.map((alinea) => `<p>${escapeHtml(alinea)}</p>`).join('\n        ') : ''}
         <p>Op etiketten kan ${escapeHtml(allergeenKlein)} ook schuilgaan achter termen als ${verbergtTekst}. Die termen noemen de bron niet altijd. Daarom beoordeelt de vergelijker niet alleen het woord zelf, maar ook de woorden eromheen.</p>
       </section>
 
@@ -911,6 +912,8 @@ ${lijst}
 ${tips.map((tip) => `          <li>${escapeHtml(tip)}</li>`).join('\n')}
         </ul>
         <p>Let ook op kruisbesmetting in de fabriek en op snacks of beloningen naast de hoofdmaaltijd. Die staan niet in deze lijst.</p>
+        ${key === 'chicken' ? '        <p><strong>Ook rund vermijden?</strong> <a href="/?allergeen=chicken&amp;allergeen=beef">Vergelijk hondenvoer zonder kip én rund</a>.</p>' : ''}
+        ${key === 'chicken' ? '        <p>Lees ook <a href="/blog/hondenvoer-zonder-kip.html">kip onder andere namen op het etiket</a>.</p>' : ''}
       </section>
 
       <section class="section-card">
@@ -1339,6 +1342,7 @@ ${relevanteAllergenen || '<a class="related-allergen" href="/hondenvoer-zonder.h
 
 function zonderHub(paginas) {
   const perKey = new Map(paginas.map((pagina) => [pagina.key, pagina]))
+  const kipPagina = perKey.get('chicken')
   const groepen = ALLERGEEN_GROEPEN
     .map(({ titel, keys }) => ({ titel, paginas: keys.map((key) => perKey.get(key)).filter(Boolean) }))
     .filter(({ paginas: groep }) => groep.length)
@@ -1375,7 +1379,18 @@ ${groep.map(kaart).join('\n')}
         </div>
       </section>
 
-      <div class="callout">
+${kipPagina ? `      <section class="section-card popular-allergen" aria-labelledby="populair-kip">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Meest gezocht</p>
+            <h2 id="populair-kip">Hondenvoer zonder kip</h2>
+          </div>
+          <a class="cta" href="${kipPagina.pad}">Bekijk ${getal(kipPagina.aantal)} producten</a>
+        </div>
+        <p>Kip is een van de meest gebruikte eiwitbronnen in hondenvoer. Op het etiket staat soms alleen “gevogelte”, “kippenvet” of “bouillon”. Bekijk de producten waarbij het etiket kip niet noemt en geen onduidelijke term die kip kan verbergen.</p>
+      </section>
+
+` : ''}      <div class="callout">
         <p><strong>Hoe lees ik dit overzicht?</strong> De aantallen zeggen hoeveel producten het allergeen niet noemen en geen onduidelijke term bevatten die het kan verbergen. Het is een indicatie op basis van het etiket, geen garantie en geen medisch advies.</p>
       </div>
 

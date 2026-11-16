@@ -79,6 +79,8 @@ try {
   meld(await page.locator('.pager select').count() === 0 && pagerKnoppen > 1, 'paginering gebruikt genummerde knoppen in plaats van een lange keuzelijst', `${pagerKnoppen} paginaknoppen`)
   const kaartProductpad = await page.locator('.product-name a').first().getAttribute('href')
   meld(/^\/producten\/[a-z0-9-]+\/[a-z0-9-]+\.html$/.test(kaartProductpad), 'productkaart linkt naar de indexeerbare productpagina', kaartProductpad)
+  const kipLinkVanafHome = await page.locator('a[href="/hondenvoer-zonder-kip.html"]').count()
+  meld(kipLinkVanafHome >= 1, 'homepage linkt naar het overzicht zonder kip', `${kipLinkVanafHome} link(s)`)
 
   // 2. Allergeen via de URL
   await open('/?allergeen=chicken', '.product-card')
@@ -289,7 +291,18 @@ try {
   meld(/feedbackknop/i.test(privacy) && /twaalf maanden/i.test(privacy), 'privacybeleid beschrijft de feedback en bewaartermijn')
   meld(/TradeTracker/i.test(privacy) && /Dierenwinkel XL/i.test(privacy) && /Daisycon/i.test(privacy) && /Ultra Premium Direct/i.test(privacy), 'privacybeleid noemt de gebruikte affiliate-netwerken en winkels')
 
+  await open('/hondenvoer-zonder.html', '.popular-allergen')
+  const hubKip = await page.locator('.popular-allergen').innerText()
+  const hubKipLink = await page.locator('.popular-allergen a[href="/hondenvoer-zonder-kip.html"]').count()
+  meld(/Hondenvoer zonder kip/i.test(hubKip) && hubKipLink === 1, 'allergeenhub zet hondenvoer zonder kip bovenaan', hubKip.replace(/\n/g, ' ').slice(0, 120))
+
   await open('/hondenvoer-zonder-kip.html', '.answer-box')
+  const kipTitel = await page.title()
+  meld(/hondenvoer zonder kip/i.test(kipTitel), 'kippagina heeft een gerichte titel', kipTitel)
+  const kipCombinatie = await page.locator('a[href="/?allergeen=chicken&allergeen=beef"]').count()
+  meld(kipCombinatie === 1, 'kippagina linkt naar de combinatie zonder kip en rund', `${kipCombinatie} link`)
+  const kipBlogLink = await page.locator('a[href="/blog/hondenvoer-zonder-kip.html"]').count()
+  meld(kipBlogLink === 1, 'kippagina linkt naar het blogartikel', `${kipBlogLink} link`)
   const faqAantal = await page.locator('.faq details').count()
   meld(faqAantal >= 4, 'allergeenpagina heeft een FAQ', `${faqAantal} vragen`)
   const citeerblok = await page.locator('.cite').innerText()

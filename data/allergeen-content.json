@@ -1,13 +1,20 @@
 {
-  "_bijgewerkt": "2026-11-09",
+  "_bijgewerkt": "2026-11-16",
   "chicken": {
     "wat": "Kip is een van de meest gebruikte eiwitbronnen in hondenvoer. Een etiket noemt lang niet altijd letterlijk “kip”; soms staat er alleen “gevogelte”, “kippenvet” of een bouillon.",
-    "direct": ["kip", "kippenvet", "kippenlever", "kippenei"],
-    "verbergt": ["gevogelte", "gevogeltevet", "bouillon", "dierlijk eiwit", "pluimveevlees", "kippenhydrolysaat"],
+    "uitleg": [
+      "Kip komt in veel vormen voor: als vers vlees, gedehydrateerd vlees, orgaanvlees, vet, bouillon of collageen. Al die vormen zijn van dezelfde diersoort, ook als het etiket een andere naam gebruikt.",
+      "Staat er alleen “gevogelte”, dan kan kip bedoeld zijn, maar ook kalkoen, eend of gans. Zonder nadere aanduiding is niet zeker of kip erin zit.",
+      "Kip en ei zijn verschillende allergenen. Een product zonder kip is dus niet automatisch zonder ei. Let daar apart op als je beide wilt vermijden."
+    ],
+    "direct": ["kip", "kippenvlees", "kippenvet", "kippenlever", "kippenhart", "kippenmaag", "kippennek", "kippenbouillon", "kippencollageen", "kippenhydrolysaat"],
+    "verbergt": ["gevogelte", "gevogelte-eiwit", "gevogeltevet", "gevogeltehydrolysaat", "pluimveevlees", "pluimveevet", "bouillon", "dierlijk eiwit", "dierlijk vet"],
     "tips": [
       "Let op “gevogelte”: dat kan kip, kalkoen, eend of gans zijn.",
       "Kijk ook naar vetten, bouillons en hydrolysaat; die kunnen van kip komen.",
-      "Vraag de fabrikant naar de diersoort achter een verzamelterm als “dierlijk eiwit”."
+      "Lees de hele ingrediëntenlijst: kip kan verderop staan, bijvoorbeeld in een bouillon of als gehydrolyseerd eiwit.",
+      "Vraag de fabrikant naar de diersoort achter een verzamelterm als “dierlijk eiwit”.",
+      "Vermijd je kip én rund? Zet in de vergelijker beide allergenen aan; de site beoordeelt ze apart."
     ],
     "faq": [
       {
@@ -17,9 +24,21 @@
       {
         "vraag": "Kan kip in “dierlijk vet” zitten?",
         "antwoord": "Ja. Dierlijk vet kan van kip, maar ook van rund, varken of lam komen. Het etiket noemt de diersoort niet."
+      },
+      {
+        "vraag": "Is kippenvet hetzelfde als kip?",
+        "antwoord": "Kippenvet is afkomstig van kip. Het etiket noemt de diersoort hier wel. Of je kippenvet ook wilt vermijden, hangt af van je situatie; bespreek dat met je dierenarts."
+      },
+      {
+        "vraag": "Zijn kip en ei hetzelfde allergeen?",
+        "antwoord": "Nee. Kip en ei zijn verschillende allergenen. Een product zonder kip is niet automatisch zonder ei. Let dus apart op ei als je dat ook wilt vermijden."
+      },
+      {
+        "vraag": "Kan ik kip en rund tegelijk uitsluiten?",
+        "antwoord": "Ja. Kies in de vergelijker zowel Kip als Rund. De lijst laat dan alleen producten zien die geen van beide noemen. Gebruik daarvoor de knop “Vergelijk zonder kip én rund” op deze pagina."
       }
     ],
-    "relatie": "Kip hoort bij de groep gevogelte, net als kalkoen, eend en gans."
+    "relatie": "Kip hoort bij de groep gevogelte, net als kalkoen, eend en gans. Een etiket met “gevogelte” noemt de diersoort niet altijd."
   },
   "beef": {
     "wat": "Rund is een veelgebruikte bron van vlees, vet en bouillon. Op etiketten kan rund ook achter “dierlijk vet”, “bouillon” of “gelatine” schuilgaan.",

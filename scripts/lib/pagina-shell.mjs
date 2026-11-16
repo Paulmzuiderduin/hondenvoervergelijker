@@ -157,6 +157,7 @@ ${inhoud}
           <a href="/merken/">Alle merken</a>
           <a href="/hondenvoer-allergieen.html">Hondenvoer en allergieën</a>
           <a href="/hondenvoer-zonder.html">Zonder allergeen</a>
+          <a href="/hondenvoer-zonder-kip.html">Zonder kip</a>
           <a href="/hoe-wij-vergelijken.html">Hoe wij vergelijken</a>
           <a href="/etikettenonderzoek.html">Etikettenonderzoek</a>
           <a href="/broncontrole.html">Broncontrole</a>

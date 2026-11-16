@@ -3,7 +3,7 @@ title: "Hondenvoer zonder kip vergelijken"
 slug: "hondenvoer-zonder-kip"
 description: "Kip kan onder veel namen op het etiket staan. Zo zoek je gericht en zie je waarom sommige producten op “Controleer” blijven staan."
 date: "2026-11-09"
-updated: "2026-11-09"
+updated: "2026-11-16"
 category: "Hondenvoer kiezen"
 author: "Paul Zuiderduin"
 medical: true
@@ -32,13 +32,14 @@ Op etiketten kun je bijvoorbeeld tegenkomen:
 - kippenlever
 - kippenhart
 - kippenvet
-- kippenei
 - gevogelte
 - bouillon
 - dierlijke bijproducten
 - gehydrolyseerd kippeneiwit
 
 Niet elke term is even specifiek. “Gevogelte” kan bijvoorbeeld meerdere vogelsoorten omvatten. “Dierlijke bijproducten” noemt de diersoort niet. En “bouillon” of “dierlijk vet” zegt niet welke bron is gebruikt.
+
+Kip en ei zijn verschillende allergenen. Een product zonder kip is dus niet automatisch zonder ei. Let daar apart op als je beide wilt vermijden.
 
 ## Waarom “kipvrij” niet altijd genoeg is
 

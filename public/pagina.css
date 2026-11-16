@@ -167,6 +167,13 @@ li { margin: 0.25rem 0; }
 .callout p:last-child { margin-bottom: 0; }
 .callout.warn { background: var(--check-soft); border-color: #eadfc4; }
 
+.popular-allergen {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+}
+.popular-allergen .section-head { margin-bottom: 0.35rem; }
+.popular-allergen p { max-width: 78ch; }
+
 /* Secties */
 .section-card {
   margin: 1.1rem 0;
