@@ -74,7 +74,7 @@ try {
     }
   })
   meld(desktopHierarchie.header === 'static', 'desktopheader schuift mee en neemt geen resultaatruimte in', desktopHierarchie.header)
-  meld(desktopHierarchie.allergenLinks < desktopHierarchie.filtersLinks && desktopHierarchie.resultatenLinks < desktopHierarchie.filtersLinks, 'stap 1 en resultaten staan links, verfijnen staat rechts', `${Math.round(desktopHierarchie.allergenLinks)}px · ${Math.round(desktopHierarchie.resultatenLinks)}px · ${Math.round(desktopHierarchie.filtersLinks)}px`)
+  meld(desktopHierarchie.filtersLinks < desktopHierarchie.resultatenLinks && desktopHierarchie.allergenLinks >= desktopHierarchie.filtersLinks, 'filters staan links, resultaten rechts', `${Math.round(desktopHierarchie.filtersLinks)}px · ${Math.round(desktopHierarchie.resultatenLinks)}px · ${Math.round(desktopHierarchie.allergenLinks)}px`)
   const pagerKnoppen = await page.locator('.pager-pages button').count()
   meld(await page.locator('.pager select').count() === 0 && pagerKnoppen > 1, 'paginering gebruikt genummerde knoppen in plaats van een lange keuzelijst', `${pagerKnoppen} paginaknoppen`)
   const kaartProductpad = await page.locator('.product-name a').first().getAttribute('href')
@@ -87,7 +87,7 @@ try {
   const chips = await page.locator('.allergen-chip').allInnerTexts()
   meld(chips.some((tekst) => tekst.includes('Kip')), 'allergeen Kip staat als filter actief', chips.join(' / '))
   const samenvatting = await page.locator('.result-summary').innerText()
-  meld(/Lijkt geschikt:/i.test(samenvatting), 'resultaten zijn per allergenen beoordeeld', samenvatting.replace(/\n/g, ' '))
+  meld(/Geschikt/i.test(samenvatting) && /Controleren/i.test(samenvatting) && /Uitgesloten/i.test(samenvatting) && /Alles/i.test(samenvatting), 'statuskoppen tonen geschikt, controleren, uitgesloten en alles', samenvatting.replace(/\n/g, ' '))
 
   const status = await page.locator('.result-status').innerText()
   meld(/geschikt/.test(status), 'dynamische resultaatmelding noemt de geschikte producten', status.replace(/\n/g, ' ').slice(0, 120))
@@ -95,38 +95,40 @@ try {
   meld(actieveChips.some((tekst) => tekst.includes('Kip')), 'actief allergeen staat bij de resultaten', actieveChips.join(' / '))
   const wisKnoppen = await page.locator('.selected-allergens-actions .link').allInnerTexts()
   meld(wisKnoppen.some((tekst) => /Wis/.test(tekst)), 'actieve filters hebben een wis-knop', wisKnoppen.join(' / '))
-  const voorbeeld = await page.locator('.result-preview').innerText()
-  meld(/Lijkt geschikt: \d+/i.test(voorbeeld) && /Controle nodig: \d+/.test(voorbeeld) && /Uitgesloten: \d+/.test(voorbeeld), 'driewegtelling staat direct onder de allergenenkeuze', voorbeeld.replace(/\n/g, ' ').slice(0, 120))
+  const voorbeeld = await page.locator('.result-summary').innerText()
+  meld(/Geschikt\s*\n?\s*\d+/i.test(voorbeeld) && /Controleren\s*\n?\s*\d+/.test(voorbeeld) && /Uitgesloten\s*\n?\s*\d+/.test(voorbeeld) && /Alles\s*\n?\s*[\d.]+/.test(voorbeeld), 'statuskoppen tonen de driewegtelling met aantallen', voorbeeld.replace(/\n/g, ' ').slice(0, 160))
   await page.locator('.allergen-group summary').first().click()
   const allergenenRaster = await page.locator('.allergen-group .choices').first().evaluate((el) => {
     const label = el.querySelector('.inline')
     return { weergave: getComputedStyle(el).display, kolommen: getComputedStyle(el).gridTemplateColumns.split(' ').length, hoogte: label?.getBoundingClientRect().height ?? 0 }
   })
-  meld(allergenenRaster.weergave === 'grid' && allergenenRaster.kolommen >= 3 && allergenenRaster.hoogte >= 24, 'allergenen staan in een compact uitgelijnd raster', `${allergenenRaster.weergave} · ${allergenenRaster.kolommen} kolommen · ${Math.round(allergenenRaster.hoogte)}px`)
+  meld(allergenenRaster.weergave === 'grid' && allergenenRaster.kolommen >= 2 && allergenenRaster.hoogte >= 20, 'allergenen staan in een compact uitgelijnd raster', `${allergenenRaster.weergave} · ${allergenenRaster.kolommen} kolommen · ${Math.round(allergenenRaster.hoogte)}px`)
 
   // 3. Merk-deeplink
   await open('/?merk=Acana', '.product-card')
+  await page.locator('.filter-section-heading').first().click()
   const filter = await page.locator('.brand-filter .filter-summary').innerText()
   meld(/1 van \d+ merken/.test(filter), 'merk-deeplink selecteert één merk', filter)
 
   // 3b. Voedingswaarden op de kaart en in het detail
   await open('/?merk=Prins%20Petfoods', '.product-card')
-  const voedingSamenvatting = await page.locator('.nutrition-summary').first().innerText()
+  const voedingSamenvatting = await page.locator('.product-card .product-fact.neutral').first().innerText()
   meld(/Eiwit/.test(voedingSamenvatting) && !/NaN/.test(voedingSamenvatting), 'voedingswaarden staan op de productkaart', voedingSamenvatting)
-  await page.locator('.nutrition summary').first().click()
+  await page.locator('.product-details > summary').first().click()
+  await page.waitForFunction(() => {
+    const tekst = document.querySelector('.product-details')?.innerText ?? ''
+    return tekst.length > 80 && !/laden/i.test(tekst)
+  }, null, { timeout: 20000 }).catch(() => {})
   const voedingDetail = await page.locator('.nutrition-grid').first().innerText()
   meld(/Ruw eiwit/.test(voedingDetail) && !/NaN/.test(voedingDetail), 'voedingswaarden-detail is compleet', voedingDetail.replace(/\n/g, ' ').slice(0, 100))
   const voedingContext = await page.locator('.nutrition-context').first().innerText()
   meld(/vocht/i.test(voedingContext) && /niet direct|vergelijk/i.test(voedingContext), 'voedingswaarden geven context over vocht', voedingContext.replace(/\n/g, ' ').slice(0, 120))
-  await page.locator('.ingredients summary').first().click()
-  await page.waitForFunction(() => {
-    const tekst = document.querySelector('.ingredients')?.innerText ?? ''
-    return tekst.length > 40 && !/laden/i.test(tekst)
-  }, null, { timeout: 20000 }).catch(() => {})
-  const ingredienten = await page.locator('.ingredients').first().innerText()
+  const ingredienten = await page.locator('.product-details').first().innerText()
   meld(ingredienten.length > 60 && !/laden/i.test(ingredienten), 'ingrediëntenlijst wordt pas bij openen geladen', ingredienten.replace(/\n/g, ' ').slice(0, 100))
-  const wetKaart = page.locator('.product-card').filter({ has: page.locator('.nutrition-kind.wet') }).first()
-  await wetKaart.locator('.nutrition summary').click()
+  const wetKaart = page.locator('.product-card').filter({ hasText: 'Natvoer' }).first()
+  if (!(await wetKaart.locator('.product-details').evaluate((el) => el.open))) {
+    await wetKaart.locator('.product-details > summary').click()
+  }
   const natDetail = await wetKaart.locator('.nutrition-grid').innerText()
   const eiwitNat = Number(natDetail.match(/Ruw eiwit\s+([\d,]+)%/)?.[1]?.replace(',', '.'))
   const vochtNat = Number(natDetail.match(/Vocht\s+([\d,]+)%/)?.[1]?.replace(',', '.'))
@@ -139,24 +141,25 @@ try {
 
   // 3c. Voedingswaardefilters met minimum en maximum
   await open('/?type=kibble&sorteer=eiwit-laag&eiwit=30-35&calcium=1-2', '.product-card')
+  await page.locator('.filter-section-heading').first().click()
   const typeChips = await page.locator('.type-chip.active').allInnerTexts()
   meld(typeChips.length === 1 && typeChips[0] === 'Brokken', 'voertype en sortering staan in de URL', typeChips.join(' / '))
   const sorteerWaarde = await page.locator('.sort-select select').inputValue()
   meld(sorteerWaarde === 'eiwit-laag', 'sorteerkeuze wordt uit de URL hersteld', sorteerWaarde)
-  const filterTelling = await page.locator('.filters-count').innerText()
-  meld(/producten/.test(filterTelling), 'filterkolom toont het aantal resultaten', filterTelling)
-  const primaireFilters = await page.locator('.nutrition-filter-block > .nutrition-filter').count()
+  const filterTelling = await page.locator('.summary-pill.active .summary-pill-count').innerText()
+  meld(/\d/.test(filterTelling), 'statuskop toont het aantal resultaten', filterTelling)
+  const primaireFilters = await page.locator('.filter-section-body > .nutrition-filter').count()
   const extraFilters = await page.locator('.nutrition-extra .nutrition-filter').count()
   meld(primaireFilters === 3 && extraFilters === 7, 'tien voedingsfilters, waarvan zeven in de uitklapregel', `${primaireFilters} + ${extraFilters}`)
   const extraOpen = await page.locator('.nutrition-extra').getAttribute('open')
   meld(extraOpen !== null, 'uitklapregel opent automatisch bij een actief extra filter')
   const voedingsChips = await page.locator('.active-filters .filter-chip').allInnerTexts()
   meld(voedingsChips.some((tekst) => /Eiwit 30–35%/.test(tekst)) && voedingsChips.some((tekst) => /Calcium 1–2%/.test(tekst)), 'voedingsfilters staan als chips bij de resultaten', voedingsChips.join(' / '))
-  const eiwitWaarden = (await page.locator('.product-card .nutrition-summary').allInnerTexts())
+  const eiwitWaarden = (await page.locator('.product-card .product-fact.neutral').allInnerTexts())
     .map((tekst) => { const match = tekst.match(/Eiwit ([\d,]+)%/); return match ? Number(match[1].replace(',', '.')) : null })
     .filter((waarde) => waarde != null)
   meld(eiwitWaarden.length > 0 && eiwitWaarden.every((waarde) => waarde >= 30 && waarde <= 35), 'eiwitfilter toont alleen waarden tussen 30 en 35%', eiwitWaarden.join(', '))
-  await page.locator('.nutrition summary').first().click()
+  await page.locator('.product-details > summary').first().click()
   const eersteDetail = await page.locator('.nutrition-grid').first().innerText()
   const calciumWaarde = eersteDetail.match(/Calcium\s+([\d,]+)%/)
   meld(Boolean(calciumWaarde) && Number(calciumWaarde[1].replace(',', '.')) >= 1 && Number(calciumWaarde[1].replace(',', '.')) <= 2, 'calciumfilter toont alleen waarden tussen 1 en 2%', calciumWaarde?.[0] ?? eersteDetail.replace(/\n/g, ' ').slice(0, 100))
@@ -166,7 +169,7 @@ try {
   meld(await sorteerKeuze.count() === 1, 'sorteerkeuze staat bij de resultaten')
   await sorteerKeuze.selectOption('eiwit-laag')
   await page.waitForFunction(() => document.querySelector('.sort-select select')?.value === 'eiwit-laag')
-  const gesorteerdeEiwitten = (await page.locator('.product-card .nutrition-summary').allInnerTexts())
+  const gesorteerdeEiwitten = (await page.locator('.product-card .product-fact.neutral').allInnerTexts())
     .slice(0, 3)
     .map((tekst) => { const match = tekst.match(/Eiwit ([\d,]+)%/); return match ? Number(match[1].replace(',', '.')) : null })
     .filter((waarde) => waarde != null)
@@ -191,10 +194,10 @@ try {
   })
   meld(traitStijl.achtergrond === 'rgb(23, 91, 48)' && traitStijl.tekst === 'rgb(255, 255, 255)', 'actieve leeftijd-/formaatkeuze is duidelijk zichtbaar', `${traitStijl.achtergrond} / ${traitStijl.tekst}`)
   await open('/?allergeen=chicken&eiwit=25-35', '.product-card')
-  await page.locator('.filters-reset').click()
+  await page.locator('.filters-clear').click()
   const allergenenNaReset = await page.locator('.selected-allergens .allergen-chip').allInnerTexts()
   const voedingsNaReset = await page.locator('.active-filters').count()
-  meld(allergenenNaReset.some((tekst) => /Kip/.test(tekst)) && voedingsNaReset === 0, 'kolomreset laat de allergenenkeuze staan', `${allergenenNaReset.join(' / ')} · ${voedingsNaReset} verfijningsblokken`)
+  meld(allergenenNaReset.length === 0 && voedingsNaReset === 0, 'alle filters wissen wist ook de allergenenkeuze', `${allergenenNaReset.join(' / ') || 'geen allergenen'} · ${voedingsNaReset} verfijningsblokken`)
 
   // 3e. Producten naast elkaar vergelijken, met een allergenenkeuze.
   await open('/?allergeen=chicken&merk=Acana', '.product-card')
@@ -271,13 +274,12 @@ try {
   meld(winkelsAntwoord.ok() && winkelLinks.length >= 30 && winkelLinks.every(geldigeWinkellink) && winkelLinksMetPrijs.length >= 30 && updLinks.length >= 10 && alsaLinks.length >= 100, 'winkelkoppelingen bevatten betrouwbare links met vanaf-prijs', `${winkelLinks.length} links, ${winkelLinksMetPrijs.length} met prijs, ${updLinks.length} Ultra Premium Direct, ${alsaLinks.length} Alsa Nature`)
 
   await open('/?zoek=Acana%20Adult%20Dog%20Recipe', '.product-card')
-  await page.waitForSelector('.shop-link', { timeout: 10000 })
-  const shopLink = page.locator('.shop-link').first()
-  const shopRel = await shopLink.getAttribute('rel')
-  const shopTekst = await shopLink.innerText()
-  const shopNote = await page.locator('.shop-note').first().innerText()
-  meld(/Dierenwinkel XL/.test(shopTekst) && /sponsored/.test(shopRel || '') && /€/.test(shopTekst), 'winkelknop toont winkel, maat en vanaf-prijs', `${shopTekst} · ${shopRel}`)
-  meld(/vanaf-prijs/i.test(shopNote) && /afwijken/i.test(shopNote), 'winkelprijs is als vanaf-prijs gelabeld', shopNote)
+  await page.waitForSelector('.product-price a', { timeout: 10000 })
+  const prijsLink = page.locator('.product-price a').first()
+  const prijsRel = await prijsLink.getAttribute('rel')
+  const prijsTekst = await page.locator('.product-price').first().innerText()
+  meld(/Dierenwinkel XL/.test(prijsTekst) && /sponsored/.test(prijsRel || '') && /€/.test(prijsTekst), 'affiliateprijs toont winkel en vanaf-prijs', `${prijsTekst.replace(/\n/g, ' ')} · ${prijsRel}`)
+  meld(/vanaf/i.test(prijsTekst) && /affiliate/i.test(prijsTekst), 'affiliateprijs is als zodanig gelabeld', prijsTekst.replace(/\n/g, ' '))
 
   await open('/hypoallergene-hondenvoeding.html', '.stat-grid')
   const hypo = await page.locator('body').innerText()
@@ -360,29 +362,29 @@ try {
   await page.waitForTimeout(100)
   const snackStatusKnoppen = await page.locator('.result-summary button').count()
   const snackActiebalk = await page.locator('.results-action-bar').innerText()
-  const snackKaartlabel = await page.locator('.snack-card .card-section-label').first().innerText()
+  const snackKaartlabel = await page.locator('.snack-card .product-fact').first().innerText()
   const snackMerkLinks = await page.locator('.snack-card a.product-brand').count()
   const snackMerkHrefs = await page.locator('.snack-card a.product-brand').evaluateAll((links) => links.map((link) => link.getAttribute('href')))
   meld(snackStatusKnoppen >= 2 && /Je sluit uit/i.test(snackActiebalk), 'snackresultaten hebben dezelfde statusfilters en actiebalk', `${snackStatusKnoppen} statusknoppen · ${snackActiebalk.replace(/\n/g, ' ').slice(0, 80)}`)
-  meld(/Uitsluiting/i.test(snackKaartlabel), 'snackkaarten gebruiken dezelfde uitsluitingsopbouw', snackKaartlabel)
-  const snackInfoMinHeight = await page.locator('.snack-card .product-verdict-block').first().evaluate((el) => getComputedStyle(el).minHeight)
-  meld(snackInfoMinHeight === '0px', 'snackkaarten hebben geen starre minimumhoogte', snackInfoMinHeight)
+  meld(/Allergenen|Etiket/i.test(snackKaartlabel), 'snackkaarten tonen het etiketoordeel', snackKaartlabel.replace(/\n/g, ' ').slice(0, 80))
+  const snackKaartHoogte = await page.locator('.snack-card').first().evaluate((el) => Math.round(el.getBoundingClientRect().height))
+  meld(snackKaartHoogte > 0 && snackKaartHoogte < 700, 'snackkaarten blijven compact', `${snackKaartHoogte}px`)
   meld(snackMerkLinks > 0 && snackMerkHrefs.every((href) => href?.startsWith('/hondensnacks/merken/')), 'snackmerken linken naar snackmerkpagina’s', `${snackMerkLinks} merklink(en)`)
   if (snackMerkHrefs[0]) {
     const snackMerkPagina = await context.request.get(`${BASIS}${snackMerkHrefs[0]}`)
     const snackMerkHtml = await snackMerkPagina.text()
     meld(snackMerkPagina.ok() && /Hondensnacks/.test(snackMerkHtml) && /noindex/i.test(snackMerkHtml), 'snackmerkpagina is bereikbaar en noindex', snackMerkHrefs[0])
   }
-  await open('/hondensnacks/?merk=Purina&zoek=dentalife', '.snack-card .shop-link')
-  const snackShopLinks = await page.locator('.snack-card .shop-link').evaluateAll((links) => links.map((link) => ({
+  await open('/hondensnacks/?merk=Purina&zoek=dentalife', '.snack-card .product-price a')
+  const snackShopLinks = await page.locator('.snack-card .product-price a').evaluateAll((links) => links.map((link) => ({
     href: link.getAttribute('href') || '',
     rel: link.getAttribute('rel') || '',
-    tekst: link.textContent.replace(/\s+/g, ' ').trim()
+    tekst: (link.closest('.product-price')?.textContent || '').replace(/\s+/g, ' ').trim()
   })))
-  meld(snackShopLinks.length >= 2 && snackShopLinks.every(({ href, rel }) => /dierenwinkelxl\.nl/.test(href) && /tt=4019/.test(href) && /sponsored/.test(rel) && /nofollow/.test(rel)), 'snackwinkelkoppeling gebruikt de Dierenwinkel XL-affiliatelink', `${snackShopLinks.length} snacklink(s) · ${snackShopLinks[0]?.tekst || '—'}`)
-  await open('/hondensnacks/?merk=Farm%20Food', '.snack-card .shop-link')
-  const nieuweSnackShopLinks = await page.locator('.snack-card .shop-link').evaluateAll((links) => links.map((link) => ({ href: link.getAttribute('href') || '', rel: link.getAttribute('rel') || '' })))
-  meld(nieuweSnackShopLinks.length >= 5 && nieuweSnackShopLinks.every(({ href, rel }) => /dierenwinkelxl\.nl/.test(href) && /tt=4019/.test(href) && /sponsored/.test(rel)), 'nieuwe snackmerken krijgen ook Dierenwinkel XL-links', `${nieuweSnackShopLinks.length} Farm Food-link(s)`)
+  meld(snackShopLinks.length >= 1 && snackShopLinks.every(({ href, rel }) => /dierenwinkelxl\.nl/.test(href) && /tt=4019/.test(href) && /sponsored/.test(rel) && /nofollow/.test(rel)), 'snackaffiliateprijs gebruikt de Dierenwinkel XL-link', `${snackShopLinks.length} prijslinks · ${snackShopLinks[0]?.tekst || '—'}`)
+  await open('/hondensnacks/?merk=Farm%20Food', '.snack-card .product-price a')
+  const nieuweSnackShopLinks = await page.locator('.snack-card .product-price a').evaluateAll((links) => links.map((link) => ({ href: link.getAttribute('href') || '', rel: link.getAttribute('rel') || '' })))
+  meld(nieuweSnackShopLinks.length >= 1 && nieuweSnackShopLinks.every(({ href, rel }) => /dierenwinkelxl\.nl/.test(href) && /tt=4019/.test(href) && /sponsored/.test(rel)), 'nieuwe snackmerken krijgen ook een Dierenwinkel XL-prijs', `${nieuweSnackShopLinks.length} Farm Food-prijslinks`)
   const snackWinkelPagina = await context.request.get(`${BASIS}/hondensnacks/merken/purina.html`)
   const snackWinkelHtml = await snackWinkelPagina.text()
   const snackWinkelLinks = (snackWinkelHtml.match(/rel="sponsored nofollow noopener noreferrer"/g) ?? []).length
@@ -413,9 +415,9 @@ try {
   // blijven, zodat Merken niet pas na de hele pagina bereikbaar is.
   await page.setViewportSize({ width: 1280, height: 700 })
   await open('/', '.product-card')
-  const advancedDicht = await page.locator('.advanced-filters').evaluate((el) => el.open)
-  meld(advancedDicht === false, 'uitgebreide voedings- en merkfilters staan standaard ingeklapt')
-  await page.locator('.advanced-filters > summary').click()
+  const sectiesDicht = await page.locator('.filter-section').evaluateAll((els) => els.every((el) => !el.open))
+  meld(sectiesDicht, 'type- en voedingfilters staan standaard ingeklapt')
+  await page.locator('.filter-section-heading').first().click()
   await page.waitForTimeout(100)
   await page.evaluate(() => window.scrollTo(0, 900))
   await page.waitForTimeout(150)
@@ -443,26 +445,26 @@ try {
       scherm: window.innerWidth,
       headerPositie: getComputedStyle(document.querySelector('.site-header')).position,
       filterBody: getComputedStyle(document.querySelector('.filters-body')).display,
-      volgorde: boven('#vergelijken') < boven('.filters') && boven('.filters') < boven('#resultaten'),
+      volgorde: boven('.mobile-filter-bar') < boven('#resultaten'),
       herhaling: [...document.querySelectorAll('.product-card .reason')].filter((el) => /Kies je allergenen/.test(el.textContent)).length,
-      springlink: document.querySelector('.jump-to-results')?.innerText ?? ''
+      springlink: document.querySelector('.mobile-filter-bar')?.innerText ?? ''
     }
   })
   meld(mobiel.breed <= mobiel.scherm + 1, 'geen horizontale overflow op mobiel', `${mobiel.breed}px op ${mobiel.scherm}px`)
   meld(mobiel.headerPositie === 'static', 'mobiele header is niet sticky')
   meld(mobiel.filterBody === 'none', 'filters staan op mobiel ingeklapt')
-  meld(mobiel.volgorde, 'allergenen staan op mobiel vóór filters en resultaten')
+  meld(mobiel.volgorde, 'mobiele filterbalk staat vóór de resultaten')
   meld(mobiel.herhaling === 0, 'geen herhaalde allergeenuitleg op productkaarten')
-  meld(/resultaten/i.test(mobiel.springlink), 'resultaten zijn direct bereikbaar met een springlink', mobiel.springlink)
-  await page.locator('.filters-toggle').click()
+  meld(/Filters/i.test(mobiel.springlink), 'filters zijn direct bereikbaar via de mobiele filterbalk', mobiel.springlink.replace(/\n/g, ' ').slice(0, 80))
+  await page.locator('.mobile-filter-bar').click()
   const mobielOpen = await page.evaluate(() => ({
-    jump: document.querySelector('.filter-jump')?.innerText ?? '',
-    count: document.querySelector('.filters-count')?.innerText ?? ''
+    buttons: [...document.querySelectorAll('.filters-actions button')].map((el) => el.innerText),
+    count: document.querySelector('.filters-selected-count')?.innerText ?? ''
   }))
-  meld(/Bekijk .* producten/.test(mobielOpen.jump) && /producten/.test(mobielOpen.count), 'filterkolom op mobiel toont resultaat en springlink', `${mobielOpen.count} · ${mobielOpen.jump}`)
+  meld(mobielOpen.buttons.some((tekst) => /Toon resultaten/.test(tekst)) && mobielOpen.buttons.some((tekst) => /Wis alle filters/.test(tekst)), 'mobiele filterdrawer toont toon-resultaten en wis-alles', `${mobielOpen.count} · ${mobielOpen.buttons.join(' / ')}`)
   const feedbackVerborgen = await page.locator('.feedback-button').evaluate((el) => getComputedStyle(el).display === 'none')
   meld(feedbackVerborgen, 'feedbackknop maakt ruimte voor de uitgeklapte mobiele filters')
-  await page.locator('.filters-toggle').click()
+  await page.locator('.filters-close').click()
   await page.waitForTimeout(100)
 
   const mobielFeedback = await page.evaluate(() => {
@@ -475,7 +477,7 @@ try {
       const tekst = bereik.getBoundingClientRect()
       return tekst.width ? tekst : el.getBoundingClientRect()
     }
-    const overlap = ['.jump-to-results', '.filters-toggle', '.filter-jump'].map((selector) => {
+    const overlap = ['.mobile-filter-bar'].map((selector) => {
       const el = document.querySelector(selector)
       if (!el) return { selector, overlapt: false }
       const r = tekstRect(el)

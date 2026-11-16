@@ -1582,10 +1582,10 @@ function App() {
                   </div>
                   <p className="trait-hint">Volgens de productnaam; zonder aanduiding valt een product af. Het etiket blijft leidend.</p>
                 </div>
-                <div className="filter-block">
+                <div className="filter-block brand-filter">
                   <div className="filter-heading">
                     <span>Merken</span>
-                    <span className="filter-summary">{selectedBrands === null ? `Alle ${alleMerken.length} merken` : selectedBrands.length === 0 ? 'Geen merken' : `${selectedBrands.length} van ${alleMerken.length}`}</span>
+                    <span className="filter-summary">{selectedBrands === null ? `Alle ${alleMerken.length} merken` : selectedBrands.length === 0 ? 'Geen merken' : `${selectedBrands.length} van ${alleMerken.length} merken`}</span>
                   </div>
                   <div className="filter-actions">
                     <button type="button" className={selectedBrands === null ? 'active' : ''} aria-pressed={selectedBrands === null} onClick={() => { setSelectedBrands(null); setBrandMode('include'); setBrandSearch('') }}>Alles</button>
@@ -1667,7 +1667,7 @@ function App() {
                     <div className="result-summary" role="group" aria-label="Filter op status">
                       <button type="button" className={`summary-pill suitable${statusFilter === 'suitable' ? ' active' : ''}`} aria-pressed={statusFilter === 'suitable'} title={allergens.length ? 'Toon alleen producten die het gekozen allergeen niet noemen.' : 'Toon alleen producten waarvan het etiket elke bron bij naam noemt.'} onClick={() => setStatusFilter('suitable')}><span className="summary-pill-title">{allergens.length ? 'Geschikt' : 'Etiket volledig'}</span><span className="summary-pill-count">{GETAL0.format(suitable.length)}</span></button>
                       <button type="button" className={`summary-pill check${statusFilter === 'check' ? ' active' : ''}`} aria-pressed={statusFilter === 'check'} title={allergens.length ? 'Toon alleen producten waarvoor controle nodig is.' : 'Toon alleen producten waarvoor het etiket niet elke bron noemt.'} onClick={() => setStatusFilter('check')}><span className="summary-pill-title">Controleren</span><span className="summary-pill-count">{GETAL0.format(check.length)}</span></button>
-                      {allergens.length > 0 && <button type="button" className={`summary-pill excluded${statusFilter === 'excluded' ? ' active' : ''}`} aria-pressed={statusFilter === 'excluded'} title="Toon alleen producten die een gekozen allergeen noemen." onClick={() => setStatusFilter('excluded')}><span className="summary-pill-title">Uitgesloten</span><span className="summary-pill-count">{GETAL0.format(excluded.length)}</span></button>}
+                      <button type="button" className={`summary-pill excluded${statusFilter === 'excluded' ? ' active' : ''}`} aria-pressed={statusFilter === 'excluded'} disabled={excluded.length === 0} title={allergens.length ? 'Toon alleen producten die een gekozen allergeen noemen.' : 'Kies eerst een allergeen om uitgesloten producten te zien.'} onClick={() => setStatusFilter('excluded')}><span className="summary-pill-title">Uitgesloten</span><span className="summary-pill-count">{GETAL0.format(excluded.length)}</span></button>
                       <button type="button" className={`summary-pill all${statusFilter === 'alle' ? ' active' : ''}`} aria-pressed={statusFilter === 'alle'} onClick={() => setStatusFilter('alle')}><span className="summary-pill-title">Alles</span><span className="summary-pill-count">{GETAL0.format(alleResultaten.length)}</span></button>
                     </div>
                     <label className="sort-select"><span>Sorteren op</span>
