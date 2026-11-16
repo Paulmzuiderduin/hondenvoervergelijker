@@ -685,7 +685,6 @@ function App() {
               <p>{check.length === 0 ? <>Alle {excluded.length} snacks in deze selectie bevatten minstens één van de gekozen allergenen. Pas je selectie of merkfilter aan, of overleg met je dierenarts over een passend eliminatiedieet.</> : <>Bij {check.length === 1 ? 'de overgebleven snack' : `de ${check.length} overgebleven snacks`} noemt het etiket niet elke bron, of staat er een woord in dat de keuring niet kent. Vraag de fabrikant om uitsluitsel of overleg met je dierenarts.</>}</p>
               <div className="no-suitable-actions"><button type="button" onClick={wisAllergenen}>Allergenen wissen</button><button type="button" onClick={wisAlles}>Alle filters wissen</button><a href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a></div>
             </div> : null}
-            <Pagination page={veiligePagina} total={aantalPaginas} onChange={setPage} />
             {heeftKeuze && statusFilter !== 'alle' && <h3 className={`result-group-heading ${statusFilter}`}>{statusKop[statusFilter]} <span>{statusAantal[statusFilter]}</span></h3>}
             {zichtbareProducten.length ? zichtbareProducten.map(({ product, match }, index) => {
               const vorige = index > 0 ? zichtbareProducten[index - 1].match.kind : null
