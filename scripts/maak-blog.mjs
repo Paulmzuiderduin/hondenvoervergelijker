@@ -454,14 +454,15 @@ function categoriePagina(categorie, categorieen) {
   const [uitgelicht, ...overige] = categorie.artikelen
   const andereCategorieen = categorieen.filter((item) => item.naam !== categorie.naam)
   const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › <a href="${BLOG_PAD}">Blog</a> › ${escapeHtml(categorie.naam)}</p>
-      ${blogSubnav(categorieen, categorie.pad, categorie.naam)}
-
-      <header class="blog-categorie-kop">
+      <section class="blog-hero">
         <p class="eyebrow">Blogcategorie</p>
         <h1>${escapeHtml(categorie.naam)}</h1>
         <p class="lead">${escapeHtml(categorie.beschrijving)}</p>
-        <p class="updated">${categorie.artikelen.length} artikelen · bijgewerkt op ${escapeHtml(datumKort(categorie.artikelen.map((artikel) => artikel.bijgewerkt).sort().at(-1)))}</p>
-      </header>
+        <p class="blog-hero-meta">${categorie.artikelen.length} artikelen · bijgewerkt op ${escapeHtml(datumKort(categorie.artikelen.map((artikel) => artikel.bijgewerkt).sort().at(-1)))}</p>
+        <p><a class="cta" href="/">Open de vergelijker</a> <a class="cta secondary" href="${BLOG_PAD}">Alle blogartikelen</a></p>
+      </section>
+
+      ${blogSubnav(categorieen, categorie.pad, categorie.naam)}
 
       ${uitgelicht ? `<article class="blog-featured-card">
         <p class="eyebrow">Uitgelicht in deze categorie</p>
