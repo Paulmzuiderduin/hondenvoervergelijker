@@ -3437,3 +3437,839 @@ button.summary-pill {
 .action-divider {
   display: none;
 }
+
+/* ================================================================== */
+/* Nieuwe resultatenlayout: vaste filterkolom links, drawer op mobiel */
+/* ================================================================== */
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  grid-template-areas: "filters results";
+  gap: 1rem 1.4rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+.content {
+  grid-area: results;
+  min-width: 0;
+}
+
+.filters {
+  grid-area: filters;
+  position: sticky;
+  top: calc(var(--header-hoogte) + 0.5rem);
+  max-height: calc(100vh - var(--header-hoogte) - 1rem);
+  overflow: auto;
+  box-sizing: border-box;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #a9bcae transparent;
+  background: #fff;
+  border: 1px solid #d3dcd4;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(24, 38, 28, 0.04);
+}
+
+.filters::-webkit-scrollbar {
+  width: 7px;
+}
+
+.filters::-webkit-scrollbar-thumb {
+  background: #b9c9bd;
+  border-radius: 4px;
+}
+
+.filters::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.filters .allergen-panel {
+  margin: 0 0 0.9rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.filters .allergen-panel-header {
+  display: block;
+}
+
+.filters .allergen-panel-header > div:first-child {
+  margin-bottom: 0.45rem;
+}
+
+.filters .allergen-panel h2 {
+  display: block;
+  margin: 0 0 0.15rem;
+  font-size: 1.02rem;
+}
+
+.filters .allergen-panel p {
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.filters .allergen-panel-actions {
+  justify-content: flex-start;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+
+.filters .jump-to-results,
+.filters .clear-allergens {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.76rem;
+}
+
+.filters .result-preview {
+  margin: 0.55rem 0 0;
+  padding: 0.4rem 0.5rem;
+  gap: 0.3rem;
+}
+
+.filters .result-preview-label {
+  font-size: 0.74rem;
+}
+
+.filters .summary-pill {
+  font-size: 0.72rem;
+  padding: 0.12rem 0.35rem;
+}
+
+.filters .selected-allergens {
+  margin: 0.55rem 0 0;
+  padding: 0.4rem 0.5rem;
+  gap: 0.3rem;
+}
+
+.filters .selected-label {
+  font-size: 0.74rem;
+}
+
+.filters .allergen-chip {
+  padding: 0.12rem 0.4rem;
+  font-size: 0.74rem;
+}
+
+.filters .allergen-search-label {
+  margin: 0.6rem 0 0.65rem;
+  font-size: 0.8rem;
+}
+
+.filters .allergen-search-label input {
+  font-size: 0.82rem;
+}
+
+.filters .quick-allergens {
+  margin: 0.55rem 0 0.2rem;
+}
+
+.filters .quick-allergens-label {
+  font-size: 0.72rem;
+}
+
+.filters .quick-allergen {
+  padding: 0.18rem 0.45rem;
+  font-size: 0.74rem;
+}
+
+.filters .allergen-group {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid #e6ebe7;
+  border-radius: 0;
+}
+
+.filters .allergen-group[open] {
+  background: transparent;
+  border-color: #e6ebe7;
+}
+
+.filters .allergen-group summary {
+  padding: 0.55rem 0;
+  font-size: 0.82rem;
+}
+
+.filters .allergen-group .group-count {
+  font-size: 0.72rem;
+}
+
+.filters .allergen-group .choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: row;
+  gap: 0.05rem 0.5rem;
+  margin-top: 0.15rem;
+  padding: 0.1rem 0 0.55rem;
+  border-top: 0;
+}
+
+.filters .allergen-group .inline {
+  min-height: 22px;
+  padding: 0.05rem 0.15rem;
+  font-size: 0.76rem;
+  line-height: 1.25;
+}
+
+.filters .allergen-group .inline.allergen-wide {
+  grid-column: auto;
+}
+
+.filters .filters-head {
+  margin-top: 0.4rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e6ebe7;
+}
+
+.filters .filters-head h2 {
+  display: block;
+  font-size: 1rem;
+}
+
+.filters .panel-step {
+  font-size: 0.65rem;
+}
+
+.filters .filters-intro {
+  margin: 0.35rem 0 0.55rem;
+}
+
+.filters .product-search {
+  margin: 0.55rem 0;
+}
+
+.filters .filter-block {
+  margin-top: 0.8rem;
+}
+
+.filters h3 {
+  font-size: 0.75rem;
+}
+
+.filters-mobile-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid #e6ebe7;
+  color: #14371f;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.filters-close {
+  display: none;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid #d3dcd4;
+  border-radius: 8px;
+  background: #fff;
+  color: #5c7061;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.filters-close:hover {
+  background: #f4f7f4;
+  color: #14371f;
+}
+
+.mobile-filter-bar {
+  display: none;
+  width: 100%;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 0.8rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d3dcd4;
+  border-radius: 10px;
+  background: #fff;
+  color: #18261c;
+  text-align: left;
+  box-shadow: 0 1px 2px rgba(24, 38, 28, 0.04);
+}
+
+.mobile-filter-bar:hover {
+  border-color: #b9cbbd;
+  background: #fbfcfb;
+}
+
+.mobile-filter-bar-icon {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+  border-radius: 8px;
+  background: #eaf1ec;
+  color: #175b30;
+  font-size: 0.95rem;
+}
+
+.mobile-filter-bar-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.mobile-filter-bar-text strong {
+  font-size: 0.86rem;
+}
+
+.mobile-filter-bar-text small {
+  color: #5c7061;
+  font-size: 0.72rem;
+}
+
+.mobile-filter-bar > span:last-child {
+  color: #5c7061;
+  font-size: 1.1rem;
+}
+
+.filters-backdrop {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    display: block;
+  }
+
+  .filters {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    z-index: 90;
+    width: min(400px, 92vw);
+    max-height: none;
+    overflow: auto;
+    padding: 1rem;
+    border: 0;
+    border-left: 1px solid #d3dcd4;
+    border-radius: 0;
+    box-shadow: -12px 0 40px rgba(13, 34, 21, 0.18);
+    transform: translateX(100%);
+    transition: transform 0.2s ease;
+  }
+
+  .filters.open {
+    transform: translateX(0);
+  }
+
+  body:has(.filters.open) {
+    overflow: hidden;
+  }
+
+  .filters-toggle {
+    display: none !important;
+  }
+
+  .filters-close {
+    display: grid;
+  }
+
+  .filters h2 {
+    display: block;
+  }
+
+  .filters:not(.open) .filters-body {
+    display: none;
+  }
+
+  .filters .allergen-group .choices {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mobile-filter-bar {
+    display: flex;
+  }
+
+  .filters-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    background: rgba(13, 34, 21, 0.5);
+    backdrop-filter: blur(2px);
+  }
+}
+
+@media (min-width: 981px) {
+  .filters-backdrop {
+    display: none !important;
+  }
+}
+
+/* ---------- nieuwe productkaart ---------- */
+.product-card {
+  border: 1px solid #d3dcd4;
+  border-radius: 12px;
+  padding: 0.9rem 1rem 0.75rem;
+  margin: 0.6rem 0;
+  box-shadow: 0 1px 2px rgba(24, 38, 28, 0.04);
+}
+
+.product-card.check,
+.product-card.excluded {
+  border-left: 1px solid #d3dcd4;
+  padding-left: 1rem;
+}
+
+.product-card-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.35fr) minmax(190px, 0.85fr);
+  gap: 1.2rem;
+  align-items: start;
+  padding-bottom: 0.7rem;
+  border-bottom: 0;
+}
+
+.product-card-top .product-title-group {
+  min-width: 0;
+}
+
+.product-brand {
+  min-height: 0;
+  padding: 0;
+  margin: 0 0 0.15rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.09em;
+}
+
+.product-brand.suitable {
+  color: #1f6b3a;
+}
+
+.product-brand.check {
+  color: #a15c00;
+}
+
+.product-brand.excluded {
+  color: #9b3838;
+}
+
+.product-brand:hover {
+  color: inherit;
+}
+
+.product-card-review {
+  margin: 0.4rem 0 0;
+  color: #5c7061;
+  font-size: 0.73rem;
+  line-height: 1.4;
+  white-space: normal;
+}
+
+.product-card-review .human-badge {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #1f6b3a;
+  font-size: 0.73rem;
+  font-weight: 600;
+}
+
+.product-card-review .human-badge::before {
+  content: "✓ ";
+}
+
+.product-review-plain {
+  color: #6b786e;
+}
+
+.product-card-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  padding-top: 0.1rem;
+}
+
+.product-fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  color: #3b4a3f;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.product-fact b {
+  color: #2c3d31;
+  font-weight: 600;
+}
+
+.product-fact-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: none;
+  display: grid;
+  place-items: center;
+  margin-top: 0.12rem;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.product-fact.suitable .product-fact-icon {
+  background: #175b30;
+}
+
+.product-fact.check .product-fact-icon {
+  background: #a85f00;
+}
+
+.product-fact.excluded .product-fact-icon {
+  background: #9f3c3c;
+}
+
+.product-fact.neutral .product-fact-icon {
+  background: #edf1ec;
+  color: #6a7c6e;
+}
+
+.product-fact.check b {
+  color: #7a4a00;
+}
+
+.product-fact.excluded b {
+  color: #7e2f2f;
+}
+
+.product-card-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  min-width: 0;
+  text-align: right;
+}
+
+.product-status-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.product-status-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  flex: none;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.product-card-status.suitable .product-status-label {
+  color: #1f6b3a;
+}
+
+.product-card-status.check .product-status-label {
+  color: #a15c00;
+}
+
+.product-card-status.excluded .product-status-label {
+  color: #9b3838;
+}
+
+.product-status-context {
+  color: #5c7061;
+  font-size: 0.72rem;
+}
+
+.product-price {
+  margin-top: 0.4rem;
+  color: #24382a;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.product-price-prefix {
+  color: #5c7061;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.product-price a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed #a9bcaa;
+}
+
+.product-price a:hover {
+  border-bottom-style: solid;
+}
+
+.product-price small {
+  display: block;
+  margin-top: 0.15rem;
+  color: #5c7061;
+  font-size: 0.67rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.product-price.muted {
+  color: #7d8b80;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.product-card-actions {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid #e6ebe7;
+}
+
+.product-actions-spacer {
+  flex: 1;
+}
+
+.product-card-actions .compare-toggle {
+  flex: none;
+}
+
+.shop-links-details {
+  margin-top: 0.55rem;
+  border-top: 1px solid #e6ebe7;
+}
+
+.shop-links-details > summary {
+  padding: 0.5rem 0;
+  color: #334d3a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.shop-links-details .shop-links {
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 1200px) {
+  .product-card-top {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 1rem;
+  }
+
+  .product-card-status {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.75rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid #e6ebe7;
+    text-align: left;
+  }
+
+  .product-card-status .product-price {
+    margin-top: 0;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .product-card-top {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .product-card-status {
+    grid-column: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-card-status .product-price {
+    margin-left: 0;
+  }
+
+  .product-card-actions {
+    gap: 0.5rem;
+  }
+
+  .product-actions-spacer {
+    display: none;
+  }
+
+  .product-card-actions .manufacturer-link {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .product-card-actions .manufacturer-link {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+
+/* ---------- status tabs boven de resultaten ---------- */
+.results-header {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.results-tools {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.result-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0.2rem;
+  background: #fff;
+  border: 1px solid #d3dcd4;
+  border-radius: 10px;
+}
+
+.summary-pill {
+  flex: 1 1 0;
+  min-width: 8.5rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: #3b4a3f;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+.summary-pill.suitable {
+  background: transparent;
+  border-color: transparent;
+  color: #1f6b3a;
+}
+
+.summary-pill.check {
+  background: transparent;
+  border-color: transparent;
+  color: #a15c00;
+}
+
+.summary-pill.excluded {
+  background: transparent;
+  border-color: transparent;
+  color: #9b3838;
+}
+
+.summary-pill.all {
+  background: transparent;
+  border-color: transparent;
+  color: #3b4a3f;
+}
+
+.summary-pill:hover:not(.active) {
+  background: #f4f7f4;
+}
+
+.summary-pill.active {
+  background: #175b30;
+  border-color: #175b30;
+  color: #fff;
+}
+
+.summary-pill.check.active {
+  background: #a85f00;
+  border-color: #a85f00;
+  color: #fff;
+}
+
+.summary-pill.excluded.active {
+  background: #9f3c3c;
+  border-color: #9f3c3c;
+  color: #fff;
+}
+
+.summary-pill.all.active {
+  background: #175b30;
+  border-color: #175b30;
+  color: #fff;
+}
+
+.sort-select {
+  align-self: flex-end;
+}
+
+@media (max-width: 620px) {
+  .summary-pill {
+    flex: 1 1 45%;
+    min-width: 0;
+  }
+}
+
+/* De snackpagina zet de statusknoppen direct in de resultatenkop. */
+.results-header > .result-summary {
+  flex: 1 1 100%;
+}
+
+/* De snack-eiwitbronnen zijn een lange lijst met samengestelde waarden.
+   Toon ze in een compacte, doorzoekbare uitklapper in plaats van een muur
+   van honderden regels in de filterkolom. */
+.protein-filter .filter-heading {
+  cursor: pointer;
+  align-items: baseline;
+}
+
+.protein-filter[open] .filter-heading {
+  margin-bottom: 0.35rem;
+}
+
+.protein-filter .brand-search-label {
+  margin: 0.35rem 0 0.45rem;
+}
+
+.protein-filter .choices.protein-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-height: 260px;
+  overflow: auto;
+  padding: 0.2rem 0.25rem 0.2rem 0;
+  border-top: 1px solid #e6ebe7;
+  scrollbar-width: thin;
+  scrollbar-color: #b9c9bd transparent;
+}
+
+.protein-filter .protein-choices .inline {
+  min-height: 25px;
+  padding: 0.12rem 0.2rem;
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
