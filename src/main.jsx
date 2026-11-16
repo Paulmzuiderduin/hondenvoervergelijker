@@ -356,61 +356,45 @@ function ProductCard({ product, match, aanbiedingen = [], aanbodBijgewerkt = '',
     </div>
 
     {unknownStates.length > 0 && <p className="verdict unknown"><strong>Waarom:</strong> het etiket noemt geen bron voor {onbekendeWoorden.length > 5 ? `${onbekendeWoorden.slice(0, 5).join(', ')} en ${onbekendeWoorden.length - 5} meer` : onbekendeWoorden.length ? onbekendeWoorden.join(', ') : 'een ingrediënt'}</p>}
-    <details className="ingredients" onToggle={(event) => { if (event.currentTarget.open) laadIngredienten() }}>
-      <summary>Ingrediëntenlijst bekijken{match.importNote && /vertaling/i.test(match.importNote) ? ' (vertaald)' : ''}</summary>
-      <Ingredients text={ingredientText} loading={ingredientLoading} hasLabel={match.hasLabel} error={ingredientError} />
-      {match.importNote && <p className="import-note"><small>{match.importNote}</small></p>}
-    </details>
-    {Object.keys(voeding).length > 0 && <details className="nutrition">
-      <summary>Alle voedingswaarden bekijken</summary>
-      <div className="nutrition-view">
-        <div className="nutrition-view-toggle" role="group" aria-label="Weergave voedingswaarden">
-          <button type="button" className={drogeStof ? '' : 'active'} aria-pressed={!drogeStof} onClick={() => setDrogeStof(false)}>As-fed</button>
-          <button type="button" className={drogeStof ? 'active' : ''} aria-pressed={drogeStof} onClick={() => setDrogeStof(true)} disabled={!voedingDroog} title={voedingDroog ? 'Reken het vocht weg' : 'Niet mogelijk: het vochtgehalte ontbreekt'}>Droge stof</button>
-        </div>
+    <details className="product-details" onToggle={(event) => { if (event.currentTarget.open) laadIngredienten() }}>
+      <summary>Details</summary>
+      <div className="product-details-body">
+        <section className="product-details-section">
+          <h4>Ingrediëntenlijst{match.importNote && /vertaling/i.test(match.importNote) ? ' (vertaald)' : ''}</h4>
+          <Ingredients text={ingredientText} loading={ingredientLoading} hasLabel={match.hasLabel} error={ingredientError} />
+          {match.importNote && <p className="import-note"><small>{match.importNote}</small></p>}
+        </section>
+        {Object.keys(voeding).length > 0 && <section className="product-details-section">
+          <h4>Voedingswaarden</h4>
+          <div className="nutrition-view">
+            <div className="nutrition-view-toggle" role="group" aria-label="Weergave voedingswaarden">
+              <button type="button" className={drogeStof ? '' : 'active'} aria-pressed={!drogeStof} onClick={() => setDrogeStof(false)}>As-fed</button>
+              <button type="button" className={drogeStof ? 'active' : ''} aria-pressed={drogeStof} onClick={() => setDrogeStof(true)} disabled={!voedingDroog} title={voedingDroog ? 'Reken het vocht weg' : 'Niet mogelijk: het vochtgehalte ontbreekt'}>Droge stof</button>
+            </div>
+          </div>
+          <dl className="nutrition-grid">
+            {NUTRIENTS.filter(({ key }) => getoondeVoeding[key] != null).map((nutrient) => <div key={nutrient.key}>
+              <dt>{nutrient.label}</dt>
+              <dd>{formatteerVoedingswaarde(nutrient, getoondeVoeding[nutrient.key])}</dd>
+            </div>)}
+          </dl>
+          <p className="nutrition-source"><small>Voedingsbron: {nutritionSource
+            ? <a href={nutritionSource} target="_blank" rel="noreferrer" onClick={() => track('voedingsbron-klik', { merk: product.brand, product: product.name, domein: nutritionSourceDomain })}>{nutritionSourceDomain || 'open bron'} ↗</a>
+            : 'niet apart vermeld'}{nutritionChecked ? ` · gecontroleerd op ${nutritionChecked}` : ' · controledatum onbekend'}{nutritionStale ? ' · controle nodig' : ''}</small></p>
+          {bronWaarschuwing && <p className="nutrition-source-warning"><small>{bronWaarschuwing}</small></p>}
+          {plausibiliteit.signalen.length > 0 && <div className="nutrition-warning"><strong>Controleer de bron:</strong> {plausibiliteit.signalen.slice(0, 2).join(' ')} Een onmogelijke waarde wordt niet getoond of als filter- of sorteerwaarde gebruikt.</div>}
+          {drogeStof
+            ? <p className="nutrition-context"><strong>Droge stof:</strong> het vocht is weggerekend, zodat je natvoer en brokken eerlijk kunt vergelijken. De energie is per 100 g droge stof.</p>
+            : <p className={`nutrition-context ${product.food_type}`}><strong>Let op:</strong> {voedingContext}</p>}
+          <p className="nutrition-note"><small>{drogeStof ? 'Weergave op droge stof (vocht weggerekend).' : 'Waarden as-fed (inclusief vocht).'}{version?.nutrition_note ? ` ${version.nutrition_note}` : ''}</small></p>
+        </section>}
       </div>
-      <dl className="nutrition-grid">
-        {NUTRIENTS.filter(({ key }) => getoondeVoeding[key] != null).map((nutrient) => <div key={nutrient.key}>
-          <dt>{nutrient.label}</dt>
-          <dd>{formatteerVoedingswaarde(nutrient, getoondeVoeding[nutrient.key])}</dd>
-        </div>)}
-      </dl>
-      <p className="nutrition-source"><small>Voedingsbron: {nutritionSource
-        ? <a href={nutritionSource} target="_blank" rel="noreferrer" onClick={() => track('voedingsbron-klik', { merk: product.brand, product: product.name, domein: nutritionSourceDomain })}>{nutritionSourceDomain || 'open bron'} ↗</a>
-        : 'niet apart vermeld'}{nutritionChecked ? ` · gecontroleerd op ${nutritionChecked}` : ' · controledatum onbekend'}{nutritionStale ? ' · controle nodig' : ''}</small></p>
-      {bronWaarschuwing && <p className="nutrition-source-warning"><small>{bronWaarschuwing}</small></p>}
-      {plausibiliteit.signalen.length > 0 && <div className="nutrition-warning"><strong>Controleer de bron:</strong> {plausibiliteit.signalen.slice(0, 2).join(' ')} Een onmogelijke waarde wordt niet getoond of als filter- of sorteerwaarde gebruikt.</div>}
-      {drogeStof
-        ? <p className="nutrition-context"><strong>Droge stof:</strong> het vocht is weggerekend, zodat je natvoer en brokken eerlijk kunt vergelijken. De energie is per 100 g droge stof.</p>
-        : <p className={`nutrition-context ${product.food_type}`}><strong>Let op:</strong> {voedingContext}</p>}
-      <p className="nutrition-note"><small>{drogeStof ? 'Weergave op droge stof (vocht weggerekend).' : 'Waarden as-fed (inclusief vocht).'}{version?.nutrition_note ? ` ${version.nutrition_note}` : ''}</small></p>
-    </details>}
+    </details>
     {hydrolysed.present && <p className="note-hydrolysed"><strong>Gehydrolyseerd eiwit:</strong> {hydrolysed.words.length ? `dit etiket noemt ${hydrolysed.words.join(', ')} in gehydrolyseerde vorm` : 'dit etiket noemt gehydrolyseerde eiwitten'}: de eiwitketens zijn opgeknipt, waardoor het lichaam ze vaak niet meer als allergeen herkent. Dierenartsen kiezen zo'n voer juist bij een allergie; deze site telt de bron toch mee, want alleen je dierenarts kan beoordelen of het in jouw geval werkt.</p>}
     {!excluded && checkReason && <p className="reason">Controleer: {checkReason}</p>}
     {!match.states.length && (verborgenWoorden.length > 0 || nietHerkendeWoorden.length > 0) && <p className="reason"><small>Let op: {verborgenWoorden.length
       ? `dit etiket noemt geen bron voor ${verborgenWoorden.join(', ')}. ${nietHerkendeWoorden.length ? 'Omdat er ook woorden in staan die de keuring niet kent, kan elk allergeen erin zitten.' : dektElkAllergeen ? 'Daardoor kan elk allergeen erin zitten.' : `${labelList(verborgenKeys)} kunnen daar in zitten.`}`
       : 'dit etiket bevat woorden die de keuring niet kent. Daardoor kan elk allergeen erin zitten.'}</small></p>}
-    {aanbiedingen.length > 0 && <details className="shop-links-details"><summary>Waar te koop ({aanbiedingen.length})</summary><div className="shop-links">
-      {aanbiedingen.map((aanbieding) => {
-        const prijs = Number(aanbieding.prijs)
-        const heeftPrijs = Number.isFinite(prijs) && prijs > 0
-        return <a
-          key={`${aanbieding.winkel}-${aanbieding.url}`}
-          className="shop-link"
-          href={aanbieding.url}
-          target="_blank"
-          rel="sponsored nofollow noopener noreferrer"
-          title={`Affiliate-link naar ${aanbieding.winkel}${heeftPrijs ? ` · vanaf ${PRIJS.format(prijs)}` : ''}. Wij ontvangen een kleine commissie.`}
-          onClick={() => track('winkel-klik', { winkel: aanbieding.winkel, merk: product.brand, product: product.name })}
-        >
-          <span className="shop-link-label">{aanbieding.winkel}{aanbieding.maat ? ` (${aanbieding.maat})` : ''}</span>
-          {heeftPrijs && <span className="shop-price" title="Laagste variantprijs uit de feed; de prijs van deze maat kan hoger zijn.">vanaf {PRIJS.format(prijs)}</span>}
-        </a>
-      })}
-      <span className="shop-note">{geprijsdeAanbiedingen.length
-        ? `Affiliate-links · vanaf-prijs (laagste variant) uit de feed${prijsDatum ? ` van ${prijsDatum}` : ''}, kan in de winkel afwijken`
-        : 'Affiliate-links · rechtstreeks naar de winkel'}</span>
-    </div></details>}
   </article>
 }
 

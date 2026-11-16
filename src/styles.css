@@ -4475,3 +4475,83 @@ button.summary-pill {
 .filters-clear:hover {
   color: #8a2f2f;
 }
+
+/* Eén Details-uitklapper per kaart voor ingrediënten en voedingswaarden. */
+.product-details {
+  margin-top: 0.55rem;
+  border-top: 1px solid #e6ebe7;
+}
+
+.product-details > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0;
+  list-style: none;
+  color: #334d3a;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.product-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.product-details > summary::after {
+  content: "▾";
+  margin-left: auto;
+  color: #5c7061;
+  font-size: 0.78rem;
+  transition: transform 0.15s ease;
+}
+
+.product-details[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+.product-details-body {
+  padding: 0.2rem 0 0.7rem;
+}
+
+.product-details[open] .product-details-body {
+  margin-top: 0.2rem;
+  padding: 0.55rem 0.7rem 0.65rem;
+  background: #fbfcfb;
+  border: 1px solid #e6ebe7;
+  border-radius: 6px;
+}
+
+.product-details-section {
+  padding: 0.2rem 0;
+}
+
+.product-details-section + .product-details-section {
+  margin-top: 0.5rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid #e6ebe7;
+}
+
+.product-details-section h4 {
+  margin: 0 0 0.35rem;
+  color: #68766c;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.product-details-section > p {
+  margin: 0.45rem 0 0.1rem;
+  color: #2b3a2f;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.product-details-section .import-note {
+  margin: 0.3rem 0;
+}
+
+.product-details-section .nutrition-view {
+  margin: 0.25rem 0 0.5rem;
+}

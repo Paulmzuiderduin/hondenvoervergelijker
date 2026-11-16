@@ -255,33 +255,17 @@ function SnackCard({ product, match, heeftKeuze, aanbiedingen = [], aanbodBijgew
     {match.traceStates.length > 0 && <p className="verdict unknown snack-trace"><strong>Sporen mogelijk:</strong> {match.traceStates.map((key) => ALLERGEN_LABELS[key] ?? key).join(', ')}. De verpakking noemt dit als sporen, niet als ingrediënt.</p>}
     {checkReason && <p className="reason">Controleer: {checkReason}</p>}
     {product.trace_text && !match.traceStates.length && <p className="snack-trace-note"><small>Sporenmelding op de verpakking: {product.trace_text}</small></p>}
-    <details className="ingredients">
-      <summary>Ingrediëntenlijst bekijken</summary>
-      <Ingredients text={product.ingredients_text} />
-      {product.source_note && <p className="import-note"><small>{product.source_note}</small></p>}
-      {match.importNote && match.importNote !== product.source_note && <p className="import-note"><small>{match.importNote}</small></p>}
+    <details className="product-details">
+      <summary>Details</summary>
+      <div className="product-details-body">
+        <section className="product-details-section">
+          <h4>Ingrediëntenlijst</h4>
+          <Ingredients text={product.ingredients_text} />
+          {product.source_note && <p className="import-note"><small>{product.source_note}</small></p>}
+          {match.importNote && match.importNote !== product.source_note && <p className="import-note"><small>{match.importNote}</small></p>}
+        </section>
+      </div>
     </details>
-    {aanbiedingen.length > 0 && <details className="shop-links-details"><summary>Waar te koop ({aanbiedingen.length})</summary><div className="shop-links">
-      {aanbiedingen.map((aanbieding) => {
-        const prijs = Number(aanbieding.prijs)
-        const heeftPrijs = Number.isFinite(prijs) && prijs > 0
-        return <a
-          key={`${aanbieding.winkel}-${aanbieding.url}`}
-          className="shop-link"
-          href={aanbieding.url}
-          target="_blank"
-          rel="sponsored nofollow noopener noreferrer"
-          title={`Affiliate-link naar ${aanbieding.winkel}${heeftPrijs ? ` · ${PRIJS.format(prijs)}` : ''}. Wij ontvangen een kleine commissie.`}
-          onClick={() => track('winkel-klik', { winkel: aanbieding.winkel, merk: product.brand, product: product.name })}
-        >
-          <span className="shop-link-label">{aanbieding.winkel}{aanbieding.maat ? ` (${aanbieding.maat})` : ''}</span>
-          {heeftPrijs && <span className="shop-price">{PRIJS.format(prijs)}</span>}
-        </a>
-      })}
-      <span className="shop-note">{geprijsdeAanbiedingen.length
-        ? `Affiliate-link · prijs van de aanbieding in de feed${prijsDatum ? ` van ${prijsDatum}` : ''}, kan afwijken`
-        : 'Affiliate-link · rechtstreeks naar de winkel'}</span>
-    </div></details>}
     <p className="snack-source"><small>Bron: {source
       ? <a href={source} target="_blank" rel="noreferrer">{sourceDomain(source) || 'open bron'} ↗</a>
       : 'niet vermeld'} · gecontroleerd op {bronDatum || 'onbekend'}{match.stale ? ' · controle nodig' : ''} · sporen: {product.trace_text ? 'apart vermeld' : 'niet vermeld op de bronpagina'}</small></p>
