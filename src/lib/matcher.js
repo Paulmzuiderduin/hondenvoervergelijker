@@ -75,7 +75,7 @@ export function productMatch(product, selectedAllergens, now = new Date(), asses
   const sourceChanged = product.source_status === 'gewijzigd'
   const presentStates = states.filter((state) => state.state === 'present')
   const unknownStates = states.filter((state) => state.state === 'unknown')
-  // Noemt dit etiket elke allergeenbron bij name? Dat is de productbrede vraag,
+  // Noemt dit etiket elke allergeenbron bij naam? Dat is de productbrede vraag,
   // los van de keuze van de bezoeker.
   const transparent = typeof assessment.transparent === 'boolean'
     ? assessment.transparent
@@ -107,7 +107,7 @@ export function productMatch(product, selectedAllergens, now = new Date(), asses
     // kaart te staan omdat een dierenarts er juist op stuurt. Het oordeel
     // verandert er niets door.
     hydrolysed: assessmentHydrolysed,
-    // Wat het etiket niet bij name noemt, los van de keuze van de bezoeker: dit
+    // Wat het etiket niet bij naam noemt, los van de keuze van de bezoeker: dit
     // bepaalt de rode woorden en de opmerking onder aan de kaart.
     hidden: assessmentHidden,
     unknownWords: assessmentUnknown

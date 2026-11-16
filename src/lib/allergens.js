@@ -159,7 +159,7 @@ const PART_SOURCE_KEYS = new Set([
 ])
 const GENERIC_ANIMAL_SOURCES = new Set(['vis', 'fish', 'gevogelte', 'pluimvee', 'poultry'])
 const PLANT_ALL_KEY_SET = new Set(PLANT_ALL_KEYS)
-// Categorieën die geen bron bij name noemen: voor de keuring zijn ze geen
+// Categorieën die geen bron bij naam noemen: voor de keuring zijn ze geen
 // aangetoonde bron, ook al bevatten ze zelf geen allergeenwoord.
 const UMBRELLA_KEYS = new Set(['grains', 'poultry', 'vegetables', 'fruit', 'herbs'])
 
@@ -391,7 +391,7 @@ const UNCERTAIN_INGREDIENT_TERMS = VAGUE_TERM_GROUPS.flatMap(({ words }) => word
 const RISK_TERMS = RISK_TERM_GROUPS.flatMap(({ words }) => words)
 const TERM_SCOPE = new Map([...VAGUE_TERM_GROUPS, ...RISK_TERM_GROUPS].flatMap(({ keys, words }) => words.map((word) => [word, keys])))
 
-// Bronnen die de keuring als "bij name genoemd" ziet, maar die geen allergeen in
+// Bronnen die de keuring als "bij naam genoemd" ziet, maar die geen allergeen in
 // onze lijst zijn. Bijna alle voedingsmiddelen hebben inmiddels een eigen
 // allergeen; hier blijven alleen delen en onbenoemde planten over.
 const OTHER_SOURCE_TERMS = [
@@ -817,7 +817,7 @@ function insideConcreteSourcePhrase(tokens, index) {
 buildVocabulary()
 
 // Een verzamel- of risicowoord is toegelicht als er in dezelfde opsomming tussen
-// haakjes een bron bij name staat: "dierlijk eiwit (rund 21%, kip 4%)" of
+// haakjes een bron bij naam staat: "dierlijk eiwit (rund 21%, kip 4%)" of
 // "granen (tarwe, maïs, rijst)". Zonder die toelichting houdt het woord tegen.
 function explainedByParenthetical(tokens, depthBefore, breakBefore, index) {
   let opened = false

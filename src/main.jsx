@@ -266,7 +266,7 @@ function ProductCard({ product, match, aanbiedingen = [], aanbodBijgewerkt = '',
   const importedOp = version?.imported_at ? datumKort(version.imported_at) : ''
   const statusText = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controleren' : match.states.length ? 'Geschikt' : 'Etiket volledig'
   const factLabel = match.states.length ? 'Allergenen' : 'Etiket'
-  const factValue = match.states.length ? conclusie : (match.kind === 'suitable' ? 'Alle bronnen bij name genoemd' : 'Niet elke bron bij name genoemd')
+  const factValue = match.states.length ? conclusie : (match.kind === 'suitable' ? 'Alle bronnen bij naam genoemd' : 'Niet elke bron bij naam genoemd')
   const voeding = voedingswaardeMap(version?.recipe_nutrition)
   const onbetrouwbaar = onbetrouwbareNutrienten(voeding, product.food_type)
   const veiligeRijen = (version?.recipe_nutrition || []).filter((rij) => !onbetrouwbaar.has(rij.nutrient_key))
@@ -638,7 +638,7 @@ function CompareDialog({ producten, allergenen = [], assessments = null, onClose
                 {producten.map((product) => {
                   const match = matchVoor(product)
                   const details = []
-                  details.push(match.transparent ? 'Geen onbenoemde bronnen in de lijst.' : 'De lijst noemt niet elke bron bij name.')
+                  details.push(match.transparent ? 'Geen onbenoemde bronnen in de lijst.' : 'De lijst noemt niet elke bron bij naam.')
                   if (!match.hasLabel) details.push('Geen ingrediëntenlijst beschikbaar.')
                   if (match.stale) details.push('Laatste broncontrole is ouder dan zes maanden.')
                   if (match.sourceChanged) details.push('De bronpagina is gewijzigd; controle loopt.')
@@ -750,7 +750,7 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
     if (!supabase) return setMessage('Voeg eerst de Supabase-omgevingsvariabelen toe.')
     if (working) return
     // Alleen uitleg vragen als er iets te wegen valt: bij een etiket dat de
-    // keuring volledig herkent en elke bron bij name noemt is het één klik.
+    // keuring volledig herkent en elke bron bij naam noemt is het één klik.
     const punten = [
       onbekend.length ? `De keuring herkent deze woorden niet: ${onbekend.join(', ')}. Zitten daar geen allergeenbronnen tussen?` : '',
       openWoorden.length ? `Het etiket noemt geen bron voor: ${openWoorden.join(', ')}. Voor wie dat allergeen vermijdt blijft dit product bij "Controleer etiket/fabrikant" staan.` : '',
@@ -1302,7 +1302,7 @@ function App() {
   }, [products, allergens, types, terms, selectedBrands, assessments, catalogusMetTekst])
   // Elke nieuwe keuze begint weer bovenaan.
   useEffect(() => { setPage(1) }, [allergens, types, selectedBrands, voedingsfilters, sortering, zoekterm, lifeStages, sizes, statusFilter])
-  useEffect(() => { setStatusFilter('alle') }, [allergens])
+  useEffect(() => { setStatusFilter(allergens.length ? 'suitable' : 'alle') }, [allergens])
   const suitable = matchesNaVoeding.filter(({ match }) => match.kind === 'suitable'); const check = matchesNaVoeding.filter(({ match }) => match.kind === 'check'); const excluded = matchesNaVoeding.filter(({ match }) => match.kind === 'excluded')
   const opNaam = (eerste, tweede) => eerste.product.brand.localeCompare(tweede.product.brand, 'nl', { sensitivity: 'base' }) || eerste.product.name.localeCompare(tweede.product.name, 'nl', { sensitivity: 'base' })
   // Sorteren gebeurt binnen de drie oordeelgroepen. Een product zonder de
@@ -1386,6 +1386,13 @@ function App() {
   // type, voeding en merk), niet bij de allergenen daarboven.
   const actieveFilterCount = (selectedBrands !== null ? Math.max(1, selectedBrands.length) : 0) + (types.length !== FOOD_TYPES.length ? 1 : 0) + actieveVoedingsfilters.length + (zoekterm ? 1 : 0) + (lifeStages.length ? 1 : 0) + (sizes.length ? 1 : 0)
   const gekozenTypeLabels = FOOD_TYPES.filter(([key]) => types.includes(key)).map(([, label]) => label).join(', ')
+  const typeMerkDelen = [
+    types.length !== FOOD_TYPES.length ? gekozenTypeLabels : null,
+    selectedBrands !== null ? (selectedBrands.length ? `${selectedBrands.length} merken` : 'Geen merken') : null,
+    zoekterm ? `“${zoekterm}”` : null,
+    lifeStages.length || sizes.length ? 'Leeftijd/formaar' : null
+  ].filter(Boolean)
+  const typeMerkSamenvatting = typeMerkDelen.length ? typeMerkDelen.join(' · ') : 'Alles'
   const sorteertOpVoeding = Boolean(SORTING_BY_KEY[sortering]?.nutrient)
   const mengtVoertypes = types.includes('kibble') && (types.includes('wet') || types.includes('raw'))
   const vergelijktNatvoerEnBrokken = actieveVoedingsfilters.length > 0 && mengtVoertypes
@@ -1538,25 +1545,24 @@ function App() {
             </div>
         <section id="vergelijken" className="allergen-panel">
           <div className="allergen-panel-header">
-            <div>
-              <p className="panel-step">Stap 1 · Kies wat je wilt vermijden</p>
-              <h2>Allergieën en intoleranties</h2>
-              <p><small>Vink aan wat je wilt uitsluiten. Klap een categorie open of zoek direct op naam.</small></p>
-            </div>
-            <div className="allergen-panel-actions">
-              <a className="jump-to-results" href="#resultaten" onClick={() => { track('resultaten-bekeken', { resultaten: statusGefilterd.length, allergenen: allergens.length, geschikt: suitable.length }); setFiltersOpen(false) }}>Bekijk resultaten ↓</a>
-              {allergens.length > 0 && <button type="button" className="clear-allergens" onClick={wisAllergenen}>Wis selectie ({allergens.length})</button>}
-            </div>
+            <h2>Jouw keuze</h2>
+            <span className="filters-selected-count">{allergens.length} geselecteerd</span>
           </div>
-          {allergens.length > 0 && <div className="selected-allergens" aria-label="Gekozen allergenen">
+          <div className="selected-allergens" aria-label="Gekozen allergenen">
             <span className="selected-label">Je sluit uit:</span>
-            {allergens.map((key) => <span className="allergen-chip static" key={key} title={`${ALLERGEN_LABELS[key]} wordt vermeden`}>{ALLERGEN_LABELS[key]}</span>)}
-          </div>}
-          <label className="brand-search-label allergen-search-label">Zoek allergeen<input type="search" value={allergenSearch} onChange={(e) => setAllergenSearch(e.target.value)} placeholder="Bijv. kip, rund, rijst, zalm of erwten" /></label>
+            {allergens.length
+              ? allergens.map((key) => <button type="button" className="allergen-chip" key={key} onClick={() => wisselAllergeen(key, false)} title={`Verwijder ${ALLERGEN_LABELS[key]}`}>{ALLERGEN_LABELS[key]} <span aria-hidden="true">×</span></button>)
+              : <span className="selected-empty">Nog geen allergeen gekozen.</span>}
+          </div>
           {!allergenSearch.trim() && <div className="quick-allergens" aria-label="Veelgekozen allergenen">
             <span className="quick-allergens-label">Veelgekozen:</span>
             {SNEL_ALLERGENEN.map((key) => <button type="button" key={key} className={`quick-allergen${allergens.includes(key) ? ' active' : ''}`} aria-pressed={allergens.includes(key)} onClick={() => wisselAllergeen(key, !allergens.includes(key))}>{ALLERGEN_LABELS[key] ?? key}</button>)}
           </div>}
+          <div className="allergen-panel-subhead">
+            <h2>Allergenen en bronnen</h2>
+            <span>{ALLERGENS.length}</span>
+          </div>
+          <label className="brand-search-label allergen-search-label">Zoek allergeen<input type="search" value={allergenSearch} onChange={(e) => setAllergenSearch(e.target.value)} placeholder="Bijv. kip, rund, rijst, zalm of erwten" /></label>
           {gezochteAllergenen.length ? gezochteAllergenen.map((group) => {
             const gekozen = group.allergens.filter(({ key }) => allergens.includes(key)).length
             return <details className="allergen-group" key={group.key} open={allergenSearch.trim() ? true : undefined}>
@@ -1566,82 +1572,82 @@ function App() {
           }) : <p><small>Geen allergeen gevonden voor “{allergenSearch}”.</small></p>}
         </section>
 
-            <div className="filters-head">
-              <div>
-                <p className="panel-step">Stap 2</p>
-                <h2>Verfijn resultaten</h2>
-              </div>
-              {actieveFilterCount > 0 && <button type="button" className="filters-reset" onClick={wisFilterkolom} title="Alleen de filters in deze kolom wissen; je allergenenkeuze blijft staan.">Wissen</button>}
-            </div>
-            <p className="filters-intro"><small><span className="filters-count">{GETAL0.format(statusGefilterd.length)} producten</span> · type voer, leeftijd, voeding en merk.</small></p>
-            <label className="product-search">Zoek product<input type="search" maxLength={80} value={zoekterm} onChange={(event) => setZoekterm(event.target.value)} placeholder="Bijv. renal, kip of senior" /></label>
-            <div className="filter-block">
-              <h3>Type voer</h3>
-              <div className="choices food-type-choices">{FOOD_TYPES.map(([key, label]) => <label className={`inline type-chip${types.includes(key) ? ' active' : ''}`} key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div>
-            </div>
-            <div className="filter-block trait-filter">
-              <div className="filter-heading nutrition-filter-heading">
-                <span>Leeftijd &amp; formaat</span>
-                <span className="filter-summary">naam</span>
-              </div>
-              <div className="trait-row">
-                <span className="trait-label">Leeftijd</span>
-                <div className="trait-chips">{LIFE_STAGE_OPTIONS.map((optie) => <button type="button" key={optie.key} className={`trait-chip${lifeStages.includes(optie.key) ? ' active' : ''}`} aria-pressed={lifeStages.includes(optie.key)} onClick={() => wisselTrait(setLifeStages, optie.key)} title={`${optie.label} volgens de productnaam`}>{optie.label}</button>)}</div>
-              </div>
-              <div className="trait-row">
-                <span className="trait-label">Formaat</span>
-                <div className="trait-chips">{SIZE_OPTIONS.map((optie) => <button type="button" key={optie.key} className={`trait-chip${sizes.includes(optie.key) ? ' active' : ''}`} aria-pressed={sizes.includes(optie.key)} onClick={() => wisselTrait(setSizes, optie.key)} title={`${optie.label} volgens de productnaam`}>{optie.label}</button>)}</div>
-              </div>
-              <p className="trait-hint">Volgens de productnaam; zonder aanduiding valt een product af. Het etiket blijft leidend.</p>
-            </div>
-            <details className="advanced-filters" open={advancedOpen} onToggle={(event) => setAdvancedOpen(event.currentTarget.open)}>
-              <summary className="filter-heading advanced-filters-heading">
-                <span>Meer filters</span>
-                <span className="filter-summary">{actieveVoedingsfilters.length || selectedBrands !== null ? 'actief' : 'voeding en merken'}</span>
+            <details className="filter-section">
+              <summary className="filter-section-heading">
+                <span>Type, leeftijd &amp; merk</span>
+                <span className="filter-summary">{typeMerkSamenvatting}</span>
               </summary>
-            <div className="filter-block nutrition-filter-block">
-              <div className="filter-heading nutrition-filter-heading">
-                <span>Voedingswaarden</span>
+              <div className="filter-section-body">
+                <label className="product-search">Zoek product<input type="search" maxLength={80} value={zoekterm} onChange={(event) => setZoekterm(event.target.value)} placeholder="Bijv. renal, kip of senior" /></label>
+                <div className="filter-block">
+                  <h3>Type voer</h3>
+                  <div className="choices food-type-choices">{FOOD_TYPES.map(([key, label]) => <label className={`inline type-chip${types.includes(key) ? ' active' : ''}`} key={key}><input type="checkbox" checked={types.includes(key)} onChange={(e) => setTypes(e.target.checked ? [...types, key] : types.filter((item) => item !== key))} />{label}</label>)}</div>
+                </div>
+                <div className="filter-block trait-filter">
+                  <div className="filter-heading nutrition-filter-heading">
+                    <span>Leeftijd &amp; formaat</span>
+                    <span className="filter-summary">naam</span>
+                  </div>
+                  <div className="trait-row">
+                    <span className="trait-label">Leeftijd</span>
+                    <div className="trait-chips">{LIFE_STAGE_OPTIONS.map((optie) => <button type="button" key={optie.key} className={`trait-chip${lifeStages.includes(optie.key) ? ' active' : ''}`} aria-pressed={lifeStages.includes(optie.key)} onClick={() => wisselTrait(setLifeStages, optie.key)} title={`${optie.label} volgens de productnaam`}>{optie.label}</button>)}</div>
+                  </div>
+                  <div className="trait-row">
+                    <span className="trait-label">Formaat</span>
+                    <div className="trait-chips">{SIZE_OPTIONS.map((optie) => <button type="button" key={optie.key} className={`trait-chip${sizes.includes(optie.key) ? ' active' : ''}`} aria-pressed={sizes.includes(optie.key)} onClick={() => wisselTrait(setSizes, optie.key)} title={`${optie.label} volgens de productnaam`}>{optie.label}</button>)}</div>
+                  </div>
+                  <p className="trait-hint">Volgens de productnaam; zonder aanduiding valt een product af. Het etiket blijft leidend.</p>
+                </div>
+                <div className="filter-block">
+                  <div className="filter-heading">
+                    <span>Merken</span>
+                    <span className="filter-summary">{selectedBrands === null ? `Alle ${alleMerken.length} merken` : selectedBrands.length === 0 ? 'Geen merken' : `${selectedBrands.length} van ${alleMerken.length}`}</span>
+                  </div>
+                  <div className="filter-actions">
+                    <button type="button" className={selectedBrands === null ? 'active' : ''} aria-pressed={selectedBrands === null} onClick={() => { setSelectedBrands(null); setBrandMode('include'); setBrandSearch('') }}>Alles</button>
+                    <button type="button" className={geenMerken ? 'active' : ''} aria-pressed={geenMerken} onClick={() => { setSelectedBrands([]); setBrandMode('include') }}>Niets</button>
+                  </div>
+                  <label className="brand-search-label">Zoek merk<input type="search" value={brandSearch} placeholder="Bijv. Acana, Royal Canin, Hill's" onChange={(event) => setBrandSearch(event.target.value)} /></label>
+                  <div className="brand-list">
+                    {zichtbareMerken.length ? zichtbareMerken.map((merk) => <label className="brand-row" key={merk}>
+                      <span><input type="checkbox" checked={merkActief(merk)} onChange={(event) => wisselMerk(merk, event.target.checked)} /> {merk}</span>
+                      <span className="brand-count">{merkTellingen.get(merk) ?? 0}</span>
+                    </label>) : <p><small>Geen merk gevonden.</small></p>}
+                  </div>
+                  <a className="filter-heading-link" href="/merken/">Alle merken bekijken</a>
+                </div>
+              </div>
+            </details>
+
+            <details className="filter-section">
+              <summary className="filter-section-heading">
+                <span>Voeding</span>
                 <span className="filter-summary">{actieveVoedingsfilters.length ? `${actieveVoedingsfilters.length} actief` : 'Geen filter'}</span>
-              </div>
-              <p className="nutrition-filter-hint">As-fed, inclusief vocht · energie in kcal/100 g. Het getal is het aantal bruikbare waarden; zonder waarde valt een product af bij een actief filter.</p>
-              {vergelijktNatvoerEnBrokken && <p className="nutrition-compare-warning" role="status"><strong>Let op:</strong> je filtert op voeding over natvoer/rauwvoer én brokken. Die zijn niet direct vergelijkbaar. Kies één voertype.</p>}
-              {PRIMAIRE_VOEDINGS_FILTERS.map(voedingsfilterRij)}
-              <details className="nutrition-extra" open={extraOpen || undefined} onToggle={(event) => setExtraOpen(event.currentTarget.open)}>
-                <summary className="nutrition-extra-heading">
-                  <span>Meer voedingswaarden</span>
-                  <span className="nutrition-extra-summary">{actieveExtraVoedingsfilters ? `${actieveExtraVoedingsfilters} actief` : `${EXTRA_VOEDINGS_FILTERS.length} waarden`}</span>
-                </summary>
-                <div className="nutrition-extra-body">{EXTRA_VOEDINGS_FILTERS.map(voedingsfilterRij)}</div>
-              </details>
-            </div>
-            <details className="filter-block brand-filter" open={selectedBrands !== null || undefined}>
-              <summary className="filter-heading">
-                <span>Merken</span>
-                <span className="filter-summary">{selectedBrands === null ? `Alle ${alleMerken.length} merken doen mee` : `${selectedBrands.length} van ${alleMerken.length} merken geselecteerd`}</span>
               </summary>
-              <div className="filter-actions">
-                <button type="button" className={selectedBrands === null ? 'active' : ''} aria-pressed={selectedBrands === null} onClick={() => { setSelectedBrands(null); setBrandMode('include'); setBrandSearch('') }}>Alles</button>
-                <button type="button" className={geenMerken ? 'active' : ''} aria-pressed={geenMerken} onClick={() => { setSelectedBrands([]); setBrandMode('include') }}>Niets</button>
+              <div className="filter-section-body">
+                {vergelijktNatvoerEnBrokken && <p className="nutrition-compare-warning" role="status"><strong>Let op:</strong> je filtert op voeding over natvoer/rauwvoer én brokken. Die zijn niet direct vergelijkbaar. Kies één voertype.</p>}
+                {PRIMAIRE_VOEDINGS_FILTERS.map(voedingsfilterRij)}
+                <details className="nutrition-extra" open={extraOpen || undefined} onToggle={(event) => setExtraOpen(event.currentTarget.open)}>
+                  <summary className="nutrition-extra-heading">
+                    <span>Meer voedingswaarden</span>
+                    <span className="nutrition-extra-summary">{actieveExtraVoedingsfilters ? `${actieveExtraVoedingsfilters} actief` : `${EXTRA_VOEDINGS_FILTERS.length} waarden`}</span>
+                  </summary>
+                  <div className="nutrition-extra-body">{EXTRA_VOEDINGS_FILTERS.map(voedingsfilterRij)}</div>
+                </details>
               </div>
-              <label className="brand-search-label">Zoek merk<input type="search" value={brandSearch} placeholder="Bijv. Acana, Royal Canin, Hill's" onChange={(event) => setBrandSearch(event.target.value)} /></label>
-              <div className="brand-list">
-                {zichtbareMerken.length ? zichtbareMerken.map((merk) => <label className="brand-row" key={merk}>
-                  <span><input type="checkbox" checked={merkActief(merk)} onChange={(event) => wisselMerk(merk, event.target.checked)} /> {merk}</span>
-                  <span className="brand-count">{merkTellingen.get(merk) ?? 0}</span>
-                </label>) : <p><small>Geen merk gevonden.</small></p>}
-              </div>
-              <a className="filter-heading-link" href="/merken/">Alle merken bekijken</a>
             </details>
-            </details>
-            <a className="filter-jump" href="#resultaten" onClick={() => setFiltersOpen(false)}>Bekijk {GETAL0.format(statusGefilterd.length)} producten ↓</a>
+
+            <div className="filters-actions">
+              <button type="button" className="filters-apply" onClick={() => { if (window.innerWidth <= 980) setFiltersOpen(false); document.getElementById('resultaten')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}>Toon resultaten</button>
+              <button type="button" className="filters-clear" onClick={wisAlleFilters}>Wis alle filters</button>
+            </div>
           </div>
         </aside>
         {filtersOpen && <div className="filters-backdrop" onClick={() => setFiltersOpen(false)} aria-hidden="true" />}
         <div className="content">
           <button type="button" className="mobile-filter-bar" aria-expanded={filtersOpen} aria-controls="filters" onClick={() => setFiltersOpen(true)}>
             <span className="mobile-filter-bar-icon" aria-hidden="true">☰</span>
-            <span className="mobile-filter-bar-text"><strong>Filters</strong><small>{allergens.length ? `${allergens.length} allergenen` : 'Geen allergenen'} · {actieveFilterCount} verfijning{actieveFilterCount === 1 ? '' : 'en'}</small></span>
+            <span className="mobile-filter-bar-text"><strong>Filters</strong><small>{allergens.length ? `${allergens.length} ${allergens.length === 1 ? 'allergeen' : 'allergenen'}` : 'Geen allergenen'} · {actieveFilterCount} verfijning{actieveFilterCount === 1 ? '' : 'en'}</small></span>
             <span aria-hidden="true">›</span>
           </button>
           {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : (loading || !matchesKlaar) ? <p>Laden…</p> : <>{verversFout && <p role="alert" className="cache-note">{verversFout}</p>}{verversen && <p className="cache-note"><small>Nieuwste gegevens worden opgehaald…</small></p>}{termsError && <p role="alert">{termsError}</p>}<details className="legend">
@@ -1675,10 +1681,10 @@ function App() {
                   <h2>Producten ({GETAL0.format(statusGefilterd.length)}{statusFilter !== 'alle' ? ` van ${GETAL0.format(alleResultaten.length)}` : ''})</h2>
                   <div className="results-tools">
                     <div className="result-summary" role="group" aria-label="Filter op status">
-                      <button type="button" className={`summary-pill suitable${statusFilter === 'suitable' ? ' active' : ''}`} aria-pressed={statusFilter === 'suitable'} title={allergens.length ? 'Toon alleen producten die het gekozen allergeen niet noemen.' : 'Toon alleen producten waarvan het etiket elke bron bij name noemt.'} onClick={() => setStatusFilter('suitable')}><span aria-hidden="true">✓</span> {allergens.length ? 'Geschikt' : 'Etiket volledig'}: {suitable.length}</button>
-                      <button type="button" className={`summary-pill check${statusFilter === 'check' ? ' active' : ''}`} aria-pressed={statusFilter === 'check'} title={allergens.length ? 'Toon alleen producten waarvoor controle nodig is.' : 'Toon alleen producten waarvoor het etiket niet elke bron noemt.'} onClick={() => setStatusFilter('check')}><span aria-hidden="true">?</span> Controleren: {check.length}</button>
-                      {allergens.length > 0 && <button type="button" className={`summary-pill excluded${statusFilter === 'excluded' ? ' active' : ''}`} aria-pressed={statusFilter === 'excluded'} title="Toon alleen producten die een gekozen allergeen noemen." onClick={() => setStatusFilter('excluded')}><span aria-hidden="true">✕</span> Uitgesloten: {excluded.length}</button>}
-                      <button type="button" className={`summary-pill all${statusFilter === 'alle' ? ' active' : ''}`} aria-pressed={statusFilter === 'alle'} onClick={() => setStatusFilter('alle')}>Alles: {GETAL0.format(alleResultaten.length)}</button>
+                      <button type="button" className={`summary-pill suitable${statusFilter === 'suitable' ? ' active' : ''}`} aria-pressed={statusFilter === 'suitable'} title={allergens.length ? 'Toon alleen producten die het gekozen allergeen niet noemen.' : 'Toon alleen producten waarvan het etiket elke bron bij naam noemt.'} onClick={() => setStatusFilter('suitable')}><span className="summary-pill-title">{allergens.length ? 'Geschikt' : 'Etiket volledig'}</span><span className="summary-pill-count">{GETAL0.format(suitable.length)}</span></button>
+                      <button type="button" className={`summary-pill check${statusFilter === 'check' ? ' active' : ''}`} aria-pressed={statusFilter === 'check'} title={allergens.length ? 'Toon alleen producten waarvoor controle nodig is.' : 'Toon alleen producten waarvoor het etiket niet elke bron noemt.'} onClick={() => setStatusFilter('check')}><span className="summary-pill-title">Controleren</span><span className="summary-pill-count">{GETAL0.format(check.length)}</span></button>
+                      {allergens.length > 0 && <button type="button" className={`summary-pill excluded${statusFilter === 'excluded' ? ' active' : ''}`} aria-pressed={statusFilter === 'excluded'} title="Toon alleen producten die een gekozen allergeen noemen." onClick={() => setStatusFilter('excluded')}><span className="summary-pill-title">Uitgesloten</span><span className="summary-pill-count">{GETAL0.format(excluded.length)}</span></button>}
+                      <button type="button" className={`summary-pill all${statusFilter === 'alle' ? ' active' : ''}`} aria-pressed={statusFilter === 'alle'} onClick={() => setStatusFilter('alle')}><span className="summary-pill-title">Alles</span><span className="summary-pill-count">{GETAL0.format(alleResultaten.length)}</span></button>
                     </div>
                     <label className="sort-select"><span>Sorteren op</span>
                       <select value={sortering} aria-label="Sorteer producten" onChange={(event) => { setSortering(event.target.value); track('sortering-gewisseld', { sortering: event.target.value }) }}>

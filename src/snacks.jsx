@@ -188,7 +188,7 @@ function SnackCard({ product, match, heeftKeuze, aanbiedingen = [], aanbodBijgew
   const laagsteAanbieding = geprijsdeAanbiedingen.reduce((laagste, aanbieding) => !laagste || Number(aanbieding.prijs) < Number(laagste.prijs) ? aanbieding : laagste, null)
   const statusText = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controleren' : heeftKeuze ? 'Geschikt' : 'Etiket volledig'
   const factLabel = match.states.length ? 'Allergenen' : 'Etiket'
-  const factValue = match.states.length ? conclusie : (match.kind === 'suitable' ? 'Alle bronnen bij name genoemd' : 'Niet elke bron bij name genoemd')
+  const factValue = match.states.length ? conclusie : (match.kind === 'suitable' ? 'Alle bronnen bij naam genoemd' : 'Niet elke bron bij naam genoemd')
   const checkReason = excluded || match.kind !== 'check' ? ''
     : !match.hasLabel ? 'Er is nog geen ingrediëntenlijst ingevoerd.'
       : !match.reviewed && !match.imported ? 'Deze samenstelling is nog niet tegen de bron gecontroleerd.'
@@ -198,7 +198,7 @@ function SnackCard({ product, match, heeftKeuze, aanbiedingen = [], aanbodBijgew
               : verborgenWoorden.length ? `Het etiket noemt geen bron voor ${verborgenWoorden.join(', ')}.`
                 : match.traceStates.length ? `De verpakking noemt sporen van ${match.traceStates.map((key) => ALLERGEN_LABELS[key] ?? key).join(', ')}.`
                   : onbekendeWoorden.length ? `De keuring kent deze woorden niet: ${onbekendeWoorden.join(', ')}. Daardoor kan elk allergeen erin zitten.`
-                    : 'Het etiket noemt niet elke bron bij name.'
+                    : 'Het etiket noemt niet elke bron bij naam.'
   return <article className={`product-card ${match.kind} snack-card`}>
     <div className="product-card-top">
       <div className="product-title-group">
@@ -288,7 +288,7 @@ function SnackCard({ product, match, heeftKeuze, aanbiedingen = [], aanbodBijgew
   </article>
 }
 
-function AllergenChooser({ gekozen, zoekterm, onZoek, onWissel, onWis, onJump }) {
+function AllergenChooser({ gekozen, zoekterm, onZoek, onWissel, onWis }) {
   const groepen = useMemo(() => {
     const zoek = normaliseerZoektekst(zoekterm)
     return ALLERGEN_GROUPS.map((groep) => ({
@@ -298,26 +298,25 @@ function AllergenChooser({ gekozen, zoekterm, onZoek, onWissel, onWis, onJump })
   }, [zoekterm])
   return <section id="vergelijken" className="allergen-panel">
     <div className="allergen-panel-header">
-      <div>
-        <p className="panel-step">Stap 1 · Kies wat je wilt vermijden</p>
-        <h2>Allergieën en intoleranties</h2>
-        <p><small>Vink aan wat je wilt uitsluiten. Klap een categorie open of zoek direct op naam. De keuring kijkt ook naar sporenmeldingen.</small></p>
-      </div>
-      <div className="allergen-panel-actions">
-        <a className="jump-to-results" href="#resultaten" onClick={onJump}>Bekijk snacks ↓</a>
-        {gekozen.length > 0 && <button type="button" className="clear-allergens" onClick={onWis}>Wis selectie ({gekozen.length})</button>}
-      </div>
+      <h2>Jouw keuze</h2>
+      <span className="filters-selected-count">{gekozen.length} geselecteerd</span>
     </div>
-    {gekozen.length > 0 && <div className="selected-allergens" aria-label="Gekozen allergenen">
+    <div className="selected-allergens" aria-label="Gekozen allergenen">
       <span className="selected-label">Je sluit uit:</span>
-      {gekozen.map((key) => <span className="allergen-chip static" key={key}>{ALLERGEN_LABELS[key] ?? key}</span>)}
-    </div>}
-    <label className="brand-search-label allergen-search-label">Zoek allergeen<input type="search" value={zoekterm} onChange={(event) => onZoek(event.target.value)} placeholder="Bijv. kip, rund, rijst, zalm of erwten" /></label>
+      {gekozen.length
+        ? gekozen.map((key) => <button type="button" className="allergen-chip" key={key} onClick={() => onWissel(key, false)} title={`Verwijder ${ALLERGEN_LABELS[key] ?? key}`}>{ALLERGEN_LABELS[key] ?? key} <span aria-hidden="true">×</span></button>)
+        : <span className="selected-empty">Nog geen allergeen gekozen.</span>}
+    </div>
     {!zoekterm.trim() && <div className="quick-allergens" aria-label="Veelgekozen allergenen">
       <span className="quick-allergens-label">Veelgekozen:</span>
       {SNEL_ALLERGENEN.map((key) => <button type="button" key={key} className={`quick-allergen${gekozen.includes(key) ? ' active' : ''}`} aria-pressed={gekozen.includes(key)} onClick={() => onWissel(key, !gekozen.includes(key))}>{ALLERGEN_LABELS[key] ?? key}</button>)}
     </div>}
-    {groepen.length ? groepen.map((groep, index) => {
+    <div className="allergen-panel-subhead">
+      <h2>Allergenen en bronnen</h2>
+      <span>{ALLERGEN_GROUPS.reduce((totaal, groep) => totaal + groep.allergens.length, 0)}</span>
+    </div>
+    <label className="brand-search-label allergen-search-label">Zoek allergeen<input type="search" value={zoekterm} onChange={(event) => onZoek(event.target.value)} placeholder="Bijv. kip, rund, rijst, zalm of erwten" /></label>
+    {groepen.length ? groepen.map((groep) => {
       const gekozenInGroep = groep.allergens.filter(({ key }) => gekozen.includes(key)).length
       return <details className="allergen-group" key={groep.key} open={zoekterm.trim() ? true : undefined}>
         <summary><span>{groep.label}</span> <span className={gekozenInGroep ? 'group-count active' : 'group-count'}>{gekozenInGroep ? `${gekozenInGroep} gekozen` : `${groep.allergens.length} ${groep.allergens.length === 1 ? 'optie' : 'opties'}`}</span></summary>
@@ -393,7 +392,7 @@ function CompareDialog({ producten, allergenen = [], onClose }) {
                   const absent = match.states.filter((state) => state.state === 'absent').length
                   if (absent) details.push(`Nergens genoemd: ${absent} van ${allergenen.length}`)
                 } else {
-                  details.push(match.transparent ? 'Geen onbenoemde bronnen in de lijst.' : 'De lijst noemt niet elke bron bij name.')
+                  details.push(match.transparent ? 'Geen onbenoemde bronnen in de lijst.' : 'De lijst noemt niet elke bron bij naam.')
                 }
                 if (!match.hasLabel) details.push('Geen ingrediëntenlijst beschikbaar.')
                 if (match.stale) details.push('Laatste broncontrole is ouder dan zes maanden.')
@@ -445,7 +444,7 @@ function App() {
   useEffect(() => { schrijfUrl(filters) }, [filters])
   useEffect(() => { setPage(1) }, [filters])
   useEffect(() => { setPage(1) }, [statusFilter])
-  useEffect(() => { setStatusFilter('alle') }, [filters.allergens])
+  useEffect(() => { setStatusFilter(filters.allergens.length ? 'suitable' : 'alle') }, [filters.allergens])
 
   const update = (patch) => setFilters((oud) => ({ ...oud, ...patch }))
   const wisselFilter = (key, waarde, aan) => setFilters((oud) => ({
@@ -495,6 +494,15 @@ function App() {
     + (filters.singleProtein ? 1 : 0)
     + (filters.grainFree ? 1 : 0)
     + (filters.zoekterm ? 1 : 0)
+  const snackTypeDelen = [
+    filters.types.length !== ALLE_TYPES.length ? 'Type' : null,
+    filters.sizes.length !== ALLE_MATEN.length ? 'Formaat' : null,
+    filters.proteins.length !== ALLE_EIWITTEN.length ? `${filters.proteins.length} eiwitbronnen` : null,
+    filters.brands.length !== ALLE_MERKEN.length ? `${filters.brands.length} merken` : null,
+    filters.singleProtein || filters.grainFree ? 'Extra eisen' : null,
+    filters.zoekterm ? `“${filters.zoekterm}”` : null
+  ].filter(Boolean)
+  const snackTypeSamenvatting = snackTypeDelen.length ? snackTypeDelen.join(' · ') : 'Alles'
   const gekozenTypeLabels = SNACK_TYPES.filter(([key]) => filters.types.includes(key)).map(([, label]) => label).join(', ')
   const gekozenMaatLabels = SIZE_CLASSES.filter(([key]) => filters.sizes.includes(key)).map(([, label]) => label).join(', ')
   const gekozenEiwitLabels = filters.proteins.join(', ')
@@ -560,7 +568,7 @@ function App() {
       <div className="hero-text">
         <p className="hero-kicker">Hondensnacks · eerste selectie</p>
         <h2>Vind snacks die passen bij de allergie van jouw hond</h2>
-        <p>Ook in snacks zitten bronnen die het etiket niet altijd bij name noemt. Deze vergelijker laat zien welke snacks <strong>lijken te passen</strong>, welke je moet <strong>controleren</strong> en welke <strong>uitgesloten</strong> zijn. We kijken naar ingrediënten, dierlijke eiwitbronnen en sporenmeldingen.</p>
+        <p>Ook in snacks zitten bronnen die het etiket niet altijd bij naam noemt. Deze vergelijker laat zien welke snacks <strong>lijken te passen</strong>, welke je moet <strong>controleren</strong> en welke <strong>uitgesloten</strong> zijn. We kijken naar ingrediënten, dierlijke eiwitbronnen en sporenmeldingen.</p>
         <p className="hero-meta"><strong>{PRODUCTEN.length}</strong> snacks · <strong>{MERKEN.length}</strong> merken · <strong>{ALLERGENS.length}</strong> allergenen &amp; bronnen</p>
         <p className="hero-positioning">Snacks zijn aanvullend voer. Een snack met één dierlijke eiwitbron is niet automatisch geschikt voor elke hond met een allergie.</p>
         <p className="hero-links"><a href="#filters" onClick={(event) => { event.preventDefault(); setFiltersOpen(true); document.getElementById('filters')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}>Begin met allergenen</a> · <a href="#resultaten">Bekijk snacks ↓</a> · <a href="/hondensnacks/merken/">Alle snackmerken</a></p>
@@ -574,56 +582,60 @@ function App() {
             <span>Filters</span>
             <button type="button" className="filters-close" onClick={() => setFiltersOpen(false)} aria-label="Sluit filters">×</button>
           </div>
-          <AllergenChooser gekozen={filters.allergens} zoekterm={allergenSearch} onZoek={setAllergenSearch} onWissel={wisselAllergeen} onWis={wisAllergenen} onJump={() => setFiltersOpen(false)} />
-          <div className="filters-head">
-            <div>
-              <p className="panel-step">Stap 2</p>
-              <h2>Verfijn resultaten</h2>
-            </div>
-            {actieveFilterCount > 0 && <button type="button" className="filters-reset" onClick={wisFilterkolom} title="Alleen de filters in deze kolom wissen; je allergenenkeuze blijft staan.">Wissen</button>}
-          </div>
-          <p className="filters-intro"><small><span className="filters-count">{GETAL0.format(statusGefilterd.length)} snacks</span> · soort snack, formaat, eiwitbron en merk.</small></p>
-          <label className="product-search">Zoek snack<input type="search" maxLength={80} value={filters.zoekterm} onChange={(event) => update({ zoekterm: event.target.value })} placeholder="Bijv. eend, lam of crunchy" /></label>
-          <div className="filter-block">
-            <h3>Soort snack</h3>
-            <div className="choices food-type-choices">{SNACK_TYPES.map(([key, label]) => <label className={`inline type-chip${filters.types.includes(key) ? ' active' : ''}`} key={key}><input type="checkbox" checked={filters.types.includes(key)} onChange={(event) => wisselFilter('types', key, event.target.checked)} />{label}</label>)}</div>
-          </div>
-          <div className="filter-block trait-filter">
-            <div className="filter-heading nutrition-filter-heading"><span>Formaat</span><span className="filter-summary">volgens product</span></div>
-            <div className="trait-chips">{SIZE_CLASSES.map(([key, label]) => <button type="button" key={key} className={`trait-chip${filters.sizes.includes(key) ? ' active' : ''}`} aria-pressed={filters.sizes.includes(key)} onClick={() => wisselFilter('sizes', key, !filters.sizes.includes(key))}>{label}</button>)}</div>
-          </div>
-          <details className="filter-block protein-filter">
-            <summary className="filter-heading">
-              <span>Dierlijke eiwitbron</span>
-              <span className="filter-summary">{filters.proteins.length === ALLE_EIWITTEN.length ? `Alle ${EIWITTEN.length} bronnen` : `${filters.proteins.length} van ${EIWITTEN.length} gekozen`}</span>
+          <AllergenChooser gekozen={filters.allergens} zoekterm={allergenSearch} onZoek={setAllergenSearch} onWissel={wisselAllergeen} onWis={wisAllergenen} />
+          <details className="filter-section">
+            <summary className="filter-section-heading">
+              <span>Type, formaat &amp; merk</span>
+              <span className="filter-summary">{snackTypeSamenvatting}</span>
             </summary>
-            <label className="brand-search-label">Zoek eiwitbron<input type="search" value={proteinSearch} onChange={(event) => setProteinSearch(event.target.value)} placeholder="Bijv. kip, rund of zalm" /></label>
-            <div className="choices protein-choices">
-              {zichtbareEiwitten.length ? zichtbareEiwitten.map((eiwit) => <label className="inline" key={eiwit}><input type="checkbox" checked={filters.proteins.includes(eiwit)} onChange={(event) => wisselFilter('proteins', eiwit, event.target.checked)} />{eiwit}</label>) : <p><small>Geen eiwitbron gevonden.</small></p>}
+            <div className="filter-section-body">
+              <label className="product-search">Zoek snack<input type="search" maxLength={80} value={filters.zoekterm} onChange={(event) => update({ zoekterm: event.target.value })} placeholder="Bijv. eend, lam of crunchy" /></label>
+              <div className="filter-block">
+                <h3>Soort snack</h3>
+                <div className="choices food-type-choices">{SNACK_TYPES.map(([key, label]) => <label className={`inline type-chip${filters.types.includes(key) ? ' active' : ''}`} key={key}><input type="checkbox" checked={filters.types.includes(key)} onChange={(event) => wisselFilter('types', key, event.target.checked)} />{label}</label>)}</div>
+              </div>
+              <div className="filter-block trait-filter">
+                <div className="filter-heading nutrition-filter-heading"><span>Formaat</span><span className="filter-summary">volgens product</span></div>
+                <div className="trait-chips">{SIZE_CLASSES.map(([key, label]) => <button type="button" key={key} className={`trait-chip${filters.sizes.includes(key) ? ' active' : ''}`} aria-pressed={filters.sizes.includes(key)} onClick={() => wisselFilter('sizes', key, !filters.sizes.includes(key))}>{label}</button>)}</div>
+              </div>
+              <details className="filter-block protein-filter">
+                <summary className="filter-heading">
+                  <span>Dierlijke eiwitbron</span>
+                  <span className="filter-summary">{filters.proteins.length === ALLE_EIWITTEN.length ? `Alle ${EIWITTEN.length} bronnen` : `${filters.proteins.length} van ${EIWITTEN.length} gekozen`}</span>
+                </summary>
+                <label className="brand-search-label">Zoek eiwitbron<input type="search" value={proteinSearch} onChange={(event) => setProteinSearch(event.target.value)} placeholder="Bijv. kip, rund of zalm" /></label>
+                <div className="choices protein-choices">
+                  {zichtbareEiwitten.length ? zichtbareEiwitten.map((eiwit) => <label className="inline" key={eiwit}><input type="checkbox" checked={filters.proteins.includes(eiwit)} onChange={(event) => wisselFilter('proteins', eiwit, event.target.checked)} />{eiwit}</label>) : <p><small>Geen eiwitbron gevonden.</small></p>}
+                </div>
+              </details>
+              <div className="filter-block snack-toggle-block">
+                <h3>Extra eisen</h3>
+                <label className="inline snack-toggle"><input type="checkbox" checked={filters.singleProtein} onChange={(event) => update({ singleProtein: event.target.checked })} />Alleen één dierlijke eiwitbron</label>
+                <label className="inline snack-toggle"><input type="checkbox" checked={filters.grainFree} onChange={(event) => update({ grainFree: event.target.checked })} />Alleen graanvrij volgens etiket</label>
+              </div>
+              <details className="filter-block brand-filter" open={filters.brands.length !== ALLE_MERKEN.length || undefined}>
+                <summary className="filter-heading"><span>Merken</span><span className="filter-summary">{filters.brands.length === ALLE_MERKEN.length ? `Alle ${ALLE_MERKEN.length} merken doen mee` : `${filters.brands.length} van ${ALLE_MERKEN.length} merken geselecteerd`}</span></summary>
+                <div className="filter-actions">
+                  <button type="button" className={filters.brands.length === ALLE_MERKEN.length ? 'active' : ''} aria-pressed={filters.brands.length === ALLE_MERKEN.length} onClick={wisMerkfilter}>Alles</button>
+                  <button type="button" className={filters.brands.length === 0 ? 'active' : ''} aria-pressed={filters.brands.length === 0} onClick={() => update({ brands: [] })}>Niets</button>
+                </div>
+                <div className="brand-list">{MERKEN.map((merk) => <label className="brand-row" key={merk}><span><input type="checkbox" checked={filters.brands.includes(merk)} onChange={(event) => wisselFilter('brands', merk, event.target.checked)} /> {merk}</span><span className="brand-count">{PRODUCTEN.filter((product) => product.brand === merk).length}</span></label>)}</div>
+                <a className="filter-heading-link" href="/hondensnacks/merken/">Alle snackmerken bekijken</a>
+              </details>
             </div>
           </details>
-          <div className="filter-block snack-toggle-block">
-            <h3>Extra eisen</h3>
-            <label className="inline snack-toggle"><input type="checkbox" checked={filters.singleProtein} onChange={(event) => update({ singleProtein: event.target.checked })} />Alleen één dierlijke eiwitbron</label>
-            <label className="inline snack-toggle"><input type="checkbox" checked={filters.grainFree} onChange={(event) => update({ grainFree: event.target.checked })} />Alleen graanvrij volgens etiket</label>
+
+          <div className="filters-actions">
+            <button type="button" className="filters-apply" onClick={() => { if (window.innerWidth <= 980) setFiltersOpen(false); document.getElementById('resultaten')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}>Toon resultaten</button>
+            <button type="button" className="filters-clear" onClick={wisAlles}>Wis alle filters</button>
           </div>
-          <details className="filter-block brand-filter" open={filters.brands.length !== ALLE_MERKEN.length || undefined}>
-            <summary className="filter-heading"><span>Merken</span><span className="filter-summary">{filters.brands.length === ALLE_MERKEN.length ? `Alle ${ALLE_MERKEN.length} merken doen mee` : `${filters.brands.length} van ${ALLE_MERKEN.length} merken geselecteerd`}</span></summary>
-            <div className="filter-actions">
-              <button type="button" className={filters.brands.length === ALLE_MERKEN.length ? 'active' : ''} aria-pressed={filters.brands.length === ALLE_MERKEN.length} onClick={wisMerkfilter}>Alles</button>
-              <button type="button" className={filters.brands.length === 0 ? 'active' : ''} aria-pressed={filters.brands.length === 0} onClick={() => update({ brands: [] })}>Niets</button>
-            </div>
-            <div className="brand-list">{MERKEN.map((merk) => <label className="brand-row" key={merk}><span><input type="checkbox" checked={filters.brands.includes(merk)} onChange={(event) => wisselFilter('brands', merk, event.target.checked)} /> {merk}</span><span className="brand-count">{PRODUCTEN.filter((product) => product.brand === merk).length}</span></label>)}</div>
-            <a className="filter-heading-link" href="/hondensnacks/merken/">Alle snackmerken bekijken</a>
-          </details>
-          <a className="filter-jump" href="#resultaten" onClick={() => setFiltersOpen(false)}>Bekijk {GETAL0.format(statusGefilterd.length)} snacks ↓</a>
         </div>
       </aside>
       {filtersOpen && <div className="filters-backdrop" onClick={() => setFiltersOpen(false)} aria-hidden="true" />}
       <div className="content">
         <button type="button" className="mobile-filter-bar" aria-expanded={filtersOpen} aria-controls="filters" onClick={() => setFiltersOpen(true)}>
           <span className="mobile-filter-bar-icon" aria-hidden="true">☰</span>
-          <span className="mobile-filter-bar-text"><strong>Filters</strong><small>{filters.allergens.length ? `${filters.allergens.length} allergenen` : 'Geen allergenen'} · {actieveFilterCount} verfijning{actieveFilterCount === 1 ? '' : 'en'}</small></span>
+          <span className="mobile-filter-bar-text"><strong>Filters</strong><small>{filters.allergens.length ? `${filters.allergens.length} ${filters.allergens.length === 1 ? 'allergeen' : 'allergenen'}` : 'Geen allergenen'} · {actieveFilterCount} verfijning{actieveFilterCount === 1 ? '' : 'en'}</small></span>
           <span aria-hidden="true">›</span>
         </button>
         <details className="legend">
@@ -664,10 +676,10 @@ function App() {
             <div className="results-header">
               <h2>Snacks ({GETAL0.format(statusGefilterd.length)}{statusFilter !== 'alle' ? ` van ${GETAL0.format(resultaten.length)}` : ''})</h2>
               <div className="result-summary" role="group" aria-label="Filter op status">
-                <button type="button" className={`summary-pill suitable${statusFilter === 'suitable' ? ' active' : ''}`} aria-pressed={statusFilter === 'suitable'} title={heeftKeuze ? 'Toon alleen snacks die het gekozen allergeen niet noemen.' : 'Toon alleen snacks waarvan het etiket elke bron bij name noemt.'} onClick={() => setStatusFilter('suitable')}><span aria-hidden="true">✓</span> {heeftKeuze ? 'Geschikt' : 'Etiket volledig'}: {suitable.length}</button>
-                <button type="button" className={`summary-pill check${statusFilter === 'check' ? ' active' : ''}`} aria-pressed={statusFilter === 'check'} title={heeftKeuze ? 'Toon alleen snacks waarvoor controle nodig is.' : 'Toon alleen snacks waarvoor het etiket niet elke bron noemt.'} onClick={() => setStatusFilter('check')}><span aria-hidden="true">?</span> Controleren: {check.length}</button>
-                {heeftKeuze && <button type="button" className={`summary-pill excluded${statusFilter === 'excluded' ? ' active' : ''}`} aria-pressed={statusFilter === 'excluded'} title="Toon alleen snacks die een gekozen allergeen noemen." onClick={() => setStatusFilter('excluded')}><span aria-hidden="true">✕</span> Uitgesloten: {excluded.length}</button>}
-                <button type="button" className={`summary-pill all${statusFilter === 'alle' ? ' active' : ''}`} aria-pressed={statusFilter === 'alle'} onClick={() => setStatusFilter('alle')}>Alles: {GETAL0.format(resultaten.length)}</button>
+                <button type="button" className={`summary-pill suitable${statusFilter === 'suitable' ? ' active' : ''}`} aria-pressed={statusFilter === 'suitable'} title={heeftKeuze ? 'Toon alleen snacks die het gekozen allergeen niet noemen.' : 'Toon alleen snacks waarvan het etiket elke bron bij naam noemt.'} onClick={() => setStatusFilter('suitable')}><span className="summary-pill-title">{heeftKeuze ? 'Geschikt' : 'Etiket volledig'}</span><span className="summary-pill-count">{GETAL0.format(suitable.length)}</span></button>
+                <button type="button" className={`summary-pill check${statusFilter === 'check' ? ' active' : ''}`} aria-pressed={statusFilter === 'check'} title={heeftKeuze ? 'Toon alleen snacks waarvoor controle nodig is.' : 'Toon alleen snacks waarvoor het etiket niet elke bron noemt.'} onClick={() => setStatusFilter('check')}><span className="summary-pill-title">Controleren</span><span className="summary-pill-count">{GETAL0.format(check.length)}</span></button>
+                {heeftKeuze && <button type="button" className={`summary-pill excluded${statusFilter === 'excluded' ? ' active' : ''}`} aria-pressed={statusFilter === 'excluded'} title="Toon alleen snacks die een gekozen allergeen noemen." onClick={() => setStatusFilter('excluded')}><span className="summary-pill-title">Uitgesloten</span><span className="summary-pill-count">{GETAL0.format(excluded.length)}</span></button>}
+                <button type="button" className={`summary-pill all${statusFilter === 'alle' ? ' active' : ''}`} aria-pressed={statusFilter === 'alle'} onClick={() => setStatusFilter('alle')}><span className="summary-pill-title">Alles</span><span className="summary-pill-count">{GETAL0.format(resultaten.length)}</span></button>
               </div>
             </div>
             {actieveFilterCount > 0 && <div className="active-filters" aria-label="Actieve filters">
