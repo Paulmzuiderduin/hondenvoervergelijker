@@ -646,8 +646,8 @@ function App() {
           <span aria-hidden="true">›</span>
         </button>
         <details className="legend">
-          <summary><mark className="uncertain-ingredient">Rood gemarkeerd</mark> = de bron wordt niet genoemd</summary>
-          <p>Het etiket noemt de specifieke dier- of plantbron niet (bijv. “dierlijke bijproducten” of “granen”). {heeftKeuze ? 'Het oordeel geldt per gekozen allergeen: een snack staat alleen op “Controle nodig” als zo’n niet-gespecificeerd ingrediënt jouw gekozen allergeen kan bevatten.' : 'Kies hierboven één of meer allergenen om direct te filteren op snacks die geschikt lijken.'}</p>
+          <summary><mark className="uncertain-ingredient">Rood gemarkeerd</mark> = de bron wordt niet bij naam genoemd</summary>
+          <p>Het etiket noemt de specifieke dier- of plantbron niet (bijv. “dierlijke bijproducten” of “granen”), of bevat een woord dat de keuring niet kent. {heeftKeuze ? 'Het oordeel geldt per gekozen allergeen: een snack staat alleen op “Controle nodig” als zo’n niet-gespecificeerd ingrediënt jouw gekozen allergeen kan bevatten.' : 'Kies in de filters één of meer allergenen om te zien welke snacks geschikt lijken.'}</p>
           <p><strong>Sporen:</strong> een melding als “kan sporen van kip bevatten” is geen ingrediënt, maar ook geen bewijs dat de snack kipvrij is. Zo’n snack blijft op “Controle nodig” staan.</p>
         </details>
         {resultaten.length === 0 ? <div className="empty-results" id="resultaten">

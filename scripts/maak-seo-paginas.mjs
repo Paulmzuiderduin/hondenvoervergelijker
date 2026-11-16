@@ -44,6 +44,26 @@ const WINKELDATA = (() => {
 })()
 const WINKELAANBOD = WINKELDATA.aanbieders
 
+// Voor producten zonder directe productkoppeling gebruiken we een transparante
+// affiliate-zoeklink. De bezoeker ziet dat het een zoekopdracht is; we doen
+// niet alsof het om een exacte productmatch gaat.
+const DIERENWINKEL_TT = (() => {
+  const voorbeeld = Object.values(WINKELAANBOD).flat().find((aanbieding) => aanbieding?.winkel === 'Dierenwinkel XL' && typeof aanbieding.url === 'string')
+  if (!voorbeeld) return ''
+  try {
+    return new URL(voorbeeld.url).searchParams.get('tt') || ''
+  } catch {
+    return ''
+  }
+})()
+
+function dierentwinkelZoeklink(product) {
+  if (!DIERENWINKEL_TT) return ''
+  const zoek = `${product.brand} ${product.name}`.trim()
+  const doel = `https://dierenwinkelxl.nl/?s=${encodeURIComponent(zoek)}&post_type=product&type_aws=true`
+  return `https://www.dierenwinkelxl.nl/dieren/?tt=${encodeURIComponent(DIERENWINKEL_TT)}&r=${encodeURIComponent(doel)}`
+}
+
 function leesEnv() {
   const env = {}
   const pad = join(WORTEL, '.env.local')
@@ -1151,9 +1171,24 @@ ${geschikt.map(({ label }) => `            <span class="tag ok">${escapeHtml(lab
             </li>`
   }).join('\n')
 
-  const affiliateKnoppen = aanbiedingen.map((aanbieding) => `<a class="cta secondary" href="${escapeHtml(aanbieding.url)}" target="_blank" rel="sponsored nofollow noopener noreferrer">Bekijk bij ${escapeHtml(aanbieding.winkel)}${aanbieding.maat ? ` (${escapeHtml(aanbieding.maat)})` : ''}${prijsNl(aanbieding.prijs) ? ` · vanaf ${prijsNl(aanbieding.prijs)}` : ''}</a>`).join(' ')
+  const fallbackAffiliate = aanbiedingen.length ? '' : dierentwinkelZoeklink(product)
+  const affiliateKnoppen = aanbiedingen.length
+    ? aanbiedingen.map((aanbieding) => `<a class="cta secondary" href="${escapeHtml(aanbieding.url)}" target="_blank" rel="sponsored nofollow noopener noreferrer">Bekijk bij ${escapeHtml(aanbieding.winkel)}${aanbieding.maat ? ` (${escapeHtml(aanbieding.maat)})` : ''}${prijsNl(aanbieding.prijs) ? ` · vanaf ${prijsNl(aanbieding.prijs)}` : ''}</a>`).join(' ')
+    : fallbackAffiliate
+      ? `<a class="cta secondary" href="${escapeHtml(fallbackAffiliate)}" target="_blank" rel="sponsored nofollow noopener noreferrer">Zoek bij Dierenwinkel XL</a>`
+      : ''
   const affiliateNotitie = aanbiedingen.length
     ? `      <p class="partner-note"><small>Partnerlink. De selectie, volgorde en beoordeling zijn niet van deze link afhankelijk. ${aanbiedingen.some((aanbieding) => prijsNl(aanbieding.prijs)) ? `De prijs is de laagste variantprijs uit de productfeed${WINKELDATA.bijgewerkt ? ` van ${escapeHtml(datumNl(WINKELDATA.bijgewerkt))}` : ''}; de actuele winkelprijs en de prijs voor deze maat kunnen afwijken.` : 'Er worden geen prijzen getoond.'}</small></p>`
+    : fallbackAffiliate
+      ? `      <p class="partner-note"><small>Partnerlink. Dit product is niet direct aan een winkel gekoppeld; de link opent een zoekopdracht bij Dierenwinkel XL. De selectie, volgorde en beoordeling zijn niet van deze link afhankelijk.</small></p>`
+      : ''
+  const affiliateSectie = affiliateKnoppen
+    ? `      <section class="product-shops">
+        <h2>Waar te koop</h2>
+        <p class="product-shops-intro">${aanbiedingen.length ? 'Beschikbare aanbiedingen voor dit product. Prijzen zijn indicaties uit de feed.' : 'Dit product is niet direct aan een winkel gekoppeld. Zoek het bij onze winkelpartner.'}</p>
+        <div class="hero-actions">${affiliateKnoppen}</div>
+${affiliateNotitie}
+      </section>`
     : ''
 
   const titel = `${product.brand} ${product.name}${maat ? ` (${maat})` : ''}: ingrediënten, allergenen en voedingswaarden | Hondenvoervergelijker`
@@ -1179,10 +1214,9 @@ ${geschikt.map(({ label }) => `            <span class="tag ok">${escapeHtml(lab
         <div class="hero-actions">
           <a class="cta" href="/?zoek=${encodeURIComponent(product.name)}">Vergelijk in de vergelijker</a>
           <a class="cta secondary" href="/merken/${slug(product.brand)}.html">Alle producten van ${escapeHtml(product.brand)}</a>
-          ${affiliateKnoppen}
         </div>
       </section>
-${affiliateNotitie}
+${affiliateSectie}
 
       <div class="overview-grid">
         <div class="overview-card">

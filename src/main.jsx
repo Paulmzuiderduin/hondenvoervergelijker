@@ -1658,8 +1658,8 @@ function App() {
             <span aria-hidden="true">›</span>
           </button>
           {loadError ? <section><h2>Kon de producten niet laden</h2><p role="alert">{loadError}</p><p>Er wordt hierdoor niets over de geschiktheid van voeding gezegd. Probeer het later opnieuw.</p></section> : (loading || !matchesKlaar) ? <p>Laden…</p> : <>{verversFout && <p role="alert" className="cache-note">{verversFout}</p>}{verversen && <p className="cache-note"><small>Nieuwste gegevens worden opgehaald…</small></p>}{termsError && <p role="alert">{termsError}</p>}<details className="legend">
-              <summary><mark className="uncertain-ingredient">Rood gemarkeerd</mark> = de bron wordt niet genoemd</summary>
-              <p>Het etiket noemt de specifieke dier- of plantbron niet (bijv. “dierlijk vet” of “granen”). {allergens.length ? 'Het oordeel geldt per gekozen allergeen: een product staat alleen op “Controleer” als zo\'n niet-gespecificeerd ingrediënt jouw gekozen allergeen kan bevatten.' : 'Kies hierboven één of meer allergenen om direct te filteren op hondenvoeding die geschikt lijkt.'}</p>
+              <summary><mark className="uncertain-ingredient">Rood gemarkeerd</mark> = de bron wordt niet bij naam genoemd</summary>
+              <p>Het etiket noemt de specifieke dier- of plantbron niet (bijv. “dierlijk vet” of “granen”), of bevat een woord dat de keuring niet kent. {allergens.length ? 'Het oordeel geldt per gekozen allergeen: een product staat alleen op “Controleer” als zo\'n niet-gespecificeerd ingrediënt jouw gekozen allergeen kan bevatten.' : 'Kies in de filters één of meer allergenen om te zien welke producten geschikt lijken.'}</p>
             </details>
             {geenMerken || geenTypes ? <section id="resultaten"><h2>Geen producten</h2><p>{filterMelding}</p></section> : (
               <section id="resultaten">

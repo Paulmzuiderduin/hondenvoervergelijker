@@ -247,8 +247,11 @@ try {
   const productHref = await page.locator('.product-list a.product-more').first().getAttribute('href')
   const productAntwoord = await context.request.get(`${BASIS}${productHref}`)
   const productHtml = await productAntwoord.text()
-  meld(productAntwoord.ok() && /<h1>/.test(productHtml) && /Allergenen en het etiket/.test(productHtml) && /Ingrediëntenlijst/.test(productHtml) && /"@type":"Product"/.test(productHtml) && !/"offers"/.test(productHtml) && !/>null</.test(productHtml), 'productpagina is indexeerbaar, gevuld en zonder offers-schema', productHref)
+  meld(productAntwoord.ok() && /<h1>/.test(productHtml) && /Allergenen en het etiket/.test(productHtml) && /Ingrediëntenlijst/.test(productHtml) && /"@type":"Product"/.test(productHtml) && !/"offers"/.test(productHtml) && !/>null</.test(productHtml) && /class="product-shops"/.test(productHtml), 'productpagina is indexeerbaar, gevuld en zonder offers-schema', productHref)
 
+  const fallbackProduct = await context.request.get(`${BASIS}/producten/edgard-en-cooper/rund-en-eend-5a6fab16.html`)
+  const fallbackHtml = await fallbackProduct.text()
+  meld(fallbackProduct.ok() && /class="product-shops"/.test(fallbackHtml) && /Zoek bij Dierenwinkel XL/.test(fallbackHtml) && /rel="sponsored nofollow noopener noreferrer"/.test(fallbackHtml), 'productpagina zonder directe koppeling heeft een affiliate-zoeklink')
   const broncontroleAntwoord = await context.request.get(`${BASIS}/broncontrole.html`)
   const broncontroleHtml = await broncontroleAntwoord.text()
   meld(broncontroleAntwoord.ok() && /Broncontrole/.test(broncontroleHtml) && /Handmatig nagelopen/.test(broncontroleHtml), 'openbaar broncontroleverslag is bereikbaar')
