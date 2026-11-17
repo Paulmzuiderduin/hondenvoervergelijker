@@ -209,7 +209,9 @@ staan lokaal in `data/winkels/plein-nl.json` en
 De koppeling gebruikt eerst een exacte EAN. Heeft een catalogusproduct geen EAN,
 dan volgt alleen een exacte match op merk, productnaam en verpakking. Bij twijfel
 blijft de link weg. Snacks worden gekoppeld op exacte merk-, naam- en
-maatovereenkomst; een EAN is daarvoor niet nodig. Het rapport staat in
+maatovereenkomst; een EAN is daarvoor niet nodig. Heeft een snack geen exacte
+match, dan toont de snackkaart een duidelijk gelabelde **zoeklink** naar
+Plein.nl en Petgamma.com in plaats van een productlink. Het rapport staat in
 `data/winkels/rapport-plein-petgamma.md`.
 
 ## Terugvallen op GitHub Pages

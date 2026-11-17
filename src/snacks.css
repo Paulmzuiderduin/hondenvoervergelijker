@@ -115,6 +115,23 @@
   margin: 0.75rem 0;
 }
 
+.shop-link-search {
+  border-style: dashed;
+  color: #3b4f42;
+}
+
+.shop-link-search:hover {
+  background: #f4f7f4;
+  border-color: #aebdb1;
+}
+
+.shop-link-search::before {
+  content: "⌕";
+  color: #6a7c6e;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
 @media (max-width: 780px) {
   .snack-section-label {
     display: none;
