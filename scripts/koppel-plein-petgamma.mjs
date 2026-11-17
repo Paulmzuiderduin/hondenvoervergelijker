@@ -20,11 +20,12 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { koppelDaisyconRetail, parseDaisyconRetailFeed } from './lib/daisycon-retail-match.mjs'
+import { koppelDaisyconRetail, koppelDaisyconSnacks, parseDaisyconRetailFeed, parseDaisyconSnackFeed } from './lib/daisycon-retail-match.mjs'
 
 const WORTEL = dirname(dirname(fileURLToPath(import.meta.url)))
 const OUTPUT = join(WORTEL, 'public', 'winkels.json')
 const RAPPORT = join(WORTEL, 'data', 'winkels', 'rapport-plein-petgamma.md')
+const SNACKS = join(WORTEL, 'data', 'snacks.json')
 const FEEDS = [
   { winkel: 'Plein.nl', pad: join(WORTEL, 'data', 'winkels', 'plein-nl.json') },
   { winkel: 'Petgamma.com', pad: join(WORTEL, 'data', 'winkels', 'petgamma.json') }
@@ -90,13 +91,17 @@ async function haalProducten() {
 }
 
 const producten = await haalProducten()
+const snackData = JSON.parse(readFileSync(SNACKS, 'utf8'))
+const snacks = Array.isArray(snackData.producten) ? snackData.producten : []
 const resultaten = []
 for (const feed of FEEDS) {
   const data = JSON.parse(readFileSync(feed.pad, 'utf8'))
-  const aanbiedingen = parseDaisyconRetailFeed(data, { winkel: feed.winkel })
-  const uitkomst = koppelDaisyconRetail(producten, aanbiedingen)
-  resultaten.push({ ...feed, aanbiedingen, ...uitkomst })
-  console.log(`${feed.winkel}: ${aanbiedingen.length} hondenvoerproducten, ${uitkomst.koppelingen.length} koppelingen.`)
+  const voerAanbiedingen = parseDaisyconRetailFeed(data, { winkel: feed.winkel })
+  const snackAanbiedingen = parseDaisyconSnackFeed(data, { winkel: feed.winkel })
+  const voer = { ...koppelDaisyconRetail(producten, voerAanbiedingen), aanbiedingen: voerAanbiedingen }
+  const snack = { ...koppelDaisyconSnacks(snacks, snackAanbiedingen), aanbiedingen: snackAanbiedingen }
+  resultaten.push({ ...feed, voerAanbiedingen, snackAanbiedingen, voer, snack })
+  console.log(`${feed.winkel}: ${voerAanbiedingen.length} hondenvoerproducten, ${voer.koppelingen.length} voerkoppelingen; ${snackAanbiedingen.length} snacks, ${snack.koppelingen.length} snackkoppelingen.`)
 }
 
 let bestaand = { aanbieders: {} }
@@ -119,7 +124,7 @@ for (const [productId, lijst] of Object.entries(bestaand.aanbieders ?? {})) {
 
 const perSleutel = new Map()
 for (const resultaat of resultaten) {
-  for (const koppeling of resultaat.koppelingen) {
+  for (const koppeling of [...resultaat.voer.koppelingen, ...resultaat.snack.koppelingen]) {
     const { product, aanbieding } = koppeling
     const maat = aanbieding.maat || product.package_size || ''
     const sleutel = `${product.id}|${aanbieding.winkel}|${maat}`
@@ -149,19 +154,19 @@ const regels = [
   `- Datum: ${new Date().toISOString().slice(0, 10)}`,
   `- Catalogusproducten: ${producten.length}`,
   '',
-  ...resultaten.flatMap(({ winkel, aanbiedingen, koppelingen, exact, naamMaat, dubbelzinnig, zonderMatch }) => {
+  ...resultaten.flatMap(({ winkel, voer, snack }) => {
     const uniekeLinks = [...perSleutel.values()].filter(({ aanbieding }) => aanbieding.winkel === winkel)
     const uniekeProducten = new Set(uniekeLinks.map(({ product }) => product.id))
     return [
       `## ${winkel}`,
       '',
-      `- Hondenvoerproducten in feed: ${aanbiedingen.length}`,
-      `- Ruwe matches: ${koppelingen.length}`,
-      `  - op exacte EAN: ${exact.length}`,
-      `  - op exacte merk/naam/maat: ${naamMaat.length}`,
+      `- Hondenvoerproducten in feed: ${voer.aanbiedingen.length}`,
+      `- Voerkoppelingen: ${voer.koppelingen.length} (${voer.exact.length} exacte EAN, ${voer.naamMaat.length} exacte merk/naam/maat)`,
+      `- Snacks in feed: ${snack.aanbiedingen.length}`,
+      `- Snackkoppelingen: ${snack.koppelingen.length} (exacte merk/naam/maat)`,
       `- Unieke links na ontdubbelen: ${uniekeLinks.length} voor ${uniekeProducten.size} producten`,
-      `- Dubbelzinnig overgeslagen: ${dubbelzinnig.length}`,
-      `- Geen match: ${zonderMatch.length}`,
+      `- Dubbelzinnig overgeslagen: ${voer.dubbelzinnig.length + snack.dubbelzinnig.length}`,
+      `- Geen match: ${voer.zonderMatch.length + snack.zonderMatch.length}`,
       ''
     ]
   }),
@@ -182,19 +187,23 @@ const regels = [
   '',
   '## Geen match of dubbelzinnig',
   '',
-  ...resultaten.flatMap(({ winkel, dubbelzinnig, zonderMatch }) => [
-    `### ${winkel}`,
-    '',
-    ...(dubbelzinnig.length
-      ? ['Dubbelzinnig:', ...dubbelzinnig.slice(0, 100).map(({ aanbieding, reden }) => `- ${aanbieding.titel}: ${reden}`)]
-      : ['Geen dubbelzinnige matches.']),
-    '',
-    ...(zonderMatch.length
-      ? [`Geen match: ${zonderMatch.length} feedproducten. Eerste 30:`, ...zonderMatch.slice(0, 30).map((aanbieding) => `- ${aanbieding.titel} (${aanbieding.ean || 'geen EAN'})`)]
-      : ['Geen ontbrekende matches.']),
-    ''
-  ]),
-  'Snacks zijn niet meegenomen: de snackcatalogus bevat geen EAN waarmee een betrouwbare koppeling mogelijk is.'
+  ...resultaten.flatMap(({ winkel, voer, snack }) => {
+    const dubbelzinnig = [...voer.dubbelzinnig, ...snack.dubbelzinnig]
+    const zonderMatch = [...voer.zonderMatch, ...snack.zonderMatch]
+    return [
+      `### ${winkel}`,
+      '',
+      ...(dubbelzinnig.length
+        ? ['Dubbelzinnig:', ...dubbelzinnig.slice(0, 100).map(({ aanbieding, reden }) => `- ${aanbieding.titel}: ${reden}`)]
+        : ['Geen dubbelzinnige matches.']),
+      '',
+      ...(zonderMatch.length
+        ? [`Geen match: ${zonderMatch.length} feedproducten. Eerste 30:`, ...zonderMatch.slice(0, 30).map((aanbieding) => `- ${aanbieding.titel} (${aanbieding.ean || 'geen EAN'})`)]
+        : ['Geen ontbrekende matches.']),
+      ''
+    ]
+  }),
+  'Snacks worden gekoppeld op exacte merk-, naam- en maatovereenkomst; een EAN is daarvoor niet nodig.'
 ]
 
 if (droog) {

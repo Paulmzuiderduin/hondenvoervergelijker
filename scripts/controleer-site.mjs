@@ -416,6 +416,9 @@ try {
   await open('/hondensnacks/?merk=Farm%20Food', '.snack-card .product-price a')
   const nieuweSnackShopLinks = await page.locator('.snack-card .product-price a').evaluateAll((links) => links.map((link) => ({ href: link.getAttribute('href') || '', rel: link.getAttribute('rel') || '' })))
   meld(nieuweSnackShopLinks.length >= 1 && nieuweSnackShopLinks.every(({ href, rel }) => /dierenwinkelxl\.nl/.test(href) && /tt=4019/.test(href) && /sponsored/.test(rel)), 'nieuwe snackmerken krijgen ook een Dierenwinkel XL-prijs', `${nieuweSnackShopLinks.length} Farm Food-prijslinks`)
+  await open('/hondensnacks/?zoek=Meaty%20Treats%20eend%20en%20appel', '.snack-card .card-shops .shop-link')
+  const snackNieuweShops = await page.locator('.snack-card .card-shops .shop-link').evaluateAll((links) => links.map((link) => ({ href: link.getAttribute('href') || '', tekst: link.innerText.replace(/\s+/g, ' ').trim() })))
+  meld(snackNieuweShops.some(({ tekst }) => /Plein\.nl/.test(tekst)) && snackNieuweShops.some(({ tekst }) => /Petgamma\.com/.test(tekst)) && snackNieuweShops.every(({ href }) => /fr135\.net\/c\//.test(href)), 'snacks krijgen ook Plein.nl- en Petgamma-links', `${snackNieuweShops.length} link(s)`)
   const snackWinkelPagina = await context.request.get(`${BASIS}/hondensnacks/merken/purina.html`)
   const snackWinkelHtml = await snackWinkelPagina.text()
   const snackWinkelLinks = (snackWinkelHtml.match(/rel="sponsored nofollow noopener noreferrer"/g) ?? []).length

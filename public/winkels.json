@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-11-17T18:06:54.101Z",
+  "bijgewerkt": "2026-11-17T18:34:05.991Z",
   "netwerk": "TradeTracker en Daisycon",
   "aanbieders": {
     "08c788d6-941d-433e-ba73-6f1c99405be5": [
@@ -10136,6 +10136,62 @@
         "prijs": 17.99
       }
     ],
+    "8in1-meaty-treats-eend-en-appel": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=c4797aac00708bb42333ef9701ca55e6&dl=8in1-meaty-treats-eend-en-appel-50-gr%3Fchannable%3D00456069640031303038303931ba&ws=",
+        "maat": "50 g",
+        "prijs": 3.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=41242d0faa699a257ff48ab4b62d4421&dl=p%2F8in1-meaty-treats-eend-en-appel-50-gr&ws=",
+        "maat": "50 g",
+        "prijs": 3.99
+      }
+    ],
+    "8in1-meaty-treats-kip-en-wortel": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=958ff725d7fb2f2a665863068575ff36&dl=8in1-meaty-treats-kip-en-wortel-50-gr%3Fchannable%3D00456069640031303038303930b9&ws=",
+        "maat": "50 g",
+        "prijs": 6.09
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=bd14ca82525955bba541e9d72f5b3e1c&dl=p%2F8in1-meaty-treats-kip-en-wortel-50-gr&ws=",
+        "maat": "50 g",
+        "prijs": 6.09
+      }
+    ],
+    "vitakraft-meat-me-rund": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=979e1d658272fbbc5e5f9f63b8c8eddb&dl=vitakraft-meat-me-rund-60-gr%3Fchannable%3D00456069640031303232333830d9&ws=",
+        "maat": "60 g",
+        "prijs": 5.59
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=abf9e9c8ca9748112a7c336e69cc174a&dl=p%2Fvitakraft-meat-me-rund-60-gr&ws=",
+        "maat": "60 g",
+        "prijs": 5.59
+      }
+    ],
+    "vitakraft-treaties-bits-leverworst": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=7a87fb75622ae5a2c37f6247a23cfaec&dl=vitakraft-treaties-bits-leverworst-120-gram%3Fchannable%3D0045606964003938303031314b&ws=",
+        "maat": "120 g",
+        "prijs": 5.05
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=8629a4fb8b2d8f234ac53e16065ef49b&dl=p%2Fvitakraft-treaties-bits-leverworst-120-gram&ws=",
+        "maat": "120 g",
+        "prijs": 5.05
+      }
+    ],
     "1c95039c-5b00-43cd-b868-a1cca78c26da": [
       {
         "winkel": "Petgamma.com",
@@ -11404,6 +11460,118 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0019e7c4c1dfc0a9c1c6e5b0a81dc729&dl=p%2Fspecific-cxd-xl-adult-large-en-giant-breed-adult-large-en-giant-breed-12-kg&ws=",
         "maat": "12 kg",
         "prijs": 53.99
+      }
+    ],
+    "braaaf-roll-sticks-eend-300g": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0feaab18e2d014b5b9b5b798df2eb3c3&dl=p%2Fbraaaf-roll-sticks-eend-280-gr&ws=",
+        "maat": "300 g",
+        "prijs": 7.25
+      }
+    ],
+    "braaaf-sushi-eend-en-vis": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=54cd8878cd67bcfdd242d62c12c03f72&dl=p%2Fbraaaf-sushi-eend-en-vis-85-gr&ws=",
+        "maat": "85 g",
+        "prijs": 3.25
+      }
+    ],
+    "chewies-hondensigaar-haas": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=56ea01d602f9bbc0f4cdff10053067ac&dl=p%2Fchewies-hondensigaar-haas-75-gr&ws=",
+        "maat": "75 g",
+        "prijs": 3.35
+      }
+    ],
+    "chewies-hondensigaar-kangoeroe": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=15bf37a3f837b1c8ce15a4eb9b6c1857&dl=p%2Fchewies-hondensigaar-kangoeroe-75-gr&ws=",
+        "maat": "75 g",
+        "prijs": 3.35
+      }
+    ],
+    "chewies-hondensigaar-paard-hennep": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f75b352f1be67d5dc390deab14daafe6&dl=p%2Fchewies-hondensigaar-paard-en-hennep-75-gr&ws=",
+        "maat": "75 g",
+        "prijs": 3.75
+      }
+    ],
+    "chewies-hondensigaar-struisvogel-bessen": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ef1665cf4cecf368a136f0a201fb5f3f&dl=p%2Fchewies-hondensigaar-struisvogel-en-bessen-75-gr&ws=",
+        "maat": "75 g",
+        "prijs": 3.75
+      }
+    ],
+    "chewies-hondensigaar-waterbuffel": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=3b8a5b68c5c57447f81a8530f3a1af6e&dl=p%2Fchewies-hondensigaar-waterbuffel-75-gr&ws=",
+        "maat": "75 g",
+        "prijs": 3.35
+      }
+    ],
+    "pedigree-biscrok-gravy-bones": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e541e27477420e12a37dd536ed3b147c&dl=p%2Fpedigree-biscrok-gravy-bones-400-gr&ws=",
+        "maat": "400 g",
+        "prijs": 3.35
+      }
+    ],
+    "royal-canin-gastrointestinal-treats": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=01e479a8eef0f13956b8e78ad2162151&dl=p%2Froyal-canin-vet-hondensnack-vet-d-treats-gi-230-gr&ws=",
+        "maat": "230 g",
+        "prijs": 7.89
+      }
+    ],
+    "royal-canin-hypoallergenic-treats": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f6863ad86bdee6ecc03b608ba78427de&dl=p%2Froyal-canin-vet-hondensnack-vet-d-treats-hypo-230-gr&ws=",
+        "maat": "230 g",
+        "prijs": 8.25
+      }
+    ],
+    "royal-canin-satiety-treats": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f529fa968d72ebe9874dd03b8340f1ce&dl=p%2Froyal-canin-vet-hondensnack-vet-d-treats-satiety-230-gr&ws=",
+        "maat": "230 g",
+        "prijs": 6.99
+      }
+    ],
+    "royal-canin-urinary-s-o-treats": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6b0b563548282237d6707c39a38b4cac&dl=p%2Froyal-canin-vet-hondensnack-vet-d-treats-urinary-so-230-gr&ws=",
+        "maat": "230 g",
+        "prijs": 7.85
+      }
+    ],
+    "vitakraft-beef-stick-hypoallergenic": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6f3583637c21885a8e764193f16f8870&dl=p%2Fvitakraft-beef-stick-hypoallergenic-12-gr&ws=",
+        "maat": "12 g",
+        "prijs": 1.95
+      }
+    ],
+    "vitakraft-bonis-bits": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b71bb88aa3f791a27a10d19ed25d6506&dl=p%2Fvitakraft-boony-bits-55-gr-1038311&ws=",
+        "maat": "55 g",
+        "prijs": 3.45
       }
     ]
   }

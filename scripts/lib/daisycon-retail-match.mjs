@@ -11,6 +11,12 @@ const GENERIEK = new Set([
   'van', 'the'
 ])
 
+const SNACK_GENERIEK = new Set([
+  'hond', 'honden', 'hondensnack', 'hondensnacks', 'hondenkoekje',
+  'hondenkoekjes', 'snack', 'snacks', 'koekje', 'koekjes', 'met', 'en',
+  'voor', 'van', 'the', 'hondenbotten', 'kauwstaaf', 'kauwstaven'
+])
+
 const MERK_ALIASSEN = new Map([
   ['smorlke', 'smolke'],
   ['smolke', 'smolke'],
@@ -52,6 +58,37 @@ export function naamTokens(naam = '', merk = '') {
       .split(' ')
       .filter((token) => token && !merktokens.has(token) && !GENERIEK.has(token))
   )
+}
+
+export function snackNaamTokens(naam = '', merk = '') {
+  const merktokens = new Set(normaliseer(merk).split(' ').filter(Boolean))
+  return new Set(
+    normaliseer(verwijderMaten(naam))
+      .split(' ')
+      .filter((token) => token && !merktokens.has(token) && !SNACK_GENERIEK.has(token))
+  )
+}
+
+// Voor snacks telt een multipack als één verpakking: "10 x 20 g" is 200 g,
+// niet 20 g. Bij een lijst met varianten ("50 g / 120 g") blijven beide
+// maten afzonderlijk geldig.
+export function maatOpties(tekst = '') {
+  const uit = new Set()
+  for (const ruw of String(tekst).toLowerCase().split(/\s*\/\s*|,\s+/)) {
+    const deel = ruw.replace(/(\d),(\d)/g, '$1.$2')
+    const multipack = deel.match(/(\d+(?:\.\d+)?)\s*x\s*(\d+(?:\.\d+)?)\s*(kg|g|gr|gram)\b/)
+    if (multipack) {
+      const factor = multipack[3] === 'kg' ? 1000 : 1
+      uit.add(Math.round(Number(multipack[1]) * Number(multipack[2]) * factor))
+      continue
+    }
+    const enkel = deel.match(/(\d+(?:\.\d+)?)\s*(kg|g|gr|gram)\b/)
+    if (enkel) {
+      const factor = enkel[2] === 'kg' ? 1000 : 1
+      uit.add(Math.round(Number(enkel[1]) * factor))
+    }
+  }
+  return [...uit].filter((waarde) => Number.isFinite(waarde) && waarde > 0).sort((a, b) => a - b)
 }
 
 export function formaatMaat(grammen) {
@@ -97,6 +134,39 @@ export function parseDaisyconRetailFeed(feed, { winkel } = {}) {
     const ean = String(info?.ean ?? '').replace(/\D/g, '')
     const feedMaten = alleMaten(info?.size ?? '')
     const titelMaten = alleMaten(titel)
+    const maatGram = feedMaten.at(-1) ?? titelMaten.at(-1) ?? null
+    const prijsGetal = Number(info?.price)
+
+    producten.push({
+      winkel,
+      titel,
+      merk: String(info?.brand ?? '').trim(),
+      ean: /^\d{8,14}$/.test(ean) ? ean : '',
+      maat: formaatMaat(maatGram),
+      maatGram,
+      prijs: Number.isFinite(prijsGetal) && prijsGetal > 0 ? prijsGetal : null,
+      url,
+      categorie
+    })
+  }
+  return producten
+}
+
+export function parseDaisyconSnackFeed(feed, { winkel } = {}) {
+  const programma = feed?.datafeed?.programs?.[0]
+  const producten = []
+  for (const rij of programma?.products ?? []) {
+    const info = rij?.product_info ?? rij
+    const categorie = String(info?.category_path ?? '')
+    if (!/hond/i.test(categorie) || !/snack|koek|kauw|trainer|gebitsverzorging|hondenbotten|hondenijs/i.test(categorie)) continue
+
+    const titel = String(info?.title ?? '').trim()
+    const url = String(info?.link ?? '').trim()
+    if (!titel || !/^https?:\/\//i.test(url)) continue
+
+    const ean = String(info?.ean ?? '').replace(/\D/g, '')
+    const feedMaten = maatOpties(info?.size ?? '')
+    const titelMaten = maatOpties(titel)
     const maatGram = feedMaten.at(-1) ?? titelMaten.at(-1) ?? null
     const prijsGetal = Number(info?.price)
 
@@ -201,4 +271,57 @@ export function koppelDaisyconRetail(producten, aanbiedingen) {
     String(a.aanbieding.maat).localeCompare(String(b.aanbieding.maat), 'nl', { sensitivity: 'base' })
   )
   return { koppelingen: veilig, exact, naamMaat, dubbelzinnig, zonderMatch }
+}
+
+export function koppelDaisyconSnacks(snacks, aanbiedingen) {
+  const perNaam = new Map()
+  for (const snack of snacks) {
+    const sleutel = `${merkSleutel(snack.brand)}|${[...snackNaamTokens(snack.name, snack.brand)].sort().join(' ')}`
+    if (!perNaam.has(sleutel)) perNaam.set(sleutel, [])
+    perNaam.get(sleutel).push(snack)
+  }
+
+  const koppelingen = []
+  const dubbelzinnig = []
+  const zonderMatch = []
+
+  for (const aanbieding of aanbiedingen) {
+    if (!aanbieding.maatGram) {
+      zonderMatch.push(aanbieding)
+      continue
+    }
+    const kandidaten = (perNaam.get(`${merkSleutel(aanbieding.merk)}|${[...snackNaamTokens(aanbieding.titel, aanbieding.merk)].sort().join(' ')}`) ?? [])
+      .filter((snack) => maatOpties(snack.package_size ?? '').includes(aanbieding.maatGram))
+
+    if (kandidaten.length > 1) {
+      dubbelzinnig.push({ aanbieding, kandidaten, reden: 'meerdere snacks passen bij merk, naam en maat' })
+      continue
+    }
+    if (!kandidaten.length) {
+      zonderMatch.push(aanbieding)
+      continue
+    }
+    koppelingen.push({ product: kandidaten[0], aanbieding, methode: 'naam+maat' })
+  }
+
+  const perUrl = new Map()
+  for (const koppeling of koppelingen) {
+    if (!perUrl.has(koppeling.aanbieding.url)) perUrl.set(koppeling.aanbieding.url, [])
+    perUrl.get(koppeling.aanbieding.url).push(koppeling)
+  }
+  const dubbeleUrls = new Set()
+  for (const groep of perUrl.values()) {
+    if (groep.length > 1) groep.forEach((koppeling) => dubbeleUrls.add(koppeling))
+  }
+  for (const koppeling of dubbeleUrls) {
+    dubbelzinnig.push({ aanbieding: koppeling.aanbieding, kandidaten: [koppeling.product], reden: 'dezelfde feedlink past bij meerdere snacks' })
+  }
+
+  const veilig = koppelingen.filter((koppeling) => !dubbeleUrls.has(koppeling))
+  veilig.sort((a, b) =>
+    a.product.brand.localeCompare(b.product.brand, 'nl', { sensitivity: 'base' }) ||
+    a.product.name.localeCompare(b.product.name, 'nl', { sensitivity: 'base' }) ||
+    String(a.aanbieding.maat).localeCompare(String(b.aanbieding.maat), 'nl', { sensitivity: 'base' })
+  )
+  return { koppelingen: veilig, dubbelzinnig, zonderMatch }
 }

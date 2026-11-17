@@ -1,6 +1,14 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { alleMaten, formaatMaat, koppelDaisyconRetail, parseDaisyconRetailFeed } from '../../scripts/lib/daisycon-retail-match.mjs'
+import {
+  alleMaten,
+  formaatMaat,
+  koppelDaisyconRetail,
+  koppelDaisyconSnacks,
+  maatOpties,
+  parseDaisyconRetailFeed,
+  parseDaisyconSnackFeed
+} from '../../scripts/lib/daisycon-retail-match.mjs'
 
 const feed = (producten) => ({
   datafeed: {
@@ -107,4 +115,57 @@ test('leest meerdere maten en formatteert de maat', () => {
   assert.deepEqual(alleMaten('2 kg, 3 x 2 kg, 7 kg, 12 kg'), [2000, 6000, 7000, 12000])
   assert.equal(formaatMaat(12500), '12,5 kg')
   assert.equal(formaatMaat(800), '800 g')
+})
+
+test('leest snackmaten en behandelt een multipack als totaalgewicht', () => {
+  assert.deepEqual(maatOpties('10 x 20 g'), [200])
+  assert.deepEqual(maatOpties('50 g / 120 g'), [50, 120])
+  assert.deepEqual(maatOpties('75 g (3 stuks)'), [75])
+  assert.deepEqual(maatOpties('2 kg, 3 x 2 kg, 7 kg'), [2000, 6000, 7000])
+})
+
+test('leest alleen honden-snacks uit de feed', () => {
+  const resultaat = parseDaisyconSnackFeed(feed([
+    { title: '8in1 Meaty Treats Eend en Appel 50 gr', brand: '8in1', ean: '4048422146162', size: '', price: '3.49', link: 'https://voorbeeld.test/snack', category_path: 'Hond|Snacks|Hondenkoekjes & snoepjes' },
+    { title: 'Kattenvoer', brand: 'Gourmet', ean: '7613036142922', size: '12 x 85 gr', price: '10.45', link: 'https://voorbeeld.test/kat', category_path: 'Kat|Kattenvoer|Kattenvoer nat' }
+  ]), { winkel: 'Petgamma.com' })
+  assert.equal(resultaat.length, 1)
+  assert.equal(resultaat[0].maat, '50 g')
+  assert.equal(resultaat[0].prijs, 3.49)
+})
+
+test('koppelt snacks op exacte merk, naam en maat', () => {
+  const snacks = [{ id: '8in1-meaty-treats-eend-en-appel', brand: '8in1', name: 'Meaty Treats eend en appel', package_size: '50 g' }]
+  const aanbiedingen = [{
+    winkel: 'Petgamma.com',
+    titel: '8in1 Meaty Treats Eend en Appel 50 gr',
+    merk: '8in1',
+    ean: '4048422146162',
+    maat: '50 g',
+    maatGram: 50,
+    prijs: 3.49,
+    url: 'https://voorbeeld.test/snack',
+    categorie: 'Hond|Snacks|Hondenkoekjes & snoepjes'
+  }]
+  const { koppelingen } = koppelDaisyconSnacks(snacks, aanbiedingen)
+  assert.equal(koppelingen.length, 1)
+  assert.equal(koppelingen[0].product.id, '8in1-meaty-treats-eend-en-appel')
+})
+
+test('koppelt geen single snack aan een multipack', () => {
+  const snacks = [{ id: 'vitakraft-beef-stick-school-rund', brand: 'Vitakraft', name: 'Beef Stick School Rund', package_size: '10 x 20 g' }]
+  const aanbiedingen = [{
+    winkel: 'Petgamma.com',
+    titel: 'Vitakraft Beef Stick School Rund 20 gr',
+    merk: 'Vitakraft',
+    ean: '4008239234155',
+    maat: '20 g',
+    maatGram: 20,
+    prijs: 2.49,
+    url: 'https://voorbeeld.test/snack',
+    categorie: 'Hond|Snacks|Trainers'
+  }]
+  const { koppelingen, zonderMatch } = koppelDaisyconSnacks(snacks, aanbiedingen)
+  assert.equal(koppelingen.length, 0)
+  assert.equal(zonderMatch.length, 1)
 })
