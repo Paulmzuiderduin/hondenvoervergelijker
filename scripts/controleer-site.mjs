@@ -419,9 +419,6 @@ try {
   await open('/hondensnacks/?zoek=Meaty%20Treats%20eend%20en%20appel', '.snack-card .card-shops .shop-link')
   const snackNieuweShops = await page.locator('.snack-card .card-shops .shop-link').evaluateAll((links) => links.map((link) => ({ href: link.getAttribute('href') || '', tekst: link.innerText.replace(/\s+/g, ' ').trim() })))
   meld(snackNieuweShops.some(({ tekst }) => /Plein\.nl/.test(tekst)) && snackNieuweShops.some(({ tekst }) => /Petgamma\.com/.test(tekst)) && snackNieuweShops.every(({ href }) => /fr135\.net\/c\//.test(href)), 'snacks krijgen ook Plein.nl- en Petgamma-links', `${snackNieuweShops.length} link(s)`)
-  await open('/hondensnacks/?zoek=delights%20beef%20bones', '.snack-card .card-shops .shop-link-search')
-  const snackZoekLinks = await page.locator('.snack-card .card-shops .shop-link-search').evaluateAll((links) => links.map((link) => ({ href: link.getAttribute('href') || '', tekst: link.innerText.replace(/\s+/g, ' ').trim(), title: link.getAttribute('title') || '' })))
-  meld(snackZoekLinks.length === 2 && snackZoekLinks.some(({ tekst }) => /Zoek bij Plein\.nl/.test(tekst)) && snackZoekLinks.some(({ tekst }) => /Zoek bij Petgamma\.com/.test(tekst)) && snackZoekLinks.every(({ href, title }) => /fr135\.net\/c\//.test(href) && /geen exacte productlink/i.test(title)), 'snacks zonder productlink krijgen een duidelijke zoeklink', `${snackZoekLinks.length} zoeklink(s)`)
   const snackWinkelPagina = await context.request.get(`${BASIS}/hondensnacks/merken/purina.html`)
   const snackWinkelHtml = await snackWinkelPagina.text()
   const snackWinkelLinks = (snackWinkelHtml.match(/rel="sponsored nofollow noopener noreferrer"/g) ?? []).length

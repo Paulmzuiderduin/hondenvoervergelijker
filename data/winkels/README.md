@@ -106,9 +106,8 @@ npm run winkels:plein-petgamma
 Eerst wordt op exacte EAN gematcht. Heeft een catalogusproduct geen EAN, dan
 volgt alleen een exacte match op merk, productnaam en verpakking. Bij twijfel
 blijft de link weg. Snacks worden op dezelfde manier gekoppeld: exacte merk-,
-naam- en maatovereenkomst, zonder EAN. Heeft een snack geen exacte match, dan
-verschijnt een duidelijk gelabelde zoeklink naar Plein.nl en Petgamma.com. Het
-rapport staat lokaal in `data/winkels/rapport-plein-petgamma.md`.
+naam- en maatovereenkomst, zonder EAN. Het rapport staat lokaal in
+`data/winkels/rapport-plein-petgamma.md`.
 
 ## Bestanden die niet in git horen
 

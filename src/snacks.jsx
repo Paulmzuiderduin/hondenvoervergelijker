@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ALLERGEN_GROUPS, ALLERGEN_LABELS, ALLERGENS, allergenSearchTerms, markUncertainIngredients, setCustomTerms, sortAllergenKeys } from './lib/allergens'
 import { SNACK_TERMS, SNACK_TYPES, SIZE_CLASSES, snackMatch, snackMerkPad, snackTypeLabel, sizeLabel, toProduct } from './lib/snacks'
-import { zoekLinksVoorSnack } from './lib/affiliateSearch'
 import { track } from './lib/analytics'
 import snackData from '../data/snacks.json'
 import './styles.css'
@@ -187,7 +186,6 @@ function SnackCard({ product, match, heeftKeuze, aanbiedingen = [], aanbodBijgew
   })
   const prijsDatum = datumKort(aanbodBijgewerkt)
   const laagsteAanbieding = geprijsdeAanbiedingen.reduce((laagste, aanbieding) => !laagste || Number(aanbieding.prijs) < Number(laagste.prijs) ? aanbieding : laagste, null)
-  const zoekLinks = aanbiedingen.length ? [] : zoekLinksVoorSnack(product)
   const statusText = excluded ? 'Uitgesloten' : match.kind === 'check' ? 'Controleren' : heeftKeuze ? 'Geschikt' : 'Etiket volledig'
   const factLabel = match.states.length ? 'Allergenen' : 'Etiket'
   const factValue = match.states.length ? conclusie : (match.kind === 'suitable' ? 'Alle bronnen bij naam genoemd' : 'Niet elke bron bij naam genoemd')
@@ -270,25 +268,7 @@ function SnackCard({ product, match, heeftKeuze, aanbiedingen = [], aanbodBijgew
             </div>
             <span className="shop-note">Affiliate</span>
           </div>
-        : zoekLinks.length > 0
-          ? <div className="card-shops card-shops-search" title="Affiliate-zoeklinks. Dit zijn geen exacte productlinks; je komt op een zoekresultaat van de winkel.">
-              <span className="shop-links-label">Zoek bij:</span>
-              <div className="shop-links-scroll">
-                {zoekLinks.map(({ winkel, url }) => <a
-                  key={winkel}
-                  className="shop-link shop-link-search"
-                  href={url}
-                  target="_blank"
-                  rel="sponsored nofollow noopener noreferrer"
-                  title={`Affiliate-zoeklink naar ${winkel}. Dit is geen exacte productlink; je komt op een zoekresultaat. Wij ontvangen een kleine commissie.`}
-                  onClick={() => track('winkel-zoek', { winkel, merk: product.brand, product: product.name })}
-                >
-                  <span className="shop-link-label">Zoek bij {winkel}</span>
-                </a>)}
-              </div>
-              <span className="shop-note">Zoeklink</span>
-            </div>
-          : <span className="product-actions-spacer" />}
+        : <span className="product-actions-spacer" />}
       {source.startsWith('http')
         ? <a className="manufacturer-link" href={source} target="_blank" rel="noreferrer" title="Officiële productpagina of gebruikte bron">Etiket bij {product.brand} ↗</a>
         : <span className="manufacturer-link unavailable">Bron niet beschikbaar</span>}
