@@ -195,6 +195,22 @@ De koppeling gebruikt alleen een exacte EAN. Producten zonder EAN of met een
 afwijkende EAN krijgen geen winkelknop; een verkeerde link is erger dan geen
 link. Het rapport staat in `data/winkels/rapport-ultra-premium-direct.md`.
 
+### Plein.nl en Petgamma.com (Daisycon)
+
+Plein.nl en Petgamma.com zijn goedgekeurd als Daisycon-campagnes. De JSON-feeds
+staan lokaal in `data/winkels/plein-nl.json` en
+`data/winkels/petgamma.json` en worden niet gecommit.
+
+1. Download de actuele productfeeds uit Daisycon en vervang de lokale bestanden.
+2. Draai `npm run winkels:plein-petgamma -- --dry-run` en controleer het rapport.
+3. Draai `npm run winkels:plein-petgamma` om `public/winkels.json` bij te werken.
+4. Commit alleen `public/winkels.json`.
+
+De koppeling gebruikt eerst een exacte EAN. Heeft een catalogusproduct geen EAN,
+dan volgt alleen een exacte match op merk, productnaam en verpakking. Bij twijfel
+blijft de link weg. Snacks worden niet meegenomen, omdat de snackcatalogus geen
+EAN bevat. Het rapport staat in `data/winkels/rapport-plein-petgamma.md`.
+
 ## Terugvallen op GitHub Pages
 
 GitHub Pages is ingericht als terugvaloptie en heeft geen eigen domein meer.

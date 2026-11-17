@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-11-13T14:32:17.523Z",
+  "bijgewerkt": "2026-11-17T18:06:54.101Z",
   "netwerk": "TradeTracker en Daisycon",
   "aanbieders": {
     "08c788d6-941d-433e-ba73-6f1c99405be5": [
@@ -112,6 +112,30 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fcavom-compleet-lam-en-rijst%2F",
         "maat": "",
         "prijs": 61.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=456491955367ddd62c222fe801c419fe&dl=cavom-compleet-lam-rijst-20-kg%3Fchannable%3D00456069640039363238393030&ws=",
+        "maat": "20 kg",
+        "prijs": 56.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=644fe64a1f90e74086e7735a35e2414a&dl=cavom-compleet-lam-rijst-5-kg%3Fchannable%3D00456069640039363238393131&ws=",
+        "maat": "5 kg",
+        "prijs": 18.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4f9c3c8ed11e87f8cf41bfef76f8ea1b&dl=p%2Fcavom-compleet-lam-rijst-20-kg&ws=",
+        "maat": "20 kg",
+        "prijs": 56.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=bdf5ae8054a95509615a68152b995a3a&dl=p%2Fcavom-compleet-lam-rijst-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 18.49
       }
     ],
     "bfca69b0-ab81-4420-88f0-a2d46af35c7e": [
@@ -120,6 +144,30 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Fcavom-compleet-senior%2F",
         "maat": "",
         "prijs": 56.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=a95b409ec815cebe95c6d6660f42d4a4&dl=cavom-compleet-senior-hondenvoer-20-kg%3Fchannable%3D004560696400373030393634a2&ws=",
+        "maat": "20 kg",
+        "prijs": 52.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=41ef434e95a05c53c399fa70319c0238&dl=cavom-compleet-senior-5-kg%3Fchannable%3D004560696400373030393635a3&ws=",
+        "maat": "5 kg",
+        "prijs": 17.25
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5c543976825e25fde126e0cf39155bac&dl=p%2Fcavom-compleet-senior-hondenvoer-20-kg&ws=",
+        "maat": "20 kg",
+        "prijs": 52.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=9f78414ed29678531c064c7d3f3cce4e&dl=p%2Fcavom-compleet-senior-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 17.25
       }
     ],
     "3eb53d08-67b1-4adc-b206-20111ec58869": [
@@ -200,6 +248,12 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Forijen-puppy%2F",
         "maat": "",
         "prijs": 6.29
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=57324074981b513835a1db5b434c5a60&dl=p%2Forijen-puppy-hondenvoer-340-gr&ws=",
+        "maat": "340 g",
+        "prijs": 6.75
       }
     ],
     "78288c8c-a8c2-4883-885d-0ef15ce1f93c": [
@@ -232,6 +286,18 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-chihuahua-adult%2F",
         "maat": "",
         "prijs": 18.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5a716b8337cd4c61b74cb5b15039bd33&dl=p%2Froyal-canin-chihuahua-28-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 22.09
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=521bc8bdd7027f07761b7859ed032460&dl=p%2Froyal-canin-chihuahua-28-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 29.99
       }
     ],
     "3b8a3d03-937d-4965-b885-97895c4142da": [
@@ -240,6 +306,12 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-dental-care-medium%2F",
         "maat": "",
         "prijs": 22.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f37f60cf37fff7d445f6a2c9c339af71&dl=p%2Froyal-canin-dental-care-medium-hondenvoer-dry-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 65.99
       }
     ],
     "6b2a4193-d201-4797-a421-253d458e8fc1": [
@@ -248,6 +320,24 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-dental-care-mini%2F",
         "maat": "3 kg",
         "prijs": 11.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=eb4ef3abc35b50e248aabb5c1bc88c29&dl=p%2Froyal-canin-hondenvoer-droog-dental-care-mini-1-kg&ws=",
+        "maat": "1 kg",
+        "prijs": 17.55
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=df96364c521e8aece8869dbe6fc22dfb&dl=p%2Froyal-canin-dental-care-mini-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 29.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5067a9054a57c8fca4eef656d0614a96&dl=p%2Froyal-canin-hondenvoer-droog-dental-care-mini-8-kg&ws=",
+        "maat": "8 kg",
+        "prijs": 61.49
       }
     ],
     "dfaffd78-1212-4110-a537-96640acf3f03": [
@@ -256,6 +346,18 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-french-bulldog-adult%2F",
         "maat": "9 kg",
         "prijs": 15.2
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e71d01ffee7cb8c6220c4ecc70d67988&dl=p%2Froyal-canin-french-bulldog-adult-26-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 24.79
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4de423a04c7fba895a944eeb0d9f3a6d&dl=p%2Froyal-canin-french-bulldog-adult-26-9-kg&ws=",
+        "maat": "9 kg",
+        "prijs": 57.49
       }
     ],
     "de23eec5-a500-42f5-961f-29fd29453448": [
@@ -264,6 +366,18 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-golden-retriever-adult%2F",
         "maat": "3 kg",
         "prijs": 23.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=806700eed8adef2094f21165dc33b39d&dl=p%2Froyal-canin-golden-retriever-adult-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 70.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2ad877d53ed18d501f85b04f3d0a273d&dl=p%2Froyal-canin-golden-retriever-adult-hondenvoer-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 75.49
       }
     ],
     "46498903-f571-4c35-a595-635faa5fca95": [
@@ -272,6 +386,12 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-maxi-adult-5%2F",
         "maat": "4 kg",
         "prijs": 29.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=119c5684d9a939a46c6acb94aec2dea7&dl=p%2Froyal-canin-maxi-adult-5-hondenvoer-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 71.49
       }
     ],
     "7d61ac75-cbf9-4c23-befb-d2eb626faa21": [
@@ -280,6 +400,18 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-maxi-ageing-8%2F",
         "maat": "15 kg",
         "prijs": 26.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0d38e59f53c65af37e5a6d59a9db19e2&dl=p%2Froyal-canin-maxi-ageing-8-hondenvoer-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 89.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=9a9a9c30b83122aa0d7e2dc4ac9d7f03&dl=p%2Froyal-canin-hondenvoer-droog-maxi-ageing-8-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 20.75
       }
     ],
     "60815eef-979a-464c-ae70-432764dd7fbd": [
@@ -288,6 +420,18 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-medium-adult%2F",
         "maat": "15 kg",
         "prijs": 27.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=722437cbf3f60dd44fa5f0593e318194&dl=p%2Froyal-canin-medium-adult-hondenvoer-dry-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 74.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ff9d36e147f2cf406a8eabfaf1fe1742&dl=p%2Froyal-canin-adult-medium-dogs-4-kg&ws=",
+        "maat": "4 kg",
+        "prijs": 28.59
       }
     ],
     "247dea35-64d2-46a7-ace4-5ffa3c09c5e3": [
@@ -296,6 +440,30 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-mini-adult-2%2F",
         "maat": "",
         "prijs": 51.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7fd2fdbcb28f4d8fe6df84264d98a8de&dl=p%2Froyal-canin-hondenvoer-droog-mini-adult-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 21.29
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=23a5a95f67bc3514cc5cfb7205e48e5b&dl=p%2Froyal-canin-mini-adult-hondenvoer-dry-4-kg&ws=",
+        "maat": "4 kg",
+        "prijs": 32.05
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=377b924a8a55cb5d3133a2a1678941a3&dl=p%2Froyal-canin-hondenvoer-droog-mini-adult-8-kg&ws=",
+        "maat": "8 kg",
+        "prijs": 52.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6f82f4b1826a64ccfa9c73c415ab9c93&dl=p%2Froyal-canin-hondenvoer-droog-mini-adult-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.35
       }
     ],
     "dbb0bf4b-ddb8-4489-af8f-0bccef7f290a": [
@@ -304,6 +472,18 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-mini-ageing-12%2F",
         "maat": "1,5 kg",
         "prijs": 14.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4a08891c3a45f6c20eba7121da7f3d88&dl=p%2Froyal-canin-mini-ageing-12-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 19.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4bb1b5101b8fb2091e076d45dc0836ca&dl=p%2Froyal-canin-mini-ageing-plus-hondenvoer-dry-35-kg&ws=",
+        "maat": "3,5 kg",
+        "prijs": 30.95
       }
     ],
     "cbdfde56-d131-4093-a51e-a7353b3275fb": [
@@ -312,6 +492,24 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-mini-puppy%2F",
         "maat": "",
         "prijs": 33.9
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2afe955a7dd5d78eedfb071fceb17f08&dl=p%2Froyal-canin-mini-junior-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 15.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b792bb225b4811fcca0018c4e9c1b992&dl=p%2Froyal-canin-mini-junior-4-kg&ws=",
+        "maat": "4 kg",
+        "prijs": 25.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=509efd47b67e6b60ffedb8af298def53&dl=p%2Froyal-canin-mini-junior-8-kg&ws=",
+        "maat": "8 kg",
+        "prijs": 45.04
       }
     ],
     "c6812757-a5b6-4017-b615-63a1d172a1a7": [
@@ -320,6 +518,24 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-shih-tzu-adult%2F",
         "maat": "",
         "prijs": 19.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c7c481cce1bec0bbb6ef0bb3117ebbf5&dl=p%2Froyal-canin-shih-tzu-adult-24-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 20.85
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=40122cf5d4b0e0913533cbbff293c301&dl=p%2Froyal-canin-shih-tzu-adult-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 29.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5eef11af839cad62928aef9a74420dc3&dl=p%2Froyal-canin-shih-tzu-adult-24-7-5-kg&ws=",
+        "maat": "7,5 kg",
+        "prijs": 62.49
       }
     ],
     "6f03b644-8cb2-4b6e-9e49-de931b9db4d3": [
@@ -328,6 +544,24 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-sterilised-mini%2F",
         "maat": "3 kg",
         "prijs": 9.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=57e6ab1e1cd5cd11912119030c4ac92d&dl=p%2Froyal-canin-hondenvoer-droog-sterilised-mini-1-kg&ws=",
+        "maat": "1 kg",
+        "prijs": 15.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=387bd41a0433fcf53c11f2817ddb6751&dl=p%2Froyal-canin-sterilised-mini-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 28.79
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f18c7d7c75dc72956f27712cbc2bc1a5&dl=p%2Froyal-canin-mini-sterilised-8-kg&ws=",
+        "maat": "8 kg",
+        "prijs": 60.49
       }
     ],
     "52edaac4-fb16-4730-a858-797efe9ce7d0": [
@@ -336,6 +570,24 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Froyal-canin-yorkshire-terrier-adult%2F",
         "maat": "",
         "prijs": 18.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f71ede8340aaf37ecac8f0b362d9e444&dl=p%2Froyal-canin-yorkshire-terrier-adult-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 15.65
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e5237888a2200074aac9240dcd231525&dl=p%2Froyal-canin-yorkshire-terrier-adult-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 26.59
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c5b05e99e7d8908d38ece2595d4999fb&dl=p%2Froyal-canin-yorkshire-terrier-28-7-5-kg&ws=",
+        "maat": "7,5 kg",
+        "prijs": 56.49
       }
     ],
     "carnilove-crunchy-snack-struisvogel-en-bramen": [
@@ -8384,6 +8636,2774 @@
         "url": "https://www.alsa-nature.nl/alsanature?tt=31843_1814066_518755_&r=https%3A%2F%2Fwww.alsa-nature.nl%2Fp%2F980087",
         "maat": "35 x 410 g",
         "prijs": 88.8
+      }
+    ],
+    "a848796e-d950-471f-be63-77210905104c": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=cd08e2fd0ddb259eb53ee41d9facae31&dl=bonzo-droogvoer-maxi%3Fchannable%3D004560696400313032333033383e&ws=",
+        "maat": "15 kg",
+        "prijs": 40.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4bd21a766b106ca393c0dfed950428cc&dl=p%2Fbonzo-droogvoer-maxi&ws=",
+        "maat": "15 kg",
+        "prijs": 40.95
+      }
+    ],
+    "6f9a1798-b0b5-47e9-840a-6accc01acaa6": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=688e456cf46b00418549d24d5dbc09f2&dl=bonzo-droogvoer-mini-menu-kip%3Fchannable%3D0045606964003130323332343940&ws=",
+        "maat": "1,5 kg",
+        "prijs": 7.09
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7a0c913d834e521af6bed311263eaede&dl=p%2Fbonzo-droogvoer-mini-menu-kip&ws=",
+        "maat": "1,5 kg",
+        "prijs": 7.09
+      }
+    ],
+    "1cce1cfe-40f7-45ac-b264-f90c51ee7ff3": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=c53ceef9e6c610a05b37a6af6958fc5f&dl=bonzo-droog-mini-menu-rund-en-lam-1-5-kg%3Fchannable%3D004560696400313136353031300d&ws=",
+        "maat": "1,5 kg",
+        "prijs": 8.69
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=272a56f3affb587babec6cc054d56fbe&dl=p%2Fbonzo-droog-mini-menu-rund-en-lam-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 8.69
+      }
+    ],
+    "5f38ac3c-ac24-4b7b-8259-1456469bbf95": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=880a12b672e86ba0200a45f48415ac64&dl=bonzo-droogvoer-mini-menu-rund%3Fchannable%3D00456069640031303233323530b7&ws=",
+        "maat": "1,5 kg",
+        "prijs": 7.09
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=220b2e28f239e1086eadddbad9234cde&dl=p%2Fbonzo-droogvoer-mini-menu-rund&ws=",
+        "maat": "1,5 kg",
+        "prijs": 7.09
+      }
+    ],
+    "20428163-697d-4b55-8e79-1640e15bbb0e": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=d318faa5a0ab455766278bddfc44e15a&dl=bonzo-senior-kip-groenten-3-kg%3Fchannable%3D004560696400313032323538345e&ws=",
+        "maat": "3 kg",
+        "prijs": 12.09
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=863b6ba2f888ebe7f11732bc591e80c6&dl=p%2Fbonzo-senior-kip-groenten-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 12.09
+      }
+    ],
+    "0cb9ab11-e274-4852-93f4-2a9693fe396e": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=af1e3d35f914a46d928f4894efab958d&dl=carocroc-hondenvoer-energy-12-5-kg%3Fchannable%3D00456069640031303637343634fd&ws=",
+        "maat": "12,5 kg",
+        "prijs": 43.39
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=a0bcf1ec8e632329c052525c84a676ce&dl=carocroc-energy-2516-hondenvoer-3-kg%3Fchannable%3D004560696400383736363433b8&ws=",
+        "maat": "3 kg",
+        "prijs": 13.89
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=45e39e67b8af72c8792cd08bc5999b73&dl=p%2Fcarocroc-hondenvoer-energy-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 43.39
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=30887fbe89cfb6d0796a16c7e3d7776b&dl=p%2Fcarocroc-energy-2516-hondenvoer-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 13.89
+      }
+    ],
+    "d2cb29bb-988b-4b4f-97d9-16db9c94c008": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=0fd5c705dd457866c616e664ab80a321&dl=carocroc-hondenvoer-high-energy-12-5-kg%3Fchannable%3D00456069640031303637343635fe&ws=",
+        "maat": "12,5 kg",
+        "prijs": 43.45
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=9d64f7bf4270a9d7b382397fac10c324&dl=p%2Fcarocroc-hondenvoer-high-energy-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 43.45
+      }
+    ],
+    "6896482b-d5ff-4a9b-b2b3-a836f5da9296": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=3e8878e4cb1fc3db916c58c1a3278aaf&dl=carocroc-hondenvoer-large-breed-12-5-kg%3Fchannable%3D0045606964003130363734363700&ws=",
+        "maat": "12,5 kg",
+        "prijs": 46.45
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4028946b6a1f0bc3f39eaae82869f6d0&dl=p%2Fcarocroc-hondenvoer-large-breed-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 46.45
+      }
+    ],
+    "84124d3c-4075-4b17-bae2-8f0c1ced483f": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=f52b418f11fcc8e63bcc64ed2389423d&dl=carocroc-hondenvoer-low-energy-12-5-kg%3Fchannable%3D0045606964003130363734363801&ws=",
+        "maat": "12,5 kg",
+        "prijs": 36.85
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=e3023e3eebe63ecfdba4cc4988eb151f&dl=carocroc-low-energy-228-hondenvoer-3-kg%3Fchannable%3D0045606964003837363633393e&ws=",
+        "maat": "3 kg",
+        "prijs": 11.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=9ff30858b0942fc02f478cb04a39636e&dl=p%2Fcarocroc-hondenvoer-low-energy-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 36.85
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=78e6b0382a496dabfd760649644ec4b3&dl=p%2Fcarocroc-low-energy-228-hondenvoer-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 11.95
+      }
+    ],
+    "c5da3d62-944b-44b6-b643-1ea15fceae4e": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=3302a6b7235f15b76456f7b62cac63ac&dl=carocroc-dog-mobility-support-12-5-kg%3Fchannable%3D0045606964003131303033343756&ws=",
+        "maat": "12,5 kg",
+        "prijs": 58.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=4663655fa5f55cfdfbea5ee5de18d9b2&dl=carocroc-dog-mobility-support-3-kg%3Fchannable%3D0045606964003131303033343857&ws=",
+        "maat": "3 kg",
+        "prijs": 18.65
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=fd8b85864e1dbc6357cf735dd4779f5c&dl=p%2Fcarocroc-dog-mobility-support-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 58.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7acd6da27a19fec16ee19cd8b288abe2&dl=p%2Fcarocroc-dog-mobility-support-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 18.65
+      }
+    ],
+    "a05b9810-653b-4449-aed2-3807ba0c8d8c": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=a01f5225133df25a317905a9bc6678e3&dl=carocroc-original-2312-hondenvoer-3-kg%3Fchannable%3D004560696400383736363431b6&ws=",
+        "maat": "3 kg",
+        "prijs": 11.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=87158ce07db7402f3506660069ae5af3&dl=p%2Fcarocroc-original-2312-hondenvoer-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 11.99
+      }
+    ],
+    "fc8c5a78-4b29-4548-a5bf-9b1c452e3be9": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=dba3e211dbfed70e5e9522f16c4d0319&dl=carocroc-puppy-12-5-kg%3Fchannable%3D004560696400313036373437307a&ws=",
+        "maat": "12,5 kg",
+        "prijs": 44.85
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=97969bb8e9bb12976f50f5a54cdc9d5f&dl=carocroc-puppy-2818-hondenvoer-3-kg%3Fchannable%3D0045606964003838373238366d&ws=",
+        "maat": "3 kg",
+        "prijs": 14.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=1fefa7e6902170b10dd9d4a3cf5b23a6&dl=p%2Fcarocroc-puppy-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 44.85
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e0fc037e68ee81bee3a9cae10dafde12&dl=p%2Fcarocroc-puppy-2818-hondenvoer-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 14.49
+      }
+    ],
+    "387a3170-8930-4662-8830-421be5228da3": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=0173c0f22ba96b8a6a40970b62c3c32b&dl=carocroc-puppy-large-12-5-kg%3Fchannable%3D004560696400313036373437317b&ws=",
+        "maat": "12,5 kg",
+        "prijs": 40.45
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=2ce5bd834a6edcc03b5f110cb8781674&dl=carocroc-puppy-large-junior-2517-3-kg%3Fchannable%3D004560696400383033383237eb&ws=",
+        "maat": "3 kg",
+        "prijs": 13.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=cb6789d407a31a14403f72044b408c18&dl=p%2Fcarocroc-puppy-large-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 40.45
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ea0a5ea5b6305bf96ec6cc8045fffee1&dl=p%2Fcarocroc-puppy-large-junior-2517-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 13.99
+      }
+    ],
+    "bc5d4bfb-7492-431b-819f-2bd8882ce704": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=e12184604525da75b726ba69bf34bb3b&dl=carocroc-hondenvoer-senior-1810-12-5-kg%3Fchannable%3D004560696400313036373437327c&ws=",
+        "maat": "12,5 kg",
+        "prijs": 37.65
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=88b8020d3a4c82720559aa3a55019a50&dl=carocroc-senior-1810-hondenvoer-3-kg%3Fchannable%3D004560696400383736363437bc&ws=",
+        "maat": "3 kg",
+        "prijs": 12.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b6872733afefe3733becc2cf9960973b&dl=p%2Fcarocroc-hondenvoer-senior-1810-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 37.65
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4238a8745538bbd964f50f9a3f8fa28e&dl=p%2Fcarocroc-senior-1810-hondenvoer-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 12.99
+      }
+    ],
+    "3407d9ee-3059-4239-8529-03cc3755c122": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=8cc417031a9d1e7cdc8e85e3a1242cdd&dl=carocroc-hondenvoer-senior-sensitive-12-5-kg%3Fchannable%3D004560696400313036373437357f&ws=",
+        "maat": "12,5 kg",
+        "prijs": 54.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=a32fdd06b7ed83994d5cd48e7fd5fdeb&dl=carocroc-senior-sensitive-1610-hondenvoer-3-kg%3Fchannable%3D0045606964003837363633353a&ws=",
+        "maat": "3 kg",
+        "prijs": 17.29
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=86e7e634cad1be45f1f5789ddc2a1d65&dl=p%2Fcarocroc-hondenvoer-senior-sensitive-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 54.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6e0141360fa4e0a333a86034072e0e7c&dl=p%2Fcarocroc-senior-sensitive-1610-hondenvoer-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 17.29
+      }
+    ],
+    "46714c8d-d463-420d-b082-471db2230149": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=f8895e6e97254267c4fca889d389b173&dl=carocroc-hondenvoer-skin-support-12-5-kg%3Fchannable%3D0045606964003130363734373680&ws=",
+        "maat": "12,5 kg",
+        "prijs": 55.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=14cebbd53913e783bcb88fad7fdd2185&dl=carocroc-skin-support-2414-hondenvoer-3-kg%3Fchannable%3D0045606964003730303334321d&ws=",
+        "maat": "3 kg",
+        "prijs": 18.15
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a44541f5460083aeb15cfbd749bb5025&dl=p%2Fcarocroc-hondenvoer-skin-support-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 55.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b40d540f7075636884cdea9c5f8f7a70&dl=p%2Fcarocroc-skin-support-2414-hondenvoer-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 18.15
+      }
+    ],
+    "d421e088-aaf5-4b6e-b028-0f789a108612": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=f5688de3345824baf31c9604699d79f8&dl=carocroc-hondenvoer-small-breed-12-5-kg%3Fchannable%3D004560696400313036373437337d&ws=",
+        "maat": "12,5 kg",
+        "prijs": 42.45
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=f7f6224ce46552ffa7af392655fee988&dl=carocroc-small-breed-2516-hondenvoer-3-kg%3Fchannable%3D004560696400383738313831b7&ws=",
+        "maat": "3 kg",
+        "prijs": 13.15
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=68cab01eb86b024f3ff5934d2f68efc9&dl=p%2Fcarocroc-hondenvoer-small-breed-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 42.45
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=782d99a2c94b9fdddae711f99bd4de3e&dl=p%2Fcarocroc-small-breed-2516-hondenvoer-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 13.15
+      }
+    ],
+    "a11f1139-0171-4599-a87e-5af6c7f8c91e": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=87c42708aff30a7ecd52012edebe817b&dl=carocroc-hondenvoer-superior-12-5-kg%3Fchannable%3D0045606964003130363734373781&ws=",
+        "maat": "12,5 kg",
+        "prijs": 62.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=9b50191feaf13ee1edc7a1c73f845a06&dl=carocroc-superior-2010-hondenvoer-3-kg%3Fchannable%3D0045606964003837363633373c&ws=",
+        "maat": "3 kg",
+        "prijs": 18.79
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b061a0242102f82e2a36fb2280cc0951&dl=p%2Fcarocroc-hondenvoer-superior-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 62.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ae1fdd844fca2e3367d548f3ff27dbab&dl=p%2Fcarocroc-superior-2010-hondenvoer-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 18.79
+      }
+    ],
+    "4b6a22d7-0748-42a3-84bb-b0754cb514b3": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=98f8187872801979dc0af4da9fe9275c&dl=cavom-compleet-hondenvoer-5-kg%3Fchannable%3D0045606964003730303036315d&ws=",
+        "maat": "5 kg",
+        "prijs": 16.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=73644890b775a50651c59bed3a15efcd&dl=p%2Fcavom-compleet-hondenvoer-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 16.75
+      }
+    ],
+    "d52bc335-a10e-48d3-b5b2-136f2e1789f1": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=c1c2168ca9d123c55a7ecc9508266cbd&dl=cavom-compleet-diner-10-kg%3Fchannable%3D004560696400373030393632a0&ws=",
+        "maat": "10 kg",
+        "prijs": 38.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b41d377f4b78d207773b79f456b2ec9c&dl=p%2Fcavom-compleet-diner-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 38.95
+      }
+    ],
+    "13f07f2f-3209-4ed7-a2d5-c416e42f2164": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=2782e07f3ab9d865e1e26f780122d636&dl=cavom-compleet-light-hondenvoer-20-kg%3Fchannable%3D00456069640037343834373826&ws=",
+        "maat": "20 kg",
+        "prijs": 53.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ef73b2e6893386613a31bc05a9177200&dl=cavom-compleet-light-hondenvoer-5-kg%3Fchannable%3D00456069640037343834373927&ws=",
+        "maat": "5 kg",
+        "prijs": 17.25
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5b83518dbf146cbcd3e275863f88aadf&dl=p%2Fcavom-compleet-light-hondenvoer-20-kg&ws=",
+        "maat": "20 kg",
+        "prijs": 53.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=fc1d284654772bcc8d01bd8e0c0b404b&dl=p%2Fcavom-compleet-light-hondenvoer-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 17.25
+      }
+    ],
+    "cc6a1aec-261e-4320-9605-e2c3ec610788": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=3a9fd0ef630b0346cb5f289671228b1b&dl=cavom-compleet-midi-10-kg%3Fchannable%3D00456069640039363238393232&ws=",
+        "maat": "10 kg",
+        "prijs": 33.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=199c01233c1026e13741d98e8d26e9eb&dl=cavom-compleet-midi-2-kg%3Fchannable%3D00456069640039363238393333&ws=",
+        "maat": "2 kg",
+        "prijs": 8.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=32b3988e04965a6ef3472cf8da2bd33f&dl=p%2Fcavom-compleet-midi-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 33.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=364600bf77382247ba845b6dded9c984&dl=p%2Fcavom-compleet-midi-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 8.75
+      }
+    ],
+    "ece59e9b-2792-46a7-ac86-c3a6a8d605bc": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=d26f2d2a7c58444ce82bc34965155d85&dl=cavom-compleet-pup-junior-hondenvoer-20-kg%3Fchannable%3D004560696400373030393633a1&ws=",
+        "maat": "20 kg",
+        "prijs": 53.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=0603ca8594084b3fd8d327841d591569&dl=cavom-compleet-pup-junior-hondenvoer-5-kg%3Fchannable%3D004560696400373030303931de&ws=",
+        "maat": "5 kg",
+        "prijs": 17.5
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=54181360a121ba05c58da6d1e5d9b273&dl=p%2Fcavom-compleet-pup-junior-hondenvoer-20-kg&ws=",
+        "maat": "20 kg",
+        "prijs": 53.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0c7763e27a21ae2b24d974d6cded8e8a&dl=p%2Fcavom-compleet-pup-junior-hondenvoer-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 17.49
+      }
+    ],
+    "a1407f26-d19a-4f0f-85a3-c660a00f5a79": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=bad8ff4712ee7c101e3b8b96261fa550&dl=cavom-hondenvoer-droog-compleet-sport-20-kg%3Fchannable%3D00456069640031313136363335a5&ws=",
+        "maat": "20 kg",
+        "prijs": 57.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=d5ee43bd9f3515bd8d95d49f7d21a1b8&dl=cavom-hondenvoer-droog-compleet-sport-5-kg%3Fchannable%3D00456069640031313136363334a4&ws=",
+        "maat": "5 kg",
+        "prijs": 17.29
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=af9e6f807b239b3464ed69aabe9f9f63&dl=p%2Fcavom-hondenvoer-droog-compleet-sport-20-kg&ws=",
+        "maat": "20 kg",
+        "prijs": 57.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b402689970fac7eae126e5da835bbcda&dl=p%2Fcavom-hondenvoer-droog-compleet-sport-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 17.29
+      }
+    ],
+    "92e34901-cf7a-45cb-9477-a52a5fd80b5d": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=81432b77aab8fcd132d6f194368bcafa&dl=cavom-hondenvoer-droog-compleet-zalm-20-kg%3Fchannable%3D00456069640031313136363333a3&ws=",
+        "maat": "20 kg",
+        "prijs": 61.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=2ad41a93aea84bf8d5214e53a2d0c0ab&dl=cavom-hondenvoer-droog-compleet-zalm-5-kg%3Fchannable%3D00456069640031313136363332a2&ws=",
+        "maat": "5 kg",
+        "prijs": 18.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2f9c31cf32ea3cd3b5681397bc640dc9&dl=p%2Fcavom-hondenvoer-droog-compleet-zalm-20-kg&ws=",
+        "maat": "20 kg",
+        "prijs": 61.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=3233010303eda1e71f25c35889b63943&dl=p%2Fcavom-hondenvoer-droog-compleet-zalm-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 18.99
+      }
+    ],
+    "e00d3da8-137d-424a-b588-c6a979d58561": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=a7c1a12159edf65cad8520600487da80&dl=cesar-alu-rund-150-gr%3Fchannable%3D00456069640039393432303802&ws=",
+        "maat": "150 g",
+        "prijs": 2.19
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=9109132dd65a52f8678c184328e01efc&dl=p%2Fcesar-alu-rund-150-gr&ws=",
+        "maat": "150 g",
+        "prijs": 2.19
+      }
+    ],
+    "81355fd8-5939-4a7b-b2a5-b2a6385c3742": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=859ca8d5cbb608e5854796f8a4005624&dl=cesar-cuisine-in-saus-kuipje-kalf-en-kalkoen-150-gr%3Fchannable%3D0045606964003130303637393641&ws=",
+        "maat": "150 g",
+        "prijs": 2.19
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e5b58755432a384c281a54344e43c169&dl=p%2Fcesar-cuisine-in-saus-kuipje-kalf-en-kalkoen-150-gr&ws=",
+        "maat": "150 g",
+        "prijs": 2.19
+      }
+    ],
+    "a06d2f0c-56b1-4bde-8958-c16d77c41f3d": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=902089bc718081e852eff97bd31880e7&dl=cesar-senior-in-gelei-kuipje-kip-en-rijst-150-gr%3Fchannable%3D0045606964003130303637393843&ws=",
+        "maat": "150 g",
+        "prijs": 2.19
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=3be07374d05120614b5e75fd7556e491&dl=p%2Fcesar-senior-in-gelei-kuipje-kip-en-rijst-150-gr&ws=",
+        "maat": "150 g",
+        "prijs": 2.19
+      }
+    ],
+    "955d5bb3-e667-4900-a3cd-389f7746cea6": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=66a54ceb9ed99651992ed859f8b9c456&dl=edgard-en-cooper-plantaardige-brokken-rode-biet-2-5-kg%3Fchannable%3D004560696400313032393037367f&ws=",
+        "maat": "2,5 kg",
+        "prijs": 25.79
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=1aed473ec4cc6edf8188ee55eb6fe076&dl=edgard-en-cooper-plantaardige-brokken-rode-biet-7-kg%3Fchannable%3D0045606964003130323930373780&ws=",
+        "maat": "7 kg",
+        "prijs": 59.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=054ed41cc1eb9dd8e0bc67d01f9b219a&dl=p%2Fedgard-en-cooper-plantaardige-brokken-rode-biet-2-5-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 25.79
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=bd9f6031c1fe95527aa8617659fd6f58&dl=p%2Fedgard-en-cooper-plantaardige-brokken-rode-biet-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 59.99
+      }
+    ],
+    "81484c49-969c-44cc-9655-afd27808bf97": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=e85fdd42cce5adbde4505a3de3a15ac4&dl=edgard-en-cooper-verse-zalm-en-kalkoen-brok-voor-puppys-1028803%3Fchannable%3D00456069640031303238383033da&ws=",
+        "maat": "2,5 kg",
+        "prijs": 22.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=59878b1213beda83635857178267f070&dl=edgard-en-cooper-verse-zalm-en-kalkoen-brok-voor-puppys-1028804%3Fchannable%3D00456069640031303238383034db&ws=",
+        "maat": "7 kg",
+        "prijs": 51.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=96a3f51ebd2af2269d93c78e90b86a60&dl=p%2Fedgard-en-cooper-verse-zalm-en-kalkoen-brok-voor-puppys-1028803&ws=",
+        "maat": "2,5 kg",
+        "prijs": 22.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5462b7d3b55383b6eb79feeea5cc5374&dl=p%2Fedgard-en-cooper-verse-zalm-en-kalkoen-brok-voor-puppys-1028804&ws=",
+        "maat": "7 kg",
+        "prijs": 51.95
+      }
+    ],
+    "14a651aa-17f9-47df-a955-207a386881d2": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=f16f90afeb192f01cd60d5bbaf75aaf8&dl=edgard-en-cooper-plantaardige-brokken-wortel-1-kg%3Fchannable%3D0045606964003130323930373982&ws=",
+        "maat": "1 kg",
+        "prijs": 10.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=a4283312a5871d24d4402fec37c0219e&dl=edgard-en-cooper-plantaardige-brokken-wortel-2-5-kg%3Fchannable%3D00456069640031303239303832fb&ws=",
+        "maat": "2,5 kg",
+        "prijs": 26.45
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=979404abdfd0a2ce8cb061b7ba87f665&dl=edgard-en-cooper-plantaardige-brokken-wortel-7-kg%3Fchannable%3D00456069640031303239303833fc&ws=",
+        "maat": "7 kg",
+        "prijs": 59.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a88f809f649614fac7fc758a41c7ce99&dl=p%2Fedgard-en-cooper-plantaardige-brokken-wortel-1-kg&ws=",
+        "maat": "1 kg",
+        "prijs": 10.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=bf1853550da5b592f6f95080a0039d5a&dl=p%2Fedgard-en-cooper-plantaardige-brokken-wortel-2-5-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 26.45
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ff7a453ec855c6e06bd96ad9d4d0f1af&dl=p%2Fedgard-en-cooper-plantaardige-brokken-wortel-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 59.49
+      }
+    ],
+    "f2762345-925e-4ec5-8cc0-679b593824fb": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=83499a7fb2cd43a39d3cc9e5c51274cc&dl=eukanuba-life-care-dog-adult-medium-hondenvoer-chicken-3kg%3Fchannable%3D0045606964003131303930353979&ws=",
+        "maat": "3 kg",
+        "prijs": 19.39
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f56bd8106e3c176446f8aff99f80b5e6&dl=p%2Feukanuba-life-care-dog-adult-medium-hondenvoer-chicken-3kg&ws=",
+        "maat": "3 kg",
+        "prijs": 19.39
+      }
+    ],
+    "9131b11f-5e2a-460e-87c8-43c786e34f86": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=9fa674e43cdf5927938ebee2844c13e3&dl=eukanuba-veterinary-diets-dermatosis-fp-hondenvoer-12-kg%3Fchannable%3D0045606964003131303935303937&ws=",
+        "maat": "12 kg",
+        "prijs": 67.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=72714dbaf317daacd438ac53e9344402&dl=eukanuba-veterinary-diets-dermatosis-fp-hondenvoer-5-kg%3Fchannable%3D0045606964003131303935303634&ws=",
+        "maat": "5 kg",
+        "prijs": 37.69
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4d7f72089a1b83444725ab0f282f5247&dl=p%2Feukanuba-veterinary-diets-dermatosis-fp-hondenvoer-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 67.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=96aa14f083b44ff3a49c6806965ffd78&dl=p%2Feukanuba-veterinary-diets-dermatosis-fp-hondenvoer-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 37.69
+      }
+    ],
+    "fa8bd6d9-586d-47e6-9e2c-a1ae12c9bdc0": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=4d7ca5fc52141981c24682c9cb98a5b8&dl=eukanuba-veterinary-diets-intestinal-hondenvoer-12-kg%3Fchannable%3D00456069640031313039353130af&ws=",
+        "maat": "12 kg",
+        "prijs": 75.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=278b2ce5edb77a52a10f62dc65cabe42&dl=eukanuba-veterinary-diets-intestinal-hondenvoer-5-kg%3Fchannable%3D0045606964003131303935303735&ws=",
+        "maat": "5 kg",
+        "prijs": 40.29
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=bb66717a4b33b720911c74aafa240dab&dl=p%2Feukanuba-veterinary-diets-intestinal-hondenvoer-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 75.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2bf4a99423f8463d89a201f91aaf152a&dl=p%2Feukanuba-veterinary-diets-intestinal-hondenvoer-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 40.29
+      }
+    ],
+    "7643a3b1-69aa-4eab-8dcb-32d3d2500e5b": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=b04aa858b5ff30887efa4d5de1922fca&dl=eukanuba-veterinary-diets-joint-mobility-hondenvoer-12-kg%3Fchannable%3D00456069640031313039353132b1&ws=",
+        "maat": "12 kg",
+        "prijs": 65.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7bb4ae6bb3e7fb689a52e8176b11f284&dl=p%2Feukanuba-veterinary-diets-joint-mobility-hondenvoer-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 65.95
+      }
+    ],
+    "16b1b134-4307-4419-9c5a-11fdfaef185e": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=79f0f9e6ed284e45cd097242b61e8c6d&dl=frolic-droog-gevogelte-1-5-kg-1095107%3Fchannable%3D00456069640031303935313037cc&ws=",
+        "maat": "1,5 kg",
+        "prijs": 9.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c7a0f2ca09f3487ca0b297bc8ce7f516&dl=p%2Ffrolic-droog-gevogelte-1-5-kg-1095107&ws=",
+        "maat": "1,5 kg",
+        "prijs": 9.75
+      }
+    ],
+    "28659252-f75c-4d70-bdd1-cf2eb83a744e": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=13ed0d1cbf786a0cdb699dd0043ce6fc&dl=frolic-droog-mini-gevogelte-800-gr%3Fchannable%3D00456069640031303935313035ca&ws=",
+        "maat": "800 g",
+        "prijs": 7.35
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0bcfbfa69ca045ee073688fb32158bad&dl=p%2Ffrolic-droog-mini-gevogelte-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 7.35
+      }
+    ],
+    "6dd90333-d14e-4960-a546-6a99c81e0864": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=2f8d0dd6a7f72ebfcdaa52b9519b2476&dl=frolic-hondenvoer-droog-mini-rund-800-gr%3Fchannable%3D004560696400313039353236348d&ws=",
+        "maat": "800 g",
+        "prijs": 6.25
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4ab28dfaa14675643ef950bbce9f443f&dl=p%2Ffrolic-hondenvoer-droog-mini-rund-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 6.25
+      }
+    ],
+    "838741d0-6746-4cbe-8466-f6da2bdde845": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=84e9f5aec8979e83045c972c35270a4d&dl=frolic-droog-rund-hondenvoer-1-5-kg%3Fchannable%3D00456069640031303935313039ce&ws=",
+        "maat": "1,5 kg",
+        "prijs": 9.19
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=dd2381dfeb5149f6cc3884ae410d3622&dl=p%2Ffrolic-droog-rund-hondenvoer-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 9.19
+      }
+    ],
+    "e88d4eb4-54f1-41ee-8558-58ef21bf9b37": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=bf3bd88a94eae48b30296371acac253d&dl=frolic-droog-rund-2-6-kg%3Fchannable%3D0045606964003130393531313349&ws=",
+        "maat": "2,6 kg",
+        "prijs": 16.05
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=9d7b662bd934b82a3e25f5ec99bab02b&dl=p%2Ffrolic-droog-rund-2-6-kg&ws=",
+        "maat": "2,6 kg",
+        "prijs": 16.05
+      }
+    ],
+    "51c26bb7-9e98-4144-9240-c2648b277e8a": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ca5e4d64d36fb40f9b3ce0295b151ecf&dl=kivo-verse-eend-graanvrij-14-kg%3Fchannable%3D004560696400313037343739310c&ws=",
+        "maat": "14 kg",
+        "prijs": 71.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=c676f9003ce0a66bad12302f75fb7a77&dl=kivo-verse-eend-graanvrij-4-kg%3Fchannable%3D004560696400313037343739300b&ws=",
+        "maat": "4 kg",
+        "prijs": 29.55
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b4ca11d8093852e58f8e2d4c115f40b7&dl=p%2Fkivo-verse-eend-graanvrij-14-kg&ws=",
+        "maat": "14 kg",
+        "prijs": 71.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0b3b1209de0544a19b4066a5b48ebb0a&dl=p%2Fkivo-verse-eend-graanvrij-4-kg&ws=",
+        "maat": "4 kg",
+        "prijs": 29.55
+      }
+    ],
+    "662dd099-ae2f-43ec-9dfd-17578614d646": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=a300c3daa2863d6552f43c430fe6ba52&dl=kivo-verse-kip-glutenvrij-14-kg%3Fchannable%3D0045606964003130373437393510&ws=",
+        "maat": "14 kg",
+        "prijs": 56.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=4d3a1eb4af041c33c09b28050bfb1aa2&dl=kivo-verse-kip-glutenvrij-4-kg%3Fchannable%3D004560696400313037343739340f&ws=",
+        "maat": "4 kg",
+        "prijs": 27.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0e5b2578ba069e05d832685698b65cf1&dl=p%2Fkivo-verse-kip-glutenvrij-14-kg&ws=",
+        "maat": "14 kg",
+        "prijs": 56.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7d1f3b99ac072e2bfac35e8276010d23&dl=p%2Fkivo-verse-kip-glutenvrij-4-kg&ws=",
+        "maat": "4 kg",
+        "prijs": 27.95
+      }
+    ],
+    "e23a079c-7f56-496c-8aea-12f26eb1ba7c": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=73558f2832c0b503bef295bb1a31a2c3&dl=kivo-verse-kip-puppy-glutenvrij-14-kg%3Fchannable%3D004560696400313037343739330e&ws=",
+        "maat": "14 kg",
+        "prijs": 56.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ca1db1ac8714d03a1c209f5612653660&dl=kivo-verse-kip-puppy-glutenvrij-4-kg%3Fchannable%3D004560696400313037343739320d&ws=",
+        "maat": "4 kg",
+        "prijs": 27.35
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=632b944afad4655a3e2f4879d1b3365a&dl=p%2Fkivo-verse-kip-puppy-glutenvrij-14-kg&ws=",
+        "maat": "14 kg",
+        "prijs": 56.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=653c26f51dd85721a127040e80c01597&dl=p%2Fkivo-verse-kip-puppy-glutenvrij-4-kg&ws=",
+        "maat": "4 kg",
+        "prijs": 27.35
+      }
+    ],
+    "0a80d7e5-955f-4dfe-b93f-77b6b6abcf58": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=e67ccfa3749a025306ee65384db519c8&dl=kivo-gedroogde-lam-graanvrij-14-kg%3Fchannable%3D004560696400313037343738308b&ws=",
+        "maat": "14 kg",
+        "prijs": 75.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=820349064fe92f6384888e83fa501563&dl=kivo-gedroogde-lam-graanvrij-4-kg%3Fchannable%3D0045606964003130373437373913&ws=",
+        "maat": "4 kg",
+        "prijs": 30.55
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a7c0a68b93907747c7431ba15da4559f&dl=p%2Fkivo-gedroogde-lam-graanvrij-14-kg&ws=",
+        "maat": "14 kg",
+        "prijs": 75.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f1f7c18b6bf48c273309d4c018173abb&dl=p%2Fkivo-gedroogde-lam-graanvrij-4-kg&ws=",
+        "maat": "4 kg",
+        "prijs": 30.55
+      }
+    ],
+    "361ce895-9a5c-436a-8178-73d4752f5428": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=b04e8352796294843086f6e1713a79f9&dl=kivo-verse-zalm-graanvrij-14-kg-1102831%3Fchannable%3D0045606964003131303238333151&ws=",
+        "maat": "14 kg",
+        "prijs": 71.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=8a234eb40ad11a0f3275cdf79bf67a79&dl=kivo-verse-zalm-graanvrij-4-kg%3Fchannable%3D0045606964003130373437393611&ws=",
+        "maat": "4 kg",
+        "prijs": 35.45
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=546c70bc4b50abb93251165564043320&dl=p%2Fkivo-verse-zalm-graanvrij-14-kg-1102831&ws=",
+        "maat": "14 kg",
+        "prijs": 71.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=47eb097f00ff506363403135c57a1c2a&dl=p%2Fkivo-verse-zalm-graanvrij-4-kg&ws=",
+        "maat": "4 kg",
+        "prijs": 35.45
+      }
+    ],
+    "4d148545-75e9-4e45-afae-6f38f9d79c2a": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=bd456eb9dbe96c6d0ddb9d8dd017acc9&dl=lilys-kitchen-hondenvoer-droog-salmon-supper-1-kg%3Fchannable%3D00456069640031313230343036f3&ws=",
+        "maat": "1 kg",
+        "prijs": 11.55
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=923fbe9518114237aace0fd57c86bc0d&dl=p%2Flilys-kitchen-hondenvoer-droog-salmon-supper-1-kg&ws=",
+        "maat": "1 kg",
+        "prijs": 11.55
+      }
+    ],
+    "11c68480-85d6-4ddb-8a75-b27a0c873083": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=9d0ef9401e0aae600d10744bf36a9856&dl=pedigree-droog-adult-kip-12-kg%3Fchannable%3D0045606964003130383839333902&ws=",
+        "maat": "12 kg",
+        "prijs": 33.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c2a06a9d34d19d84114a3ff0f472fcfc&dl=p%2Fpedigree-droog-adult-kip-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 33.95
+      }
+    ],
+    "0527daf1-c792-40f4-bd64-7c6ee9012bba": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=f23759ccbb7b9c84f7612b0be34f1208&dl=pedigree-droog-adult-mini-rund-12-kg%3Fchannable%3D0045606964003130383839333801&ws=",
+        "maat": "12 kg",
+        "prijs": 41.65
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a3a3cbe0bb5ec7b9b3b8856a20a74b5a&dl=p%2Fpedigree-droog-adult-mini-rund-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 41.65
+      }
+    ],
+    "b31af61e-8aae-466d-8d43-8c36d879617a": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=b7f94a32cef0c8e3e12e5ce8e69c7c01&dl=pedigree-droog-adult-rund-12-kg%3Fchannable%3D0045606964003130383839333700&ws=",
+        "maat": "12 kg",
+        "prijs": 34.65
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=112b7cde9ec7cf2f6e67e172a25b8b29&dl=pedigree-droog-adult-rund-2-6-kg%3Fchannable%3D004560696400313038383934337d&ws=",
+        "maat": "2,6 kg",
+        "prijs": 11.59
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6d47f1c21b5d067b5bf81d6d590e7010&dl=p%2Fpedigree-droog-adult-rund-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 34.65
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=8002f8cc0087de65968e06806df53f38&dl=p%2Fpedigree-droog-adult-rund-2-6-kg&ws=",
+        "maat": "2,6 kg",
+        "prijs": 11.59
+      }
+    ],
+    "82899e0a-2ff4-49cb-973a-938a59e0ac39": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=890cdf510d2df10699f3c298647802f1&dl=pedigree-droog-junior-kip-12-kg%3Fchannable%3D004560696400313038383934307a&ws=",
+        "maat": "12 kg",
+        "prijs": 34.45
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=1c6121d8efb4516ad063c7cd89e8a4d2&dl=p%2Fpedigree-droog-junior-kip-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 34.45
+      }
+    ],
+    "734d6ae2-b9fd-4d55-b4e3-69a23fc8bdc9": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=2ac95dea8dcfa64af1041c8ecf0be86a&dl=smolke-smolke-hond-adult-graanvrij-3-kg%3Fchannable%3D00456069640039353933333723&ws=",
+        "maat": "3 kg",
+        "prijs": 21.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=531f7e27ff5efce7ddab600701ca1c2f&dl=p%2Fsmolke-smolke-hond-adult-graanvrij-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 21.49
+      }
+    ],
+    "9af32f48-2750-42f3-82a2-94fd2cd5455b": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=cbce113434af75b1f50b4c994933c850&dl=smolke-hond-adult-maxi-3-kg%3Fchannable%3D00456069640031303036373832bc&ws=",
+        "maat": "3 kg",
+        "prijs": 16.35
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=fae6d6dac6fc173edd9c7b22f8ba0cf6&dl=p%2Fsmolke-hond-adult-maxi-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 16.35
+      }
+    ],
+    "c54312a8-6eb3-4ca4-a6d1-02fe2bd3b9cd": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=336a112a03dae86a30921c55355799d6&dl=smolke-hondenvoer-adult-medium-3-kg%3Fchannable%3D00456069640037393835353290&ws=",
+        "maat": "3 kg",
+        "prijs": 16.35
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=8e8e2820f1b5e0a690b33879481f91ec&dl=p%2Fsmolke-hondenvoer-adult-medium-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 16.35
+      }
+    ],
+    "de2a226d-e278-4944-8307-5bf264f2a90b": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ae98e32edb62de72c782fbf25d0d406b&dl=smolke-hondenvoer-adult-mini-3-kg%3Fchannable%3D004560696400393431353933b2&ws=",
+        "maat": "3 kg",
+        "prijs": 16.79
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=8eb40d86cb3fc8201078d034700b4b5c&dl=p%2Fsmolke-hondenvoer-adult-mini-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 16.79
+      }
+    ],
+    "5126e22b-c3a4-4a02-98e8-2420cc7447eb": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=406aadca00a13ec1cf76426f416f3259&dl=smolke-hond-senior-maxi-3-kg%3Fchannable%3D00456069640031303036373836c0&ws=",
+        "maat": "3 kg",
+        "prijs": 17.25
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=9aae14fa5e4742c1fa559010e7182380&dl=p%2Fsmolke-hond-senior-maxi-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 17.25
+      }
+    ],
+    "7f78dfae-e78f-4b6e-822b-4aa390c04f14": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=c3a39e676cd1402626e75589d44d25df&dl=smolke-senior-hondenvoer-medium-3-kg%3Fchannable%3D00456069640037393839323613&ws=",
+        "maat": "3 kg",
+        "prijs": 15.05
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5e18c27d09216926eb433d4a2b469f04&dl=p%2Fsmolke-senior-hondenvoer-medium-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 15.05
+      }
+    ],
+    "e73bb6f8-3fc7-4f05-b50d-f0393bba142d": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=9d60cbd5fc279b433b3b1c4fe9f7a135&dl=smolke-senior-hondenvoer-mini-3-kg%3Fchannable%3D00456069640039353437393282&ws=",
+        "maat": "3 kg",
+        "prijs": 17.65
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=760cdc23e1da5e6266dae2498f46598a&dl=p%2Fsmolke-senior-hondenvoer-mini-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 17.65
+      }
+    ],
+    "b7e804fb-9062-4bb5-bd09-a4606c8c4cf7": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=0609c822ac676230570f7464cdd79364&dl=smolke-hond-sensitive-3-kg%3Fchannable%3D00456069640031303036373834be&ws=",
+        "maat": "3 kg",
+        "prijs": 24.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c47791df4be85e1f7100138d559563b0&dl=p%2Fsmolke-hond-sensitive-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 24.99
+      }
+    ],
+    "e1eae037-8d99-4a72-9e6d-2f25dd413fc4": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=8750d421e7edace411833af6a5c50649&dl=smolke-hond-weight-control-3-kg%3Fchannable%3D00456069640031303036373833bd&ws=",
+        "maat": "3 kg",
+        "prijs": 17.65
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c247aff9dfe83138359b895149d3b46c&dl=p%2Fsmolke-hond-weight-control-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 17.65
+      }
+    ],
+    "2b8c8e46-846c-4d71-93a1-d9a97d5fe5b2": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=84e2a10d57d15a2c2202375d19af1e23&dl=smolke-puppy-hondenvoer-maxi-3-kg%3Fchannable%3D004560696400393836313035cf&ws=",
+        "maat": "3 kg",
+        "prijs": 14.59
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=fa12019e0681b69c0ea928ecb6360829&dl=p%2Fsmolke-puppy-hondenvoer-maxi-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 14.59
+      }
+    ],
+    "8e2d8748-f5c8-4b82-86ad-b8c936cdda55": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=451563b3bc0efd73ae0c17dcc2358fef&dl=smolke-puppy-hondenvoer-mini-medium-3-kg%3Fchannable%3D00456069640037393839323512&ws=",
+        "maat": "3 kg",
+        "prijs": 15.05
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=19cf36f81f18a1c2334053e69cb5653a&dl=p%2Fsmolke-puppy-hondenvoer-mini-medium-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 15.05
+      }
+    ],
+    "ee3980b0-fee0-4dc6-874e-2451abe4a60c": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=f6a11ef88de830ea06afc154993706e4&dl=smolke-soft-pate-hondenvoer-kalkoen-150-gr%3Fchannable%3D0045606964003130303532333057&ws=",
+        "maat": "125 g",
+        "prijs": 2.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2984aeb6f1452ad1c53e4767345d5e40&dl=p%2Fsmolke-soft-pate-hondenvoer-kalkoen-150-gr&ws=",
+        "maat": "125 g",
+        "prijs": 2.75
+      }
+    ],
+    "0c0de2b8-1265-43e8-bef7-61d21af7e879": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=0fcddbb27999c5a9d2fe7e5d0797bb6d&dl=smolke-soft-pate-hondenvoer-kip-125-gr%3Fchannable%3D0045606964003130303532333158&ws=",
+        "maat": "125 g",
+        "prijs": 2.19
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=bc334295f7431ebefbac4935598539ad&dl=p%2Fsmolke-soft-pate-hondenvoer-kip-125-gr&ws=",
+        "maat": "125 g",
+        "prijs": 2.19
+      }
+    ],
+    "0986941d-96b7-4b9d-b3ec-5cd3ca44a20e": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=a4d7a1363ebefc34c386176c1806b5b8&dl=smolke-soft-pate-hondenvoer-lam-125-gr%3Fchannable%3D004560696400313030353233335a&ws=",
+        "maat": "125 g",
+        "prijs": 2.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=28f8d65c66754c7edcc137398b552a3f&dl=p%2Fsmolke-soft-pate-hondenvoer-lam-125-gr&ws=",
+        "maat": "125 g",
+        "prijs": 2.75
+      }
+    ],
+    "0b47d3af-1175-42fc-8411-45a70c71fffd": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=c24874f52e690e67f06b5cdbe753f4a4&dl=smolke-soft-pate-hondenvoer-party-edition-24-x-125-gr%3Fchannable%3D004560696400313033313231382d&ws=",
+        "maat": "125 g",
+        "prijs": 2.39
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=9868ca824ef45aa95290dc433cd7d72d&dl=p%2Fsmolke-soft-pate-hondenvoer-party-edition-24-x-125-gr&ws=",
+        "maat": "125 g",
+        "prijs": 2.39
+      }
+    ],
+    "186273dd-865c-4f11-8cfa-919454854e70": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=27038083443bc01b3bfe305d1237e766&dl=smolke-soft-pate-hondenvoer-rund-125-gr%3Fchannable%3D0045606964003130303532333259&ws=",
+        "maat": "125 g",
+        "prijs": 2.59
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c1e66c8f3d79427d82f7a361bfd349e3&dl=p%2Fsmolke-soft-pate-hondenvoer-rund-125-gr&ws=",
+        "maat": "125 g",
+        "prijs": 2.59
+      }
+    ],
+    "90363d70-8818-4bb4-8675-77e85f11b5d4": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=2cbf80b36f9a1e58f55f12502e28df1f&dl=smolke-vers-gestoomd-eend-395-gr%3Fchannable%3D0045606964003937323838301f&ws=",
+        "maat": "395 g",
+        "prijs": 3.85
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=dd1c1985f4f2c0fec3a6f96e24a182b9&dl=p%2Fsmolke-vers-gestoomd-eend-395-gr&ws=",
+        "maat": "395 g",
+        "prijs": 3.85
+      }
+    ],
+    "2197a9d6-c45a-4755-9483-60a3f2e30e2e": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=92add9b12792e07873bd9bd8eb0a7afe&dl=smolke-vers-gestoomd-kip-395-gr%3Fchannable%3D004560696400393732383737a6&ws=",
+        "maat": "395 g",
+        "prijs": 3.29
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e26f458ba3a5691bebf0f4ccd4193e2c&dl=p%2Fsmolke-vers-gestoomd-kip-395-gr&ws=",
+        "maat": "395 g",
+        "prijs": 3.29
+      }
+    ],
+    "a8bdda47-05bb-4b61-bcaf-4ffa56928a0a": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=b975b0d33349886c61dea3fc74bd4abe&dl=smolke-vers-gestoomd-lam-395-gr%3Fchannable%3D004560696400393732383738a7&ws=",
+        "maat": "395 g",
+        "prijs": 3.85
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=16d6672a6baeb733b1b39c053ac7581c&dl=p%2Fsmolke-vers-gestoomd-lam-395-gr&ws=",
+        "maat": "395 g",
+        "prijs": 3.85
+      }
+    ],
+    "0b62e295-42b0-4cfd-a5be-6ee28562c74e": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=651be9a709639c419f5fb24414df7ff2&dl=smolke-hondenvoer-vers-gestoomd-turkey-395-gr%3Fchannable%3D0045606964003131303139393134&ws=",
+        "maat": "395 g",
+        "prijs": 2.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=8eeb7d8023ffc0b96088e02e4bbc344c&dl=p%2Fsmolke-hondenvoer-vers-gestoomd-turkey-395-gr&ws=",
+        "maat": "395 g",
+        "prijs": 2.99
+      }
+    ],
+    "ea86cfc1-7d34-425b-8f09-e6bd7035065c": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=4f1d6833249a9faa279b87949158ed6b&dl=smolke-hondenvoer-vers-gestoomd-sm-lmix-395-gr%3Fchannable%3D0045606964003131303139393033&ws=",
+        "maat": "395 g",
+        "prijs": 3.29
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=619a568562dad7e25c889331a0709588&dl=p%2Fsmolke-hondenvoer-vers-gestoomd-sm-lmix-395-gr&ws=",
+        "maat": "395 g",
+        "prijs": 3.29
+      }
+    ],
+    "2a1f7a69-3b5c-48b3-80f8-7eda333b43ec": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=d15d178d7d87ab072cda7927b9658561&dl=smolke-vers-gestoomd-wild-graanvrij-395-gr%3Fchannable%3D00456069640039373238383120&ws=",
+        "maat": "395 g",
+        "prijs": 3.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b57ca9b45f6f0d05297ea22111013f92&dl=p%2Fsmolke-vers-gestoomd-wild-graanvrij-395-gr&ws=",
+        "maat": "395 g",
+        "prijs": 3.49
+      }
+    ],
+    "2b11696a-4a3e-4f04-aec6-7ab49c5b2d1c": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=0dc9a980f502ef44f141d4fe614c1530&dl=wolfsblut-alaska-salmon-adult-12-5-kg%3Fchannable%3D004560696400313038353632335b&ws=",
+        "maat": "12,5 kg",
+        "prijs": 85.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ad88089fa033f2e566a03460b1b44d58&dl=p%2Fwolfsblut-alaska-salmon-adult-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 85.49
+      }
+    ],
+    "a709c9c7-18da-434b-93b9-faa7f24c0dfd": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=f258b4677c571483d8e5f3ee18967f11&dl=wolfsblut-blue-mountain-adult-12-5-kg%3Fchannable%3D00456069640031303835363337df&ws=",
+        "maat": "12,5 kg",
+        "prijs": 99.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f7225fb7735516fb277c0e1bb98bbe2c&dl=p%2Fwolfsblut-blue-mountain-adult-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 99.95
+      }
+    ],
+    "07c859e1-5f6f-4557-92b2-70b9fd000689": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=3109cc16a67a3b12ba2f8cbb65dabd1b&dl=wolfsblut-cold-river-adult-12-5-kg%3Fchannable%3D004560696400313038353632345c&ws=",
+        "maat": "12,5 kg",
+        "prijs": 88.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f544e780fcf013e3b201875bfc1cfcfd&dl=p%2Fwolfsblut-cold-river-adult-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 88.99
+      }
+    ],
+    "9e2af596-13e7-456c-8f2e-443c160bebad": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=a6633da894490e567b341d4bf3b151f3&dl=wolfsblut-dark-forest-adult-12-5-kg%3Fchannable%3D004560696400313038353632355d&ws=",
+        "maat": "12,5 kg",
+        "prijs": 88.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a1d1fb19040c8128900c77342a0eb9a4&dl=p%2Fwolfsblut-dark-forest-adult-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 88.99
+      }
+    ],
+    "cd8b1429-13fb-41f0-9351-0aaa2ba565fe": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=0fc884b827662b857d13ad6cd5684cf8&dl=wolfsblut-green-valley-adult-12-5-kg%3Fchannable%3D0045606964003130383536343059&ws=",
+        "maat": "12,5 kg",
+        "prijs": 99.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5f6ebbef367da899960ccea49fd597e6&dl=p%2Fwolfsblut-green-valley-adult-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 99.95
+      }
+    ],
+    "58b5cc62-2992-460e-9ca9-4c29aa5d5a5c": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=a6ec43b2a607a2330dcce56f5ec7d83c&dl=wolfsblut-hunters-pride-adult-12-5-kg%3Fchannable%3D00456069640031303835363331d9&ws=",
+        "maat": "12,5 kg",
+        "prijs": 88.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7002caf27e70053d1f3af9403dee7da1&dl=p%2Fwolfsblut-hunters-pride-adult-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 88.99
+      }
+    ],
+    "b806228e-0bb6-4ffa-9c9e-674544cbc972": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=5780ed5a85917bee88bcfe50ec658f4b&dl=wolfsblut-wide-plain-adult-12-5-kg%3Fchannable%3D004560696400313038353634325b&ws=",
+        "maat": "12,5 kg",
+        "prijs": 99.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=be796943ebc6e8ba9dabe3f1cc7faaa9&dl=p%2Fwolfsblut-wide-plain-adult-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 99.95
+      }
+    ],
+    "1716a722-8a79-4bde-be55-d9b3f6d4792b": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=b8a8bad87c12a6ee5e2793e6629405bf&dl=wolfsblut-wild-pacific-adult-12-5-kg%3Fchannable%3D004560696400313038353632375f&ws=",
+        "maat": "12,5 kg",
+        "prijs": 86.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=240a0783c81cd7e98da4c8b4ce42c5e8&dl=p%2Fwolfsblut-wild-pacific-adult-12-5-kg&ws=",
+        "maat": "12,5 kg",
+        "prijs": 86.99
+      }
+    ],
+    "1942af5b-6582-4963-bb54-35649d4157be": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ea6bfbbaaa8664cc0820386809945e4a&dl=wolfsblut-vetline-gastrointestinal-12-kg%3Fchannable%3D004560696400313039383533322a&ws=",
+        "maat": "12 kg",
+        "prijs": 80.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=bbdfd1f4893769a0ca21fe728a247516&dl=p%2Fwolfsblut-vetline-gastrointestinal-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 80.49
+      }
+    ],
+    "b7c05e2e-d484-4bbe-b379-f45f874b9126": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=980288a8aba69d3101b50bafa3d28321&dl=wolfsblut-vetline-hypoallergenic-12-kg%3Fchannable%3D004560696400313039383533332b&ws=",
+        "maat": "12 kg",
+        "prijs": 101.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a791c8ddd87fb350833eae85d5991631&dl=p%2Fwolfsblut-vetline-hypoallergenic-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 101.49
+      }
+    ],
+    "9ce1004e-4e29-4835-af1b-301b1f0a07f5": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=6c907e46af7768abba82ef973b2bbe1a&dl=yarrah-biologisch-hondenvoer-vegetarisch-10-kg%3Fchannable%3D004560696400313032303234365d&ws=",
+        "maat": "10 kg",
+        "prijs": 63.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ddb68c70b56ffeeeac9018420946034d&dl=yarrah-biologisch-hondenvoer-vegetarisch-2-kg%3Fchannable%3D004560696400313032303234335a&ws=",
+        "maat": "2 kg",
+        "prijs": 17.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7fe54c31b5f19242e0c01d38cd35d3e2&dl=p%2Fyarrah-biologisch-hondenvoer-vegetarisch-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 63.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2ee49f0bbc03ab1513af69b14d6c229a&dl=p%2Fyarrah-biologisch-hondenvoer-vegetarisch-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 17.99
+      }
+    ],
+    "1c95039c-5b00-43cd-b868-a1cca78c26da": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0aec26a1e684f71827dda93decf0a388&dl=p%2Facana-puppy-large-breed-114kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.49
+      }
+    ],
+    "c1e4bfee-e856-47c1-b73a-4905bbc911e8": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e202b50906286a9eb908356000a256f4&dl=p%2F1x-anallergenic-hondenvoer-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 34.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=1e27c6b4b40005a22f1b60281113cedc&dl=p%2F1x-anallergenic-hondenvoer-8-kg&ws=",
+        "maat": "8 kg",
+        "prijs": 76.49
+      }
+    ],
+    "4faf1398-723f-4f07-a9fe-3cb44bfda8b1": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2b1f17b75bf68d3492cb225a8483bd72&dl=p%2Froyal-canin-bhn-beagle-adult-dry-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 69.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0c843e4c4cee1283439a5ab8f095dc12&dl=p%2Froyal-canin-hondenvoer-droog-beagle-adult-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 28.49
+      }
+    ],
+    "065cb825-ba07-4a44-b5d2-bc28f998c926": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d3ab368d32047f9d4a0360e6ec295ca8&dl=p%2Froyal-canin-hondenvoer-droog-bichon-frise-adult-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 21.25
+      }
+    ],
+    "513b1c36-4dc4-4c2e-a87a-83cb2bc131eb": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6056572bf367a9cfb1b4f0b52c1b3fac&dl=p%2Froyal-canin-boxer-adult-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 70.49
+      }
+    ],
+    "ab74c05d-aa73-4663-9af7-20d9ad04bdac": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=9b0101034956f0fea2e6f35b8b74becf&dl=p%2Froyal-canin-cardiac-hondenvoer-14-kg&ws=",
+        "maat": "14 kg",
+        "prijs": 82.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=1172e3cd30e31a86207fd9f9ef8ea76e&dl=p%2Froyal-canin-cardiac-hondenvoer-hondenvoer-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 19.89
+      }
+    ],
+    "b8480c16-5be1-4832-962e-bf23df041228": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=cb1aed5bd1209e32e8f11c8a3ce33bec&dl=p%2Froyal-canin-cavalier-king-charles-27-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 21.25
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=1a91dbded6274e8848e3a070453726ed&dl=p%2Froyal-canin-bhn-cavalier-kc-adult-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 29.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=749ccb632621220f58d6681b3aa1067b&dl=p%2Froyal-canin-cavalier-king-charles-27-7-5-kg&ws=",
+        "maat": "7,5 kg",
+        "prijs": 56.99
+      }
+    ],
+    "f86fd6d6-5806-4a34-b3f6-72a01c5be55c": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=97bd7165cac8d5e000fb7d5e199b2dca&dl=p%2Froyal-canin-puppyvoer-droog-cavalier-kc-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 20.65
+      }
+    ],
+    "8af4a4e3-2269-47da-8c8f-772c38cb1887": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=bb2ca8e599bf40324a9d5702ec0d46c9&dl=p%2Froyal-canin-chihuahua-junior-30-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 23.25
+      }
+    ],
+    "e5289b6d-8a59-4244-b487-da5bf7d7333b": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=fc09b03847299f7a74ac26ec7080c89b&dl=p%2Froyal-canin-cocker-25-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 75.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c0039867acebc42dce69421062a59dca&dl=p%2Froyal-canin-cocker-25-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 28.85
+      }
+    ],
+    "02373076-d782-4735-9eb0-1d73f738c624": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=1784fc81036e17e6905374972f9b0cc7&dl=p%2Froyal-canin-cocker-puppy-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 30.25
+      }
+    ],
+    "e4ead238-f5d4-4eb5-938a-1d6bfd41bbc6": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b250c824c9e5abd350e588f728c17c22&dl=p%2Froyal-canin-dachshund-adult-28-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 21.35
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=78a132ac947c312de371f03cbfe19653&dl=p%2Froyal-canin-dachshundteckel-adult-28-7-5-kg&ws=",
+        "maat": "7,5 kg",
+        "prijs": 57.49
+      }
+    ],
+    "224f9829-297d-4d31-8f9d-09d00a0ee106": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2f88ddfc5aca64ca18b8c3a8bdc81738&dl=p%2Froyal-canin-dachshund-junior-30-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 22.95
+      }
+    ],
+    "ef830973-899f-4481-9898-1d234efa9212": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6376098721a08136df213ad7ea4a3d9d&dl=p%2Froyal-canin-dalmatian-adult-hondenvoer-dry-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 61.99
+      }
+    ],
+    "1413b88f-3923-4fdc-9499-d9985f33ee59": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=08b719e8b0ed3a28ef9eb8f082344759&dl=p%2Froyal-canin-dental-care-maxi-9-hondenvoer-dry-9-kg&ws=",
+        "maat": "9 kg",
+        "prijs": 57.49
+      }
+    ],
+    "12783a12-ca3d-45c6-ad0c-8e94d5a1465b": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6b866fb494d5981b52566dda710c6160&dl=p%2Froyal-canin-dental-medium-en-large-dogs-hondenvoer-hondenvoer-13-kg&ws=",
+        "maat": "13 kg",
+        "prijs": 74.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7aa040125547a148a12482769cef2c29&dl=p%2Froyal-canin-dental-medium-en-large-dogs-hondenvoer-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 44.45
+      }
+    ],
+    "19848cb4-eae8-4644-b91c-e25c915fb781": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=37db36fd55a05d7874e1d5740d34e322&dl=p%2Froyal-canin-dental-small-dogs-hondenvoer-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 20.79
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c58715b4b9addc13e73fc6cbe669b1e7&dl=p%2Froyal-canin-dental-small-dogs-hondenvoer-hondenvoer-3-5-kg&ws=",
+        "maat": "3,5 kg",
+        "prijs": 31.75
+      }
+    ],
+    "a59b73c2-315b-4b8a-bac7-f0a35d0f46ab": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=61e2022429a75f134ca13ece9f02258b&dl=p%2Froyal-canin-dermacomfort-maxi-hondenvoer-dry-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 76.99
+      }
+    ],
+    "16253e40-d9a4-4bf7-8e3b-2b9a12796142": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=72f17befac103ceee30de49dd596358c&dl=p%2Froyal-canin-dermacomfort-medium-hondenvoer-dry-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 76.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=8bcd667ec10f3ca232f171600f625682&dl=p%2Froyal-canin-medium-dermacomfort-24-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 26.69
+      }
+    ],
+    "d0730217-d589-4a1c-958f-bb784f2033cb": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d8dbbd1dfc9c4c807775304fce8afa11&dl=p%2Froyal-canin-digestive-care-maxi-hondenvoer-dry-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 70.49
+      }
+    ],
+    "b326958f-d06c-47c1-8384-fa8b447feda8": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6efab88cc6c8a90012de0718adb243b4&dl=p%2Froyal-canin-digestive-care-medium-hondenvoer-dry-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 76.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7349e6d54ca1cefe811dbd9606c1a2af&dl=p%2Froyal-canin-hondenvoer-droog-digestive-care-medium-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 28.05
+      }
+    ],
+    "8e7e7d5d-6b4e-4784-8a39-6c04c0f6a114": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=54e232424d544c5b45fc7ca1a93fac4c&dl=p%2Froyal-canin-hondenvoer-droog-digestive-care-mini-1-kg&ws=",
+        "maat": "1 kg",
+        "prijs": 17.55
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=937d4adc26dd79bd316e946fc083902a&dl=p%2Froyal-canin-digestive-care-mini-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 29.79
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e5a69d2081bbb542a8dc0c3b3c96d0a5&dl=p%2Froyal-canin-hondenvoer-droog-digestive-care-mini-8-kg&ws=",
+        "maat": "8 kg",
+        "prijs": 61.99
+      }
+    ],
+    "2924cc9c-1742-4989-a8e6-dae06f012eba": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f0db69b05d22fa5ab7500ac67c9bccf9&dl=p%2Froyal-canin-royal-canin-early-renal-14-kg&ws=",
+        "maat": "14 kg",
+        "prijs": 90.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e608865edf4cbc678be01248753dca2c&dl=p%2Froyal-canin-royal-canin-early-renal-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 23.19
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=91ac66fb639a40c17f0f2df5aff9f075&dl=p%2Froyal-canin-royal-canin-early-renal-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 54.49
+      }
+    ],
+    "148ea1b3-16e3-4a7f-8ec4-1330fb435d7f": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=33fe0a2e2869ba6383e770288e6b1e3f&dl=p%2Froyal-canin-hondenvoer-droog-exigent-mini-1-kg&ws=",
+        "maat": "1 kg",
+        "prijs": 16.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e239641c6e25113ea149fe5a17755b4b&dl=p%2Froyal-canin-exigent-mini-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 29.79
+      }
+    ],
+    "d89e9ebc-098e-4fa8-b56d-344aea335fd2": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ba0ba58e002640e3eb5acf9b8f08b863&dl=p%2Froyal-canin-french-bulldog-junior-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 67.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4aab475b8f16ff9aac94aff0bccfcd76&dl=p%2Froyal-canin-french-bulldog-junior-30-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 25.75
+      }
+    ],
+    "3e70a9dd-c423-4465-9da6-6bddf9fbbe6a": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=44fa1f2e36a16781f3cab601190bf05b&dl=p%2F1x-gastrointestinal-hondenvoer-15-kg-1104250&ws=",
+        "maat": "15 kg",
+        "prijs": 86.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=cb19716d045ecce60b025e18cc83b7ea&dl=p%2Froyal-canin-veterinary-dog-diet-gastro-intestinal-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 20.79
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=dd877e8836a63636f079a5f6cdf7c7da&dl=p%2Froyal-canin-veterinary-dog-diet-gastro-intestinal-7-5-kg&ws=",
+        "maat": "7,5 kg",
+        "prijs": 52.49
+      }
+    ],
+    "3d3ac00b-8ea1-47e4-84fd-ab866fd3f8a5": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a3518a4c7f712ff073cae09da851d85e&dl=p%2Froyal-canin-royal-canin-gastrointestinal-high-fibre-14-kg&ws=",
+        "maat": "14 kg",
+        "prijs": 101.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=cc9caae7b208c0ab21b47deaa8f667fd&dl=p%2F1x-gastrointestinal-high-fibre-hondenvoer-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 24.45
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f803bd5c3bfac0bc510a92a00c1ab95b&dl=p%2Froyal-canin-royal-canin-gastrointestinal-high-fibre-75-kg&ws=",
+        "maat": "7,5 kg",
+        "prijs": 65.49
+      }
+    ],
+    "8faf103c-5e58-492a-b8bf-13340bef8e1b": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=61221eb892dfa11bce95aec1e693df64&dl=p%2Froyal-canin-royal-canin-gastrointestinal-low-fat-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 17.05
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=8912e86dac3f95bf72973f99053422e7&dl=p%2Froyal-canin-royal-canin-gastrointestinal-low-fat-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 83.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d8d09b261577c0a340ad792106955d9d&dl=p%2Froyal-canin-royal-canin-gastrointestinal-low-fat-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 45.25
+      }
+    ],
+    "534678d6-048d-453b-aa6a-9283f0e17e0f": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c0c61e26da970cac21c4127118a5c4db&dl=p%2Froyal-canin-royal-canin-gastrointestinal-low-fat-small-dog-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 20.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=17b7b9790d6cfda23aade3b28dab1514&dl=p%2Froyal-canin-royal-canin-gastrointestinal-low-fat-small-dog-35-kg&ws=",
+        "maat": "3,5 kg",
+        "prijs": 41.35
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=96d6eda5d48d23b066aba51ce0e0124b&dl=p%2Froyal-canin-royal-canin-gastrointestinal-low-fat-small-dog-8-kg&ws=",
+        "maat": "8 kg",
+        "prijs": 73.99
+      }
+    ],
+    "a92a530a-7ac0-4d09-84bc-3ff11cc9f5e5": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=1a0165386237563c25aadf3262da8b2c&dl=p%2F1x-gastrointestinal-moderate-calorie-hondenvoer-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 93.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=214b74737e6f88c71408bcc2004fdd83&dl=p%2Froyal-canin-royal-canin-gastrointestinal-moderate-calorie-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 23.65
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b574dfe8e190aee9d6073a9f98d64ed7&dl=p%2Froyal-canin-royal-canin-gastrointestinal-moderate-calorie-75-kg&ws=",
+        "maat": "7,5 kg",
+        "prijs": 56.99
+      }
+    ],
+    "6d537359-d0ea-41b8-a099-cad66265e430": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=12e49af7193fa5f56a3a94ddb9b014d7&dl=p%2Froyal-canin-royal-canin-gastrointestinal-puppy-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 74.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=95a3edbb48ee8fae3851c92c4888dd14&dl=p%2Froyal-canin-royal-canin-gastrointestinal-puppy-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 26.45
+      }
+    ],
+    "698e2294-67b1-4beb-9b43-8a95e78be4f9": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f5b52cfc5e455c8bdd16f2c24117a272&dl=p%2Froyal-canin-german-shepherd-adult-hondenvoer-dry-11-kg&ws=",
+        "maat": "11 kg",
+        "prijs": 65.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=49bf09c4e2c519e3a46643f996b573a3&dl=p%2Froyal-canin-german-shepherd-adult-hondenvoer-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 90.99
+      }
+    ],
+    "351f00c0-208e-48fc-b9f9-fc9c01d58b56": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=688fe04b926bae7c7456dbcf15bbb782&dl=p%2Froyal-canin-german-shepherd-junior-30-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 76.49
+      }
+    ],
+    "f432ffac-0252-42fc-bb17-15a452445448": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0d9066efbf3555337ede7fa4b8a03eeb&dl=p%2Froyal-canin-giant-adult-28-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 70.99
+      }
+    ],
+    "48ff657d-a13e-417d-92c8-5d6870829f4b": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6884a2778830009f564dfc84ecea2f2b&dl=p%2Froyal-canin-giant-junior-hondenvoer-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 68.84
+      }
+    ],
+    "7d423b1e-ee7b-44fb-83e5-4c9dc6be01c3": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a62b6344a0ff0ce7b570e74f7cb84b02&dl=p%2Froyal-canin-giant-puppy-34-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 68.84
+      }
+    ],
+    "82dd7b94-c342-4224-9f28-387e139d1167": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ece103095685889b488076c89b3e3aec&dl=p%2Froyal-canin-giant-starter-m-en-b-hondenvoer-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 74.79
+      }
+    ],
+    "9a38e8e9-225d-4284-9ebb-4b44e95eb29a": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d1fb1de3dc9b1f4222f971f2dbcfe308&dl=p%2Froyal-canin-hondenvoer-droog-glycobalance-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 20.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=30328406f98315862d7237157753b480&dl=p%2Froyal-canin-hondenvoer-droog-glycobalance-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 96.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=3ee37005e51d01a9ae3f8308c84c10b7&dl=p%2Froyal-canin-hondenvoer-droog-glycobalance-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 61.95
+      }
+    ],
+    "359f120f-209d-471b-a68f-0062e10c91f9": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a8da17f29f0b68de856b6057b9b590d1&dl=p%2Froyal-canin-golden-retriever-junior-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 79.49
+      }
+    ],
+    "688eaaa4-17c0-4240-bbf2-68ba3fa986b5": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=221e5555b795f1483e62c7db71aa0a3d&dl=p%2Froyal-canin-royal-canin-hepatic-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 18.59
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=91988ae90185165c90edc8923e3a0feb&dl=p%2Froyal-canin-veterinary-diet-hond-hepatic-hf-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 91.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=990dc0411eb003823c5fd096fe26b3db&dl=p%2F1x-hepatic-hondenvoer-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 58.99
+      }
+    ],
+    "6da54eee-2e0d-4acc-bd90-e63e5ce795a9": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=fb6b1280b1af21af7f2e923d5d98daeb&dl=p%2F1x-hypoallergenic-hondenvoer-14-kg-1104351&ws=",
+        "maat": "14 kg",
+        "prijs": 95.29
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a797e1d57d16117e0624e1ffcf82cdf1&dl=p%2Froyal-canin-hypoallergenic-hond-1089989&ws=",
+        "maat": "2 kg",
+        "prijs": 24.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=52fb4416f7fb14da6a7d2f17e85d5ad1&dl=p%2F1x-hypoallergenic-hondenvoer-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 57.99
+      }
+    ],
+    "0e0c9d59-6bf8-4297-b6cf-b57cfc53a877": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=700cee74ce34fdbd1be41cb4507631b3&dl=p%2F1x-hypoallergenic-moderate-calorie-hondenvoer-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 19.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=fc27bb3d679839d3d9b6df938d0af33c&dl=p%2F1x-hypoallergenic-moderate-calorie-hondenvoer-14-kg&ws=",
+        "maat": "14 kg",
+        "prijs": 96.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=eb07aff46b8229b2c1b9ed3e92f3c5ba&dl=p%2Froyal-canin-hypoallergenic-moderate-calorie-hondenvoer&ws=",
+        "maat": "7 kg",
+        "prijs": 64.49
+      }
+    ],
+    "255bde81-e9a0-4684-9edb-3f57cbb517c6": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=74a7d787062eb78cdf39d6d8559a9029&dl=p%2Froyal-canin-hypoallergenic-puppy&ws=",
+        "maat": "1,5 kg",
+        "prijs": 22.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b346858bcb660eeb3259586b5b7acdc8&dl=p%2Froyal-canin-hypoallergenic-puppy-1090059&ws=",
+        "maat": "14 kg",
+        "prijs": 114.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=98a2a1acbeb03da88c3276a9980b32d2&dl=p%2Froyal-canin-hypoallergenic-puppy-1090058&ws=",
+        "maat": "3,5 kg",
+        "prijs": 40.45
+      }
+    ],
+    "076ac020-609c-40bd-ac1b-b3836aefdef1": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2ab15ee02379da059a50f0a8c67fec1e&dl=p%2Froyal-canin-joint-care-maxi-hondenvoer-dry-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 65.99
+      }
+    ],
+    "928c86d0-12a2-48c5-9993-f4d52d751dd8": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5acee38a2346a6e6346f4437d6366baa&dl=p%2Froyal-canin-labrador-retriever-adult-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 61.99
+      }
+    ],
+    "9c5af49e-272c-4317-a80a-9578ac6c6abf": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=423769733b2e69b2f9664a7e2f1a6f80&dl=p%2Froyal-canin-labrador-retriever-junior-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 73.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=06e495093192a17e0b7c202c0cb32099&dl=p%2Froyal-canin-labrador-retriever-junior-33-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 23.95
+      }
+    ],
+    "a3a280bc-e962-4575-8a9c-2d03b91fc1bc": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a95f921237a0b2a6651f9f27a78afb12&dl=p%2Froyal-canin-labrador-retriever-sterilised-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 79.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=84428b1e44c28ed2562150746a864d2a&dl=p%2Froyal-canin-labrador-retriever-sterilised-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 29.59
+      }
+    ],
+    "866c8419-4bb0-4093-8e6e-902d98c73dbb": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=12ee5fdaf04df4c33a340765cddea90e&dl=p%2Froyal-canin-light-weight-care-maxi-hondenvoer-dry-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 76.99
+      }
+    ],
+    "98014d29-5296-43f5-bad6-a27eb0eb1f59": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=89cf736f7ea60d5855a4a1fa801860ba&dl=p%2Froyal-canin-light-weight-care-medium-hondenvoer-dry-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 76.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=eb08899bf4154e0eabd303ce903d643d&dl=p%2Froyal-canin-hondenvoer-droog-light-weight-care-medium-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 28.29
+      }
+    ],
+    "38a02143-019c-499d-ba07-ad578d99ad93": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=df8f3b53e5556c7e032bc35cd1516e6b&dl=p%2Froyal-canin-hondenvoer-droog-light-weight-care-mini-1-kg&ws=",
+        "maat": "1 kg",
+        "prijs": 15.35
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d0739b8dd119ec7667051ca0ee24070b&dl=p%2Froyal-canin-light-weight-care-mini-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 28.85
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=176102a08c9be19e1a5f773f0fac77b0&dl=p%2Froyal-canin-mini-light-8-kg&ws=",
+        "maat": "8 kg",
+        "prijs": 60.49
+      }
+    ],
+    "cb118e1b-668e-4f40-8b5d-07aa7752329c": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ec1fe0eedae81153b0177b4ce3f3ed83&dl=p%2Froyal-canin-maltese-adult-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 21.19
+      }
+    ],
+    "3114b8a6-d1d4-4fa2-9d5c-1c1158966e44": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=fe1ef7f9fb51c3289584187dce7e9076&dl=p%2Froyal-canin-puppyvoer-droog-maxi-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 50.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ddf8987e00ec988b49fbd3c6efad2747&dl=p%2Froyal-canin-maxi-puppy-hondenvoer-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 69.69
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=bc7da1d0f2fa5d8ae9560a01b898e57a&dl=p%2Froyal-canin-maxi-junior-4-kg&ws=",
+        "maat": "4 kg",
+        "prijs": 25.59
+      }
+    ],
+    "8ee59238-b9cd-403c-8b67-6654b5348ac1": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=9a015c320f86a29347520e5a1191d1f7&dl=p%2Froyal-canin-maxi-starter-m-en-b-hondenvoer-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 77.34
+      }
+    ],
+    "ecc55762-7c0c-469e-b215-d14b27ae285e": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4590ebbc103af9c43d41df794c4ed130&dl=p%2Froyal-canin-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 79.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2f0980432204f0e2248c0a2a103fd842&dl=p%2Froyal-canin-medium-mature-25-4-kg&ws=",
+        "maat": "4 kg",
+        "prijs": 30.75
+      }
+    ],
+    "c60a16c4-49b5-4929-abc9-7e4a7b5a318e": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=47488ae8b07bbdd3e4f32bc02e5b5331&dl=p%2Froyal-canin-medium-ageing-10-hondenvoer-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 82.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=546ded7bd83acff1bd83bfcced1382c5&dl=p%2Froyal-canin-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 25.69
+      }
+    ],
+    "ff36b91e-271d-4243-a70c-44a4f1707afe": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6154ab56fe239f5c5c56e4ed9de674ea&dl=p%2Froyal-canin-medium-junior-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 50.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2b9930e1f9f2927aef34a1bc1619658d&dl=p%2Froyal-canin-medium-junior-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 69.69
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d46c3df60d5cf320d995618d033e9930&dl=p%2Froyal-canin-medium-junior-4-kg&ws=",
+        "maat": "4 kg",
+        "prijs": 25.59
+      }
+    ],
+    "90b3e718-6b8a-4e88-b850-fb0d9b461506": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2abd5250a5be679b8929616bebb0b799&dl=p%2Froyal-canin-medium-starter-meat-en-biscuits-hondenvoer-dry-15-kg&ws=",
+        "maat": "15 kg",
+        "prijs": 77.34
+      }
+    ],
+    "9d607151-f3a8-47bf-9dda-568922b635e4": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=1d0f38dbc8b1be28bca76fbcab0c9ca2&dl=p%2Froyal-canin-dermacomfort-mini-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 29.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d05a60235ce86e0bced13b159b1ce235&dl=p%2Froyal-canin-hondenvoer-droog-dermacomfort-mini-8-kg&ws=",
+        "maat": "8 kg",
+        "prijs": 61.49
+      }
+    ],
+    "505a3455-8b19-4c23-93c7-5ebcdfb122bd": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f71476c5d79854e6d638e7f1af570c24&dl=p%2Froyal-canin-mini-starter-meat-en-biscuits-hondenvoer-dry-4-kg&ws=",
+        "maat": "4 kg",
+        "prijs": 29.19
+      }
+    ],
+    "c06dc287-9217-4598-aaa8-19c16313f21f": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ecec7f3cd1e8789549c1e00277f9b9a0&dl=p%2Froyal-canin-royal-canin-mobility-support-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 87.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=04f265c96594abe8cded4bd5d4af0634&dl=p%2Froyal-canin-royal-canin-mobility-support-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 23.05
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=063b7e9b7694a74841e301b97603d59d&dl=p%2Froyal-canin-royal-canin-mobility-support-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 55.49
+      }
+    ],
+    "77a984d3-1257-4316-b52c-19da79783d58": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=040b07aa14227d4e1f5e77e0ff7113e6&dl=p%2Froyal-canin-royal-canin-neutered-junior-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 62.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6923a01419c916ee88c3682df7f045c0&dl=p%2Froyal-canin-royal-canin-neutered-junior-35-kg&ws=",
+        "maat": "3,5 kg",
+        "prijs": 23.55
+      }
+    ],
+    "df4990f6-1d73-43bb-9a73-e5b72f7f1cea": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4a2e6bc49584880958b71b11514f9623&dl=p%2Froyal-canin-hondenvoer-droog-pomeranian-adult-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 21.55
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=8215ce0f315d0267832caa03b8675ac0&dl=p%2Froyal-canin-pomeranian-adult-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 30.29
+      }
+    ],
+    "e0b285de-cf7d-4c92-9d25-1f798672c71c": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c9dbbb80a8f058faabd5d3c9ee8cc1b5&dl=p%2Froyal-canin-poodle-30-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 19.85
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=bef974230ea590cd7260168eb410051d&dl=p%2Froyal-canin-poodle-30-7-5-kg&ws=",
+        "maat": "7,5 kg",
+        "prijs": 57.49
+      }
+    ],
+    "bc8faaf4-bcc8-4d7e-afc8-951d7ab69b48": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4e98603ae04a71f57efe5eb834109bc4&dl=p%2Froyal-canin-poodle-puppy-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 29.99
+      }
+    ],
+    "d67f176e-a39e-4a3a-bd1d-1fe0cb075bcb": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d9368058bb4baba1b5e7e4b951e7f6db&dl=p%2Froyal-canin-pug-adult-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 29.79
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ea7a0dc2cf3794e6e1dbf57a93aab065&dl=p%2Froyal-canin-pug-mopshond-adult-7-5-kg&ws=",
+        "maat": "7,5 kg",
+        "prijs": 57.49
+      }
+    ],
+    "04773ca8-57d1-41dd-a524-49ef946aed5a": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=12b6808aed75ed860f25dcc1c7da7230&dl=p%2Froyal-canin-puppyvoer-droog-pug-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 16.75
+      }
+    ],
+    "09ab0696-1954-4571-ae47-0f550ff2ae1b": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=efd0aa62f1291dbc95bc86036de090d5&dl=p%2Froyal-canin-relax-care-maxi-9-hondenvoer-dry-9-kg&ws=",
+        "maat": "9 kg",
+        "prijs": 54.99
+      }
+    ],
+    "1dfaa6f5-3aa6-47ae-a94a-d64b8feebb5b": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f70663b46f359cb3be98853f5d268aa2&dl=p%2Froyal-canin-relax-care-medium-hondenvoer-dry-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 61.99
+      }
+    ],
+    "9be76e82-d26e-4dfd-a29a-37488fdbc7bd": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7136691f49c8bc1fc4e959bf3df68025&dl=p%2Froyal-canin-hondenvoer-droog-relax-care-mini-8-kg&ws=",
+        "maat": "8 kg",
+        "prijs": 61.49
+      }
+    ],
+    "d31a9f0c-5480-4eca-8320-e6fe97c3ad85": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=315f6d0ca2e6fd7f21152bbf82cd4e57&dl=p%2Froyal-canin-royal-canin-renal-14-kg&ws=",
+        "maat": "14 kg",
+        "prijs": 81.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=92644804191a9368e2e409c32ae14d3b&dl=p%2Froyal-canin-royal-canin-renal-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 23.79
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=06272780ab10b85d440ebca5bdfba0e0&dl=p%2Froyal-canin-royal-canin-renal-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 51.99
+      }
+    ],
+    "cea17956-d37c-4d73-ab9e-bcf3a5a5531b": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6bf7076d5805114d3d234cfe093d8652&dl=p%2Froyal-canin-royal-canin-renal-select-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 70.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a64b8098dc8d4b1e672fe73339509b42&dl=p%2Froyal-canin-royal-canin-renal-select-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 22.75
+      }
+    ],
+    "74c2ee9b-3f4d-4a80-81a4-0d677e367b74": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6755f8889632503a387bef9f5d1c103b&dl=p%2Froyal-canin-royal-canin-renal-special-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 70.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=23a9b78db0f535a40094d06ca214a0cd&dl=p%2Froyal-canin-royal-canin-renal-special-2-kg-1091702&ws=",
+        "maat": "2 kg",
+        "prijs": 21.05
+      }
+    ],
+    "60b205e4-69c2-40bb-9f27-0c2737e380ec": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4599f7d4246d413e3ebb6082c2b63106&dl=p%2Froyal-canin-rottweiler-26-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 67.49
+      }
+    ],
+    "be893be8-2bff-4397-8229-0f962f187caf": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=87e9e5d65117a9e076828aced7be3842&dl=p%2Froyal-canin-rottweiler-junior-31-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 72.99
+      }
+    ],
+    "6e5e4103-27c0-4edf-ab91-ec4e8a894254": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a3617069ece980e7c0bbb7fb47bdc0db&dl=p%2Froyal-canin-royal-canin-satiety-weight-management-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 17.55
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b8b82a79d837fa9725f404f4f7e4578b&dl=p%2Froyal-canin-royal-canin-satiety-weight-management-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 80.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=33cf532cacccdc639aff01731adb34c9&dl=p%2F1x-satiety-weight-management-hondenvoer-6-kg-1110935&ws=",
+        "maat": "6 kg",
+        "prijs": 43.89
+      }
+    ],
+    "f6dc0816-675d-4cc7-9070-7990268fe562": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d74d72171b4bbc9739d11fdaaec9a9e2&dl=p%2Froyal-canin-sensitivity-control&ws=",
+        "maat": "1,5 kg",
+        "prijs": 21.85
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a2c6dce2df680a6f922139293fee23eb&dl=p%2F1x-sensitivity-control-hondenvoer-14-kg&ws=",
+        "maat": "14 kg",
+        "prijs": 96.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=29dac649867fb188fca71a782f23d6f3&dl=p%2Froyal-canin-sensitivity-control-1090064&ws=",
+        "maat": "7 kg",
+        "prijs": 62.49
+      }
+    ],
+    "e2686351-11ca-43e2-bb54-59c05095d6b9": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=14fc2969523c4194168c5f7b19f07728&dl=p%2Froyal-canin-shih-tzu-junior-28-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 23.25
+      }
+    ],
+    "23357f79-8972-4454-8dcb-dc1c122c84ff": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=72aebcdab2e5e6f7df1211c80c30567e&dl=p%2Froyal-canin-skin-care&ws=",
+        "maat": "11 kg",
+        "prijs": 81.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=70c71764a1309b2224ba8903f2b88b7d&dl=p%2Froyal-canin-skin-care-1090071&ws=",
+        "maat": "2 kg",
+        "prijs": 24.09
+      }
+    ],
+    "3fec203d-8b87-455d-9741-ee0642598cd7": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=25152f2df4a0f22777a47cfc1e7383f5&dl=p%2Froyal-canin-sterilised-maxi-hondenvoer-dry-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 76.99
+      }
+    ],
+    "7dbbdb12-648a-460e-a1cf-045f93de0b2c": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d8a7ebb7e2cfbfd87e6b6f0e1ac4a8e7&dl=p%2Froyal-canin-sterilised-medium-hondenvoer-dry-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 72.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a93046a2bb61b96498df7c68d963835d&dl=p%2Froyal-canin-medium-sterilised-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 27.09
+      }
+    ],
+    "3dd9c9a4-6daa-4edd-a232-b6047e77f449": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=eb4c526f75480570f8228146d04703c5&dl=p%2Froyal-canin-urinary-care-mini-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 29.85
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e7b3a17cbb6eceddbadf5561b14894ff&dl=p%2Froyal-canin-hondenvoer-droog-urinary-care-mini-8-kg&ws=",
+        "maat": "8 kg",
+        "prijs": 61.99
+      }
+    ],
+    "a4e405cc-2e10-4083-9aa0-19474eb5df2c": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5dac35aa3cd1be3b4f36a33c31c42b27&dl=p%2Froyal-canin-royal-canin-urinary-so-13-kg&ws=",
+        "maat": "13 kg",
+        "prijs": 84.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=3a29b2fee5a5316c0165f7fc83a2313f&dl=p%2Froyal-canin-royal-canin-urinary-so-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 22.59
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c6c954e403039884dfbc031f6ed3f20d&dl=p%2Froyal-canin-veterinary-diet-urinary-s-o-7-5-kg&ws=",
+        "maat": "7,5 kg",
+        "prijs": 58.99
+      }
+    ],
+    "389106b1-ca6d-4d44-a549-06d5883707cd": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=bac6820c7c16857fd7b749360b639f3c&dl=p%2Froyal-canin-royal-canin-urinary-so-moderate-calorie-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 19.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=88eea2042b3fa82779c1ef2a787d0945&dl=p%2Froyal-canin-royal-canin-urinary-so-moderate-calorie-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 92.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a6008853f85d4557c6d00b2efddaf368&dl=p%2Froyal-canin-royal-canin-urinary-so-moderate-calorie-65-kg&ws=",
+        "maat": "6,5 kg",
+        "prijs": 53.99
+      }
+    ],
+    "494d45bd-9580-476d-87ea-c3fb555a17fb": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4a1096ba66e197613cd74b38fcc1faae&dl=p%2Froyal-canin-royal-canin-urinary-uc-14-kg&ws=",
+        "maat": "14 kg",
+        "prijs": 101.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=3d6be02392f17f40947be584577ae9ea&dl=p%2Froyal-canin-royal-canin-urinary-uc-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 23.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4fe7e34b02d093f61978df59c7a50337&dl=p%2Froyal-canin-royal-canin-urinary-uc-75-kg&ws=",
+        "maat": "7,5 kg",
+        "prijs": 62.99
+      }
+    ],
+    "18eec775-fe8b-4e34-bf03-f5f1f37955aa": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=9dc091160782fe1b849399f5d7abcaf1&dl=p%2Froyal-canin-west-highland-white-terrier-adult-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 27.39
+      }
+    ],
+    "8eefe19c-fb43-4cfe-89b2-c858904f718d": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=40d6cd6649e1b74db7d6348fdc82bf45&dl=p%2Froyal-canin-x-small-adult-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 13.29
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d611943368b96395fe5d7a47b92aced0&dl=p%2Froyal-canin-x-small-adult-hondenvoer-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 26.29
+      }
+    ],
+    "aa666366-e7f0-4280-86f6-d3722e44715c": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=9fc1d9f2cc2ddc421a9ea00ac89e8393&dl=p%2Froyal-canin-hondenvoer-droog-x-small-ageing-12-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 21.15
+      }
+    ],
+    "e60ff804-9070-4c83-881f-6299a019d101": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7deb0702678e46e332443ca352cd4069&dl=p%2Froyal-canin-puppyvoer-droog-x-small-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 13.89
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=1b8c3feba95cdb4bfe3419826183f155&dl=p%2Froyal-canin-extra-small-puppy-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 27.35
+      }
+    ],
+    "16274c60-c9ac-4517-b5b2-7a272c675921": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=50e870d574f38f2629dbac6a341a9a5b&dl=p%2Froyal-canin-hondenvoer-droog-yorkshire-terrier-8-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 23.35
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a1e3d7fd69909a32c4348b17ec2a2579&dl=p%2Froyal-canin-yorkshire-terrier-adult-8-hondenvoer-dry-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 28.39
+      }
+    ],
+    "53dde5d8-9f5f-43c9-a7d7-4b4170316b64": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=904ad78a4a8d6bcc41de75e0d35f7e8d&dl=p%2Froyal-canin-yorkshire-terrier-junior-29-1-5-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 16.29
+      }
+    ],
+    "1be3ede5-a038-48e9-83e3-ac6bdb8814d5": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7d5233b1a866f8aa1c5cb15f8db3f4d5&dl=p%2Fspecific-ccd-hondenvoer-struvite-management-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 65.49
+      }
+    ],
+    "57736a49-4151-4265-8b12-127f12b1afc4": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4d2fa8a5816a2a2ee1377ea14aa6ed34&dl=p%2Fspecific-cdd-hondenvoer-food-allergen-management-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 66.49
+      }
+    ],
+    "f680b909-8283-4739-90b2-6d59bc3b698c": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=be937edfe5f9068644b83e7dd805557d&dl=p%2Fspecific-cdd-hy-hondenvoer-food-allergen-management-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 75.49
+      }
+    ],
+    "e0c05cce-536d-4aae-8a5e-14e009c40b0b": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5ebba63c099a966ba8cabe68efa95e45&dl=p%2Fspecific-cgd-m-hondenvoer-senior-medium-breed-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 68.99
+      }
+    ],
+    "15a00d11-77ae-4620-a909-4500b49de20a": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b37ad86b14740d56cbfd8149726818ee&dl=p%2F1x-cid-hondenvoer-digestive-support-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 71.49
+      }
+    ],
+    "c85e7940-6787-430e-9582-8fab6036b1ae": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e6ac0592c608e7db4cd4f21dc9b57b51&dl=p%2Fspecific-cpd-m-hondenvoer-puppy-medium-breed-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 55.99
+      }
+    ],
+    "82e030eb-1498-46a2-9c93-46da2e45359a": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2b2418caab9eaae8250c60eedb050c10&dl=p%2F1x-crd-1-hondenvoer-weight-reduction-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 72.99
+      }
+    ],
+    "95605f82-7572-4b63-aa2b-522988d95357": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ce3c98b0f28db125ee84f7718411a959&dl=p%2Fspecific-crd-2-weight-control-weight-control-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 64.99
+      }
+    ],
+    "09005886-b86f-4edc-a54a-87422a5bc9ba": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e37fd74e9793d6e333f6023987790bc3&dl=p%2Fspecific-cxd-m-adult-medium-breed-adult-medium-breed-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 58.99
+      }
+    ],
+    "3091aa02-80b3-4eb8-9beb-251a4f9f4b69": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a8739767f504f170ed3901a6625b1a78&dl=p%2Fspecific-cxd-s-adult-small-breed-adult-small-breed-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 48.45
+      }
+    ],
+    "d8eceb32-c42e-4e93-a7d1-a4520f2b6da7": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0019e7c4c1dfc0a9c1c6e5b0a81dc729&dl=p%2Fspecific-cxd-xl-adult-large-en-giant-breed-adult-large-en-giant-breed-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 53.99
       }
     ]
   }

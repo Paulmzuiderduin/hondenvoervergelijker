@@ -272,17 +272,28 @@ try {
   const winkelsJson = winkelsAntwoord.ok() ? await winkelsAntwoord.json().catch(() => ({})) : {}
   const winkelLinks = Object.values(winkelsJson.aanbieders ?? {}).flat()
   const winkelLinksMetPrijs = winkelLinks.filter((link) => Number.isFinite(link.prijs) && link.prijs > 0)
-  const geldigeWinkellink = (link) =>
-    ['Dierenwinkel XL', 'Ultra Premium Direct', 'Alsa Nature'].includes(link.winkel) &&
-    (link.winkel === 'Dierenwinkel XL'
-      ? /tt=4019_/.test(link.url)
-      : link.winkel === 'Ultra Premium Direct'
-        ? /^https:\/\/glp8\.net\/c\//.test(link.url)
-        : /tt=31843_/.test(link.url)) &&
-    (link.prijs == null || (Number.isFinite(link.prijs) && link.prijs > 0))
+  const geldigeWinkellink = (link) => {
+    const isDaisyconRetail = (si) =>
+      /^https:\/\/fr135\.net\/c\//.test(link.url) &&
+      new RegExp(`[?&]si=${si}(?:&|$)`).test(link.url) &&
+      /[?&]wi=446454(?:&|$)/.test(link.url)
+    return ['Dierenwinkel XL', 'Ultra Premium Direct', 'Alsa Nature', 'Plein.nl', 'Petgamma.com'].includes(link.winkel) &&
+      (link.winkel === 'Dierenwinkel XL'
+        ? /tt=4019_/.test(link.url)
+        : link.winkel === 'Ultra Premium Direct'
+          ? /^https:\/\/glp8\.net\/c\//.test(link.url)
+          : link.winkel === 'Alsa Nature'
+            ? /tt=31843_/.test(link.url)
+            : link.winkel === 'Plein.nl'
+              ? isDaisyconRetail(3366)
+              : isDaisyconRetail(20686)) &&
+      (link.prijs == null || (Number.isFinite(link.prijs) && link.prijs > 0))
+  }
   const updLinks = winkelLinks.filter((link) => link.winkel === 'Ultra Premium Direct')
   const alsaLinks = winkelLinks.filter((link) => link.winkel === 'Alsa Nature')
-  meld(winkelsAntwoord.ok() && winkelLinks.length >= 30 && winkelLinks.every(geldigeWinkellink) && winkelLinksMetPrijs.length >= 30 && updLinks.length >= 10 && alsaLinks.length >= 100, 'winkelkoppelingen bevatten betrouwbare links met vanaf-prijs', `${winkelLinks.length} links, ${winkelLinksMetPrijs.length} met prijs, ${updLinks.length} Ultra Premium Direct, ${alsaLinks.length} Alsa Nature`)
+  const pleinLinks = winkelLinks.filter((link) => link.winkel === 'Plein.nl')
+  const petgammaLinks = winkelLinks.filter((link) => link.winkel === 'Petgamma.com')
+  meld(winkelsAntwoord.ok() && winkelLinks.length >= 30 && winkelLinks.every(geldigeWinkellink) && winkelLinksMetPrijs.length >= 30 && updLinks.length >= 10 && alsaLinks.length >= 100 && pleinLinks.length >= 50 && petgammaLinks.length >= 50, 'winkelkoppelingen bevatten betrouwbare links met vanaf-prijs', `${winkelLinks.length} links, ${winkelLinksMetPrijs.length} met prijs, ${updLinks.length} Ultra Premium Direct, ${alsaLinks.length} Alsa Nature, ${pleinLinks.length} Plein.nl, ${petgammaLinks.length} Petgamma.com`)
 
   await open('/?zoek=Acana%20Adult%20Dog%20Recipe', '.product-card')
   await page.waitForSelector('.product-price a', { timeout: 10000 })
@@ -295,6 +306,12 @@ try {
   const shopInDetails = await page.locator('.product-details .shop-link').count()
   meld(shopRij >= 1 && shopInDetails === 0, 'winkellinks staan zichtbaar op de kaart, niet in de details', `${shopRij} link(s) · ${shopInDetails} in details`)
 
+  await open('/?zoek=Cavom%20compleet%20Lam%20%26%20Rijst', '.product-card .card-shops .shop-link')
+  const multiShopKaart = page.locator('.product-card').filter({ hasText: 'compleet Lam & Rijst' }).first()
+  const multiShopLinks = await multiShopKaart.locator('.card-shops .shop-link').allInnerTexts()
+  const multiShopHoogte = await multiShopKaart.evaluate((el) => Math.round(el.getBoundingClientRect().height))
+  meld(multiShopLinks.length >= 4 && multiShopLinks.some((tekst) => /Plein\.nl/.test(tekst)) && multiShopLinks.some((tekst) => /Petgamma\.com/.test(tekst)) && multiShopHoogte < 700, 'meerdere winkellinks passen op de productkaart', `${multiShopLinks.length} links · ${multiShopHoogte}px`)
+
   await open('/hypoallergene-hondenvoeding.html', '.stat-grid')
   const hypo = await page.locator('body').innerText()
   meld(/hypoallergeen/i.test(hypo) && /niet beschermd|geen beschermde term/i.test(hypo), 'hypoallergeen-pagina legt de term voorzichtig uit')
@@ -305,7 +322,7 @@ try {
   meld(privacy.includes('hondenvoervergelijker@paulzuiderduin.com'), 'privacybeleid heeft het juiste contactadres')
   meld(privacy.includes('Umami'), 'privacybeleid noemt de bezoekersstatistieken')
   meld(/feedbackknop/i.test(privacy) && /twaalf maanden/i.test(privacy), 'privacybeleid beschrijft de feedback en bewaartermijn')
-  meld(/TradeTracker/i.test(privacy) && /Dierenwinkel XL/i.test(privacy) && /Daisycon/i.test(privacy) && /Ultra Premium Direct/i.test(privacy), 'privacybeleid noemt de gebruikte affiliate-netwerken en winkels')
+  meld(/TradeTracker/i.test(privacy) && /Dierenwinkel XL/i.test(privacy) && /Daisycon/i.test(privacy) && /Ultra Premium Direct/i.test(privacy) && /Plein\.nl/i.test(privacy) && /Petgamma\.com/i.test(privacy), 'privacybeleid noemt de gebruikte affiliate-netwerken en winkels')
 
   await open('/hondenvoer-zonder.html', '.popular-allergen')
   const hubKip = await page.locator('.popular-allergen').innerText()

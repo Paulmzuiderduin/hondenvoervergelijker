@@ -22,3 +22,6 @@ data/winkels/rapport-snack-affiliates.md
 
 # Lokale database-back-ups (gaan als artifact mee in de workflow).
 data/backup/
+data/winkels/plein-nl.json
+data/winkels/petgamma.json
+data/winkels/rapport-plein-petgamma.md

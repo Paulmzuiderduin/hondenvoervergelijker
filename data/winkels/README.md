@@ -92,11 +92,30 @@ via **Materiaal → Productfeeds** en draai
 `npm run winkels:ultra-premium-direct -- --dry-run` daarna zonder `--dry-run`.
 De koppeling gebruikt alleen een exacte EAN.
 
+## Plein.nl en Petgamma.com (Daisycon)
+
+De feeds van Plein.nl en Petgamma.com staan lokaal in
+`data/winkels/plein-nl.json` en `data/winkels/petgamma.json` (niet in git).
+Download ze in Daisycon via **Materiaal → Productfeeds** en draai:
+
+```bash
+npm run winkels:plein-petgamma -- --dry-run
+npm run winkels:plein-petgamma
+```
+
+Eerst wordt op exacte EAN gematcht. Heeft een catalogusproduct geen EAN, dan
+volgt alleen een exacte match op merk, productnaam en verpakking. Bij twijfel
+blijft de link weg. Snacks worden niet meegenomen, omdat de snackcatalogus geen
+EAN bevat. Het rapport staat lokaal in
+`data/winkels/rapport-plein-petgamma.md`.
+
 ## Bestanden die niet in git horen
 
 - `feeds.json` (lokale configuratie)
 - `*.csv` (feeds kunnen groot zijn en trackinglinks bevatten)
+- `plein-nl.json` en `petgamma.json` (Daisycon-feeds)
 - `rapport.md` (wordt opnieuw gegenereerd)
+- `rapport-plein-petgamma.md` (wordt opnieuw gegenereerd)
 
 Alleen `public/winkels.json` wordt gecommit, zodat de statische site de knoppen
 kan tonen.
