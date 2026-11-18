@@ -339,7 +339,7 @@ function ProductCard({ product, match, aanbiedingen = [], aanbodBijgewerkt = '',
         <span className="product-status-label"><span className="product-status-dot" aria-hidden="true" />{statusText}</span>
         <span className="product-status-context">{match.states.length ? `Bij ${match.states.length} gekozen ${match.states.length === 1 ? 'allergeen' : 'allergenen'}` : 'Etiketcontrole'}</span>
         {laagsteAanbieding
-          ? <span className="product-price"><span className="product-price-prefix">vanaf</span> <a href={laagsteAanbieding.url} target="_blank" rel="sponsored nofollow noopener noreferrer" title={`Affiliate-link naar ${laagsteAanbieding.winkel}. Wij ontvangen een kleine commissie.`} onClick={() => track('winkel-klik', { winkel: laagsteAanbieding.winkel, merk: product.brand, product: product.name })}>{PRIJS.format(Number(laagsteAanbieding.prijs))}</a><small>{laagsteAanbieding.winkel}{laagsteAanbieding.maat ? ` (${laagsteAanbieding.maat})` : ''} · affiliate</small></span>
+          ? <span className="product-price"><span className="product-price-prefix">vanaf</span> {PRIJS.format(Number(laagsteAanbieding.prijs))}<small>{laagsteAanbieding.winkel}{laagsteAanbieding.maat ? ` (${laagsteAanbieding.maat})` : ''} · laagste prijs</small></span>
           : <span className="product-price muted">Prijs niet bekend</span>}
       </div>
     </div>

@@ -866,7 +866,7 @@ ${aanbiedingen.map((aanbieding) => {
 function prijsHtml(product) {
   const laagste = laagsteAanbieding(productAanbiedingen(product))
   if (!laagste) return '<span class="product-price muted">Prijs niet bekend</span>'
-  return `          <span class="product-price"><span class="product-price-prefix">vanaf</span> <a href="${escapeHtml(laagste.url)}" target="_blank" rel="sponsored nofollow noopener noreferrer" title="Affiliate-link naar ${escapeHtml(laagste.winkel)}. Wij ontvangen een kleine commissie.">${prijsNl(laagste.prijs)}</a><small>${escapeHtml(laagste.winkel)}${laagste.maat ? ` (${escapeHtml(laagste.maat)})` : ''} · affiliate</small></span>`
+  return `          <span class="product-price"><span class="product-price-prefix">vanaf</span> ${prijsNl(laagste.prijs)}<small>${escapeHtml(laagste.winkel)}${laagste.maat ? ` (${escapeHtml(laagste.maat)})` : ''} · laagste prijs</small></span>`
 }
 
 function productKaart(product, { allergeenKort = '' } = {}) {
