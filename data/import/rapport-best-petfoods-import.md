@@ -5,7 +5,7 @@
 - Nieuwe producten opgehaald: 311
 - Nieuwe hondenvoerproducten: 150
 - Nieuwe snacks: 125
-- Voedingswaardesets: 145
+- Voedingswaardesets: 150
 - Aanvullende voeding overgeslagen: 36
 - Fouten/ontbrekende pagina's: 0
 

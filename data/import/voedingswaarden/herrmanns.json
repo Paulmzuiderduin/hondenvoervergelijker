@@ -235,6 +235,7 @@
       "waarden": {
         "protein": 11.1,
         "fat": 8,
+        "fiber": 0.3,
         "ash": 1.6,
         "moisture": 79,
         "kcal": 113
@@ -358,6 +359,7 @@
       "waarden": {
         "protein": 11.3,
         "fat": 10.1,
+        "fiber": 0.5,
         "ash": 2.2,
         "moisture": 73.2
       },

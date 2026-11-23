@@ -140,17 +140,17 @@ function waarde(tekst, patronen) {
 
 export function parseAnalytischeBestanddelen(tekst = '') {
   const waarden = {
-    protein: waarde(tekst, [/(?:Ruw eiwit|Eiwit)\s*:?\s*([\d.,]+)\s*%/i]),
-    fat: waarde(tekst, [/(?:Ruw vet|Vetgehalte|Vet)\s*:?\s*([\d.,]+)\s*%/i]),
-    fiber: waarde(tekst, [/(?:Ruwe celstof|Ruw vezel|Vezel)(?:\s*\([^)]*\))?\s*:?\s*([\d.,]+)\s*%/i]),
-    ash: waarde(tekst, [/(?:Ruwe as|Anorganisch materiaal \(ruwe as\))\s*:?\s*([\d.,]+)\s*%/i]),
-    moisture: waarde(tekst, [/(?:Vochtgehalte|Vocht|Voght)\s*:?\s*([\d.,]+)\s*%/i]),
-    calcium: waarde(tekst, [/Calcium\s*:?\s*([\d.,]+)\s*%/i]),
-    phosphorus: waarde(tekst, [/(?:Fosforgehalte|Fosfor)\s*:?\s*([\d.,]+)\s*%/i]),
+    protein: waarde(tekst, [/(?:Ruw(?:e)? eiwit(?:ten)?|Eiwit)\s*(?:\(\s*(?:min|max)\s*\))?\s*:?\s*([\d.,]+)\s*%/i]),
+    fat: waarde(tekst, [/(?:Ruw(?:e)? vet(?:ten)?|Vetgehalte|Vet)\s*(?:\(\s*(?:min|max)\s*\))?\s*:?\s*([\d.,]+)\s*%/i]),
+    fiber: waarde(tekst, [/(?:Ruwe celstof|Ruwe vezels?|Ruw vezel|Vezel)(?:\s*\([^)]*\))?\s*:?\s*([\d.,]+)\s*%/i]),
+    ash: waarde(tekst, [/(?:Ruwe as|Anorganisch materiaal \(ruwe as\))(?:\s*\(\s*(?:min|max)\s*\))?\s*:?\s*([\d.,]+)\s*%/i]),
+    moisture: waarde(tekst, [/(?:Vochtgehalte|Vocht|Voght)(?:\s*\(\s*(?:min|max)\s*\))?\s*:?\s*([\d.,]+)\s*%/i]),
+    calcium: waarde(tekst, [/Calcium\s*(?:\(\s*(?:min|max)\s*\))?\s*:?\s*([\d.,]+)\s*%/i]),
+    phosphorus: waarde(tekst, [/(?:Fosforgehalte|Fosfor|Phosphorus)\s*(?:\(\s*(?:min|max)\s*\))?\s*:?\s*([\d.,]+)\s*%/i]),
     omega3: waarde(tekst, [/Omega-?3(?:\s*vetzuren)?\s*:?\s*([\d.,]+)\s*%/i]),
     omega6: waarde(tekst, [/Omega-?6(?:\s*vetzuren)?\s*:?\s*([\d.,]+)\s*%/i])
   }
-  const energie = tekst.match(/(?:Metabole energie|Energie)[^\d]{0,40}([\d.,]+)\s*(?:kcal|Kcal)\s*\/\s*(kg|100\s*g)/i)
+  const energie = tekst.match(/(?:Metabole energie|Calorie-inhoud|Energie)[^\d]{0,60}([\d.,]+)\s*(?:kcal|Kcal)(?:\s*ME)?\s*\/\s*(kg|100\s*g)/i)
   if (energie) {
     const energieWaarde = getalEnergie(energie[1])
     if (energieWaarde != null) {

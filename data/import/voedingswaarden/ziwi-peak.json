@@ -49,6 +49,7 @@
       "waarden": {
         "protein": 38,
         "fat": 30,
+        "fiber": 1,
         "ash": 9,
         "moisture": 9
       },
@@ -67,7 +68,8 @@
         "protein": 36,
         "fat": 30,
         "fiber": 1,
-        "ash": 9
+        "ash": 9,
+        "kcal": 440
       },
       "bronTekst": "Ruw eiwit 36%, ruw vet 30%, ruwe vezel 1%, vochtigheid 9%, ruwe as 9% Calorie-inhoud (berekend) 4400 kcal ME/kg",
       "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
@@ -83,10 +85,90 @@
       "waarden": {
         "protein": 38,
         "fat": 28,
+        "fiber": 1,
         "ash": 9,
-        "moisture": 9
+        "moisture": 9,
+        "kcal": 430
       },
       "bronTekst": "Ruw eiwit 38%, ruw vet 28%, ruwe vezels 1%, vocht 9%, ruwe as 9% Calorie-inhoud (berekend) 4300 kcal ME/kg",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Ziwi Peak",
+      "naam": "Natvoeding Kip",
+      "voertype": "wet",
+      "verpakking": "170 / 390 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/ziwi-peak-natvoeding-voor-de-hond-kip-390-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9,
+        "fat": 5.5,
+        "fiber": 1,
+        "ash": 4,
+        "moisture": 78,
+        "kcal": 132.5
+      },
+      "bronTekst": "Ruw eiwit (min) 9,0% Ruw vet (min) 5,5% Ruwe vezels (max) 1,0% Vocht (max) 78,0% Ruwe as (max) 4,0% Chondroïtinesulfaat (min) 300 mg/kg Calorie-inhoud (berekend) 1325 kcal ME/kg",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Ziwi Peak",
+      "naam": "Natvoeding Rund",
+      "voertype": "wet",
+      "verpakking": "170 / 390 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/ziwi-peak-natvoeding-voor-de-hond-rund-170-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9,
+        "fat": 5.5,
+        "fiber": 2,
+        "ash": 4,
+        "moisture": 78,
+        "kcal": 125
+      },
+      "bronTekst": "Ruw eiwit (min) 9,0% Ruw vet (min) 5,5% Ruwe vezels (max) 2,0% Ruwe as (max) 4,0% Vocht (max) 78,0% Chondroïtinesulfaat (min) 300 mg/kg Calorie-inhoud (berekend) 1250 kcal ME/kg",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Ziwi Peak",
+      "naam": "Natvoeding Makreel & Lam",
+      "voertype": "wet",
+      "verpakking": "170 / 390 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/ziwi-peak-natvoeding-voor-de-hond-makreel-lam-170-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.5,
+        "fat": 4,
+        "fiber": 2,
+        "ash": 3,
+        "moisture": 78,
+        "calcium": 0.4,
+        "phosphorus": 0.3,
+        "kcal": 120
+      },
+      "bronTekst": "Ruw eiwit (min) 10,5% Ruw vet (min) 4,0% Ruwe vezels (max) 2,0% Ruwe as (max) 3,0% Vocht (max) 78,0% Calcium 0,4% Phosphorus 0,3% Magnesium 0,04% Taurine 0,10% Glucosamine 1000 mg/kg Chondroïtinesulfaat (min) 300 mg/kg Calorie-inhoud (berekend) 1200 kcal ME/kg",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Ziwi Peak",
+      "naam": "Natvoeding Hert",
+      "voertype": "wet",
+      "verpakking": "170 / 390 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/ziwi-peak-natvoeding-voor-de-hond-hert-170-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10,
+        "fat": 4,
+        "fiber": 2,
+        "ash": 3,
+        "moisture": 78,
+        "kcal": 120
+      },
+      "bronTekst": "Ruw eiwit (min) 10,0% Ruw vet (min) 4,0% Ruwe vezels (max) 2,0% Vocht (max) 78,0% Ruwe as (max) 3,0% Chondroïtinesulfaat (min) 300 mg/kg Calorie-inhoud (berekend) 1200 kcal ME/kg",
       "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
     }
   ]
