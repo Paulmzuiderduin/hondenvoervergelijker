@@ -8,7 +8,7 @@ const GENERIEK = new Set([
   'hond', 'honden', 'hondenvoer', 'hondenvoeding', 'hondervoeding',
   'hondenbrokken', 'voer', 'voeding', 'diervoeding', 'droog', 'nat',
   'natvoer', 'brokken', 'compleet', 'complete', 'met', 'en', 'voor',
-  'van', 'the'
+  'van', 'the', 'dog', 'recipe', 'classics', 'singles', 'highest', 'protein'
 ])
 
 const SNACK_GENERIEK = new Set([

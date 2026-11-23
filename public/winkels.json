@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-11-23T13:38:40.475Z",
+  "bijgewerkt": "2026-11-23T13:41:45.053Z",
   "netwerk": "TradeTracker en Daisycon",
   "aanbieders": {
     "08c788d6-941d-433e-ba73-6f1c99405be5": [
@@ -8,6 +8,48 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-adult-dog-recipe%2F",
         "maat": "6 kg",
         "prijs": 22.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=23c7813b090d84e5e4a7522877c4277e&dl=p%2Facana-dog-adult-11-4-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 78.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=30aa7e70a0cbdca4e0d0cc79f0be3030&dl=p%2Facana-dog-adult-17-kg&ws=",
+        "maat": "17 kg",
+        "prijs": 113.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b2e35aba38e3b06a95bc988fa1d123dc&dl=p%2Facana-dog-adult-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 20.79
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ae8026af23df9e14acebe0c575048ce7&dl=p%2Facana-dog-adult-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 46.69
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e27e8fc917fef237d2171e43ebb62541&dl=product%2Facana-adult-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b77ce2f6bd4b2ebda40f6e24fb6f15e0&dl=product%2Facana-adult-hondenvoeding-17-kg&ws=",
+        "maat": "17 kg",
+        "prijs": 104.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=12282e7f844c2044782c8df456b7ec38&dl=product%2Facana-adult-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 47.95
       }
     ],
     "27d6a584-9e81-4dad-8993-66cbd36c4f5d": [
@@ -16,6 +58,24 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-adult-large-breed-recipe%2F",
         "maat": "11,4 kg",
         "prijs": 79.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b23ef3dddefeffaedfc716ffbe7d979d&dl=p%2Facana-adult-large-breed-114kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 70.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a5401b53e20d933e4bb3b5c55c7ecc31&dl=product%2Facana-adult-large-breed-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=219839b34cbdc66734e18fd5b718f96b&dl=product%2Facana-adult-large-breed-hondenvoeding-17-kg&ws=",
+        "maat": "17 kg",
+        "prijs": 104.95
       }
     ],
     "b2bee777-c588-4ac0-b660-45455d2d57ca": [
@@ -24,6 +84,30 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-adult-small-breed-recipe%2F",
         "maat": "6 kg",
         "prijs": 4.55
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=94f985c5cc0b2de60cc201ea8c8ecb2a&dl=p%2Facana-adult-small-breed-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 22.89
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=369fd729948264664fe5f16c5808a855&dl=p%2Facana-adult-small-breed-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 48.09
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=40d48ad24231b5ed418b7c0d07a73c93&dl=product%2Facana-adult-small-breed-hondenvoeding-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 24.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e820c7d04f4f9e283ed49ab93d1e0e9b&dl=product%2Facana-adult-small-breed-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 48.49
       }
     ],
     "ad1fe4d6-0fe5-4572-aa8a-36f1e662097f": [
@@ -32,6 +116,24 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-singles-free-run-duck%2F",
         "maat": "11,4 kg",
         "prijs": 31.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=fc04c99c21c7f92df934afb6e2910b30&dl=p%2Facana-singles-free-run-hondenvoer-duck-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 67.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9ee802227a771ee622e20399de0dc283&dl=product%2Facana-singles-free-run-duck-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 109.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6d72cacf809081e13af98809e58affc8&dl=product%2Facana-singles-free-run-duck-hondenvoeding-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 32.95
       }
     ],
     "7f9f2d49-488c-4a83-bff9-4a51c7b050d7": [
@@ -40,6 +142,42 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-singles-grass-fed-lamb%2F",
         "maat": "2 kg",
         "prijs": 29.65
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a32e93959c60b911bf6c9bd3ff817cef&dl=p%2Facana-singles-grass-fed-lamb-17-kg&ws=",
+        "maat": "17 kg",
+        "prijs": 134.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=03284392b3eb35bc2962bfadd1ee81a1&dl=p%2Facana-singles-grass-fed-lamb-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 61.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f098949d0895401bbce6273fb752c39a&dl=product%2Facana-singles-grass-fed-lamb-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 94.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c4b72e8a18fd2bdfe4a886f73d83dc99&dl=product%2Facana-singles-grass-fed-lamb-hondenvoeding-17-kg&ws=",
+        "maat": "17 kg",
+        "prijs": 137.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=038005b0e0e6b6338918e5c5664e8643&dl=product%2Facana-singles-grass-fed-lamb-hondenvoeding-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 30.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c8b04f8986c8659629ee48d01c345f04&dl=product%2Facana-singles-grass-fed-lamb-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 63.95
       }
     ],
     "10e4d9a9-f9bd-483a-bc62-7e055174fdfc": [
@@ -48,6 +186,36 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-light-fit-recipe%2F",
         "maat": "",
         "prijs": 22.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=9ed87d9b3fddbf37e947bca2189d6fcd&dl=p%2Facana-light-en-fit-11-4-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 84.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5339164596faa45b9b2afd6a36d5255c&dl=p%2Facana-light-en-fit-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 22.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=44b4a0814d676c914f1b32cd0b9ba22f&dl=p%2Facana-light-en-fit-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 47.29
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c6321f44494a7044bc98ad9b586039ae&dl=product%2Facana-light-fit-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4e323ae10d94881061248ba3801197e2&dl=product%2Facana-light-fit-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 47.95
       }
     ],
     "a824a437-ca37-445f-9304-7520dd933f4f": [
@@ -56,6 +224,54 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-classic-prairie-poultry-recipe%2F",
         "maat": "2 kg",
         "prijs": 19.65
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=7979c3c009a64f3274eb1483d904d98d&dl=acana-hondenvoer-classics-prairie-poultry-17-kg%3Fchannable%3D0045606964003130343131343057&ws=",
+        "maat": "14,5 kg",
+        "prijs": 92.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=e99f950aea0d132faba2080480ec8a1d&dl=acana-hondenvoer-classics-prairie-poultry-2-kg%3Fchannable%3D004560696400313034313134375e&ws=",
+        "maat": "2 kg",
+        "prijs": 20.25
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=880f348111ebcc2749abe29ba6983f5d&dl=acana-hondenvoer-classics-prairie-poultry-11-4-kg%3Fchannable%3D0045606964003130343131343259&ws=",
+        "maat": "9,7 kg",
+        "prijs": 59.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2d5e3f18dcf82468d38aa8025f1362e2&dl=p%2Facana-hondenvoer-classics-prairie-poultry-17-kg&ws=",
+        "maat": "14,5 kg",
+        "prijs": 92.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=3578bd4873e8d56d143a5aa09011834d&dl=p%2Facana-hondenvoer-classics-prairie-poultry-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 20.25
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=cba566058bfccebd00478021d152150c&dl=p%2Facana-hondenvoer-classics-prairie-poultry-11-4-kg&ws=",
+        "maat": "9,7 kg",
+        "prijs": 59.49
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d59df21819eb5ef8924cc314cb9ccb51&dl=product%2Facana-classics-prairie-poultry-hondenvoeding-145-kg&ws=",
+        "maat": "14,5 kg",
+        "prijs": 88.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=86522fc9043ad3077e4e93fa3afb1a61&dl=product%2Facana-classics-prairie-poultry-hondenvoeding-97-kg&ws=",
+        "maat": "9,7 kg",
+        "prijs": 61.95
       }
     ],
     "b50f63b2-0326-492b-9019-1cdeb8427401": [
@@ -64,6 +280,30 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-puppy-recipe%2F",
         "maat": "",
         "prijs": 4.65
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7b59417732e33221284ca2c81c79d2be&dl=product%2Facana-puppy-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 76.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=81e6594a4955f7176c7c776bfb8f5729&dl=product%2Facana-puppy-17-kg&ws=",
+        "maat": "17 kg",
+        "prijs": 106.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=64bd15f23cb60d47145e72710ce11c96&dl=product%2Facana-puppy-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 22.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ac880b3c31432839f00013897bd27eb1&dl=product%2Facana-puppy-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 46.95
       }
     ],
     "8d364006-cf82-487f-8175-911981fc5391": [
@@ -72,6 +312,24 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-puppy-small-breed-recipe%2F",
         "maat": "6 kg",
         "prijs": 18.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b0c0c130219821b7d25a9556ad42f2d4&dl=p%2Facana-puppy-small-breed-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 20.79
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7c55e54f8f8c133035dec1a8c2d16e06&dl=p%2Facana-puppy-small-breed-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 45.25
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d2f9f9e524429333e716185067719230&dl=product%2Facana-puppy-small-breed-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 46.95
       }
     ],
     "b6faf53e-c062-42b1-a716-cc779ad100fc": [
@@ -80,6 +338,24 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-regionals-ranchlands-dog%2F",
         "maat": "",
         "prijs": 107.5
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f131b8e2b758c4f0109e5f61fdd59203&dl=p%2Facana-highest-protein-ranchlands-dog-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 61.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=52b436875f21fbf4936e147f139b22dc&dl=product%2Facana-highest-protein-ranchlands-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 102.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4ae5af819580fe600b7cbad4db378101&dl=product%2Facana-highest-protein-ranchlands-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 67.5
       }
     ],
     "fd2dcb4d-604c-4d8e-bce0-76b328ee4b94": [
@@ -88,6 +364,36 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-senior-recipe%2F",
         "maat": "6 kg",
         "prijs": 21.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=8d0084c462a6e722415981185ceff9d8&dl=p%2Facana-senior-dog-114kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 72.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2a29033184c2d0cd87e2544b95324d90&dl=p%2Facana-senior-dog-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 22.89
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d0973935b3b104057822b94912a330d5&dl=p%2Facana-senior-dog-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 48.49
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=979d4435c714f14b625fb0112a714a5b&dl=product%2Facana-senior-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a69bffc7fc49f456b5fa0038ca08fc63&dl=product%2Facana-senior-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 45.49
       }
     ],
     "85e23703-ab98-4425-993d-61e140f79424": [
@@ -96,6 +402,42 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-highest-protein-wild-prairie%2F",
         "maat": "6 kg",
         "prijs": 25.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=7bb80fd1935262429c2804f521dab5bf&dl=acana-hondenvoer-highest-protein-wild-prairie-11-4-kg%3Fchannable%3D004560696400313034313136365e&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ec4e2e00082873fe13f7c7bc17685a0a&dl=acana-hondenvoer-highest-protein-wild-prairie-2-kg%3Fchannable%3D004560696400313034313136375f&ws=",
+        "maat": "2 kg",
+        "prijs": 24.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=3e4d92cf770e3af84814ab14c5591403&dl=p%2Facana-hondenvoer-highest-protein-wild-prairie-11-4-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=25a2e928517f0a4291b56f149bfd026a&dl=p%2Facana-hondenvoer-highest-protein-wild-prairie-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 24.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=027b600408392a54ce628feeb750417d&dl=p%2Facana-regional-wild-prairie-dog-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 55.49
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=bd2c53943b621174a1173331426a7d54&dl=product%2Facana-highest-protein-wild-prairie-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 89.99
       }
     ],
     "9166cbb3-4ffd-4049-b280-1ebb0fd625e8": [
@@ -104,6 +446,30 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-singles-yorkshire-pork%2F",
         "maat": "11,4 kg",
         "prijs": 28.25
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=665043cd1ef34f5c718c1fb464db18fe&dl=p%2Facana-singles-yorkshire-pork-11-4-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 85.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a4ab50371efb25ff5e3e79d0533a4234&dl=p%2Facana-singles-yorkshire-pork-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 23.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5b07b6f78a074e064cde2b0e539ec794&dl=p%2Facana-singles-yorkshire-pork-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 50.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ae0019984b8413796ad37b87d5e1dbf6&dl=product%2Facana-singles-yorkshire-pork-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 91.95
       }
     ],
     "1612d255-ee7b-43b9-a8ce-7d78ac9f41f6": [
@@ -8728,6 +9094,208 @@
         "prijs": 88.8
       }
     ],
+    "1c95039c-5b00-43cd-b868-a1cca78c26da": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0aec26a1e684f71827dda93decf0a388&dl=p%2Facana-puppy-large-breed-114kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.49
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=976ae116a8ad00a7b8a1f86b84f8561f&dl=product%2Facana-puppy-large-breed-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 76.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8d1f3b1a7bfcd37828d794473190a7d5&dl=product%2Facana-puppy-large-breed-17-kg&ws=",
+        "maat": "17 kg",
+        "prijs": 105.95
+      }
+    ],
+    "613f425d-d6e8-4cbc-8a26-91257a0a33a3": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=b79e5f773699eaf41b01af6988c390c9&dl=acana-hondenvoer-highest-protein-grasslands-11-4-kg%3Fchannable%3D00456069640031303431313533da&ws=",
+        "maat": "11,4 kg",
+        "prijs": 93.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=0802b9f82ea1c664b3a566a4d22ddbe2&dl=acana-hondenvoer-highest-protein-grasslands-2-kg%3Fchannable%3D00456069640031303431313535dc&ws=",
+        "maat": "2 kg",
+        "prijs": 26.55
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=4eeac505820fed5aa3980a53057620da&dl=p%2Facana-hondenvoer-highest-protein-grasslands-11-4-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 93.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=66ed3d7f408a520d02bdded4dd18b3e9&dl=p%2Facana-hondenvoer-highest-protein-grasslands-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 26.55
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=64144b32b15fc72809265173f577df66&dl=p%2Facana-regional-grasslands-dog-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 58.49
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9e03e59f37f20b81ce5088da82239ab3&dl=product%2Facana-highest-protein-grasslands-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 99.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=175d79b989b9c807046dbbcba214f2a5&dl=product%2Facana-highest-protein-grasslands-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 64.49
+      }
+    ],
+    "3a2ffa50-57b2-4f0a-826c-c52bd2223f9f": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=110fd6a8417394b35130d1f01b29cbac&dl=acana-hondenvoer-highest-protein-pacifica-11-4-kg%3Fchannable%3D00456069640031303431313536dd&ws=",
+        "maat": "11,4 kg",
+        "prijs": 96.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=97757c74a0f6574ac631776e44e179d0&dl=acana-hondenvoer-highest-protein-pacifica-2-kg%3Fchannable%3D00456069640031303431313537de&ws=",
+        "maat": "2 kg",
+        "prijs": 27.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=db855a2e2680a12498df71bc97953616&dl=p%2Facana-hondenvoer-highest-protein-pacifica-11-4-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 96.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=28374f85b1137f4e58f09f29142ec5c2&dl=p%2Facana-hondenvoer-highest-protein-pacifica-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 27.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a3354c19109b09c1f2b9b51de207ea61&dl=p%2Facana-regional-pacifica-dog-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 57.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=07504f74ea218c0f5d735e62133745df&dl=product%2Facana-highest-protein-pacifica-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 89.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=13ac0db81fdcb0dc40bfabf76a372fc2&dl=product%2Facana-highest-protein-pacifica-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 61.95
+      }
+    ],
+    "83e3c272-1a84-4505-ac46-e8b454c29581": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=e5c817397b5f66639f98eeba5b485d90&dl=acana-hondenvoer-classics-classic-red-17-kg%3Fchannable%3D00456069640031303431313336dc&ws=",
+        "maat": "14,5 kg",
+        "prijs": 92.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=d7c2faca94ff3edfdfe54af069d024c1&dl=acana-hondenvoer-classics-red-meat-2-kg%3Fchannable%3D00456069640031303431313338de&ws=",
+        "maat": "2 kg",
+        "prijs": 25.09
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=597c2afde977540348c0cea259599990&dl=p%2Facana-hondenvoer-classics-classic-red-17-kg&ws=",
+        "maat": "14,5 kg",
+        "prijs": 92.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0ae7fb0598d3ab28c8665d83f6624a0a&dl=p%2Facana-hondenvoer-classics-red-meat-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 25.09
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=51da7b1f170fcfa860093cd210abf183&dl=p%2Facana-hondenvoer-classics-red-meat-11-4-kg&ws=",
+        "maat": "9,7 kg",
+        "prijs": 66.49
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6c463d656ae010e64f4da0146ae4912d&dl=product%2Facana-classics-red-meat-hondenvoeding-145-kg&ws=",
+        "maat": "14,5 kg",
+        "prijs": 95.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=866b6c4dfd5f86921352a57055f19ecc&dl=product%2Facana-classics-red-meat-hondenvoeding-97-kg&ws=",
+        "maat": "9,7 kg",
+        "prijs": 67.95
+      }
+    ],
+    "2760ef5c-c2ab-4f63-ac42-0d766818d1e9": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ac659d12f65afadb88f99280e22e5af0&dl=acana-hondenvoer-classics-wild-coast-17-kg%3Fchannable%3D004560696400313034313134385f&ws=",
+        "maat": "14,5 kg",
+        "prijs": 103.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=aebd8a574a82392bccb31c9c7ffb1851&dl=acana-hondenvoer-classics-wild-coast-2-kg%3Fchannable%3D00456069640031303431313532d9&ws=",
+        "maat": "2 kg",
+        "prijs": 20.79
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=5905b5696008a889ad02e70d0f7c192d&dl=acana-hondenvoer-classics-wild-coast-11-4-kg%3Fchannable%3D00456069640031303431313531d8&ws=",
+        "maat": "9,7 kg",
+        "prijs": 67.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b457c0453cef475f531222b7fd302d39&dl=p%2Facana-hondenvoer-classics-wild-coast-17-kg&ws=",
+        "maat": "14,5 kg",
+        "prijs": 103.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=80e8651344eb486afa9c262d3f7bd282&dl=p%2Facana-hondenvoer-classics-wild-coast-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 20.79
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=05bffb7dc9375a4f61d207272c200115&dl=p%2Facana-hondenvoer-classics-wild-coast-11-4-kg&ws=",
+        "maat": "9,7 kg",
+        "prijs": 67.49
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f1402012e2d9d66e6345af05902aac2d&dl=product%2Facana-classics-wild-coast-hondenvoeding-145-kg&ws=",
+        "maat": "14,5 kg",
+        "prijs": 98.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=dbbb4412a32d595df8841ac4055ddbda&dl=product%2Facana-classics-wild-coast-hondenvoeding-97-kg&ws=",
+        "maat": "9,7 kg",
+        "prijs": 68.95
+      }
+    ],
     "a848796e-d950-471f-be63-77210905104c": [
       {
         "winkel": "Plein.nl",
@@ -10282,24 +10850,12 @@
         "prijs": 5.05
       }
     ],
-    "1c95039c-5b00-43cd-b868-a1cca78c26da": [
+    "bf9d9de2-cb1a-43b5-b6e9-da471df60a79": [
       {
         "winkel": "Petgamma.com",
-        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0aec26a1e684f71827dda93decf0a388&dl=p%2Facana-puppy-large-breed-114kg&ws=",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7f3cf40730d9575cecb2b79318c76111&dl=p%2Forijen-dog-large-breed-adult-hondenvoer-11-4kg&ws=",
         "maat": "11,4 kg",
-        "prijs": 79.49
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=976ae116a8ad00a7b8a1f86b84f8561f&dl=product%2Facana-puppy-large-breed-114-kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 76.95
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8d1f3b1a7bfcd37828d794473190a7d5&dl=product%2Facana-puppy-large-breed-17-kg&ws=",
-        "maat": "17 kg",
-        "prijs": 105.95
+        "prijs": 98.49
       }
     ],
     "c1e4bfee-e856-47c1-b73a-4905bbc911e8": [
@@ -10872,6 +11428,14 @@
         "prijs": 40.45
       }
     ],
+    "cbf64187-792d-499f-bb87-17ba15b59463": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=41f5713129ad3bd606e7f63d8db9e9ed&dl=p%2F1x-hypoallergenic-small-dogs-hondenvoer-3-5-kg&ws=",
+        "maat": "3,5 kg",
+        "prijs": 40.59
+      }
+    ],
     "076ac020-609c-40bd-ac1b-b3836aefdef1": [
       {
         "winkel": "Petgamma.com",
@@ -11272,6 +11836,26 @@
         "prijs": 43.89
       }
     ],
+    "2d7dc3b5-8383-43d4-828e-ff4c4308e9ad": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2f9b7121b516d499dc9c42b9e5f9c785&dl=p%2Froyal-canin-royal-canin-satiety-weight-management-15-kg-1091711&ws=",
+        "maat": "1,5 kg",
+        "prijs": 20.65
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=db4e8267c96ac73f7ed17c621ed8df8b&dl=p%2Froyal-canin-royal-canin-satiety-weight-management-3-kg&ws=",
+        "maat": "3 kg",
+        "prijs": 31.09
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=8ceb84863a5229286f5bd2cbd12420b9&dl=p%2Froyal-canin-royal-canin-satiety-weight-management-8-kg&ws=",
+        "maat": "8 kg",
+        "prijs": 67.99
+      }
+    ],
     "f6dc0816-675d-4cc7-9070-7990268fe562": [
       {
         "winkel": "Petgamma.com",
@@ -11388,6 +11972,26 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a6008853f85d4557c6d00b2efddaf368&dl=p%2Froyal-canin-royal-canin-urinary-so-moderate-calorie-65-kg&ws=",
         "maat": "6,5 kg",
         "prijs": 53.99
+      }
+    ],
+    "d9bd636f-c47d-4830-911f-7da9acef445e": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=bbea8e89ba5e7496369b5f66553fe9b7&dl=p%2Froyal-canin-royal-canin-urinary-so-small-dog-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 21.39
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d2181ad8f0fc7315f69c93dce317d334&dl=p%2Froyal-canin-royal-canin-urinary-so-small-dog-4-kg&ws=",
+        "maat": "4 kg",
+        "prijs": 41.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=8052bf57b38ffaf49ea99daa377bf838&dl=p%2Froyal-canin-royal-canin-urinary-so-small-dog-8-kg&ws=",
+        "maat": "8 kg",
+        "prijs": 76.99
       }
     ],
     "494d45bd-9580-476d-87ea-c3fb555a17fb": [
@@ -11674,6 +12278,20 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b71bb88aa3f791a27a10d19ed25d6506&dl=p%2Fvitakraft-boony-bits-55-gr-1038311&ws=",
         "maat": "55 g",
         "prijs": 3.45
+      }
+    ],
+    "9f6f2928-8ebe-4e0c-beed-4e69e17e232a": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ce30e022275c186d04a97fbf79564a57&dl=product%2Facana-sport-agility-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=560eab2596e03536d416ede7bd3c3a22&dl=product%2Facana-sport-agility-hondenvoeding-17-kg&ws=",
+        "maat": "17 kg",
+        "prijs": 106.95
       }
     ],
     "cb239e76-318e-4e75-b99e-d24b45ed019e": [

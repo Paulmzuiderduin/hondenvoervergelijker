@@ -117,6 +117,15 @@ test('leest meerdere maten en formatteert de maat', () => {
   assert.equal(formaatMaat(800), '800 g')
 })
 
+test('negeert generieke lijnwoorden zoals Dog en Recipe bij een exacte naam+maatmatch', () => {
+  const { koppelingen } = koppelDaisyconRetail(
+    [product({ brand: 'Acana', name: 'Adult Dog Recipe', package_size: '2 / 6 / 11,4 / 17 kg' })],
+    [aanbieding({ merk: 'Acana', titel: 'Acana Adult hondenvoeding 11,4 kg', ean: '64992525118', maat: '11,4 kg', maatGram: 11400 })]
+  )
+  assert.equal(koppelingen.length, 1)
+  assert.equal(koppelingen[0].methode, 'naam+maat')
+})
+
 test('leest snackmaten en behandelt een multipack als totaalgewicht', () => {
   assert.deepEqual(maatOpties('10 x 20 g'), [200])
   assert.deepEqual(maatOpties('50 g / 120 g'), [50, 120])

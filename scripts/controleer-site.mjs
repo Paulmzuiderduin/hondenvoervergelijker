@@ -300,7 +300,7 @@ try {
   const prijsLinkAantal = await page.locator('.product-card .product-price a').count()
   const eersteShopLink = page.locator('.product-card .card-shops .shop-link').first()
   const eersteShopRel = await eersteShopLink.getAttribute('rel')
-  meld(/Dierenwinkel XL/.test(prijsTekst) && /€/.test(prijsTekst), 'productprijs toont winkel en vanaf-prijs', prijsTekst.replace(/\n/g, ' '))
+  meld(/vanaf/i.test(prijsTekst) && /€/.test(prijsTekst) && /(Dierenwinkel XL|Plein\.nl|Petgamma\.com|Best Petfoods|Ultra Premium Direct|Alsa Nature)/.test(prijsTekst), 'productprijs toont winkel en vanaf-prijs', prijsTekst.replace(/\n/g, ' '))
   meld(/laagste prijs/i.test(prijsTekst) && prijsLinkAantal === 0, 'prijs bovenin is een samenvatting zonder dubbele link', `${prijsTekst.replace(/\n/g, ' ')} · ${prijsLinkAantal} link(s)`)
   meld(/sponsored/.test(eersteShopRel || ''), 'winkelknop in de actierij is de affiliate-link', eersteShopRel || 'geen rel')
   const shopRij = await page.locator('.product-card .card-shops .shop-link').count()
