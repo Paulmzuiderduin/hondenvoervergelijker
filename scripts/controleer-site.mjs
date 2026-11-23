@@ -273,27 +273,27 @@ try {
   const winkelLinks = Object.values(winkelsJson.aanbieders ?? {}).flat()
   const winkelLinksMetPrijs = winkelLinks.filter((link) => Number.isFinite(link.prijs) && link.prijs > 0)
   const geldigeWinkellink = (link) => {
-    const isDaisyconRetail = (si) =>
-      /^https:\/\/fr135\.net\/c\//.test(link.url) &&
+    const isDaisyconRetail = (host, si) =>
+      new RegExp(`^https:\\/\\/${host.replace(/\./g, '\\.')}\\/c\\/`).test(link.url) &&
       new RegExp(`[?&]si=${si}(?:&|$)`).test(link.url) &&
       /[?&]wi=446454(?:&|$)/.test(link.url)
-    return ['Dierenwinkel XL', 'Ultra Premium Direct', 'Alsa Nature', 'Plein.nl', 'Petgamma.com'].includes(link.winkel) &&
-      (link.winkel === 'Dierenwinkel XL'
-        ? /tt=4019_/.test(link.url)
-        : link.winkel === 'Ultra Premium Direct'
-          ? /^https:\/\/glp8\.net\/c\//.test(link.url)
-          : link.winkel === 'Alsa Nature'
-            ? /tt=31843_/.test(link.url)
-            : link.winkel === 'Plein.nl'
-              ? isDaisyconRetail(3366)
-              : isDaisyconRetail(20686)) &&
+    const perWinkel = {
+      'Dierenwinkel XL': /tt=4019_/.test(link.url),
+      'Ultra Premium Direct': /^https:\/\/glp8\.net\/c\//.test(link.url),
+      'Alsa Nature': /tt=31843_/.test(link.url),
+      'Plein.nl': isDaisyconRetail('fr135.net', 3366),
+      'Petgamma.com': isDaisyconRetail('fr135.net', 20686),
+      'Best Petfoods': isDaisyconRetail('jdt8.net', 17664)
+    }
+    return Boolean(perWinkel[link.winkel]) &&
       (link.prijs == null || (Number.isFinite(link.prijs) && link.prijs > 0))
   }
   const updLinks = winkelLinks.filter((link) => link.winkel === 'Ultra Premium Direct')
   const alsaLinks = winkelLinks.filter((link) => link.winkel === 'Alsa Nature')
   const pleinLinks = winkelLinks.filter((link) => link.winkel === 'Plein.nl')
   const petgammaLinks = winkelLinks.filter((link) => link.winkel === 'Petgamma.com')
-  meld(winkelsAntwoord.ok() && winkelLinks.length >= 30 && winkelLinks.every(geldigeWinkellink) && winkelLinksMetPrijs.length >= 30 && updLinks.length >= 10 && alsaLinks.length >= 100 && pleinLinks.length >= 50 && petgammaLinks.length >= 50, 'winkelkoppelingen bevatten betrouwbare links met vanaf-prijs', `${winkelLinks.length} links, ${winkelLinksMetPrijs.length} met prijs, ${updLinks.length} Ultra Premium Direct, ${alsaLinks.length} Alsa Nature, ${pleinLinks.length} Plein.nl, ${petgammaLinks.length} Petgamma.com`)
+  const bestPetfoodsLinks = winkelLinks.filter((link) => link.winkel === 'Best Petfoods')
+  meld(winkelsAntwoord.ok() && winkelLinks.length >= 30 && winkelLinks.every(geldigeWinkellink) && winkelLinksMetPrijs.length >= 30 && updLinks.length >= 10 && alsaLinks.length >= 100 && pleinLinks.length >= 50 && petgammaLinks.length >= 50 && bestPetfoodsLinks.length >= 10, 'winkelkoppelingen bevatten betrouwbare links met vanaf-prijs', `${winkelLinks.length} links, ${winkelLinksMetPrijs.length} met prijs, ${updLinks.length} Ultra Premium Direct, ${alsaLinks.length} Alsa Nature, ${pleinLinks.length} Plein.nl, ${petgammaLinks.length} Petgamma.com, ${bestPetfoodsLinks.length} Best Petfoods`)
 
   await open('/?zoek=Acana%20Adult%20Dog%20Recipe', '.product-card .card-shops .shop-link')
   const prijsTekst = await page.locator('.product-price').first().innerText()
@@ -328,7 +328,7 @@ try {
   meld(privacy.includes('hondenvoervergelijker@paulzuiderduin.com'), 'privacybeleid heeft het juiste contactadres')
   meld(privacy.includes('Umami'), 'privacybeleid noemt de bezoekersstatistieken')
   meld(/feedbackknop/i.test(privacy) && /twaalf maanden/i.test(privacy), 'privacybeleid beschrijft de feedback en bewaartermijn')
-  meld(/TradeTracker/i.test(privacy) && /Dierenwinkel XL/i.test(privacy) && /Daisycon/i.test(privacy) && /Ultra Premium Direct/i.test(privacy) && /Plein\.nl/i.test(privacy) && /Petgamma\.com/i.test(privacy), 'privacybeleid noemt de gebruikte affiliate-netwerken en winkels')
+  meld(/TradeTracker/i.test(privacy) && /Dierenwinkel XL/i.test(privacy) && /Daisycon/i.test(privacy) && /Ultra Premium Direct/i.test(privacy) && /Plein\.nl/i.test(privacy) && /Petgamma\.com/i.test(privacy) && /Best Petfoods/i.test(privacy), 'privacybeleid noemt de gebruikte affiliate-netwerken en winkels')
 
   await open('/hondenvoer-zonder.html', '.popular-allergen')
   const hubKip = await page.locator('.popular-allergen').innerText()

@@ -212,6 +212,21 @@ blijft de link weg. Snacks worden gekoppeld op exacte merk-, naam- en
 maatovereenkomst; een EAN is daarvoor niet nodig. Het rapport staat in
 `data/winkels/rapport-plein-petgamma.md`.
 
+### Best Petfoods (Daisycon)
+
+Best Petfoods is goedgekeurd als Daisycon-campagne. De feed staat lokaal in
+`data/winkels/best-petfoods.json` en wordt niet gecommit.
+
+1. Download de actuele productfeed uit Daisycon en vervang het lokale bestand.
+2. Draai `npm run winkels:best-petfoods -- --dry-run` en controleer het rapport.
+3. Draai `npm run winkels:best-petfoods` om `public/winkels.json` bij te werken.
+4. Commit alleen `public/winkels.json`.
+
+De koppeling gebruikt eerst een exacte EAN en anders een exacte match op merk,
+productnaam en verpakking. Snacks worden op exacte merk-, naam- en
+maatovereenkomst gekoppeld. Bij twijfel blijft de link weg. Het rapport staat in
+`data/winkels/rapport-best-petfoods.md`.
+
 ## Terugvallen op GitHub Pages
 
 GitHub Pages is ingericht als terugvaloptie en heeft geen eigen domein meer.

@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-11-17T18:34:05.991Z",
+  "bijgewerkt": "2026-11-23T13:38:40.475Z",
   "netwerk": "TradeTracker en Daisycon",
   "aanbieders": {
     "08c788d6-941d-433e-ba73-6f1c99405be5": [
@@ -232,6 +232,18 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Forijen-puppy-large-breed%2F",
         "maat": "6 kg",
         "prijs": 55.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7307aa0c92e62a039c7e18d3339c8529&dl=product%2Forijen-puppy-large-breed-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 94.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=21931038fe4350535a11ba25b6bba110&dl=product%2Forijen-puppy-large-breed-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 62.95
       }
     ],
     "dddf12b5-e0a7-4ef5-b6d8-f8adf12c65e3": [
@@ -240,6 +252,24 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Forijen-original-dog%2F",
         "maat": "",
         "prijs": 5.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f333d542503cf3596171ab00313af3ec&dl=product%2Forijen-original-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 89.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ad5e1643f29d63022450eb89dd543096&dl=product%2Forijen-original-hondenvoeding-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 32.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1ecb274c1163eb6117c96a4aaf5498e7&dl=product%2Forijen-original-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 62.95
       }
     ],
     "09f8ba07-ace4-4d92-a5ea-0b4ac9e433b0": [
@@ -254,6 +284,18 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=57324074981b513835a1db5b434c5a60&dl=p%2Forijen-puppy-hondenvoer-340-gr&ws=",
         "maat": "340 g",
         "prijs": 6.75
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ac737a31a7cce43edb4972ec902772ca&dl=product%2Forijen-puppy-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 89.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=305b78123314719b038f81a0e6c76435&dl=product%2Forijen-puppy-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 62.95
       }
     ],
     "78288c8c-a8c2-4883-885d-0ef15ce1f93c": [
@@ -262,6 +304,18 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Forijen-senior-dog%2F",
         "maat": "2 kg",
         "prijs": 24.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=29c65a5d4b31c7a8906c882f1c785172&dl=product%2Forijen-senior-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 95.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=38069c440ac976c3ff3e0c149baa11be&dl=product%2Forijen-senior-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 64.95
       }
     ],
     "608653cd-654d-4c93-96e9-e0e98dffff89": [
@@ -270,6 +324,24 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Forijen-six-fish-dog%2F",
         "maat": "6 kg",
         "prijs": 31.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=082229990dae30cd1a1b41b20833193d&dl=product%2Forijen-six-fish-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 105.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ac3cacdd8d99b36ec811c4bf0324d900&dl=product%2Forijen-six-fish-hondenvoeding-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 34.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=43003928f5a62892fba9831674e2a136&dl=product%2Forijen-six-fish-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 72.95
       }
     ],
     "b6ea781e-9d63-44cb-ab21-fbfa161a6cf8": [
@@ -278,6 +350,24 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Forijen-tundra%2F",
         "maat": "",
         "prijs": 134.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8591bb36a3e49115130063ef91657a76&dl=product%2Forijen-tundra-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 129.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8fc768051af5080acc6ac0ad10325602&dl=product%2Forijen-tundra-hondenvoeding-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 39.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6f49d915c7d62bbfcb24a55377a5f211&dl=product%2Forijen-tundra-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 88.95
       }
     ],
     "b12ad4bf-0ff8-4a16-a406-5e6116abd54a": [
@@ -10198,6 +10288,18 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0aec26a1e684f71827dda93decf0a388&dl=p%2Facana-puppy-large-breed-114kg&ws=",
         "maat": "11,4 kg",
         "prijs": 79.49
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=976ae116a8ad00a7b8a1f86b84f8561f&dl=product%2Facana-puppy-large-breed-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 76.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8d1f3b1a7bfcd37828d794473190a7d5&dl=product%2Facana-puppy-large-breed-17-kg&ws=",
+        "maat": "17 kg",
+        "prijs": 105.95
       }
     ],
     "c1e4bfee-e856-47c1-b73a-4905bbc911e8": [
@@ -11572,6 +11674,54 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b71bb88aa3f791a27a10d19ed25d6506&dl=p%2Fvitakraft-boony-bits-55-gr-1038311&ws=",
         "maat": "55 g",
         "prijs": 3.45
+      }
+    ],
+    "cb239e76-318e-4e75-b99e-d24b45ed019e": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=70e355db3268fed8355b94fb77df5ed7&dl=product%2Forijen-fit-trim-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 97.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=73042d4fb310be7fab3d981966b6f9fe&dl=product%2Forijen-fit-trim-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 65.95
+      }
+    ],
+    "f7e66b20-1777-45a1-aa92-7c702f7f3e00": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d523c01b8e130e2a67990bb6db07b5c8&dl=product%2Forijen-regional-red-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 114.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2eb038e469f948f4e4519b1cf78e0a1f&dl=product%2Forijen-regional-red-hondenvoeding-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 39.49
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c0421168541f6d449b718254d5a62467&dl=product%2Forijen-regional-red-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 79.5
+      }
+    ],
+    "207ca671-61a0-4d54-90db-33d86dacb0cd": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f115c429f53e1442eb9da5f5597d9d1d&dl=product%2Forijen-small-breed-hondenvoeding-18-kg&ws=",
+        "maat": "1,8 kg",
+        "prijs": 32.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6dfaef8fe6c9dbe789b5bcd03d8129b4&dl=product%2Forijen-small-breed-hondenvoeding-45-kg&ws=",
+        "maat": "4,5 kg",
+        "prijs": 63.99
       }
     ]
   }

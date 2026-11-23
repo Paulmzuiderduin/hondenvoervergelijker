@@ -109,13 +109,30 @@ blijft de link weg. Snacks worden op dezelfde manier gekoppeld: exacte merk-,
 naam- en maatovereenkomst, zonder EAN. Het rapport staat lokaal in
 `data/winkels/rapport-plein-petgamma.md`.
 
+## Best Petfoods (Daisycon)
+
+De Best Petfoods-feed staat lokaal in `data/winkels/best-petfoods.json` (niet in
+git). Download hem in Daisycon via **Materiaal → Productfeeds** en draai:
+
+```bash
+npm run winkels:best-petfoods -- --dry-run
+npm run winkels:best-petfoods
+```
+
+De koppeling gebruikt eerst een exacte EAN en anders een exacte match op merk,
+productnaam en verpakking. Snacks worden op exacte merk-, naam- en
+maatovereenkomst gekoppeld. Het rapport staat lokaal in
+`data/winkels/rapport-best-petfoods.md`.
+
 ## Bestanden die niet in git horen
 
 - `feeds.json` (lokale configuratie)
 - `*.csv` (feeds kunnen groot zijn en trackinglinks bevatten)
 - `plein-nl.json` en `petgamma.json` (Daisycon-feeds)
+- `best-petfoods.json` (Daisycon-feed)
 - `rapport.md` (wordt opnieuw gegenereerd)
 - `rapport-plein-petgamma.md` (wordt opnieuw gegenereerd)
+- `rapport-best-petfoods.md` (wordt opnieuw gegenereerd)
 
 Alleen `public/winkels.json` wordt gecommit, zodat de statische site de knoppen
 kan tonen.
