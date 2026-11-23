@@ -1,0 +1,42 @@
+{
+  "bron": "https://www.bestpetfoods.nl/",
+  "opgehaald": "2026-11-23",
+  "producten": [
+    {
+      "merk": "Pawfect",
+      "naam": "Freeze Dried Vis",
+      "voertype": "raw",
+      "verpakking": "250 / 500 g",
+      "gtin": null,
+      "bronUrl": "https://www.bestpetfoods.nl/product/pawfect-freeze-dried-hondenvoeding-vis-250-gr",
+      "etiketOrigineel": "Sardines, meerval, groenlipmossel, kip, kippenlever, broccoli, wortel, appel, mango, papaja, pompoen, biologische kokosolie, tomaten, gemalen lijnzaad, zonnebloempitten, gemengd tocoferol.",
+      "etiketNl": "Sardines, meerval, groenlipmossel, kip, kippenlever, broccoli, wortel, appel, mango, papaja, pompoen, biologische kokosolie, tomaten, gemalen lijnzaad, zonnebloempitten, gemengd tocoferol.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Pawfect",
+      "naam": "Freeze Dried Geit",
+      "voertype": "raw",
+      "verpakking": "250 / 500 g",
+      "gtin": null,
+      "bronUrl": "https://www.bestpetfoods.nl/product/pawfect-freeze-dried-hondenvoeding-geit-250-gr",
+      "etiketOrigineel": "Geitenvlees, geitenlever, pompoen, broccoli, zoete aardappel, wortel, appel, spinazie, pap, okra, mango, biologische kokosolie, tomaten, gemalen lijnzaad, zonnebloempitten, eierschalenpoeder, tocopherolmengsel.",
+      "etiketNl": "Geitenvlees, geitenlever, pompoen, broccoli, zoete aardappel, wortel, appel, spinazie, pap, okra, mango, biologische kokosolie, tomaten, gemalen lijnzaad, zonnebloempitten, eierschalenpoeder, tocopherolmengsel.",
+      "aantekening": null,
+      "twijfel": null
+    },
+    {
+      "merk": "Pawfect",
+      "naam": "Freeze Dried Kip",
+      "voertype": "raw",
+      "verpakking": "250 / 500 g",
+      "gtin": null,
+      "bronUrl": "https://www.bestpetfoods.nl/product/pawfect-freeze-dried-hondenvoeding-kip-250-gr",
+      "etiketOrigineel": "Kip, kippenlever, gevederde boon, broccoli, pompoen, wortelen, appel, guave, aardbei, biologische kokosolie, gemalen lijnzaad, sesamzaad, kurkuma",
+      "etiketNl": "Kip, kippenlever, gevederde boon, broccoli, pompoen, wortelen, appel, guave, aardbei, biologische kokosolie, gemalen lijnzaad, sesamzaad, kurkuma",
+      "aantekening": null,
+      "twijfel": null
+    }
+  ]
+}

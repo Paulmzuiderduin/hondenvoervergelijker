@@ -53,6 +53,15 @@ test('leest alleen hondenvoer en bewaart EAN, maat en prijs', () => {
   assert.equal(resultaat[0].prijs, 70.99)
 })
 
+test('bewaart een multipack in het maatlabel', () => {
+  const resultaat = parseDaisyconRetailFeed(feed([
+    { title: "Herrmann's Adult hond Hert met aardappel 400 gr. - per 6 stuks", brand: "Herrmann's", ean: '4047459009891', size: '', price: '33.90', link: 'https://voorbeeld.test/herrmann', category_path: 'Honden|Hondenvoer|Natvoeding' }
+  ]), { winkel: 'Best Petfoods' })
+  assert.equal(resultaat.length, 1)
+  assert.equal(resultaat[0].maatGram, 400)
+  assert.equal(resultaat[0].maatLabel, '6 x 400 g')
+})
+
 test('koppelt op exacte EAN', () => {
   const { koppelingen, exact, naamMaat } = koppelDaisyconRetail(
     [product({ gtin: '3182550842648' })],
@@ -70,6 +79,15 @@ test('koppelt zonder catalogus-EAN op exacte merk, naam en maat', () => {
   )
   assert.equal(koppelingen.length, 1)
   assert.equal(naamMaat.length, 1)
+})
+
+test('koppelt zonder EAN aan beide kanten op exacte merk, naam en maat', () => {
+  const { koppelingen } = koppelDaisyconRetail(
+    [product({ gtin: null })],
+    [aanbieding({ ean: '', maat: '10 kg', maatGram: 10000 })]
+  )
+  assert.equal(koppelingen.length, 1)
+  assert.equal(koppelingen[0].methode, 'naam+maat')
 })
 
 test('weigert een naam-match als de catalogus een andere EAN heeft', () => {
@@ -159,6 +177,82 @@ test('koppelt snacks op exacte merk, naam en maat', () => {
   const { koppelingen } = koppelDaisyconSnacks(snacks, aanbiedingen)
   assert.equal(koppelingen.length, 1)
   assert.equal(koppelingen[0].product.id, '8in1-meaty-treats-eend-en-appel')
+})
+
+test('koppelt een snack zonder maat in de feedtitel op exacte EAN', () => {
+  const snacks = [{ id: 'inaba-churu-puree-kip', brand: 'Inaba', name: 'Churu puree Kip', package_size: '60 g', gtin: '8859387701060' }]
+  const aanbiedingen = [{
+    winkel: 'Best Petfoods',
+    titel: 'INABA Churu puree hond Kip',
+    merk: 'Inaba',
+    ean: '8859387701060',
+    maat: '',
+    maatGram: null,
+    prijs: 3.25,
+    url: 'https://voorbeeld.test/inaba',
+    categorie: 'Honden|Hondensnacks'
+  }]
+  const { koppelingen, exact } = koppelDaisyconSnacks(snacks, aanbiedingen)
+  assert.equal(koppelingen.length, 1)
+  assert.equal(exact.length, 1)
+  assert.equal(koppelingen[0].methode, 'ean')
+})
+
+test('negeert stopwoorden als "voor de hond" bij een snacknaam', () => {
+  const snacks = [{ id: 'pawfect-pindakaas-naturel', brand: 'Pawfect', name: 'Pindakaas Naturel', package_size: '275 g', gtin: null }]
+  const aanbiedingen = [{
+    winkel: 'Best Petfoods',
+    titel: 'Pawfect Pindakaas voor de hond Naturel 275 gr.',
+    merk: 'Pawfect',
+    ean: '8908012564898',
+    maat: '275 g',
+    maatGram: 275,
+    prijs: 7.95,
+    url: 'https://voorbeeld.test/pindakaas',
+    categorie: 'Honden|Hondensnacks'
+  }]
+  const { koppelingen } = koppelDaisyconSnacks(snacks, aanbiedingen)
+  assert.equal(koppelingen.length, 1)
+})
+
+test('koppelt een snack zonder maat op een unieke exacte naam', () => {
+  const snacks = [{ id: 'vitbit-donuts', brand: 'Vitbit', name: 'Donuts Kabeljauwhuid', package_size: '112 g', gtin: '7090051270197' }]
+  const aanbiedingen = [{
+    winkel: 'Best Petfoods',
+    titel: 'Vitbit hondensnack Donuts Kabeljauwhuid',
+    merk: 'Vitbit',
+    ean: '',
+    maat: '',
+    maatGram: null,
+    prijs: 11.95,
+    url: 'https://voorbeeld.test/donuts',
+    categorie: 'Honden|Hondensnacks'
+  }]
+  const { koppelingen, naam } = koppelDaisyconSnacks(snacks, aanbiedingen)
+  assert.equal(koppelingen.length, 1)
+  assert.equal(naam.length, 1)
+  assert.equal(koppelingen[0].methode, 'naam')
+})
+
+test('laat een snack zonder maat weg als de naam niet uniek is', () => {
+  const snacks = [
+    { id: 'a', brand: 'Test', name: 'Kip', package_size: '50 g', gtin: null },
+    { id: 'b', brand: 'Test', name: 'Kip', package_size: '100 g', gtin: null }
+  ]
+  const aanbiedingen = [{
+    winkel: 'Best Petfoods',
+    titel: 'Test Kip',
+    merk: 'Test',
+    ean: '',
+    maat: '',
+    maatGram: null,
+    prijs: 3,
+    url: 'https://voorbeeld.test/kip',
+    categorie: 'Honden|Hondensnacks'
+  }]
+  const { koppelingen, dubbelzinnig } = koppelDaisyconSnacks(snacks, aanbiedingen)
+  assert.equal(koppelingen.length, 0)
+  assert.equal(dubbelzinnig.length, 1)
 })
 
 test('koppelt geen single snack aan een multipack', () => {

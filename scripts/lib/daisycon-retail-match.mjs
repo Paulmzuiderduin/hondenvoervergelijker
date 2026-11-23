@@ -8,13 +8,15 @@ const GENERIEK = new Set([
   'hond', 'honden', 'hondenvoer', 'hondenvoeding', 'hondervoeding',
   'hondenbrokken', 'voer', 'voeding', 'diervoeding', 'droog', 'nat',
   'natvoer', 'brokken', 'compleet', 'complete', 'met', 'en', 'voor',
-  'van', 'the', 'dog', 'recipe', 'classics', 'singles', 'highest', 'protein'
+  'van', 'the', 'de', 'het', 'een', 'per', 'dog', 'recipe', 'classics',
+  'singles', 'highest', 'protein'
 ])
 
 const SNACK_GENERIEK = new Set([
   'hond', 'honden', 'hondensnack', 'hondensnacks', 'hondenkoekje',
   'hondenkoekjes', 'snack', 'snacks', 'koekje', 'koekjes', 'met', 'en',
-  'voor', 'van', 'the', 'hondenbotten', 'kauwstaaf', 'kauwstaven'
+  'voor', 'van', 'the', 'de', 'het', 'een', 'per', 'hondenbotten',
+  'kauwstaaf', 'kauwstaven'
 ])
 
 const MERK_ALIASSEN = new Map([
@@ -47,6 +49,7 @@ export function merkSleutel(merk = '') {
 
 function verwijderMaten(tekst = '') {
   return String(tekst)
+    .replace(/\bper\s+\d+\s*stuks?\b/gi, ' ')
     .replace(/\b\d+\s*x\s*\d+(?:[.,]\d+)?\s*(?:kg|g|gr|gram|stuks?)\b/gi, ' ')
     .replace(/\b\d+(?:[.,]\d+)?(?:\s*\/\s*\d+(?:[.,]\d+)?)*\s*(?:kg|g|gr|gram|stuks?)\b/gi, ' ')
 }
@@ -119,6 +122,19 @@ export function alleMaten(tekst = '') {
   return [...uit].sort((a, b) => a - b)
 }
 
+function maatLabelUitTitel(titel, maatGram) {
+  const tekst = String(titel).replace(/\s+/g, ' ')
+  const perStuks = tekst.match(/(\d+(?:[.,]\d+)?)\s*(kg|gr|g|ml|l)\s*\.?\s*[-–]?\s*per\s*(\d+)\s*stuks/i)
+  if (perStuks) {
+    return `${perStuks[3]} x ${perStuks[1].replace('.', ',')} ${perStuks[2].toLowerCase().replace(/^gr$/, 'g')}`
+  }
+  const multi = tekst.match(/(\d+)\s*x\s*(\d+(?:[.,]\d+)?)\s*(kg|gr|g|ml|l)\b/i)
+  if (multi) {
+    return `${multi[1]} x ${multi[2].replace('.', ',')} ${multi[3].toLowerCase().replace(/^gr$/, 'g')}`
+  }
+  return formaatMaat(maatGram)
+}
+
 export function parseDaisyconRetailFeed(feed, { winkel } = {}) {
   const programma = feed?.datafeed?.programs?.[0]
   const producten = []
@@ -143,6 +159,7 @@ export function parseDaisyconRetailFeed(feed, { winkel } = {}) {
       merk: String(info?.brand ?? '').trim(),
       ean: /^\d{8,14}$/.test(ean) ? ean : '',
       maat: formaatMaat(maatGram),
+      maatLabel: maatLabelUitTitel(titel, maatGram),
       maatGram,
       prijs: Number.isFinite(prijsGetal) && prijsGetal > 0 ? prijsGetal : null,
       url,
@@ -176,6 +193,7 @@ export function parseDaisyconSnackFeed(feed, { winkel } = {}) {
       merk: String(info?.brand ?? '').trim(),
       ean: /^\d{8,14}$/.test(ean) ? ean : '',
       maat: formaatMaat(maatGram),
+      maatLabel: maatLabelUitTitel(titel, maatGram),
       maatGram,
       prijs: Number.isFinite(prijsGetal) && prijsGetal > 0 ? prijsGetal : null,
       url,
@@ -223,7 +241,7 @@ export function koppelDaisyconRetail(producten, aanbiedingen) {
 
     if (ean && perEan.has(ean)) {
       kandidaten = [perEan.get(ean)]
-    } else if (ean && aanbieding.maatGram) {
+    } else if (aanbieding.maatGram) {
       kandidaten = (perNaam.get(`${merkSleutel(aanbieding.merk)}|${[...naamTokens(aanbieding.titel, aanbieding.merk)].sort().join(' ')}`) ?? [])
         .filter((product) => {
           const productMaten = alleMaten(product.package_size ?? '')
@@ -274,6 +292,7 @@ export function koppelDaisyconRetail(producten, aanbiedingen) {
 }
 
 export function koppelDaisyconSnacks(snacks, aanbiedingen) {
+  const perEan = enkelvoudigeEanMap(snacks)
   const perNaam = new Map()
   for (const snack of snacks) {
     const sleutel = `${merkSleutel(snack.brand)}|${[...snackNaamTokens(snack.name, snack.brand)].sort().join(' ')}`
@@ -282,16 +301,48 @@ export function koppelDaisyconSnacks(snacks, aanbiedingen) {
   }
 
   const koppelingen = []
+  const exact = []
+  const naamMaat = []
+  const naam = []
   const dubbelzinnig = []
   const zonderMatch = []
 
   for (const aanbieding of aanbiedingen) {
-    if (!aanbieding.maatGram) {
-      zonderMatch.push(aanbieding)
-      continue
+    const ean = String(aanbieding.ean ?? '').replace(/\D/g, '')
+    const naamKandidaten = perNaam.get(`${merkSleutel(aanbieding.merk)}|${[...snackNaamTokens(aanbieding.titel, aanbieding.merk)].sort().join(' ')}`) ?? []
+    let kandidaten = []
+    let methode = 'naam+maat'
+
+    if (ean && perEan.has(ean)) {
+      kandidaten = [perEan.get(ean)]
+      methode = 'ean'
+    } else if (!aanbieding.maatGram) {
+      // Zonder maat in de feedtitel is een unieke, exacte naammatch de enige
+      // veilige koppeling. Bij meerdere snacks met dezelfde naam blijft de
+      // link weg; dan is niet zeker welke variant de bezoeker krijgt.
+      if (naamKandidaten.length > 1) {
+        dubbelzinnig.push({ aanbieding, kandidaten: naamKandidaten, reden: 'geen maat en meerdere snacks met deze naam' })
+        continue
+      }
+      if (!naamKandidaten.length) {
+        zonderMatch.push(aanbieding)
+        continue
+      }
+      const snack = naamKandidaten[0]
+      const snackEan = String(snack.gtin ?? '').replace(/\D/g, '')
+      if (ean && snackEan && snackEan !== ean) {
+        zonderMatch.push(aanbieding)
+        continue
+      }
+      kandidaten = [snack]
+      methode = 'naam'
+    } else {
+      kandidaten = naamKandidaten.filter((snack) => {
+        if (!maatOpties(snack.package_size ?? '').includes(aanbieding.maatGram)) return false
+        const snackEan = String(snack.gtin ?? '').replace(/\D/g, '')
+        return !ean || !snackEan || snackEan === ean
+      })
     }
-    const kandidaten = (perNaam.get(`${merkSleutel(aanbieding.merk)}|${[...snackNaamTokens(aanbieding.titel, aanbieding.merk)].sort().join(' ')}`) ?? [])
-      .filter((snack) => maatOpties(snack.package_size ?? '').includes(aanbieding.maatGram))
 
     if (kandidaten.length > 1) {
       dubbelzinnig.push({ aanbieding, kandidaten, reden: 'meerdere snacks passen bij merk, naam en maat' })
@@ -301,7 +352,9 @@ export function koppelDaisyconSnacks(snacks, aanbiedingen) {
       zonderMatch.push(aanbieding)
       continue
     }
-    koppelingen.push({ product: kandidaten[0], aanbieding, methode: 'naam+maat' })
+    const koppeling = { product: kandidaten[0], aanbieding, methode }
+    koppelingen.push(koppeling)
+    ;(methode === 'ean' ? exact : methode === 'naam' ? naam : naamMaat).push(koppeling)
   }
 
   const perUrl = new Map()
@@ -323,5 +376,5 @@ export function koppelDaisyconSnacks(snacks, aanbiedingen) {
     a.product.name.localeCompare(b.product.name, 'nl', { sensitivity: 'base' }) ||
     String(a.aanbieding.maat).localeCompare(String(b.aanbieding.maat), 'nl', { sensitivity: 'base' })
   )
-  return { koppelingen: veilig, dubbelzinnig, zonderMatch }
+  return { koppelingen: veilig, exact, naamMaat, naam, dubbelzinnig, zonderMatch }
 }

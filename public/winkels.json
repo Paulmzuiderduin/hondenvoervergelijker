@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-11-23T13:41:45.053Z",
+  "bijgewerkt": "2026-11-23T14:48:04.709Z",
   "netwerk": "TradeTracker en Daisycon",
   "aanbieders": {
     "08c788d6-941d-433e-ba73-6f1c99405be5": [
@@ -8,6 +8,48 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-adult-dog-recipe%2F",
         "maat": "6 kg",
         "prijs": 22.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e27e8fc917fef237d2171e43ebb62541&dl=product%2Facana-adult-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b77ce2f6bd4b2ebda40f6e24fb6f15e0&dl=product%2Facana-adult-hondenvoeding-17-kg&ws=",
+        "maat": "17 kg",
+        "prijs": 104.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=12282e7f844c2044782c8df456b7ec38&dl=product%2Facana-adult-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 47.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=f263fa3f3336d0fcf1ee40ba67a95d2c&dl=acana-dog-adult-11-4-kg%3Fchannable%3D0045606964003130373338333028&ws=",
+        "maat": "11,4 kg",
+        "prijs": 78.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=05222d981a6cdd64ee9ded9bced93906&dl=acana-dog-adult-17-kg%3Fchannable%3D0045606964003130373338333129&ws=",
+        "maat": "17 kg",
+        "prijs": 113.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=677d72e292efd94f05f5ad454b592f1e&dl=acana-dog-adult-2-kg%3Fchannable%3D00456069640031303733383238b0&ws=",
+        "maat": "2 kg",
+        "prijs": 20.79
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=7a604a1b051615ad2e9e9545571eecb0&dl=acana-dog-adult-6-kg%3Fchannable%3D00456069640031303733383239b1&ws=",
+        "maat": "6 kg",
+        "prijs": 46.69
       },
       {
         "winkel": "Petgamma.com",
@@ -32,24 +74,6 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ae8026af23df9e14acebe0c575048ce7&dl=p%2Facana-dog-adult-6-kg&ws=",
         "maat": "6 kg",
         "prijs": 46.69
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e27e8fc917fef237d2171e43ebb62541&dl=product%2Facana-adult-hondenvoeding-114-kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 79.95
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b77ce2f6bd4b2ebda40f6e24fb6f15e0&dl=product%2Facana-adult-hondenvoeding-17-kg&ws=",
-        "maat": "17 kg",
-        "prijs": 104.95
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=12282e7f844c2044782c8df456b7ec38&dl=product%2Facana-adult-hondenvoeding-6-kg&ws=",
-        "maat": "6 kg",
-        "prijs": 47.95
       }
     ],
     "27d6a584-9e81-4dad-8993-66cbd36c4f5d": [
@@ -58,12 +82,6 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-adult-large-breed-recipe%2F",
         "maat": "11,4 kg",
         "prijs": 79.99
-      },
-      {
-        "winkel": "Petgamma.com",
-        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b23ef3dddefeffaedfc716ffbe7d979d&dl=p%2Facana-adult-large-breed-114kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 70.99
       },
       {
         "winkel": "Best Petfoods",
@@ -76,6 +94,18 @@
         "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=219839b34cbdc66734e18fd5b718f96b&dl=product%2Facana-adult-large-breed-hondenvoeding-17-kg&ws=",
         "maat": "17 kg",
         "prijs": 104.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=7bf79e4c5757cf7321c21362f0b64dbd&dl=acana-adult-large-breed-114kg%3Fchannable%3D00456069640039373133383240&ws=",
+        "maat": "11,4 kg",
+        "prijs": 70.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b23ef3dddefeffaedfc716ffbe7d979d&dl=p%2Facana-adult-large-breed-114kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 70.99
       }
     ],
     "b2bee777-c588-4ac0-b660-45455d2d57ca": [
@@ -84,18 +114,6 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-adult-small-breed-recipe%2F",
         "maat": "6 kg",
         "prijs": 4.55
-      },
-      {
-        "winkel": "Petgamma.com",
-        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=94f985c5cc0b2de60cc201ea8c8ecb2a&dl=p%2Facana-adult-small-breed-2-kg&ws=",
-        "maat": "2 kg",
-        "prijs": 22.89
-      },
-      {
-        "winkel": "Petgamma.com",
-        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=369fd729948264664fe5f16c5808a855&dl=p%2Facana-adult-small-breed-6-kg&ws=",
-        "maat": "6 kg",
-        "prijs": 48.09
       },
       {
         "winkel": "Best Petfoods",
@@ -108,6 +126,30 @@
         "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e820c7d04f4f9e283ed49ab93d1e0e9b&dl=product%2Facana-adult-small-breed-hondenvoeding-6-kg&ws=",
         "maat": "6 kg",
         "prijs": 48.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=33ad73418db393050776cdb9e974534d&dl=acana-adult-small-breed-2-kg%3Fchannable%3D004560696400393731333737c4&ws=",
+        "maat": "2 kg",
+        "prijs": 22.89
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ee041b03558b3a63cfa64a0bdf4abdc4&dl=acana-adult-small-breed-6-kg%3Fchannable%3D004560696400393731333738c5&ws=",
+        "maat": "6 kg",
+        "prijs": 48.09
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=94f985c5cc0b2de60cc201ea8c8ecb2a&dl=p%2Facana-adult-small-breed-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 22.89
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=369fd729948264664fe5f16c5808a855&dl=p%2Facana-adult-small-breed-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 48.09
       }
     ],
     "ad1fe4d6-0fe5-4572-aa8a-36f1e662097f": [
@@ -116,12 +158,6 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-singles-free-run-duck%2F",
         "maat": "11,4 kg",
         "prijs": 31.95
-      },
-      {
-        "winkel": "Petgamma.com",
-        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=fc04c99c21c7f92df934afb6e2910b30&dl=p%2Facana-singles-free-run-hondenvoer-duck-6-kg&ws=",
-        "maat": "6 kg",
-        "prijs": 67.99
       },
       {
         "winkel": "Best Petfoods",
@@ -134,6 +170,18 @@
         "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6d72cacf809081e13af98809e58affc8&dl=product%2Facana-singles-free-run-duck-hondenvoeding-2-kg&ws=",
         "maat": "2 kg",
         "prijs": 32.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=05aeb63af2c5eaec5d305bcd9b654353&dl=acana-singles-free-run-hondenvoer-duck-6-kg%3Fchannable%3D004560696400313039343835346e&ws=",
+        "maat": "6 kg",
+        "prijs": 67.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=fc04c99c21c7f92df934afb6e2910b30&dl=p%2Facana-singles-free-run-hondenvoer-duck-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 67.99
       }
     ],
     "7f9f2d49-488c-4a83-bff9-4a51c7b050d7": [
@@ -142,18 +190,6 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-singles-grass-fed-lamb%2F",
         "maat": "2 kg",
         "prijs": 29.65
-      },
-      {
-        "winkel": "Petgamma.com",
-        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a32e93959c60b911bf6c9bd3ff817cef&dl=p%2Facana-singles-grass-fed-lamb-17-kg&ws=",
-        "maat": "17 kg",
-        "prijs": 134.95
-      },
-      {
-        "winkel": "Petgamma.com",
-        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=03284392b3eb35bc2962bfadd1ee81a1&dl=p%2Facana-singles-grass-fed-lamb-6-kg&ws=",
-        "maat": "6 kg",
-        "prijs": 61.95
       },
       {
         "winkel": "Best Petfoods",
@@ -178,6 +214,30 @@
         "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c8b04f8986c8659629ee48d01c345f04&dl=product%2Facana-singles-grass-fed-lamb-hondenvoeding-6-kg&ws=",
         "maat": "6 kg",
         "prijs": 63.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=fd8bceebaa942e3f69c368349c80c595&dl=acana-singles-grass-fed-lamb-17-kg%3Fchannable%3D00456069640039383239383656&ws=",
+        "maat": "17 kg",
+        "prijs": 134.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=511a0ea869b6bcf46eb123172f6276e0&dl=acana-singles-grass-fed-lamb-6-kg%3Fchannable%3D00456069640039383739393031&ws=",
+        "maat": "6 kg",
+        "prijs": 61.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a32e93959c60b911bf6c9bd3ff817cef&dl=p%2Facana-singles-grass-fed-lamb-17-kg&ws=",
+        "maat": "17 kg",
+        "prijs": 134.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=03284392b3eb35bc2962bfadd1ee81a1&dl=p%2Facana-singles-grass-fed-lamb-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 61.95
       }
     ],
     "10e4d9a9-f9bd-483a-bc62-7e055174fdfc": [
@@ -186,6 +246,36 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-light-fit-recipe%2F",
         "maat": "",
         "prijs": 22.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c6321f44494a7044bc98ad9b586039ae&dl=product%2Facana-light-fit-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4e323ae10d94881061248ba3801197e2&dl=product%2Facana-light-fit-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 47.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=1e0c4bfb8d65ce7cc20b5d3eafd8fd70&dl=acana-light-en-fit-11-4-kg%3Fchannable%3D00456069640039373133383442&ws=",
+        "maat": "11,4 kg",
+        "prijs": 84.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=de1f85de2effa5bf6413bf23f6032a34&dl=acana-light-en-fit-2-kg%3Fchannable%3D00456069640039383232353915&ws=",
+        "maat": "2 kg",
+        "prijs": 22.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=23d2f5a7801b3554bfb46e776e7e80fe&dl=acana-light-en-fit-6-kg%3Fchannable%3D00456069640039373133383341&ws=",
+        "maat": "6 kg",
+        "prijs": 47.29
       },
       {
         "winkel": "Petgamma.com",
@@ -204,18 +294,6 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=44b4a0814d676c914f1b32cd0b9ba22f&dl=p%2Facana-light-en-fit-6-kg&ws=",
         "maat": "6 kg",
         "prijs": 47.29
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c6321f44494a7044bc98ad9b586039ae&dl=product%2Facana-light-fit-hondenvoeding-114-kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 79.95
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4e323ae10d94881061248ba3801197e2&dl=product%2Facana-light-fit-hondenvoeding-6-kg&ws=",
-        "maat": "6 kg",
-        "prijs": 47.95
       }
     ],
     "a824a437-ca37-445f-9304-7520dd933f4f": [
@@ -224,6 +302,18 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-classic-prairie-poultry-recipe%2F",
         "maat": "2 kg",
         "prijs": 19.65
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d59df21819eb5ef8924cc314cb9ccb51&dl=product%2Facana-classics-prairie-poultry-hondenvoeding-145-kg&ws=",
+        "maat": "14,5 kg",
+        "prijs": 88.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=86522fc9043ad3077e4e93fa3afb1a61&dl=product%2Facana-classics-prairie-poultry-hondenvoeding-97-kg&ws=",
+        "maat": "9,7 kg",
+        "prijs": 61.95
       },
       {
         "winkel": "Plein.nl",
@@ -260,18 +350,6 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=cba566058bfccebd00478021d152150c&dl=p%2Facana-hondenvoer-classics-prairie-poultry-11-4-kg&ws=",
         "maat": "9,7 kg",
         "prijs": 59.49
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d59df21819eb5ef8924cc314cb9ccb51&dl=product%2Facana-classics-prairie-poultry-hondenvoeding-145-kg&ws=",
-        "maat": "14,5 kg",
-        "prijs": 88.95
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=86522fc9043ad3077e4e93fa3afb1a61&dl=product%2Facana-classics-prairie-poultry-hondenvoeding-97-kg&ws=",
-        "maat": "9,7 kg",
-        "prijs": 61.95
       }
     ],
     "b50f63b2-0326-492b-9019-1cdeb8427401": [
@@ -314,6 +392,24 @@
         "prijs": 18.95
       },
       {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d2f9f9e524429333e716185067719230&dl=product%2Facana-puppy-small-breed-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 46.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=8016fbac8418b95cedc549d0fcd08342&dl=acana-puppy-small-breed-2-kg%3Fchannable%3D004560696400393731333731be&ws=",
+        "maat": "2 kg",
+        "prijs": 20.79
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=7c100b7bc4f857bd63a9918342d0c517&dl=acana-puppy-small-breed-6-kg%3Fchannable%3D004560696400393837393830b0&ws=",
+        "maat": "6 kg",
+        "prijs": 45.25
+      },
+      {
         "winkel": "Petgamma.com",
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b0c0c130219821b7d25a9556ad42f2d4&dl=p%2Facana-puppy-small-breed-2-kg&ws=",
         "maat": "2 kg",
@@ -324,12 +420,6 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7c55e54f8f8c133035dec1a8c2d16e06&dl=p%2Facana-puppy-small-breed-6-kg&ws=",
         "maat": "6 kg",
         "prijs": 45.25
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d2f9f9e524429333e716185067719230&dl=product%2Facana-puppy-small-breed-6-kg&ws=",
-        "maat": "6 kg",
-        "prijs": 46.95
       }
     ],
     "b6faf53e-c062-42b1-a716-cc779ad100fc": [
@@ -338,12 +428,6 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-regionals-ranchlands-dog%2F",
         "maat": "",
         "prijs": 107.5
-      },
-      {
-        "winkel": "Petgamma.com",
-        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f131b8e2b758c4f0109e5f61fdd59203&dl=p%2Facana-highest-protein-ranchlands-dog-6-kg&ws=",
-        "maat": "6 kg",
-        "prijs": 61.99
       },
       {
         "winkel": "Best Petfoods",
@@ -356,6 +440,18 @@
         "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4ae5af819580fe600b7cbad4db378101&dl=product%2Facana-highest-protein-ranchlands-hondenvoeding-6-kg&ws=",
         "maat": "6 kg",
         "prijs": 67.5
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=a0b95269bb1e032e98b873baa980d3df&dl=acana-highest-protein-ranchlands-dog-6-kg%3Fchannable%3D004560696400313037333833322a&ws=",
+        "maat": "6 kg",
+        "prijs": 61.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f131b8e2b758c4f0109e5f61fdd59203&dl=p%2Facana-highest-protein-ranchlands-dog-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 61.99
       }
     ],
     "fd2dcb4d-604c-4d8e-bce0-76b328ee4b94": [
@@ -364,6 +460,36 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-dog-senior-recipe%2F",
         "maat": "6 kg",
         "prijs": 21.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=979d4435c714f14b625fb0112a714a5b&dl=product%2Facana-senior-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a69bffc7fc49f456b5fa0038ca08fc63&dl=product%2Facana-senior-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 45.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=159abe5b29b7678b844101c5bc034d88&dl=acana-senior-dog-114kg%3Fchannable%3D00456069640039373133383745&ws=",
+        "maat": "11,4 kg",
+        "prijs": 72.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=6cfc520ef9f346d273b27557d6145cb8&dl=acana-senior-dog-2-kg%3Fchannable%3D00456069640039373133383644&ws=",
+        "maat": "2 kg",
+        "prijs": 22.89
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=d87162b7bf9fb5b8bf6367bbe1a28f88&dl=acana-senior-dog-6-kg%3Fchannable%3D0045606964003938323236308d&ws=",
+        "maat": "6 kg",
+        "prijs": 48.49
       },
       {
         "winkel": "Petgamma.com",
@@ -382,18 +508,6 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=d0973935b3b104057822b94912a330d5&dl=p%2Facana-senior-dog-6-kg&ws=",
         "maat": "6 kg",
         "prijs": 48.49
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=979d4435c714f14b625fb0112a714a5b&dl=product%2Facana-senior-hondenvoeding-114-kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 79.95
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a69bffc7fc49f456b5fa0038ca08fc63&dl=product%2Facana-senior-hondenvoeding-6-kg&ws=",
-        "maat": "6 kg",
-        "prijs": 45.49
       }
     ],
     "85e23703-ab98-4425-993d-61e140f79424": [
@@ -402,6 +516,12 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-highest-protein-wild-prairie%2F",
         "maat": "6 kg",
         "prijs": 25.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=bd2c53943b621174a1173331426a7d54&dl=product%2Facana-highest-protein-wild-prairie-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 89.99
       },
       {
         "winkel": "Plein.nl",
@@ -414,6 +534,12 @@
         "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ec4e2e00082873fe13f7c7bc17685a0a&dl=acana-hondenvoer-highest-protein-wild-prairie-2-kg%3Fchannable%3D004560696400313034313136375f&ws=",
         "maat": "2 kg",
         "prijs": 24.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ab389118a0d0d4efb7e19703683ff6b5&dl=acana-regional-wild-prairie-dog-6-kg%3Fchannable%3D004560696400393837393836b6&ws=",
+        "maat": "6 kg",
+        "prijs": 55.49
       },
       {
         "winkel": "Petgamma.com",
@@ -432,12 +558,6 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=027b600408392a54ce628feeb750417d&dl=p%2Facana-regional-wild-prairie-dog-6-kg&ws=",
         "maat": "6 kg",
         "prijs": 55.49
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=bd2c53943b621174a1173331426a7d54&dl=product%2Facana-highest-protein-wild-prairie-hondenvoeding-114-kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 89.99
       }
     ],
     "9166cbb3-4ffd-4049-b280-1ebb0fd625e8": [
@@ -446,6 +566,30 @@
         "url": "https://www.dierenwinkelxl.nl/dieren/?tt=4019_2370796_518755_&r=https%3A%2F%2Fdierenwinkelxl.nl%2Fproduct%2Facana-singles-yorkshire-pork%2F",
         "maat": "11,4 kg",
         "prijs": 28.25
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ae0019984b8413796ad37b87d5e1dbf6&dl=product%2Facana-singles-yorkshire-pork-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 91.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=5fa88975426caa38f04f7b2c918cfe70&dl=acana-singles-yorkshire-pork-11-4-kg%3Fchannable%3D00456069640039383739393435&ws=",
+        "maat": "11,4 kg",
+        "prijs": 85.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=e18efa447c0ea71ccfbcf95418937fd9&dl=acana-singles-yorkshire-pork-2-kg%3Fchannable%3D00456069640039383239383757&ws=",
+        "maat": "2 kg",
+        "prijs": 23.49
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=9365b831c5e862fec26de385c59deee2&dl=acana-singles-yorkshire-pork-6-kg%3Fchannable%3D00456069640039383739393637&ws=",
+        "maat": "6 kg",
+        "prijs": 50.99
       },
       {
         "winkel": "Petgamma.com",
@@ -464,12 +608,6 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5b07b6f78a074e064cde2b0e539ec794&dl=p%2Facana-singles-yorkshire-pork-6-kg&ws=",
         "maat": "6 kg",
         "prijs": 50.99
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ae0019984b8413796ad37b87d5e1dbf6&dl=product%2Facana-singles-yorkshire-pork-hondenvoeding-114-kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 91.95
       }
     ],
     "1612d255-ee7b-43b9-a8ce-7d78ac9f41f6": [
@@ -646,12 +784,6 @@
         "prijs": 6.29
       },
       {
-        "winkel": "Petgamma.com",
-        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=57324074981b513835a1db5b434c5a60&dl=p%2Forijen-puppy-hondenvoer-340-gr&ws=",
-        "maat": "340 g",
-        "prijs": 6.75
-      },
-      {
         "winkel": "Best Petfoods",
         "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ac737a31a7cce43edb4972ec902772ca&dl=product%2Forijen-puppy-114-kg&ws=",
         "maat": "11,4 kg",
@@ -662,6 +794,18 @@
         "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=305b78123314719b038f81a0e6c76435&dl=product%2Forijen-puppy-6-kg&ws=",
         "maat": "6 kg",
         "prijs": 62.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=7e26a55893316145d2bd4b928a907da6&dl=orijen-puppy-hondenvoer-340-gr%3Fchannable%3D004560696400393730343433df&ws=",
+        "maat": "340 g",
+        "prijs": 6.75
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=57324074981b513835a1db5b434c5a60&dl=p%2Forijen-puppy-hondenvoer-340-gr&ws=",
+        "maat": "340 g",
+        "prijs": 6.75
       }
     ],
     "78288c8c-a8c2-4883-885d-0ef15ce1f93c": [
@@ -9096,12 +9240,6 @@
     ],
     "1c95039c-5b00-43cd-b868-a1cca78c26da": [
       {
-        "winkel": "Petgamma.com",
-        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0aec26a1e684f71827dda93decf0a388&dl=p%2Facana-puppy-large-breed-114kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 79.49
-      },
-      {
         "winkel": "Best Petfoods",
         "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=976ae116a8ad00a7b8a1f86b84f8561f&dl=product%2Facana-puppy-large-breed-114-kg&ws=",
         "maat": "11,4 kg",
@@ -9112,9 +9250,33 @@
         "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8d1f3b1a7bfcd37828d794473190a7d5&dl=product%2Facana-puppy-large-breed-17-kg&ws=",
         "maat": "17 kg",
         "prijs": 105.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=07209ba2c130b02ebf0eb607b1455ffa&dl=acana-puppy-large-breed-114kg%3Fchannable%3D004560696400393731333735c2&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0aec26a1e684f71827dda93decf0a388&dl=p%2Facana-puppy-large-breed-114kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.49
       }
     ],
     "613f425d-d6e8-4cbc-8a26-91257a0a33a3": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9e03e59f37f20b81ce5088da82239ab3&dl=product%2Facana-highest-protein-grasslands-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 99.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=175d79b989b9c807046dbbcba214f2a5&dl=product%2Facana-highest-protein-grasslands-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 64.49
+      },
       {
         "winkel": "Plein.nl",
         "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=b79e5f773699eaf41b01af6988c390c9&dl=acana-hondenvoer-highest-protein-grasslands-11-4-kg%3Fchannable%3D00456069640031303431313533da&ws=",
@@ -9126,6 +9288,12 @@
         "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=0802b9f82ea1c664b3a566a4d22ddbe2&dl=acana-hondenvoer-highest-protein-grasslands-2-kg%3Fchannable%3D00456069640031303431313535dc&ws=",
         "maat": "2 kg",
         "prijs": 26.55
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=dd41c92849b49ad211e25d64611c223b&dl=acana-regional-grasslands-dog-6-kg%3Fchannable%3D004560696400393837393831b1&ws=",
+        "maat": "6 kg",
+        "prijs": 58.49
       },
       {
         "winkel": "Petgamma.com",
@@ -9144,21 +9312,21 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=64144b32b15fc72809265173f577df66&dl=p%2Facana-regional-grasslands-dog-6-kg&ws=",
         "maat": "6 kg",
         "prijs": 58.49
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9e03e59f37f20b81ce5088da82239ab3&dl=product%2Facana-highest-protein-grasslands-hondenvoeding-114-kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 99.95
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=175d79b989b9c807046dbbcba214f2a5&dl=product%2Facana-highest-protein-grasslands-hondenvoeding-6-kg&ws=",
-        "maat": "6 kg",
-        "prijs": 64.49
       }
     ],
     "3a2ffa50-57b2-4f0a-826c-c52bd2223f9f": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=07504f74ea218c0f5d735e62133745df&dl=product%2Facana-highest-protein-pacifica-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 89.99
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=13ac0db81fdcb0dc40bfabf76a372fc2&dl=product%2Facana-highest-protein-pacifica-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 61.95
+      },
       {
         "winkel": "Plein.nl",
         "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=110fd6a8417394b35130d1f01b29cbac&dl=acana-hondenvoer-highest-protein-pacifica-11-4-kg%3Fchannable%3D00456069640031303431313536dd&ws=",
@@ -9170,6 +9338,12 @@
         "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=97757c74a0f6574ac631776e44e179d0&dl=acana-hondenvoer-highest-protein-pacifica-2-kg%3Fchannable%3D00456069640031303431313537de&ws=",
         "maat": "2 kg",
         "prijs": 27.99
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=57aa2441d832f2757cfb92bcdc3c33e2&dl=acana-regional-pacifica-dog-6-kg%3Fchannable%3D004560696400393837393832b2&ws=",
+        "maat": "6 kg",
+        "prijs": 57.99
       },
       {
         "winkel": "Petgamma.com",
@@ -9188,21 +9362,21 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a3354c19109b09c1f2b9b51de207ea61&dl=p%2Facana-regional-pacifica-dog-6-kg&ws=",
         "maat": "6 kg",
         "prijs": 57.99
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=07504f74ea218c0f5d735e62133745df&dl=product%2Facana-highest-protein-pacifica-hondenvoeding-114-kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 89.99
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=13ac0db81fdcb0dc40bfabf76a372fc2&dl=product%2Facana-highest-protein-pacifica-hondenvoeding-6-kg&ws=",
-        "maat": "6 kg",
-        "prijs": 61.95
       }
     ],
     "83e3c272-1a84-4505-ac46-e8b454c29581": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6c463d656ae010e64f4da0146ae4912d&dl=product%2Facana-classics-red-meat-hondenvoeding-145-kg&ws=",
+        "maat": "14,5 kg",
+        "prijs": 95.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=866b6c4dfd5f86921352a57055f19ecc&dl=product%2Facana-classics-red-meat-hondenvoeding-97-kg&ws=",
+        "maat": "9,7 kg",
+        "prijs": 67.95
+      },
       {
         "winkel": "Plein.nl",
         "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=e5c817397b5f66639f98eeba5b485d90&dl=acana-hondenvoer-classics-classic-red-17-kg%3Fchannable%3D00456069640031303431313336dc&ws=",
@@ -9214,6 +9388,12 @@
         "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=d7c2faca94ff3edfdfe54af069d024c1&dl=acana-hondenvoer-classics-red-meat-2-kg%3Fchannable%3D00456069640031303431313338de&ws=",
         "maat": "2 kg",
         "prijs": 25.09
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=0b1950947d8c3145ada0c7143f30546a&dl=acana-hondenvoer-classics-red-meat-11-4-kg%3Fchannable%3D00456069640031303431313337dd&ws=",
+        "maat": "9,7 kg",
+        "prijs": 66.49
       },
       {
         "winkel": "Petgamma.com",
@@ -9232,21 +9412,21 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=51da7b1f170fcfa860093cd210abf183&dl=p%2Facana-hondenvoer-classics-red-meat-11-4-kg&ws=",
         "maat": "9,7 kg",
         "prijs": 66.49
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6c463d656ae010e64f4da0146ae4912d&dl=product%2Facana-classics-red-meat-hondenvoeding-145-kg&ws=",
-        "maat": "14,5 kg",
-        "prijs": 95.5
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=866b6c4dfd5f86921352a57055f19ecc&dl=product%2Facana-classics-red-meat-hondenvoeding-97-kg&ws=",
-        "maat": "9,7 kg",
-        "prijs": 67.95
       }
     ],
     "2760ef5c-c2ab-4f63-ac42-0d766818d1e9": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f1402012e2d9d66e6345af05902aac2d&dl=product%2Facana-classics-wild-coast-hondenvoeding-145-kg&ws=",
+        "maat": "14,5 kg",
+        "prijs": 98.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=dbbb4412a32d595df8841ac4055ddbda&dl=product%2Facana-classics-wild-coast-hondenvoeding-97-kg&ws=",
+        "maat": "9,7 kg",
+        "prijs": 68.95
+      },
       {
         "winkel": "Plein.nl",
         "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ac659d12f65afadb88f99280e22e5af0&dl=acana-hondenvoer-classics-wild-coast-17-kg%3Fchannable%3D004560696400313034313134385f&ws=",
@@ -9282,18 +9462,3252 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=05bffb7dc9375a4f61d207272c200115&dl=p%2Facana-hondenvoer-classics-wild-coast-11-4-kg&ws=",
         "maat": "9,7 kg",
         "prijs": 67.49
+      }
+    ],
+    "9f6f2928-8ebe-4e0c-beed-4e69e17e232a": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ce30e022275c186d04a97fbf79564a57&dl=product%2Facana-sport-agility-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 79.95
       },
       {
         "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f1402012e2d9d66e6345af05902aac2d&dl=product%2Facana-classics-wild-coast-hondenvoeding-145-kg&ws=",
-        "maat": "14,5 kg",
-        "prijs": 98.5
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=560eab2596e03536d416ede7bd3c3a22&dl=product%2Facana-sport-agility-hondenvoeding-17-kg&ws=",
+        "maat": "17 kg",
+        "prijs": 106.95
+      }
+    ],
+    "3e94dc45-3437-440d-a03c-103ca5d4dffb": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b3a98fc1780d5d10fd8b017a2f01b9e2&dl=product%2Fbuddy-chicken-lamb-feast-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 89.95
       },
       {
         "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=dbbb4412a32d595df8841ac4055ddbda&dl=product%2Facana-classics-wild-coast-hondenvoeding-97-kg&ws=",
-        "maat": "9,7 kg",
-        "prijs": 68.95
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9dafdfb6a042c2b8acba0e37b1d10c99&dl=product%2Fbuddy-chicken-lamb-feast-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 28.95
+      }
+    ],
+    "3a4f7fe2-6b7b-4a4f-aecd-3ec454d4dd9e": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1a8b2fc84029ccfc5cbdbdaef1eda33c&dl=product%2Fbuddy-free-range-duck-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 89.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6a7db1c9db75fa485b78bff2ab5b416c&dl=product%2Fbuddy-free-range-duck-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 14.48
+      }
+    ],
+    "e62f8c52-0853-45c2-ac42-ab3dc2256dd2": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e24b4d7b5a3238880d95f8031c3391b8&dl=product%2Fbuddy-grass-fed-lamb-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 89.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e437523d947fdde5f8e06770cff2e6d7&dl=product%2Fbuddy-grass-fed-lamb-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 28.95
+      }
+    ],
+    "7dc76000-830b-4946-a3e0-4672d339bfee": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b7d9f73e85dd0e82ed998c514606ee28&dl=product%2Fbuddy-natvoeding-delicious-lamb-400-gr&ws=",
+        "maat": "400 g",
+        "prijs": 3
+      }
+    ],
+    "fcc82ba2-b132-4dd5-9f41-9de094a10c9e": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a014be3b5b8c21f2e8e92a3a99e03411&dl=product%2Fbuddy-natvoeding-delightful-duck-400-gr&ws=",
+        "maat": "400 g",
+        "prijs": 3
+      }
+    ],
+    "9b8e5df1-0a93-49f1-ba3f-2cf758f08563": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a3dba39cc515249ca51a6a22f6df82b5&dl=product%2Fbuddy-natvoeding-juicy-turkey-400-gr&ws=",
+        "maat": "400 g",
+        "prijs": 3
+      }
+    ],
+    "b4fe8e46-ca3c-456f-9783-8250c5156e46": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1d2f325bea16a42cbdb5d30a023c08d5&dl=product%2Fbuddy-natvoeding-puppy-lavish-lamb-400-gr&ws=",
+        "maat": "400 g",
+        "prijs": 3
+      }
+    ],
+    "e34e5a65-877e-422c-ba71-df4a6ac8936b": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b910b4832f29a915d200d53711e54e21&dl=product%2Fbuddy-natvoeding-salmon-chicken-feast-400-gr&ws=",
+        "maat": "400 g",
+        "prijs": 3
+      }
+    ],
+    "5114bf52-e6c6-4f33-80cd-9488eb056b0c": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=fc43ec092b8a10327cb046d237fe1592&dl=product%2Fbuddy-natvoeding-tasty-duck-pate-400-gr&ws=",
+        "maat": "400 g",
+        "prijs": 3
+      }
+    ],
+    "b13a3af7-f96b-4ad7-a536-96144fda58fd": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=62840755cbb68f5ddcb04a6ab2eda76c&dl=product%2Fbuddy-natvoeding-turkey-rabbit-400-gr&ws=",
+        "maat": "400 g",
+        "prijs": 3
+      }
+    ],
+    "0c2adcbd-5f7a-4a4c-8576-d12acc396d69": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b7271cc97825774226d071272ffd1224&dl=product%2Fbuddy-natvoeding-yummy-beef-400-gr&ws=",
+        "maat": "400 g",
+        "prijs": 3
+      }
+    ],
+    "882f9f96-a184-44bd-9a9c-cc94dc60d861": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e22b6553d87f94045a00e4cbf70842bc&dl=product%2Fbuddy-puppy-love-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 28.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8eca0ac4e4a1bfa8d0e5854c698fcb3b&dl=product%2Fbuddy-puppy-love-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 55.95
+      }
+    ],
+    "854ebad7-3799-4116-b27f-454398dba93d": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=08576f43dc6251d4f6496b16bd719456&dl=product%2Fbuddy-tasty-duck-bites-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 28.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=235ec0420c83d677dc4f98a2de10110e&dl=product%2Fbuddy-tasty-duck-bites-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 55.95
+      }
+    ],
+    "d1cc2295-70b1-4bd8-be37-30a33c7700f2": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a00ff007e7a75125d10ab629afb05ab8&dl=product%2Fbuddy-wild-venison-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 99.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=84555290bf1f2de203f6943c3ac0cdeb&dl=product%2Fbuddy-wild-venison-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 28.95
+      }
+    ],
+    "cdddcf63-b0af-446e-b088-ea14946d008f": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7767ac463410679ccc57f647346b3a51&dl=product%2Fbuddy-wild-caught-salmon-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 89.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=48a39671c910a13faf4c0d02422f45f7&dl=product%2Fbuddy-wild-caught-salmon-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 28.95
+      }
+    ],
+    "9595aa60-d254-4247-ab8a-6de07e06341d": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=27e7bf0d77709b4c5c2669220b011c54&dl=product%2Fherrmanns-adult-hond-hert-met-aardappel-150-gr-per-14-stuks&ws=",
+        "maat": "14 x 150 g",
+        "prijs": 37.8
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=24d7da1843e93799b201a43e93ef0944&dl=product%2Fherrmanns-adult-hond-hert-met-aardappel-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 33.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=3852f4afb2d93d1e86fb4c1cdbe7000b&dl=product%2Fherrmanns-adult-hond-hert-met-aardappel-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 55.5
+      }
+    ],
+    "cee69236-e43a-48e2-9403-bd4393e4aadc": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=18a0268bc94f983d1cff2e2abb36be96&dl=product%2Fherrmanns-adult-hond-zalm-met-abrikoos-150-gr-per-14-stuks&ws=",
+        "maat": "14 x 150 g",
+        "prijs": 37.8
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6d3535f634d7575636777798e2aeda51&dl=product%2Fherrmanns-adult-hond-zalm-met-abrikoos-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 32.1
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=78d5618215eed6b14836c07ead2abe38&dl=product%2Fherrmanns-adult-hond-zalm-met-abrikoos-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 49.8
+      }
+    ],
+    "f870e5b3-aa25-429d-82a0-bc616c1bc5c6": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8b090893dcb973670ec194206fad39ea&dl=product%2Fherrmanns-bio-adult-hond-kalkoen-met-pastinaak-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 32.7
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=cb94e8e6fa3fc65a9d685ec367adfe5d&dl=product%2Fherrmanns-bio-adult-hond-kalkoen-met-pastinaak-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 51.9
+      }
+    ],
+    "80796f4c-259a-46a1-b215-c82f3b2cfa86": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=fd3b3d644e00d0e92903ad5a55a54446&dl=product%2Fherrmanns-bio-adult-hond-kip-met-venkel-150-gr-per-14-stuks&ws=",
+        "maat": "14 x 150 g",
+        "prijs": 37.8
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=aaaa5e49c417ee0033ff90c35275f14e&dl=product%2Fherrmanns-bio-adult-hond-kip-met-venkel-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 31.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2a1e979940d52cbaa4e31af3971138f8&dl=product%2Fherrmanns-bio-adult-hond-kip-met-venkel-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 48.6
+      }
+    ],
+    "67eefec7-a962-48d8-9c96-399e0f831c71": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=bb628e17551b3b2b202a0fbf336411f0&dl=product%2Fherrmanns-bio-adult-hond-rund-met-wortel-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 32.1
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=cf3eef0262f339c45bda05a87aa48dd4&dl=product%2Fherrmanns-bio-adult-hond-rund-met-wortel-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 47.7
+      }
+    ],
+    "654ee840-e2bb-48f5-8bda-cd0296d46797": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=39975c37c8f0d7f842c90a20bc7c5e16&dl=product%2Fherrmanns-bio-creative-groenten-met-bessen-150-gr-per-14-stuks&ws=",
+        "maat": "14 x 150 g",
+        "prijs": 35.7
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1b5463931fa2b2fe051936650884d822&dl=product%2Fherrmanns-bio-creative-groenten-met-bessen-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 30.6
+      }
+    ],
+    "fec9cac8-e8ec-4e57-ab03-923276acf354": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1ef906dc3748b581c2e62814587e929a&dl=product%2Fherrmanns-bio-creative-vleesvrij-met-groenten-150-gr-per-15-stuks&ws=",
+        "maat": "15 x 150 g",
+        "prijs": 32.25
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8ade2647de10e2d194ecaa31fbea0e79&dl=product%2Fherrmanns-bio-creative-vleesvrij-met-groenten-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 22.05
+      }
+    ],
+    "ed33b049-ffb3-43ee-9bf8-605e0e5cdf18": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6d96fc489580eb5601bafdceece88d2c&dl=product%2Fherrmanns-bio-light-hond-kalkoen-met-courgette-150-gr-per-14-stuks&ws=",
+        "maat": "14 x 150 g",
+        "prijs": 37.8
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=766124b04b5b166cec8d94043c32e385&dl=product%2Fherrmanns-bio-light-hond-kalkoen-met-courgette-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 33
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=5a16c33f116e6281101b878c84324d89&dl=product%2Fherrmanns-bio-light-hond-kalkoen-met-courgette-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 50.7
+      }
+    ],
+    "6739f731-6965-4c37-a11c-181e37e4af5a": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=428f71b771b9a05482a6baf0811c9e5f&dl=product%2Fherrmanns-bio-light-hond-veggie-met-witte-zoete-lupine-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 31.5
+      }
+    ],
+    "b77b8e96-57e4-45c5-839a-29c1931de9d8": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=924bd7e720b8dbf0d8260c51b8e70358&dl=product%2Fherrmanns-bio-puppy-gans-met-pompoen-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 31.5
+      }
+    ],
+    "a61a7a1f-e677-45b1-b040-d57e99ffac75": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=df8a4d99f4e424fba66dc6664b57d099&dl=product%2Fherrmanns-bio-puppy-rund-met-appel-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 31.5
+      }
+    ],
+    "172864a5-b548-4321-9571-b54765b69ffa": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=5f68bca41163cd775ef49421b8b832ed&dl=product%2Fherrmanns-bio-puur-eend-200-gr&ws=",
+        "maat": "200 g",
+        "prijs": 3.35
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ea1cfd612f692d826c97aeb925b9f853&dl=product%2Fherrmanns-bio-puur-eend-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 31.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d33960f3b016df81604954b43be0c563&dl=product%2Fherrmanns-bio-puur-eend-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 50.1
+      }
+    ],
+    "64e11d84-e226-4015-ba08-be8428bf7582": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=be4d753d8c661b8bdedc1b3ba889ac9c&dl=product%2Fherrmanns-bio-sensitive-hond-eend-met-venkel-150-gr-per-14-stuks&ws=",
+        "maat": "14 x 150 g",
+        "prijs": 37.8
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ec299c558be59f35eae6647bc98e08a1&dl=product%2Fherrmanns-bio-sensitive-hond-eend-met-venkel-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 32.1
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=18c943a7ec47a185d543705c68764108&dl=product%2Fherrmanns-bio-sensitive-hond-eend-met-venkel-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 50.4
+      }
+    ],
+    "f8390960-e68d-4dba-b07c-5ac1800be363": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9e25b6d76c8948c66ce70d35121f3e21&dl=product%2Fherrmanns-bio-sensitive-hond-kip-met-wortel-150-gr-per-14-stuks&ws=",
+        "maat": "14 x 150 g",
+        "prijs": 37.8
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9fb1d1c189c09e7aee07d184efc5a10e&dl=product%2Fherrmanns-bio-sensitive-hond-kip-met-wortel-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 31.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=594afd08ba5cebc6a8826dbb83a8ad7c&dl=product%2Fherrmanns-bio-sensitive-hond-kip-met-wortel-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 49.5
+      }
+    ],
+    "e2502d4b-864b-459a-bba9-5c9417aa7cdd": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6f67dbeb801646e4b3d198c165a17ea9&dl=product%2Fherrmanns-bio-sensitive-hond-purinearm-rund-met-wortel-150-gr-per-14-stuks&ws=",
+        "maat": "14 x 150 g",
+        "prijs": 79.8
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8d89b86d590a68cfa117abac273251a6&dl=product%2Fherrmanns-bio-sensitive-hond-purinearm-rund-met-wortel-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 34.2
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=70e2971779917d00b55a734dc61e2e73&dl=product%2Fherrmanns-bio-sensitive-hond-purinearm-rund-met-wortel-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 51.9
+      }
+    ],
+    "b7b2a2a0-6117-493e-ab92-09731095cd3e": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=82d9d37de85fbc3f5eddabe9ea5de26d&dl=product%2Fherrmanns-hondenvoeding-biologische-kip-1-kg&ws=",
+        "maat": "1 kg",
+        "prijs": 12.95
+      }
+    ],
+    "aa7a09a3-7669-4533-885b-5cbc4aab7d23": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=253f681b68b72432b67587ad2186ac6b&dl=product%2Fherrmanns-light-hond-hert-met-pompoen-150-gr-per-14-stuks&ws=",
+        "maat": "14 x 150 g",
+        "prijs": 37.8
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f6d366eddaf93c1778a69aca18808263&dl=product%2Fherrmanns-light-hond-hert-met-pompoen-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 33.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=96a64225aa077e888265a75cd073e4a5&dl=product%2Fherrmanns-light-hond-hert-met-pompoen-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 55.2
+      }
+    ],
+    "24cda5de-d390-4ab2-8bf2-4df1dd4e86fe": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a1a332bf3437ccb8cc114524fa977840&dl=product%2Fherrmanns-sensitive-hond-geit-met-rode-bieten-150-gr-per-14-stuks&ws=",
+        "maat": "14 x 150 g",
+        "prijs": 37.8
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b4ca69d16193cee69d1f49a7261abfc1&dl=product%2Fherrmanns-sensitive-hond-geit-met-rode-bieten-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 33.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ff848af0f7dd3d6cc8b2e35d90066d02&dl=product%2Fherrmanns-sensitive-hond-geit-met-rode-bieten-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 55.2
+      }
+    ],
+    "ea9f2c10-28f1-4612-b237-6eaabeea7c8a": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6fb9d1fab860b244e8834d9c34165044&dl=product%2Fherrmanns-sensitive-hond-konijn-met-rijstvlokken-150-gr-per-14-stuks&ws=",
+        "maat": "14 x 150 g",
+        "prijs": 37.8
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7f8697fecb6e9e9726866ca2b0810108&dl=product%2Fherrmanns-sensitive-hond-konijn-met-rijstvlokken-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 33.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=53b8777c623ff418a9c49619d7374b78&dl=product%2Fherrmanns-sensitive-hond-konijn-met-rijstvlokken-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 55.2
+      }
+    ],
+    "75647152-dd9c-4dee-9325-db798102cbda": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=44e24e337f30f77eb122f4988cab72ad&dl=product%2Fherrmanns-sensitive-hond-paard-met-zoete-aardappel-150-gr-per-14-stuks&ws=",
+        "maat": "14 x 150 g",
+        "prijs": 41.3
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9056c90151e08c8a85f04e7d81604f2c&dl=product%2Fherrmanns-sensitive-hond-paard-met-zoete-aardappel-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 33.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=53fca832ef9b54936ebba2bcae9134ae&dl=product%2Fherrmanns-sensitive-hond-paard-met-zoete-aardappel-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 55.2
+      }
+    ],
+    "7bf76986-3f34-43a3-90a4-87007b7f86d3": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a6b71bf8958227d5a58b2a08b3f00816&dl=product%2Fherrmanns-sensitive-hond-schaap-met-courgette-150-gr-per-14-stuks&ws=",
+        "maat": "14 x 150 g",
+        "prijs": 37.8
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=48dba89985a4e06ea57c74b3b825c98d&dl=product%2Fherrmanns-sensitive-hond-schaap-met-courgette-400-gr-per-6-stuks&ws=",
+        "maat": "6 x 400 g",
+        "prijs": 33.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a0c4e9200c32a57bd91fc0910d30ac9e&dl=product%2Fherrmanns-sensitive-hond-schaap-met-courgette-800-gr-per-6-stuks&ws=",
+        "maat": "6 x 800 g",
+        "prijs": 55.2
+      }
+    ],
+    "4c26219b-aa83-4aef-8d58-dcbef3e28f8a": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=88bfb54c0b4ceb1b8972242007c0e8a6&dl=product%2Fnd-ancestral-grain-hondenvoeding-kip-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 74.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=cfb056969f90c8179aa12a565e2fecca&dl=product%2Fnd-ancestral-grain-hondenvoeding-kip-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 27.9
+      }
+    ],
+    "390dede1-503d-42d4-a842-e7cd02c768b2": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d83f461442a2942c66ae6eaf69592b4d&dl=product%2Fnd-ancestral-grain-hondenvoeding-lam-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 74.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7e0202fc0ef12e92d2848c66e4baa3a5&dl=product%2Fnd-ancestral-grain-hondenvoeding-lam-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 27.9
+      }
+    ],
+    "d0a5cbcd-7376-4faa-ab80-739d79f2396c": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=0a6c6a4b524400867a9fc4a5f48327d8&dl=product%2Fnd-ancestral-grain-puppyvoeding-kip-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 81.9
+      }
+    ],
+    "2674574f-a26b-41dd-b384-dadfc0c2d061": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=abc5bfcb96dd2bacc1d26e76656c2d96&dl=product%2Fnd-brown-hondenvoeding-voor-de-bruine-hond-small-breed-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 31.9
+      }
+    ],
+    "10b1eaa0-46d0-470c-bc90-7ca567b58aa6": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=acccef3ab93511baeed5d2279181ea7c&dl=product%2Fnd-ocean-hondenvoeding-haring-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 94.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4af181a919bb381ac7e66e8d0dc4959d&dl=product%2Fnd-ocean-hondenvoeding-haring-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 35.9
+      }
+    ],
+    "df56ea56-1494-4638-b707-44f66ec2301c": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e55818cedf725b9d987dc1abce711809&dl=product%2Fnd-ocean-hondenvoeding-haring-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 35.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8730df0bf7cb0f3f6b62e13ef2652e1e&dl=product%2Fnd-ocean-hondenvoeding-haring-small-breed-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 67.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=65deb58624ef463500ed71703e5a4c84&dl=product%2Fnd-ocean-hondenvoeding-haring-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.9
+      }
+    ],
+    "f7bceab6-21a6-4f2c-b0df-dc7f56b8fd43": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f21578cc6e9007f40cf1cb44773c7224&dl=product%2Fnd-ocean-hondenvoeding-kabeljauw-met-pompoen-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 94.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b0d018c5130b7acf261aaa45a75d0453&dl=product%2Fnd-ocean-hondenvoeding-kabeljauw-met-pompoen-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 34.9
+      }
+    ],
+    "93c86ad1-c440-4089-beac-54f09d57f335": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2f9d893d96a63329369b4243c5ae86da&dl=product%2Fnd-ocean-hondenvoeding-kabeljauw-met-pompoen-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 34.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6cc1ddef68a71d54b17eb7220665abdf&dl=product%2Fnd-ocean-hondenvoeding-kabeljauw-met-pompoen-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.9
+      }
+    ],
+    "386840c5-75fd-44b8-a198-55836e7791cc": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1a397a71dedbfa4363a55c57f1f77a59&dl=product%2Fnd-ocean-hondenvoeding-kabeljauw-met-spelt-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 79.9
+      }
+    ],
+    "48dbf360-43f7-4abc-a80f-9c10d845e4f2": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c2ea9dc318d7c3c37eec2cf725b75997&dl=product%2Fnd-ocean-puppyvoeding-kabeljauw-met-pompoen-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 96.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=5ca8f6809fb57d7555abc19405aef5f7&dl=product%2Fnd-ocean-puppyvoeding-kabeljauw-met-pompoen-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 36.9
+      }
+    ],
+    "91efbe81-a282-4124-9473-7fe5cfc754b5": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4fcd12d7b87499252ff0a4a9014e5d21&dl=product%2Fnd-ocean-puppyvoeding-kabeljauw-met-pompoen-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 36.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=12c19de197ca86f9c4fdb811ab1886da&dl=product%2Fnd-ocean-puppyvoeding-kabeljauw-met-pompoen-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.9
+      }
+    ],
+    "ddca15d3-8fbd-4dbb-a077-fea7f9d95009": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c565900abb941db3f7614d0d2e95fdad&dl=product%2Fnd-ocean-hondenvoeding-zalm-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 94.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6fd37ca26774c0864b561b7baee7ab3a&dl=product%2Fnd-ocean-hondenvoeding-zalm-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 35.9
+      }
+    ],
+    "33f44a97-6ca4-4f1f-9c09-7ba1fd00357a": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=eddf7321604e2127fde46cbaeece7cbe&dl=product%2Fnd-ocean-hondenvoeding-zalm-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 35.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2175e0e9085027d64fdfe09f67279534&dl=product%2Fnd-ocean-hondenvoeding-zalm-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.9
+      }
+    ],
+    "9a8eb791-c6cb-4f5b-9591-359d74ac59d7": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2a01b80d3d97daa70bc3da7f92a28623&dl=product%2Fnd-prime-hondenvoeding-kip-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 94.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=74a1c3aefe8ded8ce9d59431dc2f68cf&dl=product%2Fnd-prime-hondenvoeding-kip-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 35.9
+      }
+    ],
+    "b88a414d-2452-4fad-a14e-e86b863ee25d": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=010e9f9ab4374c6a18bc2e987dbcfb92&dl=product%2Fnd-prime-hondenvoeding-kip-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 35.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=be8178151ce59fdff9e0647cbbfdca6a&dl=product%2Fnd-prime-hondenvoeding-kip-small-breed-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 71.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8e757bac246ef72f6db0a999c326dba9&dl=product%2Fnd-prime-hondenvoeding-kip-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.9
+      }
+    ],
+    "ae37a973-974c-49b1-b091-20e05ffe7a9f": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a16452f2fde1f22d38cdaf87622a9304&dl=product%2Fnd-prime-hondenvoeding-lam-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 94.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=fb90518f6a4b703509241e0bc2142f1a&dl=product%2Fnd-prime-hondenvoeding-lam-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 35.9
+      }
+    ],
+    "1521e134-7dc7-4ebf-9443-106d16821841": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c4d56525312ea5878346e180cc311730&dl=product%2Fnd-prime-hondenvoeding-lam-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 35.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=cf4de731f182058b42ce0245ab3732fd&dl=product%2Fnd-prime-hondenvoeding-lam-small-breed-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 71.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=3e24b699c00c8eaa0fde3b8e0d6742bd&dl=product%2Fnd-prime-hondenvoeding-lam-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.9
+      }
+    ],
+    "e3fbd42a-f793-49ab-996f-321b36614ef7": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a60fecb3da92dabf80c862a4e9c0cbbd&dl=product%2Fnd-prime-natvoeding-voor-de-hond-kip-140-gr-per-6-stuks&ws=",
+        "maat": "6 x 140 g",
+        "prijs": 17.4
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7f7eaa59928c00db1107c9a1d24361f5&dl=product%2Fnd-prime-natvoeding-voor-de-hond-kip-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "ede2b9f1-c609-45cd-8479-b9f7bcef3b68": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=029e85c7317756ab5cb33a2b05f112e8&dl=product%2Fnd-prime-natvoeding-voor-de-hond-lam-140-gr-per-6-stuks&ws=",
+        "maat": "6 x 140 g",
+        "prijs": 17.4
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4a198f7a58bfa92d9aab74489c1d8c59&dl=product%2Fnd-prime-natvoeding-voor-de-hond-lam-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "bac58744-aa92-461a-956f-9df5792aebe0": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d00767f70f7840c957328aa3750d547d&dl=product%2Fnd-prime-natvoeding-voor-pups-kip-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "b6b6dbac-900a-4e04-a29e-f1af18000147": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=264064071fb097afe7d3f761e5d49482&dl=product%2Fnd-prime-natvoeding-voor-de-hond-wild-zwijn-140-gr-per-6-stuks&ws=",
+        "maat": "6 x 140 g",
+        "prijs": 17.4
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=601702f1cbfb633760f774754d6302e0&dl=product%2Fnd-prime-natvoeding-voor-de-hond-wild-zwijn-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "09cb0bbb-2c85-420e-880a-3831a36c88cd": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9554821922ee7120047832f756e4a7f5&dl=product%2Fnd-prime-puppy-natvoeding-kip-140-gr-per-6-stuks&ws=",
+        "maat": "6 x 140 g",
+        "prijs": 17.4
+      }
+    ],
+    "18d62569-8838-4dfa-8bc8-8fb28fd061e7": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2bba018d94c792ca81389f850b4173d7&dl=product%2Fnd-prime-puppyvoeding-kip-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 99.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=03067e315163515d662b326ada9e428d&dl=product%2Fnd-prime-puppyvoeding-kip-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 36.9
+      }
+    ],
+    "ba26ffd1-2dd9-4cb7-83a3-522808093e18": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ed6e70456e3a8418dbe50156a54acdcd&dl=product%2Fnd-prime-puppyvoeding-kip-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 36.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6b081c5f0b3125f0c83ac5cab1cd47f7&dl=product%2Fnd-prime-puppyvoeding-kip-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.9
+      }
+    ],
+    "b749e103-3399-4819-883e-c8fccb7e1a03": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=492d081a6653dda99272e497e98bf14b&dl=product%2Fnd-prime-hondenvoeding-wild-zwijn-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 94.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=93bf4123a8c394352f282c38f8ac929f&dl=product%2Fnd-prime-hondenvoeding-wild-zwijn-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 35.9
+      }
+    ],
+    "c72f0c79-9a44-432b-a7ab-4e38749ef51b": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=62fa07ce5cddf21bedd0cd6df76791bd&dl=product%2Fnd-prime-hondenvoeding-wild-zwijn-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 35.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=068750b16971982886d3ad2f2543f0b3&dl=product%2Fnd-prime-hondenvoeding-wild-zwijn-small-breed-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 71.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=dac9748eb7207177f73d35242f00adc9&dl=product%2Fnd-prime-hondenvoeding-wild-zwijn-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.9
+      }
+    ],
+    "fed7f931-d56e-4376-a17e-eca700f41bf1": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d2f9407d3938e82c9a9751d5b6e7b675&dl=product%2Fnd-pumpkin-hondenvoeding-eend-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 87.9
+      }
+    ],
+    "7692ac10-b5fa-43aa-af0f-50f1d9156c61": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4703f36015d0db9a013b5eabcff7d301&dl=product%2Fnd-pumpkin-hondenvoeding-eend-small-breed-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 29.9
+      }
+    ],
+    "64e82df4-3760-439d-99d3-18859743e255": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=52207dc8a77da3fbad9686f0fdaf4213&dl=product%2Fnd-pumpkin-hondenvoeding-hert-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 87.9
+      }
+    ],
+    "281043ae-a16a-4455-b2bd-b74828c4d03c": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=10d822f6d2f290f6c3141e6c62fcf87d&dl=product%2Fnd-pumpkin-hondenvoeding-hert-small-breed-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 29.9
+      }
+    ],
+    "f1681816-667d-4e75-943c-41b9d218a33d": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=edbcdd7ae2bb5b378799679eca9aeb2e&dl=product%2Fnd-pumpkin-hondenvoeding-kip-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 87.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=341639428d6a278306c89c4ef52c2356&dl=product%2Fnd-pumpkin-hondenvoeding-kip-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 33.9
+      }
+    ],
+    "c11613c9-2181-4344-87a4-da5e5091f28b": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=0b233607e834d4fab6240a0c8e022cfe&dl=product%2Fnd-pumpkin-hondenvoeding-kip-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 33.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9443440902397c21e8e5906407fef00d&dl=product%2Fnd-pumpkin-hondenvoeding-kip-small-breed-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 61.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=5828e3c561f2ce3df5488b4b47662e37&dl=product%2Fnd-pumpkin-hondenvoeding-kip-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.9
+      }
+    ],
+    "0452abe4-9545-4000-b470-95efec6f9fdd": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=bed02d671185a11c47b1170629c8c0d5&dl=product%2Fnd-pumpkin-hondenvoeding-lam-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 87.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d3583f5a4026237b0d0d25277c3839f9&dl=product%2Fnd-pumpkin-hondenvoeding-lam-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 33.9
+      }
+    ],
+    "37df4d17-e886-4943-b447-545cc8d1eb28": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=36fc944b5469d963ad4997ffd546691c&dl=product%2Fnd-pumpkin-hondenvoeding-lam-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 33.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=dc5419a6c209cf2b5feec102c25d1ce8&dl=product%2Fnd-pumpkin-hondenvoeding-lam-small-breed-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 61.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=fa3b312d3188de5591fbad894487fc9c&dl=product%2Fnd-pumpkin-hondenvoeding-lam-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.9
+      }
+    ],
+    "2a15a39e-f766-4814-bbb8-438fde9cda67": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b9d136f842fd80c7abe77c3fec2d848c&dl=product%2Fnd-pumpkin-natvoeding-voor-de-hond-eend-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "f97ecde7-57a9-437f-bbf1-4cb6aad3e2fc": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=74726acd9ad863556302d311cc211d5d&dl=product%2Fnd-pumpkin-natvoeding-voor-de-hond-hert-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 29.4
+      }
+    ],
+    "9df1dd6b-9502-4806-ac64-92e343b2a862": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=56fe00e781f7d32c707bc80cbd646fa7&dl=product%2Fnd-pumpkin-natvoeding-voor-de-hond-kip-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "f6e12014-7ab1-41ef-a39c-4be5e63e0ee6": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=361d83088f6a899b8b92bdb89d5df35d&dl=product%2Fnd-pumpkin-natvoeding-voor-de-hond-kwartel-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "dd7e1d54-b36a-47f8-8749-49ebac86a51b": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=40b9a1d498cf518d761c7bf0be39dea6&dl=product%2Fnd-pumpkin-natvoeding-voor-de-hond-lam-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "42e133ec-543a-44ef-8097-d389491f1ff4": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2642535d2ebc1a42a473919f9c23640e&dl=product%2Fnd-pumpkin-natvoeding-voor-pups-kip-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "3b6c1d8e-3af5-4493-a9f7-50b0364d33d9": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=446112b06399d33b5ef98fb1829ccd00&dl=product%2Fnd-pumpkin-natvoeding-voor-de-hond-wild-zwijn-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "1e478671-fc07-4f4a-b685-8c013f78ed76": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=48f9904c61e56f16fb4853c3bdccda60&dl=product%2Fnd-pumpkin-puppyvoeding-kip-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 92.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8f918d0e7a00acbff8ce8a164d1e190a&dl=product%2Fnd-pumpkin-puppyvoeding-kip-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 34.9
+      }
+    ],
+    "cde37485-8b66-4c58-bd9e-38efcc9cb593": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9f6b15d7a1e5c47eb8e5669e4df777b1&dl=product%2Fnd-pumpkin-puppyvoeding-kip-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 34.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8e08f6ff6b5067ede046a21e300bff23&dl=product%2Fnd-pumpkin-puppyvoeding-kip-small-breed-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 64.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c37ec60b43f34fab8d269332d80004d4&dl=product%2Fnd-pumpkin-puppyvoeding-kip-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.9
+      }
+    ],
+    "7a10fa97-b66b-461a-8645-d42506533321": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=03619134078a7931b17fe0234b2cc8da&dl=product%2Fnd-pumpkin-puppyvoeding-lam-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 92.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f24f329c1513b86391e593bbba4b5521&dl=product%2Fnd-pumpkin-puppyvoeding-lam-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 34.9
+      }
+    ],
+    "d4fca7ae-c5e7-43cf-8511-e14ea208a37e": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=86d4915b750421c41ac20ff553b1b323&dl=product%2Fnd-pumpkin-puppyvoeding-lam-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 34.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=5ba008b1ee1e50a49a9b21bd1b20790c&dl=product%2Fnd-pumpkin-puppyvoeding-lam-small-breed-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 64.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=0083b22aecc7a1054675a0d3b7ee6aa2&dl=product%2Fnd-pumpkin-puppyvoeding-lam-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.9
+      }
+    ],
+    "65e2f213-0473-471c-ad61-55767ed2ec08": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=450e4c7cd436e3932a8657e1f64b62b6&dl=product%2Fnd-pumpkin-starter-natvoeding-voor-pups-lam-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "8d0643cb-bd13-441c-93fa-526792343909": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e017f81dfb93cb306b842821b8811b15&dl=product%2Fnd-pumpkin-hondenvoeding-wild-zwijn-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 87.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f267506701b9cc7c968e4889dfb45433&dl=product%2Fnd-pumpkin-hondenvoeding-wild-zwijn-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 33.9
+      }
+    ],
+    "ee3b093e-48e7-4c16-8340-b9b90b64d1bc": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=160361946ea159edcc0b6de8e0c9c16b&dl=product%2Fnd-pumpkin-hondenvoeding-wild-zwijn-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 33.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=df63592fb55e1a981a4853d85aa6a158&dl=product%2Fnd-pumpkin-hondenvoeding-wild-zwijn-small-breed-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 61.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9d7263b1fa669f8ad537ec2898c1c012&dl=product%2Fnd-pumpkin-hondenvoeding-wild-zwijn-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 14.9
+      }
+    ],
+    "47f69765-0c8b-4929-a566-4fac40d1a0a2": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1929763bc938413cb53042c5130c7fa8&dl=product%2Fnd-quinoa-hondenvoeding-digestion-mediummaxi-lam-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 37.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e00655b861949981cde195fbeca61004&dl=product%2Fnd-quinoa-hondenvoeding-digestion-mediummaxi-lam-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 73.9
+      }
+    ],
+    "dd5475a1-8f82-4efe-a094-e1a8438d6d1a": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=94cc56a0d50e6a79bfdbd683fee268ab&dl=product%2Fnd-quinoa-hondenvoeding-digestion-small-breed-lam-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 37.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=df289fe26bef3fe50fd9cd5817705e97&dl=product%2Fnd-quinoa-hondenvoeding-digestion-small-breed-lam-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 15.9
+      }
+    ],
+    "e93e09ae-20cc-4c8a-9794-ca583be7520d": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=81ac481d78e8f11983f4a0c3dd248b89&dl=product%2Fnd-quinoa-voeding-voor-de-gecastreerde-hond-mediummaxi-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 109.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=115a6566eb6d3136316cdff41c17807f&dl=product%2Fnd-quinoa-voeding-voor-de-gecastreerde-hond-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 37.9
+      }
+    ],
+    "3c9c1676-a3fd-4708-98a9-3dd10483b82d": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d182b0d6b179a0c9b3e4ff61a3a36982&dl=product%2Fnd-quinoa-voeding-voor-de-gecastreerde-hond-small-breed-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 37.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=0355f3e7a9777699d7fa59295fe65de5&dl=product%2Fnd-quinoa-voeding-voor-de-gecastreerde-hond-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 7.95
+      }
+    ],
+    "f3ec925f-f883-4668-ba6a-40ce9c112d8b": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e4604c5aefb6026511ccf1fd25378881&dl=product%2Fnd-quinoa-natvoeding-voor-de-hond-digestion-lam-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "8e435396-37ad-41a5-b5c7-4a8b268b675e": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=37d5ace470a03c469a65d27318ee9af5&dl=product%2Fnd-quinoa-natvoeding-voor-de-hond-skin-coat-eend-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "0699a848-d339-4e69-b24a-90bbd54dcc71": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8e15092d9792f884ae7d062ea2b92556&dl=product%2Fnd-quinoa-natvoeding-voor-de-hond-skin-coat-haring-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "a5777bbf-1a6f-4318-a9bc-1de8607c5093": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=91d9f9bf40786c20a90ae918880a460c&dl=product%2Fnd-quinoa-natvoeding-voor-de-hond-skin-coat-hert-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 29.4
+      }
+    ],
+    "fa182f22-bc7e-4220-b982-af3b62e3fab7": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b84208b3be7f6dd57dd7658043d312bb&dl=product%2Fnd-quinoa-natvoeding-voor-de-hond-skin-coat-kwartel-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "99ddd458-1b34-4536-a870-7db777a52f1c": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f2b783df0714fd1b8313d8a5e1544aca&dl=product%2Fnd-quinoa-natvoeding-voor-de-hond-weight-management-285-gr-per-6-stuks&ws=",
+        "maat": "6 x 285 g",
+        "prijs": 27
+      }
+    ],
+    "5a0a08da-7de7-4897-b087-5921c71ed733": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=226a043a358021238098bd5127c06ded&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-mediummaxi-eend-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 37.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=89d47f98eba2f4191d933375de61e226&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-mediummaxi-eend-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 73.9
+      }
+    ],
+    "e0175fe4-ca22-46fe-b30d-35ab5743ca75": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d2905ffc0c789da1a3b095a10507db78&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-mediummaxi-haring-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 37.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=39f7f79a3f5fe89aab58076ae3061ed9&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-mediummaxi-haring-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 73.9
+      }
+    ],
+    "f71bf40c-a977-4744-8df7-2c5faa7f6fdb": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=cde17a6e6d4d612d0a5df03836d49950&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-mediummaxi-hert-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 37.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=fa2ff3e665bf29001affb3626a642357&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-mediummaxi-hert-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 73.9
+      }
+    ],
+    "4f2d0c02-dbe4-4831-8f7e-89615f90d486": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=be6dc321e879bdeed2ca416e4844dd8f&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-mediummaxi-kwartel-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 37.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=0981ab7320befedbb0d0e2e51ed4a401&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-mediummaxi-kwartel-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 73.9
+      }
+    ],
+    "d41b0b79-41b2-4064-bfe4-8c8bc3edc793": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=3844b9bf2836616ce8a8c81bcac13383&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-small-breed-eend-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 37.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e2a269bc23b909c42e834bf60d470f6c&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-small-breed-eend-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 7.95
+      }
+    ],
+    "bec36945-fdb5-4674-9ec4-d2dd97e01a29": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=594010e6ad124e7adddb46dc4c7d6724&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-small-breed-haring-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 37.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=12a59a1373312e40578223abacc6b74f&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-small-breed-haring-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 15.9
+      }
+    ],
+    "9a09211b-64b1-42a2-969e-e523e536352f": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f94afb09ba276c4dcf460c3d5e0cef18&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-small-breed-hert-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 37.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=78ea7ef8fb653dc321062beb43f91013&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-small-breed-hert-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 15.9
+      }
+    ],
+    "87ddbd28-fe8b-4c34-b83c-80d227b07176": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ddbd477960d058e096d3609938b6ab10&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-small-breed-kwartel-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 37.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c5475b90da544c5a4bc76a4aa9ec5d2c&dl=product%2Fnd-quinoa-hondenvoeding-skin-coat-small-breed-kwartel-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 15.9
+      }
+    ],
+    "a3d4d899-62c8-4e55-bc59-ab94527261ab": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b3117994a45ae6e343c31793cb10ba39&dl=product%2Fnd-quinoa-hondenvoeding-weight-management-mediummaxi-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 37.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c766de3f0c5380e661e7cda4eceb71de&dl=product%2Fnd-quinoa-hondenvoeding-weight-management-mediummaxi-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 73.9
+      }
+    ],
+    "33d83f51-4a62-42a5-a9f4-89dbfa111ce0": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=13b71d9677d4c03267e6b95b05453628&dl=product%2Fnd-quinoa-hondenvoeding-weight-management-small-breed-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 15.9
+      }
+    ],
+    "12795e47-8563-4abb-861a-b3272388305d": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a2e6d6a3824e98c3b39c966a1d88df66&dl=product%2Fnd-spirulina-hondenvoeding-haring-mediummaxi-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 31.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1c2c0ef4199579376c3ccf06cbcb6c48&dl=product%2Fnd-spirulina-hondenvoeding-haring-mediummaxi-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 73.9
+      }
+    ],
+    "0b92f3e8-fd0e-47a2-a291-ad5d5f2d9715": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c4399c764b78eea66a5d0e91ca51c8ec&dl=product%2Fnd-spirulina-hondenvoeding-haring-small-breed-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 31.9
+      }
+    ],
+    "3ec747e0-f0b8-446e-9ce7-d1d1bf46bd55": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6b49e4512f4908030c4100659ebd40fc&dl=product%2Fnd-spirulina-hondenvoeding-lam-mediummaxi-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 31.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a6eb746491fd2f276f6aebb9471f9b9e&dl=product%2Fnd-spirulina-hondenvoeding-lam-mediummaxi-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 73.9
+      }
+    ],
+    "bfcc25c9-ab33-453f-bac0-f63a55e8a780": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=41a587b6c7046fbf9f2ff390e01d37d9&dl=product%2Fnd-spirulina-hondenvoeding-lam-small-breed-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 31.9
+      }
+    ],
+    "464a4da8-6dfd-4fab-afae-271fc14cb9e2": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a7bf5369286e5b07b196965c59bc5c1c&dl=product%2Fnd-spirulina-puppyvoeding-lam-mediummaxi-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 34.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4a959bcfa72e025556e08a2f4170593a&dl=product%2Fnd-spirulina-puppyvoeding-lam-mediummaxi-7-kg&ws=",
+        "maat": "7 kg",
+        "prijs": 77.9
+      }
+    ],
+    "614291f3-5958-4a63-a914-e7fab89b45ad": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e6681e4126b962bdc9b1fce5fcc0b0ff&dl=product%2Fnd-spirulina-puppyvoeding-lam-small-breed-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 34.9
+      }
+    ],
+    "bbdbdd13-779d-4996-a1ce-104ef019c0bc": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a13d0ecb66d41b23c7fa5a82fdc345fc&dl=product%2Fnd-tropical-hondenvoeding-kip-mediummaxi-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 59.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4fc1b5ed3c8d003eded6f55599acbb89&dl=product%2Fnd-tropical-hondenvoeding-kip-mediummaxi-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 20.9
+      }
+    ],
+    "a46e5dab-2dab-4613-bf65-331aab92ea79": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c8965f97f893f2b42e003c4d5fb9fbf2&dl=product%2Fnd-tropical-hondenvoeding-kip-small-breed-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 15.21
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6c0886493b3ef0fdf493a585e59e68e1&dl=product%2Fnd-tropical-hondenvoeding-kip-small-breed-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 39.9
+      }
+    ],
+    "d9b6e012-4901-4b27-b627-2585a6ef5eb4": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6bbdfe6f5052fac962437140bba754b8&dl=product%2Fnd-tropical-hondenvoeding-lam-mediummaxi-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 62.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f36e4e1401cb786e6e0ef584046344e7&dl=product%2Fnd-tropical-hondenvoeding-lam-mediummaxi-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 21.9
+      }
+    ],
+    "936e453e-e977-4c0f-a02b-cadc6646e7aa": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=3f3301c37e8dfe62d54e8db9a2f5e12a&dl=product%2Fnd-tropical-hondenvoeding-lam-small-breed-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 17.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8aceb65e409b7e80e2b205e41a33bf67&dl=product%2Fnd-tropical-hondenvoeding-lam-small-breed-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 41.9
+      }
+    ],
+    "ea139cd0-e488-41fa-9131-61bafd5e9a3e": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9a8e806c95f741044e2f1944b6723e47&dl=product%2Fnd-tropical-puppyvoeding-lam-mediummaxi-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 62.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7c71f91e0dd8bfe5b09de20d6aa47618&dl=product%2Fnd-tropical-puppyvoeding-lam-mediummaxi-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 21.9
+      }
+    ],
+    "ab3d1431-fc62-4d38-978c-3d737c8f62d3": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=efb991b8cdee843444e3e83f388793bd&dl=product%2Fnd-tropical-puppyvoeding-lam-small-breed-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 17.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c2679b56c60690a9f757486a4b48d526&dl=product%2Fnd-tropical-puppyvoeding-lam-small-breed-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 41.9
+      }
+    ],
+    "e8c05eda-0619-4c9c-8c38-7feeaa0d85f1": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1884ab3a15c23d9ff7b4c40628e2e642&dl=product%2Fnd-tropical-hondenvoeding-varken-mediummaxi-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 59.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=91c26df3a00877d88013a996a9464c76&dl=product%2Fnd-tropical-hondenvoeding-varken-mediummaxi-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 20.9
+      }
+    ],
+    "c9c7690f-08d7-42fd-bcf8-9cf3121d2088": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=79fcd60734c40bcd5b6f356fb4ae8207&dl=product%2Fnd-tropical-hondenvoeding-varken-small-breed-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 16.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=3beb737e3d588ccb2b38b5646e8ed75e&dl=product%2Fnd-tropical-hondenvoeding-varken-small-breed-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 39.9
+      }
+    ],
+    "c56e9789-7e3c-4d94-8249-7ac3056ec7e8": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=314cdecde84f63177d3f7e9922a631ff&dl=product%2Fnd-tropical-hondenvoeding-zalm-mediummaxi-10-kg&ws=",
+        "maat": "10 kg",
+        "prijs": 62.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=3f3defd5e6ecc212356944407f6b1862&dl=product%2Fnd-tropical-hondenvoeding-zalm-mediummaxi-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 21.9
+      }
+    ],
+    "9a355d45-ba8b-4ebe-b945-287b16b7fa7e": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ddb201409e54a8fd20a0814733750164&dl=product%2Fnd-tropical-hondenvoeding-zalm-small-breed-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 17.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=5cb54da2fd9c6b7c203d4bb0580e9df9&dl=product%2Fnd-tropical-hondenvoeding-zalm-small-breed-5-kg&ws=",
+        "maat": "5 kg",
+        "prijs": 41.9
+      }
+    ],
+    "3b199dcc-540e-40f3-b751-337749ae7c79": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=72d591a4978856f219b3e2ea5a803b20&dl=product%2Fnd-white-hondenvoeding-voor-de-witte-hond-small-breed-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 31.9
+      }
+    ],
+    "cb239e76-318e-4e75-b99e-d24b45ed019e": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=70e355db3268fed8355b94fb77df5ed7&dl=product%2Forijen-fit-trim-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 97.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=73042d4fb310be7fab3d981966b6f9fe&dl=product%2Forijen-fit-trim-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 65.95
+      }
+    ],
+    "f7e66b20-1777-45a1-aa92-7c702f7f3e00": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d523c01b8e130e2a67990bb6db07b5c8&dl=product%2Forijen-regional-red-hondenvoeding-114-kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 114.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2eb038e469f948f4e4519b1cf78e0a1f&dl=product%2Forijen-regional-red-hondenvoeding-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 39.49
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c0421168541f6d449b718254d5a62467&dl=product%2Forijen-regional-red-hondenvoeding-6-kg&ws=",
+        "maat": "6 kg",
+        "prijs": 79.5
+      }
+    ],
+    "207ca671-61a0-4d54-90db-33d86dacb0cd": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f115c429f53e1442eb9da5f5597d9d1d&dl=product%2Forijen-small-breed-hondenvoeding-18-kg&ws=",
+        "maat": "1,8 kg",
+        "prijs": 32.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6dfaef8fe6c9dbe789b5bcd03d8129b4&dl=product%2Forijen-small-breed-hondenvoeding-45-kg&ws=",
+        "maat": "4,5 kg",
+        "prijs": 63.99
+      }
+    ],
+    "42f7eee2-489d-4068-a247-65644f94f0bc": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=95d21fc3e79e1bd9c87c4a6a066f4b81&dl=product%2Fpawfect-freeze-dried-hondenvoeding-geit-250-gr&ws=",
+        "maat": "250 g",
+        "prijs": 26.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b0dcb1190ac200ef90e455efa7786989&dl=product%2Fpawfect-freeze-dried-hondenvoeding-geit-500-gr&ws=",
+        "maat": "500 g",
+        "prijs": 49.95
+      }
+    ],
+    "ac57b8a3-3629-4f53-929e-498d45178f84": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ad03dfdcf66e7c5b4966c9777d03ab9f&dl=product%2Fpawfect-freeze-dried-hondenvoeding-kip-250-gr&ws=",
+        "maat": "250 g",
+        "prijs": 16.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=60e1b82d97c0b7e3e941cdf2dcf59aeb&dl=product%2Fpawfect-freeze-dried-hondenvoeding-kip-500-gr&ws=",
+        "maat": "500 g",
+        "prijs": 30.95
+      }
+    ],
+    "d9cd64e8-6a1b-4f15-91fe-a105976868d9": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=379d1a474b7f98c8713ac6ddf98a587e&dl=product%2Fpawfect-freeze-dried-hondenvoeding-vis-250-gr&ws=",
+        "maat": "250 g",
+        "prijs": 22.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a7b73353659f2e4e3da35e63155a73e8&dl=product%2Fpawfect-freeze-dried-hondenvoeding-vis-500-gr&ws=",
+        "maat": "500 g",
+        "prijs": 40.95
+      }
+    ],
+    "1b0afeb3-4b67-409e-b8b7-a93bf10d7982": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e6e67d97476b47bf0eb64936af209cfb&dl=product%2Fvet-life-hondenvoeding-cardiac-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 30.9
+      }
+    ],
+    "62b61aa5-7c23-42ed-a71d-b89f9e2bc797": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7bb17826c77b80d3ead01c906fe2366c&dl=product%2Fvet-life-hondenvoeding-diabetic-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 30.9
+      }
+    ],
+    "9c18fbba-da12-43d8-9134-9673b63e726e": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=74005bc5076ec4a70c55a43a6e89b458&dl=product%2Fvet-life-hondenvoeding-gastrointestinal-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 107.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=da76ca2844bc75a1ba2d2be302bf5b50&dl=product%2Fvet-life-hondenvoeding-gastrointestinal-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 30.9
+      }
+    ],
+    "29949cc6-4dd5-4a61-953b-485c62fa15ac": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=014c7c7a2e0284e9eeab27203d0f25e6&dl=product%2Fvet-life-hondenvoeding-hepatic-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 30.9
+      }
+    ],
+    "3cf3687b-b26c-473a-bbd1-c61d249b9f49": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ba67ab66b0d4c73f8d324713be844b64&dl=product%2Fvet-life-hondenvoeding-hypoallergenic-ei-met-rijst-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 119.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=bdc2d3170988d262f24b2ce2ed87f43e&dl=product%2Fvet-life-hondenvoeding-hypoallergenic-ei-met-rijst-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 35.9
+      }
+    ],
+    "abe41927-71cf-45a6-88bc-ed6d75eba7b8": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d0e0c1957ff723e8d58c4568722df7c2&dl=product%2Fvet-life-hondenvoeding-hypoallergenic-vis-met-aardappel-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 119.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f6763b22fe79b752b89fdf4a96ef1664&dl=product%2Fvet-life-hondenvoeding-hypoallergenic-vis-met-aardappel-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 35.9
+      }
+    ],
+    "cda19053-fb06-44d4-b0e3-1e1c8a47c374": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2ec9facd655f25c47347b5be5a5961c9&dl=product%2Fvet-life-hondenvoeding-joint-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 30.9
+      }
+    ],
+    "174cb6f6-c0f1-4d9d-9009-6ad34b85a4c3": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9b01f604f53710624b6d3056a71aab58&dl=product%2Fvet-life-natvoeding-voor-de-hond-gastrointestinal-300-gr-per-6-stuks&ws=",
+        "maat": "6 x 300 g",
+        "prijs": 23.4
+      }
+    ],
+    "5c5f4a05-d682-4b2c-bb21-504f19e602e7": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=014a0af8a80032bdf9d38e4299429185&dl=product%2Fvet-life-natvoeding-voor-de-hond-hypoallergenic-eend-met-aardappel-300-gr-per-6-stuks&ws=",
+        "maat": "6 x 300 g",
+        "prijs": 23.4
+      }
+    ],
+    "64b389b8-74c6-442b-9afd-dab2fbd3fabf": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c8ed34d2edf7e4c8fa3878394c185317&dl=product%2Fvet-life-natvoeding-voor-de-hond-renal-300-gr-per-6-stuks&ws=",
+        "maat": "6 x 300 g",
+        "prijs": 23.4
+      }
+    ],
+    "cba47d61-7875-41db-8282-3ce3d55ab1e6": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ec2b13e070d544311e1d91aa71ae2e10&dl=product%2Fvet-life-hondenvoeding-obesity-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 30.9
+      }
+    ],
+    "b5d4b203-a43a-4d37-9a62-5b76584dd9ec": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1dcb49693632edad7b41248120a770fe&dl=product%2Fvet-life-hondenvoeding-oxalate-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 30.9
+      }
+    ],
+    "c5b956d2-dd52-4387-a3ff-dc77b514eb14": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d63a309317d7f05d6835a5a5a231eaac&dl=product%2Fvet-life-puppyvoeding-gastrointestinal-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 31.9
+      }
+    ],
+    "bc9eb9fc-a893-46f2-8adc-8cce63cfac85": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=5794a4efdcd00f10de0f7bdab17691e0&dl=product%2Fvet-life-hondenvoeding-renal-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 30.9
+      }
+    ],
+    "c13130a3-129b-44df-a2bd-3ac19e61a8bb": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b8c2e5971d72efa5a1943d13ac1414be&dl=product%2Fvet-life-hondenvoeding-struvite-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 30.9
+      }
+    ],
+    "785905e9-3cf0-4a06-b0f9-78068ada21ba": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=074f810502bb5812febaab6e373b529b&dl=product%2Fvet-life-hondenvoeding-struvite-management-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 107.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e08fdaf76079d6decb2d0fe70d85f019&dl=product%2Fvet-life-hondenvoeding-struvite-management-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 30.9
+      }
+    ],
+    "ecfdf0bd-01a1-4a35-9bb8-06c1d855d5aa": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1c5ca65556a67c7846892ff51f145e87&dl=product%2Fvet-life-hondenvoeding-ultrahypo-12-kg&ws=",
+        "maat": "12 kg",
+        "prijs": 119.9
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b4322f28471b0cd97052b1c4f233f515&dl=product%2Fvet-life-hondenvoeding-ultrahypo-2-kg&ws=",
+        "maat": "2 kg",
+        "prijs": 37.9
+      }
+    ],
+    "1d8fcb9a-c39a-4abc-b4ae-6731f835eebc": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=94bf7ac2c17c075ad6c0f3b1f0555bcd&dl=product%2Fziwi-peak-air-dried-hondenvoeding-hert-1-kg&ws=",
+        "maat": "1 kg",
+        "prijs": 69.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=42c5233589063d71810857c505ab3ee7&dl=product%2Fziwi-peak-air-dried-hondenvoeding-hert-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 164.95
+      }
+    ],
+    "06c57a97-9a68-4e1a-8430-58574ec8d04c": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=5bbf326105deeebbf79cf06f2e8231f5&dl=product%2Fziwi-peak-air-dried-hondenvoeding-makreel-lam-1-kg&ws=",
+        "maat": "1 kg",
+        "prijs": 47.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4c0473a1558fa10fdb971ff3d6ac5820&dl=product%2Fziwi-peak-air-dried-hondenvoeding-makreel-lam-25-kg&ws=",
+        "maat": "2,5 kg",
+        "prijs": 109.95
+      }
+    ],
+    "0c4cb415-27b1-4f16-b032-0f536b40e2d2": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ae26afd31cd9496f58045b68e7464fe2&dl=product%2Fziwi-peak-natvoeding-voor-de-hond-hert-170-gr&ws=",
+        "maat": "170 g",
+        "prijs": 4.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=3cfbb4084599d908f078c144c9ede143&dl=product%2Fziwi-peak-natvoeding-voor-de-hond-hert-390-gr&ws=",
+        "maat": "390 g",
+        "prijs": 7.69
+      }
+    ],
+    "c66f2381-8221-48f7-9f1f-8cf8ca3ea1b9": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=95c24f12a2850333fc8894394cb10bd5&dl=product%2Fziwi-peak-natvoeding-voor-de-hond-kip-170-gr&ws=",
+        "maat": "170 g",
+        "prijs": 4.1
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9d92161ef992f1d2138d9abf881471f1&dl=product%2Fziwi-peak-natvoeding-voor-de-hond-kip-390-gr&ws=",
+        "maat": "390 g",
+        "prijs": 6.3
+      }
+    ],
+    "0af14ff8-66f3-445c-a859-b1b861812288": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4779c08634c7f2c9fa3161e50c0a581c&dl=product%2Fziwi-peak-natvoeding-voor-de-hond-makreel-lam-170-gr&ws=",
+        "maat": "170 g",
+        "prijs": 4.1
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7c0f8984f9c21a3a86da774be0bf4183&dl=product%2Fziwi-peak-natvoeding-voor-de-hond-makreel-lam-390-gr&ws=",
+        "maat": "390 g",
+        "prijs": 6.3
+      }
+    ],
+    "f14a4296-a0ad-4e2d-8b63-1bb3e3cd8f1b": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1752924c914ae1b8367585b125672aa6&dl=product%2Fziwi-peak-natvoeding-voor-de-hond-rund-170-gr&ws=",
+        "maat": "170 g",
+        "prijs": 4.1
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=78f7318af755c6cf1068b1de68e345d6&dl=product%2Fziwi-peak-natvoeding-voor-de-hond-rund-390-gr&ws=",
+        "maat": "390 g",
+        "prijs": 6.3
+      }
+    ],
+    "8fa5ff56-acfe-4cdb-a907-9a3c2f5dbf0f": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=fe9b48faaa725de0989e660e94b488ed&dl=product%2Fziwi-peak-steam-dried-hondenvoeding-kip-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 57.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=fefe52ab8e8952cbc8b2dc7b10c1e8fa&dl=product%2Fziwi-peak-steam-dried-hondenvoeding-kip-32-kg&ws=",
+        "maat": "3,2 kg",
+        "prijs": 103.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8744c54401ea48218d53cfb9032d2389&dl=product%2Fziwi-peak-steam-dried-hondenvoeding-kip-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 32.5
+      }
+    ],
+    "cb419c44-0c45-4d05-892d-47e33b1bafdb": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=96a9fcb51d74fbfef21eef2fb355f433&dl=product%2Fziwi-peak-steam-dried-hondenvoeding-lam-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 57.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c7e886d9690e1b9e9dffdcf16325911b&dl=product%2Fziwi-peak-steam-dried-hondenvoeding-lam-32-kg&ws=",
+        "maat": "3,2 kg",
+        "prijs": 103.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1cf51da08af542c2b9ac05a5bf0ac900&dl=product%2Fziwi-peak-steam-dried-hondenvoeding-lam-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 32.5
+      }
+    ],
+    "11b41129-b215-49cf-a4cd-b067ec9d972f": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2237c930cae431ab56a1af80918c6ce5&dl=product%2Fziwi-peak-steam-dried-hondenvoeding-rund-15-kg&ws=",
+        "maat": "1,5 kg",
+        "prijs": 57.95
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4a74544b1592ae7ed6df7d9377078aaf&dl=product%2Fziwi-peak-steam-dried-hondenvoeding-rund-32-kg&ws=",
+        "maat": "3,2 kg",
+        "prijs": 103.5
+      },
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f43e99d15aadca0d7114d95d592694b0&dl=product%2Fziwi-peak-steam-dried-hondenvoeding-rund-800-gr&ws=",
+        "maat": "800 g",
+        "prijs": 32.5
+      }
+    ],
+    "buddy-crunchy-lam-met-veenbessen-150-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=fdf796920be994869086064247af39a2&dl=product%2Fbuddy-crunchy-hondensnack-lam-met-veenbessen-150-gr&ws=",
+        "maat": "150 g",
+        "prijs": 5.95
+      }
+    ],
+    "buddy-crunchy-zalm-met-blauwe-bessen-150-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ab7dbef6043fd6e40794087af170c5ea&dl=product%2Fbuddy-crunchy-hondensnack-zalm-met-blauwe-bessen-150-gr&ws=",
+        "maat": "150 g",
+        "prijs": 5.95
+      }
+    ],
+    "buddy-freeze-dried-kalkoen-en-tonijn-100-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ff8ba5ad6ee4090a5b2685d97de46ce0&dl=product%2Fbuddy-freeze-dried-hondensnack-kalkoen-tonijn-100-gr&ws=",
+        "maat": "100 g",
+        "prijs": 5.48
+      }
+    ],
+    "buddy-freeze-dried-kalkoen-en-vis-100-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=83aabb5dd52b2511f20079536f6595ec&dl=product%2Fbuddy-freeze-dried-hondensnack-kalkoen-vis-100-gr&ws=",
+        "maat": "100 g",
+        "prijs": 5.48
+      }
+    ],
+    "buddy-freeze-dried-kip-100-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=3c066e204ec6ab968a9a009e4e652488&dl=product%2Fbuddy-freeze-dried-hondensnack-kip-100-gr&ws=",
+        "maat": "100 g",
+        "prijs": 5.48
+      }
+    ],
+    "buddy-freeze-dried-kip-en-fazant-100-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4cca7b9c83a0f01528fbaaf82b639d86&dl=product%2Fbuddy-freeze-dried-hondensnack-kip-fazant-100-gr&ws=",
+        "maat": "100 g",
+        "prijs": 5.48
+      }
+    ],
+    "buddy-semi-moist-eend-met-rozemarijn-200-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=695e142e3f0e42da9e5c88b442c5bc28&dl=product%2Fbuddy-semi-moist-hondensnack-eend-met-rozemarijn-200-gr&ws=",
+        "maat": "200 g",
+        "prijs": 6.95
+      }
+    ],
+    "buddy-semi-moist-struisvogel-met-bramen-200-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b79d5471c3d39b8e8120abd0365a30c1&dl=product%2Fbuddy-semi-moist-hondensnack-struisvogel-met-bramen-200-gr&ws=",
+        "maat": "200 g",
+        "prijs": 6.95
+      }
+    ],
+    "inaba-churu-bites-hond-kip-met-kaas-135-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ac85c9fc84459b527a190b302dd6eb22&dl=product%2Finaba-churu-bites-hond-kip-met-kaas&ws=",
+        "maat": "135 g",
+        "prijs": 7.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ad3a43e746b383ac53fce36473ad3fa4&dl=inaba-hondensnack-churu-rolls-kip-kaas-76-gr%3Fchannable%3D00456069640031303431333032d7&ws=",
+        "maat": "76 g",
+        "prijs": 7.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f5907d2f222a58f03fd1383a8eee0d35&dl=p%2Finaba-hondensnack-churu-rolls-kip-kaas-76-gr&ws=",
+        "maat": "76 g",
+        "prijs": 7.95
+      }
+    ],
+    "inaba-churu-bites-hond-kip-met-kippenvulling-135-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7e3a8db1138000e2b3dea194c6f7d727&dl=product%2Finaba-churu-bites-hond-kip-met-kippenvulling&ws=",
+        "maat": "135 g",
+        "prijs": 7.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=7e7dd270aba6149bf3574ec006b968e8&dl=inaba-hondensnack-churu-rolls-kip-76-gr%3Fchannable%3D004560696400313034313239351e&ws=",
+        "maat": "76 g",
+        "prijs": 7.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e109a832e5ff1872f6c0d92c0de2fc56&dl=p%2Finaba-hondensnack-churu-rolls-kip-76-gr&ws=",
+        "maat": "76 g",
+        "prijs": 7.95
+      }
+    ],
+    "inaba-churu-bites-hond-kip-met-tonijn-135-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f774113585ea7fa260333be09a4f7152&dl=product%2Finaba-churu-bites-hond-kip-met-tonijn&ws=",
+        "maat": "135 g",
+        "prijs": 7.95
+      }
+    ],
+    "inaba-churu-bites-hond-multipack-kip-16-stuks-242-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f609f349ce305bf5c89bbe05eb26c2b6&dl=product%2Finaba-churu-bites-hond-multipack-kip-16-stuks&ws=",
+        "maat": "242 g",
+        "prijs": 14.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=6e29f1c88727da01019ad0ccadb83672&dl=inaba-churu-bites-hondensnack-multipack-chicken-en-salmon-en-tuna-en-cheese-16-x-12-gr%3Fchannable%3D00456069640031313038353632d3&ws=",
+        "maat": "16 x 12 g",
+        "prijs": 16.05
+      }
+    ],
+    "inaba-churu-bites-joint-support-kip-54-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ff2080ae2b1f3329911131bee6b2633b&dl=product%2Finaba-churu-bites-joint-support-hondensnack-kip&ws=",
+        "maat": "54 g",
+        "prijs": 4.25
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=6d21ba0a27598558e9a9a9f5749e631e&dl=inaba-churu-bites-joint-support-chicken-wraps-chicken-4x12-gr%3Fchannable%3D0045606964003131323434363879&ws=",
+        "maat": "4 x 12 g",
+        "prijs": 4.25
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f52df726926a3a4515c07c7d9a6ed07b&dl=p%2Finaba-churu-bites-joint-support-chicken-wraps-chicken-4x12-gr&ws=",
+        "maat": "4 x 12 g",
+        "prijs": 4.25
+      }
+    ],
+    "inaba-churu-bites-joint-support-kip-met-kaas-54-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7213988dbff17b07bc798077e972f83e&dl=product%2Finaba-churu-bites-joint-support-hondensnack-kip-met-kaas&ws=",
+        "maat": "54 g",
+        "prijs": 4.25
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=8037e04ddc2863b3213d4ba4084802b4&dl=inaba-churu-bites-joint-support-chicken-wraps-chicken-cheese-4x12-gr%3Fchannable%3D004560696400313132343436397a&ws=",
+        "maat": "4 x 12 g",
+        "prijs": 4.25
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=cfe0303272e6f02e5836d36d329ee188&dl=p%2Finaba-churu-bites-joint-support-chicken-wraps-chicken-cheese-4x12-gr&ws=",
+        "maat": "4 x 12 g",
+        "prijs": 4.25
+      }
+    ],
+    "inaba-churu-bites-joint-support-kip-met-tonijn-54-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=4b342f9d1dda9ce5ddc5b7dedaf1bf77&dl=product%2Finaba-churu-bites-joint-support-hondensnack-kip-met-tonijn&ws=",
+        "maat": "54 g",
+        "prijs": 4.25
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=664b0837ada3cbae68a71b7aeb11603f&dl=ciao-hondensnack-churu-rolls-kip-tonijn-4x12-gr%3Fchannable%3D00456069640031313234343330ef&ws=",
+        "maat": "4 x 12 g",
+        "prijs": 4.25
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=fc6f476b93ca226b1885c68401e333f6&dl=p%2Fciao-hondensnack-churu-rolls-kip-tonijn-4x12-gr&ws=",
+        "maat": "4 x 12 g",
+        "prijs": 4.25
+      }
+    ],
+    "inaba-churu-bites-joint-support-kip-met-zalm-54-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b52b3cf120b260a1f3f37e7efa68b223&dl=product%2Finaba-churu-bites-joint-support-hondensnack-kip-met-zalm&ws=",
+        "maat": "54 g",
+        "prijs": 4.25
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=9fe5f075fe0a94360738fcaed141a676&dl=ciao-hondensnack-churu-rolls-kip-zalm-4x12-gr%3Fchannable%3D0045606964003131323434323877&ws=",
+        "maat": "4 x 12 g",
+        "prijs": 4.25
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c940c231bd28899de3b39be2255f2067&dl=p%2Fciao-hondensnack-churu-rolls-kip-zalm-4x12-gr&ws=",
+        "maat": "4 x 12 g",
+        "prijs": 4.25
+      }
+    ],
+    "inaba-churu-fun-bites-hond-kip-met-kaas-146-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c696ff830aa65a0a5a79e7893df87128&dl=product%2Finaba-churu-fun-bites-hond-kip-met-kaas&ws=",
+        "maat": "146 g",
+        "prijs": 9.45
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ef99870861b7e13ef196be230d55bc9d&dl=inaba-churu-fun-bites-wraps-hondensnack-multipack-chicken-en-cheese-8-x-12-gr%3Fchannable%3D00456069640031313038353633d4&ws=",
+        "maat": "8 x 12 g",
+        "prijs": 7.69
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b1d7dd3c764cb48732797daa5687a3cb&dl=p%2Finaba-churu-fun-bites-wraps-hondensnack-multipack-chicken-en-cheese-8-x-12-gr&ws=",
+        "maat": "8 x 12 g",
+        "prijs": 7.69
+      }
+    ],
+    "inaba-churu-fun-bites-hond-kip-met-pompoen-146-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f28e63d69420f9035b195855b30b9f4f&dl=product%2Finaba-churu-fun-bites-hond-kip-met-pompoen&ws=",
+        "maat": "146 g",
+        "prijs": 9.45
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=a9b7490f886ace90f554db044f6c543a&dl=inaba-churu-fun-bites-wraps-hondensnack-multipack-chicken-en-pumpkin-8-x-12-gr%3Fchannable%3D00456069640031313038353634d5&ws=",
+        "maat": "8 x 12 g",
+        "prijs": 7.69
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=96c7acaa7dda4ca2224f4fb5265b995f&dl=p%2Finaba-churu-fun-bites-wraps-hondensnack-multipack-chicken-en-pumpkin-8-x-12-gr&ws=",
+        "maat": "8 x 12 g",
+        "prijs": 7.69
+      }
+    ],
+    "inaba-churu-fun-bites-hond-kip-met-zoete-aardappel-146-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=74a056e793b91e441b7253d346a464f2&dl=product%2Finaba-churu-fun-bites-hond-kip-met-zoete-aardappel&ws=",
+        "maat": "146 g",
+        "prijs": 9.45
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=d19e457046a9e4f6589ba699f3e1b9ef&dl=inaba-churu-fun-bites-wraps-hondensnack-multipack-chicken-en-sweet-potato-8-x-12-gr%3Fchannable%3D00456069640031313038353635d6&ws=",
+        "maat": "8 x 12 g",
+        "prijs": 7.69
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0c78277b6a5023d6f4be3f3947c8954b&dl=p%2Finaba-churu-fun-bites-wraps-hondensnack-multipack-chicken-en-sweet-potato-8-x-12-gr&ws=",
+        "maat": "8 x 12 g",
+        "prijs": 7.69
+      }
+    ],
+    "inaba-churu-hond-multipack-kip-20-stuks-320-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2075199abd8ca64f68380d38536efaaa&dl=product%2Finaba-churu-hond-multipack-kip-20-stuks&ws=",
+        "maat": "320 g",
+        "prijs": 14.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=2998d481142b4b3a3aa3ed3b8d955b16&dl=inaba-churu-puree-hondensnack-multipack-cheese-en-cheese-20-x-14-gr%3Fchannable%3D00456069640031313038353636d7&ws=",
+        "maat": "20 x 14 g",
+        "prijs": 15.69
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e28e6327562f8821f3f65a50c41cea83&dl=p%2Finaba-churu-puree-hondensnack-multipack-cheese-en-cheese-20-x-14-gr&ws=",
+        "maat": "20 x 14 g",
+        "prijs": 15.69
+      }
+    ],
+    "inaba-churu-hond-multipack-kip-en-zeevruchten-20-stuks-320-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8b9b73f74b92ae513157936a1a29b47a&dl=product%2Finaba-churu-hond-multipack-kip-en-zeevruchten-20-stuks&ws=",
+        "maat": "320 g",
+        "prijs": 14.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=463058822a233383de1abce5584f0005&dl=inaba-churu-puree-hondensnack-multipack-seafood-20-x-14-gr%3Fchannable%3D00456069640031313038353637d8&ws=",
+        "maat": "20 x 14 g",
+        "prijs": 15.69
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0ca2da76f0e811f2c8b2d62158d9b0e3&dl=p%2Finaba-churu-puree-hondensnack-multipack-seafood-20-x-14-gr&ws=",
+        "maat": "20 x 14 g",
+        "prijs": 15.69
+      }
+    ],
+    "inaba-churu-puree-hond-kip-60-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b57af89b1afa3fab337075961bff4ba1&dl=product%2Finaba-churu-puree-hond-kip&ws=",
+        "maat": "60 g",
+        "prijs": 3.25
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=da791b32ddc0a8dc12231644b36a5252&dl=inaba-hondensnack-churu-kip-67-gr%3Fchannable%3D004560696400313034313335365e&ws=",
+        "maat": "67 g",
+        "prijs": 2.85
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e2ff32ca3df58381c1ad5d6c0428b06c&dl=p%2Finaba-hondensnack-churu-kip-67-gr&ws=",
+        "maat": "67 g",
+        "prijs": 2.85
+      }
+    ],
+    "inaba-churu-puree-hond-kip-met-kaas-60-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ebbee72e6d108fb8f4d7711710378b83&dl=product%2Finaba-churu-puree-hond-kip-met-kaas&ws=",
+        "maat": "60 g",
+        "prijs": 3.25
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=e55ba03bab0e04aa9c87f7bdd92ead39&dl=inaba-hondensnack-churu-kip-kaas-67-gr%3Fchannable%3D00456069640031303431333639e1&ws=",
+        "maat": "67 g",
+        "prijs": 3.69
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7780cab59d1ad10ad4e9da791e45390a&dl=p%2Finaba-hondensnack-churu-kip-kaas-67-gr&ws=",
+        "maat": "67 g",
+        "prijs": 3.69
+      }
+    ],
+    "inaba-churu-puree-hond-kip-met-kaas-xl-8-stuks-205-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9e7711dd2f7725fc54cf4718c87b549c&dl=product%2Finaba-churu-puree-hond-kip-met-kaas-xl-8-stuks&ws=",
+        "maat": "205 g",
+        "prijs": 5.21
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=93609397fc1d24f909fec27b64afd0cf&dl=inaba-churu-hondensnack-chicken-en-cheese-8-x-20-gr%3Fchannable%3D004560696400313039373039354f&ws=",
+        "maat": "8 x 20 g",
+        "prijs": 6.95
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=0ebadb631414ddf1c7ee077e0abfb256&dl=p%2Finaba-churu-hondensnack-chicken-en-cheese-8-x-20-gr&ws=",
+        "maat": "8 x 20 g",
+        "prijs": 6.95
+      }
+    ],
+    "inaba-churu-puree-hond-kip-met-tonijn-60-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c3c2701888793f84c19f212ae9c5ca7e&dl=product%2Finaba-churu-puree-hond-kip-met-tonijn&ws=",
+        "maat": "60 g",
+        "prijs": 2.44
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=a99f50f4983ef8882eaf4c1461f82113&dl=inaba-hondensnack-churu-kip-tonijn-67-gr%3Fchannable%3D004560696400313034313337355e&ws=",
+        "maat": "67 g",
+        "prijs": 2.85
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=ff44eab8ee4bb8e0a50e81662ef0ea6e&dl=p%2Finaba-hondensnack-churu-kip-tonijn-67-gr&ws=",
+        "maat": "67 g",
+        "prijs": 2.85
+      }
+    ],
+    "inaba-churu-puree-hond-kip-met-tonijn-xl-8-stuks-205-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=63509fff79aa095bc02233cca2675b88&dl=product%2Finaba-churu-puree-hond-kip-met-tonijn-xl-8-stuks&ws=",
+        "maat": "205 g",
+        "prijs": 6.95
+      }
+    ],
+    "inaba-churu-puree-hond-kip-met-zalm-60-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b21949097a7553d07ee6b306b2e58f5f&dl=product%2Finaba-churu-puree-hond-kip-met-zalm&ws=",
+        "maat": "60 g",
+        "prijs": 3.25
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=ea2cbd2d811521a410e4d76e7c15065f&dl=inaba-hondensnack-churu-kip-zalm-67-gr%3Fchannable%3D004560696400313034313337315a&ws=",
+        "maat": "67 g",
+        "prijs": 3.25
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=a8e158eb2d2b0256eaec11ebb5d0da4d&dl=p%2Finaba-hondensnack-churu-kip-zalm-67-gr&ws=",
+        "maat": "67 g",
+        "prijs": 3.25
+      }
+    ],
+    "inaba-churu-puree-hond-kip-met-zalm-xl-8-stuks-205-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=37cab2b45c600d3c8a270a32e1cb6222&dl=product%2Finaba-churu-puree-hond-kip-met-zalm-xl-8-stuks&ws=",
+        "maat": "205 g",
+        "prijs": 6.95
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=1164dc99bca3cfcb1215c19d42b8ecbf&dl=inaba-churu-hondensnack-chicken-en-salmon-8-x-20-gr%3Fchannable%3D004560696400313039373039344e&ws=",
+        "maat": "8 x 20 g",
+        "prijs": 5.99
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=e429f94cd81457b714e7791f74a4e1a9&dl=p%2Finaba-churu-hondensnack-chicken-en-salmon-8-x-20-gr&ws=",
+        "maat": "8 x 20 g",
+        "prijs": 5.99
+      }
+    ],
+    "inaba-churu-puree-hond-kip-xl-8-stuks-205-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=0bffc0b37b75c9db57b61a3ea9036c84&dl=product%2Finaba-churu-puree-hond-kip-xl-8-stuks&ws=",
+        "maat": "205 g",
+        "prijs": 6.95
+      }
+    ],
+    "inaba-churu-puree-hond-tonijn-80-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=bc818266c5139c5474c8943b5d500cbb&dl=product%2Finaba-churu-puree-hond-tonijn&ws=",
+        "maat": "80 g",
+        "prijs": 3.25
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=040d5915954e3ca18518882bada63430&dl=12x-hondensnack-churu-puree-dog-fish-tuna-4-x-14-gr%3Fchannable%3D004560696400313131343836396b&ws=",
+        "maat": "4 x 14 g",
+        "prijs": 33.45
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=2de1641e1cd399c3705a87628ade96e0&dl=p%2F12x-hondensnack-churu-puree-dog-fish-tuna-4-x-14-gr&ws=",
+        "maat": "4 x 14 g",
+        "prijs": 33.45
+      }
+    ],
+    "inaba-churu-puree-hond-zalm-80-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=39deaf40ca1f09aa677f062700f070b6&dl=product%2Finaba-churu-puree-hond-zalm&ws=",
+        "maat": "80 g",
+        "prijs": 3.25
+      }
+    ],
+    "inaba-churu-puree-hond-zalm-met-garnalen-80-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ea054f4d91f34165dbdc4d044f15ceb1&dl=product%2Finaba-churu-puree-hond-zalm-met-garnalen&ws=",
+        "maat": "80 g",
+        "prijs": 3.25
+      }
+    ],
+    "inaba-churu-rolls-hond-kip-150-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2f0bb18795d16c4405e93a468e18e8b7&dl=product%2Finaba-churu-rolls-hond-kip&ws=",
+        "maat": "150 g",
+        "prijs": 7.35
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=48128c03d444110cf9475c2e27b1d4da&dl=inaba-churu-hondensnacks-rolls-chicken-wraps-8-x-20-gr%3Fchannable%3D0045606964003130393730393751&ws=",
+        "maat": "8 x 20 g",
+        "prijs": 8.05
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=bfe24569bb367ce14d454360726da5a3&dl=p%2Finaba-churu-hondensnacks-rolls-chicken-wraps-8-x-20-gr&ws=",
+        "maat": "8 x 20 g",
+        "prijs": 8.05
+      }
+    ],
+    "inaba-churu-rolls-hond-kip-met-kaas-150-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=93d2e6ed9825d71d695212e46c13d2e2&dl=product%2Finaba-churu-rolls-hond-kip-met-kaas&ws=",
+        "maat": "150 g",
+        "prijs": 7.35
+      },
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=1f57fc7d924570613edb013afc21037a&dl=inaba-churu-hondensnacks-rolls-chicken-en-cheese-wraps-8-x-20-gr%3Fchannable%3D0045606964003130393730393953&ws=",
+        "maat": "8 x 20 g",
+        "prijs": 7.35
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=dc48d992cf4acda0526b211d4b7f740f&dl=p%2Finaba-churu-hondensnacks-rolls-chicken-en-cheese-wraps-8-x-20-gr&ws=",
+        "maat": "8 x 20 g",
+        "prijs": 7.35
+      }
+    ],
+    "n-en-d-dental-treats-pumpkin-kip-medium-maxi-140-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=780fec5247ac5a31af8a98643472996a&dl=product%2Fnd-dental-treats-pumpkin-kip-mediummaxi&ws=",
+        "maat": "140 g",
+        "prijs": 3.25
+      }
+    ],
+    "n-en-d-dental-treats-pumpkin-lam-medium-maxi-140-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=45b44954b038d6c0bbcf724964fcf65e&dl=product%2Fnd-dental-treats-pumpkin-lam-mediummaxi&ws=",
+        "maat": "140 g",
+        "prijs": 3.25
+      }
+    ],
+    "n-en-d-dental-treats-quinoa-fresh-breath-medium-maxi-140-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=5dd5ac6499441535435c326878d4970c&dl=product%2Fnd-dental-treats-quinoa-fresh-breath-mediummaxi&ws=",
+        "maat": "140 g",
+        "prijs": 3.95
+      }
+    ],
+    "n-en-d-dental-treats-quinoa-skin-en-coat-eend-medium-maxi-140-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e3c32f3d77b56168edd5068ab53f49ef&dl=product%2Fnd-dental-treats-quinoa-skin-coat-eend-mediummaxi&ws=",
+        "maat": "140 g",
+        "prijs": 3.95
+      }
+    ],
+    "n-en-d-dental-treats-quinoa-skin-en-coat-haring-medium-maxi-140-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=652a07041e05410e2bb0a20197993346&dl=product%2Fnd-dental-treats-quinoa-skin-coat-haring-mediummaxi&ws=",
+        "maat": "140 g",
+        "prijs": 3.95
+      }
+    ],
+    "n-en-d-dental-treats-quinoa-skin-en-coat-hert-medium-maxi-140-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a10d57a8a6aa9473b886bfce7af2543c&dl=product%2Fnd-dental-treats-quinoa-skin-coat-hert-mediummaxi&ws=",
+        "maat": "140 g",
+        "prijs": 3.95
+      }
+    ],
+    "n-en-d-dental-treats-quinoa-skin-en-coat-kwartel-medium-maxi-140-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b1c07f7c76b87ffd8ca74204642841f4&dl=product%2Fnd-dental-treats-quinoa-skin-coat-kwartel-mediummaxi&ws=",
+        "maat": "140 g",
+        "prijs": 3.95
+      }
+    ],
+    "n-en-d-dental-treats-quinoa-weight-management-medium-maxi-140-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=abd7f52e7a31e685309108530ecd9333&dl=product%2Fnd-dental-treats-quinoa-weight-management-mediummaxi&ws=",
+        "maat": "140 g",
+        "prijs": 3.95
+      }
+    ],
+    "n-en-d-dental-treats-quinoa-weight-management-small-breed-90-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f68a0bf60a5be1050ed5cf7865b8199d&dl=product%2Fnd-dental-treats-quinoa-weight-management-small-breed&ws=",
+        "maat": "90 g",
+        "prijs": 3.1
+      }
+    ],
+    "n-en-d-dental-treats-voor-de-bruine-hond-small-breed-90-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=0fffbf7f584e57a2c306f393b977a7d9&dl=product%2Fnd-dental-treats-voor-de-bruine-hond-small-breed&ws=",
+        "maat": "90 g",
+        "prijs": 3.1
+      }
+    ],
+    "n-en-d-dental-treats-voor-de-witte-hond-small-breed-90-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=444956be7750b46d2648f1277d09e665&dl=product%2Fnd-dental-treats-voor-de-witte-hond-small-breed&ws=",
+        "maat": "90 g",
+        "prijs": 3.1
+      }
+    ],
+    "pawfect-ananas-40-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9198d9907ca2b3e06d673e6f7c56be44&dl=product%2Fpawfect-hondensnacks-ananas-40-gr&ws=",
+        "maat": "40 g",
+        "prijs": 4.95
+      }
+    ],
+    "pawfect-appel-35-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=75d12762017a3c22a946d6950616c4b8&dl=product%2Fpawfect-hondensnacks-appel-35-gr&ws=",
+        "maat": "35 g",
+        "prijs": 5.5
+      }
+    ],
+    "pawfect-banaan-60-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=49c1572bf244fb4325c9e0e101442dda&dl=product%2Fpawfect-hondensnacks-banaan-60-gr&ws=",
+        "maat": "60 g",
+        "prijs": 4.5
+      }
+    ],
+    "pawfect-chew-aardbei-medium-3-x-65-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d483ca47be6487226ff76c130a8d73bb&dl=product%2Fpawfect-chew-aardbei-medium-3-x-65-gr&ws=",
+        "maat": "3 x 65 g",
+        "prijs": 13.95
+      }
+    ],
+    "pawfect-chew-fruit-medium-3-x-65-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=10b5de6799df54bb76372544a29aa847&dl=product%2Fpawfect-chew-fruit-medium-3-x-65-gr&ws=",
+        "maat": "3 x 65 g",
+        "prijs": 13.95
+      }
+    ],
+    "pawfect-chew-kurkuma-en-ashwagandha-medium-3-x-65-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=5d6fb5d89a20dc245cc69fe77c2a15cf&dl=product%2Fpawfect-chew-kurkuma-en-ashwagandha-medium-3-x-65-gr&ws=",
+        "maat": "3 x 65 g",
+        "prijs": 13.95
+      }
+    ],
+    "pawfect-chew-large-bars-140-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7c69628d5f4d330c58b1d076e9bfe7a8&dl=product%2Fpawfect-chew-large-bars-140-gr&ws=",
+        "maat": "140 g",
+        "prijs": 8.95
+      }
+    ],
+    "pawfect-chew-medium-bars-130-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=3b8360ffd382b45bd175e16da533a788&dl=product%2Fpawfect-chew-medium-bars-130-gr&ws=",
+        "maat": "130 g",
+        "prijs": 8.95
+      }
+    ],
+    "pawfect-chew-medium-bars-single-65-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b4aad34558a938b2d3555870cb24cd42&dl=product%2Fpawfect-chew-medium-bars-single-65-gr&ws=",
+        "maat": "65 g",
+        "prijs": 4.95
+      }
+    ],
+    "pawfect-chew-munt-medium-3-x-65-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c304ea282b4747076d444ecc1ca5499a&dl=product%2Fpawfect-chew-munt-medium-3-x-65-gr&ws=",
+        "maat": "3 x 65 g",
+        "prijs": 13.95
+      }
+    ],
+    "pawfect-chew-puff-bars-70-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=600081264834e44fe8f4a17cdc3941ad&dl=product%2Fpawfect-chew-puff-bars-70-gr&ws=",
+        "maat": "70 g",
+        "prijs": 4.95
+      }
+    ],
+    "pawfect-chew-puff-bites-70-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=94a8266caf4bf49e71d8f2b69a33dd7b&dl=product%2Fpawfect-chew-puff-bites-70-gr&ws=",
+        "maat": "70 g",
+        "prijs": 4.95
+      }
+    ],
+    "pawfect-chew-puff-strips-70-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=533cff0dd02415509469c6b0e64b7def&dl=product%2Fpawfect-chew-puff-strips-70-gr&ws=",
+        "maat": "70 g",
+        "prijs": 4.95
+      }
+    ],
+    "pawfect-chew-small-bars-100-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=a8d8b21376bf11a910c41887ee3e7256&dl=product%2Fpawfect-chew-small-bars-100-gr&ws=",
+        "maat": "100 g",
+        "prijs": 6.5
+      }
+    ],
+    "pawfect-chew-small-bars-single-33-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=506b9538b12aed57ee8a52a751cbdc36&dl=product%2Fpawfect-chew-small-bars-single-33-gr&ws=",
+        "maat": "33 g",
+        "prijs": 1.88
+      }
+    ],
+    "pawfect-chew-xl-bars-180-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=15d00b5081750c9ac6e47364c6ddab99&dl=product%2Fpawfect-chew-xl-bars-180-gr&ws=",
+        "maat": "180 g",
+        "prijs": 11.5
+      }
+    ],
+    "pawfect-dentamust-bars-aloe-vera-large-420-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=3584f2dd264f311a2069558edab38520&dl=product%2Fpawfect-dentamust-bars-aloe-vera-large-420-gr&ws=",
+        "maat": "420 g",
+        "prijs": 14.98
+      }
+    ],
+    "pawfect-dentamust-bars-aloe-vera-medium-195-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=dec58fbe85e7c6889e06778d5daf721f&dl=product%2Fpawfect-dentamust-bars-aloe-vera-medium-195-gr&ws=",
+        "maat": "195 g",
+        "prijs": 7.48
+      }
+    ],
+    "pawfect-dentamust-bars-blauwe-bessen-large-420-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f8cf7720912dfb040f4beb2f3c930824&dl=product%2Fpawfect-dentamust-bars-blauwe-bessen-large-420-gr&ws=",
+        "maat": "420 g",
+        "prijs": 14.98
+      }
+    ],
+    "pawfect-dentamust-bars-blauwe-bessen-medium-195-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b180ce648ecf6711a93eb5c7a4642869&dl=product%2Fpawfect-dentamust-bars-blauwe-bessen-medium-195-gr&ws=",
+        "maat": "195 g",
+        "prijs": 7.48
+      }
+    ],
+    "pawfect-dentamust-bars-veenbessen-large-420-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f7d98beb9df8633f6a4d0a3d16a0b6e3&dl=product%2Fpawfect-dentamust-bars-veenbessen-large-420-gr&ws=",
+        "maat": "420 g",
+        "prijs": 14.98
+      }
+    ],
+    "pawfect-dentamust-bars-veenbessen-medium-195-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b5e908d45dce0d1736aaeaf5dc87a45c&dl=product%2Fpawfect-dentamust-bars-veenbessen-medium-195-gr&ws=",
+        "maat": "195 g",
+        "prijs": 7.48
+      }
+    ],
+    "pawfect-freeze-dried-geit-50-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=558df6e8310b45a779a6878b22155bc7&dl=product%2Fpawfect-freeze-dried-hondensnack-geit-50-gr&ws=",
+        "maat": "50 g",
+        "prijs": 6.95
+      }
+    ],
+    "pawfect-freeze-dried-geitenlever-50-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7e993140556aa1909c94a72501d56180&dl=product%2Fpawfect-freeze-dried-hondensnack-geitenlever-50-gr&ws=",
+        "maat": "50 g",
+        "prijs": 5.95
+      }
+    ],
+    "pawfect-freeze-dried-kip-en-asian-green-50-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=40eec2824453133d33821f69b63b2c12&dl=product%2Fpawfect-freeze-dried-hondensnack-kip-en-asian-green-50-gr&ws=",
+        "maat": "50 g",
+        "prijs": 2.48
+      }
+    ],
+    "pawfect-freeze-dried-kip-en-pompoen-magic-50-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=fc3ef0c0ac15522d9b754f939a2f050f&dl=product%2Fpawfect-freeze-dried-hondensnack-kip-en-pompoen-magic-50-gr&ws=",
+        "maat": "50 g",
+        "prijs": 2.48
+      }
+    ],
+    "pawfect-freeze-dried-kip-en-tropical-twist-50-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8f038e921f22c87e3ceef39d62621463&dl=product%2Fpawfect-freeze-dried-hondensnack-kip-en-tropical-twist-50-gr&ws=",
+        "maat": "50 g",
+        "prijs": 2.48
+      }
+    ],
+    "pawfect-freeze-dried-yoghurt-met-aardbei-38-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=0912d3013acae45467b9b07c0843a42d&dl=product%2Fpawfect-freeze-dried-yoghurt-hondensnack-met-aardbei-38-gr&ws=",
+        "maat": "38 g",
+        "prijs": 6.95
+      }
+    ],
+    "pawfect-freeze-dried-yoghurt-met-ananas-38-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=32bd1fbf201d73469f04af3d1105beda&dl=product%2Fpawfect-freeze-dried-yoghurt-hondensnack-met-ananas-38-gr&ws=",
+        "maat": "38 g",
+        "prijs": 6.95
+      }
+    ],
+    "pawfect-freeze-dried-yoghurt-met-blauwe-bessen-38-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e5e28108610fed041a7679c7569b55c5&dl=product%2Fpawfect-freeze-dried-yoghurt-hondensnack-met-blauwe-bessen-38-gr&ws=",
+        "maat": "38 g",
+        "prijs": 6.95
+      }
+    ],
+    "pawfect-freeze-dried-yoghurt-met-pompoen-38-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=de600a2c2bc9875345fb6522811a49af&dl=product%2Fpawfect-freeze-dried-yoghurt-hondensnack-met-pompoen-38-gr&ws=",
+        "maat": "38 g",
+        "prijs": 6.95
+      }
+    ],
+    "pawfect-freeze-dried-yoghurt-met-wortel-38-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=0abf7b81e07e93a8301e015e8f8fe9ef&dl=product%2Fpawfect-freeze-dried-yoghurt-hondensnack-met-wortel-38-gr&ws=",
+        "maat": "38 g",
+        "prijs": 6.95
+      }
+    ],
+    "pawfect-functionele-freeze-dried-dagelijkse-snack-75-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=45590cbc843a24ea2320075677f9ba67&dl=product%2Fpawfect-functionele-freeze-dried-hondensnack-dagelijkse-snack-75-gr&ws=",
+        "maat": "75 g",
+        "prijs": 3.75
+      }
+    ],
+    "pawfect-functionele-freeze-dried-gewricht-verzorging-75-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7e6a34fdbf7d5ebe98c90490c96fb2e2&dl=product%2Fpawfect-functionele-freeze-dried-hondensnack-gewricht-verzorging-75-gr&ws=",
+        "maat": "75 g",
+        "prijs": 3.75
+      }
+    ],
+    "pawfect-functionele-freeze-dried-gezondheid-en-spijsvertering-75-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=074db26c65ef378e48c937a38dd71f77&dl=product%2Fpawfect-functionele-freeze-dried-hondensnack-gezondheid-en-spijsvertering-75-gr&ws=",
+        "maat": "75 g",
+        "prijs": 3.75
+      }
+    ],
+    "pawfect-functionele-freeze-dried-huid-en-vacht-75-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e1592fd5add23917798345fc603e4a96&dl=product%2Fpawfect-functionele-freeze-dried-hondensnack-huid-en-vacht-75-gr&ws=",
+        "maat": "75 g",
+        "prijs": 3.75
+      }
+    ],
+    "pawfect-functionele-freeze-dried-kalm-en-relax-75-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2c0f9c63eee8ba650eb6d05f65e070e7&dl=product%2Fpawfect-functionele-freeze-dried-hondensnack-kalm-en-relax-75-gr&ws=",
+        "maat": "75 g",
+        "prijs": 3.75
+      }
+    ],
+    "pawfect-geitenmelk-granaatappel-en-cranberry-120-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=27fd9aaf1a8df144a9cf3baa171922a7&dl=product%2Fpawfect-geitenmelk-granaatappel-cranberry-120-gr&ws=",
+        "maat": "120 g",
+        "prijs": 7.48
+      }
+    ],
+    "pawfect-geitenmelk-naturel-120-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7faca81ca960a8f831e6ba870df7a921&dl=product%2Fpawfect-geitenmelk-naturel-120-gr&ws=",
+        "maat": "120 g",
+        "prijs": 8.48
+      }
+    ],
+    "pawfect-geitenmelk-pompoen-en-appel-120-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=078b9375c42e8a7949dfdaf6dca3e830&dl=product%2Fpawfect-geitenmelk-pompoen-appel-120-gr&ws=",
+        "maat": "120 g",
+        "prijs": 7.48
+      }
+    ],
+    "pawfect-gevriesdroogde-garnalen-60-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6befd4cd8e7785965cb50b6bb85b6399&dl=product%2Fpawfect-gevriesdroogde-garnalen-voor-de-hond-60-gr&ws=",
+        "maat": "60 g",
+        "prijs": 8.48
+      }
+    ],
+    "pawfect-kaas-biscuits-met-ananas-en-kokosnoot-100-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=15ae0437a72f08eaf0ed3500513cc3fa&dl=product%2Fpawfect-kaas-biscuits-met-ananas-en-kokosnoot-100-gr&ws=",
+        "maat": "100 g",
+        "prijs": 6.95
+      }
+    ],
+    "pawfect-kaas-biscuits-met-appel-en-kaneel-100-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e1aca99ff31c2c78f75629371dd7656b&dl=product%2Fpawfect-kaas-biscuits-met-appel-en-kaneel-100-gr&ws=",
+        "maat": "100 g",
+        "prijs": 6.95
+      }
+    ],
+    "pawfect-kaas-biscuits-met-banaan-en-pindakaas-100-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c8ef2da2ebf4ed51810c9e6c93f97ff2&dl=product%2Fpawfect-kaas-biscuits-met-banaan-en-pindakaas-100-gr&ws=",
+        "maat": "100 g",
+        "prijs": 6.95
+      }
+    ],
+    "pawfect-kaas-biscuits-met-pompoen-en-lijnzaad-100-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=538a077f9748c54b1a6d2d83b608ea48&dl=product%2Fpawfect-kaas-biscuits-met-pompoen-en-lijnzaad-100-gr&ws=",
+        "maat": "100 g",
+        "prijs": 6.95
+      }
+    ],
+    "pawfect-kaas-biscuits-met-spinazie-en-wortel-100-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=29329668759bd428fefc55252f4a5c62&dl=product%2Fpawfect-kaas-biscuits-met-spinazie-en-wortel-100-gr&ws=",
+        "maat": "100 g",
+        "prijs": 6.95
+      }
+    ],
+    "pawfect-kamelenmelk-appel-en-kokosnoot-150-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=31130c9f53d3cda0b7b71eb3275cff41&dl=product%2Fpawfect-kamelenmelk-appel-kokosnoot-150-gr&ws=",
+        "maat": "150 g",
+        "prijs": 9.98
+      }
+    ],
+    "pawfect-kamelenmelk-naturel-150-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=1b57d67c0b1b4f2eea3cfab5ad369951&dl=product%2Fpawfect-kamelenmelk-naturel-150-gr&ws=",
+        "maat": "150 g",
+        "prijs": 9.98
+      }
+    ],
+    "pawfect-kamelenmelk-papaja-en-banaan-150-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f5718325a412dd134e317724fd2039f9&dl=product%2Fpawfect-kamelenmelk-papaja-banaan-150-gr&ws=",
+        "maat": "150 g",
+        "prijs": 9.98
+      }
+    ],
+    "pawfect-kokosnoot-110-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=07fe2b5a5ae3e6c54a3f1cb01391a189&dl=product%2Fpawfect-hondensnacks-kokosnoot-110-gr&ws=",
+        "maat": "110 g",
+        "prijs": 8.95
+      }
+    ],
+    "pawfect-mango-50-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=658021a4c9e5c4a9e65de635dae4aff8&dl=product%2Fpawfect-hondensnacks-mango-50-gr&ws=",
+        "maat": "50 g",
+        "prijs": 6.5
+      }
+    ],
+    "pawfect-papaja-25-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=e50749f543e835fd74db49f52eac45e0&dl=product%2Fpawfect-hondensnacks-papaja-25-gr&ws=",
+        "maat": "25 g",
+        "prijs": 3.95
+      }
+    ],
+    "pawfect-pindakaas-aardbei-en-pompoenpitten-275-450-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=de99892c9207504ee26fcf52d7bb9a71&dl=product%2Fpawfect-pindakaas-voor-de-hond-aardbei-pompoenpitten-450-gr&ws=",
+        "maat": "450 g",
+        "prijs": 8.5
+      }
+    ],
+    "pawfect-pindakaas-banaan-en-lijnzaad-275-450-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=09a8ec5550a1e0d5447288aca6b334a9&dl=product%2Fpawfect-pindakaas-voor-de-hond-banaan-lijnzaad-450-gr&ws=",
+        "maat": "450 g",
+        "prijs": 8.5
+      }
+    ],
+    "pawfect-pindakaas-blauwe-bessen-en-hennepzaden-275-450-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=bbcd175511b5527b5bd7841ae2fc042b&dl=product%2Fpawfect-pindakaas-voor-de-hond-blauwe-bessen-hennepzaden-450-gr&ws=",
+        "maat": "450 g",
+        "prijs": 8.5
+      }
+    ],
+    "pawfect-pindakaas-naturel-275-450-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=9d9db41cd3e1b065891a1e0637830ffd&dl=product%2Fpawfect-pindakaas-voor-de-hond-naturel-450-gr&ws=",
+        "maat": "450 g",
+        "prijs": 8.5
+      }
+    ],
+    "pawfect-pindakaas-veenbessen-en-kaneel-275-450-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8a54198266dcdeea60536e0daef5fb81&dl=product%2Fpawfect-pindakaas-voor-de-hond-veenbessen-kaneel-450-gr&ws=",
+        "maat": "450 g",
+        "prijs": 8.5
+      }
+    ],
+    "pawfect-pompoen-20-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c49a34078a425e8aa84c1e8738402ea6&dl=product%2Fpawfect-hondensnacks-pompoen-20-gr&ws=",
+        "maat": "20 g",
+        "prijs": 4.5
+      }
+    ],
+    "thrive-kind-en-gentle-kippenborst-25-170-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=cdf2f27c7f9d2a938bd69aedeb4ea433&dl=product%2Fthrive-kind-gentle-hondensnack-kippenborst-170-gr&ws=",
+        "maat": "170 g",
+        "prijs": 30.99
+      }
+    ],
+    "thrive-kind-en-gentle-kippenlever-25-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8fc3502f409144ee7b345683f934e110&dl=product%2Fthrive-kind-gentle-hondensnack-kippenlever-25-gr&ws=",
+        "maat": "25 g",
+        "prijs": 3.59
+      }
+    ],
+    "thrive-kind-en-gentle-witvis-15-110-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=bd6917cc7c9949fdcebfcd44fc7ea623&dl=product%2Fthrive-kind-gentle-hondensnack-witvis-110-gr&ws=",
+        "maat": "110 g",
+        "prijs": 26.99
+      }
+    ],
+    "thrive-proreward-eendenborst-60-500-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7f904c828d71283ea28a9fe6e3f39e71&dl=product%2Fthrive-proreward-hondensnack-eendenborst-500-gr&ws=",
+        "maat": "500 g",
+        "prijs": 36.99
+      }
+    ],
+    "thrive-proreward-eendennekken-135-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8a4f896cc527afb6023a30fb6fecc8f8&dl=product%2Fthrive-proreward-hondensnack-eendennekken-135-gr&ws=",
+        "maat": "135 g",
+        "prijs": 17.39
+      }
+    ],
+    "thrive-proreward-kippenborst-60-500-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=7cfd11911f93dd90c6a63083ee882981&dl=product%2Fthrive-proreward-hondensnack-kippenborst-500-gr&ws=",
+        "maat": "500 g",
+        "prijs": 36.99
+      }
+    ],
+    "thrive-proreward-kippenhartjes-30-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=5e4bd353f18e8e30ea8e514468433bd5&dl=product%2Fthrive-proreward-hondensnack-kippenhartjes-30-gr&ws=",
+        "maat": "30 g",
+        "prijs": 4.19
+      }
+    ],
+    "thrive-proreward-runderlever-60-500-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=52c28d1fbead31d040d87ae3736703bc&dl=product%2Fthrive-proreward-hondensnack-runderlever-500-gr&ws=",
+        "maat": "500 g",
+        "prijs": 36.99
+      }
+    ],
+    "vet-life-dental-treats-hypoallergenic-vis-en-aardappel-medium-maxi-140-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f791a73055524715a4a0839df4c8b26d&dl=product%2Fvet-life-dental-treats-hypoallergenic-vis-en-aardappel-mediummaxi&ws=",
+        "maat": "140 g",
+        "prijs": 4.35
+      }
+    ],
+    "vitbit-collageen-chips-met-aardbeien-70-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ddb5f751b8825350ffea7327ae07256c&dl=product%2Fvitbit-hondensnack-collageen-chips-met-aardbeien-70-gr&ws=",
+        "maat": "70 g",
+        "prijs": 4.48
+      }
+    ],
+    "vitbit-collageen-chips-met-blauwe-bessen-70-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ae55068d75af8937895a34aa07c2b061&dl=product%2Fvitbit-hondensnack-collageen-chips-met-blauwe-bessen-70-gr&ws=",
+        "maat": "70 g",
+        "prijs": 4.48
+      }
+    ],
+    "vitbit-donuts-kabeljauwhuid-112-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6df2644bdac3dddeab7bc21921cbb26a&dl=product%2Fvitbit-hondensnack-donuts-kabeljauwhuid&ws=",
+        "maat": "112 g",
+        "prijs": 11.95
+      }
+    ],
+    "vitbit-kabeljauw-sticks-met-wortel-100-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c9f3e79649dcf3fd8ad9b3030fba3cb3&dl=product%2Fvitbit-hondensnack-kabeljauw-sticks-met-wortel-100-gr&ws=",
+        "maat": "100 g",
+        "prijs": 4.48
+      }
+    ],
+    "vitbit-snackmix-300-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=8f1abe34c9157f377f3985aaab4ca640&dl=product%2Fvitbit-hondensnack-snackmix-300-gr&ws=",
+        "maat": "300 g",
+        "prijs": 14.98
+      }
+    ],
+    "vitbit-tornadogs-kabeljauwhuid-sticks-large-100-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c4da51ce471d204bce280d2ab81ff250&dl=product%2Fvitbit-hondensnack-tornadogs-kabeljauwhuid-sticks-large-100-gr&ws=",
+        "maat": "100 g",
+        "prijs": 5.98
+      }
+    ],
+    "vitbit-tornadogs-kabeljauwhuid-sticks-mini-70-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=801d41e4596718bdc6ad835e5ba8208f&dl=product%2Fvitbit-hondensnack-tornadogs-kabeljauwhuid-sticks-mini-70-gr&ws=",
+        "maat": "70 g",
+        "prijs": 5.48
+      }
+    ],
+    "vitbit-tornadogs-wraps-met-kabeljauw-100-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=72c65a8029785f2101bc0e382b113383&dl=product%2Fvitbit-hondensnack-tornadogs-wraps-met-kabeljauw-100-gr&ws=",
+        "maat": "100 g",
+        "prijs": 5.48
+      }
+    ],
+    "vitbit-vissnack-300-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=b8225604d4bdf7215197ec5c037cbf3b&dl=product%2Fvitbit-hondensnack-vissnack-300-gr&ws=",
+        "maat": "300 g",
+        "prijs": 6.98
+      }
+    ],
+    "ziwi-peak-hertenlong-en-hertennier-60-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=bd3d885acbe8d0426f0f34d8313fc8f4&dl=product%2Fziwi-peak-hondensnack-hertenlong-hertennier-60-gr&ws=",
+        "maat": "60 g",
+        "prijs": 9.67
+      }
+    ],
+    "ziwi-peak-lamsoren-60-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f0ccb86b9b5de3db4316161155ab777b&dl=product%2Fziwi-peak-hondensnack-lamsoren-60-gr&ws=",
+        "maat": "60 g",
+        "prijs": 12.29
+      }
+    ],
+    "ziwi-peak-lamspens-80-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=458d7e0eba33668efa0968739110f9e0&dl=product%2Fziwi-peak-hondensnack-lamspens-80-gr&ws=",
+        "maat": "80 g",
+        "prijs": 7.49
+      }
+    ],
+    "ziwi-peak-runderslokdarm-72-g": [
+      {
+        "winkel": "Best Petfoods",
+        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=897f312f1a57bd6c3d905668dc21b977&dl=product%2Fziwi-peak-hondensnack-runderslokdarm-72-gr&ws=",
+        "maat": "72 g",
+        "prijs": 11.79
       }
     ],
     "a848796e-d950-471f-be63-77210905104c": [
@@ -10252,6 +13666,20 @@
         "prijs": 11.55
       }
     ],
+    "bf9d9de2-cb1a-43b5-b6e9-da471df60a79": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=b6f3a70c52457ab85815caadbfffb8e3&dl=orijen-dog-large-breed-adult-hondenvoer-11-4kg%3Fchannable%3D0045606964003131303930393375&ws=",
+        "maat": "11,4 kg",
+        "prijs": 98.49
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7f3cf40730d9575cecb2b79318c76111&dl=p%2Forijen-dog-large-breed-adult-hondenvoer-11-4kg&ws=",
+        "maat": "11,4 kg",
+        "prijs": 98.49
+      }
+    ],
     "11c68480-85d6-4ddb-8a75-b27a0c873083": [
       {
         "winkel": "Plein.nl",
@@ -10822,6 +14250,48 @@
         "prijs": 6.09
       }
     ],
+    "pedigree-jumbone-maxi-rund-gevogelte": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=f7c9ba3e3b022d69d005c513eb99cc35&dl=pedigree-jumbone-rund-en-gevogelte-maxi-180-gr%3Fchannable%3D004560696400313030363832337b&ws=",
+        "maat": "180 g",
+        "prijs": 3.45
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c5d342122df2075d4feb77364ae1bfbf&dl=p%2Fpedigree-jumbone-rund-en-gevogelte-maxi-180-gr&ws=",
+        "maat": "180 g",
+        "prijs": 3.45
+      }
+    ],
+    "pedigree-jumbone-medium-kip-lam": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=fee9505509c69090bbd9f5ba150bf671&dl=pedigree-jumbone-kip-lam-medium-180-gr%3Fchannable%3D004560696400313030363832327a&ws=",
+        "maat": "180 g (2 stuks)",
+        "prijs": 3.85
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7d1253caef3de34cbff302945a6b9a78&dl=p%2Fpedigree-jumbone-kip-lam-medium-180-gr&ws=",
+        "maat": "180 g (2 stuks)",
+        "prijs": 3.85
+      }
+    ],
+    "smartbones-peanut-butter-sticks": [
+      {
+        "winkel": "Plein.nl",
+        "url": "https://fr135.net/c/?si=3366&li=1483612&wi=446454&pid=eecb0245865a3bc3b77d7c02fc43c154&dl=smartbones-peanut-butter-sticks-5-stuks%3Fchannable%3D00456069640031303038303133b8&ws=",
+        "maat": "100 g (5 stuks)",
+        "prijs": 6.09
+      },
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=f98829360c1aeb9d54eee4584cbdcf11&dl=p%2Fsmartbones-peanut-butter-sticks-5-stuks&ws=",
+        "maat": "100 g (5 stuks)",
+        "prijs": 6.09
+      }
+    ],
     "vitakraft-meat-me-rund": [
       {
         "winkel": "Plein.nl",
@@ -10848,14 +14318,6 @@
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=8629a4fb8b2d8f234ac53e16065ef49b&dl=p%2Fvitakraft-treaties-bits-leverworst-120-gram&ws=",
         "maat": "120 g",
         "prijs": 5.05
-      }
-    ],
-    "bf9d9de2-cb1a-43b5-b6e9-da471df60a79": [
-      {
-        "winkel": "Petgamma.com",
-        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=7f3cf40730d9575cecb2b79318c76111&dl=p%2Forijen-dog-large-breed-adult-hondenvoer-11-4kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 98.49
       }
     ],
     "c1e4bfee-e856-47c1-b73a-4905bbc911e8": [
@@ -12168,6 +15630,38 @@
         "prijs": 53.99
       }
     ],
+    "8in1-triple-flavour-ribs": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=878fd2cb6bd3200200f3f3142a56ddda&dl=p%2F8in1-triple-flavour-ribs-6-stuks&ws=",
+        "maat": "113 g (6 stuks)",
+        "prijs": 5.05
+      }
+    ],
+    "8in1-triple-flavour-rolls": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=5872bd4ebafbdfd2c0f50b5cb4f6a832&dl=p%2F8in1-triple-flavour-rolls-3-stuks&ws=",
+        "maat": "113 g (3 stuks)",
+        "prijs": 4.65
+      }
+    ],
+    "8in1-triple-flavour-skewers": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=b7376cafb47862d3986511a896fee36f&dl=p%2F8in1-triple-flavour-skewers-6-stuks&ws=",
+        "maat": "113 g (6 stuks)",
+        "prijs": 6.89
+      }
+    ],
+    "8in1-triple-flavour-wings": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c5d746d171fa3d6f8814e315e73318ab&dl=p%2F8in1-triple-flavour-wings-6-stuks&ws=",
+        "maat": "113 g (6 stuks)",
+        "prijs": 5.19
+      }
+    ],
     "braaaf-roll-sticks-eend-300g": [
       {
         "winkel": "Petgamma.com",
@@ -12264,12 +15758,28 @@
         "prijs": 7.85
       }
     ],
+    "vitakraft-beef-stick-hot-dog": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=67e697653975a41f96b6105411089332&dl=p%2Fvitakraft-beef-stick-hot-dog&ws=",
+        "maat": "30 g",
+        "prijs": 2.89
+      }
+    ],
     "vitakraft-beef-stick-hypoallergenic": [
       {
         "winkel": "Petgamma.com",
         "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=6f3583637c21885a8e764193f16f8870&dl=p%2Fvitakraft-beef-stick-hypoallergenic-12-gr&ws=",
         "maat": "12 g",
         "prijs": 1.95
+      }
+    ],
+    "vitakraft-beef-stick-school-gevogelte": [
+      {
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=c372319f29c827268e84b60d4a5d5142&dl=p%2Fvitakraft-beef-stick-school-gevogelte&ws=",
+        "maat": "10 x 20 g",
+        "prijs": 3.69
       }
     ],
     "vitakraft-bonis-bits": [
@@ -12280,66 +15790,12 @@
         "prijs": 3.45
       }
     ],
-    "9f6f2928-8ebe-4e0c-beed-4e69e17e232a": [
+    "vitakraft-insect-stick": [
       {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=ce30e022275c186d04a97fbf79564a57&dl=product%2Facana-sport-agility-hondenvoeding-114-kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 79.95
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=560eab2596e03536d416ede7bd3c3a22&dl=product%2Facana-sport-agility-hondenvoeding-17-kg&ws=",
-        "maat": "17 kg",
-        "prijs": 106.95
-      }
-    ],
-    "cb239e76-318e-4e75-b99e-d24b45ed019e": [
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=70e355db3268fed8355b94fb77df5ed7&dl=product%2Forijen-fit-trim-hondenvoeding-114-kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 97.95
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=73042d4fb310be7fab3d981966b6f9fe&dl=product%2Forijen-fit-trim-hondenvoeding-6-kg&ws=",
-        "maat": "6 kg",
-        "prijs": 65.95
-      }
-    ],
-    "f7e66b20-1777-45a1-aa92-7c702f7f3e00": [
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=d523c01b8e130e2a67990bb6db07b5c8&dl=product%2Forijen-regional-red-hondenvoeding-114-kg&ws=",
-        "maat": "11,4 kg",
-        "prijs": 114.95
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=2eb038e469f948f4e4519b1cf78e0a1f&dl=product%2Forijen-regional-red-hondenvoeding-2-kg&ws=",
-        "maat": "2 kg",
-        "prijs": 39.49
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=c0421168541f6d449b718254d5a62467&dl=product%2Forijen-regional-red-hondenvoeding-6-kg&ws=",
-        "maat": "6 kg",
-        "prijs": 79.5
-      }
-    ],
-    "207ca671-61a0-4d54-90db-33d86dacb0cd": [
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=f115c429f53e1442eb9da5f5597d9d1d&dl=product%2Forijen-small-breed-hondenvoeding-18-kg&ws=",
-        "maat": "1,8 kg",
-        "prijs": 32.5
-      },
-      {
-        "winkel": "Best Petfoods",
-        "url": "https://jdt8.net/c/?si=17664&li=1771149&wi=446454&pid=6dfaef8fe6c9dbe789b5bcd03d8129b4&dl=product%2Forijen-small-breed-hondenvoeding-45-kg&ws=",
-        "maat": "4,5 kg",
-        "prijs": 63.99
+        "winkel": "Petgamma.com",
+        "url": "https://fr135.net/c/?si=20686&li=1880978&wi=446454&pid=fc1b5d9c0cf652aee595ff39ad5f90f5&dl=p%2Fvitakraft-insect-stick-pens-2-stuks&ws=",
+        "maat": "24 g / 7 x 24 g / 14 x 24 g",
+        "prijs": 3.05
       }
     ]
   }

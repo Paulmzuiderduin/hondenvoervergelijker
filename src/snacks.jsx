@@ -735,7 +735,7 @@ function App() {
       <div className="footer-grid">
         <div className="footer-col">
           <h3>Over deze snacksectie</h3>
-          <p>Deze batch bevat {PRODUCTEN.length} snacks van {MERKEN.length} merken. De samenstellingen zijn letterlijk overgenomen van de officiële productpagina's en tegen de bron gecontroleerd. Alleen voor Frolic is een verkoopsite als backup gebruikt, omdat de officiële merkpagina geen volledige ingrediëntenlijst heeft.</p>
+          <p>Deze batch bevat {PRODUCTEN.length} snacks van {MERKEN.length} merken. De samenstellingen zijn letterlijk overgenomen van de officiële productpagina's van de fabrikanten of de bij het product vermelde bron, en tegen de bron gecontroleerd. Voor sommige producten is een verkoopsite als bron gebruikt wanneer de officiële merkpagina geen volledige ingrediëntenlijst heeft.</p>
         </div>
         <div className="footer-col">
           <h3>Hoe wij kijken</h3>

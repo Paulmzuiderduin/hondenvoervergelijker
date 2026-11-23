@@ -1,0 +1,306 @@
+{
+  "merk": "Buddy",
+  "opgehaald": "2026-11-23",
+  "producten": [
+    {
+      "merk": "Buddy",
+      "naam": "Chicken + Lamb Feast",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-chicken-lamb-feast-12-kg",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 25,
+        "fat": 15,
+        "fiber": 3.2,
+        "ash": 7,
+        "moisture": 10,
+        "calcium": 1.4,
+        "phosphorus": 1
+      },
+      "bronTekst": "Ruw eiwit 25% Ruw vet 15% Ruwe as 7% Ruwe celstof 3,2% Vochtgehalte 10% Calcium 1,4% Fosfor 1,0% Natrium 0,2% Omega-3-vetzuren 0,25% Omega-6-vetzuren 1,7%",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Natvoeding Yummy Beef",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-natvoeding-yummy-beef-400-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9,
+        "fat": 7.5,
+        "fiber": 0.7,
+        "ash": 2,
+        "moisture": 78,
+        "calcium": 0.2,
+        "phosphorus": 0.15
+      },
+      "bronTekst": "Ruw eiwit 9,0%, ruw vet 7,5%, ruwe as 2,0%, ruwe celstof 0,7%, vocht 78,0%, calcium 0,2%, fosfor 0,15%, natrium 0,2%, omega-3-vetzuren 0,1% , omega-6-vetzuren 1,0%. BUDDY natvoeding Yummy Beef 400 gr. Merk: BUDDY Artikelnummer: C112003 Prijs p. kilo: 7,50 Hoog vleesgehalte, 65% rund Verrijkt met superfoods Zeer geschikt voor actieve én kieskeurige honden Eenmalige aankoop 5 ,99 Abonneer en bespaar 5% korting Je zit nergens aan vast. Je kan op elk moment stoppen of pauzeren. 5 ,99 = 1, 'product-d",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Natvoeding Delicious Lamb",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-natvoeding-delicious-lamb-400-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 8,
+        "fat": 5.5,
+        "fiber": 0.7,
+        "ash": 2,
+        "moisture": 78,
+        "calcium": 0.2,
+        "phosphorus": 0.15
+      },
+      "bronTekst": "Ruw eiwit 8,0%, ruw vet 5,5%, ruwe as 2,0%, ruwe celstof 0,7%, vocht 78,0%, calcium 0,2%, fosfor 0,15%, natrium 0,2%, omega-3-vetzuren 0,1% , omega-6-vetzuren 1,0%. BUDDY natvoeding Delicious Lamb 400 gr. Merk: BUDDY Artikelnummer: C112002 Prijs p. kilo: 7,50 Hoog vleesgehalte, 65% lam Verrijkt met superfoods Zeer geschikt voor honden met een gevoelige maag Eenmalige aankoop 5 ,99 Abonneer en bespaar 5% korting Je zit nergens aan vast. Je kan op elk moment stoppen of pauzeren. 5 ,99 = 1, 'produc",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Natvoeding Salmon & Chicken Feast",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-natvoeding-salmon-chicken-feast-400-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 8.5,
+        "fat": 7,
+        "fiber": 0.7,
+        "ash": 2.5,
+        "moisture": 78,
+        "calcium": 0.2,
+        "phosphorus": 0.15
+      },
+      "bronTekst": "Ruw eiwit 8,5%, ruw vet 7,0%, ruwe as 2,5%, ruwe celstof 0,7%, vocht 78,0%, calcium 0,2%, fosfor 0,15%, natrium 0,25%, omega-3-vetzuren 0,3% , omega-6-vetzuren 1,2%. BUDDY natvoeding Salmon & Chicken Feast 400 gr. Merk: BUDDY Artikelnummer: C112005 Prijs p. kilo: 7,50 Hoog vleesgehalte, 39% kip en 26% zalm Verrijkt met superfoods Zeer geschikt voor kieskeurige honden Eenmalige aankoop 5 ,99 Abonneer en bespaar 5% korting Je zit nergens aan vast. Je kan op elk moment stoppen of pauzeren. 5 ,99 = ",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Grass-Fed Lamb",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-grass-fed-lamb-2-kg",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 26,
+        "fat": 15,
+        "fiber": 3,
+        "ash": 7.5,
+        "moisture": 10,
+        "calcium": 1.4,
+        "phosphorus": 1.1
+      },
+      "bronTekst": "Ruw eiwit 26% Ruw vet 15% Ruwe as 7,5% Ruwe celstof 3% Vochtgehalte 10% Calcium 1,4% Fosfor 1,1% Natrium 0,2% Omega-3-vetzuren 0,2% Omega-6-vetzuren 1,8%.",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Natvoeding Delightful Duck",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-natvoeding-delightful-duck-400-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9.5,
+        "fat": 8,
+        "fiber": 0.7,
+        "ash": 2.5,
+        "moisture": 78,
+        "calcium": 0.2,
+        "phosphorus": 0.15
+      },
+      "bronTekst": "Ruw eiwit 9,5%, ruw vet 8,0%, ruwe as 2,5%, ruwe celstof 0,7%, vocht 78,0%, calcium 0,2%, fosfor 0,15%, natrium 0,2%, omega-3-vetzuren 0,1% , omega-6-vetzuren 1,0%. BUDDY natvoeding Delightful Duck 400 gr. Merk: BUDDY Artikelnummer: C112004 Prijs p. kilo: 7,50 Hoog vleesgehalte, 65% eend Verrijkt met superfoods Zeer geschikt voor actieve én kieskeurige honden Eenmalige aankoop 5 ,99 Abonneer en bespaar 5% korting Je zit nergens aan vast. Je kan op elk moment stoppen of pauzeren. 5 ,99 = 1, 'prod",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Free-Range Duck",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-free-range-duck-2-kg",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 38,
+        "fat": 18,
+        "fiber": 2.5,
+        "ash": 7.8,
+        "moisture": 10,
+        "calcium": 1.7,
+        "phosphorus": 1.3
+      },
+      "bronTekst": "Ruw eiwit 38%, ruw vet 18%, ruwe as 7,8%, ruwe celstof 2,5%, vochtgehalte 10%, calcium 1,7%, fosfor 1,3%, natrium 0,3%, omega-3-vetzuren 0,35%, omega-6-vetzuren 2,2%",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Natvoeding Turkey & Rabbit",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-natvoeding-turkey-rabbit-400-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 8,
+        "fat": 5.5,
+        "fiber": 0.8,
+        "ash": 2.1,
+        "moisture": 78,
+        "calcium": 0.15,
+        "phosphorus": 0.1
+      },
+      "bronTekst": "Ruw eiwit 8,0%, ruw vet 5,5%, ruwe as 2,1%, ruwe celstof 0,8%, vocht 78,0%, calcium 0,15%, fosfor 0,1%, natrium 0,2%, omega-3-vetzuren 0,1% , omega-6-vetzuren 1,1%. BUDDY natvoeding Turkey & Rabbit 400 gr. Merk: BUDDY Artikelnummer: C112008 Prijs p. kilo: 7,50 65% vlees van konijn en kalkoen Verrijkt met superfoods Zeer geschikt voor honden die gemakkelijk aankomen Eenmalige aankoop 5 ,99 Abonneer en bespaar 5% korting Je zit nergens aan vast. Je kan op elk moment stoppen of pauzeren. 5 ,99 = 1,",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Wild Venison",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-wild-venison-12-kg",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 25,
+        "fat": 14,
+        "fiber": 3,
+        "ash": 8.5,
+        "moisture": 10,
+        "calcium": 1.5,
+        "phosphorus": 1.1
+      },
+      "bronTekst": "Ruw eiwit 25% Ruw vet 14% Ruwe as 8,5% Ruwe celstof 3% Vochtgehalte 10% Calcium 1,5% Fosfor 1,1% Natrium 0,2% Omega-3-vetzuren 0,3% Omega-6-vetzuren 1,7%",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Natvoeding Puppy Lavish Lamb",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-natvoeding-puppy-lavish-lamb-400-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 8.5,
+        "fat": 7,
+        "fiber": 0.7,
+        "ash": 2.2,
+        "moisture": 78,
+        "calcium": 0.2,
+        "phosphorus": 0.15
+      },
+      "bronTekst": "Ruw eiwit 8,5%, ruw vet 7,0%, ruwe as 2,2%, ruwe celstof 0,7%, vocht 78,0%, calcium 0,2%, fosfor 0,15%, natrium 0,3%, omega-3-vetzuren 0,1% , omega-vetzuren 1,1%. BUDDY natvoeding Puppy Lavish Lamb 400 gr. Merk: BUDDY Artikelnummer: C112007 Prijs p. kilo: 7,50 Hoog vleesgehalte, 70% lam Verrijkt met superfoods Zeer geschikt voor pups en jonge honden Eenmalige aankoop 5 ,99 Abonneer en bespaar 5% korting Je zit nergens aan vast. Je kan op elk moment stoppen of pauzeren. 5 ,99 = 1, 'product-detail",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Puppy Love",
+      "voertype": "kibble",
+      "verpakking": "2 / 5 kg",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-puppy-love-2-kg",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 36,
+        "fat": 19,
+        "fiber": 2,
+        "ash": 7.8,
+        "moisture": 10,
+        "calcium": 1.4,
+        "phosphorus": 1.1
+      },
+      "bronTekst": "Ruw eiwit 36% Ruw vet 19% Ruwe as 7,8% Ruwe celstof 2% Vochtgehalte 10% Calcium 1,4% Fosfor 1,1% Natrium 0,3% Omega-3-vetzuren 0,8% Omega-6-vetzuren 2,5%",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Tasty Duck Bites",
+      "voertype": "kibble",
+      "verpakking": "2 / 5 kg",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-tasty-duck-bites-2-kg",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 30,
+        "fat": 16,
+        "fiber": 3,
+        "ash": 7.8,
+        "moisture": 10,
+        "calcium": 1.5,
+        "phosphorus": 1.1
+      },
+      "bronTekst": "Ruw eiwit 30% Ruw vet 16% Ruwe as 7,8% Ruwe celstof 3% Vochtgehalte 10% Calcium 1,5% Fosfor 1,1% Natrium 0,2% Omega-3-vetzuren 0,35% Omega-6-vetzuren 2%",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Wild-Caught Salmon",
+      "voertype": "kibble",
+      "verpakking": "2 / 12 kg",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-wild-caught-salmon-12-kg",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 27,
+        "fat": 12,
+        "fiber": 4.5,
+        "ash": 7.5,
+        "moisture": 10,
+        "calcium": 1.1,
+        "phosphorus": 0.8
+      },
+      "bronTekst": "Ruw eiwit 27% Ruw vet 12% Ruwe as 7,5% Ruwe celstof 4,5% Vochtgehalte 10% Calcium 1,1% Fosfor 0,8% Natrium 0,5% Omega-3-vetzuren 0,7% Omega-6-vetzuren 1,8%",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Natvoeding Tasty Duck Pate",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-natvoeding-tasty-duck-pate-400-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 8.5,
+        "fat": 7,
+        "fiber": 0.8,
+        "ash": 2,
+        "moisture": 78,
+        "calcium": 0.1,
+        "phosphorus": 0.1
+      },
+      "bronTekst": "Ruw eiwit 8,5%, ruw vet 7,0%, ruwe as 2,0%, ruwe celstof 0,8%, vocht 78,0%, calcium 0,1%, fosfor 0,1%, natrium 0,2%, omega-3-vetzuren 0,1% , omega-6-vetzuren 1,0%. BUDDY natvoeding Tasty Duck Pate 400 gr. Merk: BUDDY Artikelnummer: C112006 Prijs p. kilo: 7,50 Hoog vleesgehalte, 54,5% eend Verrijkt met superfoods Zeer geschikt voor honden van kleine rassen Eenmalige aankoop 5 ,99 Abonneer en bespaar 5% korting Je zit nergens aan vast. Je kan op elk moment stoppen of pauzeren. 5 ,99 = 1, 'product-",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Buddy",
+      "naam": "Natvoeding Juicy Turkey",
+      "voertype": "wet",
+      "verpakking": "400 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/buddy-natvoeding-juicy-turkey-400-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9,
+        "fat": 5.5,
+        "fiber": 0.7,
+        "ash": 2,
+        "moisture": 78,
+        "calcium": 0.2,
+        "phosphorus": 0.15
+      },
+      "bronTekst": "Ruw eiwit 9,0%, ruw vet 5,5%, ruwe as 2,0%, ruwe celstof 0,7%, vocht 78,0%, calcium 0,2%, fosfor 0,15%, natrium 0,2%, omega-3-vetzuren 0,1% , omega-6-vetzuren 1,0% BUDDY natvoeding Juicy Turkey 400 gr. Merk: BUDDY Artikelnummer: C112000 Prijs p. kilo: 7,50 Hoog vleesgehalte, 65% kalkoen Verrijkt met superfoods Zeer geschikt voor honden met een gevoelige huid Eenmalige aankoop 5 ,99 Abonneer en bespaar 5% korting Je zit nergens aan vast. Je kan op elk moment stoppen of pauzeren. 5 ,99 = 1, 'produ",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    }
+  ]
+}

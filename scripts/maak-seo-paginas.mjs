@@ -243,12 +243,12 @@ const methodePagina = () => {
   const inhoud = `      <p class="breadcrumb"><a href="/">Hondenvoervergelijker</a> › Hoe wij vergelijken</p>
       <p class="eyebrow">Methodiek</p>
       <h1>Hoe wij hondenvoer vergelijken</h1>
-      <p class="lead">Onze vergelijker hanteert één strikte basisregel: alle getoonde informatie moet direct herleidbaar zijn tot de officiële ingrediëntenlijst van de fabrikant. Op deze pagina lichten we toe hoe we data verzamelen, hoe het automatische beoordelingssysteem werkt en wat de beperkingen zijn.</p>
+      <p class="lead">Onze vergelijker hanteert één strikte basisregel: alle getoonde informatie moet direct herleidbaar zijn tot een concrete bronpagina met de ingrediëntenlijst. Bij voorkeur is dat de officiële pagina van de fabrikant; is die niet bruikbaar, dan een gespecificeerde retailerpagina. Op deze pagina lichten we toe hoe we data verzamelen, hoe het automatische beoordelingssysteem werkt en wat de beperkingen zijn.</p>
       <p class="updated">Bijgewerkt op ${datumNl(VANDAAG)}</p>
 
-      <h2>1. Bronnen: de fabrikant, niet de winkel</h2>
-      <p>Wij halen onze ingrediëntenlijsten rechtstreeks van de officiële productpagina's van de fabrikant, bij voorkeur de Nederlandse versie. Is deze niet beschikbaar? Dan gebruiken we de anderstalige officiële pagina. Daarbij vertalen we de samenstelling met exact dezelfde percentages en in dezelfde volgorde. In dat geval vind je daarvan altijd een transparante notitie op de desbetreffende productkaart.</p>
-      <p>Webshops en affiliate-feeds gebruiken we niet als bron voor de samenstelling. Deze lopen namelijk vaak achter na receptuurwijzigingen en bundelen soms per ongeluk meerdere productvarianten op één webpagina. Voor een klein aantal producten is er geen bruikbare Nederlandse fabrikantpagina, of wijkt de Nederlandse formule af van de anderstalige fabrikantpagina. Dan gebruiken we een gespecificeerde Nederlandse winkelpagina als bron en staat dat op de productkaart. Dat geldt voor Terra Canis, Taste of the Wild, Purina One, Frolic en Dog Chow. Zodra er een bruikbare fabrikantpagina is, vervangen we die bron.</p>
+      <h2>1. Bronnen: fabrikant eerst, winkel alleen als het niet anders kan</h2>
+      <p>Wij halen onze ingrediëntenlijsten bij voorkeur rechtstreeks van de officiële productpagina's van de fabrikant, in de Nederlandse versie. Is deze niet beschikbaar? Dan gebruiken we de anderstalige officiële pagina. Daarbij vertalen we de samenstelling met exact dezelfde percentages en in dezelfde volgorde. In dat geval vind je daarvan altijd een transparante notitie op de desbetreffende productkaart.</p>
+      <p>Webshops en affiliate-feeds gebruiken we niet als eerste bron voor de samenstelling. Deze lopen namelijk vaak achter na receptuurwijzigingen en bundelen soms per ongeluk meerdere productvarianten op één webpagina. Voor een aantal producten is er echter geen bruikbare fabrikantpagina, of wijkt de Nederlandse formule af van de anderstalige fabrikantpagina. Dan gebruiken we een gespecificeerde Nederlandse winkelpagina als bron en staat die bron bij het product vermeld. Dat geldt bijvoorbeeld voor Terra Canis, Taste of the Wild, Purina One, Frolic, Dog Chow en de merken die via de Best Petfoods-feed zijn geïmporteerd. Zodra er een bruikbare fabrikantpagina is, vervangen we die bron.</p>
 
       <h2>2. Letterlijk overnemen</h2>
       <p>De tekst op het etiket wordt door ons letterlijk overgenomen: inclusief dezelfde volgorde, percentages, hoeveelheden en zelfs leestekens. Ontbreekt de lijst of is de informatie online onbereikbaar? Dan voegen we het product simpelweg niet toe. We doen niet aan giswerk; we hebben liever een ontbrekend product op de site dan een onjuiste ingrediëntenlijst.</p>
@@ -327,7 +327,7 @@ const overOnsPagina = () => {
       </ul>
 
       <h2>Hoe wij werken</h2>
-      <p>De basis is altijd de officiële ingrediëntenlijst van de fabrikant. We nemen de tekst letterlijk over, inclusief percentages en volgorde. Ontbreekt een betrouwbare lijst, dan voegen we het product niet toe. Onbekende woorden worden handmatig ingedeeld. De bronpagina's worden wekelijks gecontroleerd; wijzigingen worden pas doorgevoerd nadat ze zijn nagelopen.</p>
+      <p>De basis is een concrete ingrediëntenlijst: bij voorkeur van de fabrikant, anders van een gespecificeerde retailerpagina. We nemen de tekst letterlijk over, inclusief percentages en volgorde. Ontbreekt een betrouwbare lijst, dan voegen we het product niet toe. Onbekende woorden worden handmatig ingedeeld. De bronpagina's worden wekelijks gecontroleerd; wijzigingen worden pas doorgevoerd nadat ze zijn nagelopen.</p>
       <p>Meer over onze werkwijze staat op de pagina <a href="/hoe-wij-vergelijken.html">Hoe wij hondenvoer vergelijken</a>.</p>
 
       <h2>Onafhankelijk en transparant</h2>
@@ -335,7 +335,7 @@ const overOnsPagina = () => {
       <p>We zijn geen dierenarts en geven geen medisch advies. Bij jeuk, maag-darmklachten of een vermoeden van een allergie is een dierenarts de juiste persoon. Lees ook onze <a href="/disclaimer.html">disclaimer</a>.</p>
 
       <h2 id="redactie">Over de redactie</h2>
-      <p>Hondenvoervergelijker wordt ontwikkeld en onderhouden door Paul Zuiderduin. Hij neemt de ingrediëntenlijsten over, beoordeelt onbekende woorden en bewaakt de bronpagina's van de fabrikanten. De site is bewust klein gehouden: geen advertentienetwerken, geen sponsored content en geen redactionele inmenging van merken of winkels.</p>
+      <p>Hondenvoervergelijker wordt ontwikkeld en onderhouden door Paul Zuiderduin. Hij neemt de ingrediëntenlijsten over, beoordeelt onbekende woorden en bewaakt de bronpagina's van de producten. De site is bewust klein gehouden: geen advertentienetwerken, geen sponsored content en geen redactionele inmenging van merken of winkels.</p>
       <p>Heb je een fout gevonden of een vraag over de werkwijze? Neem contact op via de <a href="/contact.html">contactpagina</a>. We corrigeren bronfouten zo snel mogelijk en vermelden daarbij waar de juiste informatie vandaan komt.</p>
 
       <div class="callout">
@@ -661,7 +661,7 @@ ${termenBlok}
 
       <section class="section-card">
         <h2>Over deze merkpagina</h2>
-        <p>De ingrediëntenlijsten komen van de officiële productpagina's van ${escapeHtml(brand)}. De vergelijker neemt de tekst letterlijk over en beoordeelt per allergeen of de bron bij naam genoemd is. Kies in de vergelijker de allergenen van jouw hond om te zien welke producten geschikt lijken, welke uitgesloten zijn en waar je het etiket moet controleren.</p>
+        <p>De ingrediëntenlijsten komen van de officiële productpagina van de fabrikant of de bij het product vermelde bron. De vergelijker neemt de tekst letterlijk over en beoordeelt per allergeen of de bron bij naam genoemd is. Kies in de vergelijker de allergenen van jouw hond om te zien welke producten geschikt lijken, welke uitgesloten zijn en waar je het etiket moet controleren.</p>
         <p><a class="cta" href="/?merk=${encodeURIComponent(brand)}">Open ${escapeHtml(brand)} in de vergelijker</a> <a class="cta secondary" href="/hondenvoer-allergieen.html">Hoe lees je een etiket?</a></p>
       </section>
 
@@ -1506,7 +1506,7 @@ ${affiliateNotitie}
     : ''
 
   const titel = `${product.brand} ${product.name}${maat ? ` (${maat})` : ''}: ingrediënten, allergenen en voedingswaarden | Hondenvoervergelijker`
-  const beschrijving = `Letterlijke ingrediëntenlijst, voedingswaarden en allergenoordeel van ${product.brand} ${product.name}${maat ? ` (${maat})` : ''}${type ? `, ${type.toLowerCase()}` : ''}. Bron gecontroleerd${bronDatum ? ` op ${bronDatum}` : ' volgens de officiële productpagina'}.`
+  const beschrijving = `Letterlijke ingrediëntenlijst, voedingswaarden en allergenoordeel van ${product.brand} ${product.name}${maat ? ` (${maat})` : ''}${type ? `, ${type.toLowerCase()}` : ''}. Bron gecontroleerd${bronDatum ? ` op ${bronDatum}` : ' volgens de bronpagina'}.`
   const korteSamenvatting = aantal.excluded === 0 && aantal.check === 0
     ? `Voor de ${hoofdKeys.length} hoofdallergenen noemt het etiket geen expliciete bron en bevat de lijst geen onduidelijke verzamelterm.`
     : `${aantal.suitable} van de ${hoofdKeys.length} hoofdallergenen worden niet genoemd, ${aantal.check} vragen om controle en ${aantal.excluded} staan expliciet in de lijst.`
@@ -1568,7 +1568,7 @@ ${affiliateSectie}
         <p class="answer-note">Dit is een indicatie op basis van het etiket, geen medisch advies. Controleer altijd de verpakking en overleg bij klachten met je dierenarts.</p>
       </div>
 
-      ${match.stale || match.sourceChanged || !match.hasLabel ? `<div class="callout warn"><p><strong>Controle nodig:</strong> ${match.sourceChanged ? 'de bronpagina bij de fabrikant is gewijzigd' : !match.hasLabel ? 'er is geen ingrediëntenlijst beschikbaar' : 'de ingrediëntenlijst is langer dan zes maanden niet gecontroleerd'}. Controleer de verpakking of de officiële productpagina voordat je op deze gegevens vertrouwt.</p></div>` : ''}
+      ${match.stale || match.sourceChanged || !match.hasLabel ? `<div class="callout warn"><p><strong>Controle nodig:</strong> ${match.sourceChanged ? 'de bronpagina is gewijzigd' : !match.hasLabel ? 'er is geen ingrediëntenlijst beschikbaar' : 'de ingrediëntenlijst is langer dan zes maanden niet gecontroleerd'}. Controleer de verpakking of de officiële productpagina voordat je op deze gegevens vertrouwt.</p></div>` : ''}
 
       <nav class="section-nav" aria-label="Op deze pagina">
         <a href="#allergenen">Allergenen</a>
@@ -1984,7 +1984,7 @@ function broncontrolePagina(producten) {
 
       <h2>Hoe de controle werkt</h2>
       <ol>
-        <li>De ingrediëntenlijst wordt letterlijk van de officiële productpagina overgenomen.</li>
+        <li>De ingrediëntenlijst wordt letterlijk van de bronpagina overgenomen.</li>
         <li>De bron wordt periodiek opnieuw opgevraagd. Is de tekst ongewijzigd, dan wordt alleen de controledatum bijgewerkt.</li>
         <li>Bij een wijziging blijft de oude tekst staan tot een beheerder de nieuwe tekst heeft beoordeeld.</li>
         <li>Voedingswaarden worden apart gecontroleerd en op plausibiliteit getest. Een onmogelijke waarde wordt niet als filter- of sorteerwaarde gebruikt.</li>

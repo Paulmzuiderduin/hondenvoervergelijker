@@ -115,7 +115,7 @@ for (const [productId, lijst] of Object.entries(bestaand.aanbieders ?? {})) {
 const perSleutel = new Map()
 for (const koppeling of [...voer.koppelingen, ...snack.koppelingen]) {
   const { product, aanbieding } = koppeling
-  const maat = aanbieding.maat || product.package_size || ''
+  const maat = aanbieding.maatLabel || aanbieding.maat || product.package_size || ''
   const sleutel = `${product.id}|${WINKEL}|${maat}`
   const prijs = Number.isFinite(aanbieding.prijs) && aanbieding.prijs > 0 ? Number(aanbieding.prijs.toFixed(2)) : null
   const huidig = perSleutel.get(sleutel)
@@ -145,7 +145,7 @@ const regels = [
   `- Hondenvoerproducten in feed: ${voerAanbiedingen.length}`,
   `- Voerkoppelingen: ${voer.koppelingen.length} (${voer.exact.length} exacte EAN, ${voer.naamMaat.length} exacte merk/naam/maat)`,
   `- Snacks in feed: ${snackAanbiedingen.length}`,
-  `- Snackkoppelingen: ${snack.koppelingen.length}`,
+  `- Snackkoppelingen: ${snack.koppelingen.length} (${snack.exact.length} exacte EAN, ${snack.naamMaat.length} exacte merk/naam/maat, ${snack.naam.length} exacte naam)`,
   `- Unieke links na ontdubbelen: ${perSleutel.size} voor ${uniekeProducten.size} producten`,
   `- Dubbelzinnig overgeslagen: ${voer.dubbelzinnig.length + snack.dubbelzinnig.length}`,
   `- Geen match: ${voer.zonderMatch.length + snack.zonderMatch.length}`,

@@ -1,0 +1,39 @@
+{
+  "merk": "Pawfect",
+  "opgehaald": "2026-11-23",
+  "producten": [
+    {
+      "merk": "Pawfect",
+      "naam": "Freeze Dried Vis",
+      "voertype": "raw",
+      "verpakking": "250 / 500 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/pawfect-freeze-dried-hondenvoeding-vis-250-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 48,
+        "fat": 22,
+        "ash": 5
+      },
+      "bronTekst": "Ruw eiwit 48% Ruw vet 22% Ruwe vezels 5% Vochtigheid 7% Ruwe as 5%",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Pawfect",
+      "naam": "Freeze Dried Kip",
+      "voertype": "raw",
+      "verpakking": "250 / 500 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/pawfect-freeze-dried-hondenvoeding-kip-250-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 48,
+        "fat": 22,
+        "fiber": 5,
+        "ash": 5
+      },
+      "bronTekst": "Ruw eiwit 48% Ruim vet 22% Ruwe vezel 5% Vochtigheid 7% Ruwe as 5%",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    }
+  ]
+}

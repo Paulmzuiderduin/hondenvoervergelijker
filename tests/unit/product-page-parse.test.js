@@ -24,6 +24,29 @@ test('leest een Alsa-pagina met samenstelling vóór analytische bestanddelen', 
   assert.equal(pagina.dierlijkeEiwitbron, 'hert')
 })
 
+test('leest gewicht, EAN en categorie uit JSON-LD', () => {
+  const html = `<html><head>
+    <script type="application/ld+json">${JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: 'Testproduct',
+      category: 'Honden > Hondensnacks',
+      gtin: '8859387701060',
+      weight: { '@type': 'QuantitativeValue', value: 60, unitText: 'GRM' }
+    })}</script>
+  </head><body>
+    <h3>Ingrediënten</h3>
+    <div>Kip (32%), tapioca, gistextract.</div>
+    <h3>Analytische bestanddelen</h3>
+    <div>Eiwit 8.5%, vetgehalte 0.5%, ruwe as 1.5%, vocht 88%.</div>
+  </body></html>`
+  const pagina = parseProductPagina(html)
+  assert.equal(pagina.gtin, '8859387701060')
+  assert.equal(pagina.gewichtGram, 60)
+  assert.equal(pagina.categorie, 'Honden > Hondensnacks')
+  assert.match(pagina.ingredients, /Kip \(32%\)/)
+})
+
 test('leest een UPD-pagina met analytische bestanddelen vóór samenstelling', () => {
   const html = `<html><body>
     <h3>Analytische bestanddelen</h3>

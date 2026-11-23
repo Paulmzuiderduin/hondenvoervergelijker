@@ -32,6 +32,7 @@
     "winkels:ultra-premium-direct": "node scripts/koppel-ultra-premium-direct.mjs",
     "winkels:alsa-nature": "node scripts/koppel-alsa-nature.mjs",
     "import:affiliate": "node scripts/importeer-affiliate-merken.mjs",
+    "import:best-petfoods": "node scripts/importeer-best-petfoods.mjs",
     "winkels:snacks-alsa-upd": "node scripts/koppel-alsa-upd-snacks.mjs",
     "winkels:plein-petgamma": "node scripts/koppel-plein-petgamma.mjs",
     "winkels:best-petfoods": "node scripts/koppel-best-petfoods.mjs"

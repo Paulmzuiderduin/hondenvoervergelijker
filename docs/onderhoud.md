@@ -223,9 +223,53 @@ Best Petfoods is goedgekeurd als Daisycon-campagne. De feed staat lokaal in
 4. Commit alleen `public/winkels.json`.
 
 De koppeling gebruikt eerst een exacte EAN en anders een exacte match op merk,
-productnaam en verpakking. Snacks worden op exacte merk-, naam- en
-maatovereenkomst gekoppeld. Bij twijfel blijft de link weg. Het rapport staat in
-`data/winkels/rapport-best-petfoods.md`.
+productnaam en verpakking. Snacks worden eerst op exacte EAN gekoppeld en anders
+op exacte merk-, naam- en maatovereenkomst. Bij twijfel blijft de link weg. Het
+rapport staat in `data/winkels/rapport-best-petfoods.md`.
+
+### Nieuwe merken uit de Best Petfoods-feed importeren
+
+De Best Petfoods-feed bevat ook merken die nog niet in de vergelijker staan,
+zoals N&D, Herrmann's, Ziwi Peak, Buddy, Vet Life, Pawfect, Thrive, Inaba en
+Vitbit. Het importscript haalt per unieke productnaam één productpagina op en
+schrijft:
+
+- `data/import/<merk>.json` met de letterlijke ingrediëntenlijst;
+- `data/import/voedingswaarden/<merk>.json` met de analytische bestanddelen;
+- nieuwe snacks direct in `data/snacks.json`.
+
+Best Petfoods vraagt in `robots.txt` om een crawl-delay van vijf seconden. Het
+script houdt die aan en cachet de pagina's lokaal in
+`data/import/.cache-best-petfoods/`, zodat een onderbroken run niet opnieuw
+hoeft te beginnen.
+
+```bash
+# Eerst kijken wat er zou worden toegevoegd
+npm run import:best-petfoods -- --dry-run
+
+# Alleen bepaalde merken of alleen voer/snacks
+npm run import:best-petfoods -- --merken=N&D,Herrmann's
+npm run import:best-petfoods -- --alleen=voer
+npm run import:best-petfoods -- --alleen=snacks
+```
+
+Het script slaat producten over die op de pagina als **aanvullende voeding**
+staan (zoals maaltijdtoppers). Alleen volledige voeding en snacks horen in de
+vergelijker. Producten waarvan de samenstelling niet gevonden wordt, komen in
+`data/import/rapport-best-petfoods-import.md` en niet in de import.
+
+Daarna de SQL-batches maken en uitvoeren:
+
+```bash
+node scripts/maak-import-sql.mjs --bestanden=n-en-d,herrmanns,ziwi-peak,buddy,vet-life,pawfect
+node scripts/maak-voedingswaarde-sql.mjs --bestanden=n-en-d,herrmanns,ziwi-peak,buddy,vet-life,pawfect
+```
+
+Voer de bestanden uit `data/import/sql/` uit in de Supabase SQL Editor. Draai
+daarna `npm run winkels:best-petfoods` opnieuw: de nieuwe producten krijgen dan
+automatisch hun Best Petfoods-link. Controleer daarna of de productpagina's en
+de allergenenmatrix zijn gebouwd met `npm run build` en
+`npm run controleer:site`.
 
 ## Terugvallen op GitHub Pages
 

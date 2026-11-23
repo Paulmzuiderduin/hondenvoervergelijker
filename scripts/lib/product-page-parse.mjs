@@ -4,8 +4,13 @@
 
 const ENTITEITEN = {
   amp: '&', nbsp: ' ', quot: '"', apos: "'", lt: '<', gt: '>',
-  eacute: 'é', egrave: 'è', agrave: 'à', ccedil: 'ç', uuml: 'ü',
-  ouml: 'ö', auml: 'ä', szlig: 'ß', euro: '€', ndash: '–', mdash: '—'
+  aacute: 'á', acirc: 'â', agrave: 'à', auml: 'ä', aring: 'å', aelig: 'æ',
+  ccedil: 'ç', eacute: 'é', ecirc: 'ê', egrave: 'è', euml: 'ë',
+  iacute: 'í', icirc: 'î', igrave: 'ì', iuml: 'ï',
+  ntilde: 'ñ', oacute: 'ó', ocirc: 'ô', ograve: 'ò', ouml: 'ö', oslash: 'ø',
+  uacute: 'ú', ucirc: 'û', ugrave: 'ù', uuml: 'ü', yacute: 'ý', yuml: 'ÿ',
+  szlig: 'ß', micro: 'µ', reg: '®', trade: '™', euro: '€',
+  ndash: '–', mdash: '—', hellip: '…'
 }
 
 export function decodeerHtml(waarde = '') {
@@ -39,33 +44,60 @@ function tussen(tekst, begin, eind) {
 function schoonIngrediënten(waarde = '') {
   return decodeerHtml(waarde)
     .replace(/^[\s:;,-]+/, '')
-    .replace(/\b(SAMENSTELLING|Samenstelling)\b\s*:?/gi, '')
+    .replace(/\b(SAMENSTELLING|Samenstelling|INGREDIËNTEN|Ingrediënten)\b\s*:?/gi, '')
     .replace(/\bPlus\b\s*$/i, '')
     .replace(/\b(AANVULLENDE HONDENVOEDING|Aanvullende hondenvoeding)\b/gi, '')
     .replace(/^.*?Voedingsmiddelsoort\s+Complete voeding\s*/i, '')
     .replace(/\s+/g, ' ')
     .replace(/\s*;\s*/g, '; ')
     .replace(/\s+\./g, '.')
+    .replace(/\b(proteï|chondroï)\s+([a-z])/gi, '$1$2')
+    .replace(/^.*?\bworden bereid van\s+/i, '')
+    .replace(/\s+(?:Vrij van|Zonder|Geschikt voor|Ideaal|Perfect|Heerlijk)\b[\s\S]*$/, '')
     .trim()
 }
 
+function lijktOpIngrediënten(blok, vooraf = '') {
+  if (blok.length < 8) return false
+  // Marketing gebruikt dezelfde woorden ("met de beste ingrediënten",
+  // "uitgebalanceerde samenstelling"). Zo'n treffer staat midden in een zin en
+  // niet boven een etiketblok.
+  if (/(?:beste|hoogwaardige|natuurlijke|gezonde|andere|deze|onze|vele|goede|uitgebalanceerde|unieke|ideale|perfecte)\s+$/i.test(vooraf)) return false
+  if (/^(is deze|deze |dit |plus |aanvullende |voor |met |een |het |onze |jouw |uw |en(?:\s|\/))/i.test(blok)) return false
+  if (/^(?:jouw hond|onze |ideaal|perfect|heerlijk|draagt bij|geschikt voor)/i.test(blok)) return false
+  if (/Merk:|Artikelnummer|Prijs p\. kilo|Kies variant|Verlaag je stukprijs|Van Zweedse kwaliteit|Zeer geschikt/i.test(blok)) return false
+  if (blok.length > 3500) return false
+  // Een losse orgaannaam of een korte opsomming ("Hertenlong en hertennier")
+  // is een geldige etiketregel, ook als er geen percentage of bekend
+  // hoofd ingrediënt in staat.
+  if (blok.length <= 80 && blok.split(/\s+/).filter(Boolean).length <= 6 && !/\b(?:onze|jouw|deze|dit|het|een|van|komen|worden|is|zijn|met|voor|hoogste|kwaliteit|producten|dieren|honden)\b/i.test(blok)) return true
+  return /[,%]/.test(blok) || /\b(?:kip|rund|lam|vis|zalm|rijst|aardappel|erwt|gist|olie|mineralen|vlees)\b/i.test(blok) || /melk|garnalen|kokosnoot|lamsoren/i.test(blok)
+}
+
 function kiesIngrediëntenBlok(tekst) {
-  // Zoek alle koppen en kies het blok met de meeste komma's. Zo negeren we
-  // "uitgebalanceerde samenstelling" in de marketingtekst.
+  // De etiketblokken staan op deze pagina's in wisselende volgorde. De
+  // dichtstbijzijnde kop bij "Analytische bestanddelen" is in beide gevallen
+  // de echte samenstelling: erboven bij Alsa, eronder bij UPD. Zo negeren we
+  // "uitgebalanceerde samenstelling" en "de beste ingrediënten" in de
+  // marketingtekst.
+  const analytisch = tekst.search(/Analytische bestanddelen/i)
   const kandidaten = []
-  const regex = /Samenstelling\s*:?/gi
+  const regex = /(?:Samenstelling|Ingrediënten)\s*:?/gi
   for (const match of tekst.matchAll(regex)) {
     const start = match.index + match[0].length
     const rest = tekst.slice(start)
-    const stop = rest.search(/Analytische bestanddelen|Nutritionele toevoegingen|Voedingsaanbeveling|Beschrijving|Recensies|Eigenschap/i)
-    const blok = schoonIngrediënten(stop >= 0 ? rest.slice(0, stop) : rest.slice(0, 1800))
-    if (blok.length < 8) continue
-    // Marketingzinnen gebruiken soms ook het woord "samenstelling"; die
-    // beginnen met een lopende zin en niet met een ingrediënt.
-    if (/^(is deze|deze |plus |aanvullende )/i.test(blok)) continue
-    kandidaten.push({ blok, kommas: (blok.match(/,/g) ?? []).length, lengte: blok.length })
+    const stop = rest.search(/ADDITIEVEN|Analytische bestanddelen|Nutritionele toevoegingen|Voedingsaanbeveling|Bewaaradvies|Beschrijving|Recensies|Eigenschap/i)
+    const blok = schoonIngrediënten(stop >= 0 ? rest.slice(0, stop) : rest.slice(0, 4000))
+    const vooraf = tekst.slice(Math.max(0, match.index - 40), match.index)
+    if (!lijktOpIngrediënten(blok, vooraf)) continue
+    kandidaten.push({
+      blok,
+      afstand: analytisch >= 0 ? Math.abs(match.index - analytisch) : 0,
+      kommas: (blok.match(/,/g) ?? []).length,
+      lengte: blok.length
+    })
   }
-  kandidaten.sort((a, b) => b.kommas - a.kommas || a.lengte - b.lengte)
+  kandidaten.sort((a, b) => a.afstand - b.afstand || b.kommas - a.kommas || a.lengte - b.lengte)
   return kandidaten[0]?.blok ?? ''
 }
 
@@ -73,8 +105,8 @@ function kiesAnalytischBlok(tekst) {
   const index = tekst.search(/Analytische bestanddelen/i)
   if (index < 0) return ''
   const rest = tekst.slice(index + 'Analytische bestanddelen'.length)
-  const stop = rest.search(/Nutritionele toevoegingen|Voedingsaanbeveling|Samenstelling|Beschrijving|Recensies|Eigenschap|Plus AANVULLENDE/i)
-  return (stop >= 0 ? rest.slice(0, stop) : rest.slice(0, 1500)).replace(/^Plus\s+/i, '').trim()
+  const stop = rest.search(/ADDITIEVEN|Nutritionele toevoegingen|Voedingsaanbeveling|Bewaaradvies|Samenstelling|Ingrediënten|Beschrijving|Recensies|Eigenschap|Plus AANVULLENDE/i)
+  return (stop >= 0 ? rest.slice(0, stop) : rest.slice(0, 2000)).replace(/^Plus\s+/i, '').trim()
 }
 
 function getal(waarde) {
@@ -114,7 +146,9 @@ export function parseAnalytischeBestanddelen(tekst = '') {
     ash: waarde(tekst, [/(?:Ruwe as|Anorganisch materiaal \(ruwe as\))\s*:?\s*([\d.,]+)\s*%/i]),
     moisture: waarde(tekst, [/(?:Vochtgehalte|Vocht|Voght)\s*:?\s*([\d.,]+)\s*%/i]),
     calcium: waarde(tekst, [/Calcium\s*:?\s*([\d.,]+)\s*%/i]),
-    phosphorus: waarde(tekst, [/(?:Fosforgehalte|Fosfor)\s*:?\s*([\d.,]+)\s*%/i])
+    phosphorus: waarde(tekst, [/(?:Fosforgehalte|Fosfor)\s*:?\s*([\d.,]+)\s*%/i]),
+    omega3: waarde(tekst, [/Omega-?3(?:\s*vetzuren)?\s*:?\s*([\d.,]+)\s*%/i]),
+    omega6: waarde(tekst, [/Omega-?6(?:\s*vetzuren)?\s*:?\s*([\d.,]+)\s*%/i])
   }
   const energie = tekst.match(/(?:Metabole energie|Energie)[^\d]{0,40}([\d.,]+)\s*(?:kcal|Kcal)\s*\/\s*(kg|100\s*g)/i)
   if (energie) {
@@ -126,11 +160,38 @@ export function parseAnalytischeBestanddelen(tekst = '') {
   return Object.fromEntries(Object.entries(waarden).filter(([, waarde]) => waarde != null))
 }
 
+function leesProductJsonLd(html) {
+  const resultaat = { gtin: '', gewichtGram: null, categorie: '' }
+  for (const match of String(html).matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
+    let data
+    try {
+      data = JSON.parse(match[1])
+    } catch {
+      continue
+    }
+    const items = Array.isArray(data) ? data : (data?.['@graph'] ?? [data])
+    for (const item of items) {
+      if (item?.['@type'] !== 'Product') continue
+      const gtin = String(item.gtin ?? item.gtin13 ?? item.gtin12 ?? '').replace(/\D/g, '')
+      if (/^\d{8,14}$/.test(gtin)) resultaat.gtin = gtin
+      if (item.category) resultaat.categorie = String(item.category)
+      const gewicht = item.weight
+      const waarde = typeof gewicht === 'object' ? Number(String(gewicht?.value ?? '').replace(',', '.')) : Number(String(gewicht ?? '').replace(',', '.'))
+      if (Number.isFinite(waarde) && waarde > 0) {
+        const eenheid = String(gewicht?.unitText ?? gewicht?.unitCode ?? '').toUpperCase()
+        resultaat.gewichtGram = /KG/.test(eenheid) ? Math.round(waarde * 1000) : Math.round(waarde)
+      }
+    }
+  }
+  return resultaat
+}
+
 export function parseProductPagina(html) {
   const tekst = htmlNaarTekst(html)
   const ingredients = kiesIngrediëntenBlok(tekst)
   const analytical = kiesAnalytischBlok(tekst)
   const nutrition = parseAnalytischeBestanddelen(analytical)
+  const jsonLd = leesProductJsonLd(html)
 
   const dierlijkeEiwitbron = tekst.match(/Dierlijke eiwitbron\s+Bekijk alle\s+([a-zà-ÿ0-9'’ -]+?)\s+producten/i)?.[1]?.trim() ?? ''
   const hondengrootte = tekst.match(/Hondengrootte\s+Bekijk alle\s+([a-zà-ÿ0-9'’ -]+?)\s+producten/i)?.[1]?.trim() ?? ''
@@ -144,6 +205,9 @@ export function parseProductPagina(html) {
     dierlijkeEiwitbron,
     hondengrootte,
     sporen,
+    gtin: jsonLd.gtin,
+    gewichtGram: jsonLd.gewichtGram,
+    categorie: jsonLd.categorie,
     enkelEiwit: /enkel-eiwit/i.test(tekst),
     graanvrij: /granenvrij/i.test(tekst)
   }

@@ -1,0 +1,93 @@
+{
+  "merk": "Ziwi Peak",
+  "opgehaald": "2026-11-23",
+  "producten": [
+    {
+      "merk": "Ziwi Peak",
+      "naam": "Air-Dried Hert",
+      "voertype": "raw",
+      "verpakking": "1 / 2,5 kg",
+      "bronUrl": "https://www.bestpetfoods.nl/product/ziwi-peak-air-dried-hondenvoeding-hert-25-kg",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 49.5,
+        "fat": 27,
+        "fiber": 1,
+        "ash": 10,
+        "moisture": 9
+      },
+      "bronTekst": "Ruw eiwit 49,5% Ruw vet 27% Ruwe as 10% Ruwe celstof 1% Vocht 9% Caloriegehalte (berekend) 4650 kcal/kg",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Ziwi Peak",
+      "naam": "Air-Dried Makreel & Lam",
+      "voertype": "raw",
+      "verpakking": "1 / 2,5 kg",
+      "bronUrl": "https://www.bestpetfoods.nl/product/ziwi-peak-air-dried-hondenvoeding-makreel-lam-25-kg",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 48,
+        "fat": 27,
+        "fiber": 1,
+        "ash": 10,
+        "moisture": 9
+      },
+      "bronTekst": "Ruw eiwit 48% Ruw vet 27% Ruwe as 10% Ruwe celstof 1% Vocht 9% Caloriegehalte (berekend) 4500 kcal/kg",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Ziwi Peak",
+      "naam": "Steam & Dried Rund",
+      "voertype": "kibble",
+      "verpakking": "800 g / 1,5 kg / 3,2 kg",
+      "bronUrl": "https://www.bestpetfoods.nl/product/ziwi-peak-steam-dried-hondenvoeding-rund-15-kg",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 38,
+        "fat": 30,
+        "ash": 9,
+        "moisture": 9
+      },
+      "bronTekst": "Ruw eiwit 38%, vetgehalte 30%, ruwe vezels 1%, vocht 9%, ruwe as 9%. Caloriegehalte (berekend) 4400 kcal / kg",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Ziwi Peak",
+      "naam": "Steam & Dried Lam",
+      "voertype": "kibble",
+      "verpakking": "800 g / 1,5 kg / 3,2 kg",
+      "bronUrl": "https://www.bestpetfoods.nl/product/ziwi-peak-steam-dried-hondenvoeding-lam-32-kg",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 36,
+        "fat": 30,
+        "fiber": 1,
+        "ash": 9
+      },
+      "bronTekst": "Ruw eiwit 36%, ruw vet 30%, ruwe vezel 1%, vochtigheid 9%, ruwe as 9% Calorie-inhoud (berekend) 4400 kcal ME/kg",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Ziwi Peak",
+      "naam": "Steam & Dried Kip",
+      "voertype": "kibble",
+      "verpakking": "800 g / 1,5 kg / 3,2 kg",
+      "bronUrl": "https://www.bestpetfoods.nl/product/ziwi-peak-steam-dried-hondenvoeding-kip-15-kg",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 38,
+        "fat": 28,
+        "ash": 9,
+        "moisture": 9
+      },
+      "bronTekst": "Ruw eiwit 38%, ruw vet 28%, ruwe vezels 1%, vocht 9%, ruwe as 9% Calorie-inhoud (berekend) 4300 kcal ME/kg",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    }
+  ]
+}

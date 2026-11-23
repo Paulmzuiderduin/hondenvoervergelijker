@@ -763,7 +763,7 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
       openWoorden.length ? `Het etiket noemt geen bron voor: ${openWoorden.join(', ')}. Voor wie dat allergeen vermijdt blijft dit product bij "Controleer etiket/fabrikant" staan.` : '',
       taken.some((taak) => taak.startsWith('langer dan')) ? 'Let op: de vorige controle is meer dan zes maanden geleden.' : ''
     ].filter(Boolean)
-    if (punten.length && !window.confirm([`${product.brand} — ${product.name}`, 'Je legt vast: deze ingrediëntenlijst is de lijst van de fabrikant.', ...punten, '', 'Vastleggen?'].join('\n'))) return
+    if (punten.length && !window.confirm([`${product.brand} — ${product.name}`, 'Je legt vast: deze ingrediëntenlijst is de lijst van dit product.', ...punten, '', 'Vastleggen?'].join('\n'))) return
     setWorking(true)
     const { error } = await supabase.rpc('set_recipe_reviewed', { p_version_ids: [version.id], p_note: version.review_note || null })
     setWorking(false)
@@ -909,7 +909,7 @@ function Admin({ terms, termsOud, reloadTerms, onSaved }) {
     </fieldset>
     <label className="inline"><input type="checkbox" checked={form.reviewed} onChange={(e) => change('reviewed', e.target.checked)} />Ik heb deze ingrediëntenlijst tegen de bron gecontroleerd</label>
     <label>Aantekening (optioneel)<input value={form.review_note} placeholder="bijv. nagevraagd bij de fabrikant op 12-10" onChange={(e) => change('review_note', e.target.value)} /></label>
-    <p><small>Nagekeken betekent: deze tekst is de tekst van de fabrikant. Het zegt niet dat er geen allergeen in zit — dat antwoord geeft de vergelijking per allergeen uit de tekst zelf. Verandert de tekst, dan vervalt de bevestiging automatisch en komt het product terug in de takenlijst.</small></p>
+    <p><small>Nagekeken betekent: deze tekst is de tekst van de bron. Het zegt niet dat er geen allergeen in zit — dat antwoord geeft de vergelijking per allergeen uit de tekst zelf. Verandert de tekst, dan vervalt de bevestiging automatisch en komt het product terug in de takenlijst.</small></p>
     <label className="inline"><input type="checkbox" checked={form.published} onChange={(e) => change('published', e.target.checked)} />Publiceren</label>
     <button disabled={saving}>{saving ? 'Opslaan…' : 'Opslaan'}</button>{editingId && <button type="button" onClick={reset}>Annuleren</button>}{message && <p aria-live="polite">{message}</p>}
 
@@ -1763,7 +1763,7 @@ function App() {
       <div className="footer-grid">
         <div className="footer-col">
           <h3>Over Hondenvoervergelijker</h3>
-          <p>Hondenvoervergelijker helpt hondeneigenaren en dierenartsen bij het vinden van complete hondenvoeding (brokken, natvoer en versvlees/KVV) zonder specifieke allergenen. Alle samenstellingen zijn rechtstreeks overgenomen van de officiële productpagina's van de fabrikanten en wekelijks gecontroleerd op wijzigingen.</p>
+          <p>Hondenvoervergelijker helpt hondeneigenaren en dierenartsen bij het vinden van complete hondenvoeding (brokken, natvoer en versvlees/KVV) zonder specifieke allergenen. Alle samenstellingen zijn rechtstreeks overgenomen van de officiële productpagina's van de fabrikanten of de bij het product vermelde bron, en worden wekelijks gecontroleerd op wijzigingen.</p>
         </div>
         <div className="footer-col">
           <h3>Onafhankelijke werkwijze</h3>

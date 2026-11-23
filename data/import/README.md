@@ -63,6 +63,16 @@ SQL-bestand gezet.
    verzoek per seconde per site, robots.txt respecteren. Bij 403 of 429:
    stoppen en dat melden in `twijfel`.
 
+## Retailerpagina's
+
+Soms is de officiële fabrikantpagina niet beschikbaar of niet compleet. Dan mag
+de samenstelling van een gespecificeerde retailerpagina komen, mits de
+`bronUrl` naar die pagina wijst. Dat geldt bijvoorbeeld voor de import van
+nieuwe merken uit de Best Petfoods-feed. De site noemt de bron bij het product;
+er wordt geen fabrikantbron geclaimd als die niet is gecontroleerd. Voeg zo'n
+product alleen toe als de pagina de volledige ingrediëntenlijst en
+analytische bestanddelen toont.
+
 ## Velden
 
 | veld | verplicht | betekenis |

@@ -1,0 +1,427 @@
+{
+  "merk": "Herrmann's",
+  "opgehaald": "2026-11-23",
+  "producten": [
+    {
+      "merk": "Herrmann's",
+      "naam": "Sensitive hond Konijn met rijstvlokken",
+      "voertype": "wet",
+      "verpakking": "14 x 150 g / 6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-sensitive-hond-konijn-met-rijstvlokken-400-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.37,
+        "fat": 2.9,
+        "fiber": 0.93,
+        "ash": 1.44,
+        "moisture": 74.07,
+        "calcium": 0.2,
+        "phosphorus": 0.14,
+        "kcal": 107.55
+      },
+      "bronTekst": "Ruw eiwit 10,37% Ruw vet 2,9% Ruwe as 1,44% Ruwe celstof 0,93% Vocht 74,07% Calcium 0,20% Fosfor 0,14% Metaboliseerbare energie is 107,55 kcal/100 gr.",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Adult Zalm met abrikoos",
+      "voertype": "wet",
+      "verpakking": "14 x 150 g / 6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-adult-hond-zalm-met-abrikoos-150-gr-per-14-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 11.21,
+        "fat": 9.86,
+        "fiber": 1.73,
+        "ash": 1.69,
+        "moisture": 72.63,
+        "calcium": 0.39,
+        "phosphorus": 0.29,
+        "kcal": 145.71
+      },
+      "bronTekst": "Ruw eiwit 11,21% Ruw vet 9,86% Ruwe as 1,69% Ruwe celstof 1,73% Vocht 72,63% Calcium 0,39% Fosfor 0,29% Metaboliseerbare energie is 145,71 kcal/100 gr.",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Sensitive hond Geit met Rode bieten",
+      "voertype": "wet",
+      "verpakking": "14 x 150 g / 6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-sensitive-hond-geit-met-rode-bieten-400-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9.32,
+        "fat": 4.83,
+        "fiber": 0.79,
+        "ash": 1.56,
+        "moisture": 77.71,
+        "calcium": 0.28,
+        "phosphorus": 0.19,
+        "kcal": 105.36
+      },
+      "bronTekst": "Ruw eiwit 9,32% Ruw vet 4,83% Ruwe as 1,56% Ruwe celstof 0,79% Vocht 77,71% Calcium 0,28% Fosfor 0,19% Metaboliseerbare energie is 105,36 kcal/100 gr.",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Bio Adult Kip met venkel",
+      "voertype": "wet",
+      "verpakking": "14 x 150 g / 6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-bio-adult-hond-kip-met-venkel-400-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9.86,
+        "fat": 8,
+        "fiber": 0.7,
+        "ash": 2.16,
+        "moisture": 73.5,
+        "calcium": 0.55,
+        "phosphorus": 0.36
+      },
+      "bronTekst": "Ruw eiwit 9,86% Ruw vet 8% Ruwe as 2,16% Ruwe celstof 0,7% Vocht 73,5% Calcium 0,55% Fosfor 0,36%",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Bio Creative Vleesvrij met groenten",
+      "voertype": "wet",
+      "verpakking": "15 x 150 g / 6 x 400 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-bio-creative-vleesvrij-met-groenten-150-gr-per-15-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 1.1,
+        "fat": 1.5,
+        "ash": 0.48,
+        "moisture": 89.75
+      },
+      "bronTekst": "Vocht 89,75% Ruw eiwit 1,10% Ruw vet 1,50% Ruwe celstof <0,5% Ruwe as 0,48% Herrmann's Bio Creative Vleesvrij met groenten 150 gr. - per 15 stuks Merk: Herrmann's Artikelnummer: 531248 Prijs p. kilo: 14,33 Perfecte aanvulling voor de hond en kat met hoge eisen 100% biologisch Ideaal als toevoeging aan de puur vlees blikken Eenmalige aankoop 32 ,25 Abonneer en bespaar 5% korting Je zit nergens aan vast. Je kan op elk moment stoppen of pauzeren. 32 ,25 Jammer! Dit product is niet op voorraad. Tota",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Bio Sensitive hond Eend met venkel",
+      "voertype": "wet",
+      "verpakking": "14 x 150 g / 6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-bio-sensitive-hond-eend-met-venkel-800-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9.98,
+        "fat": 8.16,
+        "fiber": 0.74,
+        "ash": 2.01,
+        "moisture": 73.11,
+        "calcium": 0.45,
+        "phosphorus": 0.32,
+        "kcal": 138.73
+      },
+      "bronTekst": "Ruw eiwit 9,98% Ruw vet 8,16% Ruwe as 2,01% Ruwe celstof 0,74% Vocht 73,11% Calcium 0,45% Fosfor 0,32% Metaboliseerbare energie is 138,73 kcal/100 gr.",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Bio Sensitive hond Purinearm Rund met wortel",
+      "voertype": "wet",
+      "verpakking": "14 x 150 g / 6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-bio-sensitive-hond-purinearm-rund-met-wortel-400-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 7.79,
+        "fat": 8,
+        "fiber": 1.94,
+        "ash": 1.69,
+        "moisture": 75.71,
+        "calcium": 0.2,
+        "phosphorus": 0.15,
+        "kcal": 125.9
+      },
+      "bronTekst": "Ruw eiwit 7,79% Ruw vet 8,0% Ruwe as 1,69% Ruwe celstof 1,94% Vocht 75,71% Calcium 0,20% Fosfor 0,15% Metaboliseerbare energie is 125,9 kcal/100 gr. Herrmann's Bio Sensitive hond Purinearm Rund met wortel 400 gr. - per 6 stuks Merk: Herrmann's Artikelnummer: 531094 Prijs p. kilo: 14,25 Een biologische feestmaal voor jouw lieve hond Vrij van vleesmeel Geschikt voor honden met voedselintoleranties Verlaag je stukprijs {{ price.quantity }}X {{ price.price | currency(false) }} 0\" class=\"product-deta",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Bio Puppy Rund met appel",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-bio-puppy-rund-met-appel-400-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 12.91,
+        "fat": 6.89,
+        "fiber": 1.06,
+        "ash": 1.73,
+        "moisture": 70.8,
+        "calcium": 0.32,
+        "phosphorus": 0.18,
+        "kcal": 142.13
+      },
+      "bronTekst": "Ruw eiwit 12,91% Ruw vet 6,89% Ruwe as 1,73% Ruwe celstof 1,06% Vocht 70,8% Calcium 0,32% Fosfor 0,18% Metaboliseerbare energie is 142,13 kcal/100 gr. Herrmann's Bio Puppy Rund met appel 400 gr. - per 6 stuks Merk: Herrmann's Artikelnummer: 531013 Prijs p. kilo: 13,12 Culinaire verwennerij voor je pup: biologisch rund! Bevat alle voedingsstoffen zodat jouw pup gezond opgroeit Ook voor honden met allergieën of maag- en darmklachten Verlaag je stukprijs {{ price.quantity }}X {{ price.price | curre",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Sensitive hond Paard met zoete aardappel",
+      "voertype": "wet",
+      "verpakking": "14 x 150 g / 6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-sensitive-hond-paard-met-zoete-aardappel-800-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.28,
+        "fat": 4.43,
+        "fiber": 1.39,
+        "ash": 1.07,
+        "moisture": 79.01,
+        "calcium": 0.16,
+        "phosphorus": 0.11,
+        "kcal": 97.68
+      },
+      "bronTekst": "Ruw eiwit 10,28% Ruw vet 4,43% Ruwe as 1,07% Ruwe celstof 1,39% Vocht 79,01% Calcium 0,16% Fosfor 0,11% Metaboliseerbare energie is 97,68 kcal/100 gr. Herrmann's Sensitive hond Paard met zoete aardappel 800 gr. - per 6 stuks Merk: Herrmann's Artikelnummer: 531093 Prijs p. kilo: 11,50 Een feestmaal voor honden met voedselintoleranties Hoog percentage paardenvlees Vrij van vleesmeel Kies variant: Paard met zoete aardappel 400 gr. - € 33,90 Paard met zoete aardappel 800 gr. - € 55,20 Verlaag je stu",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Bio Adult Kalkoen met pastinaak",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-bio-adult-hond-kalkoen-met-pastinaak-800-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9.59,
+        "fat": 7.83,
+        "fiber": 0.61,
+        "ash": 2.1,
+        "moisture": 75.5,
+        "calcium": 0.5,
+        "phosphorus": 0.32,
+        "kcal": 125.29
+      },
+      "bronTekst": "Ruw eiwit 9,59% Ruw vet 7,83% Ruwe as 2,1% Ruwe celstof 0,61% Vocht 75,5% Calcium 0,50% Fosfor 0,32% Metaboliseerbare energie is 125,29 kcal/100 gr.",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Bio Creative Groenten met bessen",
+      "voertype": "wet",
+      "verpakking": "14 x 150 g / 6 x 400 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-bio-creative-groenten-met-bessen-400-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 1,
+        "fat": 1.2,
+        "ash": 0.46,
+        "moisture": 89.99
+      },
+      "bronTekst": "Vocht 89,99% Ruw eiwit 1,00% Ruw vet 1,20% Ruwe celstof <0,5% Ruwe as 0,46% Herrmann's Bio Creative Groenten met bessen 400 gr. - per 6 stuks Merk: Herrmann's Artikelnummer: 531263 Prijs p. kilo: 12,75 Biologische groentemix voor de culinaire hond en kat! Beperkt voedselintolerantie Geschikt voor honden en katten Verlaag je stukprijs {{ price.quantity }}X {{ price.price | currency(false) }} 0\" class=\"product-details__bulk-item-caption\">Bespaar {{ price.discount }} Eenmalige aankoop 30 ,60 Abonne",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Bio Puur Eend",
+      "voertype": "wet",
+      "verpakking": "200 g / 6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-bio-puur-eend-200-gr",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 11.1,
+        "fat": 8,
+        "ash": 1.6,
+        "moisture": 79,
+        "kcal": 113
+      },
+      "bronTekst": "Ruw eiwit 11,1%, ruw vet 8%, ruwe vezels 0,3%, ruwe as 1,6%, vocht 79%. Metaboliseerbare energie: 1130 kcal/kg.",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Bio Adult Rund met wortel",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-bio-adult-hond-rund-met-wortel-800-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10.75,
+        "fat": 6.92,
+        "fiber": 1.72,
+        "ash": 1.28,
+        "moisture": 74.52,
+        "calcium": 0.19,
+        "phosphorus": 0.13,
+        "kcal": 127.87
+      },
+      "bronTekst": "Ruw eiwit 10,75% Ruw vet 6,92% Ruwe as 1,28% Ruwe celstof 1,72% Vocht 74,52% Calcium 0,19% Fosfor 0,13% Metaboliseerbare energie is 127,87 kcal/100 gr.",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Light hond Hert met pompoen",
+      "voertype": "wet",
+      "verpakking": "14 x 150 g / 6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-light-hond-hert-met-pompoen-800-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 10,
+        "fat": 5.99,
+        "fiber": 0.9,
+        "ash": 1.1,
+        "moisture": 75.61,
+        "calcium": 0.15,
+        "phosphorus": 0.13,
+        "kcal": 109
+      },
+      "bronTekst": "Ruw eiwit 10% Ruw vet 5,99% Ruwe as 1,1% Ruwe celstof 0,9% Vocht 75,61% Calcium 0,15% Fosfor 0,13% Metaboliseerbare energie is 109,00 kcal/100 gr. Herrmann's Light hond Hert met pompoen 800 gr. - per 6 stuks Merk: Herrmann's Artikelnummer: 531104 Prijs p. kilo: 11,50 Verwen je knappe hond met heerlijk hertenvlees Vrij van vleesmeel Geschikt voor honden met voedselintoleranties Verlaag je stukprijs {{ price.quantity }}X {{ price.price | currency(false) }} 0\" class=\"product-details__bulk-item-capt",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Adult Hert met aardappel",
+      "voertype": "wet",
+      "verpakking": "14 x 150 g / 6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-adult-hond-hert-met-aardappel-400-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9.86,
+        "fat": 7.21,
+        "fiber": 0.93,
+        "ash": 1.13,
+        "moisture": 77.89,
+        "calcium": 0.16,
+        "phosphorus": 0.1,
+        "kcal": 114.66
+      },
+      "bronTekst": "Ruw eiwit 9,86% Ruw vet 7,21% Ruwe as 1,13% Ruwe celstof 0,93% Vocht 77,89% Calcium 0,16% Fosfor 0,10% Metaboliseerbare energie is 114,66 kcal/100 gr.",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Sensitive hond Schaap met courgette",
+      "voertype": "wet",
+      "verpakking": "14 x 150 g / 6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-sensitive-hond-schaap-met-courgette-400-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9.2,
+        "fat": 5.61,
+        "fiber": 0.82,
+        "ash": 1.27,
+        "moisture": 79.97,
+        "calcium": 0.2,
+        "phosphorus": 0.14,
+        "kcal": 97.22
+      },
+      "bronTekst": "Ruw eiwit 9,2% Ruw vet 5,61% Ruwe as 1,27% Ruwe celstof 0,82% Vocht 79,97% Calcium 0,20% Fosfor 0,14% Metaboliseerbare energie is 97,22 kcal/100 gr. Herrmann's Sensitive hond Schaap met courgette 400 gr. - per 6 stuks Merk: Herrmann's Artikelnummer: 531098 Prijs p. kilo: 14,12 Een feestmaal voor honden met voedselintoleranties Hoog percentage geitenvlees Vrij van vleesmeel Kies variant: Schaap met courgette 400 gr. - € 33,90 Schaap met courgette 800 gr. - € 55,20 Verlaag je stukprijs {{ price.qu",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Bio Light hond Kalkoen met courgette",
+      "voertype": "wet",
+      "verpakking": "14 x 150 g / 6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-bio-light-hond-kalkoen-met-courgette-800-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9.5,
+        "fat": 6.99,
+        "fiber": 1.25,
+        "ash": 1.83,
+        "moisture": 76.71,
+        "calcium": 0.4,
+        "phosphorus": 0.28,
+        "kcal": 106
+      },
+      "bronTekst": "Ruw eiwit 9,5% Ruw vet 6,99% Ruwe as 1,83% Ruwe celstof 1,25% Vocht 76,71% Calcium 0,40% Fosfor 0,28% Metaboliseerbare energie is 106,00 kcal/100 gr. Herrmann's Bio Light hond Kalkoen met courgette 800 gr. - per 6 stuks Merk: Herrmann's Artikelnummer: 531101 Prijs p. kilo: 10,56 Verwen je knappe hond met biologische voeding! Vrij van vleesmeel Geschikt voor honden met voedselintoleranties Kies variant: Kalkoen met courgette 400 gr. - € 33,00 Kalkoen met courgette 800 gr. - € 50,70 Verlaag je stu",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Bio Puppy Gans met pompoen",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-bio-puppy-gans-met-pompoen-400-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 11.3,
+        "fat": 10.1,
+        "ash": 2.2,
+        "moisture": 73.2
+      },
+      "bronTekst": "Ruw eiwit 11,3%, ruw vet 10,1%, ruwe vezels 0,5%, ruwe as 2,2%, vochtgehalte 73,2% Metaboliseerbare energie (per 100 gram) 141 kcal",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Biologische kip",
+      "voertype": "kibble",
+      "verpakking": "1 kg",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-hondenvoeding-biologische-kip-1-kg",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 24,
+        "fat": 12,
+        "fiber": 3.5,
+        "ash": 6.9
+      },
+      "bronTekst": "Ruw eiwit 24,0% Ruw vet 12,0% Ruwe celstof 3,5% Ruwe as 6,9%",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Bio Sensitive hond Kip met wortel",
+      "voertype": "wet",
+      "verpakking": "14 x 150 g / 6 x 400 g / 6 x 800 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-bio-sensitive-hond-kip-met-wortel-800-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 9.65,
+        "fat": 8.07,
+        "fiber": 0.61,
+        "ash": 2.13,
+        "moisture": 72.31,
+        "calcium": 0.56,
+        "phosphorus": 0.35,
+        "kcal": 140.63
+      },
+      "bronTekst": "Ruw eiwit 9,65% Ruw vet 8.07% Ruwe as 2,13% Ruwe celstof 0,61% Vocht 72,31% Calcium 0,56% Fosfor 0,35% Metaboliseerbare energie is 140,63 kcal/100 gr. Herrmann's Bio Sensitive hond Kip met wortel 800 gr. - per 6 stuks Merk: Herrmann's Artikelnummer: 531087 Prijs p. kilo: 10,31 Een biologische feestmaal voor honden met voedselintoleranties Hoog percentage vlees Vrij van vleesmeel Verlaag je stukprijs {{ price.quantity }}X {{ price.price | currency(false) }} 0\" class=\"product-details__bulk-item-ca",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    },
+    {
+      "merk": "Herrmann's",
+      "naam": "Bio Light hond Veggie met witte zoete lupine",
+      "voertype": "wet",
+      "verpakking": "6 x 400 g",
+      "bronUrl": "https://www.bestpetfoods.nl/product/herrmanns-bio-light-hond-veggie-met-witte-zoete-lupine-400-gr-per-6-stuks",
+      "gecontroleerd": "2026-11-23",
+      "basis": "as-fed",
+      "waarden": {
+        "protein": 6.91,
+        "fat": 2.67,
+        "fiber": 4.95,
+        "ash": 0.86,
+        "moisture": 75.1,
+        "calcium": 0.14,
+        "phosphorus": 0.1,
+        "kcal": 95.68
+      },
+      "bronTekst": "Ruw eiwit 6,91% Ruw vet 2,67% Ruwe as 0,86% Ruwe celstof 4,95% Vocht 75,1% Calcium 0,14% Fosfor 0,10% Metaboliseerbare energie is 95,68 kcal/100 gr. Herrmann's Bio Light hond Veggie met witte zoete lupine 400 gr. - per 6 stuks Merk: Herrmann's Artikelnummer: 531111 Prijs p. kilo: 13,12 Verwen je knappe hond met 100% biologische voeding! Geschikt bij een purinearm dieet Vol groentes, fruit van de biologische landbouw in de regio Verlaag je stukprijs {{ price.quantity }}X {{ price.price | currency",
+      "notitie": "Automatisch overgenomen van de productpagina van Best Petfoods op 2026-11-23. Ontbrekende waarden zijn niet vermeld."
+    }
+  ]
+}
